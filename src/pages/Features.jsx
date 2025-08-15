@@ -1,6 +1,7 @@
-import { Analytics as AnalyticsIcon, Bolt as BoltIcon, CurrencyExchange as CurrencyIcon, Dashboard as DashboardIcon, Language as LanguageIcon, Payment as PaymentIcon, People as PeopleIcon, Schedule as ScheduleIcon, Star as StarIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
-import { Box, Card, CardContent, Chip, Container, Typography } from '@mui/material';
+import { Analytics as AnalyticsIcon, ArrowForward as ArrowForwardIcon, Bolt as BoltIcon, CurrencyExchange as CurrencyIcon, Dashboard as DashboardIcon, Language as LanguageIcon, Payment as PaymentIcon, People as PeopleIcon, Schedule as ScheduleIcon, Star as StarIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { Box, Button, Card, CardContent, Chip, Container, Typography } from '@mui/material';
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Features = ({ showHeading = true }) => {
   const scrollContainerRef = useRef(null);
@@ -451,6 +452,38 @@ const Features = ({ showHeading = true }) => {
               </Card>
             </Box>
           ))}
+        </Box>
+
+        {/* Action Button */}
+        <Box sx={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          mt: 6
+        }}>
+          <Button
+            component={Link}
+            to="/features"
+            variant="contained"
+            size="large"
+            endIcon={<ArrowForwardIcon />}
+            sx={{
+              backgroundColor: '#2e7d32',
+              fontWeight: 600,
+              fontSize: '1rem',
+              px: 4,
+              py: 1.5,
+              borderRadius: '12px',
+              boxShadow: '0 8px 24px rgba(46, 125, 50, 0.3)',
+              transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+              '&:hover': {
+                backgroundColor: '#1b5e20',
+                transform: 'translateY(-2px)',
+                boxShadow: '0 12px 32px rgba(46, 125, 50, 0.4)'
+              }
+            }}
+          >
+            View All Features
+          </Button>
         </Box>
       </Container>
     </Box>

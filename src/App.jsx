@@ -10,7 +10,6 @@ import ScrollToTop from './components/ScrollToTop';
 
 // Import Pages
 import BlogPage from './pages/BlogPage';
-import ContactPage from './pages/ContactPage';
 import FeaturesPage from './pages/FeaturesPage';
 import Home from './pages/Home';
 
@@ -50,7 +49,6 @@ function App() {
           <Route path="/" element={<Home onContactOpen={handleContactOpen} />} />
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/blog" element={<BlogPage />} />
-          <Route path="/contact" element={<ContactPage />} />
         </Routes>
 
         {/* Footer */}

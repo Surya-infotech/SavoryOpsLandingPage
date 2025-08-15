@@ -1,9 +1,13 @@
 import { ArrowForward as ArrowForwardIcon, Bookmark as BookmarkIcon, CalendarToday as CalendarIcon, Person as PersonIcon, Search as SearchIcon, Share as ShareIcon, TrendingUp as TrendingIcon } from '@mui/icons-material';
 import { Box, Breadcrumbs, Button, Card, CardMedia, Chip, Container, FormControl, Grid, IconButton, InputAdornment, InputLabel, MenuItem, Link as MuiLink, Pagination, Select, Tab, Tabs, TextField, Typography } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const BlogPage = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [currentTab, setCurrentTab] = useState(0);

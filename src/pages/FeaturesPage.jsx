@@ -1,7 +1,12 @@
 import { Analytics as AnalyticsIcon, Bolt as BoltIcon, CheckCircle as CheckCircleIcon, Dashboard as DashboardIcon, Inventory as InventoryIcon, LocalShipping as LocalShippingIcon, Menu as MenuIcon, Payment as PaymentIcon, People as PeopleIcon, Receipt as ReceiptIcon, Schedule as ScheduleIcon, Security as SecurityIcon, Speed as SpeedIcon, Star as StarIcon, Support as SupportIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Card, CardContent, Chip, Container, Divider, Grid, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import { useEffect } from 'react';
 
 const FeaturesPage = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const detailedFeatures = [
     {
       icon: <DashboardIcon sx={{ fontSize: 50 }} />,
