@@ -1,4 +1,4 @@
-import { Close as CloseIcon, Menu as MenuIcon, Restaurant as RestaurantIcon } from '@mui/icons-material';
+import { Close as CloseIcon, Menu as MenuIcon } from '@mui/icons-material';
 import { AppBar, Box, Button, Drawer, IconButton, List, ListItem, ListItemText, Toolbar, Typography } from '@mui/material';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -23,10 +23,42 @@ const Navigation = ({ onContactOpen }) => {
       <AppBar position="fixed" className="navigation-appbar">
         <Toolbar>
           <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
-            <RestaurantIcon sx={{ mr: 2, fontSize: 32 }} />
-            <Typography variant="h6" component="div" className="brand-name">
-              SavoryOps
-            </Typography>
+            <Link 
+              to="/" 
+              style={{ 
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                marginRight: 16
+              }}
+            >
+              <img
+                src="/logo.png"
+                alt="SavoryOps Logo"
+                style={{
+                  height: '40px',
+                  width: 'auto',
+                  display: 'block',
+                  objectFit: 'contain',
+                  maxWidth: '120px'
+                }}
+                onError={(e) => {
+                  console.log('Logo failed to load');
+                  e.target.style.display = 'none';
+                }}
+              />
+            </Link>
+            <Link 
+              to="/" 
+              style={{ 
+                textDecoration: 'none',
+                color: 'inherit'
+              }}
+            >
+              <Typography variant="h6" component="div" className="brand-name">
+                SavoryOps
+              </Typography>
+            </Link>
           </Box>
           
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
@@ -72,10 +104,44 @@ const Navigation = ({ onContactOpen }) => {
       >
         <Box className="drawer-header">
           <Box className="drawer-brand">
-            <RestaurantIcon className="brand-icon" />
-            <Typography variant="h6" className="brand-name">
-              SavoryOps
-            </Typography>
+            <Link 
+              to="/" 
+              style={{ 
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                marginRight: 8
+              }} 
+              onClick={handleDrawerToggle}
+            >
+              <img
+                src="/logo.png"
+                alt="SavoryOps Logo"
+                style={{
+                  height: '32px',
+                  width: 'auto',
+                  display: 'block',
+                  objectFit: 'contain',
+                  maxWidth: '100px'
+                }}
+                onError={(e) => {
+                  console.log('Mobile logo failed to load');
+                  e.target.style.display = 'none';
+                }}
+              />
+            </Link>
+            <Link 
+              to="/" 
+              style={{ 
+                textDecoration: 'none',
+                color: 'inherit'
+              }}
+              onClick={handleDrawerToggle}
+            >
+              <Typography variant="h6" className="brand-name">
+                SavoryOps
+              </Typography>
+            </Link>
           </Box>
           <IconButton onClick={handleDrawerToggle}>
             <CloseIcon />

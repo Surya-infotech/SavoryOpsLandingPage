@@ -6,10 +6,61 @@
   border-bottom: 1px solid rgba(46, 125, 50, 0.1);
   color: $primary-green !important;
   
+  // Logo styles
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    
+    &:hover {
+      text-decoration: none;
+    }
+    
+    &:active {
+      outline: none;
+    }
+    
+    &:focus {
+      outline: none;
+    }
+    
+    img {
+      display: block;
+      object-fit: contain;
+      
+      &:hover {
+        transform: none;
+      }
+      
+      &:active {
+        transform: none;
+      }
+    }
+  }
+  
   .brand-name {
     font-weight: $font-weight-bold;
     color: $primary-green !important;
     font-size: 1.5rem;
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      
+      &:hover {
+        text-decoration: none;
+        color: $primary-green-dark !important;
+      }
+      
+      &:active {
+        outline: none;
+      }
+      
+      &:focus {
+        outline: none;
+      }
+    }
   }
   
   .nav-link {
@@ -79,15 +130,59 @@
       display: flex;
       align-items: center;
       
-      .brand-icon {
-        color: $primary-green;
-        font-size: 2rem;
-        margin-right: $spacing-sm;
+      a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        
+        &:hover {
+          text-decoration: none;
+        }
+        
+        &:active {
+          outline: none;
+        }
+        
+        &:focus {
+          outline: none;
+        }
+        
+        img {
+          display: block;
+          object-fit: contain;
+          
+          &:hover {
+            transform: none;
+          }
+          
+          &:active {
+            transform: none;
+          }
+        }
       }
       
       .brand-name {
         font-weight: $font-weight-bold;
         color: $primary-green;
+        
+        a {
+          text-decoration: none;
+          color: inherit;
+          cursor: pointer;
+          
+          &:hover {
+            text-decoration: none;
+            color: $primary-green-dark;
+          }
+          
+          &:active {
+            outline: none;
+          }
+          
+          &:focus {
+            outline: none;
+          }
+        }
       }
     }
   }
