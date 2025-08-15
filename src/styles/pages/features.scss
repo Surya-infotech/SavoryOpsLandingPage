@@ -1,0 +1,115 @@
+// Features Section Styles
+
+.features-section {
+  background-color: $light-gray;
+  padding: 80px 0;
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: $spacing-xxl;
+    
+    .section-title {
+      color: $primary-green;
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacing-md;
+      
+      @media (max-width: $breakpoint-md) {
+        font-size: 2rem;
+      }
+      
+      @media (max-width: $breakpoint-sm) {
+        font-size: 1.75rem;
+      }
+    }
+    
+    .section-subtitle {
+      color: $text-light;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+  
+  .feature-card {
+    background: $white;
+    border-radius: $border-radius-xl;
+    padding: $spacing-xl;
+    text-align: center;
+    height: 100%;
+    transition: all $transition-normal;
+    border: 1px solid rgba(46, 125, 50, 0.1);
+    box-shadow: $shadow-md;
+    
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(46, 125, 50, 0.15);
+      border-color: $primary-green-light;
+    }
+    
+    .feature-content {
+      padding: 0 !important;
+      
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, $primary-green-light, $primary-green);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto $spacing-lg;
+        color: $white;
+        font-size: 2rem;
+        transition: all $transition-normal;
+        
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: $shadow-primary;
+        }
+      }
+      
+      .feature-title {
+        color: $primary-green;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-md;
+        font-size: 1.25rem;
+      }
+      
+      .feature-description {
+        color: $text-light;
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
+
+// Responsive Features
+@media (max-width: $breakpoint-md) {
+  .features-section {
+    padding: 60px 0;
+    
+    .section-header {
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .features-section {
+    padding: 40px 0;
+    
+    .section-header {
+      .section-title {
+        font-size: 1.75rem;
+      }
+    }
+    
+    .feature-card {
+      margin-bottom: $spacing-xl;
+    }
+  }
+}

@@ -1,0 +1,170 @@
+// Hero Section Styles
+
+.hero-section {
+  background: linear-gradient(135deg, $primary-green-light 0%, $primary-green 100%);
+  color: $white;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-lg;
+    line-height: 1.1;
+    position: relative;
+    z-index: 2;
+    
+    @media (max-width: $breakpoint-md) {
+      font-size: 2.5rem;
+    }
+    
+    @media (max-width: $breakpoint-sm) {
+      font-size: 2rem;
+    }
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: $spacing-xl;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    
+    @media (max-width: $breakpoint-md) {
+      font-size: 1.1rem;
+    }
+    
+    @media (max-width: $breakpoint-sm) {
+      font-size: 1rem;
+    }
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: $spacing-md;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    
+    @media (max-width: $breakpoint-sm) {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .hero-cta-button {
+      background: $white !important;
+      color: $primary-green !important;
+      font-weight: $font-weight-bold;
+      padding: 16px 32px;
+      border-radius: $border-radius-md;
+      font-size: 1.1rem;
+      transition: all $transition-normal;
+      
+      &:hover {
+        background: $light-gray !important;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+      }
+    }
+    
+    .hero-demo-button {
+      border-color: $white !important;
+      color: $white !important;
+      font-weight: $font-weight-bold;
+      padding: 16px 32px;
+      border-radius: $border-radius-md;
+      font-size: 1.1rem;
+      transition: all $transition-normal;
+      
+      &:hover {
+        border-color: $white !important;
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        transform: translateY(-2px);
+      }
+    }
+  }
+  
+  .hero-visual {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    
+    .dashboard-preview {
+      width: 100%;
+      height: 400px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: $border-radius-xl;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all $transition-normal;
+      
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+      
+      .preview-text {
+        opacity: 0.8;
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+}
+
+// Responsive Hero
+@media (max-width: $breakpoint-lg) {
+  .hero-section {
+    .hero-title {
+      font-size: 3rem;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .hero-section {
+    padding: 100px 0 60px;
+    
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .hero-section {
+    padding: 80px 0 40px;
+    
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

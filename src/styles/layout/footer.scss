@@ -1,0 +1,158 @@
+// Footer Styles
+
+.footer {
+  background-color: $primary-green-dark;
+  color: $white;
+  padding: 60px 0 0;
+  margin-top: auto;
+  
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-lg;
+    
+    .brand-icon {
+      color: $white;
+      font-size: 2rem;
+      margin-right: $spacing-md;
+    }
+    
+    .brand-name {
+      font-weight: $font-weight-bold;
+      font-size: 1.5rem;
+    }
+  }
+  
+  .footer-description {
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: $spacing-xl;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: $spacing-sm;
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      transition: all $transition-normal;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+    }
+  }
+  
+  .footer-section-title {
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+    color: $white;
+  }
+  
+  .footer-links {
+    .footer-link {
+      margin-bottom: $spacing-sm;
+      
+      a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color $transition-normal;
+        
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+  
+  .footer-contact {
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+      margin-bottom: $spacing-md;
+      opacity: 0.8;
+      
+      .contact-icon {
+        font-size: 1rem;
+        color: $white;
+      }
+      
+      p {
+        margin: 0;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  
+  .footer-divider {
+    border-color: rgba(255, 255, 255, 0.2);
+    margin: $spacing-xxl 0 $spacing-xl;
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    margin: 0;
+    padding: $spacing-xl 0;
+    
+    .copyright {
+      opacity: 0.8;
+    }
+    
+    .footer-bottom-links {
+      display: flex;
+      gap: $spacing-xl;
+      
+      .footer-link {
+        a {
+          color: rgba(255, 255, 255, 0.8);
+          text-decoration: none;
+          transition: color $transition-normal;
+          
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Footer
+@media (max-width: $breakpoint-md) {
+  .footer {
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .footer {
+    text-align: center;
+    
+    .social-links {
+      justify-content: center;
+    }
+    
+    .footer-bottom {
+      .footer-bottom-links {
+        flex-direction: column;
+        gap: $spacing-md;
+      }
+    }
+  }
+}

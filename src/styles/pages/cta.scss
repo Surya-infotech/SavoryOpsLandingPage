@@ -1,0 +1,78 @@
+// CTA Section Styles
+
+.cta-section {
+  background: linear-gradient(135deg, $primary-green 0%, $primary-green-dark 100%);
+  color: $white;
+  padding: 80px 0;
+  text-align: center;
+  
+  .cta-content {
+    .cta-title {
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacing-lg;
+      
+      @media (max-width: $breakpoint-md) {
+        font-size: 2rem;
+      }
+      
+      @media (max-width: $breakpoint-sm) {
+        font-size: 1.75rem;
+      }
+    }
+    
+    .cta-subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: $spacing-xl;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    
+    .cta-button {
+      background: $white !important;
+      color: $primary-green !important;
+      font-weight: $font-weight-bold;
+      padding: 16px 48px;
+      border-radius: $border-radius-md;
+      font-size: 1.1rem;
+      transition: all $transition-normal;
+      
+      &:hover {
+        background: $light-gray !important;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+}
+
+// Responsive CTA
+@media (max-width: $breakpoint-md) {
+  .cta-section {
+    padding: 60px 0;
+    
+    .cta-content {
+      .cta-title {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .cta-section {
+    padding: 40px 0;
+    
+    .cta-content {
+      .cta-title {
+        font-size: 1.75rem;
+      }
+      
+      .cta-subtitle {
+        font-size: 1rem;
+      }
+    }
+  }
+}

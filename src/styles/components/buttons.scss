@@ -1,0 +1,148 @@
+// Button Component Styles
+
+.btn-primary {
+  background-color: $primary-green !important;
+  border-color: $primary-green !important;
+  color: $white !important;
+  font-weight: $font-weight-bold;
+  padding: 12px 32px;
+  border-radius: $border-radius-md;
+  transition: all $transition-normal;
+  
+  &:hover {
+    background-color: $primary-green-dark !important;
+    border-color: $primary-green-dark !important;
+    transform: translateY(-2px);
+    box-shadow: $shadow-primary;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-outline {
+  border-color: $primary-green !important;
+  color: $primary-green !important;
+  font-weight: $font-weight-bold;
+  padding: 12px 32px;
+  border-radius: $border-radius-md;
+  transition: all $transition-normal;
+  
+  &:hover {
+    background-color: $primary-green !important;
+    color: $white !important;
+    transform: translateY(-2px);
+    box-shadow: $shadow-primary;
+  }
+}
+
+.btn-secondary {
+  background-color: $primary-green-light !important;
+  border-color: $primary-green-light !important;
+  color: $white !important;
+  font-weight: $font-weight-bold;
+  padding: 12px 32px;
+  border-radius: $border-radius-md;
+  transition: all $transition-normal;
+  
+  &:hover {
+    background-color: $primary-green !important;
+    border-color: $primary-green !important;
+    transform: translateY(-2px);
+    box-shadow: $shadow-primary;
+  }
+}
+
+.btn-large {
+  padding: 16px 48px;
+  font-size: 1.1rem;
+}
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+// CTA Button Styles
+.cta-button {
+  background-color: $primary-green !important;
+  border-color: $primary-green !important;
+  color: $white !important;
+  font-weight: $font-weight-bold;
+  padding: 16px 32px;
+  border-radius: $border-radius-md;
+  font-size: 1.1rem;
+  transition: all $transition-normal;
+  
+  &:hover {
+    background-color: $primary-green-dark !important;
+    border-color: $primary-green-dark !important;
+    transform: translateY(-2px);
+    box-shadow: $shadow-primary;
+  }
+}
+
+// Hero Button Styles
+.hero-cta-button {
+  background: $white !important;
+  color: $primary-green !important;
+  font-weight: $font-weight-bold;
+  padding: 16px 32px;
+  border-radius: $border-radius-md;
+  font-size: 1.1rem;
+  transition: all $transition-normal;
+  
+  &:hover {
+    background: $light-gray !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.hero-demo-button {
+  border-color: $white !important;
+  color: $white !important;
+  font-weight: $font-weight-bold;
+  padding: 16px 32px;
+  border-radius: $border-radius-md;
+  font-size: 1.1rem;
+  transition: all $transition-normal;
+  
+  &:hover {
+    border-color: $white !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    transform: translateY(-2px);
+  }
+}
+
+// Benefits CTA Button
+.benefits-cta-button {
+  background-color: $primary-green !important;
+  border-color: $primary-green !important;
+  color: $white !important;
+  font-weight: $font-weight-bold;
+  padding: 16px 32px;
+  border-radius: $border-radius-md;
+  font-size: 1.1rem;
+  transition: all $transition-normal;
+  
+  &:hover {
+    background-color: $primary-green-dark !important;
+    border-color: $primary-green-dark !important;
+    transform: translateY(-2px);
+    box-shadow: $shadow-primary;
+  }
+}
+
+// Responsive Button Styles
+@media (max-width: $breakpoint-sm) {
+  .btn-large,
+  .cta-button,
+  .hero-cta-button,
+  .hero-demo-button,
+  .benefits-cta-button {
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+}

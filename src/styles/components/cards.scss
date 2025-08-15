@@ -1,0 +1,202 @@
+// Card Component Styles
+
+.card {
+  border: none;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  transition: all $transition-normal;
+  overflow: hidden;
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow-lg;
+  }
+  
+  .card-body {
+    padding: $spacing-xl;
+  }
+  
+  .card-title {
+    color: $primary-green;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+  }
+  
+  .card-text {
+    color: $text-light;
+    line-height: 1.6;
+  }
+}
+
+// Feature Card Styles
+.feature-card {
+  background: $white;
+  border-radius: $border-radius-xl;
+  padding: $spacing-xl;
+  text-align: center;
+  height: 100%;
+  transition: all $transition-normal;
+  border: 1px solid rgba(46, 125, 50, 0.1);
+  box-shadow: $shadow-md;
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(46, 125, 50, 0.15);
+    border-color: $primary-green-light;
+  }
+  
+  .feature-content {
+    padding: 0 !important;
+    
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, $primary-green-light, $primary-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto $spacing-lg;
+      color: $white;
+      font-size: 2rem;
+      transition: all $transition-normal;
+      
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: $shadow-primary;
+      }
+    }
+    
+    .feature-title {
+      color: $primary-green;
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacing-md;
+      font-size: 1.25rem;
+    }
+    
+    .feature-description {
+      color: $text-light;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// Benefit Card Styles
+.benefit-card {
+  background: $light-gray;
+  border-radius: $border-radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  border-left: 4px solid $primary-green;
+  transition: all $transition-normal;
+  box-shadow: $shadow-sm;
+  
+  &:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 20px rgba(46, 125, 50, 0.1);
+  }
+  
+  .benefit-card-content {
+    padding: 0 !important;
+    
+    .benefit-card-icon {
+      color: $primary-green;
+      font-size: 2rem;
+      margin-bottom: $spacing-md;
+    }
+    
+    .benefit-card-title {
+      font-weight: $font-weight-bold;
+      color: $primary-green;
+      margin-bottom: $spacing-sm;
+    }
+    
+    .benefit-card-description {
+      color: $text-light;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+// Testimonial Card Styles
+.testimonial-card {
+  background: $white;
+  border-radius: $border-radius-xl;
+  padding: $spacing-xl;
+  height: 100%;
+  box-shadow: $shadow-md;
+  transition: all $transition-normal;
+  border: 1px solid rgba(46, 125, 50, 0.1);
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(46, 125, 50, 0.15);
+  }
+  
+  .testimonial-content {
+    padding: 0 !important;
+    
+    .testimonial-rating {
+      color: #ffc107;
+      margin-bottom: $spacing-md;
+      
+      .star-icon {
+        font-size: 20px;
+      }
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      color: $text-dark;
+      margin-bottom: $spacing-lg;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+      
+      .author-avatar {
+        width: 50px;
+        height: 50px;
+        background: $primary-green;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        font-weight: $font-weight-bold;
+        font-size: 1.2rem;
+      }
+      
+      .author-info {
+        .author-name {
+          font-weight: $font-weight-bold;
+          color: $primary-green;
+          margin-bottom: $spacing-xs;
+        }
+        
+        .author-role {
+          color: $text-light;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Card Styles
+@media (max-width: $breakpoint-sm) {
+  .feature-card,
+  .testimonial-card {
+    margin-bottom: $spacing-xl;
+  }
+  
+  .benefit-card {
+    margin-bottom: $spacing-lg;
+  }
+}
