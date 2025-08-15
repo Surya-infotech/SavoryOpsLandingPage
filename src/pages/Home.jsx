@@ -1,10 +1,9 @@
-import React from 'react';
-import Hero from './Hero';
-import Features from './Features';
 import Benefits from './Benefits';
-import Testimonials from './Testimonials';
 import Blog from './Blog';
 import CTA from './CTA';
+import Features from './Features';
+import Hero from './Hero';
+import Testimonials from './Testimonials';
 
 const Home = ({ onContactOpen }) => {
   return (
@@ -13,8 +12,8 @@ const Home = ({ onContactOpen }) => {
       <Features />
       <Benefits onContactOpen={onContactOpen} />
       <Testimonials />
-      <Blog />
       <CTA onContactOpen={onContactOpen} />
+      <Blog />
     </>
   );
 };
