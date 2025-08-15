@@ -1,22 +1,7 @@
-import React, { useState } from 'react';
+import { Close as CloseIcon, Menu as MenuIcon, Restaurant as RestaurantIcon } from '@mui/icons-material';
+import { AppBar, Box, Button, Drawer, IconButton, List, ListItem, ListItemText, Toolbar, Typography } from '@mui/material';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  IconButton,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
-  Box
-} from '@mui/material';
-import {
-  Menu as MenuIcon,
-  Close as CloseIcon,
-  Restaurant as RestaurantIcon
-} from '@mui/icons-material';
 
 const Navigation = ({ onContactOpen }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -29,7 +14,6 @@ const Navigation = ({ onContactOpen }) => {
   const menuItems = [
     { text: 'Home', path: '/' },
     { text: 'Features', path: '/features' },
-    { text: 'Benefits', path: '/benefits' },
     { text: 'Blog', path: '/blog' }
   ];
 

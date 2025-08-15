@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './styles/main.scss';
 
 // Import Components
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
 import ContactDialog from './components/ContactDialog';
+import Footer from './components/Footer';
+import Navigation from './components/Navigation';
 import ScrollToTop from './components/ScrollToTop';
 
 // Import Pages
-import Home from './pages/Home';
-import FeaturesPage from './pages/FeaturesPage';
-import BenefitsPage from './pages/BenefitsPage';
-import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
+import ContactPage from './pages/ContactPage';
+import FeaturesPage from './pages/FeaturesPage';
+import Home from './pages/Home';
 
 function App() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -50,7 +49,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home onContactOpen={handleContactOpen} />} />
           <Route path="/features" element={<FeaturesPage />} />
-          <Route path="/benefits" element={<BenefitsPage onContactOpen={handleContactOpen} />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
