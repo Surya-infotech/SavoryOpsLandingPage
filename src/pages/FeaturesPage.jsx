@@ -1,4 +1,4 @@
-import { Analytics as AnalyticsIcon, ArrowForward as ArrowForwardIcon, Bolt as BoltIcon, Dashboard as DashboardIcon, Inventory as InventoryIcon, LocalShipping as LocalShippingIcon, Menu as MenuIcon, Payment as PaymentIcon, People as PeopleIcon, Receipt as ReceiptIcon, Rocket as RocketIcon, Schedule as ScheduleIcon, Security as SecurityIcon, Star as StarIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { AccountTree as AccountTreeIcon, Analytics as AnalyticsIcon, ArrowForward as ArrowForwardIcon, Assessment as AssessmentIcon, Bolt as BoltIcon, Business as BusinessIcon, CalendarMonth as CalendarMonthIcon, Cloud as CloudIcon, CurrencyExchange as CurrencyExchangeIcon, Dashboard as DashboardIcon, Download as DownloadIcon, Groups as GroupsIcon, Language as LanguageIcon, Menu as MenuIcon, PriceChange as PriceChangeIcon, Public as PublicIcon, QrCode as QrCodeIcon, RateReview as RateReviewIcon, Receipt as ReceiptIcon, ReceiptLong as ReceiptLongIcon, Restaurant as RestaurantIcon, Rocket as RocketIcon, Security as SecurityIcon, Star as StarIcon, Storage as StorageIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Button, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -11,68 +11,167 @@ const FeaturesPage = () => {
   }, []);
 
   const detailedFeatures = [
+    // 1. BUSINESS SETUP & MANAGEMENT
     {
-      icon: <DashboardIcon sx={{ fontSize: 28 }} />,
+      icon: <DashboardIcon sx={{ fontSize: 24 }} />,
       title: 'Smart Dashboard',
       subtitle: 'Real-time Business Intelligence',
       description: 'Get instant insights into your restaurant performance with our intelligent dashboard.',
       color: '#4caf50'
     },
     {
-      icon: <InventoryIcon sx={{ fontSize: 28 }} />,
-      title: 'Advanced Inventory',
-      subtitle: 'Smart Stock Management',
-      description: 'Never run out of ingredients with our AI-powered inventory management system.',
-      color: '#2e7d32'
-    },
-    {
-      icon: <PeopleIcon sx={{ fontSize: 28 }} />,
-      title: 'Staff Management',
-      subtitle: 'Complete HR Solution',
-      description: 'Streamline your workforce management with comprehensive staff tools.',
+      icon: <BusinessIcon sx={{ fontSize: 24 }} />,
+      title: 'Multiple Business',
+      subtitle: 'Multi-Entity Management',
+      description: 'Manage multiple business entities from a single platform with centralized control.',
       color: '#388e3c'
     },
     {
-      icon: <PaymentIcon sx={{ fontSize: 28 }} />,
-      title: 'Payment Solutions',
-      subtitle: 'Secure & Fast Transactions',
-      description: 'Accept all payment methods with our secure and fast payment processing.',
+      icon: <AccountTreeIcon sx={{ fontSize: 24 }} />,
+      title: 'Multiple Branches',
+      subtitle: 'Branch Network Management',
+      description: 'Efficiently manage multiple branches with unified operations and reporting.',
       color: '#4caf50'
     },
     {
-      icon: <AnalyticsIcon sx={{ fontSize: 28 }} />,
-      title: 'Business Analytics',
-      subtitle: 'Data-Driven Decisions',
-      description: 'Make informed decisions with comprehensive business analytics and reporting.',
+      icon: <StorageIcon sx={{ fontSize: 24 }} />,
+      title: 'Separate Database',
+      subtitle: 'Multi-Tenant Architecture',
+      description: 'Each restaurant owner gets their own dedicated database with complete data isolation and security.',
       color: '#2e7d32'
     },
     {
-      icon: <ScheduleIcon sx={{ fontSize: 28 }} />,
-      title: 'Reservation System',
-      subtitle: 'Smart Booking Management',
-      description: 'Manage reservations efficiently with our intelligent booking system.',
+      icon: <PublicIcon sx={{ fontSize: 24 }} />,
+      title: 'Custom Subdomain',
+      subtitle: 'Restaurant Owner-wise',
+      description: 'Each restaurant owner gets their own custom subdomain for a personalized and branded experience.',
       color: '#388e3c'
     },
     {
-      icon: <MenuIcon sx={{ fontSize: 28 }} />,
+      icon: <CloudIcon sx={{ fontSize: 24 }} />,
+      title: 'Cloud-Based System',
+      subtitle: 'Access Anywhere, Anytime',
+      description: 'Fully cloud-based platform ensuring secure access from anywhere with automatic updates and backups.',
+      color: '#2e7d32'
+    },
+
+    // 2. STAFF & OPERATIONS
+    {
+      icon: <GroupsIcon sx={{ fontSize: 24 }} />,
+      title: 'Branch-wise Staff Management',
+      subtitle: 'Local Workforce Control',
+      description: 'Manage staff separately for each branch with localized permissions and scheduling.',
+      color: '#4caf50'
+    },
+
+    // 3. MENU & PRICING
+    {
+      icon: <MenuIcon sx={{ fontSize: 24 }} />,
       title: 'Menu Management',
       subtitle: 'Dynamic Menu Control',
       description: 'Update menus instantly and manage pricing with real-time control.',
       color: '#4caf50'
     },
     {
-      icon: <ReceiptIcon sx={{ fontSize: 28 }} />,
+      icon: <PriceChangeIcon sx={{ fontSize: 24 }} />,
+      title: 'Branch-wise Pricing',
+      subtitle: 'Flexible Price Management',
+      description: 'Set different item prices for each branch based on local market conditions.',
+      color: '#4caf50'
+    },
+
+    // 4. ORDERING & POS SYSTEMS
+    {
+      icon: <ReceiptIcon sx={{ fontSize: 24 }} />,
       title: 'POS System',
       subtitle: 'Modern Point of Sale',
       description: 'Fast and reliable point of sale system designed for restaurants.',
       color: '#2e7d32'
     },
     {
-      icon: <LocalShippingIcon sx={{ fontSize: 28 }} />,
-      title: 'Delivery Management',
-      subtitle: 'Seamless Delivery Operations',
-      description: 'Manage delivery orders efficiently with integrated delivery tracking.',
+      icon: <QrCodeIcon sx={{ fontSize: 24 }} />,
+      title: 'QR Code Scanning',
+      subtitle: 'Smart Order Processing',
+      description: 'Scan QR codes for instant order placement and seamless customer experience.',
+      color: '#4caf50'
+    },
+    {
+      icon: <RestaurantIcon sx={{ fontSize: 24 }} />,
+      title: 'KOT System',
+      subtitle: 'Kitchen Order Tickets',
+      description: 'Streamlined kitchen order management with real-time ticket generation and tracking.',
       color: '#388e3c'
+    },
+    {
+      icon: <TimelineIcon sx={{ fontSize: 24 }} />,
+      title: 'Order Summary & Timeline',
+      subtitle: 'Detailed Order Tracking',
+      description: 'Complete order details with status tracking and timeline for better order management.',
+      color: '#2e7d32'
+    },
+
+    // 5. INTERNATIONAL & LOCALIZATION
+    {
+      icon: <LanguageIcon sx={{ fontSize: 24 }} />,
+      title: 'Multiple Languages',
+      subtitle: 'Global Communication',
+      description: 'Support for multiple languages to serve diverse customer bases worldwide.',
+      color: '#2e7d32'
+    },
+    {
+      icon: <CurrencyExchangeIcon sx={{ fontSize: 24 }} />,
+      title: 'Multiple Currency',
+      subtitle: 'International Transactions',
+      description: 'Accept payments in multiple currencies for global business operations.',
+      color: '#388e3c'
+    },
+
+    // 6. FINANCIAL MANAGEMENT
+    {
+      icon: <ReceiptLongIcon sx={{ fontSize: 24 }} />,
+      title: 'Branch-wise Tax Management',
+      subtitle: 'Local Tax Compliance',
+      description: 'Manage different tax rates and regulations for each branch location.',
+      color: '#388e3c'
+    },
+    {
+      icon: <CalendarMonthIcon sx={{ fontSize: 24 }} />,
+      title: 'Fiscal Year Records',
+      subtitle: 'Organized Financial Data',
+      description: 'Keep organized records fiscal year wise for better financial management and compliance.',
+      color: '#4caf50'
+    },
+    {
+      icon: <DownloadIcon sx={{ fontSize: 24 }} />,
+      title: 'Digital Invoice Download',
+      subtitle: 'Future Requirements',
+      description: 'Users can download digital invoices for future requirements and record keeping.',
+      color: '#388e3c'
+    },
+
+    // 7. ANALYTICS & REPORTING
+    {
+      icon: <AnalyticsIcon sx={{ fontSize: 24 }} />,
+      title: 'Business Analytics',
+      subtitle: 'Data-Driven Decisions',
+      description: 'Make informed decisions with comprehensive business analytics and reporting.',
+      color: '#2e7d32'
+    },
+    {
+      icon: <AssessmentIcon sx={{ fontSize: 24 }} />,
+      title: 'Advanced Reports',
+      subtitle: 'Growth Intelligence',
+      description: 'Comprehensive reports and analytics to make the best decisions for your business growth.',
+      color: '#2e7d32'
+    },
+
+    // 8. CUSTOMER EXPERIENCE
+    {
+      icon: <RateReviewIcon sx={{ fontSize: 24 }} />,
+      title: 'Customer Reviews',
+      subtitle: 'Feedback Management',
+      description: 'Review pages to see customer feedback and ratings for continuous improvement.',
+      color: '#2e7d32'
     }
   ];
 
@@ -168,12 +267,18 @@ const FeaturesPage = () => {
         <Grid container spacing={2} className="features-grid">
           {detailedFeatures.map((feature, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-                             <Card
-                 className="feature-card"
-                 style={{ animationDelay: `${index * 0.1}s` }}
-               >
+              <Card
+                className="feature-card"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <CardContent className="card-content">
-                  <Box className="feature-icon">
+                  <Box
+                    className="feature-icon"
+                    style={{
+                      background: `linear-gradient(135deg, ${feature.color}, ${feature.color}dd)`,
+                      boxShadow: `0 8px 24px ${feature.color}40, 0 4px 12px ${feature.color}30`
+                    }}
+                  >
                     {feature.icon}
                   </Box>
 
