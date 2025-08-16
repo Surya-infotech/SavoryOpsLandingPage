@@ -5,14 +5,14 @@ import Features from './Features';
 import Hero from './Hero';
 import Testimonials from './Testimonials';
 
-const Home = ({ onContactOpen }) => {
+const Home = () => {
   return (
     <>
-      <Hero onContactOpen={onContactOpen} />
+      <Hero />
       <Features />
-      <Benefits onContactOpen={onContactOpen} />
+      <Benefits />
       <Testimonials />
-      <CTA onContactOpen={onContactOpen} />
+      <CTA />
       <Blog />
     </>
   );

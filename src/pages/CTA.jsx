@@ -1,12 +1,7 @@
-import React from 'react';
-import {
-  Container,
-  Typography,
-  Button,
-  Box
-} from '@mui/material';
+import { Box, Button, Container, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-const CTA = ({ onContactOpen }) => {
+const CTA = () => {
   return (
     <Box id="contact" className="cta-section">
       <Container maxWidth="md">
@@ -20,7 +15,8 @@ const CTA = ({ onContactOpen }) => {
           <Button
             variant="contained"
             size="large"
-            onClick={onContactOpen}
+                            component={Link}
+                to="/features"
             className="cta-button"
           >
             Start Your Free Trial Today

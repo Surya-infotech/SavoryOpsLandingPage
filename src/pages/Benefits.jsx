@@ -1,7 +1,8 @@
-import { ArrowForward as ArrowForwardIcon, CheckCircle as CheckCircleIcon, Security as SecurityIcon, Speed as SpeedIcon, Star as StarIcon, Support as SupportIcon } from '@mui/icons-material';
+import { ArrowForward as ArrowForwardIcon, CheckCircle as CheckCircleIcon, Star as StarIcon } from '@mui/icons-material';
 import { Box, Button, Chip, Container, Grid, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-const Benefits = ({ onContactOpen }) => {
+const Benefits = () => {
   const benefits = [
     'Increase operational efficiency',
     'Improve customer satisfaction',
@@ -12,30 +13,6 @@ const Benefits = ({ onContactOpen }) => {
     'Branch-wise pricing and employee management',
     'Easy ordering through user app with QR code scanning',
     'Employee app for order management and status updates'
-  ];
-
-  const benefitCards = [
-    {
-      icon: <SpeedIcon sx={{ fontSize: 40 }} />,
-      title: 'Lightning Fast Setup',
-      description: 'Get your restaurant up and running in less than 24 hours with our streamlined onboarding process.',
-      color: '#4caf50',
-      stat: '24 Hours'
-    },
-    {
-      icon: <SecurityIcon sx={{ fontSize: 40 }} />,
-      title: 'Enterprise Security',
-      description: 'Bank-level security with 256-bit encryption and regular security audits to protect your data.',
-      color: '#2e7d32',
-      stat: '99.9%'
-    },
-    {
-      icon: <SupportIcon sx={{ fontSize: 40 }} />,
-      title: '24/7 Support',
-      description: 'Round-the-clock customer support to help you succeed with dedicated assistance.',
-      color: '#388e3c',
-      stat: '24/7'
-    }
   ];
 
   return (
@@ -151,7 +128,8 @@ const Benefits = ({ onContactOpen }) => {
               variant="contained"
               size="large"
               endIcon={<ArrowForwardIcon />}
-              onClick={onContactOpen}
+                              component={Link}
+                to="/features"
               sx={{
                 background: 'linear-gradient(135deg, #2e7d32, #4caf50)',
                 borderRadius: '50px',

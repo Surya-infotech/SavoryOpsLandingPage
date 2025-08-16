@@ -3,7 +3,7 @@ import { AppBar, Box, Button, Drawer, IconButton, List, ListItem, ListItemText, 
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const Navigation = ({ onContactOpen }) => {
+const Navigation = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
@@ -75,7 +75,8 @@ const Navigation = ({ onContactOpen }) => {
             ))}
             <Button
               variant="contained"
-              onClick={onContactOpen}
+              component={Link}
+              to="/features"
               className="cta-button"
             >
               Get Started
@@ -164,7 +165,9 @@ const Navigation = ({ onContactOpen }) => {
             <Button
               fullWidth
               variant="contained"
-              onClick={() => { onContactOpen(); handleDrawerToggle(); }}
+              component={Link}
+              to="/features"
+              onClick={handleDrawerToggle}
               className="cta-button"
             >
               Get Started

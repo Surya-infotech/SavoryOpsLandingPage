@@ -1,20 +1,8 @@
-import React from 'react';
-import {
-  Container,
-  Grid,
-  Typography,
-  Button,
-  Box,
-  Chip
-} from '@mui/material';
-import {
-  TrendingUp as TrendingUpIcon,
-  Star as StarIcon,
-  ArrowForward as ArrowForwardIcon
-} from '@mui/icons-material';
+import { ArrowForward as ArrowForwardIcon } from '@mui/icons-material';
+import { Box, Button, Container, Grid, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-
-const Hero = ({ onContactOpen }) => {
+const Hero = () => {
   return (
     <Box 
       id="home" 
@@ -79,7 +67,8 @@ const Hero = ({ onContactOpen }) => {
               <Button
                 variant="contained"
                 size="large"
-                onClick={onContactOpen}
+                component={Link}
+                to="/features"
                 className="hero-cta-button"
                 endIcon={<ArrowForwardIcon />}
                 sx={{
