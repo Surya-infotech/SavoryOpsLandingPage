@@ -1,36 +1,43 @@
-import {
-  Article as ArticleIcon,
-  Assessment as AssessmentIcon,
-  BarChart as BarChartIcon,
-  AccountTree as BranchIcon,
-  Business as BusinessIcon,
-  CurrencyExchange as CurrencyIcon,
-  Email as EmailIcon,
-  Facebook as FacebookIcon,
-  Info as InfoIcon,
-  Instagram as InstagramIcon,
-  Inventory as InventoryIcon,
-  Language as LanguageIcon,
-  LinkedIn as LinkedInIcon,
-  LocationOn as LocationIcon,
-  MenuBook as MenuBookIcon,
-  People as PeopleIcon,
-  PointOfSale as PointOfSaleIcon,
-  Receipt as ReceiptIcon,
-  Restaurant as RestaurantIcon,
-  TrendingUp as TrendingUpIcon,
-  Twitter as TwitterIcon,
-  Work as WorkIcon
-} from '@mui/icons-material';
-import {
-  Box,
-  Container,
-  Divider,
-  Grid,
-  IconButton,
-  Link,
-  Typography
-} from '@mui/material';
+import { Article as ArticleIcon, Assessment as AssessmentIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, CurrencyExchange as CurrencyIcon, Email as EmailIcon, Facebook as FacebookIcon, Info as InfoIcon, Instagram as InstagramIcon, Inventory as InventoryIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, PointOfSale as PointOfSaleIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, TrendingUp as TrendingUpIcon, Twitter as TwitterIcon, Work as WorkIcon } from '@mui/icons-material';
+import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
+const Footer = () => {
+  const productFeatures = [
+    { name: 'POS Tracking System', icon: <PointOfSaleIcon />, href: '#' },
+    { name: 'KOT Tracking System', icon: <RestaurantIcon />, href: '#' },
+    { name: 'Multiple Business', icon: <BusinessIcon />, href: '#' },
+    { name: 'Multiple Branches', icon: <BranchIcon />, href: '#' },
+    { name: 'Multiple Languages', icon: <LanguageIcon />, href: '#' },
+    { name: 'Multiple Currency', icon: <CurrencyIcon />, href: '#' },
+    { name: 'Menu Management', icon: <MenuBookIcon />, href: '#' },
+    { name: 'Item Management', icon: <InventoryIcon />, href: '#' },
+    { name: 'Staff Management', icon: <PeopleIcon />, href: '#' }
+  ];
+
+  const reportList = [
+    { name: 'Daily Wise Report', icon: <AssessmentIcon />, href: '#' },
+    { name: 'Business Wise Report', icon: <TrendingUpIcon />, href: '#' },
+    { name: 'Branch Wise Report', icon: <BarChartIcon />, href: '#' },
+    { name: 'Order Summary', icon: <ReceiptIcon />, href: '#' }
+  ];
+
+  const companyLinks = [
+    { name: 'About Us', icon: <InfoIcon />, href: '#' },
+    { name: 'Careers', icon: <WorkIcon />, href: '#' },
+    { name: 'Blog', icon: <ArticleIcon />, href: '#' }
+  ];
+
+  const legalLinks = [
+    { name: 'Privacy Policy', href: '#' },
+    { name: 'Terms of Service', href: '#' }
+  ];
+
+  const socialLinks = [
+    { icon: <FacebookIcon />, href: '#', label: 'Facebook' },
+    { icon: <TwitterIcon />, href: '#', label: 'Twitter' },
+    { icon: <LinkedInIcon />, href: '#', label: 'LinkedIn' },
+    { icon: <InstagramIcon />, href: '#', label: 'Instagram' }
+  ];
+
   const contactInfo = [
     { icon: <EmailIcon />, text: 'hello@savoryops.com', href: 'mailto:hello@savoryops.com' },
     { icon: <LocationIcon />, text: 'Surat, Gujarat, India', href: '#' }
