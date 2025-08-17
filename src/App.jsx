@@ -12,6 +12,15 @@ import BlogPage from './pages/BlogPage';
 import FeaturesPage from './pages/FeaturesPage';
 import Home from './pages/Home';
 
+// Import Feature Detail Pages
+import SmartDashboard from './pages/features/SmartDashboard';
+import MenuManagement from './pages/features/MenuManagement';
+import POSSystem from './pages/features/POSSystem';
+import BusinessAnalytics from './pages/features/BusinessAnalytics';
+import CustomerReviews from './pages/features/CustomerReviews';
+import MultipleBusiness from './pages/features/MultipleBusiness';
+import QRCodeScanning from './pages/features/QRCodeScanning';
+
 function App() {
   const [scrollTop, setScrollTop] = useState(0);
 
@@ -39,6 +48,15 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          
+          {/* Feature Detail Routes */}
+          <Route path="/features/smart-dashboard" element={<SmartDashboard />} />
+          <Route path="/features/menu-management" element={<MenuManagement />} />
+          <Route path="/features/pos-system" element={<POSSystem />} />
+          <Route path="/features/business-analytics" element={<BusinessAnalytics />} />
+          <Route path="/features/customer-reviews" element={<CustomerReviews />} />
+          <Route path="/features/multiple-business" element={<MultipleBusiness />} />
+          <Route path="/features/qr-code-scanning" element={<QRCodeScanning />} />
         </Routes>
 
         {/* Footer */}
