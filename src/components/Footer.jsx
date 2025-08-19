@@ -50,8 +50,42 @@ const Footer = () => {
           {/* Logo, Description, and Social Media Box */}
           <Grid item xs={12} md={3}>
             <Box className="footer-brand">
-              <Link href="/" className="brand-link">
-                <Box className="brand-content">
+              <Link
+                href="/"
+                className="brand-link"
+                sx={{
+                  textDecoration: 'none',
+                  outline: 'none',
+                  '&:focus': {
+                    outline: 'none',
+                    border: 'none',
+                    boxShadow: 'none'
+                  },
+                  '&:active': {
+                    outline: 'none',
+                    border: 'none',
+                    boxShadow: 'none'
+                  },
+                  '&:visited': {
+                    outline: 'none',
+                    border: 'none'
+                  }
+                }}
+              >
+                <Box
+                  className="brand-content"
+                  sx={{
+                    outline: 'none',
+                    '&:focus': {
+                      outline: 'none',
+                      border: 'none'
+                    },
+                    '&:active': {
+                      outline: 'none',
+                      border: 'none'
+                    }
+                  }}
+                >
                   <img src="/logo.png" alt="SavoryOps Logo" className="brand-logo" />
                   <Typography variant="h5" className="brand-name">
                     SavoryOps
