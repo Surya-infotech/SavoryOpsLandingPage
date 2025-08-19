@@ -1,4 +1,4 @@
-import { Bolt as BoltIcon, CalendarToday as CalendarIcon, Facebook, Instagram, LinkedIn, Person as PersonIcon, Rocket as RocketIcon, Security as SecurityIcon, Star as StarIcon, TrendingUp as TrendingUpIcon, Twitter } from '@mui/icons-material';
+import { Bolt as BoltIcon, Facebook, Instagram, LinkedIn, Person as PersonIcon, Rocket as RocketIcon, Security as SecurityIcon, Star as StarIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Card, CardMedia, Chip, Container, Grid, IconButton, Pagination, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import '../styles/pages/blogpage.scss';
@@ -194,8 +194,6 @@ const BlogPage = () => {
           </Box>
         </Box>
 
-
-
         {/* Blog Posts Grid */}
         <Grid container spacing={2} className="blog-posts-grid">
           {currentPosts.map((post) => (
@@ -242,12 +240,6 @@ const BlogPage = () => {
                         {post.author}
                       </Typography>
                     </Box>
-                    <Box className="date-section">
-                      <CalendarIcon className="calendar-icon" />
-                      <Typography variant="caption" className="date-text">
-                        {post.date}
-                      </Typography>
-                    </Box>
                   </Box>
                 </Box>
               </Card>
@@ -291,15 +283,6 @@ const BlogPage = () => {
                 rel="noopener noreferrer"
               >
                 <Facebook />
-              </IconButton>
-              <IconButton
-                className="social-icon twitter"
-                aria-label="Twitter"
-                href="https://twitter.com/savoryops"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twitter />
               </IconButton>
               <IconButton
                 className="social-icon instagram"

@@ -1,4 +1,4 @@
-import { Article as ArticleIcon, Assessment as AssessmentIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, CurrencyExchange as CurrencyIcon, Email as EmailIcon, Facebook as FacebookIcon, Info as InfoIcon, Instagram as InstagramIcon, Inventory as InventoryIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, PointOfSale as PointOfSaleIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, TrendingUp as TrendingUpIcon, Twitter as TwitterIcon, Work as WorkIcon } from '@mui/icons-material';
+import { Article as ArticleIcon, Assessment as AssessmentIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, CurrencyExchange as CurrencyIcon, Email as EmailIcon, Facebook as FacebookIcon, Info as InfoIcon, Instagram as InstagramIcon, Inventory as InventoryIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, PointOfSale as PointOfSaleIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, TrendingUp as TrendingUpIcon, Work as WorkIcon } from '@mui/icons-material';
 import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
 const Footer = () => {
   const productFeatures = [
@@ -33,7 +33,6 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: <FacebookIcon />, href: '#', label: 'Facebook' },
-    { icon: <TwitterIcon />, href: '#', label: 'Twitter' },
     { icon: <LinkedInIcon />, href: '#', label: 'LinkedIn' },
     { icon: <InstagramIcon />, href: '#', label: 'Instagram' }
   ];
