@@ -270,9 +270,7 @@ const FeaturesPage = () => {
               <Card
                 className="feature-card"
                 style={{ animationDelay: `${index * 0.1}s` }}
-                component={Link}
-                to={`/features/${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
-                sx={{ textDecoration: 'none', cursor: 'pointer' }}
+                sx={{ cursor: 'default !important', '&:hover': { cursor: 'default !important' } }}
               >
                 <CardContent className="card-content">
                   <Box
