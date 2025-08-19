@@ -1,4 +1,4 @@
-import { ArrowForward as ArrowForwardIcon, CalendarToday as CalendarIcon, Person as PersonIcon } from '@mui/icons-material';
+import { ArrowForward as ArrowForwardIcon, Person as PersonIcon } from '@mui/icons-material';
 import { Box, Button, Card, CardMedia, Chip, Container, Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
@@ -77,19 +77,19 @@ const Blog = () => {
         <Grid container spacing={4} sx={{ mb: 6, justifyContent: 'center' }}>
           {featuredPosts.map((post) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={post.id}>
-              <Link 
-                to="/blog" 
-                style={{ 
-                  textDecoration: 'none', 
+              <Link
+                to="/blog"
+                style={{
+                  textDecoration: 'none',
                   display: 'block',
                   height: '100%'
                 }}
               >
-                <Card 
-                  className="blog-card" 
-                  sx={{ 
-                    height: '100%', 
-                    display: 'flex', 
+                <Card
+                  className="blog-card"
+                  sx={{
+                    height: '100%',
+                    display: 'flex',
                     flexDirection: 'column',
                     transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                     transform: 'translateZ(0)',
@@ -108,9 +108,6 @@ const Blog = () => {
                       '& .blog-card-image': {
                         transform: 'scale(1.08)'
                       },
-                      '& .blog-card-overlay': {
-                        opacity: 1
-                      },
                       '& .blog-card-accent': {
                         transform: 'scaleX(1)'
                       },
@@ -119,188 +116,155 @@ const Blog = () => {
                       }
                     }
                   }}
-              >
-                {/* Image Container with Overlay */}
-                <Box sx={{ 
-                  overflow: 'hidden', 
-                  position: 'relative',
-                  height: '200px'
-                }}>
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    image={post.image}
-                    alt={post.title}
-                    className="blog-card-image"
-                    sx={{
-                      transition: 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                      transform: 'translateZ(0)',
-                      willChange: 'transform',
-                      objectFit: 'cover'
-                    }}
-                  />
-                  
-                  {/* Gradient Overlay */}
-                  <Box
-                    className="blog-card-overlay"
-                    sx={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: 'linear-gradient(135deg, rgba(46, 125, 50, 0.8), rgba(76, 175, 80, 0.6))',
-                      opacity: 0,
-                      transition: 'opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
-                    }}
-                  >
-                    <Box sx={{ textAlign: 'center', color: 'white' }}>
-                      <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
-                        Read Article
-                      </Typography>
+                >
+                  {/* Image Container with Overlay */}
+                  <Box sx={{
+                    overflow: 'hidden',
+                    position: 'relative',
+                    height: '200px'
+                  }}>
+                    <CardMedia
+                      component="img"
+                      height="200"
+                      image={post.image}
+                      alt={post.title}
+                      className="blog-card-image"
+                      sx={{
+                        transition: 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                        transform: 'translateZ(0)',
+                        willChange: 'transform',
+                        objectFit: 'cover'
+                      }}
+                    />
+
+                    {/* Category Badge */}
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: '16px',
+                        left: '16px',
+                        zIndex: 2
+                      }}
+                    >
+                      <Chip
+                        label={post.category}
+                        size="small"
+                        className="blog-category-chip"
+                        sx={{
+                          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                          color: '#2e7d32',
+                          fontWeight: 600,
+                          fontSize: '0.75rem',
+                          backdropFilter: 'blur(10px)',
+                          border: '1px solid rgba(255, 255, 255, 0.2)'
+                        }}
+                      />
                     </Box>
-                  </Box>
-                  
-                  {/* Category Badge */}
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      top: '16px',
-                      left: '16px',
-                      zIndex: 2
-                    }}
-                  >
-                    <Chip 
-                      label={post.category} 
-                      size="small" 
-                      className="blog-category-chip"
-                      sx={{ 
-                        backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                        color: '#2e7d32',
-                        fontWeight: 600,
-                        fontSize: '0.75rem',
-                        backdropFilter: 'blur(10px)',
-                        border: '1px solid rgba(255, 255, 255, 0.2)'
+
+                    {/* Accent Line */}
+                    <Box
+                      className="blog-card-accent"
+                      sx={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        height: '4px',
+                        background: 'linear-gradient(90deg, #4caf50, #66bb6a)',
+                        transform: 'scaleX(0)',
+                        transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                        transformOrigin: 'left'
                       }}
                     />
                   </Box>
-                  
-                  {/* Accent Line */}
+
+                  {/* Content Container */}
                   <Box
-                    className="blog-card-accent"
+                    className="blog-card-content"
                     sx={{
-                      position: 'absolute',
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      height: '4px',
-                      background: 'linear-gradient(90deg, #4caf50, #66bb6a)',
-                      transform: 'scaleX(0)',
-                      transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                      transformOrigin: 'left'
-                    }}
-                  />
-                </Box>
-                
-                {/* Content Container */}
-                <Box 
-                  className="blog-card-content"
-                  sx={{ 
-                    flexGrow: 1, 
-                    display: 'flex', 
-                    flexDirection: 'column',
-                    p: 2.5,
-                    transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                    transform: 'translateZ(0)',
-                    willChange: 'transform'
-                  }}
-                >
-                  <Typography 
-                    variant="h6" 
-                    component="h3" 
-                    className="blog-card-title" 
-                    sx={{ 
-                      mb: 1.5,
-                      fontWeight: 700,
-                      lineHeight: 1.4,
-                      fontSize: '1.1rem',
-                      color: '#333333',
-                      display: '-webkit-box',
-                      WebkitLineClamp: 2,
-                      WebkitBoxOrient: 'vertical',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      minHeight: '3.1rem'
-                    }}
-                  >
-                    {post.title}
-                  </Typography>
-                  
-                  <Typography 
-                    variant="body2" 
-                    className="blog-card-excerpt" 
-                    sx={{ 
-                      mb: 2.5, 
                       flexGrow: 1,
-                      color: '#666666',
-                      lineHeight: 1.6,
-                      fontSize: '0.9rem',
-                      display: '-webkit-box',
-                      WebkitLineClamp: 3,
-                      WebkitBoxOrient: 'vertical',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      minHeight: '4.3rem'
+                      display: 'flex',
+                      flexDirection: 'column',
+                      p: 2.5,
+                      transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                      transform: 'translateZ(0)',
+                      willChange: 'transform'
                     }}
                   >
-                    {post.excerpt}
-                  </Typography>
-                  
-                  {/* Meta Information */}
-                  <Box className="blog-card-meta" sx={{ mb: 0, pb: 0 }}>
-                    <Box sx={{ 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      justifyContent: 'space-between',
-                      mb: 0 
-                    }}>
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Box sx={{
-                          width: '24px',
-                          height: '24px',
-                          borderRadius: '50%',
-                          backgroundColor: '#4caf50',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          mr: 1
-                        }}>
-                          <PersonIcon sx={{ fontSize: 14, color: 'white' }} />
+                    <Typography
+                      variant="h6"
+                      component="h3"
+                      className="blog-card-title"
+                      sx={{
+                        mb: 1.5,
+                        fontWeight: 700,
+                        lineHeight: 1.4,
+                        fontSize: '1.1rem',
+                        color: '#333333',
+                        display: '-webkit-box',
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        minHeight: '3.1rem'
+                      }}
+                    >
+                      {post.title}
+                    </Typography>
+
+                    <Typography
+                      variant="body2"
+                      className="blog-card-excerpt"
+                      sx={{
+                        mb: 2.5,
+                        flexGrow: 1,
+                        color: '#666666',
+                        lineHeight: 1.6,
+                        fontSize: '0.9rem',
+                        display: '-webkit-box',
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: 'vertical',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        minHeight: '4.3rem'
+                      }}
+                    >
+                      {post.excerpt}
+                    </Typography>
+
+                    {/* Meta Information */}
+                    <Box className="blog-card-meta" sx={{ mb: 0, pb: 0 }}>
+                      <Box sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'flex-start',
+                        mb: 0
+                      }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                          <Box sx={{
+                            width: '24px',
+                            height: '24px',
+                            borderRadius: '50%',
+                            backgroundColor: '#4caf50',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            mr: 1
+                          }}>
+                            <PersonIcon sx={{ fontSize: 14, color: 'white' }} />
+                          </Box>
+                          <Typography variant="caption" sx={{
+                            color: '#666666',
+                            fontSize: '0.8rem',
+                            fontWeight: 500
+                          }}>
+                            {post.author}
+                          </Typography>
                         </Box>
-                        <Typography variant="caption" sx={{ 
-                          color: '#666666', 
-                          fontSize: '0.8rem',
-                          fontWeight: 500
-                        }}>
-                          {post.author}
-                        </Typography>
-                      </Box>
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <CalendarIcon sx={{ fontSize: 14, mr: 0.5, color: '#4caf50' }} />
-                        <Typography variant="caption" sx={{ 
-                          color: '#666666', 
-                          fontSize: '0.75rem' 
-                        }}>
-                          {post.date}
-                        </Typography>
                       </Box>
                     </Box>
                   </Box>
-                </Box>
-              </Card>
+                </Card>
               </Link>
             </Grid>
           ))}

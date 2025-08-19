@@ -327,7 +327,7 @@ const Features = ({ showHeading = true }) => {
                   position: 'relative',
                   overflow: 'hidden',
                   animation: `fadeInUp 0.8s ease-out ${index * 0.1}s both`,
-                  cursor: 'pointer',
+                  cursor: 'default',
                   '&:hover': {
                     transform: 'translateY(-12px) scale(1.03) rotateY(2deg)',
                     boxShadow: '0 24px 64px rgba(46, 125, 50, 0.25)',
@@ -455,9 +455,9 @@ const Features = ({ showHeading = true }) => {
         </Box>
 
         {/* Action Button */}
-        <Box sx={{ 
-          display: 'flex', 
-          justifyContent: 'center', 
+        <Box sx={{
+          display: 'flex',
+          justifyContent: 'center',
           mt: 6
         }}>
           <Button

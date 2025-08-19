@@ -2,28 +2,28 @@ import { Article as ArticleIcon, Assessment as AssessmentIcon, BarChart as BarCh
 import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
 const Footer = () => {
   const productFeatures = [
-    { name: 'POS Tracking System', icon: <PointOfSaleIcon />, href: '#' },
-    { name: 'KOT Tracking System', icon: <RestaurantIcon />, href: '#' },
-    { name: 'Multiple Business', icon: <BusinessIcon />, href: '#' },
-    { name: 'Multiple Branches', icon: <BranchIcon />, href: '#' },
-    { name: 'Multiple Languages', icon: <LanguageIcon />, href: '#' },
-    { name: 'Multiple Currency', icon: <CurrencyIcon />, href: '#' },
-    { name: 'Menu Management', icon: <MenuBookIcon />, href: '#' },
-    { name: 'Item Management', icon: <InventoryIcon />, href: '#' },
-    { name: 'Staff Management', icon: <PeopleIcon />, href: '#' }
+    { name: 'POS Tracking System', icon: <PointOfSaleIcon />, href: '/features' },
+    { name: 'KOT Tracking System', icon: <RestaurantIcon />, href: '/features' },
+    { name: 'Multiple Business', icon: <BusinessIcon />, href: '/features' },
+    { name: 'Multiple Branches', icon: <BranchIcon />, href: '/features' },
+    { name: 'Multiple Languages', icon: <LanguageIcon />, href: '/features' },
+    { name: 'Multiple Currency', icon: <CurrencyIcon />, href: '/features' },
+    { name: 'Menu Management', icon: <MenuBookIcon />, href: '/features' },
+    { name: 'Item Management', icon: <InventoryIcon />, href: '/features' },
+    { name: 'Staff Management', icon: <PeopleIcon />, href: '/features' }
   ];
 
   const reportList = [
-    { name: 'Daily Wise Report', icon: <AssessmentIcon />, href: '#' },
-    { name: 'Business Wise Report', icon: <TrendingUpIcon />, href: '#' },
-    { name: 'Branch Wise Report', icon: <BarChartIcon />, href: '#' },
-    { name: 'Order Summary', icon: <ReceiptIcon />, href: '#' }
+    { name: 'Daily Wise Report', icon: <AssessmentIcon />, href: '/features' },
+    { name: 'Business Wise Report', icon: <TrendingUpIcon />, href: '/features' },
+    { name: 'Branch Wise Report', icon: <BarChartIcon />, href: '/features' },
+    { name: 'Order Summary', icon: <ReceiptIcon />, href: '/features' }
   ];
 
   const companyLinks = [
     { name: 'About Us', icon: <InfoIcon />, href: '#' },
     { name: 'Careers', icon: <WorkIcon />, href: '#' },
-    { name: 'Blog', icon: <ArticleIcon />, href: '#' }
+    { name: 'Blog', icon: <ArticleIcon />, href: '/blog' }
   ];
 
   const legalLinks = [
@@ -60,13 +60,13 @@ const Footer = () => {
                 </Box>
               </Link>
             </Box>
-            
+
             <Typography variant="body1" className="footer-description">
-              Transform your restaurant operations with our comprehensive management platform. 
-              Streamline workflows, enhance customer experience, and drive sustainable growth 
+              Transform your restaurant operations with our comprehensive management platform.
+              Streamline workflows, enhance customer experience, and drive sustainable growth
               with powerful tools designed for modern hospitality businesses.
             </Typography>
-            
+
             {/* Social Links */}
             <Box className="social-links">
               {socialLinks.map((social, index) => (
@@ -82,16 +82,22 @@ const Footer = () => {
                 </IconButton>
               ))}
             </Box>
-            
+
             {/* Contact Details */}
             <Box className="footer-contact">
               {contactInfo.map((contact, index) => (
-                <Box 
+                <Box
                   key={index}
                   className="contact-item"
                   display="flex"
                   alignItems="center"
                   gap={1}
+                  sx={{
+                    cursor: 'default !important',
+                    '&:hover': {
+                      cursor: 'default !important'
+                    }
+                  }}
                 >
                   <Box className="contact-icon">
                     {contact.icon}
@@ -114,9 +120,9 @@ const Footer = () => {
                 </Typography>
                 <Box className="footer-links">
                   {productFeatures.map((feature, index) => (
-                    <Link 
-                      key={index} 
-                      href={feature.href} 
+                    <Link
+                      key={index}
+                      href={feature.href}
                       className="footer-link"
                       display="flex"
                       alignItems="center"
@@ -136,9 +142,9 @@ const Footer = () => {
                 </Typography>
                 <Box className="footer-links">
                   {reportList.map((report, index) => (
-                    <Link 
-                      key={index} 
-                      href={report.href} 
+                    <Link
+                      key={index}
+                      href={report.href}
                       className="footer-link"
                       display="flex"
                       alignItems="center"
@@ -160,9 +166,9 @@ const Footer = () => {
             </Typography>
             <Box className="footer-links">
               {companyLinks.map((link, index) => (
-                <Link 
-                  key={index} 
-                  href={link.href} 
+                <Link
+                  key={index}
+                  href={link.href}
                   className="footer-link"
                   display="flex"
                   alignItems="center"
@@ -182,13 +188,13 @@ const Footer = () => {
         <Box className="footer-bottom">
           <Box className="footer-bottom-left">
             <Typography variant="body2" className="copyright">
-              © 2024 SavoryOps. All rights reserved.
+              © 2025 Dholakiya Nexus. All rights reserved.
             </Typography>
             <Box className="footer-bottom-links">
               {legalLinks.map((link, index) => (
-                <Link 
-                  key={index} 
-                  href={link.href} 
+                <Link
+                  key={index}
+                  href={link.href}
                   className="footer-link"
                   variant="body2"
                 >
@@ -197,7 +203,7 @@ const Footer = () => {
               ))}
             </Box>
           </Box>
-          
+
           <Box className="footer-bottom-right">
             <Typography variant="body2" className="footer-version">
               Version 1.0.0
