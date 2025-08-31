@@ -120,6 +120,21 @@
     position: relative;
     padding-bottom: $spacing-xs;
     
+    // Mobile responsive - left align Features heading
+    @media (max-width: 600px) {
+      text-align: left !important;
+      margin-top: 0 !important;
+      margin-bottom: $spacing-sm !important;
+      padding-bottom: 4px !important;
+    }
+    
+    @media (max-width: 480px) {
+      text-align: left !important;
+      margin-top: 0 !important;
+      margin-bottom: 8px !important;
+      padding-bottom: 2px !important;
+    }
+    
     &::after {
       content: '';
       position: absolute;
