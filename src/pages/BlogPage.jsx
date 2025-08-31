@@ -1,4 +1,4 @@
-import { Bolt as BoltIcon, Facebook, Instagram, LinkedIn, Person as PersonIcon, Rocket as RocketIcon, Security as SecurityIcon, Star as StarIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { Bolt as BoltIcon, LinkedIn, Person as PersonIcon, Rocket as RocketIcon, Security as SecurityIcon, Star as StarIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Card, CardMedia, Chip, Container, Grid, IconButton, Pagination, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import '../styles/pages/blogpage.scss';
@@ -275,7 +275,7 @@ const BlogPage = () => {
               Follow Us on Social Media
             </Typography>
             <Box className="social-icons">
-              <IconButton
+              {/* <IconButton
                 className="social-icon facebook"
                 aria-label="Facebook"
                 href="https://facebook.com/savoryops"
@@ -292,11 +292,11 @@ const BlogPage = () => {
                 rel="noopener noreferrer"
               >
                 <Instagram />
-              </IconButton>
+              </IconButton> */}
               <IconButton
                 className="social-icon linkedin"
                 aria-label="LinkedIn"
-                href="https://linkedin.com/company/savoryops"
+                href="https://linkedin.com/company/dholakiya-nexus"
                 target="_blank"
                 rel="noopener noreferrer"
               >

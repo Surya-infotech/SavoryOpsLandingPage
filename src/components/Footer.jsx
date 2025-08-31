@@ -1,4 +1,4 @@
-import { Article as ArticleIcon, Assessment as AssessmentIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, CurrencyExchange as CurrencyIcon, Email as EmailIcon, Facebook as FacebookIcon, Info as InfoIcon, Instagram as InstagramIcon, Inventory as InventoryIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, PointOfSale as PointOfSaleIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, TrendingUp as TrendingUpIcon, Work as WorkIcon } from '@mui/icons-material';
+import { Article as ArticleIcon, Assessment as AssessmentIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, CurrencyExchange as CurrencyIcon, Inventory as InventoryIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, PointOfSale as PointOfSaleIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
 const Footer = () => {
   const productFeatures = [
@@ -21,24 +21,24 @@ const Footer = () => {
   ];
 
   const companyLinks = [
-    { name: 'About Us', icon: <InfoIcon />, href: '#' },
-    { name: 'Careers', icon: <WorkIcon />, href: '#' },
+    // { name: 'About Us', icon: <InfoIcon />, href: '#' },
+    // { name: 'Careers', icon: <WorkIcon />, href: '#' },
     { name: 'Blog', icon: <ArticleIcon />, href: '/blog' }
   ];
 
   const legalLinks = [
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Terms of Service', href: '#' }
+    // { name: 'Privacy Policy', href: '#' },
+    // { name: 'Terms of Service', href: '#' }
   ];
 
   const socialLinks = [
-    { icon: <FacebookIcon />, href: '#', label: 'Facebook' },
-    { icon: <LinkedInIcon />, href: '#', label: 'LinkedIn' },
-    { icon: <InstagramIcon />, href: '#', label: 'Instagram' }
+    // { icon: <FacebookIcon />, href: '#', label: 'Facebook' },
+    { icon: <LinkedInIcon />, href: "https://linkedin.com/company/dholakiya-nexus", label: 'LinkedIn' },
+    // { icon: <InstagramIcon />, href: '#', label: 'Instagram' }
   ];
 
   const contactInfo = [
-    { icon: <EmailIcon />, text: 'hello@savoryops.com', href: 'mailto:hello@savoryops.com' },
+    // { icon: <EmailIcon />, text: 'hello@savoryops.com', href: 'mailto:hello@savoryops.com' },
     { icon: <LocationIcon />, text: 'Surat, Gujarat, India', href: '#' }
   ];
 
@@ -237,11 +237,11 @@ const Footer = () => {
             </Box>
           </Box>
 
-          <Box className="footer-bottom-right">
+          {/* <Box className="footer-bottom-right">
             <Typography variant="body2" className="footer-version">
               Version 1.0.0
             </Typography>
-          </Box>
+          </Box> */}
         </Box>
       </Container>
     </Box>
