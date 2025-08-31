@@ -37,6 +37,17 @@ body {
   z-index: 1;
   margin-bottom: 0px !important;
 
+  // Mobile responsive adjustments - add more top space
+  @media (max-width: 600px) {
+    padding-top: 80px !important;
+    padding-bottom: 32px !important;
+  }
+
+  @media (max-width: 480px) {
+    padding-top: 100px !important;
+    padding-bottom: 32px !important;
+  }
+
   .premium-badge {
     margin-bottom: 32px;
 
@@ -164,6 +175,14 @@ body {
   background-color: transparent !important;
   background: transparent !important;
 
+  // Mobile responsive grid adjustments
+  @media (max-width: 600px) {
+    .MuiGrid-item {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+
   .blog-card {
     height: 400px;
     width: 100%;
@@ -181,6 +200,13 @@ body {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 255, 248, 0.98) 100%);
     backdrop-filter: blur(20px);
     margin-bottom: 10px !important;
+
+    // Mobile responsive adjustments - increase width only on mobile
+    @media (max-width: 600px) {
+      max-width: 100% !important;
+      width: 100% !important;
+      margin: 0 auto 10px auto !important;
+    }
 
     &:hover {
       transform: translateY(-16px) scale(1.02) translateZ(0);
@@ -578,7 +604,7 @@ body {
 // Responsive design
 @media (max-width: 768px) {
   .blog-header {
-    padding: 48px 16px 32px;
+    padding: 80px 16px 32px !important;
 
     .blog-title {
       font-size: 2.5rem;
@@ -603,7 +629,8 @@ body {
   .blog-posts-grid {
     .blog-card {
       height: 450px;
-      max-width: 350px;
+      max-width: 100% !important;
+      width: 100% !important;
       margin-bottom: 24px;
 
       .image-container {
@@ -663,7 +690,7 @@ body {
 
 @media (max-width: 480px) {
   .blog-header {
-    padding: 32px 12px 24px;
+    padding: 100px 12px 24px !important;
 
     .blog-title {
       font-size: 2rem;

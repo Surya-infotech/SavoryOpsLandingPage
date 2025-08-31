@@ -1,6 +1,6 @@
 import { Close as CloseIcon, Menu as MenuIcon } from '@mui/icons-material';
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
@@ -8,15 +8,8 @@ const Navigation = () => {
   const location = useLocation();
 
   const handleDrawerToggle = () => {
-    console.log('Mobile menu button clicked, current state:', mobileOpen);
     setMobileOpen(!mobileOpen);
-    console.log('Mobile menu state changed to:', !mobileOpen);
   };
-
-  // Debug effect to monitor state changes
-  useEffect(() => {
-    console.log('Mobile drawer state updated:', mobileOpen);
-  }, [mobileOpen]);
 
   const menuItems = [
     { text: 'Home', path: '/' },
