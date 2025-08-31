@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './styles/main.scss';
 
 // Import Components
@@ -13,13 +13,13 @@ import FeaturesPage from './pages/FeaturesPage';
 import Home from './pages/Home';
 
 // Import Feature Detail Pages
-import SmartDashboard from './pages/features/SmartDashboard';
-import MenuManagement from './pages/features/MenuManagement';
-import POSSystem from './pages/features/POSSystem';
 import BusinessAnalytics from './pages/features/BusinessAnalytics';
 import CustomerReviews from './pages/features/CustomerReviews';
+import MenuManagement from './pages/features/MenuManagement';
 import MultipleBusiness from './pages/features/MultipleBusiness';
+import POSSystem from './pages/features/POSSystem';
 import QRCodeScanning from './pages/features/QRCodeScanning';
+import SmartDashboard from './pages/features/SmartDashboard';
 
 function App() {
   const [scrollTop, setScrollTop] = useState(0);
@@ -48,7 +48,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/blog" element={<BlogPage />} />
-          
+
           {/* Feature Detail Routes */}
           <Route path="/features/smart-dashboard" element={<SmartDashboard />} />
           <Route path="/features/menu-management" element={<MenuManagement />} />
@@ -57,6 +57,9 @@ function App() {
           <Route path="/features/customer-reviews" element={<CustomerReviews />} />
           <Route path="/features/multiple-business" element={<MultipleBusiness />} />
           <Route path="/features/qr-code-scanning" element={<QRCodeScanning />} />
+
+          {/* Catch-all route to redirect anonymous URLs to home page */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
 
         {/* Footer */}
