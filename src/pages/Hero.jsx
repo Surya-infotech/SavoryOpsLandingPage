@@ -1,11 +1,9 @@
-import { ArrowForward as ArrowForwardIcon } from '@mui/icons-material';
-import { Box, Button, Container, Grid, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Box, Container, Grid, Typography } from '@mui/material';
 
 const Hero = () => {
   return (
-    <Box 
-      id="home" 
+    <Box
+      id="home"
       className="hero-section"
       sx={{
         background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
@@ -20,9 +18,9 @@ const Hero = () => {
         <Grid container spacing={6} alignItems="center">
           <Grid item xs={12} md={6}>
             {/* Main Heading */}
-            <Typography 
-              variant="h1" 
-              component="h1" 
+            <Typography
+              variant="h1"
+              component="h1"
               className="hero-title"
               sx={{
                 fontWeight: 700,
@@ -45,8 +43,8 @@ const Hero = () => {
             </Typography>
 
             {/* Subtitle */}
-            <Typography 
-              variant="h5" 
+            <Typography
+              variant="h5"
               className="hero-subtitle"
               sx={{
                 fontSize: { xs: '1.1rem', md: '1.25rem' },
@@ -58,50 +56,46 @@ const Hero = () => {
                 animation: 'fadeInUp 0.8s ease-out 0.4s both'
               }}
             >
-              Streamline your restaurant management with our comprehensive platform. 
+              Streamline your restaurant management with our comprehensive platform.
               From inventory to staff scheduling, we've got you covered.
             </Typography>
 
             {/* CTA Button */}
             <Box className="hero-buttons" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', animation: 'fadeInUp 0.8s ease-out 0.6s both' }}>
-              <Button
-                variant="contained"
-                size="large"
-                component={Link}
-                to="/features"
-                className="hero-cta-button"
-                endIcon={<ArrowForwardIcon />}
+              <Typography
+                variant="h6"
+                className="coming-soon-text"
                 sx={{
                   backgroundColor: '#2e7d32',
+                  color: 'white',
                   borderRadius: '8px',
                   px: 4,
-                  py: 1.5,
+                  py: 2,
                   fontSize: '1.1rem',
                   fontWeight: 600,
                   textTransform: 'none',
                   boxShadow: '0 4px 12px rgba(46, 125, 50, 0.3)',
-                  '&:hover': {
-                    backgroundColor: '#1b5e20',
-                    boxShadow: '0 6px 16px rgba(46, 125, 50, 0.4)',
-                    transform: 'translateY(-1px)'
-                  },
-                  transition: 'all 0.2s ease'
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  minHeight: '48px',
+                  animation: 'fadeInUp 0.8s ease-out 0.6s both'
                 }}
               >
-                Start Free Trial
-              </Button>
+                Coming Soon
+              </Typography>
             </Box>
           </Grid>
-          
+
           <Grid item xs={12} md={6}>
-            <Box sx={{ 
-              display: 'flex', 
+            <Box sx={{
+              display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
               animation: 'fadeInUp 0.8s ease-out 0.8s both'
             }}>
               {/* Clean Image Display */}
-              <Box sx={{ 
+              <Box sx={{
                 borderRadius: '12px',
                 overflow: 'hidden',
                 boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
@@ -109,9 +103,9 @@ const Hero = () => {
                 p: 2,
                 maxWidth: '100%'
               }}>
-                <img 
-                  src="/design.png" 
-                  alt="SavoryOps Restaurant Management Platform" 
+                <img
+                  src="/design.png"
+                  alt="SavoryOps Restaurant Management Platform"
                   style={{
                     width: '100%',
                     maxWidth: '500px',

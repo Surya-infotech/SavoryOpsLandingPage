@@ -1,5 +1,4 @@
-import { Box, Button, Container, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Box, Container, Typography } from '@mui/material';
 
 const CTA = () => {
   return (
@@ -12,15 +11,28 @@ const CTA = () => {
           <Typography variant="h6" className="cta-subtitle">
             Join thousands of restaurants already using SavoryOps to streamline their operations
           </Typography>
-          <Button
-            variant="contained"
-            size="large"
-                            component={Link}
-                to="/features"
-            className="cta-button"
+          <Typography
+            variant="h6"
+            className="coming-soon-text"
+            sx={{
+              backgroundColor: '#2e7d32',
+              color: 'white',
+              borderRadius: '8px',
+              px: 4,
+              py: 2,
+              fontSize: '1.1rem',
+              fontWeight: 600,
+              textTransform: 'none',
+              boxShadow: '0 4px 12px rgba(46, 125, 50, 0.3)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: '48px',
+              cursor: 'default'
+            }}
           >
-            Start Your Free Trial Today
-          </Button>
+            Coming Soon
+          </Typography>
         </Box>
       </Container>
     </Box>

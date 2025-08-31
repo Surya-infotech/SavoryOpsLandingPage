@@ -23,9 +23,9 @@ const Navigation = () => {
       <AppBar position="fixed" className="navigation-appbar">
         <Toolbar>
           <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
-            <Link 
-              to="/" 
-              style={{ 
+            <Link
+              to="/"
+              style={{
                 textDecoration: 'none',
                 display: 'flex',
                 alignItems: 'center',
@@ -48,9 +48,9 @@ const Navigation = () => {
                 }}
               />
             </Link>
-            <Link 
-              to="/" 
-              style={{ 
+            <Link
+              to="/"
+              style={{
                 textDecoration: 'none',
                 color: 'inherit'
               }}
@@ -60,7 +60,7 @@ const Navigation = () => {
               </Typography>
             </Link>
           </Box>
-          
+
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
             {menuItems.map((item) => (
               <Button
@@ -73,16 +73,16 @@ const Navigation = () => {
                 {item.text}
               </Button>
             ))}
-            <Button
+            {/* <Button
               variant="contained"
               component={Link}
               to="/features"
               className="cta-button"
             >
               Get Started
-            </Button>
+            </Button> */}
           </Box>
-          
+
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -105,14 +105,14 @@ const Navigation = () => {
       >
         <Box className="drawer-header">
           <Box className="drawer-brand">
-            <Link 
-              to="/" 
-              style={{ 
+            <Link
+              to="/"
+              style={{
                 textDecoration: 'none',
                 display: 'flex',
                 alignItems: 'center',
                 marginRight: 8
-              }} 
+              }}
               onClick={handleDrawerToggle}
             >
               <img
@@ -131,9 +131,9 @@ const Navigation = () => {
                 }}
               />
             </Link>
-            <Link 
-              to="/" 
-              style={{ 
+            <Link
+              to="/"
+              style={{
                 textDecoration: 'none',
                 color: 'inherit'
               }}
@@ -148,20 +148,20 @@ const Navigation = () => {
             <CloseIcon />
           </IconButton>
         </Box>
-        
+
         <List className="drawer-menu">
           {menuItems.map((item) => (
-            <ListItem 
-              key={item.text} 
-              component={Link} 
-              to={item.path} 
+            <ListItem
+              key={item.text}
+              component={Link}
+              to={item.path}
               onClick={handleDrawerToggle}
               className={`drawer-menu-item ${location.pathname === item.path ? 'active' : ''}`}
             >
               <ListItemText primary={item.text} />
             </ListItem>
           ))}
-          <ListItem className="drawer-cta-item">
+          {/* <ListItem className="drawer-cta-item">
             <Button
               fullWidth
               variant="contained"
@@ -172,7 +172,7 @@ const Navigation = () => {
             >
               Get Started
             </Button>
-          </ListItem>
+          </ListItem> */}
         </List>
       </Drawer>
     </>

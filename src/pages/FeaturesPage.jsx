@@ -1,7 +1,6 @@
-import { AccountTree as AccountTreeIcon, Analytics as AnalyticsIcon, ArrowForward as ArrowForwardIcon, Assessment as AssessmentIcon, Bolt as BoltIcon, Business as BusinessIcon, CalendarMonth as CalendarMonthIcon, Cloud as CloudIcon, CurrencyExchange as CurrencyExchangeIcon, Dashboard as DashboardIcon, Download as DownloadIcon, Groups as GroupsIcon, Language as LanguageIcon, Menu as MenuIcon, PriceChange as PriceChangeIcon, Public as PublicIcon, QrCode as QrCodeIcon, RateReview as RateReviewIcon, Receipt as ReceiptIcon, ReceiptLong as ReceiptLongIcon, Restaurant as RestaurantIcon, Rocket as RocketIcon, Security as SecurityIcon, Star as StarIcon, Storage as StorageIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
-import { Box, Button, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
+import { AccountTree as AccountTreeIcon, Analytics as AnalyticsIcon, Assessment as AssessmentIcon, Bolt as BoltIcon, Business as BusinessIcon, CalendarMonth as CalendarMonthIcon, Cloud as CloudIcon, CurrencyExchange as CurrencyExchangeIcon, Dashboard as DashboardIcon, Download as DownloadIcon, Groups as GroupsIcon, Language as LanguageIcon, Menu as MenuIcon, PriceChange as PriceChangeIcon, Public as PublicIcon, QrCode as QrCodeIcon, RateReview as RateReviewIcon, Receipt as ReceiptIcon, ReceiptLong as ReceiptLongIcon, Restaurant as RestaurantIcon, Rocket as RocketIcon, Security as SecurityIcon, Star as StarIcon, Storage as StorageIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { Box, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import '../styles/pages/featurespage.scss';
 
 const FeaturesPage = () => {
@@ -250,16 +249,28 @@ const FeaturesPage = () => {
 
           {/* CTA Button */}
           <Box className="cta-section">
-            <Button
-              component={Link}
-              to="/contact"
-              variant="contained"
-              size="large"
-              endIcon={<ArrowForwardIcon />}
-              className="cta-button"
+            <Typography
+              variant="h6"
+              className="coming-soon-text"
+              sx={{
+                backgroundColor: '#2e7d32',
+                color: 'white',
+                borderRadius: '8px',
+                px: 4,
+                py: 2,
+                fontSize: '1.1rem',
+                fontWeight: 600,
+                textTransform: 'none',
+                boxShadow: '0 4px 12px rgba(46, 125, 50, 0.3)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minHeight: '48px',
+                cursor: 'default'
+              }}
             >
-              Get Started Today
-            </Button>
+              Coming Soon
+            </Typography>
           </Box>
         </Box>
 

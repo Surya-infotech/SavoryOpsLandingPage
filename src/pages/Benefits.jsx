@@ -1,6 +1,5 @@
-import { ArrowForward as ArrowForwardIcon, CheckCircle as CheckCircleIcon, Star as StarIcon } from '@mui/icons-material';
-import { Box, Button, Chip, Container, Grid, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { CheckCircle as CheckCircleIcon, Star as StarIcon } from '@mui/icons-material';
+import { Box, Chip, Container, Grid, Typography } from '@mui/material';
 
 const Benefits = () => {
   const benefits = [
@@ -16,8 +15,8 @@ const Benefits = () => {
   ];
 
   return (
-    <Box 
-      id="benefits" 
+    <Box
+      id="benefits"
       sx={{
         backgroundColor: '#ffffff',
         padding: { xs: '60px 0', md: '80px 0' },
@@ -44,10 +43,10 @@ const Benefits = () => {
               }}
             />
           </Box>
-          
-          <Typography 
-            variant="h2" 
-            component="h2" 
+
+          <Typography
+            variant="h2"
+            component="h2"
             sx={{
               fontWeight: 800,
               fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
@@ -62,9 +61,9 @@ const Benefits = () => {
           >
             Why Choose SavoryOps?
           </Typography>
-          
-          <Typography 
-            variant="h5" 
+
+          <Typography
+            variant="h5"
             sx={{
               color: '#666666',
               fontSize: { xs: '1.1rem', md: '1.25rem' },
@@ -83,8 +82,8 @@ const Benefits = () => {
           <Grid item xs={12} md={6}>
             <Box sx={{ mb: 4 }}>
               {benefits.map((benefit, index) => (
-                <Box 
-                  key={index} 
+                <Box
+                  key={index}
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
@@ -109,8 +108,8 @@ const Benefits = () => {
                   >
                     <CheckCircleIcon sx={{ fontSize: 20 }} />
                   </Box>
-                  <Typography 
-                    variant="body1" 
+                  <Typography
+                    variant="body1"
                     sx={{
                       color: '#333333',
                       fontSize: '1.1rem',
@@ -123,36 +122,33 @@ const Benefits = () => {
                 </Box>
               ))}
             </Box>
-            
-            <Button
-              variant="contained"
-              size="large"
-              endIcon={<ArrowForwardIcon />}
-                              component={Link}
-                to="/features"
+
+            <Typography
+              variant="h6"
+              className="coming-soon-text"
               sx={{
                 background: 'linear-gradient(135deg, #2e7d32, #4caf50)',
+                color: 'white',
                 borderRadius: '50px',
                 padding: '12px 32px',
                 fontSize: '1.1rem',
                 fontWeight: 600,
                 textTransform: 'none',
                 boxShadow: '0 8px 24px rgba(46, 125, 50, 0.3)',
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  background: 'linear-gradient(135deg, #1b5e20, #2e7d32)',
-                  boxShadow: '0 12px 32px rgba(46, 125, 50, 0.4)',
-                  transform: 'translateY(-2px)'
-                }
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minHeight: '48px',
+                animation: 'fadeInUp 0.8s ease-out 0.6s both'
               }}
             >
-              Start Your Free Trial
-            </Button>
+              Coming Soon
+            </Typography>
           </Grid>
-          
+
           {/* Right Column - POS&KOT Image */}
           <Grid item xs={12} md={6}>
-            <Box 
+            <Box
               sx={{
                 display: 'flex',
                 justifyContent: 'flex-end',
@@ -162,9 +158,9 @@ const Benefits = () => {
                 animation: 'fadeInUp 0.8s ease-out 0.4s both'
               }}
             >
-              <img 
-                src="/POS&KOT.png" 
-                alt="POS and KOT System Interface" 
+              <img
+                src="/POS&KOT.png"
+                alt="POS and KOT System Interface"
                 style={{
                   width: '100%',
                   maxWidth: '500px',
