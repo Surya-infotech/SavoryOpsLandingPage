@@ -345,6 +345,25 @@ code {
   }
 }
 
+/* Mobile Menu Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 /* Loading Animation */
 .loading {
   opacity: 0.6;

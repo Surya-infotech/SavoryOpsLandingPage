@@ -275,7 +275,7 @@ const FeaturesPage = () => {
         </Box>
 
         {/* Detailed Features Grid */}
-        <Grid container spacing={2} className="features-grid">
+        <Grid container spacing={{ xs: 2, sm: 2, md: 2 }} className="features-grid">
           {detailedFeatures.map((feature, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
               <Card
