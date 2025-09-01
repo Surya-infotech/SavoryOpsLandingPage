@@ -1,0 +1,36 @@
+# SavoryOps Robots.txt
+
+# Disallow all web crawlers from accessing subdomain
+User-agent: *
+Disallow: /
+
+# Disallow specific subdomain patterns
+Disallow: https://*.savoryops.com/
+Disallow: https://subdomain.savoryops.com/
+
+# Disallow access to admin areas (if any)
+Disallow: /admin/
+
+# Disallow access to development files
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /package-lock.json
+
+# Disallow access to sensitive files
+Disallow: /*.log
+Disallow: /*.sql
+Disallow: /*.bak
+Disallow: /*.tmp
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1
+
+# Sitemap location (only if you want to allow crawling of main domain)
+# Sitemap: https://savoryops.com/sitemap.xml
+
+# Additional sitemaps (if you have multiple)
+# Sitemap: https://savoryops.com/sitemap-blog.xml
+# Sitemap: https://savoryops.com/sitemap-features.xml
