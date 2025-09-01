@@ -25,9 +25,6 @@ Disallow: /*.sql
 Disallow: /*.bak
 Disallow: /*.tmp
 
-# Crawl delay (optional - helps prevent server overload)
-Crawl-delay: 1
-
 # Sitemap location (only if you want to allow crawling of main domain)
 # Sitemap: https://savoryops.com/sitemap.xml
 
