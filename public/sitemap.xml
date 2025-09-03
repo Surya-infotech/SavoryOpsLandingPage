@@ -4,7 +4,7 @@
   <url>
     <loc>https://savoryops.com/</loc>
     <lastmod>2024-01-01</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
@@ -12,16 +12,16 @@
   <url>
     <loc>https://savoryops.com/features</loc>
     <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>daily</changefreq>
+    <priority>1</priority>
   </url>
 
   <!-- Blog Page -->
   <url>
     <loc>https://savoryops.com/blog</loc>
     <lastmod>2024-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+    <priority>1</priority>
   </url>
 
   <!-- Feature Detail Pages -->

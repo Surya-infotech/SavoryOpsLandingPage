@@ -11,6 +11,7 @@ import ScrollToTop from './components/ScrollToTop';
 import BlogPage from './pages/BlogPage';
 import FeaturesPage from './pages/FeaturesPage';
 import Home from './pages/Home';
+import Sitemap from './pages/Sitemap';
 
 // Import Feature Detail Pages
 import BusinessAnalytics from './pages/features/BusinessAnalytics';
@@ -48,6 +49,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/sitemap" element={<Sitemap />} />
 
           {/* Feature Detail Routes */}
           <Route path="/features/smart-dashboard" element={<SmartDashboard />} />

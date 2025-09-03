@@ -31,7 +31,7 @@ code {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px !important;
 }
 
 ::-webkit-scrollbar-track {
@@ -247,11 +247,11 @@ code {
   .d-sm-none {
     display: none !important;
   }
-  
+
   .d-sm-block {
     display: block !important;
   }
-  
+
   .text-sm-center {
     text-align: center !important;
   }
@@ -261,11 +261,11 @@ code {
   .d-md-none {
     display: none !important;
   }
-  
+
   .d-md-block {
     display: block !important;
   }
-  
+
   .text-md-center {
     text-align: center !important;
   }
@@ -296,6 +296,7 @@ code {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -306,6 +307,7 @@ code {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -317,6 +319,7 @@ code {
     opacity: 0;
     transform: translateY(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -328,6 +331,7 @@ code {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -339,6 +343,7 @@ code {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -350,6 +355,7 @@ code {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -359,6 +365,7 @@ code {
   from {
     transform: translateX(-100%);
   }
+
   to {
     transform: translateX(0);
   }
@@ -380,8 +387,13 @@ code {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Print Styles */
@@ -389,12 +401,12 @@ code {
   .no-print {
     display: none !important;
   }
-  
+
   body {
     background: white !important;
     color: black !important;
   }
-  
+
   a {
     color: black !important;
     text-decoration: underline !important;
