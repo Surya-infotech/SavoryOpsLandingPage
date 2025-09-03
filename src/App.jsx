@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './styles/main.scss';
 
 // Import Components
@@ -57,9 +57,6 @@ function App() {
           <Route path="/features/customer-reviews" element={<CustomerReviews />} />
           <Route path="/features/multiple-business" element={<MultipleBusiness />} />
           <Route path="/features/qr-code-scanning" element={<QRCodeScanning />} />
-
-          {/* Catch-all route to redirect anonymous URLs to home page */}
-          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
 
         {/* Footer */}
