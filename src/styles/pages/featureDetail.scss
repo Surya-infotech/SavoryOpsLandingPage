@@ -66,8 +66,7 @@
       .feature-description {
         font-size: 1.1rem;
         line-height: 1.8;
-        max-width: 800px;
-        margin: 0 auto;
+        max-width: 600px;
         color: #555;
       }
     }
@@ -313,9 +312,12 @@
 
 // Animations
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -379,6 +381,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

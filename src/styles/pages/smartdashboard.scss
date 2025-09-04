@@ -1,0 +1,198 @@
+// Smart Dashboard Page Styles
+.smart-dashboard-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem 0;
+
+  .feature-header {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      min-height: 500px;
+      padding: 0 1rem;
+    }
+
+    .feature-hero {
+      text-align: left;
+      flex: 1;
+      max-width: 50%;
+
+      .feature-title {
+        margin-bottom: 1rem;
+        text-align: left;
+      }
+
+      .feature-subtitle {
+        margin-bottom: 1.5rem;
+        text-align: left;
+      }
+
+      .feature-description {
+        margin-bottom: 2rem;
+        line-height: 1.7;
+        text-align: left !important;
+        max-width: 500px;
+        display: block;
+      }
+
+      .cta-button-container {
+        text-align: left;
+
+        .cta-button {
+          padding: 0.75rem 2rem;
+          font-size: 1.1rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .dashboard-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      min-height: 400px;
+      flex: 1;
+      max-width: 50%;
+
+      .dashboard-image {
+        width: 100% !important;
+        height: 400px;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .dashboard-preview-image {
+          width: 100%;
+          height: 100%;
+          object-fit: fill;
+          border-radius: 1rem;
+        }
+      }
+    }
+  }
+
+  .benefits-section {
+    padding: 4rem 1rem;
+
+    .benefits-header {
+      margin-bottom: 3rem;
+
+      .section-title {
+        margin-bottom: 1rem;
+        text-align: left;
+      }
+
+      .benefits-description {
+        max-width: 600px;
+        text-align: left;
+      }
+    }
+
+    .benefit-card {
+      height: 100%;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      .benefit-content {
+        padding: 2rem;
+        text-align: center;
+
+        .benefit-icon {
+          margin-bottom: 1.5rem;
+          font-size: 2rem;
+          color: #4caf50;
+        }
+
+        .benefit-title {
+          margin-bottom: 1rem;
+          font-weight: 600;
+        }
+
+        .benefit-description {
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+
+  .metrics-section {
+    padding: 0 1rem;
+
+    .section-title {
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .features-list-section {
+    padding: 0 1rem;
+
+    .section-title {
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .cta-section {
+    padding: 0 1rem;
+
+    .cta-title {
+      text-align: left;
+    }
+
+    .cta-description {
+      text-align: left;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .smart-dashboard-page {
+    padding: 1rem 0;
+
+    .feature-header {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+
+      .header-row {
+        flex-direction: column;
+        gap: 2rem;
+        min-height: auto;
+      }
+
+      .feature-hero {
+        max-width: 100%;
+
+        .feature-description {
+          max-width: 100%;
+        }
+      }
+
+      .dashboard-image-container {
+        max-width: 100%;
+
+        .dashboard-image {
+          height: 300px;
+        }
+      }
+    }
+
+    .benefits-section {
+      padding: 2rem 0;
+    }
+  }
+}

@@ -1,8 +1,8 @@
-import { Dashboard as DashboardIcon, Analytics as AnalyticsIcon, TrendingUp as TrendingUpIcon, Visibility as VisibilityIcon, Speed as SpeedIcon, Assessment as AssessmentIcon, ArrowBack as ArrowBackIcon } from '@mui/icons-material';
-import { Box, Button, Card, CardContent, Container, Grid, Typography, Chip, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Analytics as AnalyticsIcon, Assessment as AssessmentIcon, BarChart as BarChartIcon, Dashboard as DashboardIcon, FileDownload as ExportIcon, Monitor as MonitorIcon, Palette as PaletteIcon, PhoneAndroid as PhoneIcon, Security as SecurityIcon, Speed as SpeedIcon, TrendingUp as TrendingUpIcon, Visibility as VisibilityIcon } from '@mui/icons-material';
+import { Box, Button, Card, CardContent, Container, Grid, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/pages/featureDetail.scss';
+import '../../styles/pages/smartdashboard.scss';
 
 const SmartDashboard = () => {
   useEffect(() => {
@@ -10,12 +10,36 @@ const SmartDashboard = () => {
   }, []);
 
   const benefits = [
-    'Real-time performance monitoring',
-    'Customizable dashboard widgets',
-    'Interactive charts and graphs',
-    'Mobile-responsive design',
-    'Export capabilities for reports',
-    'Role-based access control'
+    {
+      title: 'Real-time Performance Monitoring',
+      description: 'Track your restaurant performance with live updates and instant insights',
+      icon: <MonitorIcon className="benefit-icon" />
+    },
+    {
+      title: 'Customizable Dashboard Widgets',
+      description: 'Personalize your dashboard with drag-and-drop widgets',
+      icon: <PaletteIcon className="benefit-icon" />
+    },
+    {
+      title: 'Interactive Charts & Graphs',
+      description: 'Visualize data with dynamic charts and interactive graphs',
+      icon: <BarChartIcon className="benefit-icon" />
+    },
+    {
+      title: 'Mobile-Responsive Design',
+      description: 'Access your dashboard seamlessly on any device',
+      icon: <PhoneIcon className="benefit-icon" />
+    },
+    {
+      title: 'Export Capabilities',
+      description: 'Generate and export detailed reports in multiple formats',
+      icon: <ExportIcon className="benefit-icon" />
+    },
+    {
+      title: 'Role-Based Access Control',
+      description: 'Secure access with customizable user permissions',
+      icon: <SecurityIcon className="benefit-icon" />
+    }
   ];
 
   const metrics = [
@@ -26,50 +50,73 @@ const SmartDashboard = () => {
   ];
 
   return (
-    <Box className="feature-detail-page">
-      <Container maxWidth="lg">
+    <Box className="smart-dashboard-page">
+      <Container maxWidth="xl">
         {/* Header Section */}
         <Box className="feature-header">
-          <Button
-            component={Link}
-            to="/features"
-            startIcon={<ArrowBackIcon />}
-            variant="outlined"
-            className="back-button"
-          >
-            Back to Features
-          </Button>
-
-          <Box className="feature-hero">
-            <Box className="feature-icon-large">
-              <DashboardIcon sx={{ fontSize: 48 }} />
+          <Box className="header-row">
+            {/* Left Side - Content */}
+            <Box className="feature-hero">
+              <Typography variant="h1" component="h1" className="feature-title">
+                Smart Dashboard
+              </Typography>
+              <Typography variant="h4" color="text.secondary" className="feature-subtitle">
+                Real-time Business Intelligence
+              </Typography>
+              <Typography variant="body1" className="feature-description">
+                Get instant insights into your restaurant performance with our intelligent dashboard.
+                Monitor sales, track orders, analyze staff performance, and make data-driven decisions
+                to optimize your operations and boost profitability.
+              </Typography>
+              <Box className="cta-button-container">
+                <Button
+                  component={Link}
+                  to="/contact"
+                  variant="contained"
+                  size="large"
+                  className="cta-button"
+                >
+                  Get Started Today
+                </Button>
+              </Box>
             </Box>
-            <Typography variant="h1" component="h1" className="feature-title">
-              Smart Dashboard
-            </Typography>
-            <Typography variant="h4" color="text.secondary" className="feature-subtitle">
-              Real-time Business Intelligence
-            </Typography>
-            <Typography variant="body1" className="feature-description">
-              Get instant insights into your restaurant performance with our intelligent dashboard. 
-              Monitor sales, track orders, analyze staff performance, and make data-driven decisions 
-              to optimize your operations and boost profitability.
-            </Typography>
+
+            {/* Right Side - Dashboard Image */}
+            <Box className="dashboard-image-container">
+              <Box className="dashboard-image">
+                <img
+                  src="/dashboard.png"
+                  alt="Smart Dashboard Interface"
+                  className="dashboard-preview-image"
+                />
+              </Box>
+            </Box>
           </Box>
         </Box>
 
         {/* Key Benefits */}
         <Box className="benefits-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Key Benefits
-          </Typography>
-          <Grid container spacing={3}>
+          <Box className="benefits-header">
+            <Typography variant="h3" component="h2" className="section-title">
+              Key Benefits
+            </Typography>
+            <Typography variant="body1" color="text.secondary" className="benefits-description">
+              Discover how our Smart Dashboard transforms your restaurant management with powerful features designed for modern operations.
+            </Typography>
+          </Box>
+          <Grid container spacing={4}>
             {benefits.map((benefit, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
                 <Card className="benefit-card">
-                  <CardContent>
-                    <Typography variant="h6" component="h3">
-                      {benefit}
+                  <CardContent className="benefit-content">
+                    <Box>
+                      {benefit.icon}
+                    </Box>
+                    <Typography variant="h6" component="h3" className="benefit-title">
+                      {benefit.title}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" className="benefit-description">
+                      {benefit.description}
                     </Typography>
                   </CardContent>
                 </Card>
@@ -173,10 +220,10 @@ const SmartDashboard = () => {
 
         {/* CTA Section */}
         <Box className="cta-section">
-          <Typography variant="h4" component="h2" gutterBottom>
+          <Typography variant="h4" component="h2" gutterBottom className="cta-title">
             Ready to Transform Your Restaurant?
           </Typography>
-          <Typography variant="body1" paragraph>
+          <Typography variant="body1" paragraph className="cta-description">
             Experience the power of real-time business intelligence with our Smart Dashboard.
           </Typography>
           <Button
