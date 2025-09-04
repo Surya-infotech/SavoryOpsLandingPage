@@ -8,14 +8,14 @@
   padding: 12px 32px;
   border-radius: $border-radius-md;
   transition: all $transition-normal;
-  
+
   &:hover {
-    background-color: $primary-green-dark !important;
-    border-color: $primary-green-dark !important;
+    background-color: $primary-green-hover !important;
+    border-color: $primary-green-hover !important;
     transform: translateY(-2px);
     box-shadow: $shadow-primary;
   }
-  
+
   &:active {
     transform: translateY(0);
   }
@@ -28,7 +28,7 @@
   padding: 12px 32px;
   border-radius: $border-radius-md;
   transition: all $transition-normal;
-  
+
   &:hover {
     background-color: $primary-green !important;
     color: $white !important;
@@ -45,7 +45,7 @@
   padding: 12px 32px;
   border-radius: $border-radius-md;
   transition: all $transition-normal;
-  
+
   &:hover {
     background-color: $primary-green !important;
     border-color: $primary-green !important;
@@ -74,10 +74,10 @@
   border-radius: $border-radius-md;
   font-size: 1.1rem;
   transition: all $transition-normal;
-  
+
   &:hover {
-    background-color: $primary-green-dark !important;
-    border-color: $primary-green-dark !important;
+    background-color: $primary-green-hover !important;
+    border-color: $primary-green-hover !important;
     transform: translateY(-2px);
     box-shadow: $shadow-primary;
   }
@@ -92,7 +92,7 @@
   border-radius: $border-radius-md;
   font-size: 1.1rem;
   transition: all $transition-normal;
-  
+
   &:hover {
     background: $light-gray !important;
     transform: translateY(-2px);
@@ -108,7 +108,7 @@
   border-radius: $border-radius-md;
   font-size: 1.1rem;
   transition: all $transition-normal;
-  
+
   &:hover {
     border-color: $white !important;
     background-color: rgba(255, 255, 255, 0.1) !important;
@@ -126,10 +126,10 @@
   border-radius: $border-radius-md;
   font-size: 1.1rem;
   transition: all $transition-normal;
-  
+
   &:hover {
-    background-color: $primary-green-dark !important;
-    border-color: $primary-green-dark !important;
+    background-color: $primary-green-hover !important;
+    border-color: $primary-green-hover !important;
     transform: translateY(-2px);
     box-shadow: $shadow-primary;
   }
@@ -137,6 +137,7 @@
 
 // Responsive Button Styles
 @media (max-width: $breakpoint-sm) {
+
   .btn-large,
   .cta-button,
   .hero-cta-button,

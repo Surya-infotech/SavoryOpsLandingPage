@@ -3,22 +3,22 @@
 .form-container {
   .form-field {
     margin-bottom: $spacing-lg;
-    
+
     .MuiTextField-root {
       width: 100%;
-      
+
       .MuiOutlinedInput-root {
         border-radius: $border-radius-md;
-        
+
         &:hover .MuiOutlinedInput-notchedOutline {
           border-color: $primary-green-light;
         }
-        
+
         &.Mui-focused .MuiOutlinedInput-notchedOutline {
           border-color: $primary-green;
         }
       }
-      
+
       .MuiInputLabel-root {
         &.Mui-focused {
           color: $primary-green;
@@ -26,26 +26,26 @@
       }
     }
   }
-  
+
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $spacing-md;
-    
+
     @media (max-width: $breakpoint-sm) {
       grid-template-columns: 1fr;
     }
   }
-  
+
   .form-actions {
     display: flex;
     justify-content: flex-end;
     gap: $spacing-md;
     margin-top: $spacing-xl;
-    
+
     @media (max-width: $breakpoint-sm) {
       flex-direction: column;
-      
+
       button {
         width: 100%;
       }
@@ -57,18 +57,18 @@
 .MuiTextField-root {
   .MuiOutlinedInput-root {
     transition: all $transition-normal;
-    
+
     &:hover {
       transform: translateY(-1px);
       box-shadow: $shadow-sm;
     }
-    
+
     &.Mui-focused {
       transform: translateY(-2px);
       box-shadow: $shadow-md;
     }
   }
-  
+
   .MuiInputLabel-root {
     font-weight: $font-weight-medium;
   }
@@ -82,30 +82,30 @@
   padding: 12px 32px;
   border-radius: $border-radius-md;
   transition: all $transition-normal;
-  
+
   &:hover {
-    background-color: $primary-green-dark !important;
+    background-color: $primary-green-hover !important;
     transform: translateY(-2px);
     box-shadow: $shadow-primary;
   }
-  
+
   &:disabled {
     background-color: $medium-gray !important;
-    color: $text-light !important;
+    color: $text-secondary !important;
     transform: none;
     box-shadow: none;
   }
 }
 
 .form-cancel-button {
-  color: $text-light !important;
+  color: $text-secondary !important;
   font-weight: $font-weight-medium;
   padding: 12px 32px;
   border-radius: $border-radius-md;
   transition: all $transition-normal;
-  
+
   &:hover {
-    color: $text-dark !important;
+    color: $text-primary !important;
     background-color: $light-gray !important;
   }
 }
@@ -134,7 +134,7 @@
     .form-field {
       margin-bottom: $spacing-md;
     }
-    
+
     .form-actions {
       margin-top: $spacing-lg;
     }

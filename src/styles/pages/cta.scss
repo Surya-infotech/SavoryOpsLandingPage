@@ -1,25 +1,25 @@
 // CTA Section Styles
 
 .cta-section {
-  background: linear-gradient(135deg, $primary-green 0%, $primary-green-dark 100%);
+  background: linear-gradient(135deg, $primary-green 0%, $primary-green-hover 100%);
   color: $white;
   padding: 80px 0;
   text-align: center;
-  
+
   .cta-content {
     .cta-title {
       font-weight: $font-weight-bold;
       margin-bottom: $spacing-lg;
-      
+
       @media (max-width: $breakpoint-md) {
         font-size: 2rem;
       }
-      
+
       @media (max-width: $breakpoint-sm) {
         font-size: 1.75rem;
       }
     }
-    
+
     .cta-subtitle {
       font-size: 1.1rem;
       opacity: 0.9;
@@ -29,7 +29,7 @@
       margin-right: auto;
       line-height: 1.6;
     }
-    
+
     .cta-button {
       background: $white !important;
       color: $primary-green !important;
@@ -38,7 +38,7 @@
       border-radius: $border-radius-md;
       font-size: 1.1rem;
       transition: all $transition-normal;
-      
+
       &:hover {
         background: $light-gray !important;
         transform: translateY(-2px);
@@ -52,7 +52,7 @@
 @media (max-width: $breakpoint-md) {
   .cta-section {
     padding: 60px 0;
-    
+
     .cta-content {
       .cta-title {
         font-size: 2rem;
@@ -64,12 +64,12 @@
 @media (max-width: $breakpoint-sm) {
   .cta-section {
     padding: 40px 0;
-    
+
     .cta-content {
       .cta-title {
         font-size: 1.75rem;
       }
-      
+
       .cta-subtitle {
         font-size: 1rem;
       }

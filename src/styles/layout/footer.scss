@@ -1,12 +1,12 @@
 // Footer Styles
 
 .footer {
-  background: linear-gradient(135deg, $primary-green-dark 0%, darken($primary-green-dark, 8%) 100%);
+  background: linear-gradient(135deg, $primary-green 0%, $primary-green-hover 100%);
   color: $white;
   padding: 40px 0 0;
   margin-top: auto;
   position: relative;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -16,15 +16,15 @@
     height: 1px;
     background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
   }
-  
+
   .footer-brand {
     margin-bottom: $spacing-md;
-    
+
     .brand-link {
       text-decoration: none;
       color: inherit;
       display: inline-block;
-      
+
       &:hover {
         .brand-content {
           transform: translateY(-3px);
@@ -32,7 +32,7 @@
         }
       }
     }
-    
+
     .brand-content {
       display: flex;
       align-items: center;
@@ -43,7 +43,7 @@
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .brand-logo {
       width: 40px;
       height: 40px;
@@ -51,12 +51,12 @@
       object-fit: contain;
       filter: brightness(0) invert(1);
       transition: transform $transition-normal;
-      
+
       &:hover {
         transform: scale(1.1);
       }
     }
-    
+
     .brand-name {
       font-weight: $font-weight-bold;
       font-size: 1.7rem;
@@ -68,7 +68,7 @@
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
   }
-  
+
   .footer-description {
     opacity: 0.95;
     line-height: 1.6;
@@ -82,12 +82,12 @@
     max-width: 500px;
     width: 100%;
   }
-  
+
   .social-links {
     display: flex;
     gap: 8px;
     margin-top: 30px;
-    
+
     .social-link {
       color: rgba(255, 255, 255, 0.8);
       background: rgba(255, 255, 255, 0.05);
@@ -96,7 +96,7 @@
       padding: 8px;
       transition: all 0.3s ease;
       backdrop-filter: blur(10px);
-      
+
       &:hover {
         color: $white;
         background: rgba(255, 255, 255, 0.15);
@@ -104,13 +104,13 @@
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       }
-      
+
       .MuiSvgIcon-root {
         font-size: 1.2rem;
       }
     }
   }
-  
+
   .footer-section-title {
     font-weight: $font-weight-bold;
     margin-bottom: $spacing-md;
@@ -119,7 +119,7 @@
     font-size: 1.1rem;
     position: relative;
     padding-bottom: $spacing-xs;
-    
+
     // Mobile responsive - left align Features heading
     @media (max-width: 600px) {
       text-align: left !important;
@@ -127,14 +127,14 @@
       margin-bottom: $spacing-sm !important;
       padding-bottom: 4px !important;
     }
-    
+
     @media (max-width: 480px) {
       text-align: left !important;
       margin-top: 0 !important;
       margin-bottom: 8px !important;
       padding-bottom: 2px !important;
     }
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -146,7 +146,7 @@
       border-radius: 2px;
     }
   }
-  
+
   .footer-links {
     .footer-link {
       color: rgba(255, 255, 255, 0.9);
@@ -164,7 +164,7 @@
       position: relative;
       overflow: hidden;
       cursor: pointer;
-      
+
       &::before {
         content: '';
         position: absolute;
@@ -175,7 +175,7 @@
         background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
         transition: left 0.6s ease;
       }
-      
+
       &::after {
         content: '';
         position: absolute;
@@ -187,30 +187,30 @@
         opacity: 0;
         transition: opacity 0.3s ease;
       }
-      
+
       &:hover {
         color: $white;
         padding: 4px 12px;
         background: rgba(255, 255, 255, 0.08);
         border: 1px solid rgba(255, 255, 255, 0.15);
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        
+
         &::before {
           left: 100%;
         }
-        
+
         &::after {
           opacity: 1;
         }
       }
-      
+
       &:active {
         padding: 6px 12px;
         background: rgba(255, 255, 255, 0.12);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         transition: all 0.1s ease;
       }
-      
+
       .MuiSvgIcon-root {
         font-size: 0.9rem;
         opacity: 0.7;
@@ -227,7 +227,7 @@
         border: 1px solid rgba(255, 255, 255, 0.08);
         position: relative;
         overflow: hidden;
-        
+
         &::before {
           content: '';
           position: absolute;
@@ -241,30 +241,30 @@
           transition: all 0.4s ease;
         }
       }
-      
+
       &:hover .MuiSvgIcon-root {
         opacity: 1;
         transform: scale(1.15) rotate(8deg);
         background: rgba(255, 255, 255, 0.12);
         border-color: rgba(255, 255, 255, 0.25);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        
+
         &::before {
           width: 100%;
           height: 100%;
         }
       }
-      
+
       &:active .MuiSvgIcon-root {
         transform: scale(1.1) rotate(4deg);
         transition: all 0.1s ease;
       }
     }
   }
-  
+
   .footer-contact {
     margin-top: 20px;
-    
+
     .contact-item {
       color: rgba(255, 255, 255, 0.9);
       text-decoration: none;
@@ -273,32 +273,32 @@
       margin-bottom: 8px;
       transition: all 0.3s ease;
       cursor: pointer;
-      
+
       &:last-child {
         margin-bottom: 20px;
       }
-      
+
       &:hover {
         color: $white;
         transform: translateX(4px);
-        
+
         .contact-icon {
           opacity: 1;
           transform: scale(1.1);
         }
-        
+
         p {
           color: $white;
           transform: translateX(2px);
         }
       }
-      
+
       .contact-icon {
         margin-right: 8px;
         opacity: 0.8;
         transition: all 0.3s ease;
       }
-      
+
       p {
         margin: 0;
         font-size: 0.9rem;
@@ -318,7 +318,7 @@
   // Add extra spacing to grid items
   .MuiGrid-item {
     margin-bottom: $spacing-md;
-    
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -334,11 +334,11 @@
     border-radius: 16px;
     margin-left: -$spacing-lg;
     margin-right: -$spacing-lg;
-    
+
     .stat-item {
       text-align: center;
       padding: $spacing-sm;
-      
+
       .stat-number {
         font-weight: $font-weight-bold;
         color: $white;
@@ -349,7 +349,7 @@
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
-      
+
       .stat-label {
         opacity: 0.8;
         font-size: 0.85rem;
@@ -359,26 +359,26 @@
       }
     }
   }
-  
+
   .footer-divider {
     border-color: rgba(255, 255, 255, 0.15);
     margin: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
   }
-  
+
   .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
     padding: 20px 0;
-    
+
     .footer-bottom-left {
       display: flex;
       align-items: center;
       gap: 20px;
-      
+
       .copyright {
         color: rgba(255, 255, 255, 0.8);
         font-size: 0.85rem;
@@ -387,11 +387,11 @@
         border-radius: 8px;
         border: 1px solid rgba(255, 255, 255, 0.08);
       }
-      
+
       .footer-bottom-links {
         display: flex;
         gap: 15px;
-        
+
         .footer-link {
           color: rgba(255, 255, 255, 0.7);
           text-decoration: none;
@@ -399,7 +399,7 @@
           padding: 6px 12px;
           border-radius: 6px;
           transition: all 0.3s ease;
-          
+
           &:hover {
             color: $white;
             background: rgba(255, 255, 255, 0.1);
@@ -408,7 +408,7 @@
         }
       }
     }
-    
+
     .footer-bottom-right {
       .footer-version {
         color: rgba(255, 255, 255, 0.7);
@@ -439,35 +439,35 @@
 @media (max-width: $breakpoint-md) {
   .footer {
     padding: 30px 0 0;
-    
+
     .footer-stats {
       margin-left: -$spacing-md;
       margin-right: -$spacing-md;
-      
+
       .stat-item {
         .stat-number {
           font-size: 1.8rem;
         }
       }
     }
-    
+
     .footer-bottom {
       flex-direction: column;
       text-align: center;
       gap: $spacing-md;
       margin-left: -$spacing-md;
       margin-right: -$spacing-md;
-      
+
       .footer-bottom-left {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        
+
         .footer-bottom-links {
           justify-content: center;
         }
       }
-      
+
       .footer-bottom-right {
         justify-content: center;
       }
@@ -479,31 +479,31 @@
   .footer {
     text-align: center;
     padding: 25px 0 0;
-    
+
     .footer-brand {
       .brand-content {
         justify-content: center;
       }
     }
-    
+
     .social-links {
       justify-content: center;
     }
-    
+
     .footer-stats {
       margin: $spacing-md -$spacing-sm;
-      
+
       .stat-item {
         .stat-number {
           font-size: 1.6rem;
         }
       }
     }
-    
+
     .footer-bottom {
       margin-left: -$spacing-sm;
       margin-right: -$spacing-sm;
-      
+
       .footer-bottom-left {
         .footer-bottom-links {
           flex-direction: column;

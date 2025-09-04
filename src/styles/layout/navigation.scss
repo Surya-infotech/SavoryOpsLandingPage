@@ -5,80 +5,80 @@
   background-color: rgba(255, 255, 255, 0.95) !important;
   border-bottom: 1px solid rgba(46, 125, 50, 0.1);
   color: $primary-green !important;
-  
+
   // Logo styles
   a {
     text-decoration: none;
     display: flex;
     align-items: center;
-    
+
     &:hover {
       text-decoration: none;
     }
-    
+
     &:active {
       outline: none;
     }
-    
+
     &:focus {
       outline: none;
     }
-    
+
     img {
       display: block;
       object-fit: contain;
-      
+
       &:hover {
         transform: none;
       }
-      
+
       &:active {
         transform: none;
       }
     }
   }
-  
+
   .brand-name {
     font-weight: $font-weight-bold;
     color: $primary-green !important;
     font-size: 1.5rem;
-    
+
     a {
       text-decoration: none;
       color: inherit;
       cursor: pointer;
-      
+
       &:hover {
         text-decoration: none;
-        color: $primary-green-dark !important;
+        color: $primary-green-hover !important;
       }
-      
+
       &:active {
         outline: none;
       }
-      
+
       &:focus {
         outline: none;
       }
     }
   }
-  
+
   .nav-link {
     color: $primary-green !important;
     font-weight: $font-weight-medium;
     margin: 0 0.5rem;
     transition: all $transition-normal;
-    
+
     &:hover {
-      color: $primary-green-dark !important;
+      color: $primary-green-hover !important;
       transform: translateY(-1px);
     }
-    
+
     &.active {
-      color: $primary-green-dark !important;
+      color: $primary-green-hover !important;
       font-weight: $font-weight-bold;
       position: relative;
-      
+
       &::after {
         content: '';
         position: absolute;
@@ -92,7 +92,7 @@
       }
     }
   }
-  
+
   .cta-button {
     background-color: $primary-green !important;
     border-color: $primary-green !important;
@@ -101,10 +101,10 @@
     padding: 12px 24px;
     border-radius: $border-radius-md;
     transition: all $transition-normal;
-    
+
     &:hover {
-      background-color: $primary-green-dark !important;
-      border-color: $primary-green-dark !important;
+      background-color: $primary-green-hover !important;
+      border-color: $primary-green-hover !important;
       transform: translateY(-2px);
       box-shadow: $shadow-primary;
     }
@@ -118,67 +118,67 @@
     width: 240px;
     background-color: $white;
   }
-  
+
   .drawer-header {
     padding: $spacing-lg;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid $medium-gray;
-    
+
     .drawer-brand {
       display: flex;
       align-items: center;
-      
+
       a {
         text-decoration: none;
         display: flex;
         align-items: center;
-        
+
         &:hover {
           text-decoration: none;
         }
-        
+
         &:active {
           outline: none;
         }
-        
+
         &:focus {
           outline: none;
         }
-        
+
         img {
           display: block;
           object-fit: contain;
-          
+
           &:hover {
             transform: none;
           }
-          
+
           &:active {
             transform: none;
           }
         }
       }
-      
+
       .brand-name {
         font-weight: $font-weight-bold;
         color: $primary-green;
-        
+
         a {
           text-decoration: none;
           color: inherit;
           cursor: pointer;
-          
+
           &:hover {
             text-decoration: none;
-            color: $primary-green-dark;
+            color: $primary-green-hover;
           }
-          
+
           &:active {
             outline: none;
           }
-          
+
           &:focus {
             outline: none;
           }
@@ -186,46 +186,46 @@
       }
     }
   }
-  
+
   .drawer-menu {
     padding: 0;
-    
+
     .drawer-menu-item {
       padding: $spacing-md $spacing-lg;
-      color: $text-dark;
+      color: $text-primary;
       text-decoration: none;
       transition: all $transition-normal;
-      
+
       &:hover {
         background-color: $light-gray;
         color: $primary-green;
       }
-      
+
       &.active {
         background-color: rgba(46, 125, 50, 0.1);
         color: $primary-green;
         border-left: 3px solid $primary-green;
-        
+
         .MuiListItemText-primary {
           font-weight: $font-weight-bold;
         }
       }
-      
+
       .MuiListItemText-primary {
         font-weight: $font-weight-medium;
       }
     }
-    
+
     .drawer-cta-item {
       padding: $spacing-lg;
-      
+
       .cta-button {
         background-color: $primary-green !important;
         color: $white !important;
         font-weight: $font-weight-bold;
-        
+
         &:hover {
-          background-color: $primary-green-dark !important;
+          background-color: $primary-green-hover !important;
         }
       }
     }
