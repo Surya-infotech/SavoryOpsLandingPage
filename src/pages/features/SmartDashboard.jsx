@@ -1,7 +1,8 @@
-import { Analytics as AnalyticsIcon, Assessment as AssessmentIcon, BarChart as BarChartIcon, Dashboard as DashboardIcon, FileDownload as ExportIcon, Monitor as MonitorIcon, Palette as PaletteIcon, PhoneAndroid as PhoneIcon, Security as SecurityIcon, Speed as SpeedIcon, TrendingUp as TrendingUpIcon, Visibility as VisibilityIcon } from '@mui/icons-material';
-import { Box, Button, Card, CardContent, Container, Grid, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import { BarChart as BarChartIcon, FileDownload as ExportIcon, Monitor as MonitorIcon, Palette as PaletteIcon, PhoneAndroid as PhoneIcon, Security as SecurityIcon } from '@mui/icons-material';
+import { Box, Button, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import CTA from '../../components/CTA';
 import '../../styles/pages/smartdashboard.scss';
 
 const SmartDashboard = () => {
@@ -11,43 +12,49 @@ const SmartDashboard = () => {
 
   const benefits = [
     {
-      title: 'Real-time Performance Monitoring',
-      description: 'Track your restaurant performance with live updates and instant insights',
-      icon: <MonitorIcon className="benefit-icon" />
+      title: 'Real-time Monitoring',
+      description: 'Live insights at your fingertips',
+      content: 'Track sales, orders, and performance with instant updates and real-time notifications.',
+      icon: <MonitorIcon />,
+      color: '#4CAF50'
     },
     {
-      title: 'Customizable Dashboard Widgets',
-      description: 'Personalize your dashboard with drag-and-drop widgets',
-      icon: <PaletteIcon className="benefit-icon" />
+      title: 'Smart Analytics',
+      description: 'Data-driven decisions made simple',
+      content: 'Advanced reporting tools with interactive charts and trend analysis for better business insights.',
+      icon: <BarChartIcon />,
+      color: '#2196F3'
     },
     {
-      title: 'Interactive Charts & Graphs',
-      description: 'Visualize data with dynamic charts and interactive graphs',
-      icon: <BarChartIcon className="benefit-icon" />
+      title: 'Mobile Ready',
+      description: 'Access anywhere, anytime',
+      content: 'Fully responsive design that works perfectly on smartphones, tablets, and desktop devices.',
+      icon: <PhoneIcon />,
+      color: '#FF9800'
     },
     {
-      title: 'Mobile-Responsive Design',
-      description: 'Access your dashboard seamlessly on any device',
-      icon: <PhoneIcon className="benefit-icon" />
+      title: 'Secure & Reliable',
+      description: 'Enterprise-grade security',
+      content: 'Bank-level encryption, role-based access control, and 99.9% uptime guarantee.',
+      icon: <SecurityIcon />,
+      color: '#9C27B0'
     },
     {
-      title: 'Export Capabilities',
-      description: 'Generate and export detailed reports in multiple formats',
-      icon: <ExportIcon className="benefit-icon" />
+      title: 'Easy Export',
+      description: 'Reports in seconds',
+      content: 'Generate and download reports in PDF, Excel, and CSV formats with one click.',
+      icon: <ExportIcon />,
+      color: '#F44336'
     },
     {
-      title: 'Role-Based Access Control',
-      description: 'Secure access with customizable user permissions',
-      icon: <SecurityIcon className="benefit-icon" />
+      title: 'Customizable',
+      description: 'Tailored to your needs',
+      content: 'Personalize your dashboard with custom widgets, layouts, and user preferences.',
+      icon: <PaletteIcon />,
+      color: '#00BCD4'
     }
   ];
 
-  const metrics = [
-    { title: 'Sales Analytics', value: 'Real-time', icon: <TrendingUpIcon /> },
-    { title: 'Order Tracking', value: 'Live Updates', icon: <VisibilityIcon /> },
-    { title: 'Staff Performance', value: 'Instant', icon: <AssessmentIcon /> },
-    { title: 'Inventory Status', value: 'Current', icon: <SpeedIcon /> }
-  ];
 
   return (
     <Box className="smart-dashboard-page">
@@ -98,143 +105,41 @@ const SmartDashboard = () => {
         <Box className="benefits-section">
           <Box className="benefits-header">
             <Typography variant="h3" component="h2" className="section-title">
-              Key Benefits
+              Why Choose Our Smart Dashboard?
             </Typography>
             <Typography variant="body1" color="text.secondary" className="benefits-description">
-              Discover how our Smart Dashboard transforms your restaurant management with powerful features designed for modern operations.
+              Experience the future of restaurant management with AI-powered insights, real-time analytics, and intuitive controls that boost efficiency and profitability
             </Typography>
           </Box>
-          <Grid container spacing={4}>
+          <Box className="benefits-grid">
             {benefits.map((benefit, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card className="benefit-card">
-                  <CardContent className="benefit-content">
-                    <Box>
-                      {benefit.icon}
-                    </Box>
-                    <Typography variant="h6" component="h3" className="benefit-title">
-                      {benefit.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary" className="benefit-description">
-                      {benefit.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Real-time Metrics */}
-        <Box className="metrics-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Real-time Metrics
-          </Typography>
-          <Grid container spacing={3}>
-            {metrics.map((metric, index) => (
-              <Grid item xs={12} sm={6} md={3} key={index}>
-                <Card className="metric-card">
-                  <CardContent>
-                    <Box className="metric-icon">
-                      {metric.icon}
-                    </Box>
-                    <Typography variant="h5" component="h3" className="metric-title">
-                      {metric.title}
-                    </Typography>
-                    <Typography variant="h6" color="primary" className="metric-value">
-                      {metric.value}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Features List */}
-        <Box className="features-list-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Dashboard Features
-          </Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Card className="feature-list-card">
-                <CardContent>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    Analytics & Reporting
+              <Box key={index} className="benefit-item" style={{ '--benefit-color': benefit.color }}>
+                <Box className="benefit-image-container">
+                  <img
+                    src="/dashboard.png"
+                    alt={benefit.title}
+                    className="benefit-dashboard-image"
+                  />
+                </Box>
+                <Box className="benefit-text-content">
+                  <Typography variant="h6" className="benefit-title">
+                    {benefit.title}
                   </Typography>
-                  <List>
-                    <ListItem>
-                      <ListItemIcon>
-                        <AnalyticsIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Sales performance analytics" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <TrendingUpIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Trend analysis and forecasting" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <AssessmentIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Custom report generation" />
-                    </ListItem>
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Card className="feature-list-card">
-                <CardContent>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    Real-time Monitoring
+                  <Typography variant="body2" className="benefit-description">
+                    {benefit.description}
                   </Typography>
-                  <List>
-                    <ListItem>
-                      <ListItemIcon>
-                        <VisibilityIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Live order tracking" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <SpeedIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Staff performance monitoring" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <DashboardIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Inventory status updates" />
-                    </ListItem>
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </Box>
-
-        {/* CTA Section */}
-        <Box className="cta-section">
-          <Typography variant="h4" component="h2" gutterBottom className="cta-title">
-            Ready to Transform Your Restaurant?
-          </Typography>
-          <Typography variant="body1" paragraph className="cta-description">
-            Experience the power of real-time business intelligence with our Smart Dashboard.
-          </Typography>
-          <Button
-            component={Link}
-            to="/contact"
-            variant="contained"
-            size="large"
-            className="cta-button"
-          >
-            Get Started Today
-          </Button>
+                  <Typography variant="body2" className="benefit-content">
+                    {benefit.content}
+                  </Typography>
+                </Box>
+              </Box>
+            ))}
+          </Box>
+          <CTA
+            title="Ready to Transform Your Restaurant?"
+            description="Experience the power of real-time business intelligence with our Smart Dashboard."
+            variant="default"
+          />
         </Box>
       </Container>
     </Box>
