@@ -332,8 +332,8 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.02);
     border-radius: 16px;
-    margin-left: -$spacing-lg;
-    margin-right: -$spacing-lg;
+    margin-left: - $spacing-lg;
+    margin-right: - $spacing-lg;
 
     .stat-item {
       text-align: center;
@@ -441,8 +441,8 @@
     padding: 30px 0 0;
 
     .footer-stats {
-      margin-left: -$spacing-md;
-      margin-right: -$spacing-md;
+      margin-left: - $spacing-md;
+      margin-right: - $spacing-md;
 
       .stat-item {
         .stat-number {
@@ -455,8 +455,8 @@
       flex-direction: column;
       text-align: center;
       gap: $spacing-md;
-      margin-left: -$spacing-md;
-      margin-right: -$spacing-md;
+      margin-left: - $spacing-md;
+      margin-right: - $spacing-md;
 
       .footer-bottom-left {
         flex-direction: column;
@@ -491,7 +491,7 @@
     }
 
     .footer-stats {
-      margin: $spacing-md -$spacing-sm;
+      margin: $spacing-md - $spacing-sm;
 
       .stat-item {
         .stat-number {
@@ -501,8 +501,8 @@
     }
 
     .footer-bottom {
-      margin-left: -$spacing-sm;
-      margin-right: -$spacing-sm;
+      margin-left: - $spacing-sm;
+      margin-right: - $spacing-sm;
 
       .footer-bottom-left {
         .footer-bottom-links {
