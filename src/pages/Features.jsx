@@ -2,72 +2,71 @@ import { Analytics as AnalyticsIcon, ArrowBack as ArrowBackIcon, ArrowForward as
 import { Box, Button, Card, CardContent, Chip, Container, IconButton, Typography } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/pages/features.scss';
 
 const Features = ({ showHeading = true }) => {
   const scrollContainerRef = useRef(null);
   const [showArrows, setShowArrows] = useState(false);
   const [isHoveringArrow, setIsHoveringArrow] = useState(false);
-  const [hoveredArrow, setHoveredArrow] = useState(null); // 'left' or 'right'
+  const [hoveredArrow, setHoveredArrow] = useState(null);
   const [isScrolling, setIsScrolling] = useState(false);
 
   const features = [
     {
-      icon: <DashboardIcon sx={{ fontSize: 40 }} />,
+      icon: <DashboardIcon sx={{ fontSize: 28 }} />,
       title: 'Dashboard',
       description: 'Real-time overview of your restaurant operations with intuitive analytics',
       color: '#4caf50'
     },
     {
-      icon: <StarIcon sx={{ fontSize: 40 }} />,
+      icon: <StarIcon sx={{ fontSize: 28 }} />,
       title: 'Multiple Business',
       description: 'Create and manage multiple restaurant businesses from a single platform',
       color: '#4caf50'
     },
     {
-      icon: <TrendingUpIcon sx={{ fontSize: 40 }} />,
+      icon: <TrendingUpIcon sx={{ fontSize: 28 }} />,
       title: 'Multiple Branches',
       description: 'Manage multiple branches with centralized control and reporting',
       color: '#2e7d32'
     },
     {
-      icon: <PaymentIcon sx={{ fontSize: 40 }} />,
+      icon: <PaymentIcon sx={{ fontSize: 28 }} />,
       title: 'Branch-wise Pricing',
       description: 'Set different item prices for each branch with flexible pricing control',
       color: '#4caf50'
     },
     {
-      icon: <PeopleIcon sx={{ fontSize: 40 }} />,
+      icon: <PeopleIcon sx={{ fontSize: 28 }} />,
       title: 'Staff Management',
       description: 'Add branch-wise employees, assign roles, schedule shifts, and manage payroll',
       color: '#388e3c'
     },
     {
-      icon: <ScheduleIcon sx={{ fontSize: 40 }} />,
+      icon: <ScheduleIcon sx={{ fontSize: 28 }} />,
       title: 'Order Management',
       description: 'Track order details with complete status history and timeline',
       color: '#388e3c'
     },
     {
-      icon: <AnalyticsIcon sx={{ fontSize: 40 }} />,
+      icon: <AnalyticsIcon sx={{ fontSize: 28 }} />,
       title: 'Analytics & Reports',
       description: 'Comprehensive insights to optimize your business performance',
       color: '#2e7d32'
     },
     {
-      icon: <DashboardIcon sx={{ fontSize: 40 }} />,
+      icon: <DashboardIcon sx={{ fontSize: 28 }} />,
       title: 'Revenue Analytics',
       description: 'Business and branch-wise order revenue with fiscal year tracking',
       color: '#4caf50'
     }
   ];
 
-  // Arrow navigation functions with enhanced animations
   const scrollLeft = () => {
     const scrollContainer = scrollContainerRef.current;
     if (scrollContainer) {
-      const cardWidth = 320 + 24; // card width + gap
+      const cardWidth = 320 + 24;
 
-      // Add visual feedback
       scrollContainer.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
       scrollContainer.style.transform = 'translateX(-5px)';
 
@@ -85,9 +84,8 @@ const Features = ({ showHeading = true }) => {
   const scrollRight = () => {
     const scrollContainer = scrollContainerRef.current;
     if (scrollContainer) {
-      const cardWidth = 320 + 24; // card width + gap
+      const cardWidth = 320 + 24;
 
-      // Add visual feedback
       scrollContainer.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
       scrollContainer.style.transform = 'translateX(5px)';
 
@@ -108,35 +106,6 @@ const Features = ({ showHeading = true }) => {
 
     let arrowHoverInterval;
 
-    // Auto-scroll functionality removed - only manual arrow scrolling now
-    const startAutoScroll = () => {
-      // No automatic scrolling - only manual arrow control
-    };
-
-    // Pause/resume functions removed - no auto-scroll to control
-
-    // Arrow hover functionality
-    const startArrowHoverScroll = (direction) => {
-      if (arrowHoverInterval) clearInterval(arrowHoverInterval);
-
-      arrowHoverInterval = setInterval(() => {
-        if (scrollContainer && isHoveringArrow) {
-          const cardWidth = 320 + 24;
-          scrollContainer.scrollBy({
-            left: direction === 'left' ? -cardWidth : cardWidth,
-            behavior: 'smooth'
-          });
-        }
-      }, 200); // Faster scroll when hovering arrows
-    };
-
-    const stopArrowHoverScroll = () => {
-      if (arrowHoverInterval) {
-        clearInterval(arrowHoverInterval);
-        arrowHoverInterval = null;
-      }
-    };
-
     const handleMouseMove = (e) => {
       if (!isHovering) return;
 
@@ -146,14 +115,12 @@ const Features = ({ showHeading = true }) => {
       const distanceFromCenter = mouseX - centerX;
       const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
 
-      // Calculate which card should be centered based on mouse position
-      const cardWidth = 320 + 24; // card width + gap
+      const cardWidth = 320 + 24;
       const totalCards = features.length;
       const scrollRatio = distanceFromCenter / (rect.width / 2);
       const targetCardIndex = Math.round((totalCards - 1) * (scrollRatio + 1) / 2);
       const clampedIndex = Math.max(0, Math.min(totalCards - 1, targetCardIndex));
 
-      // Scroll to center the target card
       const targetScroll = clampedIndex * cardWidth;
 
       scrollContainer.scrollTo({
@@ -166,14 +133,13 @@ const Features = ({ showHeading = true }) => {
       if (!isHovering) return;
 
       e.preventDefault();
-      const scrollAmount = e.deltaY > 0 ? 320 : -320; // Scroll one card width
+      const scrollAmount = e.deltaY > 0 ? 320 : -320;
       scrollContainer.scrollBy({
         left: scrollAmount,
         behavior: 'smooth'
       });
     };
 
-    // Only add mouse move tracking and wheel handling
     scrollContainer.addEventListener('mousemove', handleMouseMove);
     scrollContainer.addEventListener('wheel', handleWheel, { passive: false });
 
@@ -184,7 +150,6 @@ const Features = ({ showHeading = true }) => {
     };
   }, [features.length]);
 
-  // Arrow hover scroll effect - only scrolling when hovering over arrows
   useEffect(() => {
     let arrowHoverInterval;
 
@@ -198,7 +163,6 @@ const Features = ({ showHeading = true }) => {
             const cardWidth = 320 + 24;
             const scrollDirection = hoveredArrow === 'left' ? -cardWidth : cardWidth;
 
-            // Add subtle animation feedback during continuous scroll
             const bounceAmount = hoveredArrow === 'left' ? '-3px' : '3px';
 
             scrollContainer.style.transition = 'transform 0.15s ease-out';
@@ -227,162 +191,61 @@ const Features = ({ showHeading = true }) => {
   }, [isHoveringArrow, hoveredArrow]);
 
   return (
-    <Box
-      id="features"
-      sx={{
-        backgroundColor: '#f8f9fa',
-        padding: { xs: '60px 0', md: '80px 0' },
-        position: 'relative',
-        '@keyframes pulse': {
-          '0%': {
-            transform: 'translateY(-50%) scale(1.15)',
-            boxShadow: '0 12px 32px rgba(76, 175, 80, 0.4)'
-          },
-          '50%': {
-            transform: 'translateY(-50%) scale(1.25)',
-            boxShadow: '0 16px 40px rgba(76, 175, 80, 0.6)'
-          },
-          '100%': {
-            transform: 'translateY(-50%) scale(1.15)',
-            boxShadow: '0 12px 32px rgba(76, 175, 80, 0.4)'
-          }
-        },
-        '@keyframes bounce': {
-          '0%, 100%': {
-            transform: 'translateY(0)'
-          },
-          '50%': {
-            transform: 'translateY(-3px)'
-          }
-        }
-      }}
-    >
+    <Box id="features" className="features-section" >
       <Container maxWidth="lg">
         {showHeading && (
-          <Box sx={{ textAlign: 'center', mb: { xs: 4, md: 6 } }}>
-            {/* Feature Badge */}
-            <Box sx={{ mb: 3 }}>
+          <Box className="features-header">
+            <Box className="features-badge">
               <Chip
                 icon={<StarIcon />}
                 label="Premium Features"
-                sx={{
-                  background: 'linear-gradient(135deg, #2e7d32, #4caf50)',
-                  color: 'white',
-                  fontWeight: 600,
-                  fontSize: '0.9rem',
-                  padding: '8px 16px',
-                  '& .MuiChip-icon': {
-                    color: 'white'
-                  }
-                }}
+                className="features-badge-chip"
               />
             </Box>
-
-            {/* Main Heading */}
-            <Typography
-              variant="h2"
-              component="h2"
-              sx={{
-                fontWeight: 800,
-                fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
-                color: '#1a1a1a',
-                mb: 2,
-                background: 'linear-gradient(135deg, #1b5e20, #2e7d32, #4caf50)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                textShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                position: 'relative'
-              }}
-            >
+            <Typography variant="h2" component="h2" className="features-title" >
               Powerful Features
             </Typography>
-
-            {/* Subtitle */}
-            <Typography
-              variant="h5"
-              sx={{
-                color: '#666666',
-                fontSize: { xs: '1.1rem', md: '1.25rem' },
-                maxWidth: '700px',
-                margin: '0 auto',
-                lineHeight: 1.6,
-                fontWeight: 500,
-                mb: 3
-              }}
-            >
+            <Typography variant="h5" className="features-subtitle" >
               Everything you need to streamline your restaurant operations and boost profitability
             </Typography>
-
-            {/* Feature badges */}
-            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
+            <Box className="features-badges">
               <Chip
                 icon={<BoltIcon />}
                 label="Real-time Analytics"
                 variant="outlined"
-                sx={{
-                  borderColor: '#4caf50',
-                  color: '#2e7d32',
-                  fontWeight: 500,
-                  '& .MuiChip-icon': { color: '#4caf50' }
-                }}
+                className="feature-badge-chip"
               />
               <Chip
                 icon={<TrendingUpIcon />}
                 label="Smart Automation"
                 variant="outlined"
-                sx={{
-                  borderColor: '#4caf50',
-                  color: '#2e7d32',
-                  fontWeight: 500,
-                  '& .MuiChip-icon': { color: '#4caf50' }
-                }}
+                className="feature-badge-chip"
               />
               <Chip
                 icon={<PaymentIcon />}
                 label="Multi-Payment"
                 variant="outlined"
-                sx={{
-                  borderColor: '#4caf50',
-                  color: '#2e7d32',
-                  fontWeight: 500,
-                  '& .MuiChip-icon': { color: '#4caf50' }
-                }}
+                className="feature-badge-chip"
               />
               <Chip
                 icon={<CurrencyIcon />}
                 label="Multiple Currency"
                 variant="outlined"
-                sx={{
-                  borderColor: '#4caf50',
-                  color: '#2e7d32',
-                  fontWeight: 500,
-                  '& .MuiChip-icon': { color: '#4caf50' }
-                }}
+                className="feature-badge-chip"
               />
               <Chip
                 icon={<LanguageIcon />}
                 label="Multiple Languages"
                 variant="outlined"
-                sx={{
-                  borderColor: '#4caf50',
-                  color: '#2e7d32',
-                  fontWeight: 500,
-                  '& .MuiChip-icon': { color: '#4caf50' }
-                }}
+                className="feature-badge-chip"
               />
             </Box>
           </Box>
         )}
 
-        <Box
-          sx={{
-            position: 'relative'
-          }}
-        >
-          {/* Left Arrow */}
+        <Box className="features-scroll-container">
           <IconButton
-            className="scroll-arrows"
+            className={`scroll-arrows scroll-arrow-left ${isScrolling && hoveredArrow === 'left' ? 'scrolling' : ''}`}
             onClick={scrollLeft}
             onMouseEnter={() => {
               setIsHoveringArrow(true);
@@ -394,50 +257,11 @@ const Features = ({ showHeading = true }) => {
               setShowArrows(false);
               setHoveredArrow(null);
             }}
-            sx={{
-              position: 'absolute',
-              left: 10,
-              top: '50%',
-              transform: 'translateY(-50%)',
-              zIndex: 10,
-              backgroundColor: 'rgba(255, 255, 255, 0.7)',
-              backdropFilter: 'blur(10px)',
-              border: '1px solid rgba(76, 175, 80, 0.2)',
-              width: 48,
-              height: 48,
-              opacity: 0.6,
-              visibility: 'visible',
-              transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-              '&:hover': {
-                backgroundColor: '#4caf50',
-                color: 'white',
-                transform: 'translateY(-50%) scale(1.15) rotate(-5deg)',
-                boxShadow: '0 12px 32px rgba(76, 175, 80, 0.4)',
-                borderColor: '#4caf50',
-                opacity: 1,
-                '& .MuiSvgIcon-root': {
-                  transform: 'scale(1.1)',
-                  transition: 'transform 0.2s ease-out'
-                }
-              },
-              ...(isScrolling && hoveredArrow === 'left' && {
-                animation: 'pulse 0.6s ease-in-out infinite',
-                '& .MuiSvgIcon-root': {
-                  animation: 'bounce 0.5s ease-in-out infinite'
-                }
-              }),
-              '&:active': {
-                transform: 'translateY(-50%) scale(1.05) rotate(-2deg)',
-                boxShadow: '0 6px 20px rgba(76, 175, 80, 0.3)'
-              }
-            }}
           >
             <ArrowBackIcon />
           </IconButton>
-
-          {/* Right Arrow */}
           <IconButton
-            className="scroll-arrows"
+            className={`scroll-arrows scroll-arrow-right ${isScrolling && hoveredArrow === 'right' ? 'scrolling' : ''}`}
             onClick={scrollRight}
             onMouseEnter={() => {
               setIsHoveringArrow(true);
@@ -449,206 +273,23 @@ const Features = ({ showHeading = true }) => {
               setShowArrows(false);
               setHoveredArrow(null);
             }}
-            sx={{
-              position: 'absolute',
-              right: 10,
-              top: '50%',
-              transform: 'translateY(-50%)',
-              zIndex: 10,
-              backgroundColor: 'rgba(255, 255, 255, 0.7)',
-              backdropFilter: 'blur(10px)',
-              border: '1px solid rgba(76, 175, 80, 0.2)',
-              width: 48,
-              height: 48,
-              opacity: 0.6,
-              visibility: 'visible',
-              transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-              '&:hover': {
-                backgroundColor: '#4caf50',
-                color: 'white',
-                transform: 'translateY(-50%) scale(1.15) rotate(5deg)',
-                boxShadow: '0 12px 32px rgba(76, 175, 80, 0.4)',
-                borderColor: '#4caf50',
-                opacity: 1,
-                '& .MuiSvgIcon-root': {
-                  transform: 'scale(1.1)',
-                  transition: 'transform 0.2s ease-out'
-                }
-              },
-              ...(isScrolling && hoveredArrow === 'right' && {
-                animation: 'pulse 0.6s ease-in-out infinite',
-                '& .MuiSvgIcon-root': {
-                  animation: 'bounce 0.5s ease-in-out infinite'
-                }
-              }),
-              '&:active': {
-                transform: 'translateY(-50%) scale(1.05) rotate(2deg)',
-                boxShadow: '0 6px 20px rgba(76, 175, 80, 0.3)'
-              }
-            }}
           >
             <ArrowForwardIcon />
           </IconButton>
 
-          <Box
-            ref={scrollContainerRef}
-            sx={{
-              display: 'flex',
-              gap: 3,
-              overflowX: 'auto',
-              padding: '20px 0',
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
-              scrollBehavior: 'smooth',
-              '&::-webkit-scrollbar': {
-                display: 'none'
-              },
-              '& > *': {
-                transition: 'transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease'
-              }
-            }}
-          >
+          <Box ref={scrollContainerRef} className="features-scroll-wrapper" >
             {features.map((feature, index) => (
-              <Box
-                key={index}
-                sx={{
-                  flexShrink: 0,
-                  minWidth: '320px',
-                  marginLeft: index === 0 ? '20px' : '0',
-                  marginRight: index === features.length - 1 ? '20px' : '0'
-                }}
-              >
-                <Card
-                  sx={{
-                    background: 'white',
-                    borderRadius: '16px',
-                    width: '320px',
-                    height: '240px',
-                    transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                    border: '1px solid rgba(76, 175, 80, 0.1)',
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    animation: `fadeInUp 0.8s ease-out ${index * 0.1}s both`,
-                    cursor: 'default',
-                    '&:hover': {
-                      transform: 'translateY(-12px) scale(1.03) rotateY(2deg)',
-                      boxShadow: '0 24px 64px rgba(46, 125, 50, 0.25)',
-                      borderColor: '#4caf50',
-                      '& .feature-icon': {
-                        transform: 'scale(1.2) rotate(8deg)',
-                        boxShadow: '0 16px 40px rgba(76, 175, 80, 0.5)'
-                      },
-                      '& .card-content': {
-                        transform: 'translateY(-4px)'
-                      }
-                    },
-                    '&::before': {
-                      content: '""',
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      height: '4px',
-                      background: `linear-gradient(90deg, ${feature.color}, ${feature.color}88)`,
-                      transform: 'scaleX(0)',
-                      transition: 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-                    },
-                    '&:hover::before': {
-                      transform: 'scaleX(1)'
-                    },
-                    '&::after': {
-                      content: '""',
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      width: '100%',
-                      height: '100%',
-                      background: `radial-gradient(circle, ${feature.color}15 0%, transparent 70%)`,
-                      transform: 'translate(-50%, -50%) scale(0)',
-                      transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                      zIndex: 0
-                    },
-                    '&:hover::after': {
-                      transform: 'translate(-50%, -50%) scale(1)'
-                    }
-                  }}
-                >
-                  <CardContent
-                    className="card-content"
-                    sx={{
-                      padding: '24px 20px',
-                      textAlign: 'center',
-                      position: 'relative',
-                      zIndex: 1,
-                      transition: 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-                    }}
-                  >
-                    <Box
-                      className="feature-icon"
-                      sx={{
-                        width: '60px',
-                        height: '60px',
-                        background: `linear-gradient(135deg, ${feature.color}, ${feature.color}dd)`,
-                        borderRadius: '50%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        margin: '0 auto 16px',
-                        color: 'white',
-                        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                        position: 'relative',
-                        animation: `float 3s ease-in-out infinite ${index * 0.2}s`,
-                        '&::after': {
-                          content: '""',
-                          position: 'absolute',
-                          top: '-4px',
-                          left: '-4px',
-                          right: '-4px',
-                          bottom: '-4px',
-                          background: `linear-gradient(135deg, ${feature.color}, ${feature.color}88)`,
-                          borderRadius: '50%',
-                          zIndex: -1,
-                          opacity: 0,
-                          transition: 'opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                          filter: 'blur(2px)'
-                        },
-                        '&:hover::after': {
-                          opacity: 1,
-                          transform: 'scale(1.1)'
-                        }
-                      }}
-                    >
+              <Box key={index} className="feature-card-wrapper" >
+                <Card className="feature-card">
+                  <CardContent className="feature-card-content">
+                    <Box className="feature-icon">
                       {feature.icon}
                     </Box>
-
-                    <Typography
-                      variant="h6"
-                      component="h3"
-                      sx={{
-                        color: '#1a1a1a',
-                        fontWeight: 600,
-                        marginBottom: '12px',
-                        fontSize: '1.1rem'
-                      }}
-                    >
+                    <Typography variant="h6" component="h3" className="feature-title" >
                       {feature.title}
                     </Typography>
 
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: '#666666',
-                        lineHeight: 1.6,
-                        fontSize: '0.9rem',
-                        height: '50px',
-                        overflow: 'hidden',
-                        display: '-webkit-box',
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: 'vertical',
-                        textOverflow: 'ellipsis'
-                      }}
-                    >
+                    <Typography variant="body2" className="feature-description" >
                       {feature.description}
                     </Typography>
                   </CardContent>
@@ -657,34 +298,14 @@ const Features = ({ showHeading = true }) => {
             ))}
           </Box>
         </Box>
-
-        {/* Action Button */}
-        <Box sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          mt: 6
-        }}>
+        <Box className="features-action">
           <Button
             component={Link}
             to="/features"
             variant="contained"
             size="large"
             endIcon={<ArrowForwardIcon />}
-            sx={{
-              backgroundColor: '#2e7d32',
-              fontWeight: 600,
-              fontSize: '1rem',
-              px: 4,
-              py: 1.5,
-              borderRadius: '12px',
-              boxShadow: '0 8px 24px rgba(46, 125, 50, 0.3)',
-              transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-              '&:hover': {
-                backgroundColor: '#1b5e20',
-                transform: 'translateY(-2px)',
-                boxShadow: '0 12px 32px rgba(46, 125, 50, 0.4)'
-              }
-            }}
+            className="features-action-button"
           >
             View All Features
           </Button>
