@@ -68,22 +68,22 @@ const Sitemap = () => {
   ];
 
   const footerFeatures = [
-    'POS Tracking System',
-    'KOT Tracking System',
-    'Multiple Business',
-    'Multiple Branches',
-    'Multiple Languages',
-    'Multiple Currency',
-    'Menu Management',
-    'Item Management',
-    'Staff Management'
+    { name: 'POS Tracking System', path: '/features/pos-system' },
+    { name: 'KOT Tracking System', path: '/features/kot-system' },
+    { name: 'Multiple Business', path: '/features/multiple-business' },
+    { name: 'Multiple Branches', path: '/features/multiple-branches' },
+    { name: 'Multiple Languages', path: '/features/multiple-languages' },
+    { name: 'Multiple Currency', path: '/features/multiple-currency' },
+    { name: 'Menu Management', path: '/features/menu-management' },
+    { name: 'Item Management', path: '/features/menu-management' },
+    { name: 'Staff Management', path: '/features/branch-staff-management' }
   ];
 
   const footerReports = [
-    'Daily Wise Report',
-    'Business Wise Report',
-    'Branch Wise Report',
-    'Order Summary'
+    { name: 'Daily Wise Report', path: '/features/advanced-reports' },
+    { name: 'Business Wise Report', path: '/features/business-analytics' },
+    { name: 'Branch Wise Report', path: '/features/advanced-reports' },
+    { name: 'Order Summary', path: '/features/order-summary' }
   ];
 
   return (
@@ -148,11 +148,18 @@ const Sitemap = () => {
             </Typography>
             <Box className="features-container">
               {footerFeatures.map((feature, index) => (
-                <Box key={index} className="feature-item">
-                  <Typography variant="body2" className="feature-text">
-                    {feature}
-                  </Typography>
-                </Box>
+                <Link
+                  key={index}
+                  component={RouterLink}
+                  to={feature.path}
+                  className="feature-item-link"
+                >
+                  <Box className="feature-item">
+                    <Typography variant="body2" className="feature-text">
+                      {feature.name}
+                    </Typography>
+                  </Box>
+                </Link>
               ))}
             </Box>
           </Box>
@@ -164,11 +171,18 @@ const Sitemap = () => {
             </Typography>
             <Box className="features-container">
               {footerReports.map((report, index) => (
-                <Box key={index} className="feature-item">
-                  <Typography variant="body2" className="feature-text">
-                    {report}
-                  </Typography>
-                </Box>
+                <Link
+                  key={index}
+                  component={RouterLink}
+                  to={report.path}
+                  className="feature-item-link"
+                >
+                  <Box className="feature-item">
+                    <Typography variant="body2" className="feature-text">
+                      {report.name}
+                    </Typography>
+                  </Box>
+                </Link>
               ))}
             </Box>
           </Box>

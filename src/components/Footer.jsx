@@ -2,22 +2,22 @@ import { Article as ArticleIcon, Assessment as AssessmentIcon, BarChart as BarCh
 import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
 const Footer = () => {
   const productFeatures = [
-    { name: 'POS Tracking System', icon: <PointOfSaleIcon />, href: '/features' },
-    { name: 'KOT Tracking System', icon: <RestaurantIcon />, href: '/features' },
-    { name: 'Multiple Business', icon: <BusinessIcon />, href: '/features' },
-    { name: 'Multiple Branches', icon: <BranchIcon />, href: '/features' },
-    { name: 'Multiple Languages', icon: <LanguageIcon />, href: '/features' },
-    { name: 'Multiple Currency', icon: <CurrencyIcon />, href: '/features' },
-    { name: 'Menu Management', icon: <MenuBookIcon />, href: '/features' },
-    { name: 'Item Management', icon: <InventoryIcon />, href: '/features' },
-    { name: 'Staff Management', icon: <PeopleIcon />, href: '/features' }
+    { name: 'POS Tracking System', icon: <PointOfSaleIcon />, href: '/features/pos-system' },
+    { name: 'KOT Tracking System', icon: <RestaurantIcon />, href: '/features/kot-system' },
+    { name: 'Multiple Business', icon: <BusinessIcon />, href: '/features/multiple-business' },
+    { name: 'Multiple Branches', icon: <BranchIcon />, href: '/features/multiple-branches' },
+    { name: 'Multiple Languages', icon: <LanguageIcon />, href: '/features/multiple-languages' },
+    { name: 'Multiple Currency', icon: <CurrencyIcon />, href: '/features/multiple-currency' },
+    { name: 'Menu Management', icon: <MenuBookIcon />, href: '/features/menu-management' },
+    { name: 'Item Management', icon: <InventoryIcon />, href: '/features/menu-management' },
+    { name: 'Staff Management', icon: <PeopleIcon />, href: '/features/branch-staff-management' }
   ];
 
   const reportList = [
-    { name: 'Daily Wise Report', icon: <AssessmentIcon />, href: '/features' },
-    { name: 'Business Wise Report', icon: <TrendingUpIcon />, href: '/features' },
-    { name: 'Branch Wise Report', icon: <BarChartIcon />, href: '/features' },
-    { name: 'Order Summary', icon: <ReceiptIcon />, href: '/features' }
+    { name: 'Daily Wise Report', icon: <AssessmentIcon />, href: '/features/advanced-reports' },
+    { name: 'Business Wise Report', icon: <TrendingUpIcon />, href: '/features/business-analytics' },
+    { name: 'Branch Wise Report', icon: <BarChartIcon />, href: '/features/advanced-reports' },
+    { name: 'Order Summary', icon: <ReceiptIcon />, href: '/features/order-summary' }
   ];
 
   const companyLinks = [

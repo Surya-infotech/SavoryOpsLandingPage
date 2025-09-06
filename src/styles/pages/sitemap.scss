@@ -143,10 +143,29 @@
         gap: 1rem;
         justify-content: flex-start;
 
+        .feature-item-link {
+          text-decoration: none;
+          color: inherit;
+          display: block;
+
+          &:hover {
+            text-decoration: none;
+            color: inherit;
+          }
+
+          &:focus,
+          &:active,
+          &:focus-visible {
+            text-decoration: none;
+            color: inherit;
+            outline: none;
+          }
+        }
+
         .feature-item {
           padding: 1rem;
           background-color: white;
-          border-radius: 0.25rem;
+          border-radius: 16px;
           border: 1px solid #e0e0e0;
           transition: all 0.2s;
           min-width: 200px;
@@ -158,6 +177,7 @@
             border-color: #2e7d32;
             background-color: rgba(46, 125, 50, 0.05);
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
           }
 
           &:focus,
@@ -165,11 +185,17 @@
           &:focus-visible {
             outline: none;
             border-color: #2e7d32;
-            box-shadow: none;
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
           }
 
           .feature-text {
             font-weight: 500;
+            color: #333;
+            transition: color 0.2s;
+
+            &:hover {
+              color: #2e7d32;
+            }
           }
         }
       }
