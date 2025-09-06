@@ -1,6 +1,7 @@
 import { Apps as AppsIcon, Article as ArticleIcon, Assessment as AssessmentIcon, Business as BusinessIcon, Dashboard as DashboardIcon, Home as HomeIcon, MenuBook as MenuBookIcon, People as PeopleIcon, PointOfSale as PointOfSaleIcon, QrCode as QrCodeIcon } from '@mui/icons-material';
 import { Box, Card, CardContent, Container, Divider, Grid, Link, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
+import '../styles/pages/sitemap.scss';
 
 const Sitemap = () => {
   const mainPages = [
@@ -86,26 +87,14 @@ const Sitemap = () => {
   ];
 
   return (
-    <Box sx={{
-      minHeight: '100vh',
-      backgroundColor: '#f8f9fa',
-      paddingTop: '80px' // Account for fixed navigation
-    }}>
-      <Container maxWidth="lg" sx={{ py: 6 }}>
+    <Box className="sitemap-page">
+      <Container maxWidth="lg" className="sitemap-container">
         {/* Header */}
-        <Box sx={{ textAlign: 'center', mb: 6 }}>
-          <Typography variant="h2" component="h1" sx={{
-            color: '#2e7d32',
-            fontWeight: 'bold',
-            mb: 2
-          }}>
+        <Box className="sitemap-header">
+          <Typography variant="h2" component="h1" className="header-title">
             Sitemap
           </Typography>
-          <Typography variant="h6" sx={{
-            color: '#666',
-            maxWidth: '600px',
-            margin: '0 auto'
-          }}>
+          <Typography variant="h6" className="header-subtitle">
             Navigate through all pages and features of SavoryOps platform
           </Typography>
         </Box>
@@ -113,14 +102,8 @@ const Sitemap = () => {
 
 
         {/* Feature Pages Section */}
-        <Box sx={{ mb: 6 }}>
-          <Typography variant="h4" component="h2" sx={{
-            color: '#2e7d32',
-            mb: 3,
-            display: 'flex',
-            alignItems: 'center',
-            gap: 1
-          }}>
+        <Box className="feature-pages-section">
+          <Typography variant="h4" component="h2" className="section-title">
             <AppsIcon /> Feature Pages
           </Typography>
           <Grid container spacing={3}>
@@ -129,36 +112,17 @@ const Sitemap = () => {
                 <Link
                   component={RouterLink}
                   to={page.path}
-                  sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'center' }}
+                  className="feature-card-link"
                 >
-                  <Card sx={{
-                    height: '120px',
-                    width: '360px',
-                    transition: 'transform 0.2s, box-shadow 0.2s',
-                    cursor: 'pointer',
-                    '&:hover': {
-                      transform: 'translateY(-4px)',
-                      boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
-                    }
-                  }}>
-                    <CardContent sx={{ textAlign: 'center', p: 3 }}>
-                      <Typography variant="h6" component="h3" sx={{
-                        mb: 1,
-                        fontWeight: 'bold',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: 1
-                      }}>
-                        <Box sx={{ color: '#2e7d32' }}>
+                  <Card className="feature-card">
+                    <CardContent className="card-content">
+                      <Typography variant="h6" component="h3" className="card-title">
+                        <Box className="card-icon">
                           {page.icon}
                         </Box>
                         {page.name}
                       </Typography>
-                      <Typography variant="body2" sx={{
-                        color: '#666',
-                        minHeight: '40px'
-                      }}>
+                      <Typography variant="body2" className="card-description">
                         {page.description}
                       </Typography>
                     </CardContent>
@@ -169,51 +133,23 @@ const Sitemap = () => {
           </Grid>
         </Box>
 
-        <Divider sx={{ my: 4 }} />
+        <Divider className="section-divider" />
 
         {/* Additional Features Section */}
-        <Box sx={{ mb: 6 }}>
-          <Typography variant="h4" component="h2" sx={{
-            color: '#2e7d32',
-            mb: 3,
-            display: 'flex',
-            alignItems: 'center',
-            gap: 1
-          }}>
+        <Box className="additional-features-section">
+          <Typography variant="h4" component="h2" className="section-title">
             <AppsIcon /> Additional Features
           </Typography>
 
           {/* Core Features - Horizontal List */}
-          <Box sx={{ mb: 4 }}>
-            <Typography variant="h6" component="h3" sx={{
-              color: '#2e7d32',
-              mb: 2,
-              fontWeight: 'bold'
-            }}>
+          <Box className="features-subsection">
+            <Typography variant="h6" component="h3" className="subsection-title">
               Core Features
             </Typography>
-            <Box sx={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: 2,
-              justifyContent: 'flex-start'
-            }}>
+            <Box className="features-container">
               {footerFeatures.map((feature, index) => (
-                <Box key={index} sx={{
-                  p: 2,
-                  backgroundColor: 'white',
-                  borderRadius: 1,
-                  border: '1px solid #e0e0e0',
-                  transition: 'all 0.2s',
-                  minWidth: '200px',
-                  textAlign: 'center',
-                  '&:hover': {
-                    borderColor: '#2e7d32',
-                    backgroundColor: 'rgba(46, 125, 50, 0.05)',
-                    transform: 'translateY(-2px)'
-                  }
-                }}>
-                  <Typography variant="body2" sx={{ fontWeight: '500' }}>
+                <Box key={index} className="feature-item">
+                  <Typography variant="body2" className="feature-text">
                     {feature}
                   </Typography>
                 </Box>
@@ -222,36 +158,14 @@ const Sitemap = () => {
           </Box>
 
           {/* Reports - Horizontal List */}
-          <Box sx={{ mb: 4 }}>
-            <Typography variant="h6" component="h3" sx={{
-              color: '#2e7d32',
-              mb: 2,
-              fontWeight: 'bold'
-            }}>
+          <Box className="features-subsection">
+            <Typography variant="h6" component="h3" className="subsection-title">
               Reporting & Analytics
             </Typography>
-            <Box sx={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: 2,
-              justifyContent: 'flex-start'
-            }}>
+            <Box className="features-container">
               {footerReports.map((report, index) => (
-                <Box key={index} sx={{
-                  p: 2,
-                  backgroundColor: 'white',
-                  borderRadius: 1,
-                  border: '1px solid #e0e0e0',
-                  transition: 'all 0.2s',
-                  minWidth: '200px',
-                  textAlign: 'center',
-                  '&:hover': {
-                    borderColor: '#2e7d32',
-                    backgroundColor: 'rgba(46, 125, 50, 0.05)',
-                    transform: 'translateY(-2px)'
-                  }
-                }}>
-                  <Typography variant="body2" sx={{ fontWeight: '500' }}>
+                <Box key={index} className="feature-item">
+                  <Typography variant="body2" className="feature-text">
                     {report}
                   </Typography>
                 </Box>
@@ -261,46 +175,22 @@ const Sitemap = () => {
         </Box>
 
         {/* Quick Navigation */}
-        <Box sx={{
-          backgroundColor: 'white',
-          p: 4,
-          borderRadius: 2,
-          border: '1px solid #e0e0e0'
-        }}>
-          <Typography variant="h5" component="h3" sx={{
-            color: '#2e7d32',
-            mb: 3,
-            textAlign: 'center'
-          }}>
+        <Box className="quick-navigation">
+          <Typography variant="h5" component="h3" className="nav-title">
             Quick Navigation
           </Typography>
-          <Grid container spacing={2} justifyContent="center">
+          <Box className="nav-buttons-container">
             {mainPages.map((page) => (
-              <Grid item key={page.name}>
-                <Link
-                  component={RouterLink}
-                  to={page.path}
-                  sx={{
-                    display: 'inline-block',
-                    px: 3,
-                    py: 1.5,
-                    backgroundColor: '#2e7d32',
-                    color: 'white',
-                    textDecoration: 'none',
-                    borderRadius: 2,
-                    fontWeight: 'bold',
-                    transition: 'all 0.2s',
-                    '&:hover': {
-                      backgroundColor: '#1b5e20',
-                      transform: 'translateY(-2px)'
-                    }
-                  }}
-                >
-                  {page.name}
-                </Link>
-              </Grid>
+              <Link
+                key={page.name}
+                component={RouterLink}
+                to={page.path}
+                className="nav-button"
+              >
+                {page.name}
+              </Link>
             ))}
-          </Grid>
+          </Box>
         </Box>
       </Container>
     </Box>
