@@ -1,16 +1,47 @@
 import { AccountTree as AccountTreeIcon, Analytics as AnalyticsIcon, Assessment as AssessmentIcon, Bolt as BoltIcon, Business as BusinessIcon, CalendarMonth as CalendarMonthIcon, Cloud as CloudIcon, CurrencyExchange as CurrencyExchangeIcon, Dashboard as DashboardIcon, Download as DownloadIcon, Groups as GroupsIcon, Language as LanguageIcon, Menu as MenuIcon, PriceChange as PriceChangeIcon, Public as PublicIcon, QrCode as QrCodeIcon, RateReview as RateReviewIcon, Receipt as ReceiptIcon, ReceiptLong as ReceiptLongIcon, Restaurant as RestaurantIcon, Rocket as RocketIcon, Security as SecurityIcon, Star as StarIcon, Storage as StorageIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/pages/featurespage.scss';
 
 const FeaturesPage = () => {
-  // Scroll to top when component mounts
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const handleCardClick = (featureTitle) => {
+    const routeMap = {
+      'Smart Dashboard': '/features/smart-dashboard',
+      'Multiple Business': '/features/multiple-business',
+      'Multiple Branches': '/features/multiple-branches',
+      'Menu Management': '/features/menu-management',
+      'Multiple Languages': '/features/multiple-languages',
+      'KOT System': '/features/kot-system',
+      'Order Summary & Timeline': '/features/order-summary',
+      'POS System': '/features/pos-system',
+      'QR Code Scanning': '/features/qr-code-scanning',
+      'Business Analytics': '/features/business-analytics',
+      'Customer Reviews': '/features/customer-reviews',
+      'Cloud-Based System': '/features/cloud-based-system',
+      'Separate Database': '/features/multi-tenant-architecture',
+      'Branch-wise Staff Management': '/features/branch-staff-management',
+      'Branch-wise Pricing': '/features/branch-pricing',
+      'Multiple Currency': '/features/multiple-currency',
+      'Branch-wise Tax Management': '/features/branch-tax-management',
+      'Fiscal Year Records': '/features/fiscal-year-records',
+      'Digital Invoice Download': '/features/digital-invoice-download',
+      'Advanced Reports': '/features/advanced-reports'
+    };
+
+    const route = routeMap[featureTitle];
+    if (route) {
+      navigate(route);
+    }
+  };
+
   const detailedFeatures = [
-    // 1. BUSINESS SETUP & MANAGEMENT
     {
       icon: <DashboardIcon sx={{ fontSize: 24 }} />,
       title: 'Smart Dashboard',
@@ -53,8 +84,6 @@ const FeaturesPage = () => {
       description: 'Fully cloud-based platform ensuring secure access from anywhere with automatic updates and backups.',
       color: '#2e7d32'
     },
-
-    // 2. STAFF & OPERATIONS
     {
       icon: <GroupsIcon sx={{ fontSize: 24 }} />,
       title: 'Branch-wise Staff Management',
@@ -62,8 +91,6 @@ const FeaturesPage = () => {
       description: 'Manage staff separately for each branch with localized permissions and scheduling.',
       color: '#4caf50'
     },
-
-    // 3. MENU & PRICING
     {
       icon: <MenuIcon sx={{ fontSize: 24 }} />,
       title: 'Menu Management',
@@ -78,8 +105,6 @@ const FeaturesPage = () => {
       description: 'Set different item prices for each branch based on local market conditions.',
       color: '#4caf50'
     },
-
-    // 4. ORDERING & POS SYSTEMS
     {
       icon: <ReceiptIcon sx={{ fontSize: 24 }} />,
       title: 'POS System',
@@ -108,8 +133,6 @@ const FeaturesPage = () => {
       description: 'Complete order details with status tracking and timeline for better order management.',
       color: '#2e7d32'
     },
-
-    // 5. INTERNATIONAL & LOCALIZATION
     {
       icon: <LanguageIcon sx={{ fontSize: 24 }} />,
       title: 'Multiple Languages',
@@ -124,8 +147,6 @@ const FeaturesPage = () => {
       description: 'Accept payments in multiple currencies for global business operations.',
       color: '#388e3c'
     },
-
-    // 6. FINANCIAL MANAGEMENT
     {
       icon: <ReceiptLongIcon sx={{ fontSize: 24 }} />,
       title: 'Branch-wise Tax Management',
@@ -147,8 +168,6 @@ const FeaturesPage = () => {
       description: 'Users can download digital invoices for future requirements and record keeping.',
       color: '#388e3c'
     },
-
-    // 7. ANALYTICS & REPORTING
     {
       icon: <AnalyticsIcon sx={{ fontSize: 24 }} />,
       title: 'Business Analytics',
@@ -163,8 +182,6 @@ const FeaturesPage = () => {
       description: 'Comprehensive reports and analytics to make the best decisions for your business growth.',
       color: '#2e7d32'
     },
-
-    // 8. CUSTOMER EXPERIENCE
     {
       icon: <RateReviewIcon sx={{ fontSize: 24 }} />,
       title: 'Customer Reviews',
@@ -174,22 +191,16 @@ const FeaturesPage = () => {
     }
   ];
 
-
-
   return (
     <Box className="features-page">
       <Container maxWidth="lg">
-        {/* Enhanced Header Section */}
         <Box className="features-header">
-          {/* Premium Badge */}
           <Box className="premium-badge">
             <Chip
               icon={<StarIcon />}
               label="Premium Features"
             />
           </Box>
-
-          {/* Main Heading */}
           <Typography
             variant="h1"
             component="h1"
@@ -198,8 +209,6 @@ const FeaturesPage = () => {
           >
             Powerful Features
           </Typography>
-
-          {/* Subtitle with Icon */}
           <Box className="subtitle-section">
             <Box className="platform-badge">
               <RocketIcon className="rocket-icon" />
@@ -208,8 +217,6 @@ const FeaturesPage = () => {
               </Typography>
             </Box>
           </Box>
-
-          {/* Description */}
           <Typography
             variant="h5"
             color="text.secondary"
@@ -218,8 +225,6 @@ const FeaturesPage = () => {
           >
             Everything you need to streamline your restaurant operations and boost profitability with our comprehensive management platform
           </Typography>
-
-          {/* Feature Highlights */}
           <Box className="feature-highlights">
             <Chip
               icon={<BoltIcon />}
@@ -246,8 +251,6 @@ const FeaturesPage = () => {
               className="feature-chip"
             />
           </Box>
-
-          {/* CTA Button */}
           <Box className="cta-section">
             <Typography
               variant="h6"
@@ -273,15 +276,21 @@ const FeaturesPage = () => {
             </Typography>
           </Box>
         </Box>
-
-        {/* Detailed Features Grid */}
         <Grid container spacing={{ xs: 2, sm: 2, md: 2 }} className="features-grid">
           {detailedFeatures.map((feature, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
               <Card
                 className="feature-card"
                 style={{ animationDelay: `${index * 0.1}s` }}
-                sx={{ cursor: 'default !important', '&:hover': { cursor: 'default !important' } }}
+                onClick={() => handleCardClick(feature.title)}
+                sx={{
+                  cursor: 'pointer !important',
+                  '&:hover': {
+                    cursor: 'pointer !important',
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)'
+                  }
+                }}
               >
                 <CardContent className="card-content">
                   <Box

@@ -7,12 +7,23 @@ import BlogPage from './pages/BlogPage';
 import FeaturesPage from './pages/FeaturesPage';
 import Home from './pages/Home';
 import Sitemap from './pages/Sitemap';
+import AdvancedReports from './pages/features/AdvancedReports';
+import BranchPricing from './pages/features/BranchPricing';
+import BranchStaffManagement from './pages/features/BranchStaffManagement';
+import BranchTaxManagement from './pages/features/BranchTaxManagement';
 import BusinessAnalytics from './pages/features/BusinessAnalytics';
 import CloudBasedSystem from './pages/features/CloudBasedSystem';
 import CustomerReviews from './pages/features/CustomerReviews';
+import DigitalInvoiceDownload from './pages/features/DigitalInvoiceDownload';
+import FiscalYearRecords from './pages/features/FiscalYearRecords';
+import KOTSystem from './pages/features/KOTSystem';
 import MenuManagement from './pages/features/MenuManagement';
 import MultiTenantArchitecture from './pages/features/MultiTenantArchitecture';
+import MultipleBranches from './pages/features/MultipleBranches';
 import MultipleBusiness from './pages/features/MultipleBusiness';
+import MultipleCurrency from './pages/features/MultipleCurrency';
+import MultipleLanguages from './pages/features/MultipleLanguages';
+import OrderSummary from './pages/features/OrderSummary';
 import POSSystem from './pages/features/POSSystem';
 import QRCodeScanning from './pages/features/QRCodeScanning';
 import SmartDashboard from './pages/features/SmartDashboard';
@@ -88,13 +99,24 @@ function App() {
           {/* Feature Detail Routes */}
           <Route path="/features/smart-dashboard" element={<SmartDashboard />} />
           <Route path="/features/menu-management" element={<MenuManagement />} />
+          <Route path="/features/multiple-languages" element={<MultipleLanguages />} />
+          <Route path="/features/kot-system" element={<KOTSystem />} />
+          <Route path="/features/order-summary" element={<OrderSummary />} />
           <Route path="/features/pos-system" element={<POSSystem />} />
           <Route path="/features/business-analytics" element={<BusinessAnalytics />} />
           <Route path="/features/customer-reviews" element={<CustomerReviews />} />
           <Route path="/features/multiple-business" element={<MultipleBusiness />} />
+          <Route path="/features/multiple-branches" element={<MultipleBranches />} />
           <Route path="/features/qr-code-scanning" element={<QRCodeScanning />} />
           <Route path="/features/cloud-based-system" element={<CloudBasedSystem />} />
           <Route path="/features/multi-tenant-architecture" element={<MultiTenantArchitecture />} />
+          <Route path="/features/branch-staff-management" element={<BranchStaffManagement />} />
+          <Route path="/features/branch-pricing" element={<BranchPricing />} />
+          <Route path="/features/multiple-currency" element={<MultipleCurrency />} />
+          <Route path="/features/branch-tax-management" element={<BranchTaxManagement />} />
+          <Route path="/features/fiscal-year-records" element={<FiscalYearRecords />} />
+          <Route path="/features/digital-invoice-download" element={<DigitalInvoiceDownload />} />
+          <Route path="/features/advanced-reports" element={<AdvancedReports />} />
         </Routes>
 
         {/* Footer */}
