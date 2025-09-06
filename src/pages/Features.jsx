@@ -1,10 +1,14 @@
-import { Analytics as AnalyticsIcon, ArrowForward as ArrowForwardIcon, Bolt as BoltIcon, CurrencyExchange as CurrencyIcon, Dashboard as DashboardIcon, Language as LanguageIcon, Payment as PaymentIcon, People as PeopleIcon, Schedule as ScheduleIcon, Star as StarIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
-import { Box, Button, Card, CardContent, Chip, Container, Typography } from '@mui/material';
-import { useEffect, useRef } from 'react';
+import { Analytics as AnalyticsIcon, ArrowBack as ArrowBackIcon, ArrowForward as ArrowForwardIcon, Bolt as BoltIcon, CurrencyExchange as CurrencyIcon, Dashboard as DashboardIcon, Language as LanguageIcon, Payment as PaymentIcon, People as PeopleIcon, Schedule as ScheduleIcon, Star as StarIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { Box, Button, Card, CardContent, Chip, Container, IconButton, Typography } from '@mui/material';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Features = ({ showHeading = true }) => {
   const scrollContainerRef = useRef(null);
+  const [showArrows, setShowArrows] = useState(false);
+  const [isHoveringArrow, setIsHoveringArrow] = useState(false);
+  const [hoveredArrow, setHoveredArrow] = useState(null); // 'left' or 'right'
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const features = [
     {
@@ -57,47 +61,80 @@ const Features = ({ showHeading = true }) => {
     }
   ];
 
+  // Arrow navigation functions with enhanced animations
+  const scrollLeft = () => {
+    const scrollContainer = scrollContainerRef.current;
+    if (scrollContainer) {
+      const cardWidth = 320 + 24; // card width + gap
+
+      // Add visual feedback
+      scrollContainer.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      scrollContainer.style.transform = 'translateX(-5px)';
+
+      setTimeout(() => {
+        scrollContainer.style.transform = 'translateX(0)';
+      }, 100);
+
+      scrollContainer.scrollBy({
+        left: -cardWidth,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    const scrollContainer = scrollContainerRef.current;
+    if (scrollContainer) {
+      const cardWidth = 320 + 24; // card width + gap
+
+      // Add visual feedback
+      scrollContainer.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      scrollContainer.style.transform = 'translateX(5px)';
+
+      setTimeout(() => {
+        scrollContainer.style.transform = 'translateX(0)';
+      }, 100);
+
+      scrollContainer.scrollBy({
+        left: cardWidth,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
 
-    let scrollInterval;
-    let isScrolling = true;
-    let currentIndex = 0;
-    let isHovering = false;
+    let arrowHoverInterval;
 
+    // Auto-scroll functionality removed - only manual arrow scrolling now
     const startAutoScroll = () => {
-      scrollInterval = setInterval(() => {
-        if (scrollContainer && isScrolling && !isHovering) {
-          currentIndex++;
+      // No automatic scrolling - only manual arrow control
+    };
 
-          if (currentIndex >= features.length) {
-            // Reset to beginning with smooth animation
-            currentIndex = 0;
-            scrollContainer.scrollTo({
-              left: 0,
-              behavior: 'smooth'
-            });
-          } else {
-            // Scroll to next card with smooth animation
-            const scrollPosition = currentIndex * (320 + 24); // card width + gap
-            scrollContainer.scrollTo({
-              left: scrollPosition,
-              behavior: 'smooth'
-            });
-          }
+    // Pause/resume functions removed - no auto-scroll to control
+
+    // Arrow hover functionality
+    const startArrowHoverScroll = (direction) => {
+      if (arrowHoverInterval) clearInterval(arrowHoverInterval);
+
+      arrowHoverInterval = setInterval(() => {
+        if (scrollContainer && isHoveringArrow) {
+          const cardWidth = 320 + 24;
+          scrollContainer.scrollBy({
+            left: direction === 'left' ? -cardWidth : cardWidth,
+            behavior: 'smooth'
+          });
         }
-      }, 3000); // Scroll every 3 seconds for one-by-one card viewing
+      }, 200); // Faster scroll when hovering arrows
     };
 
-    const pauseScroll = () => {
-      isScrolling = false;
-      isHovering = true;
-    };
-
-    const resumeScroll = () => {
-      isScrolling = true;
-      isHovering = false;
+    const stopArrowHoverScroll = () => {
+      if (arrowHoverInterval) {
+        clearInterval(arrowHoverInterval);
+        arrowHoverInterval = null;
+      }
     };
 
     const handleMouseMove = (e) => {
@@ -136,29 +173,58 @@ const Features = ({ showHeading = true }) => {
       });
     };
 
-    // Start auto-scrolling
-    startAutoScroll();
-
-    // Pause on hover and add mouse move tracking
-    scrollContainer.addEventListener('mouseenter', pauseScroll);
-    scrollContainer.addEventListener('mouseleave', resumeScroll);
+    // Only add mouse move tracking and wheel handling
     scrollContainer.addEventListener('mousemove', handleMouseMove);
     scrollContainer.addEventListener('wheel', handleWheel, { passive: false });
 
-    // Pause on touch
-    scrollContainer.addEventListener('touchstart', pauseScroll);
-    scrollContainer.addEventListener('touchend', resumeScroll);
-
     return () => {
-      clearInterval(scrollInterval);
-      scrollContainer.removeEventListener('mouseenter', pauseScroll);
-      scrollContainer.removeEventListener('mouseleave', resumeScroll);
+      clearInterval(arrowHoverInterval);
       scrollContainer.removeEventListener('mousemove', handleMouseMove);
       scrollContainer.removeEventListener('wheel', handleWheel);
-      scrollContainer.removeEventListener('touchstart', pauseScroll);
-      scrollContainer.removeEventListener('touchend', resumeScroll);
     };
   }, [features.length]);
+
+  // Arrow hover scroll effect - only scrolling when hovering over arrows
+  useEffect(() => {
+    let arrowHoverInterval;
+
+    if (isHoveringArrow && hoveredArrow) {
+      const scrollContainer = scrollContainerRef.current;
+      if (scrollContainer) {
+        setIsScrolling(true);
+
+        arrowHoverInterval = setInterval(() => {
+          if (scrollContainer && isHoveringArrow) {
+            const cardWidth = 320 + 24;
+            const scrollDirection = hoveredArrow === 'left' ? -cardWidth : cardWidth;
+
+            // Add subtle animation feedback during continuous scroll
+            const bounceAmount = hoveredArrow === 'left' ? '-3px' : '3px';
+
+            scrollContainer.style.transition = 'transform 0.15s ease-out';
+            scrollContainer.style.transform = `translateX(${bounceAmount})`;
+
+            setTimeout(() => {
+              scrollContainer.style.transform = 'translateX(0)';
+            }, 75);
+
+            scrollContainer.scrollBy({
+              left: scrollDirection,
+              behavior: 'smooth'
+            });
+          }
+        }, 200);
+      }
+    } else {
+      setIsScrolling(false);
+    }
+
+    return () => {
+      if (arrowHoverInterval) {
+        clearInterval(arrowHoverInterval);
+      }
+    };
+  }, [isHoveringArrow, hoveredArrow]);
 
   return (
     <Box
@@ -166,7 +232,29 @@ const Features = ({ showHeading = true }) => {
       sx={{
         backgroundColor: '#f8f9fa',
         padding: { xs: '60px 0', md: '80px 0' },
-        position: 'relative'
+        position: 'relative',
+        '@keyframes pulse': {
+          '0%': {
+            transform: 'translateY(-50%) scale(1.15)',
+            boxShadow: '0 12px 32px rgba(76, 175, 80, 0.4)'
+          },
+          '50%': {
+            transform: 'translateY(-50%) scale(1.25)',
+            boxShadow: '0 16px 40px rgba(76, 175, 80, 0.6)'
+          },
+          '100%': {
+            transform: 'translateY(-50%) scale(1.15)',
+            boxShadow: '0 12px 32px rgba(76, 175, 80, 0.4)'
+          }
+        },
+        '@keyframes bounce': {
+          '0%, 100%': {
+            transform: 'translateY(0)'
+          },
+          '50%': {
+            transform: 'translateY(-3px)'
+          }
+        }
       }}
     >
       <Container maxWidth="lg">
@@ -288,170 +376,286 @@ const Features = ({ showHeading = true }) => {
         )}
 
         <Box
-          ref={scrollContainerRef}
           sx={{
-            display: 'flex',
-            gap: 3,
-            overflowX: 'auto',
-            padding: '20px 0',
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            scrollBehavior: 'smooth',
-            '&::-webkit-scrollbar': {
-              display: 'none'
-            },
-            '& > *': {
-              transition: 'transform 0.3s ease, opacity 0.3s ease'
-            }
+            position: 'relative'
           }}
         >
-          {features.map((feature, index) => (
-            <Box
-              key={index}
-              sx={{
-                flexShrink: 0,
-                minWidth: '320px',
-                marginLeft: index === 0 ? '20px' : '0',
-                marginRight: index === features.length - 1 ? '20px' : '0'
-              }}
-            >
-              <Card
+          {/* Left Arrow */}
+          <IconButton
+            className="scroll-arrows"
+            onClick={scrollLeft}
+            onMouseEnter={() => {
+              setIsHoveringArrow(true);
+              setShowArrows(true);
+              setHoveredArrow('left');
+            }}
+            onMouseLeave={() => {
+              setIsHoveringArrow(false);
+              setShowArrows(false);
+              setHoveredArrow(null);
+            }}
+            sx={{
+              position: 'absolute',
+              left: 10,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              zIndex: 10,
+              backgroundColor: 'rgba(255, 255, 255, 0.7)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(76, 175, 80, 0.2)',
+              width: 48,
+              height: 48,
+              opacity: 0.6,
+              visibility: 'visible',
+              transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+              '&:hover': {
+                backgroundColor: '#4caf50',
+                color: 'white',
+                transform: 'translateY(-50%) scale(1.15) rotate(-5deg)',
+                boxShadow: '0 12px 32px rgba(76, 175, 80, 0.4)',
+                borderColor: '#4caf50',
+                opacity: 1,
+                '& .MuiSvgIcon-root': {
+                  transform: 'scale(1.1)',
+                  transition: 'transform 0.2s ease-out'
+                }
+              },
+              ...(isScrolling && hoveredArrow === 'left' && {
+                animation: 'pulse 0.6s ease-in-out infinite',
+                '& .MuiSvgIcon-root': {
+                  animation: 'bounce 0.5s ease-in-out infinite'
+                }
+              }),
+              '&:active': {
+                transform: 'translateY(-50%) scale(1.05) rotate(-2deg)',
+                boxShadow: '0 6px 20px rgba(76, 175, 80, 0.3)'
+              }
+            }}
+          >
+            <ArrowBackIcon />
+          </IconButton>
+
+          {/* Right Arrow */}
+          <IconButton
+            className="scroll-arrows"
+            onClick={scrollRight}
+            onMouseEnter={() => {
+              setIsHoveringArrow(true);
+              setShowArrows(true);
+              setHoveredArrow('right');
+            }}
+            onMouseLeave={() => {
+              setIsHoveringArrow(false);
+              setShowArrows(false);
+              setHoveredArrow(null);
+            }}
+            sx={{
+              position: 'absolute',
+              right: 10,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              zIndex: 10,
+              backgroundColor: 'rgba(255, 255, 255, 0.7)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(76, 175, 80, 0.2)',
+              width: 48,
+              height: 48,
+              opacity: 0.6,
+              visibility: 'visible',
+              transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+              '&:hover': {
+                backgroundColor: '#4caf50',
+                color: 'white',
+                transform: 'translateY(-50%) scale(1.15) rotate(5deg)',
+                boxShadow: '0 12px 32px rgba(76, 175, 80, 0.4)',
+                borderColor: '#4caf50',
+                opacity: 1,
+                '& .MuiSvgIcon-root': {
+                  transform: 'scale(1.1)',
+                  transition: 'transform 0.2s ease-out'
+                }
+              },
+              ...(isScrolling && hoveredArrow === 'right' && {
+                animation: 'pulse 0.6s ease-in-out infinite',
+                '& .MuiSvgIcon-root': {
+                  animation: 'bounce 0.5s ease-in-out infinite'
+                }
+              }),
+              '&:active': {
+                transform: 'translateY(-50%) scale(1.05) rotate(2deg)',
+                boxShadow: '0 6px 20px rgba(76, 175, 80, 0.3)'
+              }
+            }}
+          >
+            <ArrowForwardIcon />
+          </IconButton>
+
+          <Box
+            ref={scrollContainerRef}
+            sx={{
+              display: 'flex',
+              gap: 3,
+              overflowX: 'auto',
+              padding: '20px 0',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              scrollBehavior: 'smooth',
+              '&::-webkit-scrollbar': {
+                display: 'none'
+              },
+              '& > *': {
+                transition: 'transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease'
+              }
+            }}
+          >
+            {features.map((feature, index) => (
+              <Box
+                key={index}
                 sx={{
-                  background: 'white',
-                  borderRadius: '16px',
-                  width: '320px',
-                  height: '240px',
-                  transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                  border: '1px solid rgba(76, 175, 80, 0.1)',
-                  boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  animation: `fadeInUp 0.8s ease-out ${index * 0.1}s both`,
-                  cursor: 'default',
-                  '&:hover': {
-                    transform: 'translateY(-12px) scale(1.03) rotateY(2deg)',
-                    boxShadow: '0 24px 64px rgba(46, 125, 50, 0.25)',
-                    borderColor: '#4caf50',
-                    '& .feature-icon': {
-                      transform: 'scale(1.2) rotate(8deg)',
-                      boxShadow: '0 16px 40px rgba(76, 175, 80, 0.5)'
-                    },
-                    '& .card-content': {
-                      transform: 'translateY(-4px)'
-                    }
-                  },
-                  '&::before': {
-                    content: '""',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    height: '4px',
-                    background: `linear-gradient(90deg, ${feature.color}, ${feature.color}88)`,
-                    transform: 'scaleX(0)',
-                    transition: 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-                  },
-                  '&:hover::before': {
-                    transform: 'scaleX(1)'
-                  },
-                  '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    width: '100%',
-                    height: '100%',
-                    background: `radial-gradient(circle, ${feature.color}15 0%, transparent 70%)`,
-                    transform: 'translate(-50%, -50%) scale(0)',
-                    transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                    zIndex: 0
-                  },
-                  '&:hover::after': {
-                    transform: 'translate(-50%, -50%) scale(1)'
-                  }
+                  flexShrink: 0,
+                  minWidth: '320px',
+                  marginLeft: index === 0 ? '20px' : '0',
+                  marginRight: index === features.length - 1 ? '20px' : '0'
                 }}
               >
-                <CardContent
-                  className="card-content"
+                <Card
                   sx={{
-                    padding: '24px 20px',
-                    textAlign: 'center',
+                    background: 'white',
+                    borderRadius: '16px',
+                    width: '320px',
+                    height: '240px',
+                    transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                    border: '1px solid rgba(76, 175, 80, 0.1)',
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
                     position: 'relative',
-                    zIndex: 1,
-                    transition: 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                    overflow: 'hidden',
+                    animation: `fadeInUp 0.8s ease-out ${index * 0.1}s both`,
+                    cursor: 'default',
+                    '&:hover': {
+                      transform: 'translateY(-12px) scale(1.03) rotateY(2deg)',
+                      boxShadow: '0 24px 64px rgba(46, 125, 50, 0.25)',
+                      borderColor: '#4caf50',
+                      '& .feature-icon': {
+                        transform: 'scale(1.2) rotate(8deg)',
+                        boxShadow: '0 16px 40px rgba(76, 175, 80, 0.5)'
+                      },
+                      '& .card-content': {
+                        transform: 'translateY(-4px)'
+                      }
+                    },
+                    '&::before': {
+                      content: '""',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: '4px',
+                      background: `linear-gradient(90deg, ${feature.color}, ${feature.color}88)`,
+                      transform: 'scaleX(0)',
+                      transition: 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                    },
+                    '&:hover::before': {
+                      transform: 'scaleX(1)'
+                    },
+                    '&::after': {
+                      content: '""',
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      width: '100%',
+                      height: '100%',
+                      background: `radial-gradient(circle, ${feature.color}15 0%, transparent 70%)`,
+                      transform: 'translate(-50%, -50%) scale(0)',
+                      transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                      zIndex: 0
+                    },
+                    '&:hover::after': {
+                      transform: 'translate(-50%, -50%) scale(1)'
+                    }
                   }}
                 >
-                  <Box
-                    className="feature-icon"
+                  <CardContent
+                    className="card-content"
                     sx={{
-                      width: '60px',
-                      height: '60px',
-                      background: `linear-gradient(135deg, ${feature.color}, ${feature.color}dd)`,
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      margin: '0 auto 16px',
-                      color: 'white',
-                      transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                      padding: '24px 20px',
+                      textAlign: 'center',
                       position: 'relative',
-                      animation: `float 3s ease-in-out infinite ${index * 0.2}s`,
-                      '&::after': {
-                        content: '""',
-                        position: 'absolute',
-                        top: '-4px',
-                        left: '-4px',
-                        right: '-4px',
-                        bottom: '-4px',
-                        background: `linear-gradient(135deg, ${feature.color}, ${feature.color}88)`,
+                      zIndex: 1,
+                      transition: 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                    }}
+                  >
+                    <Box
+                      className="feature-icon"
+                      sx={{
+                        width: '60px',
+                        height: '60px',
+                        background: `linear-gradient(135deg, ${feature.color}, ${feature.color}dd)`,
                         borderRadius: '50%',
-                        zIndex: -1,
-                        opacity: 0,
-                        transition: 'opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                        filter: 'blur(2px)'
-                      },
-                      '&:hover::after': {
-                        opacity: 1,
-                        transform: 'scale(1.1)'
-                      }
-                    }}
-                  >
-                    {feature.icon}
-                  </Box>
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        margin: '0 auto 16px',
+                        color: 'white',
+                        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                        position: 'relative',
+                        animation: `float 3s ease-in-out infinite ${index * 0.2}s`,
+                        '&::after': {
+                          content: '""',
+                          position: 'absolute',
+                          top: '-4px',
+                          left: '-4px',
+                          right: '-4px',
+                          bottom: '-4px',
+                          background: `linear-gradient(135deg, ${feature.color}, ${feature.color}88)`,
+                          borderRadius: '50%',
+                          zIndex: -1,
+                          opacity: 0,
+                          transition: 'opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                          filter: 'blur(2px)'
+                        },
+                        '&:hover::after': {
+                          opacity: 1,
+                          transform: 'scale(1.1)'
+                        }
+                      }}
+                    >
+                      {feature.icon}
+                    </Box>
 
-                  <Typography
-                    variant="h6"
-                    component="h3"
-                    sx={{
-                      color: '#1a1a1a',
-                      fontWeight: 600,
-                      marginBottom: '12px',
-                      fontSize: '1.1rem'
-                    }}
-                  >
-                    {feature.title}
-                  </Typography>
+                    <Typography
+                      variant="h6"
+                      component="h3"
+                      sx={{
+                        color: '#1a1a1a',
+                        fontWeight: 600,
+                        marginBottom: '12px',
+                        fontSize: '1.1rem'
+                      }}
+                    >
+                      {feature.title}
+                    </Typography>
 
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: '#666666',
-                      lineHeight: 1.6,
-                      fontSize: '0.9rem',
-                      height: '50px',
-                      overflow: 'hidden',
-                      display: '-webkit-box',
-                      WebkitLineClamp: 2,
-                      WebkitBoxOrient: 'vertical',
-                      textOverflow: 'ellipsis'
-                    }}
-                  >
-                    {feature.description}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Box>
-          ))}
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: '#666666',
+                        lineHeight: 1.6,
+                        fontSize: '0.9rem',
+                        height: '50px',
+                        overflow: 'hidden',
+                        display: '-webkit-box',
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical',
+                        textOverflow: 'ellipsis'
+                      }}
+                    >
+                      {feature.description}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Box>
+            ))}
+          </Box>
         </Box>
 
         {/* Action Button */}
