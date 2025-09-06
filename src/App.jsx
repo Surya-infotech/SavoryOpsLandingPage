@@ -1,26 +1,22 @@
 import { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom';
-import './styles/main.scss';
-
-// Import Components
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import ScrollToTopButton from './components/ScrollToTop';
-
-// Import Pages
 import BlogPage from './pages/BlogPage';
 import FeaturesPage from './pages/FeaturesPage';
 import Home from './pages/Home';
 import Sitemap from './pages/Sitemap';
-
-// Import Feature Detail Pages
 import BusinessAnalytics from './pages/features/BusinessAnalytics';
+import CloudBasedSystem from './pages/features/CloudBasedSystem';
 import CustomerReviews from './pages/features/CustomerReviews';
 import MenuManagement from './pages/features/MenuManagement';
+import MultiTenantArchitecture from './pages/features/MultiTenantArchitecture';
 import MultipleBusiness from './pages/features/MultipleBusiness';
 import POSSystem from './pages/features/POSSystem';
 import QRCodeScanning from './pages/features/QRCodeScanning';
 import SmartDashboard from './pages/features/SmartDashboard';
+import './styles/main.scss';
 
 // Component to scroll to top on route change
 const ScrollToTop = () => {
@@ -97,6 +93,8 @@ function App() {
           <Route path="/features/customer-reviews" element={<CustomerReviews />} />
           <Route path="/features/multiple-business" element={<MultipleBusiness />} />
           <Route path="/features/qr-code-scanning" element={<QRCodeScanning />} />
+          <Route path="/features/cloud-based-system" element={<CloudBasedSystem />} />
+          <Route path="/features/multi-tenant-architecture" element={<MultiTenantArchitecture />} />
         </Routes>
 
         {/* Footer */}

@@ -1,195 +1,148 @@
-import { Analytics as AnalyticsIcon, TrendingUp as TrendingUpIcon, Assessment as AssessmentIcon, BarChart as BarChartIcon, PieChart as PieChartIcon, Timeline as TimelineIcon, ArrowBack as ArrowBackIcon } from '@mui/icons-material';
-import { Box, Button, Card, CardContent, Container, Grid, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Analytics as AnalyticsIcon, TrendingUp as TrendingUpIcon, Assessment as AssessmentIcon, BarChart as BarChartIcon, PieChart as PieChartIcon, Timeline as TimelineIcon } from '@mui/icons-material';
+import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import '../../styles/pages/featureDetail.scss';
+import CTA from '../../components/CTA';
+import '../../styles/pages/businessanalytics.scss';
 
 const BusinessAnalytics = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const features = [
-    'Comprehensive data analysis',
-    'Real-time reporting',
-    'Custom dashboard creation',
-    'Performance metrics tracking',
-    'Trend analysis and forecasting',
-    'Export and sharing capabilities'
-  ];
-
-  const capabilities = [
-    { title: 'Sales Analytics', description: 'Track sales performance, trends, and patterns with detailed insights', icon: <TrendingUpIcon /> },
-    { title: 'Customer Insights', description: 'Understand customer behavior and preferences for better decision making', icon: <BarChartIcon /> },
-    { title: 'Performance Metrics', description: 'Monitor key performance indicators and business metrics', icon: <AssessmentIcon /> },
-    { title: 'Financial Reports', description: 'Generate comprehensive financial reports and statements', icon: <PieChartIcon /> },
-    { title: 'Trend Analysis', description: 'Identify trends and patterns for strategic planning', icon: <TimelineIcon /> },
-    { title: 'Custom Dashboards', description: 'Create personalized dashboards for different user roles', icon: <AnalyticsIcon /> }
+  const benefits = [
+    {
+      title: 'Sales Analytics',
+      description: 'Track performance with precision',
+      content: 'Monitor sales trends, patterns, and performance metrics with detailed insights and real-time data visualization.',
+      icon: <TrendingUpIcon />,
+      color: '#4CAF50',
+      image: '/sales-analytics.png'
+    },
+    {
+      title: 'Customer Insights',
+      description: 'Understand your customers better',
+      content: 'Analyze customer behavior, preferences, and purchasing patterns to make data-driven business decisions.',
+      icon: <BarChartIcon />,
+      color: '#2196F3',
+      image: '/customer-insights.png'
+    },
+    {
+      title: 'Performance Metrics',
+      description: 'Monitor key indicators',
+      content: 'Track essential business metrics and KPIs with automated reporting and performance monitoring tools.',
+      icon: <AssessmentIcon />,
+      color: '#FF9800',
+      image: '/performance-metrics.png'
+    },
+    {
+      title: 'Financial Reports',
+      description: 'Comprehensive financial analysis',
+      content: 'Generate detailed financial reports, profit analysis, and revenue tracking with automated calculations.',
+      icon: <PieChartIcon />,
+      color: '#9C27B0',
+      image: '/financial-reports.png'
+    },
+    {
+      title: 'Trend Analysis',
+      description: 'Predict future performance',
+      content: 'Identify business trends and patterns with advanced forecasting and predictive analytics capabilities.',
+      icon: <TimelineIcon />,
+      color: '#F44336',
+      image: '/trend-analysis.png'
+    },
+    {
+      title: 'Custom Dashboards',
+      description: 'Personalized analytics views',
+      content: 'Create tailored dashboards for different user roles with customizable widgets and real-time updates.',
+      icon: <AnalyticsIcon />,
+      color: '#00BCD4',
+      image: '/custom-dashboards.png'
+    }
   ];
 
   return (
-    <Box className="feature-detail-page">
-      <Container maxWidth="lg">
+    <Box className="business-analytics-page">
+      <Container maxWidth="xl">
         {/* Header Section */}
         <Box className="feature-header">
-          <Button
-            component={Link}
-            to="/features"
-            startIcon={<ArrowBackIcon />}
-            variant="outlined"
-            className="back-button"
-          >
-            Back to Features
-          </Button>
-
-          <Box className="feature-hero">
-            <Box className="feature-icon-large">
-              <AnalyticsIcon sx={{ fontSize: 48 }} />
+          <Box className="header-row">
+            {/* Left Side - Content */}
+            <Box className="feature-hero">
+              <Typography variant="h1" component="h1" className="feature-title">
+                Business Analytics
+              </Typography>
+              <Typography variant="h4" color="text.secondary" className="feature-subtitle">
+                Data-Driven Decisions
+              </Typography>
+              <Typography variant="body1" className="feature-description">
+                Make informed decisions with comprehensive business analytics and reporting.
+                Our advanced analytics platform provides deep insights into your restaurant's
+                performance, customer behavior, and financial metrics to drive growth and profitability.
+              </Typography>
+              <Box className="cta-button-container">
+                <Typography variant="h6" className="coming-soon-text">
+                  Coming Soon
+                </Typography>
+              </Box>
             </Box>
-            <Typography variant="h1" component="h1" className="feature-title">
-              Business Analytics
-            </Typography>
-            <Typography variant="h4" color="text.secondary" className="feature-subtitle">
-              Data-Driven Decisions
-            </Typography>
-            <Typography variant="body1" className="feature-description">
-              Make informed decisions with comprehensive business analytics and reporting. 
-              Our advanced analytics platform provides deep insights into your restaurant's 
-              performance, customer behavior, and financial metrics to drive growth and profitability.
-            </Typography>
+
+            {/* Right Side - Analytics Image */}
+            <Box className="analytics-image-container">
+              <Box className="analytics-image">
+                <img
+                  src="/business-analytics.png"
+                  alt="Business Analytics Interface"
+                  className="analytics-preview-image"
+                />
+              </Box>
+            </Box>
           </Box>
         </Box>
 
-        {/* Key Features */}
+        {/* Key Benefits */}
         <Box className="benefits-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Key Features
-          </Typography>
-          <Grid container spacing={3}>
-            {features.map((feature, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card className="benefit-card">
-                  <CardContent>
-                    <Typography variant="h6" component="h3">
-                      {feature}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Capabilities */}
-        <Box className="capabilities-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Analytics Capabilities
-          </Typography>
-          <Grid container spacing={4}>
-            {capabilities.map((capability, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card className="capability-card">
-                  <CardContent>
-                    <Box className="capability-icon">
-                      {capability.icon}
+          <Box className="benefits-header">
+            <Typography variant="h3" component="h2" className="section-title">
+              Why Choose Our Business Analytics?
+            </Typography>
+            <Typography variant="body1" color="text.secondary" className="benefits-description">
+              Experience the future of restaurant analytics with intelligent insights, real-time reporting, and predictive analytics that drive business growth
+            </Typography>
+          </Box>
+          <Box className="benefits-grid">
+            {benefits.map((benefit, index) => (
+              <Box key={index} className="benefit-item" style={{ '--benefit-color': benefit.color }}>
+                <Box className="benefit-image-container">
+                  <img
+                    src={benefit.image}
+                    alt={benefit.title}
+                    className="benefit-analytics-image"
+                  />
+                </Box>
+                <Box className="benefit-text-content">
+                  <Box className="benefit-title-container">
+                    <Box className="benefit-icon" style={{ color: benefit.color }}>
+                      {benefit.icon}
                     </Box>
-                    <Typography variant="h5" component="h3" gutterBottom>
-                      {capability.title}
+                    <Typography variant="h6" className="benefit-title">
+                      {benefit.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {capability.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
+                  </Box>
+                  <Typography variant="body2" className="benefit-description">
+                    {benefit.description}
+                  </Typography>
+                  <Typography variant="body2" className="benefit-content">
+                    {benefit.content}
+                  </Typography>
+                </Box>
+              </Box>
             ))}
-          </Grid>
-        </Box>
-
-        {/* Detailed Features */}
-        <Box className="features-list-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Advanced Analytics Features
-          </Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Card className="feature-list-card">
-                <CardContent>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    Reporting & Insights
-                  </Typography>
-                  <List>
-                    <ListItem>
-                      <ListItemIcon>
-                        <AssessmentIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Automated report generation" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <TrendingUpIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Real-time performance monitoring" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <BarChartIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Interactive data visualization" />
-                    </ListItem>
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Card className="feature-list-card">
-                <CardContent>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    Data Management
-                  </Typography>
-                  <List>
-                    <ListItem>
-                      <ListItemIcon>
-                        <PieChartIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Multi-dimensional data analysis" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <TimelineIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Historical data tracking" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <AnalyticsIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Predictive analytics and forecasting" />
-                    </ListItem>
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </Box>
-
-        {/* CTA Section */}
-        <Box className="cta-section">
-          <Typography variant="h4" component="h2" gutterBottom>
-            Transform Your Business with Data
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Leverage the power of analytics to make smarter business decisions and drive growth.
-          </Typography>
-          <Button
-            component={Link}
-            to="/contact"
-            variant="contained"
-            size="large"
-            className="cta-button"
-          >
-            Get Started Today
-          </Button>
+          </Box>
+          <CTA
+            title="Ready to Transform Your Business with Data?"
+            description="Experience the power of advanced analytics with our comprehensive business intelligence platform."
+            variant="default"
+          />
         </Box>
       </Container>
     </Box>

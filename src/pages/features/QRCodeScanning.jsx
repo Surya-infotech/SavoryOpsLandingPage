@@ -1,195 +1,148 @@
-import { QrCode as QrCodeIcon, Smartphone as SmartphoneIcon, Speed as SpeedIcon, Restaurant as RestaurantIcon, Timeline as TimelineIcon, Security as SecurityIcon, ArrowBack as ArrowBackIcon } from '@mui/icons-material';
-import { Box, Button, Card, CardContent, Container, Grid, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { QrCode as QrCodeIcon, Restaurant as RestaurantIcon, Security as SecurityIcon, Smartphone as SmartphoneIcon, Speed as SpeedIcon, Timeline as TimelineIcon } from '@mui/icons-material';
+import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import '../../styles/pages/featureDetail.scss';
+import CTA from '../../components/CTA';
+import '../../styles/pages/qrcodescanning.scss';
 
 const QRCodeScanning = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const features = [
-    'Instant order placement',
-    'Seamless customer experience',
-    'Real-time order tracking',
-    'Mobile-friendly interface',
-    'Secure transaction processing',
-    'Integration with POS system'
-  ];
-
-  const capabilities = [
-    { title: 'QR Code Generation', description: 'Generate unique QR codes for each table and menu section', icon: <QrCodeIcon /> },
-    { title: 'Mobile Scanning', description: 'Customers can scan QR codes with their smartphones for instant access', icon: <SmartphoneIcon /> },
-    { title: 'Fast Ordering', description: 'Streamlined ordering process with instant menu access and order placement', icon: <SpeedIcon /> },
-    { title: 'Kitchen Integration', description: 'Seamless integration with kitchen order ticket system for efficient food preparation', icon: <RestaurantIcon /> },
-    { title: 'Order Tracking', description: 'Real-time order status tracking from placement to delivery', icon: <TimelineIcon /> },
-    { title: 'Secure Transactions', description: 'Secure payment processing and data protection for all transactions', icon: <SecurityIcon /> }
+  const benefits = [
+    {
+      title: 'QR Code Generation',
+      description: 'Smart code creation',
+      content: 'Generate unique QR codes for each table and menu section with automatic updates and customization.',
+      icon: <QrCodeIcon />,
+      color: '#4CAF50',
+      image: '/qr-code-generation.png'
+    },
+    {
+      title: 'Mobile Scanning',
+      description: 'Instant smartphone access',
+      content: 'Customers can scan QR codes with their smartphones for instant access to menus and ordering.',
+      icon: <SmartphoneIcon />,
+      color: '#2196F3',
+      image: '/mobile-scanning.png'
+    },
+    {
+      title: 'Fast Ordering',
+      description: 'Streamlined process',
+      content: 'Streamlined ordering process with instant menu access and order placement for maximum efficiency.',
+      icon: <SpeedIcon />,
+      color: '#FF9800',
+      image: '/fast-ordering.png'
+    },
+    {
+      title: 'Kitchen Integration',
+      description: 'Seamless workflow',
+      content: 'Seamless integration with kitchen order ticket system for efficient food preparation and delivery.',
+      icon: <RestaurantIcon />,
+      color: '#9C27B0',
+      image: '/kitchen-integration.png'
+    },
+    {
+      title: 'Order Tracking',
+      description: 'Real-time monitoring',
+      content: 'Real-time order status tracking from placement to delivery with comprehensive monitoring.',
+      icon: <TimelineIcon />,
+      color: '#F44336',
+      image: '/order-tracking.png'
+    },
+    {
+      title: 'Secure Transactions',
+      description: 'Protected payments',
+      content: 'Secure payment processing and data protection for all transactions with advanced encryption.',
+      icon: <SecurityIcon />,
+      color: '#00BCD4',
+      image: '/secure-transactions.png'
+    }
   ];
 
   return (
-    <Box className="feature-detail-page">
-      <Container maxWidth="lg">
+    <Box className="qr-code-scanning-page">
+      <Container maxWidth="xl">
         {/* Header Section */}
         <Box className="feature-header">
-          <Button
-            component={Link}
-            to="/features"
-            startIcon={<ArrowBackIcon />}
-            variant="outlined"
-            className="back-button"
-          >
-            Back to Features
-          </Button>
-
-          <Box className="feature-hero">
-            <Box className="feature-icon-large">
-              <QrCodeIcon sx={{ fontSize: 48 }} />
+          <Box className="header-row">
+            {/* Left Side - Content */}
+            <Box className="feature-hero">
+              <Typography variant="h1" component="h1" className="feature-title">
+                QR Code Scanning
+              </Typography>
+              <Typography variant="h4" color="text.secondary" className="feature-subtitle">
+                Smart Order Processing
+              </Typography>
+              <Typography variant="body1" className="feature-description">
+                Scan QR codes for instant order placement and seamless customer experience.
+                Our QR code system revolutionizes the dining experience by allowing customers
+                to access menus, place orders, and track their food preparation in real-time.
+              </Typography>
+              <Box className="cta-button-container">
+                <Typography variant="h6" className="coming-soon-text">
+                  Coming Soon
+                </Typography>
+              </Box>
             </Box>
-            <Typography variant="h1" component="h1" className="feature-title">
-              QR Code Scanning
-            </Typography>
-            <Typography variant="h4" color="text.secondary" className="feature-subtitle">
-              Smart Order Processing
-            </Typography>
-            <Typography variant="body1" className="feature-description">
-              Scan QR codes for instant order placement and seamless customer experience. 
-              Our QR code system revolutionizes the dining experience by allowing customers 
-              to access menus, place orders, and track their food preparation in real-time.
-            </Typography>
+
+            {/* Right Side - QR Image */}
+            <Box className="qr-image-container">
+              <Box className="qr-image">
+                <img
+                  src="/qr-code-scanning.png"
+                  alt="QR Code Scanning Interface"
+                  className="qr-preview-image"
+                />
+              </Box>
+            </Box>
           </Box>
         </Box>
 
-        {/* Key Features */}
+        {/* Key Benefits */}
         <Box className="benefits-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Key Features
-          </Typography>
-          <Grid container spacing={3}>
-            {features.map((feature, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card className="benefit-card">
-                  <CardContent>
-                    <Typography variant="h6" component="h3">
-                      {feature}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Capabilities */}
-        <Box className="capabilities-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            QR Code Capabilities
-          </Typography>
-          <Grid container spacing={4}>
-            {capabilities.map((capability, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card className="capability-card">
-                  <CardContent>
-                    <Box className="capability-icon">
-                      {capability.icon}
+          <Box className="benefits-header">
+            <Typography variant="h3" component="h2" className="section-title">
+              Why Choose Our QR Code Scanning?
+            </Typography>
+            <Typography variant="body1" color="text.secondary" className="benefits-description">
+              Experience the future of restaurant ordering with instant QR code access, seamless mobile integration, and real-time tracking that revolutionizes the dining experience
+            </Typography>
+          </Box>
+          <Box className="benefits-grid">
+            {benefits.map((benefit, index) => (
+              <Box key={index} className="benefit-item" style={{ '--benefit-color': benefit.color }}>
+                <Box className="benefit-image-container">
+                  <img
+                    src={benefit.image}
+                    alt={benefit.title}
+                    className="benefit-qr-image"
+                  />
+                </Box>
+                <Box className="benefit-text-content">
+                  <Box className="benefit-title-container">
+                    <Box className="benefit-icon" style={{ color: benefit.color }}>
+                      {benefit.icon}
                     </Box>
-                    <Typography variant="h5" component="h3" gutterBottom>
-                      {capability.title}
+                    <Typography variant="h6" className="benefit-title">
+                      {benefit.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {capability.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
+                  </Box>
+                  <Typography variant="body2" className="benefit-description">
+                    {benefit.description}
+                  </Typography>
+                  <Typography variant="body2" className="benefit-content">
+                    {benefit.content}
+                  </Typography>
+                </Box>
+              </Box>
             ))}
-          </Grid>
-        </Box>
-
-        {/* Detailed Features */}
-        <Box className="features-list-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Advanced QR Code Features
-          </Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Card className="feature-list-card">
-                <CardContent>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    Customer Experience
-                  </Typography>
-                  <List>
-                    <ListItem>
-                      <ListItemIcon>
-                        <QrCodeIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Instant menu access via QR codes" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <SmartphoneIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Mobile-optimized ordering interface" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <SpeedIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Fast and efficient order placement" />
-                    </ListItem>
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Card className="feature-list-card">
-                <CardContent>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    Restaurant Operations
-                  </Typography>
-                  <List>
-                    <ListItem>
-                      <ListItemIcon>
-                        <RestaurantIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Seamless kitchen order integration" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <TimelineIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Real-time order status updates" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <SecurityIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Secure payment processing" />
-                    </ListItem>
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </Box>
-
-        {/* CTA Section */}
-        <Box className="cta-section">
-          <Typography variant="h4" component="h2" gutterBottom>
-            Modernize Your Ordering System
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Transform your restaurant with our innovative QR code ordering system for enhanced customer experience.
-          </Typography>
-          <Button
-            component={Link}
-            to="/contact"
-            variant="contained"
-            size="large"
-            className="cta-button"
-          >
-            Get Started Today
-          </Button>
+          </Box>
+          <CTA
+            title="Ready to Modernize Your Ordering System?"
+            description="Experience the power of QR code technology with our innovative restaurant ordering platform."
+            variant="default"
+          />
         </Box>
       </Container>
     </Box>

@@ -1,195 +1,148 @@
-import { Menu as MenuIcon, Edit as EditIcon, PriceChange as PriceChangeIcon, Category as CategoryIcon, Image as ImageIcon, Schedule as ScheduleIcon, ArrowBack as ArrowBackIcon } from '@mui/icons-material';
-import { Box, Button, Card, CardContent, Container, Grid, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Category as CategoryIcon, Edit as EditIcon, Image as ImageIcon, Menu as MenuIcon, PriceChange as PriceChangeIcon, Schedule as ScheduleIcon } from '@mui/icons-material';
+import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import '../../styles/pages/featureDetail.scss';
+import CTA from '../../components/CTA';
+import '../../styles/pages/menumangement.scss';
 
 const MenuManagement = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const features = [
-    'Real-time menu updates',
-    'Category management',
-    'Image upload and management',
-    'Pricing control',
-    'Availability scheduling',
-    'Multi-language support'
-  ];
-
-  const capabilities = [
-    { title: 'Menu Editor', description: 'Easy-to-use interface for creating and editing menu items', icon: <EditIcon /> },
-    { title: 'Category Management', description: 'Organize items into categories for better customer experience', icon: <CategoryIcon /> },
-    { title: 'Image Management', description: 'Upload and manage high-quality food images', icon: <ImageIcon /> },
-    { title: 'Pricing Control', description: 'Set and update prices with real-time synchronization', icon: <PriceChangeIcon /> },
-    { title: 'Availability Control', description: 'Schedule item availability based on time and day', icon: <ScheduleIcon /> },
-    { title: 'Multi-language', description: 'Support for multiple languages in menu descriptions', icon: <MenuIcon /> }
+  const benefits = [
+    {
+      title: 'Real-time Updates',
+      description: 'Instant menu synchronization',
+      content: 'Update your menu items, prices, and availability in real-time across all platforms and devices.',
+      icon: <EditIcon />,
+      color: '#4CAF50',
+      image: '/real-time-updates.png'
+    },
+    {
+      title: 'Smart Organization',
+      description: 'Intelligent menu structure',
+      content: 'Organize your menu with custom categories, subcategories, and drag-and-drop item management.',
+      icon: <CategoryIcon />,
+      color: '#2196F3',
+      image: '/smart-organization.png'
+    },
+    {
+      title: 'Visual Management',
+      description: 'Stunning food photography',
+      content: 'Upload and manage high-quality images with automatic optimization and responsive display.',
+      icon: <ImageIcon />,
+      color: '#FF9800',
+      image: '/visual-management.png'
+    },
+    {
+      title: 'Dynamic Pricing',
+      description: 'Flexible price control',
+      content: 'Set different prices for different times, seasons, or special events with automated updates.',
+      icon: <PriceChangeIcon />,
+      color: '#9C27B0',
+      image: '/dynamic-pricing.png'
+    },
+    {
+      title: 'Availability Control',
+      description: 'Smart scheduling system',
+      content: 'Schedule item availability based on time, day, season, or inventory levels automatically.',
+      icon: <ScheduleIcon />,
+      color: '#F44336',
+      image: '/availability-control.png'
+    },
+    {
+      title: 'Multi-language Support',
+      description: 'Global restaurant reach',
+      content: 'Support multiple languages in menu descriptions to serve diverse customer bases effectively.',
+      icon: <MenuIcon />,
+      color: '#00BCD4',
+      image: '/multi-language-support.png'
+    }
   ];
 
   return (
-    <Box className="feature-detail-page">
-      <Container maxWidth="lg">
+    <Box className="menu-management-page">
+      <Container maxWidth="xl">
         {/* Header Section */}
         <Box className="feature-header">
-          <Button
-            component={Link}
-            to="/features"
-            startIcon={<ArrowBackIcon />}
-            variant="outlined"
-            className="back-button"
-          >
-            Back to Features
-          </Button>
-
-          <Box className="feature-hero">
-            <Box className="feature-icon-large">
-              <MenuIcon sx={{ fontSize: 48 }} />
+          <Box className="header-row">
+            {/* Left Side - Content */}
+            <Box className="feature-hero">
+              <Typography variant="h1" component="h1" className="feature-title">
+                Menu Management
+              </Typography>
+              <Typography variant="h4" color="text.secondary" className="feature-subtitle">
+                Dynamic Menu Control
+              </Typography>
+              <Typography variant="body1" className="feature-description">
+                Update menus instantly and manage pricing with real-time control. Our comprehensive
+                menu management system allows you to create, edit, and organize your menu items
+                with ease, ensuring your customers always see the most current offerings.
+              </Typography>
+              <Box className="cta-button-container">
+                <Typography variant="h6" className="coming-soon-text">
+                  Coming Soon
+                </Typography>
+              </Box>
             </Box>
-            <Typography variant="h1" component="h1" className="feature-title">
-              Menu Management
-            </Typography>
-            <Typography variant="h4" color="text.secondary" className="feature-subtitle">
-              Dynamic Menu Control
-            </Typography>
-            <Typography variant="body1" className="feature-description">
-              Update menus instantly and manage pricing with real-time control. Our comprehensive 
-              menu management system allows you to create, edit, and organize your menu items 
-              with ease, ensuring your customers always see the most current offerings.
-            </Typography>
+
+            {/* Right Side - Menu Image */}
+            <Box className="menu-image-container">
+              <Box className="menu-image">
+                <img
+                  src="/menu-management.png"
+                  alt="Menu Management Interface"
+                  className="menu-preview-image"
+                />
+              </Box>
+            </Box>
           </Box>
         </Box>
 
-        {/* Key Features */}
+        {/* Key Benefits */}
         <Box className="benefits-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Key Features
-          </Typography>
-          <Grid container spacing={3}>
-            {features.map((feature, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card className="benefit-card">
-                  <CardContent>
-                    <Typography variant="h6" component="h3">
-                      {feature}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Capabilities */}
-        <Box className="capabilities-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Menu Management Capabilities
-          </Typography>
-          <Grid container spacing={4}>
-            {capabilities.map((capability, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card className="capability-card">
-                  <CardContent>
-                    <Box className="capability-icon">
-                      {capability.icon}
+          <Box className="benefits-header">
+            <Typography variant="h3" component="h2" className="section-title">
+              Why Choose Our Menu Management?
+            </Typography>
+            <Typography variant="body1" color="text.secondary" className="benefits-description">
+              Experience the future of restaurant menu management with intelligent organization, real-time updates, and intuitive controls that streamline your operations
+            </Typography>
+          </Box>
+          <Box className="benefits-grid">
+            {benefits.map((benefit, index) => (
+              <Box key={index} className="benefit-item" style={{ '--benefit-color': benefit.color }}>
+                <Box className="benefit-image-container">
+                  <img
+                    src={benefit.image}
+                    alt={benefit.title}
+                    className="benefit-menu-image"
+                  />
+                </Box>
+                <Box className="benefit-text-content">
+                  <Box className="benefit-title-container">
+                    <Box className="benefit-icon" style={{ color: benefit.color }}>
+                      {benefit.icon}
                     </Box>
-                    <Typography variant="h5" component="h3" gutterBottom>
-                      {capability.title}
+                    <Typography variant="h6" className="benefit-title">
+                      {benefit.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {capability.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
+                  </Box>
+                  <Typography variant="body2" className="benefit-description">
+                    {benefit.description}
+                  </Typography>
+                  <Typography variant="body2" className="benefit-content">
+                    {benefit.content}
+                  </Typography>
+                </Box>
+              </Box>
             ))}
-          </Grid>
-        </Box>
-
-        {/* Detailed Features */}
-        <Box className="features-list-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Advanced Features
-          </Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Card className="feature-list-card">
-                <CardContent>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    Menu Organization
-                  </Typography>
-                  <List>
-                    <ListItem>
-                      <ListItemIcon>
-                        <CategoryIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Create custom categories and subcategories" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <EditIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Drag-and-drop item reordering" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <ImageIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Bulk image upload and management" />
-                    </ListItem>
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Card className="feature-list-card">
-                <CardContent>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    Pricing & Availability
-                  </Typography>
-                  <List>
-                    <ListItem>
-                      <ListItemIcon>
-                        <PriceChangeIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Dynamic pricing with real-time updates" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <ScheduleIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Time-based availability scheduling" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <MenuIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Seasonal menu management" />
-                    </ListItem>
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </Box>
-
-        {/* CTA Section */}
-        <Box className="cta-section">
-          <Typography variant="h4" component="h2" gutterBottom>
-            Streamline Your Menu Management
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Take control of your menu with our powerful management system designed for modern restaurants.
-          </Typography>
-          <Button
-            component={Link}
-            to="/contact"
-            variant="contained"
-            size="large"
-            className="cta-button"
-          >
-            Get Started Today
-          </Button>
+          </Box>
+          <CTA
+            title="Ready to Transform Your Menu Management?"
+            description="Experience the power of intelligent menu control with our advanced management system."
+            variant="default"
+          />
         </Box>
       </Container>
     </Box>

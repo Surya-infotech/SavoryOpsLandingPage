@@ -1,4 +1,4 @@
-import { Apps as AppsIcon, Article as ArticleIcon, Assessment as AssessmentIcon, Business as BusinessIcon, Dashboard as DashboardIcon, Home as HomeIcon, MenuBook as MenuBookIcon, People as PeopleIcon, PointOfSale as PointOfSaleIcon, QrCode as QrCodeIcon } from '@mui/icons-material';
+import { Apps as AppsIcon, Article as ArticleIcon, Assessment as AssessmentIcon, Business as BusinessIcon, Cloud as CloudIcon, Dashboard as DashboardIcon, Home as HomeIcon, MenuBook as MenuBookIcon, People as PeopleIcon, PointOfSale as PointOfSaleIcon, QrCode as QrCodeIcon } from '@mui/icons-material';
 import { Box, Card, CardContent, Container, Divider, Grid, Link, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import '../styles/pages/sitemap.scss';
@@ -56,7 +56,7 @@ const Sitemap = () => {
     {
       name: 'Cloud Based System',
       path: '/features/cloud-based-system',
-      icon: <AppsIcon />,
+      icon: <CloudIcon />,
       description: 'Secure cloud infrastructure for reliable access and scalability'
     },
     {

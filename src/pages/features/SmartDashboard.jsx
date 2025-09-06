@@ -15,42 +15,48 @@ const SmartDashboard = () => {
       description: 'Live insights at your fingertips',
       content: 'Track sales, orders, and performance with instant updates and real-time notifications.',
       icon: <MonitorIcon />,
-      color: '#4CAF50'
+      color: '#4CAF50',
+      image: '/real-time-monitoring.png'
     },
     {
       title: 'Smart Analytics',
       description: 'Data-driven decisions made simple',
       content: 'Advanced reporting tools with interactive charts and trend analysis for better business insights.',
       icon: <BarChartIcon />,
-      color: '#2196F3'
+      color: '#2196F3',
+      image: '/smart-analytics.png'
     },
     {
       title: 'Mobile Ready',
       description: 'Access anywhere, anytime',
       content: 'Fully responsive design that works perfectly on smartphones, tablets, and desktop devices.',
       icon: <PhoneIcon />,
-      color: '#FF9800'
+      color: '#FF9800',
+      image: '/mobile-ready.png'
     },
     {
       title: 'Secure & Reliable',
       description: 'Enterprise-grade security',
       content: 'Bank-level encryption, role-based access control, and 99.9% uptime guarantee.',
       icon: <SecurityIcon />,
-      color: '#9C27B0'
+      color: '#9C27B0',
+      image: '/secure-reliable.png'
     },
     {
       title: 'Easy Export',
       description: 'Reports in seconds',
       content: 'Generate and download reports in PDF, Excel, and CSV formats with one click.',
       icon: <ExportIcon />,
-      color: '#F44336'
+      color: '#F44336',
+      image: '/easy-export.png'
     },
     {
       title: 'Customizable',
       description: 'Tailored to your needs',
       content: 'Personalize your dashboard with custom widgets, layouts, and user preferences.',
       icon: <PaletteIcon />,
-      color: '#00BCD4'
+      color: '#00BCD4',
+      image: '/customizable.png'
     }
   ];
 
@@ -109,15 +115,20 @@ const SmartDashboard = () => {
               <Box key={index} className="benefit-item" style={{ '--benefit-color': benefit.color }}>
                 <Box className="benefit-image-container">
                   <img
-                    src="/dashboard.png"
+                    src={benefit.image}
                     alt={benefit.title}
                     className="benefit-dashboard-image"
                   />
                 </Box>
                 <Box className="benefit-text-content">
-                  <Typography variant="h6" className="benefit-title">
-                    {benefit.title}
-                  </Typography>
+                  <Box className="benefit-title-container">
+                    <Box className="benefit-icon" style={{ color: benefit.color }}>
+                      {benefit.icon}
+                    </Box>
+                    <Typography variant="h6" className="benefit-title">
+                      {benefit.title}
+                    </Typography>
+                  </Box>
                   <Typography variant="body2" className="benefit-description">
                     {benefit.description}
                   </Typography>

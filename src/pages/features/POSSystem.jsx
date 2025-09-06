@@ -1,195 +1,148 @@
-import { Receipt as ReceiptIcon, QrCode as QrCodeIcon, Restaurant as RestaurantIcon, Timeline as TimelineIcon, Speed as SpeedIcon, Security as SecurityIcon, ArrowBack as ArrowBackIcon } from '@mui/icons-material';
-import { Box, Button, Card, CardContent, Container, Grid, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { QrCode as QrCodeIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Security as SecurityIcon, Speed as SpeedIcon, Timeline as TimelineIcon } from '@mui/icons-material';
+import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import '../../styles/pages/featureDetail.scss';
+import CTA from '../../components/CTA';
+import '../../styles/pages/possystem.scss';
 
 const POSSystem = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const features = [
-    'Fast and reliable transactions',
-    'QR code scanning integration',
-    'Kitchen order tickets (KOT)',
-    'Real-time order tracking',
-    'Multiple payment methods',
-    'Offline mode support'
-  ];
-
-  const capabilities = [
-    { title: 'Quick Transactions', description: 'Process orders quickly with our optimized POS interface', icon: <SpeedIcon /> },
-    { title: 'QR Code Scanning', description: 'Scan QR codes for instant order placement and processing', icon: <QrCodeIcon /> },
-    { title: 'KOT System', description: 'Generate kitchen order tickets for efficient food preparation', icon: <RestaurantIcon /> },
-    { title: 'Order Timeline', description: 'Track order status from placement to delivery in real-time', icon: <TimelineIcon /> },
-    { title: 'Payment Processing', description: 'Accept multiple payment methods securely', icon: <ReceiptIcon /> },
-    { title: 'Data Security', description: 'Enterprise-grade security for all transaction data', icon: <SecurityIcon /> }
+  const benefits = [
+    {
+      title: 'Quick Transactions',
+      description: 'Lightning-fast order processing',
+      content: 'Process orders quickly with our optimized POS interface designed for speed and efficiency.',
+      icon: <SpeedIcon />,
+      color: '#4CAF50',
+      image: '/quick-transactions.png'
+    },
+    {
+      title: 'QR Code Scanning',
+      description: 'Instant order placement',
+      content: 'Scan QR codes for instant order placement and processing with seamless integration.',
+      icon: <QrCodeIcon />,
+      color: '#2196F3',
+      image: '/qr-code-scanning.png'
+    },
+    {
+      title: 'KOT System',
+      description: 'Efficient kitchen workflow',
+      content: 'Generate kitchen order tickets for efficient food preparation and streamlined operations.',
+      icon: <RestaurantIcon />,
+      color: '#FF9800',
+      image: '/kot-system.png'
+    },
+    {
+      title: 'Order Timeline',
+      description: 'Real-time order tracking',
+      content: 'Track order status from placement to delivery in real-time with comprehensive monitoring.',
+      icon: <TimelineIcon />,
+      color: '#9C27B0',
+      image: '/order-timeline.png'
+    },
+    {
+      title: 'Payment Processing',
+      description: 'Secure payment handling',
+      content: 'Accept multiple payment methods securely with advanced encryption and fraud protection.',
+      icon: <ReceiptIcon />,
+      color: '#F44336',
+      image: '/payment-processing.png'
+    },
+    {
+      title: 'Data Security',
+      description: 'Enterprise-grade protection',
+      content: 'Enterprise-grade security for all transaction data with complete privacy and compliance.',
+      icon: <SecurityIcon />,
+      color: '#00BCD4',
+      image: '/data-security.png'
+    }
   ];
 
   return (
-    <Box className="feature-detail-page">
-      <Container maxWidth="lg">
+    <Box className="pos-system-page">
+      <Container maxWidth="xl">
         {/* Header Section */}
         <Box className="feature-header">
-          <Button
-            component={Link}
-            to="/features"
-            startIcon={<ArrowBackIcon />}
-            variant="outlined"
-            className="back-button"
-          >
-            Back to Features
-          </Button>
-
-          <Box className="feature-hero">
-            <Box className="feature-icon-large">
-              <ReceiptIcon sx={{ fontSize: 48 }} />
+          <Box className="header-row">
+            {/* Left Side - Content */}
+            <Box className="feature-hero">
+              <Typography variant="h1" component="h1" className="feature-title">
+                POS System
+              </Typography>
+              <Typography variant="h4" color="text.secondary" className="feature-subtitle">
+                Modern Point of Sale
+              </Typography>
+              <Typography variant="body1" className="feature-description">
+                Fast and reliable point of sale system designed specifically for restaurants.
+                Our POS system integrates seamlessly with QR code scanning, kitchen order tickets,
+                and real-time order tracking to streamline your entire ordering process.
+              </Typography>
+              <Box className="cta-button-container">
+                <Typography variant="h6" className="coming-soon-text">
+                  Coming Soon
+                </Typography>
+              </Box>
             </Box>
-            <Typography variant="h1" component="h1" className="feature-title">
-              POS System
-            </Typography>
-            <Typography variant="h4" color="text.secondary" className="feature-subtitle">
-              Modern Point of Sale
-            </Typography>
-            <Typography variant="body1" className="feature-description">
-              Fast and reliable point of sale system designed specifically for restaurants. 
-              Our POS system integrates seamlessly with QR code scanning, kitchen order tickets, 
-              and real-time order tracking to streamline your entire ordering process.
-            </Typography>
+
+            {/* Right Side - POS Image */}
+            <Box className="pos-image-container">
+              <Box className="pos-image">
+                <img
+                  src="/pos-system.png"
+                  alt="POS System Interface"
+                  className="pos-preview-image"
+                />
+              </Box>
+            </Box>
           </Box>
         </Box>
 
-        {/* Key Features */}
+        {/* Key Benefits */}
         <Box className="benefits-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Key Features
-          </Typography>
-          <Grid container spacing={3}>
-            {features.map((feature, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card className="benefit-card">
-                  <CardContent>
-                    <Typography variant="h6" component="h3">
-                      {feature}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Capabilities */}
-        <Box className="capabilities-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            POS Capabilities
-          </Typography>
-          <Grid container spacing={4}>
-            {capabilities.map((capability, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card className="capability-card">
-                  <CardContent>
-                    <Box className="capability-icon">
-                      {capability.icon}
+          <Box className="benefits-header">
+            <Typography variant="h3" component="h2" className="section-title">
+              Why Choose Our POS System?
+            </Typography>
+            <Typography variant="body1" color="text.secondary" className="benefits-description">
+              Experience the future of restaurant point of sale with lightning-fast transactions, seamless integrations, and enterprise-grade security that streamlines your operations
+            </Typography>
+          </Box>
+          <Box className="benefits-grid">
+            {benefits.map((benefit, index) => (
+              <Box key={index} className="benefit-item" style={{ '--benefit-color': benefit.color }}>
+                <Box className="benefit-image-container">
+                  <img
+                    src={benefit.image}
+                    alt={benefit.title}
+                    className="benefit-pos-image"
+                  />
+                </Box>
+                <Box className="benefit-text-content">
+                  <Box className="benefit-title-container">
+                    <Box className="benefit-icon" style={{ color: benefit.color }}>
+                      {benefit.icon}
                     </Box>
-                    <Typography variant="h5" component="h3" gutterBottom>
-                      {capability.title}
+                    <Typography variant="h6" className="benefit-title">
+                      {benefit.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {capability.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
+                  </Box>
+                  <Typography variant="body2" className="benefit-description">
+                    {benefit.description}
+                  </Typography>
+                  <Typography variant="body2" className="benefit-content">
+                    {benefit.content}
+                  </Typography>
+                </Box>
+              </Box>
             ))}
-          </Grid>
-        </Box>
-
-        {/* Detailed Features */}
-        <Box className="features-list-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Advanced POS Features
-          </Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Card className="feature-list-card">
-                <CardContent>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    Order Processing
-                  </Typography>
-                  <List>
-                    <ListItem>
-                      <ListItemIcon>
-                        <QrCodeIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="QR code scanning for instant orders" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <RestaurantIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Kitchen order ticket generation" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <TimelineIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Real-time order status tracking" />
-                    </ListItem>
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Card className="feature-list-card">
-                <CardContent>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    Payment & Security
-                  </Typography>
-                  <List>
-                    <ListItem>
-                      <ListItemIcon>
-                        <ReceiptIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Multiple payment method support" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <SecurityIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Secure transaction processing" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <SpeedIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Offline mode for reliability" />
-                    </ListItem>
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </Box>
-
-        {/* CTA Section */}
-        <Box className="cta-section">
-          <Typography variant="h4" component="h2" gutterBottom>
-            Upgrade Your Point of Sale
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Experience the future of restaurant POS with our modern, fast, and reliable system.
-          </Typography>
-          <Button
-            component={Link}
-            to="/contact"
-            variant="contained"
-            size="large"
-            className="cta-button"
-          >
-            Get Started Today
-          </Button>
+          </Box>
+          <CTA
+            title="Ready to Upgrade Your Point of Sale?"
+            description="Experience the power of modern POS technology with our comprehensive restaurant management system."
+            variant="default"
+          />
         </Box>
       </Container>
     </Box>

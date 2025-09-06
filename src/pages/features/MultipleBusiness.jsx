@@ -1,195 +1,148 @@
-import { Business as BusinessIcon, AccountTree as AccountTreeIcon, Storage as StorageIcon, Public as PublicIcon, Cloud as CloudIcon, Security as SecurityIcon, ArrowBack as ArrowBackIcon } from '@mui/icons-material';
-import { Box, Button, Card, CardContent, Container, Grid, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { AccountTree as AccountTreeIcon, Business as BusinessIcon, Cloud as CloudIcon, Public as PublicIcon, Security as SecurityIcon, Storage as StorageIcon } from '@mui/icons-material';
+import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import '../../styles/pages/featureDetail.scss';
+import CTA from '../../components/CTA';
+import '../../styles/pages/multiplebusiness.scss';
 
 const MultipleBusiness = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const features = [
-    'Multi-entity management',
-    'Centralized control',
-    'Separate databases',
-    'Custom subdomains',
-    'Cloud-based system',
-    'Enterprise security'
-  ];
-
-  const capabilities = [
-    { title: 'Business Management', description: 'Manage multiple business entities from a single platform with centralized control', icon: <BusinessIcon /> },
-    { title: 'Branch Network', description: 'Efficiently manage multiple branches with unified operations and reporting', icon: <AccountTreeIcon /> },
-    { title: 'Data Isolation', description: 'Each restaurant owner gets their own dedicated database with complete data isolation', icon: <StorageIcon /> },
-    { title: 'Custom Subdomains', description: 'Each restaurant owner gets their own custom subdomain for a personalized experience', icon: <PublicIcon /> },
-    { title: 'Cloud Platform', description: 'Fully cloud-based platform ensuring secure access from anywhere with automatic updates', icon: <CloudIcon /> },
-    { title: 'Security & Privacy', description: 'Enterprise-grade security with complete data isolation and privacy protection', icon: <SecurityIcon /> }
+  const benefits = [
+    {
+      title: 'Business Management',
+      description: 'Centralized multi-entity control',
+      content: 'Manage multiple business entities from a single platform with centralized control and unified operations.',
+      icon: <BusinessIcon />,
+      color: '#4CAF50',
+      image: '/business-management.png'
+    },
+    {
+      title: 'Branch Network',
+      description: 'Unified branch operations',
+      content: 'Efficiently manage multiple branches with unified operations, reporting, and centralized management.',
+      icon: <AccountTreeIcon />,
+      color: '#2196F3',
+      image: '/branch-network.png'
+    },
+    {
+      title: 'Data Isolation',
+      description: 'Complete data separation',
+      content: 'Each restaurant owner gets their own dedicated database with complete data isolation and privacy.',
+      icon: <StorageIcon />,
+      color: '#FF9800',
+      image: '/data-isolation.png'
+    },
+    {
+      title: 'Custom Subdomains',
+      description: 'Personalized experience',
+      content: 'Each restaurant owner gets their own custom subdomain for a personalized and branded experience.',
+      icon: <PublicIcon />,
+      color: '#9C27B0',
+      image: '/custom-subdomains.png'
+    },
+    {
+      title: 'Cloud Platform',
+      description: 'Secure cloud access',
+      content: 'Fully cloud-based platform ensuring secure access from anywhere with automatic updates and scalability.',
+      icon: <CloudIcon />,
+      color: '#F44336',
+      image: '/cloud-platform.png'
+    },
+    {
+      title: 'Security & Privacy',
+      description: 'Enterprise-grade protection',
+      content: 'Enterprise-grade security with complete data isolation, privacy protection, and compliance standards.',
+      icon: <SecurityIcon />,
+      color: '#00BCD4',
+      image: '/security-privacy.png'
+    }
   ];
 
   return (
-    <Box className="feature-detail-page">
-      <Container maxWidth="lg">
+    <Box className="multiple-business-page">
+      <Container maxWidth="xl">
         {/* Header Section */}
         <Box className="feature-header">
-          <Button
-            component={Link}
-            to="/features"
-            startIcon={<ArrowBackIcon />}
-            variant="outlined"
-            className="back-button"
-          >
-            Back to Features
-          </Button>
-
-          <Box className="feature-hero">
-            <Box className="feature-icon-large">
-              <BusinessIcon sx={{ fontSize: 48 }} />
+          <Box className="header-row">
+            {/* Left Side - Content */}
+            <Box className="feature-hero">
+              <Typography variant="h1" component="h1" className="feature-title">
+                Multiple Business
+              </Typography>
+              <Typography variant="h4" color="text.secondary" className="feature-subtitle">
+                Multi-Entity Management
+              </Typography>
+              <Typography variant="body1" className="feature-description">
+                Manage multiple business entities from a single platform with centralized control.
+                Our multi-tenant architecture provides each restaurant owner with their own dedicated
+                database, custom subdomain, and complete data isolation while maintaining unified management.
+              </Typography>
+              <Box className="cta-button-container">
+                <Typography variant="h6" className="coming-soon-text">
+                  Coming Soon
+                </Typography>
+              </Box>
             </Box>
-            <Typography variant="h1" component="h1" className="feature-title">
-              Multiple Business
-            </Typography>
-            <Typography variant="h4" color="text.secondary" className="feature-subtitle">
-              Multi-Entity Management
-            </Typography>
-            <Typography variant="body1" className="feature-description">
-              Manage multiple business entities from a single platform with centralized control. 
-              Our multi-tenant architecture provides each restaurant owner with their own dedicated 
-              database, custom subdomain, and complete data isolation while maintaining unified management.
-            </Typography>
+
+            {/* Right Side - Business Image */}
+            <Box className="business-image-container">
+              <Box className="business-image">
+                <img
+                  src="/multiple-business.png"
+                  alt="Multiple Business Interface"
+                  className="business-preview-image"
+                />
+              </Box>
+            </Box>
           </Box>
         </Box>
 
-        {/* Key Features */}
+        {/* Key Benefits */}
         <Box className="benefits-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Key Features
-          </Typography>
-          <Grid container spacing={3}>
-            {features.map((feature, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card className="benefit-card">
-                  <CardContent>
-                    <Typography variant="h6" component="h3">
-                      {feature}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Capabilities */}
-        <Box className="capabilities-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Multi-Business Capabilities
-          </Typography>
-          <Grid container spacing={4}>
-            {capabilities.map((capability, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card className="capability-card">
-                  <CardContent>
-                    <Box className="capability-icon">
-                      {capability.icon}
+          <Box className="benefits-header">
+            <Typography variant="h3" component="h2" className="section-title">
+              Why Choose Our Multiple Business Platform?
+            </Typography>
+            <Typography variant="body1" color="text.secondary" className="benefits-description">
+              Experience the future of multi-entity restaurant management with centralized control, data isolation, and scalable architecture that grows with your business empire
+            </Typography>
+          </Box>
+          <Box className="benefits-grid">
+            {benefits.map((benefit, index) => (
+              <Box key={index} className="benefit-item" style={{ '--benefit-color': benefit.color }}>
+                <Box className="benefit-image-container">
+                  <img
+                    src={benefit.image}
+                    alt={benefit.title}
+                    className="benefit-business-image"
+                  />
+                </Box>
+                <Box className="benefit-text-content">
+                  <Box className="benefit-title-container">
+                    <Box className="benefit-icon" style={{ color: benefit.color }}>
+                      {benefit.icon}
                     </Box>
-                    <Typography variant="h5" component="h3" gutterBottom>
-                      {capability.title}
+                    <Typography variant="h6" className="benefit-title">
+                      {benefit.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {capability.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
+                  </Box>
+                  <Typography variant="body2" className="benefit-description">
+                    {benefit.description}
+                  </Typography>
+                  <Typography variant="body2" className="benefit-content">
+                    {benefit.content}
+                  </Typography>
+                </Box>
+              </Box>
             ))}
-          </Grid>
-        </Box>
-
-        {/* Detailed Features */}
-        <Box className="features-list-section">
-          <Typography variant="h3" component="h2" className="section-title">
-            Advanced Multi-Business Features
-          </Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Card className="feature-list-card">
-                <CardContent>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    Business Management
-                  </Typography>
-                  <List>
-                    <ListItem>
-                      <ListItemIcon>
-                        <BusinessIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Centralized business entity management" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <AccountTreeIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Multi-branch network management" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <StorageIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Individual database per business" />
-                    </ListItem>
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Card className="feature-list-card">
-                <CardContent>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    Platform Features
-                  </Typography>
-                  <List>
-                    <ListItem>
-                      <ListItemIcon>
-                        <PublicIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Custom subdomain for each business" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <CloudIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Cloud-based access and updates" />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemIcon>
-                        <SecurityIcon color="primary" />
-                      </ListItemIcon>
-                      <ListItemText primary="Enterprise-grade security and privacy" />
-                    </ListItem>
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </Box>
-
-        {/* CTA Section */}
-        <Box className="cta-section">
-          <Typography variant="h4" component="h2" gutterBottom>
-            Scale Your Restaurant Empire
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Manage multiple restaurants efficiently with our powerful multi-business platform.
-          </Typography>
-          <Button
-            component={Link}
-            to="/contact"
-            variant="contained"
-            size="large"
-            className="cta-button"
-          >
-            Get Started Today
-          </Button>
+          </Box>
+          <CTA
+            title="Ready to Scale Your Restaurant Empire?"
+            description="Experience the power of multi-entity management with our comprehensive business platform."
+            variant="default"
+          />
         </Box>
       </Container>
     </Box>
