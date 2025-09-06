@@ -54,6 +54,18 @@
           font-size: 1.1rem;
           font-weight: 600;
         }
+
+        .coming-soon-text {
+          display: inline-block;
+          background-color: #2e7d32;
+          color: white;
+          padding: 0.75rem 2rem;
+          border-radius: 0.5rem;
+          font-weight: 600;
+          font-size: 1.1rem;
+          text-align: center;
+          box-shadow: 0 2px 8px rgba(46, 125, 50, 0.3);
+        }
       }
     }
 

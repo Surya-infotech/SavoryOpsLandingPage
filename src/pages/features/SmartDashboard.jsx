@@ -1,7 +1,6 @@
 import { BarChart as BarChartIcon, FileDownload as ExportIcon, Monitor as MonitorIcon, Palette as PaletteIcon, PhoneAndroid as PhoneIcon, Security as SecurityIcon } from '@mui/icons-material';
-import { Box, Button, Container, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import CTA from '../../components/CTA';
 import '../../styles/pages/smartdashboard.scss';
 
@@ -76,15 +75,9 @@ const SmartDashboard = () => {
                 to optimize your operations and boost profitability.
               </Typography>
               <Box className="cta-button-container">
-                <Button
-                  component={Link}
-                  to="/contact"
-                  variant="contained"
-                  size="large"
-                  className="cta-button"
-                >
-                  Get Started Today
-                </Button>
+                <Typography variant="h6" className="coming-soon-text">
+                  Coming Soon
+                </Typography>
               </Box>
             </Box>
 
