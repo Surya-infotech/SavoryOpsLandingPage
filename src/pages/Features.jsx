@@ -281,7 +281,7 @@ const Features = ({ showHeading = true }) => {
             {features.map((feature, index) => (
               <Box key={index} className="feature-card-wrapper" >
                 <Card className="feature-card">
-                  <CardContent className="feature-card-content">
+                  <CardContent className="card-content">
                     <Box className="feature-icon">
                       {feature.icon}
                     </Box>
