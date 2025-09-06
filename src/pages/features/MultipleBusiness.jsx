@@ -2,7 +2,7 @@ import { AccountTree as AccountTreeIcon, Business as BusinessIcon, Cloud as Clou
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/multiplebusiness.scss';
+import '../../styles/pages/feature/multiplebusiness.scss';
 
 const MultipleBusiness = () => {
   useEffect(() => {

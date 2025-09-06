@@ -2,7 +2,7 @@ import { Download as DownloadIcon, Receipt as ReceiptIcon, CloudDownload as Clou
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/digitalinvoicedownload.scss';
+import '../../styles/pages/feature/digitalinvoicedownload.scss';
 
 const DigitalInvoiceDownload = () => {
   useEffect(() => {

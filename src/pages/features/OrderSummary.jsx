@@ -2,7 +2,7 @@ import { ReceiptLong as ReceiptLongIcon, Timeline as TimelineIcon, Assessment as
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/ordersummary.scss';
+import '../../styles/pages/feature/ordersummary.scss';
 
 const OrderSummary = () => {
   useEffect(() => {

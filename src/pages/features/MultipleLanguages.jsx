@@ -2,7 +2,7 @@ import { Language as LanguageIcon, Translate as TranslateIcon, Public as PublicI
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/multiplelanguages.scss';
+import '../../styles/pages/feature/multiplelanguages.scss';
 
 const MultipleLanguages = () => {
   useEffect(() => {

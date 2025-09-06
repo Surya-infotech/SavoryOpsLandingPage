@@ -2,7 +2,7 @@ import { ReceiptLong as ReceiptLongIcon, AccountBalance as AccountBalanceIcon, A
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/branchtaxmanagement.scss';
+import '../../styles/pages/feature/branchtaxmanagement.scss';
 
 const BranchTaxManagement = () => {
   useEffect(() => {

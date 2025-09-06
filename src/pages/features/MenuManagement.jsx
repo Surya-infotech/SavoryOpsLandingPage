@@ -2,7 +2,7 @@ import { Category as CategoryIcon, Edit as EditIcon, Image as ImageIcon, Menu as
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/menumangement.scss';
+import '../../styles/pages/feature/menumangement.scss';
 
 const MenuManagement = () => {
   useEffect(() => {

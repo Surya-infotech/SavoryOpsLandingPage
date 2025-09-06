@@ -2,7 +2,7 @@ import { AccountTree as AccountTreeIcon, Business as BusinessIcon, Public as Pub
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/multitenantarchitecture.scss';
+import '../../styles/pages/feature/multitenantarchitecture.scss';
 
 const MultiTenantArchitecture = () => {
   useEffect(() => {

@@ -2,7 +2,7 @@ import { Cloud as CloudIcon, Security as SecurityIcon, Speed as SpeedIcon, Stora
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/cloudbasedsystem.scss';
+import '../../styles/pages/feature/cloudbasedsystem.scss';
 
 const CloudBasedSystem = () => {
   useEffect(() => {

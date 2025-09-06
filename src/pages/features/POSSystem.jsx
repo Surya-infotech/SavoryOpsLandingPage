@@ -2,7 +2,7 @@ import { QrCode as QrCodeIcon, Receipt as ReceiptIcon, Restaurant as RestaurantI
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/possystem.scss';
+import '../../styles/pages/feature/possystem.scss';
 
 const POSSystem = () => {
   useEffect(() => {

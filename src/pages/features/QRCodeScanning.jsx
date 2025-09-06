@@ -2,7 +2,7 @@ import { QrCode as QrCodeIcon, Restaurant as RestaurantIcon, Security as Securit
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/qrcodescanning.scss';
+import '../../styles/pages/feature/qrcodescanning.scss';
 
 const QRCodeScanning = () => {
   useEffect(() => {

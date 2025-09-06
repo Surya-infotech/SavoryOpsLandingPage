@@ -2,7 +2,7 @@ import { Groups as GroupsIcon, Person as PersonIcon, Schedule as ScheduleIcon, S
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/branchstaffmanagement.scss';
+import '../../styles/pages/feature/branchstaffmanagement.scss';
 
 const BranchStaffManagement = () => {
   useEffect(() => {

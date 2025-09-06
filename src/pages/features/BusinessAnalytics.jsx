@@ -2,7 +2,7 @@ import { Analytics as AnalyticsIcon, TrendingUp as TrendingUpIcon, Assessment as
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/businessanalytics.scss';
+import '../../styles/pages/feature/businessanalytics.scss';
 
 const BusinessAnalytics = () => {
   useEffect(() => {

@@ -2,7 +2,7 @@ import { CurrencyExchange as CurrencyExchangeIcon, AttachMoney as AttachMoneyIco
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/multiplecurrency.scss';
+import '../../styles/pages/feature/multiplecurrency.scss';
 
 const MultipleCurrency = () => {
   useEffect(() => {

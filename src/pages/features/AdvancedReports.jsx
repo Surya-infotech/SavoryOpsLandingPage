@@ -2,7 +2,7 @@ import { Assessment as AssessmentIcon, TrendingUp as TrendingUpIcon, BarChart as
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/advancedreports.scss';
+import '../../styles/pages/feature/advancedreports.scss';
 
 const AdvancedReports = () => {
   useEffect(() => {

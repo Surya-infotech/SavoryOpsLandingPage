@@ -2,7 +2,7 @@ import { RateReview as RateReviewIcon, Star as StarIcon, Feedback as FeedbackIco
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/customerreviews.scss';
+import '../../styles/pages/feature/customerreviews.scss';
 
 const CustomerReviews = () => {
   useEffect(() => {

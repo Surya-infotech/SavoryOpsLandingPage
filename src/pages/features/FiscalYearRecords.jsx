@@ -2,7 +2,7 @@ import { CalendarMonth as CalendarMonthIcon, Assessment as AssessmentIcon, Trend
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/fiscalyearrecords.scss';
+import '../../styles/pages/feature/fiscalyearrecords.scss';
 
 const FiscalYearRecords = () => {
   useEffect(() => {

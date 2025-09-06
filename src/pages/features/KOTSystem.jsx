@@ -2,7 +2,7 @@ import { Restaurant as RestaurantIcon, Receipt as ReceiptIcon, Timeline as Timel
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/kotsystem.scss';
+import '../../styles/pages/feature/kotsystem.scss';
 
 const KOTSystem = () => {
   useEffect(() => {

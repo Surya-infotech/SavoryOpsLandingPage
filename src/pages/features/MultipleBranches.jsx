@@ -2,7 +2,7 @@ import { AccountTree as AccountTreeIcon, Business as BusinessIcon, LocationOn as
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/multiplebranches.scss';
+import '../../styles/pages/feature/multiplebranches.scss';
 
 const MultipleBranches = () => {
   useEffect(() => {

@@ -2,7 +2,7 @@ import { BarChart as BarChartIcon, FileDownload as ExportIcon, Monitor as Monito
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/smartdashboard.scss';
+import '../../styles/pages/feature/smartdashboard.scss';
 
 const SmartDashboard = () => {
   useEffect(() => {

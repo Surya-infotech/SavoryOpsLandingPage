@@ -2,7 +2,7 @@ import { Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, Compare a
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
-import '../../styles/pages/branchpricing.scss';
+import '../../styles/pages/feature/branchpricing.scss';
 
 const BranchPricing = () => {
   useEffect(() => {
