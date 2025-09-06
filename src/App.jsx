@@ -13,6 +13,7 @@ import BranchStaffManagement from './pages/features/BranchStaffManagement';
 import BranchTaxManagement from './pages/features/BranchTaxManagement';
 import BusinessAnalytics from './pages/features/BusinessAnalytics';
 import CloudBasedSystem from './pages/features/CloudBasedSystem';
+import CustomSubdomain from './pages/features/CustomSubdomain';
 import CustomerReviews from './pages/features/CustomerReviews';
 import DigitalInvoiceDownload from './pages/features/DigitalInvoiceDownload';
 import FiscalYearRecords from './pages/features/FiscalYearRecords';
@@ -117,6 +118,7 @@ function App() {
           <Route path="/features/fiscal-year-records" element={<FiscalYearRecords />} />
           <Route path="/features/digital-invoice-download" element={<DigitalInvoiceDownload />} />
           <Route path="/features/advanced-reports" element={<AdvancedReports />} />
+          <Route path="/features/custom-subdomain" element={<CustomSubdomain />} />
         </Routes>
 
         {/* Footer */}

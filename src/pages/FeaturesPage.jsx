@@ -32,7 +32,8 @@ const FeaturesPage = () => {
       'Branch-wise Tax Management': '/features/branch-tax-management',
       'Fiscal Year Records': '/features/fiscal-year-records',
       'Digital Invoice Download': '/features/digital-invoice-download',
-      'Advanced Reports': '/features/advanced-reports'
+      'Advanced Reports': '/features/advanced-reports',
+      'Custom Subdomain': '/features/custom-subdomain'
     };
 
     const route = routeMap[featureTitle];
