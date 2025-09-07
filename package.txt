@@ -9,3 +9,5 @@ npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fo
 npm install --save-dev node-sass
 npm install -D sass-embedded
 npm install react-world-flags
+npm i dotenv
+npm install react-phone-number-input

@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom';
+import OwnerLogin from "./Pages/General/Signin.jsx";
+import OwnerSignUp from "./Pages/General/Signup.jsx";
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import ScrollToTopButton from './components/ScrollToTop';
+import { LanguageProvider } from './context/LanguageContext.jsx';
 import BlogPage from './pages/BlogPage';
 import FeaturesPage from './pages/FeaturesPage';
 import Home from './pages/Home';
@@ -82,52 +85,57 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="App">
-        {/* Scroll to top on route change */}
-        <ScrollToTop />
+    <LanguageProvider>
+      <Router>
+        <div className="App">
+          {/* Scroll to top on route change */}
+          <ScrollToTop />
 
-        {/* Navigation */}
-        <Navigation />
+          {/* Navigation */}
+          <Navigation />
 
-        {/* Main Content */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/features" element={<FeaturesPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/sitemap" element={<Sitemap />} />
+          {/* Main Content */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/features" element={<FeaturesPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/sitemap" element={<Sitemap />} />
 
-          {/* Feature Detail Routes */}
-          <Route path="/features/smart-dashboard" element={<SmartDashboard />} />
-          <Route path="/features/menu-management" element={<MenuManagement />} />
-          <Route path="/features/multiple-languages" element={<MultipleLanguages />} />
-          <Route path="/features/kot-system" element={<KOTSystem />} />
-          <Route path="/features/order-summary" element={<OrderSummary />} />
-          <Route path="/features/pos-system" element={<POSSystem />} />
-          <Route path="/features/business-analytics" element={<BusinessAnalytics />} />
-          <Route path="/features/customer-reviews" element={<CustomerReviews />} />
-          <Route path="/features/multiple-business" element={<MultipleBusiness />} />
-          <Route path="/features/multiple-branches" element={<MultipleBranches />} />
-          <Route path="/features/qr-code-scanning" element={<QRCodeScanning />} />
-          <Route path="/features/cloud-based-system" element={<CloudBasedSystem />} />
-          <Route path="/features/multi-tenant-architecture" element={<MultiTenantArchitecture />} />
-          <Route path="/features/branch-staff-management" element={<BranchStaffManagement />} />
-          <Route path="/features/branch-pricing" element={<BranchPricing />} />
-          <Route path="/features/multiple-currency" element={<MultipleCurrency />} />
-          <Route path="/features/branch-tax-management" element={<BranchTaxManagement />} />
-          <Route path="/features/fiscal-year-records" element={<FiscalYearRecords />} />
-          <Route path="/features/digital-invoice-download" element={<DigitalInvoiceDownload />} />
-          <Route path="/features/advanced-reports" element={<AdvancedReports />} />
-          <Route path="/features/custom-subdomain" element={<CustomSubdomain />} />
-        </Routes>
+            {/* Feature Detail Routes */}
+            <Route path="/features/smart-dashboard" element={<SmartDashboard />} />
+            <Route path="/features/menu-management" element={<MenuManagement />} />
+            <Route path="/features/multiple-languages" element={<MultipleLanguages />} />
+            <Route path="/features/kot-system" element={<KOTSystem />} />
+            <Route path="/features/order-summary" element={<OrderSummary />} />
+            <Route path="/features/pos-system" element={<POSSystem />} />
+            <Route path="/features/business-analytics" element={<BusinessAnalytics />} />
+            <Route path="/features/customer-reviews" element={<CustomerReviews />} />
+            <Route path="/features/multiple-business" element={<MultipleBusiness />} />
+            <Route path="/features/multiple-branches" element={<MultipleBranches />} />
+            <Route path="/features/qr-code-scanning" element={<QRCodeScanning />} />
+            <Route path="/features/cloud-based-system" element={<CloudBasedSystem />} />
+            <Route path="/features/multi-tenant-architecture" element={<MultiTenantArchitecture />} />
+            <Route path="/features/branch-staff-management" element={<BranchStaffManagement />} />
+            <Route path="/features/branch-pricing" element={<BranchPricing />} />
+            <Route path="/features/multiple-currency" element={<MultipleCurrency />} />
+            <Route path="/features/branch-tax-management" element={<BranchTaxManagement />} />
+            <Route path="/features/fiscal-year-records" element={<FiscalYearRecords />} />
+            <Route path="/features/digital-invoice-download" element={<DigitalInvoiceDownload />} />
+            <Route path="/features/advanced-reports" element={<AdvancedReports />} />
+            <Route path="/features/custom-subdomain" element={<CustomSubdomain />} />
+            <Route path="/Signin" element={<OwnerLogin />} />
+            <Route path="/Signup" element={<OwnerSignUp />} />
+          </Routes>
 
-        {/* Footer */}
-        <Footer />
+          {/* Footer */}
+          <Footer />
 
-        {/* Scroll to Top Button */}
-        <ScrollToTopButton show={scrollTop > 300} onClick={scrollToTop} />
-      </div>
-    </Router>
+          {/* Scroll to Top Button */}
+          <ScrollToTopButton show={scrollTop > 300} onClick={scrollToTop} />
+        </div>
+      </Router>
+    </LanguageProvider>
+
   );
 }
 

@@ -1,0 +1,106 @@
+@use "../var.scss" as var;
+
+@mixin main_table {
+    max-height: 715px !important;
+    overflow-y: auto;
+    border-radius: 10px;
+    width: auto !important;
+    overflow-x: auto;
+    max-width: 100% !important;
+
+    &::-webkit-scrollbar {
+        height: 8px !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var.$hover_color !important;
+        border-radius: 10px !important;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 10px !important;
+    }
+}
+
+@mixin table {
+    border-radius: 10px;
+    font-family: var.$font-family !important;
+    text-align: center;
+    vertical-align: middle;
+    table-layout: auto;
+    width: auto;
+    min-width: 100% !important;
+
+    tr {
+        background-color: var(--table-tr-color) !important;
+
+        &:hover {
+            background-color: var.$hover_color !important;
+        }
+    }
+}
+
+@mixin table_thead {
+    white-space: nowrap;
+    position: sticky;
+    padding: 10px !important;
+    font-weight: var.$table_heading_font_weight !important;
+    top: 0;
+    background-color: var.$table_heading_color !important;
+    z-index: 1;
+    color: var.$table_heading_font_color !important;
+}
+
+@mixin table_td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: var.$font-family !important;
+    font-weight: var.$table_td_font_weight !important;
+    padding: 14px !important;
+    color: var.$table_td_font_color !important;
+    border-bottom: 0.1px solid #333;
+}
+
+@mixin table_tr {
+    height: 55px !important;
+    color: black;
+
+    .container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .container img {
+        width: 45px;
+        height: 45px;
+        margin-left: 15px !important;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+@mixin table_tdclick {
+    cursor: pointer !important;
+    color: var.$table_td_tdclick !important;
+}
+
+@mixin edit_icon {
+    color: var.$table_edit_icon_color !important;
+    padding: 3px;
+
+    &:hover {
+        background-color: var.$table_edit_icon_bgcolor !important;
+        color: var.$table_edit_icon_hovercolor !important;
+    }
+}
+
+@mixin delete_icon {
+    color: var.$table_delete_icon_color !important;
+    padding: 3px;
+
+    &:hover {
+        background-color: var.$table_delete_icon_color !important;
+        color: var.$table_delte_icon_hovercolor !important;
+    }
+}

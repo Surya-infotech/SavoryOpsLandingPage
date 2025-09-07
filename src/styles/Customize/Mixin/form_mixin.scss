@@ -1,0 +1,158 @@
+@use "../var.scss" as var;
+
+@mixin form_label {
+    display: block;
+    font-weight: var.$form_label_weight !important;
+    margin-bottom: var.$form_label_bottom !important;
+}
+
+@mixin form_row {
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: space-between;
+
+    .form-group {
+        width: 46%;
+        margin-right: 4%;
+
+        input {
+            width: 100%;
+
+            &::placeholder {
+                color: var(--text-color) !important;
+            }
+        }
+    }
+}
+
+@mixin form_input {
+    background-color: var(--form-input-color);
+    display: block;
+    padding: 8px;
+    border: var.$form_input_border_color !important;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    outline: none;
+    color: var(--text-color) !important;
+
+    &:focus,
+    &:hover {
+        box-shadow: var.$box-shadow !important;
+    }
+
+    &::placeholder {
+        color: var(--text-color) !important;
+    }
+
+    &[type="number"] {
+        -moz-appearance: textfield;
+        -webkit-appearance: none;
+        appearance: none;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+    &[type="radio"] {
+
+        &:hover,
+        &:focus {
+            box-shadow: none !important;
+        }
+    }
+}
+
+@mixin dropdown {
+    padding: 8px !important;
+    display: flex !important;
+    width: 100% !important;
+    text-align: left !important;
+    background-color: var(--form-input-color);
+    color: var(--text-color) !important;
+    align-items: center !important;
+    border: var.$form_input_border_color !important;
+
+    &::after {
+        content: none !important;
+    }
+
+    &:hover,
+    &:active {
+        background-color: transparent !important;
+        box-shadow: var.$box-shadow !important;
+        border: none;
+    }
+}
+
+@mixin dropdownul {
+    max-height: 200px;
+    overflow-y: auto;
+    display: block;
+    width: 100%;
+    border-color: var(--border-color);
+    background-color: var(--form-input-color);
+    color: var(--text-color) !important;
+
+    li {
+        margin-left: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    a {
+        color: var(--text-color) !important;
+
+        &:hover {
+            background-color: var.$hover_color;
+            border-radius: 10px;
+            color: var.$primary_text_color !important;
+        }
+
+        &:active {
+            color: black;
+        }
+    }
+}
+
+@mixin btn_group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+@mixin btn {
+    width: 100px;
+    padding: 5px;
+}
+
+@mixin save_btn {
+    background-color: var.$save_btn_color !important;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: var.$save_btn_hover_bgcolor !important;
+    }
+}
+
+@mixin cancel_btn {
+    background-color: var(--cancel-btn-color) !important;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: var.$cancel_btn_hover_bgcolor !important;
+    }
+}
