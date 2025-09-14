@@ -1,4 +1,4 @@
-import { Assessment as AssessmentIcon, TrendingUp as TrendingUpIcon, BarChart as BarChartIcon, PieChart as PieChartIcon, Timeline as TimelineIcon, Insights as InsightsIcon } from '@mui/icons-material';
+import { Assessment as AssessmentIcon, BarChart as BarChartIcon, Insights as InsightsIcon, PieChart as PieChartIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';

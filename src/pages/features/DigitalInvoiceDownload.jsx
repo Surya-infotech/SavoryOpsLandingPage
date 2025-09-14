@@ -1,4 +1,4 @@
-import { Download as DownloadIcon, Receipt as ReceiptIcon, CloudDownload as CloudDownloadIcon, Security as SecurityIcon, Archive as ArchiveIcon, Print as PrintIcon } from '@mui/icons-material';
+import { Archive as ArchiveIcon, CloudDownload as CloudDownloadIcon, Download as DownloadIcon, Print as PrintIcon, Receipt as ReceiptIcon, Security as SecurityIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';

@@ -1,4 +1,4 @@
-import { Groups as GroupsIcon, Person as PersonIcon, Schedule as ScheduleIcon, Security as SecurityIcon, Assignment as AssignmentIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { Assignment as AssignmentIcon, Groups as GroupsIcon, Person as PersonIcon, Schedule as ScheduleIcon, Security as SecurityIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';

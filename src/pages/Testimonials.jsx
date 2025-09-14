@@ -182,7 +182,7 @@ const Testimonials = () => {
             Don't just take our word for it - hear from restaurant owners who've transformed their business with SavoryOps
           </Typography>
         </Box>
-        
+
         <Box
           ref={scrollContainerRef}
           sx={{

@@ -1,5 +1,4 @@
 import ErrorIcon from '@mui/icons-material/Error';
-import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 
 const WarningModal = ({ message, onClose }) => {

@@ -1,4 +1,4 @@
-import { Cloud as CloudIcon, Security as SecurityIcon, Speed as SpeedIcon, Storage as StorageIcon, Sync as SyncIcon, Public as PublicIcon } from '@mui/icons-material';
+import { Cloud as CloudIcon, Public as PublicIcon, Security as SecurityIcon, Speed as SpeedIcon, Storage as StorageIcon, Sync as SyncIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';

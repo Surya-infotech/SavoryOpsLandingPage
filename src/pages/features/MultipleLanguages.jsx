@@ -1,4 +1,4 @@
-import { Language as LanguageIcon, Translate as TranslateIcon, Public as PublicIcon, People as PeopleIcon, Settings as SettingsIcon, MenuBook as MenuBookIcon } from '@mui/icons-material';
+import { Language as LanguageIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Public as PublicIcon, Settings as SettingsIcon, Translate as TranslateIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';

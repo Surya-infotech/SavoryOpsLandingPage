@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom';
-import OwnerLogin from "./Pages/General/Signin.jsx";
-import OwnerSignUp from "./Pages/General/Signup.jsx";
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import ScrollToTopButton from './components/ScrollToTop';
 import { LanguageProvider } from './context/LanguageContext.jsx';
 import BlogPage from './pages/BlogPage';
 import FeaturesPage from './pages/FeaturesPage';
+import OwnerLogin from './pages/General/Signin.jsx';
+import OwnerSignUp from './pages/General/Signup.jsx';
 import Home from './pages/Home';
 import Sitemap from './pages/Sitemap';
 import AdvancedReports from './pages/features/AdvancedReports';

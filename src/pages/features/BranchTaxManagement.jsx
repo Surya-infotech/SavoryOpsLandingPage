@@ -1,4 +1,4 @@
-import { ReceiptLong as ReceiptLongIcon, AccountBalance as AccountBalanceIcon, Assessment as AssessmentIcon, Gavel as GavelIcon, TrendingUp as TrendingUpIcon, Security as SecurityIcon } from '@mui/icons-material';
+import { AccountBalance as AccountBalanceIcon, Assessment as AssessmentIcon, Gavel as GavelIcon, ReceiptLong as ReceiptLongIcon, Security as SecurityIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';

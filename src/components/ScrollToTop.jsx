@@ -1,6 +1,5 @@
-import React from 'react';
-import { Fab } from '@mui/material';
 import { KeyboardArrowUp as KeyboardArrowUpIcon } from '@mui/icons-material';
+import { Fab } from '@mui/material';
 
 const ScrollToTop = ({ show, onClick }) => {
   if (!show) return null;

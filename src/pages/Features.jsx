@@ -1,11 +1,12 @@
 import { Analytics as AnalyticsIcon, ArrowBack as ArrowBackIcon, ArrowForward as ArrowForwardIcon, Bolt as BoltIcon, CurrencyExchange as CurrencyIcon, Dashboard as DashboardIcon, Language as LanguageIcon, Payment as PaymentIcon, People as PeopleIcon, Schedule as ScheduleIcon, Star as StarIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Button, Card, CardContent, Chip, Container, IconButton, Typography } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/pages/features.scss';
 
 const Features = ({ showHeading = true }) => {
   const scrollContainerRef = useRef(null);
+  const navigate = useNavigate();
   const [showArrows, setShowArrows] = useState(false);
   const [isHoveringArrow, setIsHoveringArrow] = useState(false);
   const [hoveredArrow, setHoveredArrow] = useState(null);
@@ -13,54 +14,66 @@ const Features = ({ showHeading = true }) => {
 
   const features = [
     {
-      icon: <DashboardIcon sx={{ fontSize: 28 }} />,
+      id: 'smart-dashboard',
+      icon: <DashboardIcon />,
       title: 'Dashboard',
       description: 'Real-time overview of your restaurant operations with intuitive analytics',
       color: '#4caf50'
     },
     {
-      icon: <StarIcon sx={{ fontSize: 28 }} />,
+      id: 'multiple-business',
+      icon: <StarIcon />,
       title: 'Multiple Business',
       description: 'Create and manage multiple restaurant businesses from a single platform',
       color: '#4caf50'
     },
     {
-      icon: <TrendingUpIcon sx={{ fontSize: 28 }} />,
+      id: 'multiple-branches',
+      icon: <TrendingUpIcon />,
       title: 'Multiple Branches',
       description: 'Manage multiple branches with centralized control and reporting',
       color: '#2e7d32'
     },
     {
-      icon: <PaymentIcon sx={{ fontSize: 28 }} />,
+      id: 'branch-pricing',
+      icon: <PaymentIcon />,
       title: 'Branch-wise Pricing',
       description: 'Set different item prices for each branch with flexible pricing control',
       color: '#4caf50'
     },
     {
-      icon: <PeopleIcon sx={{ fontSize: 28 }} />,
+      id: 'branch-staff-management',
+      icon: <PeopleIcon />,
       title: 'Staff Management',
       description: 'Add branch-wise employees, assign roles, schedule shifts, and manage payroll',
       color: '#388e3c'
     },
     {
-      icon: <ScheduleIcon sx={{ fontSize: 28 }} />,
+      id: 'order-summary',
+      icon: <ScheduleIcon />,
       title: 'Order Management',
       description: 'Track order details with complete status history and timeline',
       color: '#388e3c'
     },
     {
-      icon: <AnalyticsIcon sx={{ fontSize: 28 }} />,
+      id: 'business-analytics',
+      icon: <AnalyticsIcon />,
       title: 'Analytics & Reports',
       description: 'Comprehensive insights to optimize your business performance',
       color: '#2e7d32'
     },
     {
-      icon: <DashboardIcon sx={{ fontSize: 28 }} />,
+      id: 'advanced-reports',
+      icon: <DashboardIcon />,
       title: 'Revenue Analytics',
       description: 'Business and branch-wise order revenue with fiscal year tracking',
       color: '#4caf50'
     }
   ];
+
+  const handleFeatureClick = (featureId) => {
+    navigate(`/features/${featureId}`);
+  };
 
   const scrollLeft = () => {
     const scrollContainer = scrollContainerRef.current;
@@ -280,7 +293,10 @@ const Features = ({ showHeading = true }) => {
           <Box ref={scrollContainerRef} className="features-scroll-wrapper" >
             {features.map((feature, index) => (
               <Box key={index} className="feature-card-wrapper" >
-                <Card className="feature-card">
+                <Card
+                  className="feature-card clickable-card"
+                  onClick={() => handleFeatureClick(feature.id)}
+                >
                   <CardContent className="card-content">
                     <Box className="feature-icon">
                       {feature.icon}

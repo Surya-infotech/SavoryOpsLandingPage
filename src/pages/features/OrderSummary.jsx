@@ -1,4 +1,4 @@
-import { ReceiptLong as ReceiptLongIcon, Timeline as TimelineIcon, Assessment as AssessmentIcon, ListAlt as ListAltIcon, Speed as SpeedIcon, Visibility as VisibilityIcon } from '@mui/icons-material';
+import { Assessment as AssessmentIcon, ListAlt as ListAltIcon, ReceiptLong as ReceiptLongIcon, Speed as SpeedIcon, Timeline as TimelineIcon, Visibility as VisibilityIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';

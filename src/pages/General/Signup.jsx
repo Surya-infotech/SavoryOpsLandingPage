@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import 'react-phone-number-input/style.css';
 import { NavLink } from 'react-router-dom';
 import Flag from 'react-world-flags';
-import '../../styles/General/signup.scss';
 import { useLanguage } from '../../context/LanguageContext';
+import '../../styles/General/signup.scss';
 import WarningModal from '../Custom/WarningModal';
 
 const OwnerSignUp = () => {

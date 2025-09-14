@@ -1,4 +1,4 @@
-import { CalendarMonth as CalendarMonthIcon, Assessment as AssessmentIcon, TrendingUp as TrendingUpIcon, Storage as StorageIcon, Security as SecurityIcon, Timeline as TimelineIcon } from '@mui/icons-material';
+import { Assessment as AssessmentIcon, CalendarMonth as CalendarMonthIcon, Security as SecurityIcon, Storage as StorageIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';

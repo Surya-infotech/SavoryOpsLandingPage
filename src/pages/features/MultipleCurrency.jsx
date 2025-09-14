@@ -1,4 +1,4 @@
-import { CurrencyExchange as CurrencyExchangeIcon, AttachMoney as AttachMoneyIcon, Payment as PaymentIcon, TrendingUp as TrendingUpIcon, Assessment as AssessmentIcon, Public as PublicIcon } from '@mui/icons-material';
+import { Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, CurrencyExchange as CurrencyExchangeIcon, Payment as PaymentIcon, Public as PublicIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';

@@ -1,4 +1,4 @@
-import { RateReview as RateReviewIcon, Star as StarIcon, Feedback as FeedbackIcon, TrendingUp as TrendingUpIcon, Visibility as VisibilityIcon, Analytics as AnalyticsIcon } from '@mui/icons-material';
+import { Analytics as AnalyticsIcon, Feedback as FeedbackIcon, RateReview as RateReviewIcon, Star as StarIcon, TrendingUp as TrendingUpIcon, Visibility as VisibilityIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';

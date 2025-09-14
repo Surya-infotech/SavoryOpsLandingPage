@@ -1,4 +1,4 @@
-import { Restaurant as RestaurantIcon, Receipt as ReceiptIcon, Timeline as TimelineIcon, Speed as SpeedIcon, Notifications as NotificationsIcon, Assignment as AssignmentIcon } from '@mui/icons-material';
+import { Assignment as AssignmentIcon, Notifications as NotificationsIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Speed as SpeedIcon, Timeline as TimelineIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
