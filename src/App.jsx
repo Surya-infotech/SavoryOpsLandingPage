@@ -33,7 +33,6 @@ import QRCodeScanning from './pages/features/QRCodeScanning';
 import SmartDashboard from './pages/features/SmartDashboard';
 import './styles/main.scss';
 
-// Component to scroll to top on route change
 const ScrollToTop = () => {
   const location = useLocation();
 
@@ -68,8 +67,9 @@ const ScrollToTop = () => {
   return null;
 };
 
-function App() {
+const AppContent = () => {
   const [scrollTop, setScrollTop] = useState(0);
+  const location = useLocation();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -84,58 +84,59 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const isAuthPage = location.pathname === '/Signin' || location.pathname === '/Signup' || location.pathname === '/signin' || location.pathname === '/signup';
+
+  return (
+    <div className="App">
+      <ScrollToTop />
+
+      {!isAuthPage && <Navigation />}
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/features" element={<FeaturesPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/sitemap" element={<Sitemap />} />
+
+        <Route path="/features/smart-dashboard" element={<SmartDashboard />} />
+        <Route path="/features/menu-management" element={<MenuManagement />} />
+        <Route path="/features/multiple-languages" element={<MultipleLanguages />} />
+        <Route path="/features/kot-system" element={<KOTSystem />} />
+        <Route path="/features/order-summary" element={<OrderSummary />} />
+        <Route path="/features/pos-system" element={<POSSystem />} />
+        <Route path="/features/business-analytics" element={<BusinessAnalytics />} />
+        <Route path="/features/customer-reviews" element={<CustomerReviews />} />
+        <Route path="/features/multiple-business" element={<MultipleBusiness />} />
+        <Route path="/features/multiple-branches" element={<MultipleBranches />} />
+        <Route path="/features/qr-code-scanning" element={<QRCodeScanning />} />
+        <Route path="/features/cloud-based-system" element={<CloudBasedSystem />} />
+        <Route path="/features/multi-tenant-architecture" element={<MultiTenantArchitecture />} />
+        <Route path="/features/branch-staff-management" element={<BranchStaffManagement />} />
+        <Route path="/features/branch-pricing" element={<BranchPricing />} />
+        <Route path="/features/multiple-currency" element={<MultipleCurrency />} />
+        <Route path="/features/branch-tax-management" element={<BranchTaxManagement />} />
+        <Route path="/features/fiscal-year-records" element={<FiscalYearRecords />} />
+        <Route path="/features/digital-invoice-download" element={<DigitalInvoiceDownload />} />
+        <Route path="/features/advanced-reports" element={<AdvancedReports />} />
+        <Route path="/features/custom-subdomain" element={<CustomSubdomain />} />
+        <Route path="/Signin" element={<OwnerLogin />} />
+        <Route path="/Signup" element={<OwnerSignUp />} />
+      </Routes>
+
+      {!isAuthPage && <Footer />}
+
+      {!isAuthPage && <ScrollToTopButton show={scrollTop > 300} onClick={scrollToTop} />}
+    </div>
+  );
+};
+
+function App() {
   return (
     <LanguageProvider>
       <Router>
-        <div className="App">
-          {/* Scroll to top on route change */}
-          <ScrollToTop />
-
-          {/* Navigation */}
-          <Navigation />
-
-          {/* Main Content */}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/features" element={<FeaturesPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/sitemap" element={<Sitemap />} />
-
-            {/* Feature Detail Routes */}
-            <Route path="/features/smart-dashboard" element={<SmartDashboard />} />
-            <Route path="/features/menu-management" element={<MenuManagement />} />
-            <Route path="/features/multiple-languages" element={<MultipleLanguages />} />
-            <Route path="/features/kot-system" element={<KOTSystem />} />
-            <Route path="/features/order-summary" element={<OrderSummary />} />
-            <Route path="/features/pos-system" element={<POSSystem />} />
-            <Route path="/features/business-analytics" element={<BusinessAnalytics />} />
-            <Route path="/features/customer-reviews" element={<CustomerReviews />} />
-            <Route path="/features/multiple-business" element={<MultipleBusiness />} />
-            <Route path="/features/multiple-branches" element={<MultipleBranches />} />
-            <Route path="/features/qr-code-scanning" element={<QRCodeScanning />} />
-            <Route path="/features/cloud-based-system" element={<CloudBasedSystem />} />
-            <Route path="/features/multi-tenant-architecture" element={<MultiTenantArchitecture />} />
-            <Route path="/features/branch-staff-management" element={<BranchStaffManagement />} />
-            <Route path="/features/branch-pricing" element={<BranchPricing />} />
-            <Route path="/features/multiple-currency" element={<MultipleCurrency />} />
-            <Route path="/features/branch-tax-management" element={<BranchTaxManagement />} />
-            <Route path="/features/fiscal-year-records" element={<FiscalYearRecords />} />
-            <Route path="/features/digital-invoice-download" element={<DigitalInvoiceDownload />} />
-            <Route path="/features/advanced-reports" element={<AdvancedReports />} />
-            <Route path="/features/custom-subdomain" element={<CustomSubdomain />} />
-            <Route path="/Signin" element={<OwnerLogin />} />
-            <Route path="/Signup" element={<OwnerSignUp />} />
-          </Routes>
-
-          {/* Footer */}
-          <Footer />
-
-          {/* Scroll to Top Button */}
-          <ScrollToTopButton show={scrollTop > 300} onClick={scrollToTop} />
-        </div>
+        <AppContent />
       </Router>
     </LanguageProvider>
-
   );
 }
 

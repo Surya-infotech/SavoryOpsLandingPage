@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Flag from 'react-world-flags';
 import { useLanguage } from '../../context/LanguageContext';
 import '../../styles/General/signin.scss';
@@ -9,10 +9,9 @@ import WarningModal from '../Custom/WarningModal';
 const OwnerLogin = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
     const BackendPath = import.meta.env.VITE_BACKEND_URL;
-    const tokenname = import.meta.env.VITE_AdminTOKEN_NAME;
-    const token = localStorage.getItem(tokenname);
+    const host = import.meta.env.VITE_HOST;
+    const tld = import.meta.env.VITE_TLD;
     const [warningMessage, setWarningMessage] = useState("");
     const [showWarning, setShowWarning] = useState(false);
     const [alertMessage, setAlertMessage] = useState("");
@@ -52,30 +51,6 @@ const OwnerLogin = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isLanguageDropdownVisible]);
 
-    // const checkToken = async () => {
-    //     if (!CheckToken(token, logoutUser, navigate)) return;
-    //     try {
-    //         const response = await fetch(`${BackendPath}/General/owner/verify-token`, {
-    //             method: "GET",
-    //             headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json', "x-user": "admin" },
-    //         });
-    //         const data = await response.json();
-    //         if (response.ok) {
-    //             const { subdomain } = data.owner;
-    //             const subdomainUrl = `http://${subdomain}.savoryops.local/Home/Dashboard`;
-    //             window.location.href = subdomainUrl;
-    //         }
-    //         else {
-    //             logoutUser();
-    //             navigate("/Signin");
-    //         }
-    //     } catch (error) {
-    //         console.log("Error verifying token:", error);
-    //         logoutUser();
-    //         navigate("/Signin");
-    //     }
-    // };
-
     // useEffect(() => {
     //     const urlParams = new URLSearchParams(window.location.search);
     //     const successMessage = urlParams.get('message');
@@ -87,9 +62,7 @@ const OwnerLogin = () => {
     //         window.history.replaceState({}, '', newUrl);
     //     }
 
-    //     checkToken();
-
-    // }, [logoutUser]);
+    // }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -102,11 +75,8 @@ const OwnerLogin = () => {
 
             const data = await response.json();
             if (response.ok) {
-
                 const { Token, id, subdomain } = data.owner;
-                // const subdomainUrl = `http://${subdomain}.savoryops.local/token-middleware?token=${Token}&id=${id}&success=${translations.signinsucessful}`;
-
-                const subdomainUrl = `https://${subdomain}.savoryops.com/token-middleware?token=${Token}&id=${id}&success=${translations.signinsucessful}`;
+                const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${Token}&id=${id}&success=${translations.signinsucessful}`;
                 window.location.href = subdomainUrl;
             }
             else {

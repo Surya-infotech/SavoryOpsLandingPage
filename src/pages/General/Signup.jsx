@@ -15,6 +15,7 @@ const OwnerSignUp = () => {
     const [warningMessage, setWarningMessage] = useState("");
     const [showWarning, setShowWarning] = useState(false);
     const BackendPath = import.meta.env.VITE_BACKEND_URL;
+    const host = import.meta.env.VITE_HOST;
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
     const { translations } = useLanguage();
@@ -62,9 +63,7 @@ const OwnerSignUp = () => {
             const data = await response.json();
             if (response.ok) {
                 const { token, id, subdomain } = data.owner;
-                // const subdomainUrl = `http://${subdomain}.savoryops.local/token-middleware?token=${token}&id=${id}&success=${translations.signupsuccessful}`;
-
-                const subdomainUrl = `https://${subdomain}.savoryops.com/token-middleware?token=${token}&id=${id}&success=${translations.signupsuccessful}`;
+                const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${token}&id=${id}&success=${translations.signupsuccessful}`;
                 window.location.href = subdomainUrl;
             } else {
                 const errorMessages = {

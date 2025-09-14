@@ -6,6 +6,7 @@ const TokenMiddleware = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const { storetoken } = useAuth();
+    const URL = import.meta.env.VITE_URL;
 
     useEffect(() => {
         const urlParams = new URLSearchParams(location.search);
@@ -23,8 +24,7 @@ const TokenMiddleware = () => {
 
         } else {
             console.log("Token or ID missing in the redirect URL");
-            // window.location.href = "http://savoryops.local/Signin";
-            window.location.href = "https://savoryops.com/Signin";
+            window.location.href = `${URL}`;
         }
     }, [location, navigate, storetoken]);
 
