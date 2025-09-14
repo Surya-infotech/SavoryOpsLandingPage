@@ -18,6 +18,7 @@ const OwnerLogin = () => {
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
     const { translations } = useLanguage();
+    const [isLoading, setIsLoading] = useState(false);
 
     const languages = [
         { name: 'English', code: 'GB' },
@@ -66,6 +67,7 @@ const OwnerLogin = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         try {
             const response = await fetch(`${BackendPath}/General/owner/Signin`, {
                 method: 'POST',
@@ -93,6 +95,8 @@ const OwnerLogin = () => {
             console.log(err.message || 'Something went wrong');
             setWarningMessage(translations.servererror);
             setShowWarning(true);
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -153,8 +157,8 @@ const OwnerLogin = () => {
                     {/* <div className="form-group forgot-password">
                         <NavLink to="/forgot-password">{translations.forgotpassword}</NavLink>
                     </div> */}
-                    <button type="submit" className="login-button">
-                        {translations.signin}
+                    <button type="submit" className="login-button" disabled={isLoading}>
+                        {isLoading ? 'Signing In...' : translations.signin}
                     </button>
                 </form>
                 <div className="form-group signup">

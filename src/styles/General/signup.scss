@@ -126,11 +126,18 @@
         .checkbox {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 8px;
+            margin-bottom: 10px !important;
 
             input[type="checkbox"] {
                 margin: 0;
                 width: 20px !important;
+                cursor: pointer !important;
+
+                &:focus {
+                    outline: none !important;
+                    outline-offset: none !important;
+                }
             }
 
             label {
@@ -138,6 +145,11 @@
                 align-items: center;
                 margin: 0;
                 margin-bottom: 0px !important;
+                cursor: pointer !important;
+
+                a {
+                    margin: 0 5px;
+                }
             }
         }
 

@@ -19,6 +19,7 @@ const OwnerSignUp = () => {
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
     const { translations } = useLanguage();
+    const [isLoading, setIsLoading] = useState(false);
 
     const languages = [
         { name: 'English', code: 'GB' },
@@ -54,6 +55,7 @@ const OwnerSignUp = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         try {
             const response = await fetch(`${BackendPath}/General/owner/Signup`, {
                 method: "POST",
@@ -78,6 +80,8 @@ const OwnerSignUp = () => {
             console.log("Failed to connect to the server", error);
             setWarningMessage(translations.servererror);
             setShowWarning(true);
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -158,18 +162,22 @@ const OwnerSignUp = () => {
                             />
                         </div>
                     </div>
-                    <div className="form-group checkbox">
+                    <div className="checkbox">
                         <input
                             type="checkbox"
+                            id="terms-checkbox"
                             checked={termsAccepted}
                             onChange={() => setTermsAccepted(!termsAccepted)}
                         />
-                        <label>
-                            I accept the terms and conditions
+                        <label htmlFor="terms-checkbox">
+                            By signing up, you agree to our
+                            <a href="/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+                            and
+                            <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
                         </label>
                     </div>
-                    <button type="submit" className="signup-button">
-                        {translations.signup}
+                    <button type="submit" className="signup-button" disabled={isLoading}>
+                        {isLoading ? 'Signing In...' : translations.signup}
                     </button>
                 </form>
                 <div className="form-group signin">
