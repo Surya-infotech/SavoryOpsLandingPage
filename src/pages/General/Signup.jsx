@@ -170,10 +170,10 @@ const OwnerSignUp = () => {
                             onChange={() => setTermsAccepted(!termsAccepted)}
                         />
                         <label htmlFor="terms-checkbox">
-                            By signing up, you agree to our
-                            <a href="/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a>
-                            and
-                            <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+                            {translations.bysignupingyouagreetoour}
+                            <a href="/terms" target="_blank" rel="noopener noreferrer">{translations.termsandconditions}</a>
+                            {translations.and}
+                            <a href="/privacy" target="_blank" rel="noopener noreferrer">{translations.privacypolicy}</a>.
                         </label>
                     </div>
                     <button type="submit" className="signup-button" disabled={isLoading}>
