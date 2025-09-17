@@ -16,6 +16,7 @@ const OwnerSignUp = () => {
     const [showWarning, setShowWarning] = useState(false);
     const BackendPath = import.meta.env.VITE_BACKEND_URL;
     const host = import.meta.env.VITE_HOST;
+    const tld = import.meta.env.VITE_TLD;
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
     const { translations } = useLanguage();
