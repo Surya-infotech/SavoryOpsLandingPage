@@ -25,5 +25,7 @@
   "bysignupingyouagreetoour": "By signing up you agree to our",
   "termsandconditions": "Terms and Conditions",
   "privacypolicy": "Privacy Policy",
-  "and": "and"
+  "and": "and",
+  "youmustacceptthetermsandconditions": "You must accept the terms and conditions to sign up.",
+  "passwordLengthError": "Password must be between 8 and 14 characters long."
 }

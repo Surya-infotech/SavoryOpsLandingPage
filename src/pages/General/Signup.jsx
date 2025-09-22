@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import Flag from 'react-world-flags';
 import { useLanguage } from '../../context/LanguageContext';
 import '../../styles/General/signup.scss';
-import WarningModal from '../Custom/WarningModal';
 
 const OwnerSignUp = () => {
     const [firstName, setFirstName] = useState('');
@@ -12,8 +11,6 @@ const OwnerSignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [termsAccepted, setTermsAccepted] = useState(false);
-    const [warningMessage, setWarningMessage] = useState("");
-    const [showWarning, setShowWarning] = useState(false);
     const BackendPath = import.meta.env.VITE_BACKEND_URL;
     const host = import.meta.env.VITE_HOST;
     const tld = import.meta.env.VITE_TLD;
@@ -21,6 +18,7 @@ const OwnerSignUp = () => {
     const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
     const { translations } = useLanguage();
     const [isLoading, setIsLoading] = useState(false);
+    const [formError, setFormError] = useState('');
 
     const languages = [
         { name: 'English', code: 'GB' },
@@ -57,6 +55,20 @@ const OwnerSignUp = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
+        setFormError('');
+
+        if (password.length < 8 || password.length > 14) {
+            setFormError(translations.passwordLengthError);
+            setIsLoading(false);
+            return;
+        }
+
+        if (!termsAccepted) {
+            setFormError(translations.youmustacceptthetermsandconditions);
+            setIsLoading(false);
+            return;
+        }
+
         try {
             const response = await fetch(`${BackendPath}/General/owner/Signup`, {
                 method: "POST",
@@ -74,20 +86,17 @@ const OwnerSignUp = () => {
                     "Email ID Already Exists": translations.emailalreadyexists,
                     "Server error": translations.servererror
                 };
-                setWarningMessage(errorMessages[data.message] || data.message);
-                setShowWarning(true);
+                setFormError(errorMessages[data.message] || data.message);
             }
         } catch (error) {
             console.log("Failed to connect to the server", error);
-            setWarningMessage(translations.servererror);
-            setShowWarning(true);
+            setFormError(errorMessages[data.message] || data.message);
         } finally {
             setIsLoading(false);
         }
     };
 
     return (<>
-        {showWarning && <WarningModal message={warningMessage} onClose={() => setShowWarning(false)} />}
         <div className="full-page">
             <div className="language-container">
                 <div className="language-dropdown" onClick={toggleLanguageDropdown}>
@@ -177,6 +186,7 @@ const OwnerSignUp = () => {
                             <a href="/privacy" target="_blank" rel="noopener noreferrer">{translations.privacypolicy}</a>.
                         </label>
                     </div>
+                    {formError && <div className="error-message">{formError}</div>}
                     <button type="submit" className="signup-button" disabled={isLoading}>
                         {isLoading ? 'Signing In...' : translations.signup}
                     </button>

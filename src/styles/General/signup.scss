@@ -209,5 +209,17 @@
                 }
             }
         }
+
+        .error-message {
+            color: White;
+            background-color: red;
+            padding: 10px !important;
+            text-align: center !important;
+            margin-top: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 50px;
+            width: auto !important;
+        }
     }
 }

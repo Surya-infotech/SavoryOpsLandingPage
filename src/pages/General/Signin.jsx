@@ -4,7 +4,6 @@ import Flag from 'react-world-flags';
 import { useLanguage } from '../../context/LanguageContext';
 import '../../styles/General/signin.scss';
 import AlertMessage from '../Custom/AlertMessage';
-import WarningModal from '../Custom/WarningModal';
 
 const OwnerLogin = () => {
     const [email, setEmail] = useState('');
@@ -12,13 +11,12 @@ const OwnerLogin = () => {
     const BackendPath = import.meta.env.VITE_BACKEND_URL;
     const host = import.meta.env.VITE_HOST;
     const tld = import.meta.env.VITE_TLD;
-    const [warningMessage, setWarningMessage] = useState("");
-    const [showWarning, setShowWarning] = useState(false);
     const [alertMessage, setAlertMessage] = useState("");
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
     const { translations } = useLanguage();
     const [isLoading, setIsLoading] = useState(false);
+    const [formError, setFormError] = useState('');
 
     const languages = [
         { name: 'English', code: 'GB' },
@@ -68,6 +66,7 @@ const OwnerLogin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
+        setFormError('');
         try {
             const response = await fetch(`${BackendPath}/General/owner/Signin`, {
                 method: 'POST',
@@ -88,13 +87,11 @@ const OwnerLogin = () => {
                     "Invalid email or password": translations.invailidemailorpassword,
                     "Server error": translations.servererror
                 };
-                setWarningMessage(errorMessages[data.message] || data.message);
-                setShowWarning(true);
+                setFormError(errorMessages[data.message] || data.message);
             }
         } catch (err) {
             console.log(err.message || 'Something went wrong');
-            setWarningMessage(translations.servererror);
-            setShowWarning(true);
+            setFormError(errorMessages[data.message] || data.message);
         } finally {
             setIsLoading(false);
         }
@@ -102,7 +99,6 @@ const OwnerLogin = () => {
 
     return (<>
         {alertMessage && <AlertMessage message={alertMessage} onClose={() => setAlertMessage("")} />}
-        {showWarning && <WarningModal message={warningMessage} onClose={() => setShowWarning(false)} />}
         <div className="full-page">
             <div className="language-container">
                 <div className="language-dropdown" onClick={toggleLanguageDropdown}>
@@ -157,6 +153,8 @@ const OwnerLogin = () => {
                     {/* <div className="form-group forgot-password">
                         <NavLink to="/forgot-password">{translations.forgotpassword}</NavLink>
                     </div> */}
+
+                    {formError && <div className="error-message">{formError}</div>}
                     <button type="submit" className="login-button" disabled={isLoading}>
                         {isLoading ? 'Signing In...' : translations.signin}
                     </button>
