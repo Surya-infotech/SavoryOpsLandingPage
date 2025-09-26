@@ -9,6 +9,7 @@ import FeaturesPage from './pages/FeaturesPage';
 import OwnerLogin from './pages/General/Signin.jsx';
 import OwnerSignUp from './pages/General/Signup.jsx';
 import Home from './pages/Home';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import Sitemap from './pages/Sitemap';
 import AdvancedReports from './pages/features/AdvancedReports';
 import BranchPricing from './pages/features/BranchPricing';
@@ -96,6 +97,7 @@ const AppContent = () => {
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<FeaturesPage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/sitemap" element={<Sitemap />} />
 
         <Route path="/features/smart-dashboard" element={<SmartDashboard />} />

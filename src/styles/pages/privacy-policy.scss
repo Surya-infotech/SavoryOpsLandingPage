@@ -1,0 +1,153 @@
+// Privacy Policy Page Styles
+.privacy-policy-page {
+
+  // Remove focus borders from all Material-UI components
+  .MuiCard-root:focus,
+  .MuiCard-root:active,
+  .MuiCard-root:focus-visible,
+  .MuiLink-root:focus,
+  .MuiLink-root:active,
+  .MuiLink-root:focus-visible {
+    outline: none !important;
+    border: none !important;
+  }
+
+  // Main container styles
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding-top: 80px; // Account for fixed navigation
+
+  .privacy-policy-container {
+    padding: 3rem 0;
+  }
+
+  // Header section
+  .privacy-policy-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    .header-title {
+      color: #2e7d32;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .header-subtitle {
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  // Divider
+  .section-divider {
+    margin: 2rem 0;
+  }
+
+  // Content sections
+  .privacy-policy-content {
+    .privacy-section {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      border: 1px solid #e0e0e0;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+      .section-title {
+        color: #2e7d32;
+        margin-bottom: 1.5rem;
+        font-weight: bold;
+        border-bottom: 2px solid #2e7d32;
+        padding-bottom: 0.5rem;
+      }
+
+      .section-content {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .subsection {
+        margin-bottom: 1.5rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .subsection-title {
+          color: #2e7d32;
+          font-weight: 600;
+          margin-bottom: 0.75rem;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    padding-top: 60px;
+
+    .privacy-policy-container {
+      padding: 2rem 0;
+    }
+
+    .privacy-policy-header {
+      margin-bottom: 2rem;
+
+      .header-title {
+        font-size: 2rem;
+      }
+
+      .header-subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    .privacy-policy-content {
+      .privacy-section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        .section-title {
+          font-size: 1.5rem;
+        }
+
+        .subsection {
+          .subsection-title {
+            font-size: 1rem;
+          }
+        }
+
+        .section-content {
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .privacy-policy-container {
+      padding: 1rem 0;
+    }
+
+    .privacy-policy-header {
+      .header-title {
+        font-size: 1.75rem;
+      }
+    }
+
+    .privacy-policy-content {
+      .privacy-section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
