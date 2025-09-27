@@ -25,5 +25,7 @@
   "bysignupingyouagreetoour": "Al registrarte, aceptas nuestros",
   "termsandconditions": "Términos y condiciones",
   "privacypolicy": "Política de privacidad",
-  "and": "y"
+  "and": "y",
+  "youmustacceptthetermsandconditions": "Debe aceptar los términos y condiciones para registrarse.",
+  "passwordLengthError": "La contraseña debe tener entre 8 y 14 caracteres."
 }

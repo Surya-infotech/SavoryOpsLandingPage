@@ -25,5 +25,7 @@
     "bysignupingyouagreetoour": "Door u aan te melden, gaat u akkoord met onze",
     "termsandconditions": "Algemene voorwaarden",
     "privacypolicy": "Privacybeleid",
-    "and": "en"
+    "and": "en",
+    "youmustacceptthetermsandconditions": "U moet de algemene voorwaarden accepteren om u te registreren.",
+    "passwordLengthError": "Het wachtwoord moet tussen 8 en 14 tekens lang zijn."
 }

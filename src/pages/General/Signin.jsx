@@ -91,7 +91,7 @@ const OwnerLogin = () => {
             }
         } catch (err) {
             console.log(err.message || 'Something went wrong');
-            setFormError(errorMessages[data.message] || data.message);
+            setWarningMessage(translations.servererror);
         } finally {
             setIsLoading(false);
         }

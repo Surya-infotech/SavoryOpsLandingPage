@@ -25,5 +25,7 @@
     "bysignupingyouagreetoour": "Με την εγγραφή σας, αποδέχεστε τους",
     "termsandconditions": "Όρους και Προϋποθέσεις",
     "privacypolicy": "Πολιτική Απορρήτου",
-    "and": "και"
+    "and": "και",
+    "youmustacceptthetermsandconditions": "Πρέπει να αποδεχτείτε τους όρους και τις προϋποθέσεις για να εγγραφείτε.",
+    "passwordLengthError": "Ο κωδικός πρόσβασης πρέπει να έχει μήκος μεταξύ 8 και 14 χαρακτήρων."
 }

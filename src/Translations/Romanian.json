@@ -25,5 +25,7 @@
     "bysignupingyouagreetoour": "Prin înregistrare, sunteți de acord cu",
     "termsandconditions": "Termenii și condițiile",
     "privacypolicy": "Politica de confidențialitate",
-    "and": "și"
+    "and": "și",
+    "youmustacceptthetermsandconditions": "Trebuie să acceptați termenii și condițiile pentru a vă înregistra.",
+    "passwordLengthError": "Parola trebuie să aibă o lungime între 8 și 14 caractere."
 }

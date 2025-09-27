@@ -25,5 +25,7 @@
     "bysignupingyouagreetoour": "Registrandoti accetti i nostri",
     "termsandconditions": "Termini e Condizioni",
     "privacypolicy": "Informativa sulla Privacy",
-    "and": "e"
+    "and": "e",
+    "youmustacceptthetermsandconditions": "Devi accettare i termini e le condizioni per registrarti.",
+    "passwordLengthError": "La password deve essere lunga tra 8 e 14 caratteri."
 }

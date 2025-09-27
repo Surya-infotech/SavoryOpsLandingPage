@@ -25,5 +25,7 @@
     "bysignupingyouagreetoour": "Mit der Anmeldung akzeptieren Sie unsere",
     "termsandconditions": "Allgemeinen Geschäftsbedingungen",
     "privacypolicy": "Datenschutzrichtlinie",
-    "and": "und"
+    "and": "und",
+    "youmustacceptthetermsandconditions": "Sie müssen die Allgemeinen Geschäftsbedingungen akzeptieren, um sich zu registrieren.",
+    "passwordLengthError": "Das Passwort muss zwischen 8 und 14 Zeichen lang sein."
 }

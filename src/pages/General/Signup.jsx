@@ -90,7 +90,7 @@ const OwnerSignUp = () => {
             }
         } catch (error) {
             console.log("Failed to connect to the server", error);
-            setFormError(errorMessages[data.message] || data.message);
+            setWarningMessage(translations.servererror);
         } finally {
             setIsLoading(false);
         }
@@ -181,9 +181,9 @@ const OwnerSignUp = () => {
                         />
                         <label htmlFor="terms-checkbox">
                             {translations.bysignupingyouagreetoour}
-                            <a href="/terms" target="_blank" rel="noopener noreferrer">{translations.termsandconditions}</a>
-                            {translations.and}
-                            <a href="/privacy" target="_blank" rel="noopener noreferrer">{translations.privacypolicy}</a>.
+                            {/* <a href="/terms" target="_blank" rel="noopener noreferrer">{translations.termsandconditions}</a> */}
+                            {/* {translations.and} */}
+                            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">{translations.privacypolicy}</a>.
                         </label>
                     </div>
                     {formError && <div className="error-message">{formError}</div>}

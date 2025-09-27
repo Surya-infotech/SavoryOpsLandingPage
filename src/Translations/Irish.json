@@ -25,5 +25,7 @@
     "bysignupingyouagreetoour": "Trí chlárú aontaíonn tú lenár",
     "termsandconditions": "Téarmaí agus Coinníollacha",
     "privacypolicy": "Polasaí Príobháideachta",
-    "and": "agus"
+    "and": "agus",
+    "youmustacceptthetermsandconditions": "Ní mór duit glacadh leis na téarmaí agus na coinníollacha chun clárú.",
+    "passwordLengthError": "Caithfidh an focal faire a bheith idir 8 agus 14 carachtar ar fad."
 }

@@ -25,5 +25,7 @@
     "bysignupingyouagreetoour": "En vous inscrivant, vous acceptez nos",
     "termsandconditions": "Conditions générales",
     "privacypolicy": "Politique de confidentialité",
-    "and": "et"
+    "and": "et",
+    "youmustacceptthetermsandconditions": "Vous devez accepter les conditions générales pour vous inscrire.",
+    "passwordLengthError": "Le mot de passe doit comporter entre 8 et 14 caractères."
 }
