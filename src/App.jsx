@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import ScrollToTopButton from './components/ScrollToTop';
 import { LanguageProvider } from './context/LanguageContext.jsx';
 import BlogPage from './pages/BlogPage';
+import DataDeletionPolicy from './pages/DataDeletionPolicy';
 import FeaturesPage from './pages/FeaturesPage';
 import OwnerLogin from './pages/General/Signin.jsx';
 import OwnerSignUp from './pages/General/Signup.jsx';
@@ -98,8 +99,8 @@ const AppContent = () => {
         <Route path="/features" element={<FeaturesPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
         <Route path="/sitemap" element={<Sitemap />} />
-
         <Route path="/features/smart-dashboard" element={<SmartDashboard />} />
         <Route path="/features/menu-management" element={<MenuManagement />} />
         <Route path="/features/multiple-languages" element={<MultipleLanguages />} />
