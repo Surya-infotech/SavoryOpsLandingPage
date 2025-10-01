@@ -84,48 +84,48 @@ const PrivacyPolicy = () => {
             </Box>
           </Box>
 
-        <Box className="privacy-section">
-          <Typography variant="h4" component="h2" className="section-title">
-            App Permissions (User and Employee Apps)
-          </Typography>
-          <Typography variant="body1" className="section-content">
-            Our mobile apps request certain device permissions to provide core functionality. Permissions are requested at runtime, are optional unless required for a feature you use, and can be changed anytime in your device settings.
-          </Typography>
-
-          <Box className="subsection">
-            <Typography variant="h6" className="subsection-title">
-              Camera (Scan QR Code)
+          <Box className="privacy-section">
+            <Typography variant="h4" component="h2" className="section-title">
+              App Permissions (User and Employee Apps)
             </Typography>
             <Typography variant="body1" className="section-content">
-              • Purpose: Scan table QR codes to create orders and identify table numbers<br />
-              • Data: Live camera stream used locally for scanning; we do not store raw camera footage<br />
-              • Control: You can deny or disable camera access in device settings; scanning features will be unavailable without permission
+              Our mobile apps request certain device permissions to provide core functionality. Permissions are requested at runtime, are optional unless required for a feature you use, and can be changed anytime in your device settings.
             </Typography>
-          </Box>
 
-          <Box className="subsection">
-            <Typography variant="h6" className="subsection-title">
-              Photos / Gallery (Profile Image Upload)
-            </Typography>
-            <Typography variant="body1" className="section-content">
-              • Purpose: Allow customers and employees to upload a profile photo from the device gallery<br />
-              • Data: Only the image you select is uploaded; we do not access your entire gallery<br />
-              • Control: You can deny or disable gallery access; profile image upload will be unavailable without permission
-            </Typography>
-          </Box>
+            <Box className="subsection">
+              <Typography variant="h6" className="subsection-title">
+                Camera (Scan QR Code)
+              </Typography>
+              <Typography variant="body1" className="section-content">
+                • Purpose: Scan table QR codes to create orders and identify table numbers<br />
+                • Data: Live camera stream used locally for scanning; we do not store raw camera footage<br />
+                • Control: You can deny or disable camera access in device settings; scanning features will be unavailable without permission
+              </Typography>
+            </Box>
 
-          
+            <Box className="subsection">
+              <Typography variant="h6" className="subsection-title">
+                Photos / Gallery (Profile Image Upload)
+              </Typography>
+              <Typography variant="body1" className="section-content">
+                • Purpose: Allow customers and employees to upload a profile photo from the device gallery<br />
+                • Data: Only the image you select is uploaded; we do not access your entire gallery<br />
+                • Control: You can deny or disable gallery access; profile image upload will be unavailable without permission
+              </Typography>
+            </Box>
 
-          <Box className="subsection">
-            <Typography variant="h6" className="subsection-title">
-              Managing Permissions
-            </Typography>
-            <Typography variant="body1" className="section-content">
-              • You can manage or revoke permissions in your device settings at any time<br />
-              • Denying a permission only limits the related feature; the rest of the app remains usable
-            </Typography>
+
+
+            <Box className="subsection">
+              <Typography variant="h6" className="subsection-title">
+                Managing Permissions
+              </Typography>
+              <Typography variant="body1" className="section-content">
+                • You can manage or revoke permissions in your device settings at any time<br />
+                • Denying a permission only limits the related feature; the rest of the app remains usable
+              </Typography>
+            </Box>
           </Box>
-        </Box>
 
           <Box className="privacy-section">
             <Typography variant="h4" component="h2" className="section-title">
