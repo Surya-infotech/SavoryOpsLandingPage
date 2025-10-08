@@ -1,4 +1,4 @@
-import { Cloud as CloudIcon, Public as PublicIcon, Security as SecurityIcon, Speed as SpeedIcon, Storage as StorageIcon, Sync as SyncIcon } from '@mui/icons-material';
+import { Cloud as CloudIcon, Public as PublicIcon, Security as SecurityIcon, Speed as SpeedIcon, Sync as SyncIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -13,7 +13,7 @@ const CloudBasedSystem = () => {
     {
       title: 'Cloud Infrastructure',
       description: 'Scalable cloud platform',
-      content: 'Built on enterprise-grade cloud infrastructure with automatic scaling, high availability, and global accessibility.',
+      content: 'Built on enterprise-grade cloud infrastructure with automatic scaling, high availability, and global accessibility. Leverage AWS cloud services for robust performance, 99.9% uptime guarantee, and seamless scalability to handle peak restaurant operations and business growth.',
       icon: <CloudIcon />,
       color: '#4CAF50',
       image: '/features/CloudBasedSystem/cloud-infrastructure.png'
@@ -21,7 +21,7 @@ const CloudBasedSystem = () => {
     {
       title: 'Data Security',
       description: 'Enterprise-grade protection',
-      content: 'Advanced encryption, secure data transmission, and compliance with industry standards for complete data protection.',
+      content: 'Advanced encryption, secure data transmission, and compliance with industry standards for complete data protection. Implement multi-layer security protocols, SSL encryption, and regular security audits to safeguard your restaurant data and customer information.',
       icon: <SecurityIcon />,
       color: '#2196F3',
       image: '/features/CloudBasedSystem/data-security.png'
@@ -29,23 +29,15 @@ const CloudBasedSystem = () => {
     {
       title: 'High Performance',
       description: 'Lightning-fast operations',
-      content: 'Optimized cloud architecture ensures fast response times, minimal latency, and seamless user experience.',
+      content: 'Optimized cloud architecture ensures fast response times, minimal latency, and seamless user experience. Benefit from CDN acceleration, load balancing, and optimized database queries for instant access to your restaurant management tools.',
       icon: <SpeedIcon />,
       color: '#FF9800',
       image: '/features/CloudBasedSystem/high-performance.png'
     },
     {
-      title: 'Data Backup',
-      description: 'Automatic data protection',
-      content: 'Automated backup systems with multiple redundancy layers ensure your data is always safe and recoverable.',
-      icon: <StorageIcon />,
-      color: '#9C27B0',
-      image: '/features/CloudBasedSystem/data-backup.png'
-    },
-    {
       title: 'Real-time Sync',
       description: 'Instant synchronization',
-      content: 'Real-time data synchronization across all devices and locations ensures consistency and up-to-date information.',
+      content: 'Real-time data synchronization across all devices and locations ensures consistency and up-to-date information. Keep all your restaurant data synchronized instantly across POS systems, mobile apps, and web dashboards for seamless operations.',
       icon: <SyncIcon />,
       color: '#F44336',
       image: '/features/CloudBasedSystem/real-time-sync.png'
@@ -53,7 +45,7 @@ const CloudBasedSystem = () => {
     {
       title: 'Global Access',
       description: 'Access from anywhere',
-      content: 'Access your restaurant management system from anywhere in the world with secure cloud-based connectivity.',
+      content: 'Access your restaurant management system from anywhere in the world with secure cloud-based connectivity. Manage your restaurant operations remotely, check real-time reports, and stay connected to your business 24/7 from any device or location.',
       icon: <PublicIcon />,
       color: '#00BCD4',
       image: '/features/CloudBasedSystem/global-access.png'

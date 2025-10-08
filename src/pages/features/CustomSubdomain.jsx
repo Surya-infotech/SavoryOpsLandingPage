@@ -1,4 +1,4 @@
-import { BrandingWatermark as BrandingWatermarkIcon, Cloud as CloudIcon, Domain as DomainIcon, Public as PublicIcon, Security as SecurityIcon, Settings as SettingsIcon } from '@mui/icons-material';
+import { BrandingWatermark as BrandingWatermarkIcon, Domain as DomainIcon, Public as PublicIcon, Security as SecurityIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -13,7 +13,7 @@ const CustomSubdomain = () => {
     {
       title: 'Branded Experience',
       description: 'Personalized restaurant branding',
-      content: 'Create a unique branded experience for your restaurant with custom subdomains that reflect your business identity and enhance customer recognition.',
+      content: 'Create a unique branded experience for your restaurant with custom subdomains that reflect your business identity and enhance customer recognition. Customize your web presence with your restaurant name, logo, and branding elements for a professional and memorable customer experience.',
       icon: <BrandingWatermarkIcon />,
       color: '#4CAF50',
       image: '/features/CustomSubdomain/branded-experience.png'
@@ -21,7 +21,7 @@ const CustomSubdomain = () => {
     {
       title: 'Easy Access',
       description: 'Memorable web addresses',
-      content: 'Provide customers with easy-to-remember web addresses like yourrestaurant.savoryops.com for seamless access to your restaurant services.',
+      content: 'Provide customers with easy-to-remember web addresses like yourrestaurant.savoryops.com for seamless access to your restaurant services. Simplify customer navigation with intuitive URLs that reflect your business name and make it easy for customers to find and access your restaurant online.',
       icon: <DomainIcon />,
       color: '#2196F3',
       image: '/features/CustomSubdomain/easy-access.png'
@@ -29,7 +29,7 @@ const CustomSubdomain = () => {
     {
       title: 'Professional Identity',
       description: 'Enhanced business credibility',
-      content: 'Establish a professional online presence with custom subdomains that build trust and credibility with your customers and partners.',
+      content: 'Establish a professional online presence with custom subdomains that build trust and credibility with your customers and partners. Project a professional image that instills confidence in your restaurant business and creates a strong brand identity in the competitive restaurant market.',
       icon: <PublicIcon />,
       color: '#FF9800',
       image: '/features/CustomSubdomain/professional-identity.png'
@@ -37,27 +37,11 @@ const CustomSubdomain = () => {
     {
       title: 'Secure Access',
       description: 'Protected restaurant data',
-      content: 'Ensure secure access to your restaurant data with SSL-enabled custom subdomains and advanced security protocols.',
+      content: 'Ensure secure access to your restaurant data with SSL-enabled custom subdomains and advanced security protocols. Protect sensitive business information, customer data, and financial transactions with enterprise-grade security measures and encrypted connections.',
       icon: <SecurityIcon />,
       color: '#9C27B0',
       image: '/features/CustomSubdomain/secure-access.png'
     },
-    {
-      title: 'Custom Configuration',
-      description: 'Tailored system settings',
-      content: 'Configure your restaurant system with custom settings and preferences that are unique to your subdomain and business requirements.',
-      icon: <SettingsIcon />,
-      color: '#F44336',
-      image: '/features/CustomSubdomain/custom-configuration.png'
-    },
-    {
-      title: 'Cloud Integration',
-      description: 'Seamless cloud connectivity',
-      content: 'Leverage cloud-based infrastructure with your custom subdomain for reliable, scalable, and always-available restaurant management.',
-      icon: <CloudIcon />,
-      color: '#00BCD4',
-      image: '/features/CustomSubdomain/cloud-integration.png'
-    }
   ];
 
   return (
