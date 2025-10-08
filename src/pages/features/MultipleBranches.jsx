@@ -1,4 +1,4 @@
-import { AccountTree as AccountTreeIcon, Business as BusinessIcon, LocationOn as LocationOnIcon, People as PeopleIcon, Settings as SettingsIcon, Timeline as TimelineIcon } from '@mui/icons-material';
+import { AccountTree as AccountTreeIcon, AttachMoney as AttachMoneyIcon, People as PeopleIcon, Receipt as ReceiptIcon, Timeline as TimelineIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -13,23 +13,15 @@ const MultipleBranches = () => {
     {
       title: 'Branch Network Management',
       description: 'Unified multi-location control',
-      content: 'Manage multiple restaurant branches from a single platform with centralized control and unified operations.',
+      content: 'Manage multiple restaurant branches from a single platform with centralized control and unified operations. Monitor performance across all locations from a single dashboard, streamline operations with consistent processes, and make data-driven decisions with comprehensive multi-branch analytics.',
       icon: <AccountTreeIcon />,
       color: '#4CAF50',
       image: '/features/MultipleBranches/branch-network-management.png'
     },
     {
-      title: 'Location-based Operations',
-      description: 'Localized branch management',
-      content: 'Handle location-specific operations, staff management, and local market adaptations for each branch.',
-      icon: <LocationOnIcon />,
-      color: '#2196F3',
-      image: '/features/MultipleBranches/location-based-operations.png'
-    },
-    {
       title: 'Centralized Reporting',
       description: 'Unified business insights',
-      content: 'Generate comprehensive reports across all branches with consolidated analytics and performance tracking.',
+      content: 'Generate comprehensive reports across all branches with consolidated analytics and performance tracking. Compare branch performance, identify top-performing locations, and make strategic decisions based on unified data from all your restaurant branches.',
       icon: <TimelineIcon />,
       color: '#FF9800',
       image: '/features/MultipleBranches/centralized-reporting.png'
@@ -37,26 +29,26 @@ const MultipleBranches = () => {
     {
       title: 'Branch-specific Staff',
       description: 'Local workforce management',
-      content: 'Manage staff separately for each branch with localized permissions, scheduling, and performance tracking.',
+      content: 'Manage staff separately for each branch with localized permissions, scheduling, and performance tracking. Assign roles specific to each location, track individual performance, and ensure proper staffing levels across all your restaurant branches.',
       icon: <PeopleIcon />,
       color: '#9C27B0',
       image: '/features/MultipleBranches/branch-specific-staff.png'
     },
     {
-      title: 'Independent Operations',
-      description: 'Autonomous branch control',
-      content: 'Each branch operates independently while maintaining centralized oversight and standardized processes.',
-      icon: <BusinessIcon />,
-      color: '#F44336',
-      image: '/features/MultipleBranches/independent-operations.png'
+      title: 'Branch-wise Currency',
+      description: 'Local currency management',
+      content: 'Manage different currencies for each branch based on local market conditions and regional requirements. Set up local currency support for international branches, handle exchange rates automatically, and provide customers with pricing in their preferred currency.',
+      icon: <AttachMoneyIcon />,
+      color: '#17a2b8',
+      image: '/features/MultipleBranches/branch-currency.png'
     },
     {
-      title: 'Unified Configuration',
-      description: 'Consistent system setup',
-      content: 'Maintain consistent configurations across all branches while allowing for location-specific customizations.',
-      icon: <SettingsIcon />,
-      color: '#00BCD4',
-      image: '/features/MultipleBranches/unified-configuration.png'
+      title: 'Branch-wise Tax',
+      description: 'Local tax management',
+      content: 'Handle different tax rates and regulations for each branch location with automated compliance and reporting. Configure location-specific tax rules, ensure regulatory compliance, and generate accurate tax reports for each branch automatically.',
+      icon: <ReceiptIcon />,
+      color: '#6f42c1',
+      image: '/features/MultipleBranches/branch-tax.png'
     }
   ];
 

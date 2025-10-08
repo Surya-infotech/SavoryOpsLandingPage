@@ -1,4 +1,4 @@
-import { AccountTree as AccountTreeIcon, Business as BusinessIcon, Public as PublicIcon, Security as SecurityIcon, Storage as StorageIcon, VpnKey as VpnKeyIcon } from '@mui/icons-material';
+import { AccountTree as AccountTreeIcon, Business as BusinessIcon, Public as PublicIcon, Security as SecurityIcon, Storage as StorageIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -13,7 +13,7 @@ const MultiTenantArchitecture = () => {
     {
       title: 'Tenant Isolation',
       description: 'Complete data separation',
-      content: 'Each tenant operates in a completely isolated environment with dedicated resources and data separation.',
+      content: 'Each tenant operates in a completely isolated environment with dedicated resources and data separation. Ensure maximum privacy and security with separate databases, isolated user sessions, and independent configurations for each restaurant business.',
       icon: <BusinessIcon />,
       color: '#4CAF50',
       image: '/features/MultiTenantArchitecture/tenant-isolation.png'
@@ -21,7 +21,7 @@ const MultiTenantArchitecture = () => {
     {
       title: 'Shared Infrastructure',
       description: 'Cost-effective scaling',
-      content: 'Leverage shared infrastructure while maintaining complete tenant isolation for optimal resource utilization.',
+      content: 'Leverage shared infrastructure while maintaining complete tenant isolation for optimal resource utilization. Benefit from enterprise-grade hardware, automatic scaling, and cost-effective operations without compromising security or performance.',
       icon: <AccountTreeIcon />,
       color: '#2196F3',
       image: '/features/MultiTenantArchitecture/shared-infrastructure.png'
@@ -29,7 +29,7 @@ const MultiTenantArchitecture = () => {
     {
       title: 'Data Security',
       description: 'Enterprise-grade protection',
-      content: 'Advanced security measures ensure complete data isolation and protection for each tenant environment.',
+      content: 'Advanced security measures ensure complete data isolation and protection for each tenant environment. Implement multi-layer security protocols, encrypted data transmission, and comprehensive access controls to safeguard your business information.',
       icon: <SecurityIcon />,
       color: '#FF9800',
       image: '/features/MultiTenantArchitecture/data-security.png'
@@ -37,23 +37,15 @@ const MultiTenantArchitecture = () => {
     {
       title: 'Database Separation',
       description: 'Dedicated data storage',
-      content: 'Each tenant has their own dedicated database with complete isolation and independent data management.',
+      content: 'Each tenant has their own dedicated database with complete isolation and independent data management. Maintain separate data schemas, backup systems, and recovery processes for maximum data integrity and business continuity.',
       icon: <StorageIcon />,
       color: '#9C27B0',
       image: '/features/MultiTenantArchitecture/database-separation.png'
     },
     {
-      title: 'Access Control',
-      description: 'Role-based permissions',
-      content: 'Comprehensive access control system with role-based permissions and tenant-specific authentication.',
-      icon: <VpnKeyIcon />,
-      color: '#F44336',
-      image: '/features/MultiTenantArchitecture/access-control.png'
-    },
-    {
       title: 'Custom Domains',
       description: 'Branded tenant experience',
-      content: 'Each tenant can have their own custom domain and branding for a personalized experience.',
+      content: 'Each tenant can have their own custom domain and branding for a personalized experience. Create unique web addresses, maintain brand identity, and provide customers with a seamless, branded experience that reflects your restaurant business.',
       icon: <PublicIcon />,
       color: '#00BCD4',
       image: '/features/MultiTenantArchitecture/custom-domains.png'
