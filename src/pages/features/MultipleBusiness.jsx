@@ -1,4 +1,4 @@
-import { AccountTree as AccountTreeIcon, Business as BusinessIcon, Cloud as CloudIcon, Public as PublicIcon, Security as SecurityIcon, Storage as StorageIcon } from '@mui/icons-material';
+import { AccountTree as AccountTreeIcon, Cloud as CloudIcon, Public as PublicIcon, Security as SecurityIcon, Storage as StorageIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -11,52 +11,44 @@ const MultipleBusiness = () => {
 
   const benefits = [
     {
-      title: 'Business Management',
-      description: 'Centralized multi-entity control',
-      content: 'Manage multiple business entities from a single platform with centralized control and unified operations.',
-      icon: <BusinessIcon />,
-      color: '#4CAF50',
-      image: '/business-management.png'
-    },
-    {
       title: 'Branch Network',
       description: 'Unified branch operations',
-      content: 'Efficiently manage multiple branches with unified operations, reporting, and centralized management.',
+      content: 'Efficiently manage multiple branches with unified operations, reporting, and centralized management. Monitor performance across all locations from a single dashboard, streamline operations with consistent processes, and make data-driven decisions with comprehensive multi-branch analytics.',
       icon: <AccountTreeIcon />,
       color: '#2196F3',
-      image: '/branch-network.png'
+      image: '/features/MultipleBusiness/branch-network.png'
     },
     {
       title: 'Data Isolation',
       description: 'Complete data separation',
-      content: 'Each restaurant owner gets their own dedicated database with complete data isolation and privacy.',
+      content: 'Each restaurant owner gets their own dedicated database with complete data isolation and privacy. Ensure maximum security with separate databases for each business entity, protect sensitive information with advanced encryption, and maintain regulatory compliance with isolated data storage.',
       icon: <StorageIcon />,
       color: '#FF9800',
-      image: '/data-isolation.png'
+      image: '/features/MultipleBusiness/data-isolation.png'
     },
     {
       title: 'Custom Subdomains',
       description: 'Personalized experience',
-      content: 'Each restaurant owner gets their own custom subdomain for a personalized and branded experience.',
+      content: 'Each restaurant owner gets their own custom subdomain for a personalized and branded experience. Create a unique online presence for your business, enhance brand recognition with custom URLs, and provide customers with a seamless, branded ordering experience.',
       icon: <PublicIcon />,
       color: '#9C27B0',
-      image: '/custom-subdomains.png'
+      image: '/features/MultipleBusiness/custom-subdomains.png'
     },
     {
       title: 'Cloud Platform',
       description: 'Secure cloud access',
-      content: 'Fully cloud-based platform ensuring secure access from anywhere with automatic updates and scalability.',
+      content: 'Fully cloud-based platform ensuring secure access from anywhere with automatic updates and scalability. Access your business data from any device, benefit from automatic software updates without downtime, and scale effortlessly as your restaurant empire grows.',
       icon: <CloudIcon />,
       color: '#F44336',
-      image: '/cloud-platform.png'
+      image: '/features/MultipleBusiness/cloud-platform.png'
     },
     {
       title: 'Security & Privacy',
       description: 'Enterprise-grade protection',
-      content: 'Enterprise-grade security with complete data isolation, privacy protection, and compliance standards.',
+      content: 'Enterprise-grade security with complete data isolation, privacy protection, and compliance standards. Safeguard your business with AWS cloud infrastructure, ensure GDPR and data privacy compliance, and protect customer information with industry-leading security protocols.',
       icon: <SecurityIcon />,
       color: '#00BCD4',
-      image: '/security-privacy.png'
+      image: '/features/MultipleBusiness/security-privacy.png'
     }
   ];
 
@@ -90,7 +82,7 @@ const MultipleBusiness = () => {
             <Box className="business-image-container">
               <Box className="business-image">
                 <img
-                  src="/multiple-business.png"
+                  src="/features/MultipleBusiness/multiple-business.png"
                   alt="Multiple Business Interface"
                   className="business-preview-image"
                 />

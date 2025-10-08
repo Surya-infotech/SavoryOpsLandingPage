@@ -1,4 +1,4 @@
-import { BarChart as BarChartIcon, FileDownload as ExportIcon, Monitor as MonitorIcon, Palette as PaletteIcon, PhoneAndroid as PhoneIcon, Security as SecurityIcon } from '@mui/icons-material';
+import { BarChart as BarChartIcon, Monitor as MonitorIcon, Receipt as ReceiptIcon, Star as StarIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -13,50 +13,42 @@ const SmartDashboard = () => {
     {
       title: 'Real-time Monitoring',
       description: 'Live insights at your fingertips',
-      content: 'Track sales, orders, and performance with instant updates and real-time notifications.',
+      content: 'Track sales, orders, and performance with instant updates and real-time notifications. Monitor revenue streams, table occupancy, and staff productivity. Get immediate alerts for important events and stay connected to your restaurant operations 24/7 from any device.',
       icon: <MonitorIcon />,
       color: '#4CAF50',
-      image: '/real-time-monitoring.png'
+      image: '/features/SmartDashboard/SmartDashboard.png'
     },
     {
       title: 'Smart Analytics',
       description: 'Data-driven decisions made simple',
-      content: 'Advanced reporting tools with interactive charts and trend analysis for better business insights.',
+      content: 'Advanced reporting tools with interactive charts and trend analysis for better business insights. Analyze sales patterns, identify top-performing menu items, and understand customer preferences. Transform complex data into actionable insights with intuitive visualizations.',
       icon: <BarChartIcon />,
       color: '#2196F3',
-      image: '/smart-analytics.png'
+      image: '/features/SmartDashboard/smart-analytics.png'
     },
     {
-      title: 'Mobile Ready',
-      description: 'Access anywhere, anytime',
-      content: 'Fully responsive design that works perfectly on smartphones, tablets, and desktop devices.',
-      icon: <PhoneIcon />,
+      title: 'Running Order List',
+      description: 'Track active orders in real-time',
+      content: 'Monitor all running orders with live status updates, preparation times, and order details. Track estimated completion times and identify bottlenecks in your kitchen workflow. Ensure smooth coordination between kitchen staff, waiters, and cashiers.',
+      icon: <ReceiptIcon />,
       color: '#FF9800',
-      image: '/mobile-ready.png'
+      image: '/features/SmartDashboard/running-orders.png'
     },
     {
-      title: 'Secure & Reliable',
-      description: 'Enterprise-grade security',
-      content: 'Bank-level encryption, role-based access control, and 99.9% uptime guarantee.',
-      icon: <SecurityIcon />,
+      title: 'Branch-wise Customer Reviews',
+      description: 'Overall customer satisfaction insights',
+      content: 'View and analyze customer reviews and ratings for each branch to understand satisfaction levels. Track review trends over time and identify areas for improvement. Monitor branch performance and compare satisfaction scores across locations.',
+      icon: <StarIcon />,
+      color: '#FFC107',
+      image: '/features/SmartDashboard/customer-reviews.png'
+    },
+    {
+      title: 'Monthly Order Count',
+      description: 'Track completed orders monthly',
+      content: 'Monitor monthly completed order statistics to track business growth and performance trends. View detailed breakdowns of orders by branch, time period, and order type. Identify peak seasons and compare month-over-month growth.',
+      icon: <TrendingUpIcon />,
       color: '#9C27B0',
-      image: '/secure-reliable.png'
-    },
-    {
-      title: 'Easy Export',
-      description: 'Reports in seconds',
-      content: 'Generate and download reports in PDF, Excel, and CSV formats with one click.',
-      icon: <ExportIcon />,
-      color: '#F44336',
-      image: '/easy-export.png'
-    },
-    {
-      title: 'Customizable',
-      description: 'Tailored to your needs',
-      content: 'Personalize your dashboard with custom widgets, layouts, and user preferences.',
-      icon: <PaletteIcon />,
-      color: '#00BCD4',
-      image: '/customizable.png'
+      image: '/features/SmartDashboard/monthly-orders.png'
     }
   ];
 
@@ -91,7 +83,7 @@ const SmartDashboard = () => {
             <Box className="dashboard-image-container">
               <Box className="dashboard-image">
                 <img
-                  src="/dashboard.png"
+                  src="/features/SmartDashboard/SmartDashboard.png"
                   alt="Smart Dashboard Interface"
                   className="dashboard-preview-image"
                 />
