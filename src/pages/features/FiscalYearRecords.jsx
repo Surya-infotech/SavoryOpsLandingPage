@@ -16,7 +16,7 @@ const FiscalYearRecords = () => {
       content: 'Keep organized records fiscal year wise for better financial management and compliance.',
       icon: <CalendarMonthIcon />,
       color: '#4CAF50',
-      image: '/organized-financial-data.png'
+      image: '/features/FiscalYearRecords/organized-financial-data.png'
     },
     {
       title: 'Financial Reporting',
@@ -24,7 +24,7 @@ const FiscalYearRecords = () => {
       content: 'Generate comprehensive financial reports organized by fiscal year for better analysis.',
       icon: <AssessmentIcon />,
       color: '#2196F3',
-      image: '/financial-reporting.png'
+      image: '/features/FiscalYearRecords/financial-reporting.png'
     },
     {
       title: 'Performance Tracking',
@@ -32,7 +32,7 @@ const FiscalYearRecords = () => {
       content: 'Track performance across fiscal years with detailed year-over-year analysis.',
       icon: <TrendingUpIcon />,
       color: '#FF9800',
-      image: '/performance-tracking.png'
+      image: '/features/FiscalYearRecords/performance-tracking.png'
     },
     {
       title: 'Data Archival',
@@ -40,7 +40,7 @@ const FiscalYearRecords = () => {
       content: 'Securely archive and store financial records for long-term compliance and reference.',
       icon: <StorageIcon />,
       color: '#9C27B0',
-      image: '/data-archival.png'
+      image: '/features/FiscalYearRecords/data-archival.png'
     },
     {
       title: 'Compliance Management',
@@ -48,7 +48,7 @@ const FiscalYearRecords = () => {
       content: 'Ensure compliance with fiscal year reporting requirements and regulations.',
       icon: <SecurityIcon />,
       color: '#F44336',
-      image: '/compliance-management.png'
+      image: '/features/FiscalYearRecords/compliance-management.png'
     },
     {
       title: 'Historical Analysis',
@@ -56,7 +56,7 @@ const FiscalYearRecords = () => {
       content: 'Analyze historical data and trends across multiple fiscal years for strategic planning.',
       icon: <TimelineIcon />,
       color: '#00BCD4',
-      image: '/historical-analysis.png'
+      image: '/features/FiscalYearRecords/historical-analysis.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const FiscalYearRecords = () => {
             <Box className="fiscal-image-container">
               <Box className="fiscal-image">
                 <img
-                  src="/fiscal-year-records.png"
+                  src="/features/FiscalYearRecords/fiscal-year-records.png"
                   alt="Fiscal Year Records Interface"
                   className="fiscal-preview-image"
                 />

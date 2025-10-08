@@ -16,7 +16,7 @@ const CloudBasedSystem = () => {
       content: 'Built on enterprise-grade cloud infrastructure with automatic scaling, high availability, and global accessibility.',
       icon: <CloudIcon />,
       color: '#4CAF50',
-      image: '/cloud-infrastructure.png'
+      image: '/features/CloudBasedSystem/cloud-infrastructure.png'
     },
     {
       title: 'Data Security',
@@ -24,7 +24,7 @@ const CloudBasedSystem = () => {
       content: 'Advanced encryption, secure data transmission, and compliance with industry standards for complete data protection.',
       icon: <SecurityIcon />,
       color: '#2196F3',
-      image: '/data-security.png'
+      image: '/features/CloudBasedSystem/data-security.png'
     },
     {
       title: 'High Performance',
@@ -32,7 +32,7 @@ const CloudBasedSystem = () => {
       content: 'Optimized cloud architecture ensures fast response times, minimal latency, and seamless user experience.',
       icon: <SpeedIcon />,
       color: '#FF9800',
-      image: '/high-performance.png'
+      image: '/features/CloudBasedSystem/high-performance.png'
     },
     {
       title: 'Data Backup',
@@ -40,7 +40,7 @@ const CloudBasedSystem = () => {
       content: 'Automated backup systems with multiple redundancy layers ensure your data is always safe and recoverable.',
       icon: <StorageIcon />,
       color: '#9C27B0',
-      image: '/data-backup.png'
+      image: '/features/CloudBasedSystem/data-backup.png'
     },
     {
       title: 'Real-time Sync',
@@ -48,7 +48,7 @@ const CloudBasedSystem = () => {
       content: 'Real-time data synchronization across all devices and locations ensures consistency and up-to-date information.',
       icon: <SyncIcon />,
       color: '#F44336',
-      image: '/real-time-sync.png'
+      image: '/features/CloudBasedSystem/real-time-sync.png'
     },
     {
       title: 'Global Access',
@@ -56,7 +56,7 @@ const CloudBasedSystem = () => {
       content: 'Access your restaurant management system from anywhere in the world with secure cloud-based connectivity.',
       icon: <PublicIcon />,
       color: '#00BCD4',
-      image: '/global-access.png'
+      image: '/features/CloudBasedSystem/global-access.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const CloudBasedSystem = () => {
             <Box className="cloud-image-container">
               <Box className="cloud-image">
                 <img
-                  src="/cloud-based-system.png"
+                  src="/features/CloudBasedSystem/cloud-based-system.png"
                   alt="Cloud Based System Interface"
                   className="cloud-preview-image"
                 />

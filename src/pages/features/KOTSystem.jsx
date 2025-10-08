@@ -16,7 +16,7 @@ const KOTSystem = () => {
       content: 'Generate kitchen order tickets automatically for efficient food preparation and streamlined kitchen operations.',
       icon: <ReceiptIcon />,
       color: '#4CAF50',
-      image: '/kitchen-order-tickets.png'
+      image: '/features/KOTSystem/kitchen-order-tickets.png'
     },
     {
       title: 'Real-time Order Tracking',
@@ -24,7 +24,7 @@ const KOTSystem = () => {
       content: 'Track order status in real-time from placement to completion with comprehensive order monitoring.',
       icon: <TimelineIcon />,
       color: '#2196F3',
-      image: '/real-time-order-tracking.png'
+      image: '/features/KOTSystem/real-time-order-tracking.png'
     },
     {
       title: 'Kitchen Workflow',
@@ -32,7 +32,7 @@ const KOTSystem = () => {
       content: 'Streamline kitchen workflow with organized order management and efficient food preparation processes.',
       icon: <RestaurantIcon />,
       color: '#FF9800',
-      image: '/kitchen-workflow.png'
+      image: '/features/KOTSystem/kitchen-workflow.png'
     },
     {
       title: 'Order Notifications',
@@ -40,7 +40,7 @@ const KOTSystem = () => {
       content: 'Receive instant notifications for new orders, modifications, and special instructions in the kitchen.',
       icon: <NotificationsIcon />,
       color: '#9C27B0',
-      image: '/order-notifications.png'
+      image: '/features/KOTSystem/order-notifications.png'
     },
     {
       title: 'Fast Processing',
@@ -48,7 +48,7 @@ const KOTSystem = () => {
       content: 'Process orders quickly with optimized ticket generation and efficient kitchen communication systems.',
       icon: <SpeedIcon />,
       color: '#F44336',
-      image: '/fast-processing.png'
+      image: '/features/KOTSystem/fast-processing.png'
     },
     {
       title: 'Order Management',
@@ -56,7 +56,7 @@ const KOTSystem = () => {
       content: 'Manage all orders efficiently with detailed tracking, status updates, and comprehensive order history.',
       icon: <AssignmentIcon />,
       color: '#00BCD4',
-      image: '/order-management.png'
+      image: '/features/KOTSystem/order-management.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const KOTSystem = () => {
             <Box className="kot-image-container">
               <Box className="kot-image">
                 <img
-                  src="/kot-system.png"
+                  src="/features/KOTSystem/kot-system.png"
                   alt="KOT System Interface"
                   className="kot-preview-image"
                 />

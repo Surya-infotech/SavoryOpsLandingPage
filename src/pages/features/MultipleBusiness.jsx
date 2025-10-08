@@ -32,7 +32,7 @@ const MultipleBusiness = () => {
       content: 'Each restaurant owner gets their own custom subdomain for a personalized and branded experience. Create a unique online presence for your business, enhance brand recognition with custom URLs, and provide customers with a seamless, branded ordering experience.',
       icon: <PublicIcon />,
       color: '#9C27B0',
-      image: '/features/MultipleBusiness/custom-subdomains.png'
+      image: '/features/MultipleBusiness/subdomain.png'
     },
     {
       title: 'Cloud Platform',

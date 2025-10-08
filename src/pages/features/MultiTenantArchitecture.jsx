@@ -16,7 +16,7 @@ const MultiTenantArchitecture = () => {
       content: 'Each tenant operates in a completely isolated environment with dedicated resources and data separation.',
       icon: <BusinessIcon />,
       color: '#4CAF50',
-      image: '/tenant-isolation.png'
+      image: '/features/MultiTenantArchitecture/tenant-isolation.png'
     },
     {
       title: 'Shared Infrastructure',
@@ -24,7 +24,7 @@ const MultiTenantArchitecture = () => {
       content: 'Leverage shared infrastructure while maintaining complete tenant isolation for optimal resource utilization.',
       icon: <AccountTreeIcon />,
       color: '#2196F3',
-      image: '/shared-infrastructure.png'
+      image: '/features/MultiTenantArchitecture/shared-infrastructure.png'
     },
     {
       title: 'Data Security',
@@ -32,7 +32,7 @@ const MultiTenantArchitecture = () => {
       content: 'Advanced security measures ensure complete data isolation and protection for each tenant environment.',
       icon: <SecurityIcon />,
       color: '#FF9800',
-      image: '/data-security.png'
+      image: '/features/MultiTenantArchitecture/data-security.png'
     },
     {
       title: 'Database Separation',
@@ -40,7 +40,7 @@ const MultiTenantArchitecture = () => {
       content: 'Each tenant has their own dedicated database with complete isolation and independent data management.',
       icon: <StorageIcon />,
       color: '#9C27B0',
-      image: '/database-separation.png'
+      image: '/features/MultiTenantArchitecture/database-separation.png'
     },
     {
       title: 'Access Control',
@@ -48,7 +48,7 @@ const MultiTenantArchitecture = () => {
       content: 'Comprehensive access control system with role-based permissions and tenant-specific authentication.',
       icon: <VpnKeyIcon />,
       color: '#F44336',
-      image: '/access-control.png'
+      image: '/features/MultiTenantArchitecture/access-control.png'
     },
     {
       title: 'Custom Domains',
@@ -56,7 +56,7 @@ const MultiTenantArchitecture = () => {
       content: 'Each tenant can have their own custom domain and branding for a personalized experience.',
       icon: <PublicIcon />,
       color: '#00BCD4',
-      image: '/custom-domains.png'
+      image: '/features/MultiTenantArchitecture/custom-domains.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const MultiTenantArchitecture = () => {
             <Box className="tenant-image-container">
               <Box className="tenant-image">
                 <img
-                  src="/multi-tenant-architecture.png"
+                  src="/features/MultiTenantArchitecture/multi-tenant-architecture.png"
                   alt="Multi Tenant Architecture Interface"
                   className="tenant-preview-image"
                 />

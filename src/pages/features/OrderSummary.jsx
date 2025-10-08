@@ -16,7 +16,7 @@ const OrderSummary = () => {
       content: 'Track orders from placement to completion with detailed timeline and status updates for better order management.',
       icon: <TimelineIcon />,
       color: '#4CAF50',
-      image: '/order-timeline.png'
+      image: '/features/OrderSummary/order-timeline.png'
     },
     {
       title: 'Detailed Reports',
@@ -24,7 +24,7 @@ const OrderSummary = () => {
       content: 'Generate detailed order reports with comprehensive analysis and insights for better business decisions.',
       icon: <AssessmentIcon />,
       color: '#2196F3',
-      image: '/detailed-reports.png'
+      image: '/features/OrderSummary/detailed-reports.png'
     },
     {
       title: 'Order History',
@@ -32,7 +32,7 @@ const OrderSummary = () => {
       content: 'Maintain complete order history with searchable records and detailed order information for reference.',
       icon: <ListAltIcon />,
       color: '#FF9800',
-      image: '/order-history.png'
+      image: '/features/OrderSummary/order-history.png'
     },
     {
       title: 'Quick Summary',
@@ -40,7 +40,7 @@ const OrderSummary = () => {
       content: 'Get instant order summaries with key information and quick access to order details and status.',
       icon: <SpeedIcon />,
       color: '#9C27B0',
-      image: '/quick-summary.png'
+      image: '/features/OrderSummary/quick-summary.png'
     },
     {
       title: 'Order Visibility',
@@ -48,7 +48,7 @@ const OrderSummary = () => {
       content: 'Monitor orders in real-time with complete visibility into order status, progress, and completion.',
       icon: <VisibilityIcon />,
       color: '#F44336',
-      image: '/order-visibility.png'
+      image: '/features/OrderSummary/order-visibility.png'
     },
     {
       title: 'Summary Reports',
@@ -56,7 +56,7 @@ const OrderSummary = () => {
       content: 'Generate organized summary reports with key metrics and insights for efficient order management.',
       icon: <ReceiptLongIcon />,
       color: '#00BCD4',
-      image: '/summary-reports.png'
+      image: '/features/OrderSummary/summary-reports.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const OrderSummary = () => {
             <Box className="order-image-container">
               <Box className="order-image">
                 <img
-                  src="/order-summary.png"
+                  src="/features/OrderSummary/order-summary.png"
                   alt="Order Summary Interface"
                   className="order-preview-image"
                 />

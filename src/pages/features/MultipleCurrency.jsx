@@ -16,7 +16,7 @@ const MultipleCurrency = () => {
       content: 'Accept payments in multiple currencies for global business operations and international customers.',
       icon: <CurrencyExchangeIcon />,
       color: '#4CAF50',
-      image: '/international-transactions.png'
+      image: '/features/MultipleCurrency/international-transactions.png'
     },
     {
       title: 'Multi-Currency Support',
@@ -24,7 +24,7 @@ const MultipleCurrency = () => {
       content: 'Support for multiple currencies with real-time exchange rates and automatic conversion.',
       icon: <AttachMoneyIcon />,
       color: '#2196F3',
-      image: '/multi-currency-support.png'
+      image: '/features/MultipleCurrency/multi-currency-support.png'
     },
     {
       title: 'Payment Processing',
@@ -32,7 +32,7 @@ const MultipleCurrency = () => {
       content: 'Process payments securely in different currencies with fraud protection and compliance.',
       icon: <PaymentIcon />,
       color: '#FF9800',
-      image: '/payment-processing.png'
+      image: '/features/MultipleCurrency/payment-processing.png'
     },
     {
       title: 'Exchange Rate Management',
@@ -40,7 +40,7 @@ const MultipleCurrency = () => {
       content: 'Manage exchange rates with real-time updates and automatic rate adjustments.',
       icon: <TrendingUpIcon />,
       color: '#9C27B0',
-      image: '/exchange-rate-management.png'
+      image: '/features/MultipleCurrency/exchange-rate-management.png'
     },
     {
       title: 'Financial Reporting',
@@ -48,7 +48,7 @@ const MultipleCurrency = () => {
       content: 'Generate comprehensive financial reports with multi-currency analytics and insights.',
       icon: <AssessmentIcon />,
       color: '#F44336',
-      image: '/financial-reporting.png'
+      image: '/features/MultipleCurrency/financial-reporting.png'
     },
     {
       title: 'Global Compliance',
@@ -56,7 +56,7 @@ const MultipleCurrency = () => {
       content: 'Ensure compliance with international financial regulations and currency standards.',
       icon: <PublicIcon />,
       color: '#00BCD4',
-      image: '/global-compliance.png'
+      image: '/features/MultipleCurrency/global-compliance.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const MultipleCurrency = () => {
             <Box className="currency-image-container">
               <Box className="currency-image">
                 <img
-                  src="/multiple-currency.png"
+                  src="/features/MultipleCurrency/multiple-currency.png"
                   alt="Multiple Currency Interface"
                   className="currency-preview-image"
                 />

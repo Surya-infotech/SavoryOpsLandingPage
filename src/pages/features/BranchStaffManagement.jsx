@@ -16,7 +16,7 @@ const BranchStaffManagement = () => {
       content: 'Manage staff separately for each branch with localized permissions and scheduling for optimal workforce control.',
       icon: <GroupsIcon />,
       color: '#4CAF50',
-      image: '/local-workforce-control.png'
+      image: '/features/BranchStaffManagement/local-workforce-control.png'
     },
     {
       title: 'Staff Scheduling',
@@ -24,7 +24,7 @@ const BranchStaffManagement = () => {
       content: 'Create and manage flexible staff schedules with automated shift planning and conflict resolution.',
       icon: <ScheduleIcon />,
       color: '#2196F3',
-      image: '/staff-scheduling.png'
+      image: '/features/BranchStaffManagement/staff-scheduling.png'
     },
     {
       title: 'Role-based Permissions',
@@ -32,7 +32,7 @@ const BranchStaffManagement = () => {
       content: 'Implement role-based permissions with secure access control for different staff levels and responsibilities.',
       icon: <SecurityIcon />,
       color: '#FF9800',
-      image: '/role-based-permissions.png'
+      image: '/features/BranchStaffManagement/role-based-permissions.png'
     },
     {
       title: 'Performance Tracking',
@@ -40,7 +40,7 @@ const BranchStaffManagement = () => {
       content: 'Track and monitor staff performance with detailed analytics and performance metrics for each branch.',
       icon: <TrendingUpIcon />,
       color: '#9C27B0',
-      image: '/performance-tracking.png'
+      image: '/features/BranchStaffManagement/performance-tracking.png'
     },
     {
       title: 'Staff Profiles',
@@ -48,7 +48,7 @@ const BranchStaffManagement = () => {
       content: 'Maintain comprehensive staff profiles with detailed employee records and information management.',
       icon: <PersonIcon />,
       color: '#F44336',
-      image: '/staff-profiles.png'
+      image: '/features/BranchStaffManagement/staff-profiles.png'
     },
     {
       title: 'Task Assignment',
@@ -56,7 +56,7 @@ const BranchStaffManagement = () => {
       content: 'Assign and distribute tasks efficiently among staff members with automated task management.',
       icon: <AssignmentIcon />,
       color: '#00BCD4',
-      image: '/task-assignment.png'
+      image: '/features/BranchStaffManagement/task-assignment.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const BranchStaffManagement = () => {
             <Box className="staff-image-container">
               <Box className="staff-image">
                 <img
-                  src="/branch-staff-management.png"
+                  src="/features/BranchStaffManagement/branch-staff-management.png"
                   alt="Branch Staff Management Interface"
                   className="staff-preview-image"
                 />

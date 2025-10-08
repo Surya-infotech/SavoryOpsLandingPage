@@ -16,7 +16,7 @@ const CustomerReviews = () => {
       content: 'Automatically collect reviews from customers across multiple platforms with seamless integration and real-time updates.',
       icon: <RateReviewIcon />,
       color: '#4CAF50',
-      image: '/review-collection.png'
+      image: '/features/CustomerReviews/review-collection.png'
     },
     {
       title: 'Rating Analytics',
@@ -24,7 +24,7 @@ const CustomerReviews = () => {
       content: 'Analyze rating trends and customer satisfaction metrics with advanced analytics and detailed reporting.',
       icon: <StarIcon />,
       color: '#2196F3',
-      image: '/rating-analytics.png'
+      image: '/features/CustomerReviews/rating-analytics.png'
     },
     {
       title: 'Feedback Insights',
@@ -32,7 +32,7 @@ const CustomerReviews = () => {
       content: 'Gain valuable insights from customer feedback and suggestions with AI-powered sentiment analysis.',
       icon: <FeedbackIcon />,
       color: '#FF9800',
-      image: '/feedback-insights.png'
+      image: '/features/CustomerReviews/feedback-insights.png'
     },
     {
       title: 'Response Management',
@@ -40,7 +40,7 @@ const CustomerReviews = () => {
       content: 'Easily respond to customer reviews and manage interactions with automated response suggestions.',
       icon: <TrendingUpIcon />,
       color: '#9C27B0',
-      image: '/response-management.png'
+      image: '/features/CustomerReviews/response-management.png'
     },
     {
       title: 'Review Moderation',
@@ -48,7 +48,7 @@ const CustomerReviews = () => {
       content: 'Moderate and filter reviews to maintain quality standards with intelligent content filtering.',
       icon: <VisibilityIcon />,
       color: '#F44336',
-      image: '/review-moderation.png'
+      image: '/features/CustomerReviews/review-moderation.png'
     },
     {
       title: 'Performance Tracking',
@@ -56,7 +56,7 @@ const CustomerReviews = () => {
       content: 'Track review performance and customer satisfaction trends with comprehensive analytics dashboard.',
       icon: <AnalyticsIcon />,
       color: '#00BCD4',
-      image: '/performance-tracking.png'
+      image: '/features/CustomerReviews/performance-tracking.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const CustomerReviews = () => {
             <Box className="reviews-image-container">
               <Box className="reviews-image">
                 <img
-                  src="/customer-reviews.png"
+                  src="/features/CustomerReviews/customer-reviews.png"
                   alt="Customer Reviews Interface"
                   className="reviews-preview-image"
                 />

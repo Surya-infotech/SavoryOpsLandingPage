@@ -16,7 +16,7 @@ const BranchTaxManagement = () => {
       content: 'Manage different tax rates and regulations for each branch location with automated compliance.',
       icon: <ReceiptLongIcon />,
       color: '#4CAF50',
-      image: '/local-tax-compliance.png'
+      image: '/features/BranchTaxManagement/local-tax-compliance.png'
     },
     {
       title: 'Tax Rate Management',
@@ -24,7 +24,7 @@ const BranchTaxManagement = () => {
       content: 'Configure and manage different tax rates for various categories and locations.',
       icon: <AccountBalanceIcon />,
       color: '#2196F3',
-      image: '/tax-rate-management.png'
+      image: '/features/BranchTaxManagement/tax-rate-management.png'
     },
     {
       title: 'Tax Reporting',
@@ -32,7 +32,7 @@ const BranchTaxManagement = () => {
       content: 'Generate detailed tax reports and analytics for each branch and overall operations.',
       icon: <AssessmentIcon />,
       color: '#FF9800',
-      image: '/tax-reporting.png'
+      image: '/features/BranchTaxManagement/tax-reporting.png'
     },
     {
       title: 'Regulatory Compliance',
@@ -40,7 +40,7 @@ const BranchTaxManagement = () => {
       content: 'Ensure compliance with local and national tax regulations and legal requirements.',
       icon: <GavelIcon />,
       color: '#9C27B0',
-      image: '/regulatory-compliance.png'
+      image: '/features/BranchTaxManagement/regulatory-compliance.png'
     },
     {
       title: 'Tax Optimization',
@@ -48,7 +48,7 @@ const BranchTaxManagement = () => {
       content: 'Optimize tax strategies and planning for maximum efficiency and compliance.',
       icon: <TrendingUpIcon />,
       color: '#F44336',
-      image: '/tax-optimization.png'
+      image: '/features/BranchTaxManagement/tax-optimization.png'
     },
     {
       title: 'Audit Support',
@@ -56,7 +56,7 @@ const BranchTaxManagement = () => {
       content: 'Provide comprehensive support and documentation for tax audits and inspections.',
       icon: <SecurityIcon />,
       color: '#00BCD4',
-      image: '/audit-support.png'
+      image: '/features/BranchTaxManagement/audit-support.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const BranchTaxManagement = () => {
             <Box className="tax-image-container">
               <Box className="tax-image">
                 <img
-                  src="/branch-tax-management.png"
+                  src="/features/BranchTaxManagement/branch-tax-management.png"
                   alt="Branch Tax Management Interface"
                   className="tax-preview-image"
                 />

@@ -16,7 +16,7 @@ const MultipleBranches = () => {
       content: 'Manage multiple restaurant branches from a single platform with centralized control and unified operations.',
       icon: <AccountTreeIcon />,
       color: '#4CAF50',
-      image: '/branch-network-management.png'
+      image: '/features/MultipleBranches/branch-network-management.png'
     },
     {
       title: 'Location-based Operations',
@@ -24,7 +24,7 @@ const MultipleBranches = () => {
       content: 'Handle location-specific operations, staff management, and local market adaptations for each branch.',
       icon: <LocationOnIcon />,
       color: '#2196F3',
-      image: '/location-based-operations.png'
+      image: '/features/MultipleBranches/location-based-operations.png'
     },
     {
       title: 'Centralized Reporting',
@@ -32,7 +32,7 @@ const MultipleBranches = () => {
       content: 'Generate comprehensive reports across all branches with consolidated analytics and performance tracking.',
       icon: <TimelineIcon />,
       color: '#FF9800',
-      image: '/centralized-reporting.png'
+      image: '/features/MultipleBranches/centralized-reporting.png'
     },
     {
       title: 'Branch-specific Staff',
@@ -40,7 +40,7 @@ const MultipleBranches = () => {
       content: 'Manage staff separately for each branch with localized permissions, scheduling, and performance tracking.',
       icon: <PeopleIcon />,
       color: '#9C27B0',
-      image: '/branch-specific-staff.png'
+      image: '/features/MultipleBranches/branch-specific-staff.png'
     },
     {
       title: 'Independent Operations',
@@ -48,7 +48,7 @@ const MultipleBranches = () => {
       content: 'Each branch operates independently while maintaining centralized oversight and standardized processes.',
       icon: <BusinessIcon />,
       color: '#F44336',
-      image: '/independent-operations.png'
+      image: '/features/MultipleBranches/independent-operations.png'
     },
     {
       title: 'Unified Configuration',
@@ -56,7 +56,7 @@ const MultipleBranches = () => {
       content: 'Maintain consistent configurations across all branches while allowing for location-specific customizations.',
       icon: <SettingsIcon />,
       color: '#00BCD4',
-      image: '/unified-configuration.png'
+      image: '/features/MultipleBranches/unified-configuration.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const MultipleBranches = () => {
             <Box className="branches-image-container">
               <Box className="branches-image">
                 <img
-                  src="/multiple-branches.png"
+                  src="/features/MultipleBranches/multiple-branches.png"
                   alt="Multiple Branches Interface"
                   className="branches-preview-image"
                 />

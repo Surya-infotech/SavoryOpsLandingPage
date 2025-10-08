@@ -16,7 +16,7 @@ const POSSystem = () => {
       content: 'Process orders quickly with our optimized POS interface designed for speed and efficiency.',
       icon: <SpeedIcon />,
       color: '#4CAF50',
-      image: '/quick-transactions.png'
+      image: '/features/POSSystem/quick-transactions.png'
     },
     {
       title: 'QR Code Scanning',
@@ -24,7 +24,7 @@ const POSSystem = () => {
       content: 'Scan QR codes for instant order placement and processing with seamless integration.',
       icon: <QrCodeIcon />,
       color: '#2196F3',
-      image: '/qr-code-scanning.png'
+      image: '/features/POSSystem/qr-code-scanning.png'
     },
     {
       title: 'KOT System',
@@ -32,7 +32,7 @@ const POSSystem = () => {
       content: 'Generate kitchen order tickets for efficient food preparation and streamlined operations.',
       icon: <RestaurantIcon />,
       color: '#FF9800',
-      image: '/kot-system.png'
+      image: '/features/POSSystem/kot-system.png'
     },
     {
       title: 'Order Timeline',
@@ -40,7 +40,7 @@ const POSSystem = () => {
       content: 'Track order status from placement to delivery in real-time with comprehensive monitoring.',
       icon: <TimelineIcon />,
       color: '#9C27B0',
-      image: '/order-timeline.png'
+      image: '/features/POSSystem/order-timeline.png'
     },
     {
       title: 'Payment Processing',
@@ -48,7 +48,7 @@ const POSSystem = () => {
       content: 'Accept multiple payment methods securely with advanced encryption and fraud protection.',
       icon: <ReceiptIcon />,
       color: '#F44336',
-      image: '/payment-processing.png'
+      image: '/features/POSSystem/payment-processing.png'
     },
     {
       title: 'Data Security',
@@ -56,7 +56,7 @@ const POSSystem = () => {
       content: 'Enterprise-grade security for all transaction data with complete privacy and compliance.',
       icon: <SecurityIcon />,
       color: '#00BCD4',
-      image: '/data-security.png'
+      image: '/features/POSSystem/data-security.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const POSSystem = () => {
             <Box className="pos-image-container">
               <Box className="pos-image">
                 <img
-                  src="/pos-system.png"
+                  src="/features/POSSystem/pos-system.png"
                   alt="POS System Interface"
                   className="pos-preview-image"
                 />

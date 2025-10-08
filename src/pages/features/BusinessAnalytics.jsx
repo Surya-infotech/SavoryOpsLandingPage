@@ -16,7 +16,7 @@ const BusinessAnalytics = () => {
       content: 'Monitor sales trends, patterns, and performance metrics with detailed insights and real-time data visualization.',
       icon: <TrendingUpIcon />,
       color: '#4CAF50',
-      image: '/sales-analytics.png'
+      image: '/features/BusinessAnalytics/sales-analytics.png'
     },
     {
       title: 'Customer Insights',
@@ -24,7 +24,7 @@ const BusinessAnalytics = () => {
       content: 'Analyze customer behavior, preferences, and purchasing patterns to make data-driven business decisions.',
       icon: <BarChartIcon />,
       color: '#2196F3',
-      image: '/customer-insights.png'
+      image: '/features/BusinessAnalytics/customer-insights.png'
     },
     {
       title: 'Performance Metrics',
@@ -32,7 +32,7 @@ const BusinessAnalytics = () => {
       content: 'Track essential business metrics and KPIs with automated reporting and performance monitoring tools.',
       icon: <AssessmentIcon />,
       color: '#FF9800',
-      image: '/performance-metrics.png'
+      image: '/features/BusinessAnalytics/performance-metrics.png'
     },
     {
       title: 'Financial Reports',
@@ -40,7 +40,7 @@ const BusinessAnalytics = () => {
       content: 'Generate detailed financial reports, profit analysis, and revenue tracking with automated calculations.',
       icon: <PieChartIcon />,
       color: '#9C27B0',
-      image: '/financial-reports.png'
+      image: '/features/BusinessAnalytics/financial-reports.png'
     },
     {
       title: 'Trend Analysis',
@@ -48,7 +48,7 @@ const BusinessAnalytics = () => {
       content: 'Identify business trends and patterns with advanced forecasting and predictive analytics capabilities.',
       icon: <TimelineIcon />,
       color: '#F44336',
-      image: '/trend-analysis.png'
+      image: '/features/BusinessAnalytics/trend-analysis.png'
     },
     {
       title: 'Custom Dashboards',
@@ -56,7 +56,7 @@ const BusinessAnalytics = () => {
       content: 'Create tailored dashboards for different user roles with customizable widgets and real-time updates.',
       icon: <AnalyticsIcon />,
       color: '#00BCD4',
-      image: '/custom-dashboards.png'
+      image: '/features/BusinessAnalytics/custom-dashboards.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const BusinessAnalytics = () => {
             <Box className="analytics-image-container">
               <Box className="analytics-image">
                 <img
-                  src="/business-analytics.png"
+                  src="/features/BusinessAnalytics/business-analytics.png"
                   alt="Business Analytics Interface"
                   className="analytics-preview-image"
                 />

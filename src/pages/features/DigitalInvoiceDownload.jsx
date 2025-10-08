@@ -16,7 +16,7 @@ const DigitalInvoiceDownload = () => {
       content: 'Users can download digital invoices for future requirements and record keeping.',
       icon: <DownloadIcon />,
       color: '#4CAF50',
-      image: '/future-requirements.png'
+      image: '/features/DigitalInvoiceDownload/future-requirements.png'
     },
     {
       title: 'Digital Invoicing',
@@ -24,7 +24,7 @@ const DigitalInvoiceDownload = () => {
       content: 'Generate and manage digital invoices with professional formatting and branding.',
       icon: <ReceiptIcon />,
       color: '#2196F3',
-      image: '/digital-invoicing.png'
+      image: '/features/DigitalInvoiceDownload/digital-invoicing.png'
     },
     {
       title: 'Cloud Storage',
@@ -32,7 +32,7 @@ const DigitalInvoiceDownload = () => {
       content: 'Store invoices securely in the cloud with automatic backup and synchronization.',
       icon: <CloudDownloadIcon />,
       color: '#FF9800',
-      image: '/cloud-storage.png'
+      image: '/features/DigitalInvoiceDownload/cloud-storage.png'
     },
     {
       title: 'Data Security',
@@ -40,7 +40,7 @@ const DigitalInvoiceDownload = () => {
       content: 'Ensure data security and privacy with encrypted invoice storage and transmission.',
       icon: <SecurityIcon />,
       color: '#9C27B0',
-      image: '/data-security.png'
+      image: '/features/DigitalInvoiceDownload/data-security.png'
     },
     {
       title: 'Archive Management',
@@ -48,7 +48,7 @@ const DigitalInvoiceDownload = () => {
       content: 'Organize and manage invoice archives with easy search and retrieval capabilities.',
       icon: <ArchiveIcon />,
       color: '#F44336',
-      image: '/archive-management.png'
+      image: '/features/DigitalInvoiceDownload/archive-management.png'
     },
     {
       title: 'Print Options',
@@ -56,7 +56,7 @@ const DigitalInvoiceDownload = () => {
       content: 'Print invoices in various formats with customizable templates and layouts.',
       icon: <PrintIcon />,
       color: '#00BCD4',
-      image: '/print-options.png'
+      image: '/features/DigitalInvoiceDownload/print-options.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const DigitalInvoiceDownload = () => {
             <Box className="invoice-image-container">
               <Box className="invoice-image">
                 <img
-                  src="/digital-invoice-download.png"
+                  src="/features/DigitalInvoiceDownload/digital-invoice-download.png"
                   alt="Digital Invoice Download Interface"
                   className="invoice-preview-image"
                 />

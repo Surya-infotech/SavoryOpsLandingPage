@@ -16,7 +16,7 @@ const MenuManagement = () => {
       content: 'Update your menu items, prices, and availability in real-time across all platforms and devices.',
       icon: <EditIcon />,
       color: '#4CAF50',
-      image: '/real-time-updates.png'
+      image: '/features/MenuManagement/real-time-updates.png'
     },
     {
       title: 'Smart Organization',
@@ -24,7 +24,7 @@ const MenuManagement = () => {
       content: 'Organize your menu with custom categories, subcategories, and drag-and-drop item management.',
       icon: <CategoryIcon />,
       color: '#2196F3',
-      image: '/smart-organization.png'
+      image: '/features/MenuManagement/smart-organization.png'
     },
     {
       title: 'Visual Management',
@@ -32,7 +32,7 @@ const MenuManagement = () => {
       content: 'Upload and manage high-quality images with automatic optimization and responsive display.',
       icon: <ImageIcon />,
       color: '#FF9800',
-      image: '/visual-management.png'
+      image: '/features/MenuManagement/visual-management.png'
     },
     {
       title: 'Dynamic Pricing',
@@ -40,7 +40,7 @@ const MenuManagement = () => {
       content: 'Set different prices for different times, seasons, or special events with automated updates.',
       icon: <PriceChangeIcon />,
       color: '#9C27B0',
-      image: '/dynamic-pricing.png'
+      image: '/features/MenuManagement/dynamic-pricing.png'
     },
     {
       title: 'Availability Control',
@@ -48,7 +48,7 @@ const MenuManagement = () => {
       content: 'Schedule item availability based on time, day, season, or inventory levels automatically.',
       icon: <ScheduleIcon />,
       color: '#F44336',
-      image: '/availability-control.png'
+      image: '/features/MenuManagement/availability-control.png'
     },
     {
       title: 'Multi-language Support',
@@ -56,7 +56,7 @@ const MenuManagement = () => {
       content: 'Support multiple languages in menu descriptions to serve diverse customer bases effectively.',
       icon: <MenuIcon />,
       color: '#00BCD4',
-      image: '/multi-language-support.png'
+      image: '/features/MenuManagement/multi-language-support.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const MenuManagement = () => {
             <Box className="menu-image-container">
               <Box className="menu-image">
                 <img
-                  src="/menu-management.png"
+                  src="/features/MenuManagement/menu-management.png"
                   alt="Menu Management Interface"
                   className="menu-preview-image"
                 />

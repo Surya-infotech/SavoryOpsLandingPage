@@ -16,7 +16,7 @@ const MultipleLanguages = () => {
       content: 'Support for multiple languages to serve diverse customer bases worldwide with localized communication.',
       icon: <LanguageIcon />,
       color: '#4CAF50',
-      image: '/global-communication.png'
+      image: '/features/MultipleLanguages/global-communication.png'
     },
     {
       title: 'Menu Translation',
@@ -24,7 +24,7 @@ const MultipleLanguages = () => {
       content: 'Translate menus and content into multiple languages for better customer understanding and experience.',
       icon: <TranslateIcon />,
       color: '#2196F3',
-      image: '/menu-translation.png'
+      image: '/features/MultipleLanguages/menu-translation.png'
     },
     {
       title: 'Multi-language Interface',
@@ -32,7 +32,7 @@ const MultipleLanguages = () => {
       content: 'Provide localized user interface and experience in multiple languages for global accessibility.',
       icon: <PublicIcon />,
       color: '#FF9800',
-      image: '/multi-language-interface.png'
+      image: '/features/MultipleLanguages/multi-language-interface.png'
     },
     {
       title: 'Customer Support',
@@ -40,7 +40,7 @@ const MultipleLanguages = () => {
       content: 'Offer customer support and assistance in multiple languages for better customer service.',
       icon: <PeopleIcon />,
       color: '#9C27B0',
-      image: '/customer-support.png'
+      image: '/features/MultipleLanguages/customer-support.png'
     },
     {
       title: 'Language Settings',
@@ -48,7 +48,7 @@ const MultipleLanguages = () => {
       content: 'Configure and manage language settings with flexible options for different regions and markets.',
       icon: <SettingsIcon />,
       color: '#F44336',
-      image: '/language-settings.png'
+      image: '/features/MultipleLanguages/language-settings.png'
     },
     {
       title: 'Content Localization',
@@ -56,7 +56,7 @@ const MultipleLanguages = () => {
       content: 'Localize content and adapt it culturally for different regions and language preferences.',
       icon: <MenuBookIcon />,
       color: '#00BCD4',
-      image: '/content-localization.png'
+      image: '/features/MultipleLanguages/content-localization.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const MultipleLanguages = () => {
             <Box className="languages-image-container">
               <Box className="languages-image">
                 <img
-                  src="/multiple-languages.png"
+                  src="/features/MultipleLanguages/multiple-languages.png"
                   alt="Multiple Languages Interface"
                   className="languages-preview-image"
                 />

@@ -16,7 +16,7 @@ const BranchPricing = () => {
       content: 'Set different item prices for each branch based on local market conditions and competitive analysis.',
       icon: <PriceChangeIcon />,
       color: '#4CAF50',
-      image: '/flexible-price-management.png'
+      image: '/features/BranchPricing/flexible-price-management.png'
     },
     {
       title: 'Market-based Pricing',
@@ -24,7 +24,7 @@ const BranchPricing = () => {
       content: 'Adapt pricing strategies based on local market conditions and customer purchasing power.',
       icon: <AttachMoneyIcon />,
       color: '#2196F3',
-      image: '/market-based-pricing.png'
+      image: '/features/BranchPricing/market-based-pricing.png'
     },
     {
       title: 'Price Comparison',
@@ -32,7 +32,7 @@ const BranchPricing = () => {
       content: 'Compare prices across branches and analyze competitive pricing strategies for optimal revenue.',
       icon: <CompareIcon />,
       color: '#FF9800',
-      image: '/price-comparison.png'
+      image: '/features/BranchPricing/price-comparison.png'
     },
     {
       title: 'Revenue Optimization',
@@ -40,7 +40,7 @@ const BranchPricing = () => {
       content: 'Optimize revenue through strategic pricing adjustments and performance monitoring.',
       icon: <TrendingUpIcon />,
       color: '#9C27B0',
-      image: '/revenue-optimization.png'
+      image: '/features/BranchPricing/revenue-optimization.png'
     },
     {
       title: 'Pricing Analytics',
@@ -48,7 +48,7 @@ const BranchPricing = () => {
       content: 'Make informed pricing decisions with comprehensive analytics and performance metrics.',
       icon: <AssessmentIcon />,
       color: '#F44336',
-      image: '/pricing-analytics.png'
+      image: '/features/BranchPricing/pricing-analytics.png'
     },
     {
       title: 'Promotional Pricing',
@@ -56,7 +56,7 @@ const BranchPricing = () => {
       content: 'Create and manage promotional pricing strategies for different branches and campaigns.',
       icon: <LocalOfferIcon />,
       color: '#00BCD4',
-      image: '/promotional-pricing.png'
+      image: '/features/BranchPricing/promotional-pricing.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const BranchPricing = () => {
             <Box className="pricing-image-container">
               <Box className="pricing-image">
                 <img
-                  src="/branch-pricing.png"
+                  src="/features/BranchPricing/branch-pricing.png"
                   alt="Branch Pricing Interface"
                   className="pricing-preview-image"
                 />

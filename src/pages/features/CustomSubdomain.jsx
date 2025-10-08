@@ -16,7 +16,7 @@ const CustomSubdomain = () => {
       content: 'Create a unique branded experience for your restaurant with custom subdomains that reflect your business identity and enhance customer recognition.',
       icon: <BrandingWatermarkIcon />,
       color: '#4CAF50',
-      image: '/branded-experience.png'
+      image: '/features/CustomSubdomain/branded-experience.png'
     },
     {
       title: 'Easy Access',
@@ -24,7 +24,7 @@ const CustomSubdomain = () => {
       content: 'Provide customers with easy-to-remember web addresses like yourrestaurant.savoryops.com for seamless access to your restaurant services.',
       icon: <DomainIcon />,
       color: '#2196F3',
-      image: '/easy-access.png'
+      image: '/features/CustomSubdomain/easy-access.png'
     },
     {
       title: 'Professional Identity',
@@ -32,7 +32,7 @@ const CustomSubdomain = () => {
       content: 'Establish a professional online presence with custom subdomains that build trust and credibility with your customers and partners.',
       icon: <PublicIcon />,
       color: '#FF9800',
-      image: '/professional-identity.png'
+      image: '/features/CustomSubdomain/professional-identity.png'
     },
     {
       title: 'Secure Access',
@@ -40,7 +40,7 @@ const CustomSubdomain = () => {
       content: 'Ensure secure access to your restaurant data with SSL-enabled custom subdomains and advanced security protocols.',
       icon: <SecurityIcon />,
       color: '#9C27B0',
-      image: '/secure-access.png'
+      image: '/features/CustomSubdomain/secure-access.png'
     },
     {
       title: 'Custom Configuration',
@@ -48,7 +48,7 @@ const CustomSubdomain = () => {
       content: 'Configure your restaurant system with custom settings and preferences that are unique to your subdomain and business requirements.',
       icon: <SettingsIcon />,
       color: '#F44336',
-      image: '/custom-configuration.png'
+      image: '/features/CustomSubdomain/custom-configuration.png'
     },
     {
       title: 'Cloud Integration',
@@ -56,7 +56,7 @@ const CustomSubdomain = () => {
       content: 'Leverage cloud-based infrastructure with your custom subdomain for reliable, scalable, and always-available restaurant management.',
       icon: <CloudIcon />,
       color: '#00BCD4',
-      image: '/cloud-integration.png'
+      image: '/features/CustomSubdomain/cloud-integration.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const CustomSubdomain = () => {
             <Box className="subdomain-image-container">
               <Box className="subdomain-image">
                 <img
-                  src="/custom-subdomain.png"
+                  src="/features/CustomSubdomain/custom-subdomain.png"
                   alt="Custom Subdomain Interface"
                   className="subdomain-preview-image"
                 />

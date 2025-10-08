@@ -16,7 +16,7 @@ const QRCodeScanning = () => {
       content: 'Generate unique QR codes for each table and menu section with automatic updates and customization.',
       icon: <QrCodeIcon />,
       color: '#4CAF50',
-      image: '/qr-code-generation.png'
+      image: '/features/QRCodeScanning/qr-code-generation.png'
     },
     {
       title: 'Mobile Scanning',
@@ -24,7 +24,7 @@ const QRCodeScanning = () => {
       content: 'Customers can scan QR codes with their smartphones for instant access to menus and ordering.',
       icon: <SmartphoneIcon />,
       color: '#2196F3',
-      image: '/mobile-scanning.png'
+      image: '/features/QRCodeScanning/mobile-scanning.png'
     },
     {
       title: 'Fast Ordering',
@@ -32,7 +32,7 @@ const QRCodeScanning = () => {
       content: 'Streamlined ordering process with instant menu access and order placement for maximum efficiency.',
       icon: <SpeedIcon />,
       color: '#FF9800',
-      image: '/fast-ordering.png'
+      image: '/features/QRCodeScanning/fast-ordering.png'
     },
     {
       title: 'Kitchen Integration',
@@ -40,7 +40,7 @@ const QRCodeScanning = () => {
       content: 'Seamless integration with kitchen order ticket system for efficient food preparation and delivery.',
       icon: <RestaurantIcon />,
       color: '#9C27B0',
-      image: '/kitchen-integration.png'
+      image: '/features/QRCodeScanning/kitchen-integration.png'
     },
     {
       title: 'Order Tracking',
@@ -48,7 +48,7 @@ const QRCodeScanning = () => {
       content: 'Real-time order status tracking from placement to delivery with comprehensive monitoring.',
       icon: <TimelineIcon />,
       color: '#F44336',
-      image: '/order-tracking.png'
+      image: '/features/QRCodeScanning/order-tracking.png'
     },
     {
       title: 'Secure Transactions',
@@ -56,7 +56,7 @@ const QRCodeScanning = () => {
       content: 'Secure payment processing and data protection for all transactions with advanced encryption.',
       icon: <SecurityIcon />,
       color: '#00BCD4',
-      image: '/secure-transactions.png'
+      image: '/features/QRCodeScanning/secure-transactions.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const QRCodeScanning = () => {
             <Box className="qr-image-container">
               <Box className="qr-image">
                 <img
-                  src="/qr-code-scanning.png"
+                  src="/features/QRCodeScanning/qr-code-scanning.png"
                   alt="QR Code Scanning Interface"
                   className="qr-preview-image"
                 />

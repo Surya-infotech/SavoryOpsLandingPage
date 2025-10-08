@@ -16,7 +16,7 @@ const AdvancedReports = () => {
       content: 'Comprehensive reports and analytics to make the best decisions for your business growth.',
       icon: <AssessmentIcon />,
       color: '#4CAF50',
-      image: '/growth-intelligence.png'
+      image: '/features/AdvancedReports/growth-intelligence.png'
     },
     {
       title: 'Performance Analytics',
@@ -24,7 +24,7 @@ const AdvancedReports = () => {
       content: 'Track and analyze performance metrics with advanced analytics and detailed insights.',
       icon: <TrendingUpIcon />,
       color: '#2196F3',
-      image: '/performance-analytics.png'
+      image: '/features/AdvancedReports/performance-analytics.png'
     },
     {
       title: 'Visual Reports',
@@ -32,7 +32,7 @@ const AdvancedReports = () => {
       content: 'Create interactive visual reports with charts, graphs, and data visualization tools.',
       icon: <BarChartIcon />,
       color: '#FF9800',
-      image: '/visual-reports.png'
+      image: '/features/AdvancedReports/visual-reports.png'
     },
     {
       title: 'Custom Dashboards',
@@ -40,7 +40,7 @@ const AdvancedReports = () => {
       content: 'Build custom dashboards with personalized reporting views and key performance indicators.',
       icon: <PieChartIcon />,
       color: '#9C27B0',
-      image: '/custom-dashboards.png'
+      image: '/features/AdvancedReports/custom-dashboards.png'
     },
     {
       title: 'Trend Analysis',
@@ -48,7 +48,7 @@ const AdvancedReports = () => {
       content: 'Analyze historical trends and patterns to predict future performance and opportunities.',
       icon: <TimelineIcon />,
       color: '#F44336',
-      image: '/trend-analysis.png'
+      image: '/features/AdvancedReports/trend-analysis.png'
     },
     {
       title: 'Business Insights',
@@ -56,7 +56,7 @@ const AdvancedReports = () => {
       content: 'Generate actionable business insights and recommendations for strategic decision making.',
       icon: <InsightsIcon />,
       color: '#00BCD4',
-      image: '/business-insights.png'
+      image: '/features/AdvancedReports/business-insights.png'
     }
   ];
 
@@ -90,7 +90,7 @@ const AdvancedReports = () => {
             <Box className="reports-image-container">
               <Box className="reports-image">
                 <img
-                  src="/advanced-reports.png"
+                  src="/features/AdvancedReports/advanced-reports.png"
                   alt="Advanced Reports Interface"
                   className="reports-preview-image"
                 />
