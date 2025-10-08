@@ -1,4 +1,4 @@
-import { QrCode as QrCodeIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Security as SecurityIcon, Speed as SpeedIcon, Timeline as TimelineIcon } from '@mui/icons-material';
+import { QrCode as QrCodeIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Speed as SpeedIcon, Timeline as TimelineIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -34,30 +34,6 @@ const POSSystem = () => {
       color: '#FF9800',
       image: '/features/POSSystem/kot-system.png'
     },
-    {
-      title: 'Order Timeline',
-      description: 'Real-time order tracking',
-      content: 'Track order status from placement to delivery in real-time with comprehensive monitoring.',
-      icon: <TimelineIcon />,
-      color: '#9C27B0',
-      image: '/features/POSSystem/order-timeline.png'
-    },
-    {
-      title: 'Payment Processing',
-      description: 'Secure payment handling',
-      content: 'Accept multiple payment methods securely with advanced encryption and fraud protection.',
-      icon: <ReceiptIcon />,
-      color: '#F44336',
-      image: '/features/POSSystem/payment-processing.png'
-    },
-    {
-      title: 'Data Security',
-      description: 'Enterprise-grade protection',
-      content: 'Enterprise-grade security for all transaction data with complete privacy and compliance.',
-      icon: <SecurityIcon />,
-      color: '#00BCD4',
-      image: '/features/POSSystem/data-security.png'
-    }
   ];
 
   return (

@@ -27,14 +27,6 @@ const BranchPricing = () => {
       image: '/features/BranchPricing/market-based-pricing.png'
     },
     {
-      title: 'Price Comparison',
-      description: 'Competitive pricing analysis',
-      content: 'Compare prices across branches and analyze competitive pricing strategies for optimal revenue.',
-      icon: <CompareIcon />,
-      color: '#FF9800',
-      image: '/features/BranchPricing/price-comparison.png'
-    },
-    {
       title: 'Revenue Optimization',
       description: 'Maximize branch profitability',
       content: 'Optimize revenue through strategic pricing adjustments and performance monitoring.',
@@ -42,22 +34,6 @@ const BranchPricing = () => {
       color: '#9C27B0',
       image: '/features/BranchPricing/revenue-optimization.png'
     },
-    {
-      title: 'Pricing Analytics',
-      description: 'Data-driven pricing decisions',
-      content: 'Make informed pricing decisions with comprehensive analytics and performance metrics.',
-      icon: <AssessmentIcon />,
-      color: '#F44336',
-      image: '/features/BranchPricing/pricing-analytics.png'
-    },
-    {
-      title: 'Promotional Pricing',
-      description: 'Dynamic promotional offers',
-      content: 'Create and manage promotional pricing strategies for different branches and campaigns.',
-      icon: <LocalOfferIcon />,
-      color: '#00BCD4',
-      image: '/features/BranchPricing/promotional-pricing.png'
-    }
   ];
 
   return (

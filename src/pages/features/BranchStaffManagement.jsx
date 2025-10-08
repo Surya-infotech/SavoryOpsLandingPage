@@ -19,14 +19,6 @@ const BranchStaffManagement = () => {
       image: '/features/BranchStaffManagement/local-workforce-control.png'
     },
     {
-      title: 'Staff Scheduling',
-      description: 'Flexible shift management',
-      content: 'Create and manage flexible staff schedules with automated shift planning and conflict resolution.',
-      icon: <ScheduleIcon />,
-      color: '#2196F3',
-      image: '/features/BranchStaffManagement/staff-scheduling.png'
-    },
-    {
       title: 'Role-based Permissions',
       description: 'Secure access control',
       content: 'Implement role-based permissions with secure access control for different staff levels and responsibilities.',
@@ -34,30 +26,6 @@ const BranchStaffManagement = () => {
       color: '#FF9800',
       image: '/features/BranchStaffManagement/role-based-permissions.png'
     },
-    {
-      title: 'Performance Tracking',
-      description: 'Staff performance monitoring',
-      content: 'Track and monitor staff performance with detailed analytics and performance metrics for each branch.',
-      icon: <TrendingUpIcon />,
-      color: '#9C27B0',
-      image: '/features/BranchStaffManagement/performance-tracking.png'
-    },
-    {
-      title: 'Staff Profiles',
-      description: 'Comprehensive employee records',
-      content: 'Maintain comprehensive staff profiles with detailed employee records and information management.',
-      icon: <PersonIcon />,
-      color: '#F44336',
-      image: '/features/BranchStaffManagement/staff-profiles.png'
-    },
-    {
-      title: 'Task Assignment',
-      description: 'Efficient work distribution',
-      content: 'Assign and distribute tasks efficiently among staff members with automated task management.',
-      icon: <AssignmentIcon />,
-      color: '#00BCD4',
-      image: '/features/BranchStaffManagement/task-assignment.png'
-    }
   ];
 
   return (

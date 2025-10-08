@@ -1,4 +1,4 @@
-import { Category as CategoryIcon, Edit as EditIcon, Image as ImageIcon, Menu as MenuIcon, PriceChange as PriceChangeIcon, Schedule as ScheduleIcon } from '@mui/icons-material';
+import { Category as CategoryIcon, Edit as EditIcon, Image as ImageIcon, Menu as MenuIcon, PriceChange as PriceChangeIcon, Schedule as ScheduleIcon, Add as AddIcon, List as ListIcon, Description as DescriptionIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -13,51 +13,51 @@ const MenuManagement = () => {
     {
       title: 'Real-time Updates',
       description: 'Instant menu synchronization',
-      content: 'Update your menu items, prices, and availability in real-time across all platforms and devices.',
+      content: 'Update your menu items, prices, and availability in real-time across all platforms and devices. Ensure customers always see the latest menu offerings with instant synchronization between your POS system, online ordering, and mobile applications.',
       icon: <EditIcon />,
       color: '#4CAF50',
       image: '/features/MenuManagement/real-time-updates.png'
     },
     {
-      title: 'Smart Organization',
-      description: 'Intelligent menu structure',
-      content: 'Organize your menu with custom categories, subcategories, and drag-and-drop item management.',
+      title: 'Item Categories',
+      description: 'Organized menu structure',
+      content: 'Create and manage item categories to organize your menu items logically. Set up categories like appetizers, mains, desserts, and beverages with custom descriptions, images, and display order for better customer navigation.',
       icon: <CategoryIcon />,
       color: '#2196F3',
-      image: '/features/MenuManagement/smart-organization.png'
+      image: '/features/MenuManagement/item-categories.png'
     },
     {
-      title: 'Visual Management',
-      description: 'Stunning food photography',
-      content: 'Upload and manage high-quality images with automatic optimization and responsive display.',
-      icon: <ImageIcon />,
+      title: 'Menu Names',
+      description: 'Flexible menu organization',
+      content: 'Create multiple menu names for different occasions, times, or seasons. Set up breakfast, lunch, dinner, seasonal, or special event menus with unique names and customizable display options for targeted customer experiences.',
+      icon: <MenuIcon />,
+      color: '#17a2b8',
+      image: '/features/MenuManagement/menu-names.png'
+    },
+    {
+      title: 'Item Details',
+      description: 'Comprehensive item information',
+      content: 'Add detailed information for each menu item including descriptions, ingredients, nutritional information, allergens, and preparation time. Provide customers with complete item details to help them make informed dining choices.',
+      icon: <DescriptionIcon />,
       color: '#FF9800',
-      image: '/features/MenuManagement/visual-management.png'
+      image: '/features/MenuManagement/item-details.png'
+    },
+    {
+      title: 'Addon Details',
+      description: 'Customizable item options',
+      content: 'Create and manage addon options for menu items like extra toppings, sides, sauces, and modifications. Set up pricing, availability, and grouping for addons to give customers flexibility in customizing their orders.',
+      icon: <AddIcon />,
+      color: '#6f42c1',
+      image: '/features/MenuManagement/addon-details.png'
     },
     {
       title: 'Dynamic Pricing',
       description: 'Flexible price control',
-      content: 'Set different prices for different times, seasons, or special events with automated updates.',
+      content: 'Set different prices for different times, seasons, or special events with automated updates. Implement happy hour pricing, seasonal rates, and promotional pricing to maximize revenue and attract customers during specific periods.',
       icon: <PriceChangeIcon />,
       color: '#9C27B0',
       image: '/features/MenuManagement/dynamic-pricing.png'
     },
-    {
-      title: 'Availability Control',
-      description: 'Smart scheduling system',
-      content: 'Schedule item availability based on time, day, season, or inventory levels automatically.',
-      icon: <ScheduleIcon />,
-      color: '#F44336',
-      image: '/features/MenuManagement/availability-control.png'
-    },
-    {
-      title: 'Multi-language Support',
-      description: 'Global restaurant reach',
-      content: 'Support multiple languages in menu descriptions to serve diverse customer bases effectively.',
-      icon: <MenuIcon />,
-      color: '#00BCD4',
-      image: '/features/MenuManagement/multi-language-support.png'
-    }
   ];
 
   return (
