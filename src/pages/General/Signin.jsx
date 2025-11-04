@@ -4,6 +4,7 @@ import Flag from 'react-world-flags';
 import { useLanguage } from '../../context/LanguageContext';
 import '../../styles/General/signin.scss';
 import AlertMessage from '../Custom/AlertMessage';
+import WarningModal from '../Custom/WarningModal';
 
 const OwnerLogin = () => {
     const [email, setEmail] = useState('');
@@ -17,6 +18,8 @@ const OwnerLogin = () => {
     const { translations } = useLanguage();
     const [isLoading, setIsLoading] = useState(false);
     const [formError, setFormError] = useState('');
+    const [warningMessage, setWarningMessage] = useState("");
+    const [showWarning, setShowWarning] = useState(false);
 
     const languages = [
         { name: 'English', code: 'GB' },
@@ -98,6 +101,7 @@ const OwnerLogin = () => {
     };
 
     return (<>
+        {showWarning && <WarningModal message={warningMessage} onClose={() => setShowWarning(false)} />}
         {alertMessage && <AlertMessage message={alertMessage} onClose={() => setAlertMessage("")} />}
         <div className="full-page">
             <div className="language-container">

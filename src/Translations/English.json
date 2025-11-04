@@ -27,5 +27,13 @@
   "privacypolicy": "Privacy Policy",
   "and": "and",
   "youmustacceptthetermsandconditions": "You must accept the terms and conditions to sign up.",
-  "passwordLengthError": "Password must be between 8 and 14 characters long."
+  "passwordLengthError": "Password must be between 8 and 14 characters long.",
+  "phone": "Phone Number",
+  "phonenumberplaceholder": "Enter Phone Number",
+  "phonealreadyexists": "Phone No. Already Exists",
+  "invalidphonenumber": "Invalid Phone Number",
+  "female": "Female",
+  "intersex": "Intersex",
+  "male": "Male",
+  "gender": "Gender"
 }

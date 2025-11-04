@@ -1,15 +1,20 @@
 import { useEffect, useState } from 'react';
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import 'react-phone-number-input/style.css';
 import { NavLink } from 'react-router-dom';
 import Flag from 'react-world-flags';
 import { useLanguage } from '../../context/LanguageContext';
 import '../../styles/General/signup.scss';
+import WarningModal from '../Custom/WarningModal';
 
 const OwnerSignUp = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [phone, setPhone] = useState('');
+    const [phoneError, setPhoneError] = useState('');
+    const [gender, setGender] = useState('Male');
     const [termsAccepted, setTermsAccepted] = useState(false);
     const BackendPath = import.meta.env.VITE_BACKEND_URL;
     const host = import.meta.env.VITE_HOST;
@@ -19,6 +24,8 @@ const OwnerSignUp = () => {
     const { translations } = useLanguage();
     const [isLoading, setIsLoading] = useState(false);
     const [formError, setFormError] = useState('');
+    const [warningMessage, setWarningMessage] = useState("");
+    const [showWarning, setShowWarning] = useState(false);
 
     const languages = [
         { name: 'English', code: 'GB' },
@@ -52,6 +59,35 @@ const OwnerSignUp = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isLanguageDropdownVisible]);
 
+    const handlePhoneChange = (value) => {
+        setPhone(value || '');
+
+        if (!value || value.trim() === '') {
+            setPhoneError("");
+            return;
+        }
+
+        try {
+            const isValid = isValidPhoneNumber(value);
+
+            if (isValid) {
+                setPhoneError("");
+            } else {
+                if (value.length >= 10) {
+                    setPhoneError(translations.invalidphonenumber);
+                } else {
+                    setPhoneError("");
+                }
+            }
+        } catch {
+            if (value.length >= 10) {
+                setPhoneError(translations.invalidphonenumber);
+            } else {
+                setPhoneError("");
+            }
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
@@ -59,6 +95,30 @@ const OwnerSignUp = () => {
 
         if (password.length < 8 || password.length > 14) {
             setFormError(translations.passwordLengthError);
+            setIsLoading(false);
+            return;
+        }
+
+        let isPhoneValid = false;
+        if (phone && phone.trim() !== '') {
+            try {
+                isPhoneValid = isValidPhoneNumber(phone);
+            } catch {
+                isPhoneValid = false;
+            }
+        }
+
+        if (!isPhoneValid || !phone || phone.trim() === '') {
+            setPhoneError(translations.invalidphonenumber);
+            setFormError(translations.invalidphonenumber);
+            setIsLoading(false);
+            return;
+        }
+
+        setPhoneError("");
+
+        if (!gender) {
+            setFormError(translations.allfieldrequired);
             setIsLoading(false);
             return;
         }
@@ -73,7 +133,7 @@ const OwnerSignUp = () => {
             const response = await fetch(`${BackendPath}/General/owner/Signup`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json", "x-user": "admin" },
-                body: JSON.stringify({ ownerfirstname: firstName, ownerlastname: lastName, email, password, }),
+                body: JSON.stringify({ ownerfirstname: firstName, ownerlastname: lastName, email, password, phone, gender }),
             });
             const data = await response.json();
             if (response.ok) {
@@ -91,12 +151,14 @@ const OwnerSignUp = () => {
         } catch (error) {
             console.log("Failed to connect to the server", error);
             setWarningMessage(translations.servererror);
+            setShowWarning(true);
         } finally {
             setIsLoading(false);
         }
     };
 
     return (<>
+        {showWarning && <WarningModal message={warningMessage} onClose={() => setShowWarning(false)} />}
         <div className="full-page">
             <div className="language-container">
                 <div className="language-dropdown" onClick={toggleLanguageDropdown}>
@@ -170,6 +232,65 @@ const OwnerSignUp = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
                             />
+                        </div>
+                    </div>
+                    <div className="form-group name-fields">
+                        <div className="name-field">
+                            <label>{translations.phone}</label>
+                            <div className={`phone-input-wrapper ${phoneError ? 'has-phone-error' : ''}`}>
+                                <PhoneInput
+                                    international
+                                    defaultCountry="US"
+                                    value={phone}
+                                    onChange={handlePhoneChange}
+                                    placeholder={translations.phone}
+                                    required
+                                />
+                                {phoneError && (
+                                    <div className="phone-error-message">{phoneError}</div>
+                                )}
+                            </div>
+                        </div>
+                        <div className="name-field">
+                            <label>{translations.gender}</label>
+                            <div className="radio-group">
+                                <div className="radio-option">
+                                    <input
+                                        type="radio"
+                                        id="gender-male"
+                                        name="gender"
+                                        value="Male"
+                                        checked={gender === 'Male'}
+                                        onChange={(e) => setGender(e.target.value)}
+                                        required
+                                    />
+                                    <label htmlFor="gender-male">{translations.male}</label>
+                                </div>
+                                <div className="radio-option">
+                                    <input
+                                        type="radio"
+                                        id="gender-female"
+                                        name="gender"
+                                        value="Female"
+                                        checked={gender === 'Female'}
+                                        onChange={(e) => setGender(e.target.value)}
+                                        required
+                                    />
+                                    <label htmlFor="gender-female">{translations.female}</label>
+                                </div>
+                                <div className="radio-option">
+                                    <input
+                                        type="radio"
+                                        id="gender-intersex"
+                                        name="gender"
+                                        value="Intersex"
+                                        checked={gender === 'Intersex'}
+                                        onChange={(e) => setGender(e.target.value)}
+                                        required
+                                    />
+                                    <label htmlFor="gender-intersex">{translations.intersex}</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="checkbox">
