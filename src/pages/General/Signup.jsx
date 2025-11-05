@@ -12,7 +12,6 @@ const OwnerSignUp = () => {
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
     const [phone, setPhone] = useState('');
     const [phoneError, setPhoneError] = useState('');
     const [gender, setGender] = useState('Male');
@@ -464,20 +463,12 @@ const OwnerSignUp = () => {
                                         <label>{translations.password}</label>
                                         <div className="password-input-wrapper">
                                             <input
-                                                type={showPassword ? "text" : "password"}
+                                                type="password"
                                                 placeholder={translations.passwordplaceholder}
                                                 value={password}
                                                 onChange={(e) => setPassword(e.target.value)}
                                                 required
                                             />
-                                            <button
-                                                type="button"
-                                                className="password-toggle"
-                                                onClick={() => setShowPassword(!showPassword)}
-                                                aria-label={showPassword ? "Hide password" : "Show password"}
-                                            >
-                                                {showPassword ? "👁️" : "👁️‍🗨️"}
-                                            </button>
                                         </div>
                                         {password && (
                                             <div className="password-strength">
