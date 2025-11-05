@@ -472,8 +472,14 @@ const OwnerSignUp = () => {
                                         </div>
                                         {password && (
                                             <div className="password-strength">
-                                                <div className={`strength-indicator ${password.length >= 8 && password.length <= 14 ? 'valid' : 'invalid'}`}></div>
-                                                <span className="password-hint">{translations.passwordLengthError || 'Password must be 8-14 characters'}</span>
+                                                <span className={`password-hint ${password.length >= 8 && password.length <= 14 ? 'valid' : password.length > 14 ? 'invalid' : 'warning'}`}>
+                                                    {password.length > 14
+                                                        ? translations.passwordLengthError || 'Password must be 8-14 characters'
+                                                        : password.length >= 8 && password.length <= 14
+                                                            ? '✓ Password length is valid'
+                                                            : `Password must be 8-14 characters (${password.length}/8)`
+                                                    }
+                                                </span>
                                             </div>
                                         )}
                                     </div>
