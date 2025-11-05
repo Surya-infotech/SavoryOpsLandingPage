@@ -12,10 +12,17 @@ const OwnerSignUp = () => {
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [phone, setPhone] = useState('');
     const [phoneError, setPhoneError] = useState('');
     const [gender, setGender] = useState('Male');
     const [termsAccepted, setTermsAccepted] = useState(false);
+    const [currentStep, setCurrentStep] = useState(1);
+    const [otp, setOtp] = useState(['', '', '', '', '', '']);
+    const [otpError, setOtpError] = useState('');
+    const [referralCode, setReferralCode] = useState('');
+    const [referralError, setReferralError] = useState('');
+    const [signupData, setSignupData] = useState(null);
     const BackendPath = import.meta.env.VITE_BACKEND_URL;
     const host = import.meta.env.VITE_HOST;
     const tld = import.meta.env.VITE_TLD;
@@ -88,7 +95,7 @@ const OwnerSignUp = () => {
         }
     };
 
-    const handleSubmit = async (e) => {
+    const handleBasicInfoSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
         setFormError('');
@@ -130,32 +137,245 @@ const OwnerSignUp = () => {
         }
 
         try {
-            const response = await fetch(`${BackendPath}/General/owner/Signup`, {
+            const response = await fetch(`${BackendPath}/General/owner/SendOTP`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json", "x-user": "admin" },
-                body: JSON.stringify({ ownerfirstname: firstName, ownerlastname: lastName, email, password, phone, gender }),
+                body: JSON.stringify({ phone }),
             });
             const data = await response.json();
             if (response.ok) {
-                const { token, id, subdomain } = data.owner;
-                const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${token}&id=${id}&success=${translations.signupsuccessful}`;
-                window.location.href = subdomainUrl;
+                setCurrentStep(2);
+                setFormError('');
             } else {
                 const errorMessages = {
                     "All fields are required": translations.allfieldrequired,
                     "Email ID Already Exists": translations.emailalreadyexists,
                     "Server error": translations.servererror
                 };
-                setFormError(errorMessages[data.message] || data.message);
+                setFormError(errorMessages[data.message] || translations.servererror);
             }
-        } catch (error) {
-            console.log("Failed to connect to the server", error);
+        } catch {
             setWarningMessage(translations.servererror);
             setShowWarning(true);
         } finally {
             setIsLoading(false);
         }
     };
+
+    const handleOtpChange = (index, value) => {
+        if (value.length > 1) return;
+        const newOtp = [...otp];
+        newOtp[index] = value;
+        setOtp(newOtp);
+        setOtpError('');
+
+        if (value && index < 5) {
+            const nextInput = document.getElementById(`otp-${index + 1}`);
+            if (nextInput) nextInput.focus();
+        }
+    };
+
+    const handleOtpKeyDown = (index, e) => {
+        if (e.key === 'Backspace' && !otp[index] && index > 0) {
+            const prevInput = document.getElementById(`otp-${index - 1}`);
+            if (prevInput) prevInput.focus();
+        }
+    };
+
+    const handleOtpPaste = (e) => {
+        e.preventDefault();
+        const pastedData = e.clipboardData.getData('text').slice(0, 6);
+        const newOtp = pastedData.split('').concat(Array(6 - pastedData.length).fill(''));
+        setOtp(newOtp.slice(0, 6));
+        const lastFilledIndex = Math.min(pastedData.length - 1, 5);
+        const nextInput = document.getElementById(`otp-${lastFilledIndex}`);
+        if (nextInput) nextInput.focus();
+    };
+
+    const handleOtpSubmit = async (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+        setOtpError('');
+        setFormError('');
+
+        const otpValue = otp.join('');
+        if (otpValue.length !== 6) {
+            setOtpError(translations.invalidotpmessage);
+            setIsLoading(false);
+            return;
+        }
+
+        try {
+            const response = await fetch(`${BackendPath}/General/owner/VerifyOTP`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json", "x-user": "admin" },
+                body: JSON.stringify({ phone, otp: otpValue }),
+            });
+            const data = await response.json();
+            if (response.ok) {
+                setCurrentStep(3);
+                setOtpError('');
+                setOtp(['', '', '', '', '', '']);
+            } else {
+                const errorMessages = {
+                    "Invalid OTP format. OTP must be 6 digits.": translations.invalidotpformatotpmustbe6digits,
+                    "OTP not found or expired. Please request a new OTP.": translations.otpnotfoundorexpires,
+                    "OTP has expired. Please request a new OTP.": translations.otphasexpiresrequestanewotp,
+                    "Maximum verification attempts exceeded. Please request a new OTP.": translations.maximumverificationattemptsexceeded,
+                    "Server error": translations.servererror
+                };
+                setOtpError(errorMessages[data.message] || translations.servererror);
+            }
+        } catch {
+            setWarningMessage(translations.servererror);
+            setShowWarning(true);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const handleResendOtp = async () => {
+        setIsLoading(true);
+        setOtpError('');
+        try {
+            const response = await fetch(`${BackendPath}/General/owner/ResendOTP`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json", "x-user": "admin" },
+                body: JSON.stringify({ phone }),
+            });
+            const data = await response.json();
+            if (response.ok) {
+                setOtp(['', '', '', '', '', '']);
+                setFormError('');
+            } else {
+                setOtpError(data.message || translations.servererror);
+            }
+        } catch {
+            setWarningMessage(translations.servererror);
+            setShowWarning(true);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const handleReferralSubmit = async (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+        setReferralError('');
+        setFormError('');
+
+        try {
+            const response = await fetch(`${BackendPath}/General/owner/Signup`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json", "x-user": "admin" },
+                body: JSON.stringify({
+                    ownerfirstname: firstName,
+                    ownerlastname: lastName,
+                    email,
+                    password,
+                    phone,
+                    gender,
+                    referralCode: referralCode || null
+                }),
+            });
+            const data = await response.json();
+            if (response.ok) {
+                setSignupData(data);
+                setCurrentStep(4);
+                setFormError('');
+            } else {
+                const errorMessages = {
+                    "Invalid referral code": translations.invalidreferralcode,
+                    "All fields are required": translations.allfieldrequired,
+                    "Email ID Already Exists": translations.emailalreadyexists,
+                    "Server error": translations.servererror
+                };
+                setReferralError(errorMessages[data.message] || translations.servererror);
+            }
+        } catch {
+            setWarningMessage(translations.servererror);
+            setShowWarning(true);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const handleSkipReferral = async () => {
+        setIsLoading(true);
+        setReferralError('');
+        setFormError('');
+
+        try {
+            const response = await fetch(`${BackendPath}/General/owner/Signup`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json", "x-user": "admin" },
+                body: JSON.stringify({
+                    ownerfirstname: firstName,
+                    ownerlastname: lastName,
+                    email,
+                    password,
+                    phone,
+                    gender,
+                    referralCode: null
+                }),
+            });
+            const data = await response.json();
+            if (response.ok) {
+                setSignupData(data);
+                setCurrentStep(4);
+                setFormError('');
+            } else {
+                const errorMessages = {
+                    "All fields are required": translations.allfieldrequired,
+                    "Email ID Already Exists": translations.emailalreadyexists,
+                    "Server error": translations.servererror
+                };
+                setReferralError(errorMessages[data.message] || translations.servererror);
+            }
+        } catch {
+            setWarningMessage(translations.servererror);
+            setShowWarning(true);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const handleFinish = () => {
+        if (signupData && signupData.owner) {
+            const { token, id, subdomain } = signupData.owner;
+            const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${token}&id=${id}&success=${translations.signupsuccessful}`;
+            window.location.href = subdomainUrl;
+        } else {
+            window.location.href = '/Signin';
+        }
+    };
+
+    const steps = [
+        {
+            number: 1,
+            title: translations.yourdetails,
+            description: translations.provideemailandpassword,
+            icon: "👤"
+        },
+        {
+            number: 2,
+            title: translations.verifyyourphone,
+            description: translations.enteryourverificationcode,
+            icon: "📱"
+        },
+        {
+            number: 3,
+            title: translations.referralcode,
+            description: translations.referralcodedescription,
+            icon: "🎁"
+        },
+        {
+            number: 4,
+            title: translations.welcometosystem,
+            description: translations.getupandrunning,
+            icon: "🚀"
+        }
+    ];
 
     return (<>
         {showWarning && <WarningModal message={warningMessage} onClose={() => setShowWarning(false)} />}
@@ -185,137 +405,300 @@ const OwnerSignUp = () => {
                 </div>
             </div>
             <div className="signup-container">
-                <div className="logo-container">
-                    <img src="/logo.png" alt="Logo" className="logo" />
-                    <h2>SavoryOps</h2>
-                </div>
-                <form onSubmit={handleSubmit}>
-                    <div className="form-group name-fields">
-                        <div className="name-field">
-                            <label>{translations.firstname}</label>
-                            <input
-                                type="text"
-                                placeholder={translations.enteryourfirstnameplaceholder}
-                                value={firstName}
-                                onChange={(e) => setFirstName(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div className="name-field">
-                            <label>{translations.lastname}</label>
-                            <input
-                                type="text"
-                                placeholder={translations.enteryourlastnameplaceholder}
-                                value={lastName}
-                                onChange={(e) => setLastName(e.target.value)}
-                                required
-                            />
-                        </div>
-                    </div>
-                    <div className="form-group name-fields">
-                        <div className="name-field">
-                            <label>{translations.email}</label>
-                            <input
-                                type="email"
-                                placeholder={translations.emailplaceholder}
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div className="name-field">
-                            <label>{translations.password}</label>
-                            <input
-                                type="password"
-                                placeholder={translations.passwordplaceholder}
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                        </div>
-                    </div>
-                    <div className="form-group name-fields">
-                        <div className="name-field">
-                            <label>{translations.phone}</label>
-                            <div className={`phone-input-wrapper ${phoneError ? 'has-phone-error' : ''}`}>
-                                <PhoneInput
-                                    international
-                                    defaultCountry="US"
-                                    value={phone}
-                                    onChange={handlePhoneChange}
-                                    placeholder={translations.phone}
-                                    required
-                                />
-                                {phoneError && (
-                                    <div className="phone-error-message">{phoneError}</div>
+                <div className="signup-wrapper">
+                    <div className="progress-tracker">
+                        {steps.map((step, index) => (
+                            <div key={step.number} className={`progress-step ${currentStep >= step.number ? 'active' : ''} ${currentStep > step.number ? 'completed' : ''}`}>
+                                <div className="step-icon">{step.icon}</div>
+                                <div className="step-content">
+                                    <div className="step-title">{step.title}</div>
+                                    <div className="step-description">{step.description}</div>
+                                </div>
+                                {index < steps.length - 1 && (
+                                    <div className={`step-connector ${currentStep > step.number ? 'completed' : ''}`}></div>
                                 )}
                             </div>
-                        </div>
-                        <div className="name-field">
-                            <label>{translations.gender}</label>
-                            <div className="radio-group">
-                                <div className="radio-option">
-                                    <input
-                                        type="radio"
-                                        id="gender-male"
-                                        name="gender"
-                                        value="Male"
-                                        checked={gender === 'Male'}
-                                        onChange={(e) => setGender(e.target.value)}
-                                        required
-                                    />
-                                    <label htmlFor="gender-male">{translations.male}</label>
+                        ))}
+                    </div>
+                    <div className="signup-content">
+                        {currentStep === 1 ? (
+                            <form onSubmit={handleBasicInfoSubmit} className="signup-form">
+                                <div className="step-header">
+                                    <h2 className="step-title">{translations.yourdetails}</h2>
+                                    <p className="step-subtitle">{translations.provideemailandpassword}</p>
                                 </div>
-                                <div className="radio-option">
-                                    <input
-                                        type="radio"
-                                        id="gender-female"
-                                        name="gender"
-                                        value="Female"
-                                        checked={gender === 'Female'}
-                                        onChange={(e) => setGender(e.target.value)}
-                                        required
-                                    />
-                                    <label htmlFor="gender-female">{translations.female}</label>
+                                <div className="form-group name-fields">
+                                    <div className="name-field">
+                                        <label>{translations.firstname}</label>
+                                        <input
+                                            type="text"
+                                            placeholder={translations.enteryourfirstnameplaceholder}
+                                            value={firstName}
+                                            onChange={(e) => setFirstName(e.target.value)}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="name-field">
+                                        <label>{translations.lastname}</label>
+                                        <input
+                                            type="text"
+                                            placeholder={translations.enteryourlastnameplaceholder}
+                                            value={lastName}
+                                            onChange={(e) => setLastName(e.target.value)}
+                                            required
+                                        />
+                                    </div>
                                 </div>
-                                <div className="radio-option">
-                                    <input
-                                        type="radio"
-                                        id="gender-intersex"
-                                        name="gender"
-                                        value="Intersex"
-                                        checked={gender === 'Intersex'}
-                                        onChange={(e) => setGender(e.target.value)}
-                                        required
-                                    />
-                                    <label htmlFor="gender-intersex">{translations.intersex}</label>
+                                <div className="form-group name-fields">
+                                    <div className="name-field">
+                                        <label>{translations.email}</label>
+                                        <input
+                                            type="email"
+                                            placeholder={translations.emailplaceholder}
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="name-field">
+                                        <label>{translations.password}</label>
+                                        <div className="password-input-wrapper">
+                                            <input
+                                                type={showPassword ? "text" : "password"}
+                                                placeholder={translations.passwordplaceholder}
+                                                value={password}
+                                                onChange={(e) => setPassword(e.target.value)}
+                                                required
+                                            />
+                                            <button
+                                                type="button"
+                                                className="password-toggle"
+                                                onClick={() => setShowPassword(!showPassword)}
+                                                aria-label={showPassword ? "Hide password" : "Show password"}
+                                            >
+                                                {showPassword ? "👁️" : "👁️‍🗨️"}
+                                            </button>
+                                        </div>
+                                        {password && (
+                                            <div className="password-strength">
+                                                <div className={`strength-indicator ${password.length >= 8 && password.length <= 14 ? 'valid' : 'invalid'}`}></div>
+                                                <span className="password-hint">{translations.passwordLengthError || 'Password must be 8-14 characters'}</span>
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
+                                <div className="form-group name-fields">
+                                    <div className="name-field">
+                                        <label>{translations.phone}</label>
+                                        <div className={`phone-input-wrapper ${phoneError ? 'has-phone-error' : ''}`}>
+                                            <PhoneInput
+                                                international
+                                                defaultCountry="US"
+                                                value={phone}
+                                                onChange={handlePhoneChange}
+                                                placeholder={translations.phone}
+                                                required
+                                            />
+                                            {phoneError && (
+                                                <div className="phone-error-message">{phoneError}</div>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className="name-field">
+                                        <label>{translations.gender}</label>
+                                        <div className="radio-group">
+                                            <div className="radio-option">
+                                                <input
+                                                    type="radio"
+                                                    id="gender-male"
+                                                    name="gender"
+                                                    value="Male"
+                                                    checked={gender === 'Male'}
+                                                    onChange={(e) => setGender(e.target.value)}
+                                                    required
+                                                />
+                                                <label htmlFor="gender-male">{translations.male}</label>
+                                            </div>
+                                            <div className="radio-option">
+                                                <input
+                                                    type="radio"
+                                                    id="gender-female"
+                                                    name="gender"
+                                                    value="Female"
+                                                    checked={gender === 'Female'}
+                                                    onChange={(e) => setGender(e.target.value)}
+                                                    required
+                                                />
+                                                <label htmlFor="gender-female">{translations.female}</label>
+                                            </div>
+                                            <div className="radio-option">
+                                                <input
+                                                    type="radio"
+                                                    id="gender-intersex"
+                                                    name="gender"
+                                                    value="Intersex"
+                                                    checked={gender === 'Intersex'}
+                                                    onChange={(e) => setGender(e.target.value)}
+                                                    required
+                                                />
+                                                <label htmlFor="gender-intersex">{translations.intersex}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="checkbox">
+                                    <input
+                                        type="checkbox"
+                                        id="terms-checkbox"
+                                        checked={termsAccepted}
+                                        onChange={() => setTermsAccepted(!termsAccepted)}
+                                    />
+                                    <label htmlFor="terms-checkbox">
+                                        {translations.bysignupingyouagreetoour}
+                                        {/* <a href="/terms" target="_blank" rel="noopener noreferrer">{translations.termsandconditions}</a> */}
+                                        {/* {translations.and} */}
+                                        <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">{translations.privacypolicy}</a>.
+                                    </label>
+                                </div>
+                                {formError && <div className="error-message">{formError}</div>}
+                                <button type="submit" className="signup-button" disabled={isLoading}>
+                                    {isLoading ? (
+                                        <>
+                                            <span className="spinner"></span>
+                                            {translations.sendingotp}
+                                        </>
+                                    ) : (
+                                        <>
+                                            {translations.continue}
+                                            <span className="button-arrow">→</span>
+                                        </>
+                                    )}
+                                </button>
+                            </form>
+                        ) : currentStep === 2 ? (
+                            <form onSubmit={handleOtpSubmit}>
+                                <div className="otp-container">
+                                    <div className="step-header">
+                                        <h3>{translations.verifyyourphone}</h3>
+                                        <p className="otp-description">
+                                            {translations.otpsentmessage}
+                                        </p>
+                                    </div>
+                                    <div className="otp-input-group">
+                                        {otp.map((digit, index) => (
+                                            <input
+                                                key={index}
+                                                id={`otp-${index}`}
+                                                type="text"
+                                                inputMode="numeric"
+                                                maxLength={1}
+                                                value={digit}
+                                                onChange={(e) => handleOtpChange(index, e.target.value.replace(/\D/g, ''))}
+                                                onKeyDown={(e) => handleOtpKeyDown(index, e)}
+                                                onPaste={index === 0 ? handleOtpPaste : undefined}
+                                                className="otp-input"
+                                                autoFocus={index === 0}
+                                            />
+                                        ))}
+                                    </div>
+                                    {otpError && <div className="error-message">{otpError}</div>}
+                                    <button type="submit" className="signup-button" disabled={isLoading}>
+                                        {isLoading ? (
+                                            <>
+                                                <span className="spinner"></span>
+                                                {translations.verifying}
+                                            </>
+                                        ) : (
+                                            <>
+                                                {translations.verify}
+                                                <span className="button-arrow">→</span>
+                                            </>
+                                        )}
+                                    </button>
+                                    <div className="resend-otp">
+                                        <span>{translations.didntreceiveotp}</span>
+                                        <button type="button" onClick={handleResendOtp} disabled={isLoading} className="resend-button">
+                                            {translations.resendotp}
+                                        </button>
+                                    </div>
+                                    <button type="button" onClick={() => setCurrentStep(1)} className="back-button">
+                                        {translations.back}
+                                    </button>
+                                </div>
+                            </form>
+                        ) : currentStep === 3 ? (
+                            <form onSubmit={handleReferralSubmit}>
+                                <div className="referral-container">
+                                    <div className="step-header">
+                                        <h3>{translations.referralcode}</h3>
+                                        <p className="referral-description">
+                                            {translations.referralcodedescription}
+                                        </p>
+                                    </div>
+                                    <div className="form-group">
+                                        <label>{translations.referralcode}</label>
+                                        <input
+                                            type="text"
+                                            placeholder={translations.enteryourreferralcode}
+                                            value={referralCode}
+                                            onChange={(e) => setReferralCode(e.target.value)}
+                                            className="referral-input"
+                                        />
+                                    </div>
+                                    {referralError && <div className="error-message">{referralError}</div>}
+                                    <button type="submit" className="signup-button" disabled={isLoading}>
+                                        {isLoading ? (
+                                            <>
+                                                <span className="spinner"></span>
+                                                {translations.processing}
+                                            </>
+                                        ) : (
+                                            <>
+                                                {translations.continue}
+                                                <span className="button-arrow">→</span>
+                                            </>
+                                        )}
+                                    </button>
+                                    <button type="button" onClick={handleSkipReferral} disabled={isLoading} className="skip-button">
+                                        {translations.skip}
+                                    </button>
+                                    <button type="button" onClick={() => setCurrentStep(2)} className="back-button">
+                                        {translations.back}
+                                    </button>
+                                </div>
+                            </form>
+                        ) : (
+                            <div className="welcome-container">
+                                <div className="step-header">
+                                    <h2>{translations.welcometosystem}</h2>
+                                    <p className="welcome-description">
+                                        {translations.getupandrunning}
+                                    </p>
+                                </div>
+                                <div className="welcome-content">
+                                    <div className="welcome-icon">🎉</div>
+                                    <p>{translations.accountcreatedsuccessfully}</p>
+                                </div>
+                                <button onClick={handleFinish} className="signup-button finish-button">
+                                    {translations.finishup}
+                                    <span className="button-arrow">→</span>
+                                </button>
                             </div>
-                        </div>
+                        )}
                     </div>
-                    <div className="checkbox">
-                        <input
-                            type="checkbox"
-                            id="terms-checkbox"
-                            checked={termsAccepted}
-                            onChange={() => setTermsAccepted(!termsAccepted)}
-                        />
-                        <label htmlFor="terms-checkbox">
-                            {translations.bysignupingyouagreetoour}
-                            {/* <a href="/terms" target="_blank" rel="noopener noreferrer">{translations.termsandconditions}</a> */}
-                            {/* {translations.and} */}
-                            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">{translations.privacypolicy}</a>.
-                        </label>
-                    </div>
-                    {formError && <div className="error-message">{formError}</div>}
-                    <button type="submit" className="signup-button" disabled={isLoading}>
-                        {isLoading ? 'Signing In...' : translations.signup}
-                    </button>
-                </form>
-                <div className="form-group signin">
-                    <h6>{translations.alreadyhaveanaccount}</h6>
-                    <NavLink to="/Signin">{translations.signin}</NavLink>
                 </div>
+                {currentStep === 1 && (
+                    <div className="form-group signin">
+                        <div className="signin-divider">
+                            <span className="divider-line"></span>
+                            <span className="divider-text">{translations.alreadyhaveanaccount}</span>
+                            <span className="divider-line"></span>
+                        </div>
+                        <NavLink to="/Signin" className="signin-link">
+                            {translations.signin}
+                        </NavLink>
+                    </div>
+                )}
             </div>
         </div>
     </>);
