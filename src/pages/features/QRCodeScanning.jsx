@@ -2,6 +2,7 @@ import { QrCode as QrCodeIcon, Restaurant as RestaurantIcon, Security as Securit
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
+import GetStartedButton from '../../components/GetStartedButton';
 import '../../styles/pages/feature/qrcodescanning.scss';
 
 const QRCodeScanning = () => {
@@ -80,9 +81,7 @@ const QRCodeScanning = () => {
                 to access menus, place orders, and track their food preparation in real-time.
               </Typography>
               <Box className="cta-button-container">
-                <Typography variant="h6" className="coming-soon-text">
-                  Coming Soon
-                </Typography>
+                <GetStartedButton className="coming-soon-text" />
               </Box>
             </Box>
 

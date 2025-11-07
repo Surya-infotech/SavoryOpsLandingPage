@@ -1,5 +1,6 @@
 import { CheckCircle as CheckCircleIcon, Star as StarIcon } from '@mui/icons-material';
 import { Box, Chip, Container, Grid, Typography } from '@mui/material';
+import GetStartedButton from '../components/GetStartedButton';
 
 const Benefits = () => {
   const benefits = [
@@ -123,27 +124,17 @@ const Benefits = () => {
               ))}
             </Box>
 
-            <Typography
-              variant="h6"
+            <GetStartedButton
               className="coming-soon-text"
               sx={{
-                background: 'linear-gradient(135deg, #2e7d32, #4caf50)',
-                color: 'white',
-                borderRadius: '50px',
                 padding: '12px 32px',
                 fontSize: '1.1rem',
                 fontWeight: 600,
-                textTransform: 'none',
-                boxShadow: '0 8px 24px rgba(46, 125, 50, 0.3)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                borderRadius: '50px',
                 minHeight: '48px',
                 animation: 'fadeInUp 0.8s ease-out 0.6s both'
               }}
-            >
-              Coming Soon
-            </Typography>
+            />
           </Grid>
 
           {/* Right Column - POS&KOT Image */}

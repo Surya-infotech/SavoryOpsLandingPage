@@ -2,6 +2,7 @@ import { Assessment as AssessmentIcon, ListAlt as ListAltIcon, ReceiptLong as Re
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
+import GetStartedButton from '../../components/GetStartedButton';
 import '../../styles/pages/feature/ordersummary.scss';
 
 const OrderSummary = () => {
@@ -80,9 +81,7 @@ const OrderSummary = () => {
                 and real-time visibility into all order activities for maximum efficiency.
               </Typography>
               <Box className="cta-button-container">
-                <Typography variant="h6" className="coming-soon-text">
-                  Coming Soon
-                </Typography>
+                <GetStartedButton className="coming-soon-text" />
               </Box>
             </Box>
 

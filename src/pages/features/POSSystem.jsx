@@ -2,6 +2,7 @@ import { QrCode as QrCodeIcon, Receipt as ReceiptIcon, Restaurant as RestaurantI
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
+import GetStartedButton from '../../components/GetStartedButton';
 import '../../styles/pages/feature/possystem.scss';
 
 const POSSystem = () => {
@@ -56,9 +57,7 @@ const POSSystem = () => {
                 and real-time order tracking to streamline your entire ordering process.
               </Typography>
               <Box className="cta-button-container">
-                <Typography variant="h6" className="coming-soon-text">
-                  Coming Soon
-                </Typography>
+                <GetStartedButton className="coming-soon-text" />
               </Box>
             </Box>
 

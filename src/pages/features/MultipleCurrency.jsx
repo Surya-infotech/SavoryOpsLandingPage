@@ -2,6 +2,7 @@ import { Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, CurrencyE
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
+import GetStartedButton from '../../components/GetStartedButton';
 import '../../styles/pages/feature/multiplecurrency.scss';
 
 const MultipleCurrency = () => {
@@ -80,9 +81,7 @@ const MultipleCurrency = () => {
                 real-time exchange rates, and global compliance for worldwide restaurant operations.
               </Typography>
               <Box className="cta-button-container">
-                <Typography variant="h6" className="coming-soon-text">
-                  Coming Soon
-                </Typography>
+                <GetStartedButton className="coming-soon-text" />
               </Box>
             </Box>
 

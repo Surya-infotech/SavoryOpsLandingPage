@@ -2,6 +2,7 @@ import { Analytics as AnalyticsIcon, Feedback as FeedbackIcon, RateReview as Rat
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
+import GetStartedButton from '../../components/GetStartedButton';
 import '../../styles/pages/feature/customerreviews.scss';
 
 const CustomerReviews = () => {
@@ -80,9 +81,7 @@ const CustomerReviews = () => {
                 satisfaction, respond to feedback, and build stronger relationships with your customers.
               </Typography>
               <Box className="cta-button-container">
-                <Typography variant="h6" className="coming-soon-text">
-                  Coming Soon
-                </Typography>
+                <GetStartedButton className="coming-soon-text" />
               </Box>
             </Box>
 

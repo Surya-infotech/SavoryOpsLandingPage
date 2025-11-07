@@ -130,8 +130,10 @@ const OwnerLogin = () => {
             </div>
             <div className="login-container">
                 <div className="logo-container">
-                    <img src="/logo.png" alt="Logo" className="logo" />
-                    <h2>SavoryOps</h2>
+                    <a href="/" className="logo-button">
+                        <img src="/logo.png" alt="Logo" className="logo" />
+                        <h2>SavoryOps</h2>
+                    </a>
                 </div>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">

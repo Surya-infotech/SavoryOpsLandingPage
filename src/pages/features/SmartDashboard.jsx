@@ -2,6 +2,7 @@ import { BarChart as BarChartIcon, Monitor as MonitorIcon, Receipt as ReceiptIco
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
+import GetStartedButton from '../../components/GetStartedButton';
 import '../../styles/pages/feature/smartdashboard.scss';
 
 const SmartDashboard = () => {
@@ -73,9 +74,7 @@ const SmartDashboard = () => {
                 to optimize your operations and boost profitability.
               </Typography>
               <Box className="cta-button-container">
-                <Typography variant="h6" className="coming-soon-text">
-                  Coming Soon
-                </Typography>
+                <GetStartedButton className="coming-soon-text" />
               </Box>
             </Box>
 

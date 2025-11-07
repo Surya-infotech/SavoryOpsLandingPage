@@ -2,6 +2,7 @@ import { Cloud as CloudIcon, Public as PublicIcon, Security as SecurityIcon, Spe
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
+import GetStartedButton from '../../components/GetStartedButton';
 import '../../styles/pages/feature/cloudbasedsystem.scss';
 
 const CloudBasedSystem = () => {
@@ -72,9 +73,7 @@ const CloudBasedSystem = () => {
                 automatic backups, real-time synchronization, and global accessibility for your restaurant operations.
               </Typography>
               <Box className="cta-button-container">
-                <Typography variant="h6" className="coming-soon-text">
-                  Coming Soon
-                </Typography>
+                <GetStartedButton className="coming-soon-text" />
               </Box>
             </Box>
 

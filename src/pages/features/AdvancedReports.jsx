@@ -2,6 +2,7 @@ import { Assessment as AssessmentIcon, BarChart as BarChartIcon, Insights as Ins
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
+import GetStartedButton from '../../components/GetStartedButton';
 import '../../styles/pages/feature/advancedreports.scss';
 
 const AdvancedReports = () => {
@@ -80,9 +81,7 @@ const AdvancedReports = () => {
                 and actionable intelligence for strategic business planning and optimization.
               </Typography>
               <Box className="cta-button-container">
-                <Typography variant="h6" className="coming-soon-text">
-                  Coming Soon
-                </Typography>
+                <GetStartedButton className="coming-soon-text" />
               </Box>
             </Box>
 

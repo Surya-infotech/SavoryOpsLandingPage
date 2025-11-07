@@ -2,6 +2,7 @@ import { Assignment as AssignmentIcon, Notifications as NotificationsIcon, Recei
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
+import GetStartedButton from '../../components/GetStartedButton';
 import '../../styles/pages/feature/kotsystem.scss';
 
 const KOTSystem = () => {
@@ -80,9 +81,7 @@ const KOTSystem = () => {
                 real-time status updates, and optimized workflow management for maximum productivity.
               </Typography>
               <Box className="cta-button-container">
-                <Typography variant="h6" className="coming-soon-text">
-                  Coming Soon
-                </Typography>
+                <GetStartedButton className="coming-soon-text" />
               </Box>
             </Box>
 

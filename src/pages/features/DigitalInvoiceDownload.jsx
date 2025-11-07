@@ -2,6 +2,7 @@ import { Archive as ArchiveIcon, CloudDownload as CloudDownloadIcon, Download as
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
+import GetStartedButton from '../../components/GetStartedButton';
 import '../../styles/pages/feature/digitalinvoicedownload.scss';
 
 const DigitalInvoiceDownload = () => {
@@ -80,9 +81,7 @@ const DigitalInvoiceDownload = () => {
                 secure storage, and flexible access for all your business documentation needs.
               </Typography>
               <Box className="cta-button-container">
-                <Typography variant="h6" className="coming-soon-text">
-                  Coming Soon
-                </Typography>
+                <GetStartedButton className="coming-soon-text" />
               </Box>
             </Box>
 

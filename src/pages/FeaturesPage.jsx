@@ -2,6 +2,7 @@ import { AccountTree as AccountTreeIcon, Analytics as AnalyticsIcon, Assessment 
 import { Box, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import GetStartedButton from '../components/GetStartedButton';
 import '../styles/pages/featurespage.scss';
 
 const FeaturesPage = () => {
@@ -253,28 +254,16 @@ const FeaturesPage = () => {
             />
           </Box>
           <Box className="cta-section">
-            <Typography
-              variant="h6"
+            <GetStartedButton
               className="coming-soon-text"
               sx={{
-                backgroundColor: '#2e7d32',
-                color: 'white',
-                borderRadius: '8px',
                 px: 4,
                 py: 2,
                 fontSize: '1.1rem',
                 fontWeight: 600,
-                textTransform: 'none',
-                boxShadow: '0 4px 12px rgba(46, 125, 50, 0.3)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                minHeight: '48px',
-                cursor: 'default'
+                minHeight: '48px'
               }}
-            >
-              Coming Soon
-            </Typography>
+            />
           </Box>
         </Box>
         <Grid container spacing={{ xs: 2, sm: 2, md: 2 }} className="features-grid">

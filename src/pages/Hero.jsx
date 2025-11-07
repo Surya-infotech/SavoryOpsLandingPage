@@ -1,4 +1,5 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
+import GetStartedButton from '../components/GetStartedButton';
 
 const Hero = () => {
   return (
@@ -62,28 +63,17 @@ const Hero = () => {
 
             {/* CTA Button */}
             <Box className="hero-buttons" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', animation: 'fadeInUp 0.8s ease-out 0.6s both' }}>
-              <Typography
-                variant="h6"
+              <GetStartedButton
                 className="coming-soon-text"
                 sx={{
-                  backgroundColor: '#2e7d32',
-                  color: 'white',
-                  borderRadius: '8px',
                   px: 4,
                   py: 2,
                   fontSize: '1.1rem',
                   fontWeight: 600,
-                  textTransform: 'none',
-                  boxShadow: '0 4px 12px rgba(46, 125, 50, 0.3)',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
                   minHeight: '48px',
                   animation: 'fadeInUp 0.8s ease-out 0.6s both'
                 }}
-              >
-                Coming Soon
-              </Typography>
+              />
             </Box>
           </Grid>
 

@@ -2,6 +2,7 @@ import { Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, Compare a
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
+import GetStartedButton from '../../components/GetStartedButton';
 import '../../styles/pages/feature/branchpricing.scss';
 
 const BranchPricing = () => {
@@ -56,9 +57,7 @@ const BranchPricing = () => {
                 and revenue optimization for maximum profitability across all locations.
               </Typography>
               <Box className="cta-button-container">
-                <Typography variant="h6" className="coming-soon-text">
-                  Coming Soon
-                </Typography>
+                <GetStartedButton className="coming-soon-text" />
               </Box>
             </Box>
 

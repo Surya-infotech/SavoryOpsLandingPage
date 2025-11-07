@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material';
+import GetStartedButton from './GetStartedButton';
 import '../styles/components/cta.scss';
 
 const CTA = ({
@@ -15,9 +16,7 @@ const CTA = ({
         <Typography variant="body1" className="cta-description">
           {description}
         </Typography>
-        <Typography variant="h6" className="coming-soon-text">
-          Coming Soon
-        </Typography>
+        <GetStartedButton className="coming-soon-text" />
       </Box>
     </Box>
   );

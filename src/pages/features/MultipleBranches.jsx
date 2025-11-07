@@ -2,6 +2,7 @@ import { AccountTree as AccountTreeIcon, AttachMoney as AttachMoneyIcon, People 
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
+import GetStartedButton from '../../components/GetStartedButton';
 import '../../styles/pages/feature/multiplebranches.scss';
 
 const MultipleBranches = () => {
@@ -72,9 +73,7 @@ const MultipleBranches = () => {
                 operations for each location, ensuring consistent quality and streamlined management.
               </Typography>
               <Box className="cta-button-container">
-                <Typography variant="h6" className="coming-soon-text">
-                  Coming Soon
-                </Typography>
+                <GetStartedButton className="coming-soon-text" />
               </Box>
             </Box>
 

@@ -2,6 +2,7 @@ import { Assignment as AssignmentIcon, Groups as GroupsIcon, Person as PersonIco
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
+import GetStartedButton from '../../components/GetStartedButton';
 import '../../styles/pages/feature/branchstaffmanagement.scss';
 
 const BranchStaffManagement = () => {
@@ -48,9 +49,7 @@ const BranchStaffManagement = () => {
                 performance tracking, and efficient task distribution for optimal restaurant operations.
               </Typography>
               <Box className="cta-button-container">
-                <Typography variant="h6" className="coming-soon-text">
-                  Coming Soon
-                </Typography>
+                <GetStartedButton className="coming-soon-text" />
               </Box>
             </Box>
 
