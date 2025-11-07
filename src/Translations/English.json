@@ -41,13 +41,10 @@
   "otpnotfoundorexpires": "OTP not found or expired. Please request a new OTP.",
   "otphasexpiresrequestanewotp": "OTP has expired. Please request a new OTP.",
   "maximumverificationattemptsexceeded": "Maximum verification attempts exceeded. Please request a new OTP.",
-  "invalidreferralcode": "Invalid referral code",
   "yourdetails": "Your details",
   "provideemailandpassword": "Provide an email and password",
   "verifyyourphone": "Verify your phone",
   "enteryourverificationcode": "Enter your verification code",
-  "referralcode": " Referral Code",
-  "referralcodedescription": "Enter Referral Code (if any)",
   "welcometosystem": "Welcome to SavoryOps!",
   "getupandrunning": "Get up and running in 3 minutes",
   "sendingotp": "Sending OTP...",
@@ -58,9 +55,6 @@
   "didntreceiveotp": "Didn't receive the OTP?",
   "resendotp": "Resend OTP",
   "back": "Back",
-  "enteryourreferralcode": "Enter your referral code (optional)",
-  "processing": "Processing...",
-  "skip": "Skip",
   "accountcreatedsuccessfully": "Account created successfully!",
   "finishup": "Finish up"
 }

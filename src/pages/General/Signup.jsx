@@ -19,8 +19,6 @@ const OwnerSignUp = () => {
     const [currentStep, setCurrentStep] = useState(1);
     const [otp, setOtp] = useState(['', '', '', '', '', '']);
     const [otpError, setOtpError] = useState('');
-    const [referralCode, setReferralCode] = useState('');
-    const [referralError, setReferralError] = useState('');
     const [signupData, setSignupData] = useState(null);
     const BackendPath = import.meta.env.VITE_BACKEND_URL;
     const host = import.meta.env.VITE_HOST;
@@ -28,7 +26,9 @@ const OwnerSignUp = () => {
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
     const { translations } = useLanguage();
-    const [isLoading, setIsLoading] = useState(false);
+    const [isSendingOtp, setIsSendingOtp] = useState(false);
+    const [isVerifyingOtp, setIsVerifyingOtp] = useState(false);
+    const [isResendingOtp, setIsResendingOtp] = useState(false);
     const [formError, setFormError] = useState('');
     const [warningMessage, setWarningMessage] = useState("");
     const [showWarning, setShowWarning] = useState(false);
@@ -96,12 +96,12 @@ const OwnerSignUp = () => {
 
     const handleBasicInfoSubmit = async (e) => {
         e.preventDefault();
-        setIsLoading(true);
+        setIsSendingOtp(true);
         setFormError('');
 
         if (password.length < 8 || password.length > 14) {
             setFormError(translations.passwordLengthError);
-            setIsLoading(false);
+            setIsSendingOtp(false);
             return;
         }
 
@@ -117,7 +117,7 @@ const OwnerSignUp = () => {
         if (!isPhoneValid || !phone || phone.trim() === '') {
             setPhoneError(translations.invalidphonenumber);
             setFormError(translations.invalidphonenumber);
-            setIsLoading(false);
+            setIsSendingOtp(false);
             return;
         }
 
@@ -125,13 +125,13 @@ const OwnerSignUp = () => {
 
         if (!gender) {
             setFormError(translations.allfieldrequired);
-            setIsLoading(false);
+            setIsSendingOtp(false);
             return;
         }
 
         if (!termsAccepted) {
             setFormError(translations.youmustacceptthetermsandconditions);
-            setIsLoading(false);
+            setIsSendingOtp(false);
             return;
         }
 
@@ -157,7 +157,7 @@ const OwnerSignUp = () => {
             setWarningMessage(translations.servererror);
             setShowWarning(true);
         } finally {
-            setIsLoading(false);
+            setIsSendingOtp(false);
         }
     };
 
@@ -193,14 +193,14 @@ const OwnerSignUp = () => {
 
     const handleOtpSubmit = async (e) => {
         e.preventDefault();
-        setIsLoading(true);
+        setIsVerifyingOtp(true);
         setOtpError('');
         setFormError('');
 
         const otpValue = otp.join('');
         if (otpValue.length !== 6) {
             setOtpError(translations.invalidotpmessage);
-            setIsLoading(false);
+            setIsVerifyingOtp(false);
             return;
         }
 
@@ -212,9 +212,39 @@ const OwnerSignUp = () => {
             });
             const data = await response.json();
             if (response.ok) {
-                setCurrentStep(3);
                 setOtpError('');
                 setOtp(['', '', '', '', '', '']);
+
+                try {
+                    const signupResponse = await fetch(`${BackendPath}/General/owner/Signup`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json", "x-user": "admin" },
+                        body: JSON.stringify({
+                            ownerfirstname: firstName,
+                            ownerlastname: lastName,
+                            email,
+                            password,
+                            phone,
+                            gender
+                        }),
+                    });
+                    const signupResult = await signupResponse.json();
+                    if (signupResponse.ok) {
+                        setSignupData(signupResult);
+                        setCurrentStep(3);
+                        setFormError('');
+                    } else {
+                        const errorMessages = {
+                            "All fields are required": translations.allfieldrequired,
+                            "Email ID Already Exists": translations.emailalreadyexists,
+                            "Server error": translations.servererror
+                        };
+                        setOtpError(errorMessages[signupResult.message] || translations.servererror);
+                    }
+                } catch {
+                    setWarningMessage(translations.servererror);
+                    setShowWarning(true);
+                }
             } else {
                 const errorMessages = {
                     "Invalid OTP format. OTP must be 6 digits.": translations.invalidotpformatotpmustbe6digits,
@@ -229,12 +259,12 @@ const OwnerSignUp = () => {
             setWarningMessage(translations.servererror);
             setShowWarning(true);
         } finally {
-            setIsLoading(false);
+            setIsVerifyingOtp(false);
         }
     };
 
     const handleResendOtp = async () => {
-        setIsLoading(true);
+        setIsResendingOtp(true);
         setOtpError('');
         try {
             const response = await fetch(`${BackendPath}/General/owner/ResendOTP`, {
@@ -253,89 +283,7 @@ const OwnerSignUp = () => {
             setWarningMessage(translations.servererror);
             setShowWarning(true);
         } finally {
-            setIsLoading(false);
-        }
-    };
-
-    const handleReferralSubmit = async (e) => {
-        e.preventDefault();
-        setIsLoading(true);
-        setReferralError('');
-        setFormError('');
-
-        try {
-            const response = await fetch(`${BackendPath}/General/owner/Signup`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json", "x-user": "admin" },
-                body: JSON.stringify({
-                    ownerfirstname: firstName,
-                    ownerlastname: lastName,
-                    email,
-                    password,
-                    phone,
-                    gender,
-                    referralCode: referralCode || null
-                }),
-            });
-            const data = await response.json();
-            if (response.ok) {
-                setSignupData(data);
-                setCurrentStep(4);
-                setFormError('');
-            } else {
-                const errorMessages = {
-                    "Invalid referral code": translations.invalidreferralcode,
-                    "All fields are required": translations.allfieldrequired,
-                    "Email ID Already Exists": translations.emailalreadyexists,
-                    "Server error": translations.servererror
-                };
-                setReferralError(errorMessages[data.message] || translations.servererror);
-            }
-        } catch {
-            setWarningMessage(translations.servererror);
-            setShowWarning(true);
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
-    const handleSkipReferral = async () => {
-        setIsLoading(true);
-        setReferralError('');
-        setFormError('');
-
-        try {
-            const response = await fetch(`${BackendPath}/General/owner/Signup`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json", "x-user": "admin" },
-                body: JSON.stringify({
-                    ownerfirstname: firstName,
-                    ownerlastname: lastName,
-                    email,
-                    password,
-                    phone,
-                    gender,
-                    referralCode: null
-                }),
-            });
-            const data = await response.json();
-            if (response.ok) {
-                setSignupData(data);
-                setCurrentStep(4);
-                setFormError('');
-            } else {
-                const errorMessages = {
-                    "All fields are required": translations.allfieldrequired,
-                    "Email ID Already Exists": translations.emailalreadyexists,
-                    "Server error": translations.servererror
-                };
-                setReferralError(errorMessages[data.message] || translations.servererror);
-            }
-        } catch {
-            setWarningMessage(translations.servererror);
-            setShowWarning(true);
-        } finally {
-            setIsLoading(false);
+            setIsResendingOtp(false);
         }
     };
 
@@ -364,12 +312,6 @@ const OwnerSignUp = () => {
         },
         {
             number: 3,
-            title: translations.referralcode,
-            description: translations.referralcodedescription,
-            icon: "🎁"
-        },
-        {
-            number: 4,
             title: translations.welcometosystem,
             description: translations.getupandrunning,
             icon: "🚀"
@@ -558,8 +500,8 @@ const OwnerSignUp = () => {
                                     </label>
                                 </div>
                                 {formError && <div className="error-message">{formError}</div>}
-                                <button type="submit" className="signup-button" disabled={isLoading}>
-                                    {isLoading ? (
+                                <button type="submit" className="signup-button" disabled={isSendingOtp}>
+                                    {isSendingOtp ? (
                                         <>
                                             <span className="spinner"></span>
                                             {translations.sendingotp}
@@ -599,8 +541,8 @@ const OwnerSignUp = () => {
                                         ))}
                                     </div>
                                     {otpError && <div className="error-message">{otpError}</div>}
-                                    <button type="submit" className="signup-button" disabled={isLoading}>
-                                        {isLoading ? (
+                                    <button type="submit" className="signup-button" disabled={isVerifyingOtp || isResendingOtp}>
+                                        {isVerifyingOtp ? (
                                             <>
                                                 <span className="spinner"></span>
                                                 {translations.verifying}
@@ -614,52 +556,18 @@ const OwnerSignUp = () => {
                                     </button>
                                     <div className="resend-otp">
                                         <span>{translations.didntreceiveotp}</span>
-                                        <button type="button" onClick={handleResendOtp} disabled={isLoading} className="resend-button">
-                                            {translations.resendotp}
+                                        <button type="button" onClick={handleResendOtp} disabled={isResendingOtp || isVerifyingOtp} className="resend-button">
+                                            {isResendingOtp ? (
+                                                <>
+                                                    <span className="spinner"></span>
+                                                    {translations.sendingotp}
+                                                </>
+                                            ) : (
+                                                translations.resendotp
+                                            )}
                                         </button>
                                     </div>
                                     <button type="button" onClick={() => setCurrentStep(1)} className="back-button">
-                                        {translations.back}
-                                    </button>
-                                </div>
-                            </form>
-                        ) : currentStep === 3 ? (
-                            <form onSubmit={handleReferralSubmit}>
-                                <div className="referral-container">
-                                    <div className="step-header">
-                                        <h3>{translations.referralcode}</h3>
-                                        <p className="referral-description">
-                                            {translations.referralcodedescription}
-                                        </p>
-                                    </div>
-                                    <div className="form-group">
-                                        <label>{translations.referralcode}</label>
-                                        <input
-                                            type="text"
-                                            placeholder={translations.enteryourreferralcode}
-                                            value={referralCode}
-                                            onChange={(e) => setReferralCode(e.target.value)}
-                                            className="referral-input"
-                                        />
-                                    </div>
-                                    {referralError && <div className="error-message">{referralError}</div>}
-                                    <button type="submit" className="signup-button" disabled={isLoading}>
-                                        {isLoading ? (
-                                            <>
-                                                <span className="spinner"></span>
-                                                {translations.processing}
-                                            </>
-                                        ) : (
-                                            <>
-                                                {translations.continue}
-                                                <span className="button-arrow">→</span>
-                                            </>
-                                        )}
-                                    </button>
-                                    <button type="button" onClick={handleSkipReferral} disabled={isLoading} className="skip-button">
-                                        {translations.skip}
-                                    </button>
-                                    <button type="button" onClick={() => setCurrentStep(2)} className="back-button">
                                         {translations.back}
                                     </button>
                                 </div>
