@@ -346,6 +346,12 @@ const OwnerSignUp = () => {
                 </div>
             </div>
             <div className="signup-container">
+                <div className="logo-container">
+                    <a href="/" className="logo-button">
+                        <img src="/logo.png" alt="Logo" className="logo" />
+                        <h2>SavoryOps</h2>
+                    </a>
+                </div>
                 <div className="signup-wrapper">
                     <div className="progress-tracker">
                         {steps.map((step, index) => (
@@ -592,18 +598,18 @@ const OwnerSignUp = () => {
                         )}
                     </div>
                 </div>
-                {currentStep === 1 && (
-                    <div className="form-group signin">
-                        <div className="signin-divider">
-                            <span className="divider-line"></span>
+                <div className="form-group signin">
+                    <div className="signin-divider">
+                        <span className="divider-line"></span>
+                        <div className="divider-content">
                             <span className="divider-text">{translations.alreadyhaveanaccount}</span>
-                            <span className="divider-line"></span>
+                            <NavLink to="/Signin" className="signin-link">
+                                {translations.signin}
+                            </NavLink>
                         </div>
-                        <NavLink to="/Signin" className="signin-link">
-                            {translations.signin}
-                        </NavLink>
+                        <span className="divider-line"></span>
                     </div>
-                )}
+                </div>
             </div>
         </div>
     </>);
