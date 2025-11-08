@@ -3,7 +3,7 @@ import Blog from './Blog';
 import CTA from './CTA';
 import Features from './Features';
 import Hero from './Hero';
-import Testimonials from './Testimonials';
+import AppDownloads from './AppDownloads';
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <Hero />
       <Features />
       <Benefits />
-      {/* <Testimonials /> */}
+      <AppDownloads />
       <CTA />
       <Blog />
     </>

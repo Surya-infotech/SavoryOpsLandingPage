@@ -62,7 +62,15 @@ const Hero = () => {
             </Typography>
 
             {/* CTA Button */}
-            <Box className="hero-buttons" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', animation: 'fadeInUp 0.8s ease-out 0.6s both' }}>
+            <Box
+              className="hero-buttons"
+              sx={{
+                display: 'flex',
+                gap: 2,
+                flexWrap: 'wrap',
+                animation: 'fadeInUp 0.8s ease-out 0.6s both'
+              }}
+            >
               <GetStartedButton
                 className="coming-soon-text"
                 sx={{
@@ -78,21 +86,25 @@ const Hero = () => {
           </Grid>
 
           <Grid item xs={12} md={6}>
-            <Box sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              animation: 'fadeInUp 0.8s ease-out 0.8s both'
-            }}>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                animation: 'fadeInUp 0.8s ease-out 0.8s both'
+              }}
+            >
               {/* Clean Image Display */}
-              <Box sx={{
-                borderRadius: '12px',
-                overflow: 'hidden',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                bgcolor: 'white',
-                p: 2,
-                maxWidth: '100%'
-              }}>
+              <Box
+                sx={{
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                  bgcolor: 'white',
+                  p: 2,
+                  maxWidth: '100%'
+                }}
+              >
                 <img
                   src="/design.png"
                   alt="SavoryOps Restaurant Management Platform"

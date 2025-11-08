@@ -1,0 +1,175 @@
+.app-downloads-section {
+  background: linear-gradient(140deg, #f4fdf4 0%, #ffffff 45%, #e8f5e9 100%);
+  padding: 80px 0;
+
+  .app-downloads-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 64px auto;
+
+    .app-downloads-chip {
+      margin-bottom: 24px;
+    }
+
+    .app-downloads-title {
+      font-weight: 800;
+      font-size: clamp(2.5rem, 4vw + 1rem, 4rem);
+      color: #1a1a1a;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #1b5e20, #2e7d32, #4caf50);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .app-downloads-subtitle {
+      color: #666666;
+      font-size: clamp(1.05rem, 0.6vw + 1rem, 1.25rem);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+  }
+
+  .app-downloads-chip.MuiChip-root {
+    align-self: center;
+    background: linear-gradient(135deg, #2e7d32, #4caf50);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 12px;
+
+    .MuiChip-icon {
+      color: #ffffff;
+      margin-left: 0;
+    }
+  }
+
+  .app-downloads-cards {
+    width: 100%;
+    max-width: 940px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .app-download-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 28px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(246, 254, 247, 0.95));
+    border: 1px solid rgba(46, 125, 50, 0.12);
+    box-shadow: 0 18px 36px rgba(13, 51, 20, 0.1);
+    min-height: 280px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 48px rgba(46, 125, 50, 0.22);
+    }
+  }
+
+  .app-download-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .app-download-card-avatar.MuiAvatar-root {
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    background-color: #ffffff;
+
+    .MuiAvatar-img {
+      object-fit: contain;
+      padding: 4px;
+    }
+  }
+
+  .app-download-card-name {
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+
+  .app-download-card-badge {
+    color: #2e7d32;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .app-download-card-description {
+    color: #555555;
+    line-height: 1.6;
+    font-size: 0.98rem;
+  }
+
+  .app-download-card-highlights {
+    gap: 8px;
+  }
+
+  .app-download-feature-chip.MuiChip-root {
+    background-color: rgba(46, 125, 50, 0.12);
+    color: #1b5e20;
+    font-weight: 600;
+    border-radius: 999px;
+  }
+
+  .app-download-card-store {
+    margin-top: auto;
+    display: inline-block;
+    line-height: 0;
+    cursor: pointer;
+
+    .app-download-card-store-badge {
+      height: 48px;
+      width: auto;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover .app-download-card-store-badge {
+      transform: translateY(-2px) scale(1.02);
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: 60px 0;
+
+    .app-downloads-header {
+      margin-bottom: 48px;
+    }
+
+    .app-downloads-cards {
+      max-width: 100%;
+    }
+
+    .app-download-card {
+      min-height: unset;
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 48px 0;
+
+    .app-downloads-title {
+      font-size: 2rem;
+    }
+
+    .app-downloads-subtitle {
+      font-size: 1rem;
+    }
+
+    .app-download-card {
+      padding: 24px;
+    }
+  }
+}
+
