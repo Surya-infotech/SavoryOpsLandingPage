@@ -1,4 +1,4 @@
-import { Assessment as AssessmentIcon, ListAlt as ListAltIcon, ReceiptLong as ReceiptLongIcon, Speed as SpeedIcon, Timeline as TimelineIcon, Visibility as VisibilityIcon } from '@mui/icons-material';
+import { Assessment as AssessmentIcon, ListAlt as ListAltIcon, Timeline as TimelineIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -14,7 +14,7 @@ const OrderSummary = () => {
     {
       title: 'Order Timeline',
       description: 'Complete order tracking',
-      content: 'Track orders from placement to completion with detailed timeline and status updates for better order management.',
+      content: 'Follow every ticket through submission, confirmation, prep, and delivery with a visual timeline that highlights status changes, handoffs, and delays. Managers can drill into each stage to see who touched the order, what adjustments were made, and how long each step took.',
       icon: <TimelineIcon />,
       color: '#4CAF50',
       image: '/features/OrderSummary/order-timeline.png'
@@ -22,7 +22,7 @@ const OrderSummary = () => {
     {
       title: 'Detailed Reports',
       description: 'Comprehensive order analysis',
-      content: 'Generate detailed order reports with comprehensive analysis and insights for better business decisions.',
+      content: 'Build multi-dimensional reports that break down sales by channel, server, menu category, or fulfillment speed, then export them for finance or operations reviews. Spot trends such as repeat cancellations, peak-hour bottlenecks, and top-performing dishes in seconds.',
       icon: <AssessmentIcon />,
       color: '#2196F3',
       image: '/features/OrderSummary/detailed-reports.png'
@@ -30,34 +30,10 @@ const OrderSummary = () => {
     {
       title: 'Order History',
       description: 'Complete order records',
-      content: 'Maintain complete order history with searchable records and detailed order information for reference.',
+      content: 'Store a searchable archive of every order, including guest preferences, modifiers, refunds, and loyalty identifiers. Staff can pull up any past transaction instantly to resolve disputes, re-create favorites, or understand customer behavior before the next visit.',
       icon: <ListAltIcon />,
       color: '#FF9800',
       image: '/features/OrderSummary/order-history.png'
-    },
-    {
-      title: 'Quick Summary',
-      description: 'Instant order overview',
-      content: 'Get instant order summaries with key information and quick access to order details and status.',
-      icon: <SpeedIcon />,
-      color: '#9C27B0',
-      image: '/features/OrderSummary/quick-summary.png'
-    },
-    {
-      title: 'Order Visibility',
-      description: 'Real-time order monitoring',
-      content: 'Monitor orders in real-time with complete visibility into order status, progress, and completion.',
-      icon: <VisibilityIcon />,
-      color: '#F44336',
-      image: '/features/OrderSummary/order-visibility.png'
-    },
-    {
-      title: 'Summary Reports',
-      description: 'Organized order summaries',
-      content: 'Generate organized summary reports with key metrics and insights for efficient order management.',
-      icon: <ReceiptLongIcon />,
-      color: '#00BCD4',
-      image: '/features/OrderSummary/summary-reports.png'
     }
   ];
 
