@@ -1,4 +1,4 @@
-import { Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, CurrencyExchange as CurrencyExchangeIcon, Payment as PaymentIcon, Public as PublicIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { AttachMoney as AttachMoneyIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -12,52 +12,12 @@ const MultipleCurrency = () => {
 
   const benefits = [
     {
-      title: 'International Transactions',
-      description: 'Global payment processing',
-      content: 'Accept payments in multiple currencies for global business operations and international customers.',
-      icon: <CurrencyExchangeIcon />,
-      color: '#4CAF50',
-      image: '/features/MultipleCurrency/international-transactions.png'
-    },
-    {
       title: 'Multi-Currency Support',
-      description: 'Comprehensive currency handling',
-      content: 'Support for multiple currencies with real-time exchange rates and automatic conversion.',
+      description: 'Branch-wise currency configuration',
+      content: 'Assign unique currencies and price lists to every branch so menus automatically reflect the right denomination, rounding rules, and tax profile. Update exchange rates once and your satellite locations instantly inherit accurate, localized pricing for both dine-in and delivery.',
       icon: <AttachMoneyIcon />,
       color: '#2196F3',
       image: '/features/MultipleCurrency/multi-currency-support.png'
-    },
-    {
-      title: 'Payment Processing',
-      description: 'Secure payment handling',
-      content: 'Process payments securely in different currencies with fraud protection and compliance.',
-      icon: <PaymentIcon />,
-      color: '#FF9800',
-      image: '/features/MultipleCurrency/payment-processing.png'
-    },
-    {
-      title: 'Exchange Rate Management',
-      description: 'Real-time rate updates',
-      content: 'Manage exchange rates with real-time updates and automatic rate adjustments.',
-      icon: <TrendingUpIcon />,
-      color: '#9C27B0',
-      image: '/features/MultipleCurrency/exchange-rate-management.png'
-    },
-    {
-      title: 'Financial Reporting',
-      description: 'Multi-currency analytics',
-      content: 'Generate comprehensive financial reports with multi-currency analytics and insights.',
-      icon: <AssessmentIcon />,
-      color: '#F44336',
-      image: '/features/MultipleCurrency/financial-reporting.png'
-    },
-    {
-      title: 'Global Compliance',
-      description: 'International regulations',
-      content: 'Ensure compliance with international financial regulations and currency standards.',
-      icon: <PublicIcon />,
-      color: '#00BCD4',
-      image: '/features/MultipleCurrency/global-compliance.png'
     }
   ];
 
