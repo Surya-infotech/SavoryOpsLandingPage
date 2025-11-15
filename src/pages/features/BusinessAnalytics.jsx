@@ -1,4 +1,4 @@
-import { Analytics as AnalyticsIcon, Assessment as AssessmentIcon, BarChart as BarChartIcon, PieChart as PieChartIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { Assessment as AssessmentIcon, PieChart as PieChartIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -14,31 +14,23 @@ const BusinessAnalytics = () => {
     {
       title: 'Sales Analytics',
       description: 'Track performance with precision',
-      content: 'Monitor sales trends, patterns, and performance metrics with detailed insights and real-time data visualization.',
+      content: 'Monitor revenue trends across channels, dayparts, and menu categories with live visualizations that highlight anomalies instantly. Layer in promo calendars and weather data to see what truly moves the needle and pivot strategy before the next service.',
       icon: <TrendingUpIcon />,
       color: '#4CAF50',
       image: '/features/BusinessAnalytics/sales-analytics.png'
     },
     {
-      title: 'Customer Insights',
-      description: 'Understand your customers better',
-      content: 'Analyze customer behavior, preferences, and purchasing patterns to make data-driven business decisions.',
-      icon: <BarChartIcon />,
-      color: '#2196F3',
-      image: '/features/BusinessAnalytics/customer-insights.png'
-    },
-    {
       title: 'Performance Metrics',
       description: 'Monitor key indicators',
-      content: 'Track essential business metrics and KPIs with automated reporting and performance monitoring tools.',
+      content: 'Automated KPI scorecards surface prime cost, staffing ratios, table turn times, and guest sentiment in one snapshot. Threshold alerts ping operators when a metric drifts, so corrective actions happen during the shift—not after month-end.',
       icon: <AssessmentIcon />,
       color: '#FF9800',
-      image: '/features/BusinessAnalytics/performance-metrics.png'
+      image: '/features/BusinessAnalytics/trend-analysis.png'
     },
     {
       title: 'Financial Reports',
       description: 'Comprehensive financial analysis',
-      content: 'Generate detailed financial reports, profit analysis, and revenue tracking with automated calculations.',
+      content: 'Export-ready P&Ls, segment profit analysis, and revenue waterfall charts are generated automatically with drill-through access to the underlying tickets. Finance teams can reconcile numbers faster while leadership gets clean, presentation-ready data.',
       icon: <PieChartIcon />,
       color: '#9C27B0',
       image: '/features/BusinessAnalytics/financial-reports.png'
@@ -46,19 +38,11 @@ const BusinessAnalytics = () => {
     {
       title: 'Trend Analysis',
       description: 'Predict future performance',
-      content: 'Identify business trends and patterns with advanced forecasting and predictive analytics capabilities.',
+      content: 'Advanced forecasting models predict covers, sales, and inventory demand weeks ahead, then compare projections to actuals so you can validate accuracy. Visual timelines reveal seasonal lift and emerging guest behaviors before competitors catch on.',
       icon: <TimelineIcon />,
       color: '#F44336',
       image: '/features/BusinessAnalytics/trend-analysis.png'
     },
-    {
-      title: 'Custom Dashboards',
-      description: 'Personalized analytics views',
-      content: 'Create tailored dashboards for different user roles with customizable widgets and real-time updates.',
-      icon: <AnalyticsIcon />,
-      color: '#00BCD4',
-      image: '/features/BusinessAnalytics/custom-dashboards.png'
-    }
   ];
 
   return (
