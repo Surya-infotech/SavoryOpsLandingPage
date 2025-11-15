@@ -1,9 +1,15 @@
-import { QrCode as QrCodeIcon, Restaurant as RestaurantIcon, Security as SecurityIcon, Smartphone as SmartphoneIcon, Speed as SpeedIcon, Timeline as TimelineIcon } from '@mui/icons-material';
-import { Box, Container, Typography } from '@mui/material';
-import { useEffect } from 'react';
-import CTA from '../../components/CTA';
-import GetStartedButton from '../../components/GetStartedButton';
-import '../../styles/pages/feature/qrcodescanning.scss';
+import {
+  QrCode as QrCodeIcon,
+  Restaurant as RestaurantIcon,
+  Smartphone as SmartphoneIcon,
+  Speed as SpeedIcon,
+  Timeline as TimelineIcon,
+} from "@mui/icons-material";
+import { Box, Container, Typography } from "@mui/material";
+import { useEffect } from "react";
+import CTA from "../../components/CTA";
+import GetStartedButton from "../../components/GetStartedButton";
+import "../../styles/pages/feature/qrcodescanning.scss";
 
 const QRCodeScanning = () => {
   useEffect(() => {
@@ -12,53 +18,50 @@ const QRCodeScanning = () => {
 
   const benefits = [
     {
-      title: 'QR Code Generation',
-      description: 'Smart code creation',
-      content: 'Generate unique QR codes for each table and menu section with automatic updates and customization.',
+      title: "QR Code Generation",
+      description: "Smart code creation with centralized control",
+      content:
+        "Generate unique QR codes for every table, zone, or menu section while keeping brand assets perfectly aligned. Advanced templates let you update pricing, categories, and promotional banners in seconds without reprinting anything.",
       icon: <QrCodeIcon />,
-      color: '#4CAF50',
-      image: '/features/QRCodeScanning/qr-code-generation.png'
+      color: "#4CAF50",
+      image: "/features/QRCodeScanning/qrcode-generation.png",
     },
     {
-      title: 'Mobile Scanning',
-      description: 'Instant smartphone access',
-      content: 'Customers can scan QR codes with their smartphones for instant access to menus and ordering.',
+      title: "Mobile Scanning",
+      description: "Instant smartphone access for guests",
+      content:
+        "Guests scan once and receive a responsive experience that feels built for their device, including accessibility-ready fonts and tactile-friendly controls. Orders, modifiers, and notes are captured directly from their phone, cutting wait times dramatically.",
       icon: <SmartphoneIcon />,
-      color: '#2196F3',
-      image: '/features/QRCodeScanning/mobile-scanning.png'
+      color: "#2196F3",
+      image: "/features/QRCodeScanning/mobile-scanning.jpeg",
     },
     {
-      title: 'Fast Ordering',
-      description: 'Streamlined process',
-      content: 'Streamlined ordering process with instant menu access and order placement for maximum efficiency.',
+      title: "Fast Ordering",
+      description: "Streamlined ordering and upselling flow",
+      content:
+        "The interface guides diners through combos, add-ons, and chef recommendations so your average order value goes up without extra staff effort. Built-in caching and offline-ready logic keep the experience snappy even during peak dinner rushes.",
       icon: <SpeedIcon />,
-      color: '#FF9800',
-      image: '/features/QRCodeScanning/fast-ordering.png'
+      color: "#FF9800",
+      image: "/features/QRCodeScanning/fast-ordering.jpeg",
     },
     {
-      title: 'Kitchen Integration',
-      description: 'Seamless workflow',
-      content: 'Seamless integration with kitchen order ticket system for efficient food preparation and delivery.',
+      title: "Kitchen Integration",
+      description: "Seamless workflow from table to kitchen",
+      content:
+        "Orders flow straight into the KOT system with clear station routing, ingredient notes, and allergy tags so chefs know exactly what to prepare. Any edits made by guests are synced instantly, reducing miscommunication and food wastage.",
       icon: <RestaurantIcon />,
-      color: '#9C27B0',
-      image: '/features/QRCodeScanning/kitchen-integration.png'
+      color: "#9C27B0",
+      image: "/features/QRCodeScanning/kitchen-integration.jpeg",
     },
     {
-      title: 'Order Tracking',
-      description: 'Real-time monitoring',
-      content: 'Real-time order status tracking from placement to delivery with comprehensive monitoring.',
+      title: "Order Tracking",
+      description: "Real-time monitoring for staff and guests",
+      content:
+        "Front-of-house teams see every ticket status—confirmed, firing, plating, delivered—inside a single dashboard, while guests get live updates on their phones. Analytics expose bottlenecks so you can optimize prep time and service speed week over week.",
       icon: <TimelineIcon />,
-      color: '#F44336',
-      image: '/features/QRCodeScanning/order-tracking.png'
+      color: "#F44336",
+      image: "/features/QRCodeScanning/order-tracking.jpeg",
     },
-    {
-      title: 'Secure Transactions',
-      description: 'Protected payments',
-      content: 'Secure payment processing and data protection for all transactions with advanced encryption.',
-      icon: <SecurityIcon />,
-      color: '#00BCD4',
-      image: '/features/QRCodeScanning/secure-transactions.png'
-    }
   ];
 
   return (
@@ -72,13 +75,18 @@ const QRCodeScanning = () => {
               <Typography variant="h1" component="h1" className="feature-title">
                 QR Code Scanning
               </Typography>
-              <Typography variant="h4" color="text.secondary" className="feature-subtitle">
+              <Typography
+                variant="h4"
+                color="text.secondary"
+                className="feature-subtitle"
+              >
                 Smart Order Processing
               </Typography>
               <Typography variant="body1" className="feature-description">
-                Scan QR codes for instant order placement and seamless customer experience.
-                Our QR code system revolutionizes the dining experience by allowing customers
-                to access menus, place orders, and track their food preparation in real-time.
+                Scan QR codes for instant order placement and seamless customer
+                experience. Our QR code system revolutionizes the dining
+                experience by allowing customers to access menus, place orders,
+                and track their food preparation in real-time.
               </Typography>
               <Box className="cta-button-container">
                 <GetStartedButton className="coming-soon-text" />
@@ -104,13 +112,23 @@ const QRCodeScanning = () => {
             <Typography variant="h3" component="h2" className="section-title">
               Why Choose Our QR Code Scanning?
             </Typography>
-            <Typography variant="body1" color="text.secondary" className="benefits-description">
-              Experience the future of restaurant ordering with instant QR code access, seamless mobile integration, and real-time tracking that revolutionizes the dining experience
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              className="benefits-description"
+            >
+              Experience the future of restaurant ordering with instant QR code
+              access, seamless mobile integration, and real-time tracking that
+              revolutionizes the dining experience
             </Typography>
           </Box>
           <Box className="benefits-grid">
             {benefits.map((benefit, index) => (
-              <Box key={index} className="benefit-item" style={{ '--benefit-color': benefit.color }}>
+              <Box
+                key={index}
+                className="benefit-item"
+                style={{ "--benefit-color": benefit.color }}
+              >
                 <Box className="benefit-image-container">
                   <img
                     src={benefit.image}
@@ -120,7 +138,10 @@ const QRCodeScanning = () => {
                 </Box>
                 <Box className="benefit-text-content">
                   <Box className="benefit-title-container">
-                    <Box className="benefit-icon" style={{ color: benefit.color }}>
+                    <Box
+                      className="benefit-icon"
+                      style={{ color: benefit.color }}
+                    >
                       {benefit.icon}
                     </Box>
                     <Typography variant="h6" className="benefit-title">
