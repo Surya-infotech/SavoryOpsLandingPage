@@ -1,4 +1,4 @@
-import { Archive as ArchiveIcon, CloudDownload as CloudDownloadIcon, Download as DownloadIcon, Print as PrintIcon, Receipt as ReceiptIcon, Security as SecurityIcon } from '@mui/icons-material';
+import { Download as DownloadIcon, Receipt as ReceiptIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -14,50 +14,18 @@ const DigitalInvoiceDownload = () => {
     {
       title: 'Future Requirements',
       description: 'Digital record keeping',
-      content: 'Users can download digital invoices for future requirements and record keeping.',
+      content: 'Give customers and auditors instant access to tamper-proof invoice PDFs, complete with payment references, tax IDs, and QR codes for quick verification. Every download is logged with timestamps and user details so you maintain a clear audit trail without digging through paper folders.',
       icon: <DownloadIcon />,
       color: '#4CAF50',
-      image: '/features/DigitalInvoiceDownload/future-requirements.png'
+      image: '/features/DigitalInvoiceDownload/future-requirements.jpeg'
     },
     {
       title: 'Digital Invoicing',
       description: 'Paperless invoice system',
-      content: 'Generate and manage digital invoices with professional formatting and branding.',
+      content: 'Design branded invoice layouts once and reuse them across dine-in, delivery, and catering channels. Automatic currency, tax, and tipping logic keeps calculations accurate, while customers receive the invoice via email, SMS, or portal download the moment a sale closes.',
       icon: <ReceiptIcon />,
       color: '#2196F3',
-      image: '/features/DigitalInvoiceDownload/digital-invoicing.png'
-    },
-    {
-      title: 'Cloud Storage',
-      description: 'Secure invoice storage',
-      content: 'Store invoices securely in the cloud with automatic backup and synchronization.',
-      icon: <CloudDownloadIcon />,
-      color: '#FF9800',
-      image: '/features/DigitalInvoiceDownload/cloud-storage.png'
-    },
-    {
-      title: 'Data Security',
-      description: 'Protected invoice data',
-      content: 'Ensure data security and privacy with encrypted invoice storage and transmission.',
-      icon: <SecurityIcon />,
-      color: '#9C27B0',
-      image: '/features/DigitalInvoiceDownload/data-security.png'
-    },
-    {
-      title: 'Archive Management',
-      description: 'Organized invoice archives',
-      content: 'Organize and manage invoice archives with easy search and retrieval capabilities.',
-      icon: <ArchiveIcon />,
-      color: '#F44336',
-      image: '/features/DigitalInvoiceDownload/archive-management.png'
-    },
-    {
-      title: 'Print Options',
-      description: 'Flexible printing formats',
-      content: 'Print invoices in various formats with customizable templates and layouts.',
-      icon: <PrintIcon />,
-      color: '#00BCD4',
-      image: '/features/DigitalInvoiceDownload/print-options.png'
+      image: '/features/DigitalInvoiceDownload/digital-invoice-download.jpeg'
     }
   ];
 
@@ -89,7 +57,7 @@ const DigitalInvoiceDownload = () => {
             <Box className="invoice-image-container">
               <Box className="invoice-image">
                 <img
-                  src="/features/DigitalInvoiceDownload/digital-invoice-download.png"
+                  src="/features/DigitalInvoiceDownload/digital-invoice-download.jpeg"
                   alt="Digital Invoice Download Interface"
                   className="invoice-preview-image"
                 />
