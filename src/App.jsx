@@ -30,7 +30,6 @@ import MultipleBusiness from './pages/features/MultipleBusiness';
 import MultipleCurrency from './pages/features/MultipleCurrency';
 import MultipleLanguages from './pages/features/MultipleLanguages';
 import OrderSummary from './pages/features/OrderSummary';
-import POSSystem from './pages/features/POSSystem';
 import QRCodeScanning from './pages/features/QRCodeScanning';
 import SmartDashboard from './pages/features/SmartDashboard';
 import './styles/main.scss';
@@ -106,7 +105,6 @@ const AppContent = () => {
         <Route path="/features/multiple-languages" element={<MultipleLanguages />} />
         <Route path="/features/kot-system" element={<KOTSystem />} />
         <Route path="/features/order-summary" element={<OrderSummary />} />
-        <Route path="/features/pos-system" element={<POSSystem />} />
         <Route path="/features/business-analytics" element={<BusinessAnalytics />} />
         <Route path="/features/customer-reviews" element={<CustomerReviews />} />
         <Route path="/features/multiple-business" element={<MultipleBusiness />} />

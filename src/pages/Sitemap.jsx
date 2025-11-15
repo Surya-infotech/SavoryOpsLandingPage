@@ -1,4 +1,4 @@
-import { Apps as AppsIcon, Article as ArticleIcon, Assessment as AssessmentIcon, Business as BusinessIcon, Cloud as CloudIcon, Dashboard as DashboardIcon, Home as HomeIcon, MenuBook as MenuBookIcon, People as PeopleIcon, PointOfSale as PointOfSaleIcon, QrCode as QrCodeIcon } from '@mui/icons-material';
+import { Apps as AppsIcon, Article as ArticleIcon, Assessment as AssessmentIcon, Business as BusinessIcon, Cloud as CloudIcon, Dashboard as DashboardIcon, Home as HomeIcon, MenuBook as MenuBookIcon, People as PeopleIcon, QrCode as QrCodeIcon } from '@mui/icons-material';
 import { Box, Card, CardContent, Container, Divider, Grid, Link, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import '../styles/pages/sitemap.scss';
@@ -22,12 +22,6 @@ const Sitemap = () => {
       path: '/features/menu-management',
       icon: <MenuBookIcon />,
       description: 'Efficient menu creation and management system'
-    },
-    {
-      name: 'POS System',
-      path: '/features/pos-system',
-      icon: <PointOfSaleIcon />,
-      description: 'Point of sale tracking and management'
     },
     {
       name: 'Business Analytics',
@@ -68,7 +62,6 @@ const Sitemap = () => {
   ];
 
   const footerFeatures = [
-    { name: 'POS Tracking System', path: '/features/pos-system' },
     { name: 'KOT Tracking System', path: '/features/kot-system' },
     { name: 'Multiple Business', path: '/features/multiple-business' },
     { name: 'Multiple Branches', path: '/features/multiple-branches' },

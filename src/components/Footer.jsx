@@ -1,8 +1,7 @@
-import { Article as ArticleIcon, Assessment as AssessmentIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, CurrencyExchange as CurrencyIcon, Inventory as InventoryIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, PointOfSale as PointOfSaleIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { Article as ArticleIcon, Assessment as AssessmentIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, CurrencyExchange as CurrencyIcon, Inventory as InventoryIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
 const Footer = () => {
   const productFeatures = [
-    { name: 'POS Tracking System', icon: <PointOfSaleIcon />, href: '/features/pos-system' },
     { name: 'KOT Tracking System', icon: <RestaurantIcon />, href: '/features/kot-system' },
     { name: 'Multiple Business', icon: <BusinessIcon />, href: '/features/multiple-business' },
     { name: 'Multiple Branches', icon: <BranchIcon />, href: '/features/multiple-branches' },
