@@ -1,4 +1,4 @@
-import { Language as LanguageIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Public as PublicIcon, Settings as SettingsIcon, Translate as TranslateIcon } from '@mui/icons-material';
+import { Language as LanguageIcon, People as PeopleIcon, Settings as SettingsIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -14,50 +14,26 @@ const MultipleLanguages = () => {
     {
       title: 'Global Communication',
       description: 'Serve diverse customer bases',
-      content: 'Support for multiple languages to serve diverse customer bases worldwide with localized communication.',
+      content: 'Engage guests, franchisees, and suppliers across continents with messaging and notifications delivered in their preferred language, tone, and cultural context. Broadcast promos, service updates, and loyalty incentives worldwide without rewriting copy for every region, ensuring brand consistency and inclusivity.',
       icon: <LanguageIcon />,
       color: '#4CAF50',
       image: '/features/MultipleLanguages/global-communication.png'
     },
     {
-      title: 'Menu Translation',
-      description: 'Localized menu content',
-      content: 'Translate menus and content into multiple languages for better customer understanding and experience.',
-      icon: <TranslateIcon />,
-      color: '#2196F3',
-      image: '/features/MultipleLanguages/menu-translation.png'
-    },
-    {
-      title: 'Multi-language Interface',
-      description: 'Localized user experience',
-      content: 'Provide localized user interface and experience in multiple languages for global accessibility.',
-      icon: <PublicIcon />,
-      color: '#FF9800',
-      image: '/features/MultipleLanguages/multi-language-interface.png'
-    },
-    {
-      title: 'Customer Support',
-      description: 'Language-specific assistance',
-      content: 'Offer customer support and assistance in multiple languages for better customer service.',
+      title: 'User App Multi-language Support',
+      description: 'Personalized guest experience',
+      content: 'Let diners switch app language instantly from their profile so menus, promotions, and notifications feel native no matter where they come from. Saved preferences sync across devices, ensuring returning guests always see the experience in their preferred language.',
       icon: <PeopleIcon />,
-      color: '#9C27B0',
-      image: '/features/MultipleLanguages/customer-support.png'
+      color: '#2196F3',
+      image: '/features/MultipleLanguages/user-app-multi-language.jpeg'
     },
     {
-      title: 'Language Settings',
-      description: 'Flexible language configuration',
-      content: 'Configure and manage language settings with flexible options for different regions and markets.',
+      title: 'Employee App Multi-language Support',
+      description: 'Empowered global teams',
+      content: 'Front-of-house and kitchen staff can run their dashboards, shift notes, and checklists in the language they know best. Training materials, SOPs, and task reminders adapt automatically, reducing onboarding time and operational errors across international locations.',
       icon: <SettingsIcon />,
-      color: '#F44336',
-      image: '/features/MultipleLanguages/language-settings.png'
-    },
-    {
-      title: 'Content Localization',
-      description: 'Culturally adapted content',
-      content: 'Localize content and adapt it culturally for different regions and language preferences.',
-      icon: <MenuBookIcon />,
-      color: '#00BCD4',
-      image: '/features/MultipleLanguages/content-localization.png'
+      color: '#FF9800',
+      image: '/features/MultipleLanguages/employee-app-multi-language.jpeg'
     }
   ];
 
