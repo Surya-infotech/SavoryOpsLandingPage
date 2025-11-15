@@ -1,4 +1,4 @@
-import { Assessment as AssessmentIcon, BarChart as BarChartIcon, Insights as InsightsIcon, PieChart as PieChartIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { Assessment as AssessmentIcon, BarChart as BarChartIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -14,7 +14,7 @@ const AdvancedReports = () => {
     {
       title: 'Growth Intelligence',
       description: 'Comprehensive business insights',
-      content: 'Comprehensive reports and analytics to make the best decisions for your business growth.',
+      content: 'Consolidate revenue, labor, and marketing performance into executive-ready packs that surface the true drivers behind growth. Automated commentary highlights outliers and opportunities so leaders spend less time compiling data and more time acting on it.',
       icon: <AssessmentIcon />,
       color: '#4CAF50',
       image: '/features/AdvancedReports/growth-intelligence.png'
@@ -22,7 +22,7 @@ const AdvancedReports = () => {
     {
       title: 'Performance Analytics',
       description: 'Advanced performance metrics',
-      content: 'Track and analyze performance metrics with advanced analytics and detailed insights.',
+      content: 'Slice KPIs by branch, concept, or channel with drill-down flexibility that reveals bottlenecks instantly. Benchmark locations against each other, apply weighted scoring, and share curated scorecards with managers to keep everyone rowing in the same direction.',
       icon: <TrendingUpIcon />,
       color: '#2196F3',
       image: '/features/AdvancedReports/performance-analytics.png'
@@ -30,34 +30,10 @@ const AdvancedReports = () => {
     {
       title: 'Visual Reports',
       description: 'Interactive data visualization',
-      content: 'Create interactive visual reports with charts, graphs, and data visualization tools.',
+      content: 'Build interactive charts, cohort diagrams, and waterfall views that transform dense spreadsheets into stories anyone can understand. Users can comment, annotate, and export the visuals so decisions are backed by the same source of truth.',
       icon: <BarChartIcon />,
       color: '#FF9800',
       image: '/features/AdvancedReports/visual-reports.png'
-    },
-    {
-      title: 'Custom Dashboards',
-      description: 'Personalized reporting views',
-      content: 'Build custom dashboards with personalized reporting views and key performance indicators.',
-      icon: <PieChartIcon />,
-      color: '#9C27B0',
-      image: '/features/AdvancedReports/custom-dashboards.png'
-    },
-    {
-      title: 'Trend Analysis',
-      description: 'Historical trend tracking',
-      content: 'Analyze historical trends and patterns to predict future performance and opportunities.',
-      icon: <TimelineIcon />,
-      color: '#F44336',
-      image: '/features/AdvancedReports/trend-analysis.png'
-    },
-    {
-      title: 'Business Insights',
-      description: 'Actionable business intelligence',
-      content: 'Generate actionable business insights and recommendations for strategic decision making.',
-      icon: <InsightsIcon />,
-      color: '#00BCD4',
-      image: '/features/AdvancedReports/business-insights.png'
     }
   ];
 
