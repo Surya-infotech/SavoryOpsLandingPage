@@ -1,4 +1,4 @@
-import { Assessment as AssessmentIcon, CalendarMonth as CalendarMonthIcon, Security as SecurityIcon, Storage as StorageIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { Assessment as AssessmentIcon, CalendarMonth as CalendarMonthIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -14,7 +14,7 @@ const FiscalYearRecords = () => {
     {
       title: 'Organized Financial Data',
       description: 'Fiscal year-wise organization',
-      content: 'Keep organized records fiscal year wise for better financial management and compliance.',
+      content: 'Segment every ledger, invoice, and payout by fiscal year so finance teams can close books faster and respond to audits with confidence. Automated rollovers move opening balances, depreciation schedules, and carry-forward losses into the next year without manual spreadsheets.',
       icon: <CalendarMonthIcon />,
       color: '#4CAF50',
       image: '/features/FiscalYearRecords/organized-financial-data.png'
@@ -22,7 +22,7 @@ const FiscalYearRecords = () => {
     {
       title: 'Financial Reporting',
       description: 'Comprehensive fiscal reports',
-      content: 'Generate comprehensive financial reports organized by fiscal year for better analysis.',
+      content: 'Generate GAAP-ready and management-ready reports with one click, complete with drill-down filters for branch, concept, or channel. Exportable packages include supporting schedules, so accountants and investors get the full story behind each revenue line.',
       icon: <AssessmentIcon />,
       color: '#2196F3',
       image: '/features/FiscalYearRecords/financial-reporting.png'
@@ -30,34 +30,10 @@ const FiscalYearRecords = () => {
     {
       title: 'Performance Tracking',
       description: 'Year-over-year analysis',
-      content: 'Track performance across fiscal years with detailed year-over-year analysis.',
+      content: 'Visualize year-over-year trends across sales, COGS, labor, and marketing spend to pinpoint what’s driving growth or compressing margins. Intelligent alerts flag anomalies—like sudden cost spikes—so leadership can intervene before they impact the annual outlook.',
       icon: <TrendingUpIcon />,
       color: '#FF9800',
       image: '/features/FiscalYearRecords/performance-tracking.png'
-    },
-    {
-      title: 'Data Archival',
-      description: 'Secure record storage',
-      content: 'Securely archive and store financial records for long-term compliance and reference.',
-      icon: <StorageIcon />,
-      color: '#9C27B0',
-      image: '/features/FiscalYearRecords/data-archival.png'
-    },
-    {
-      title: 'Compliance Management',
-      description: 'Regulatory compliance',
-      content: 'Ensure compliance with fiscal year reporting requirements and regulations.',
-      icon: <SecurityIcon />,
-      color: '#F44336',
-      image: '/features/FiscalYearRecords/compliance-management.png'
-    },
-    {
-      title: 'Historical Analysis',
-      description: 'Long-term trend analysis',
-      content: 'Analyze historical data and trends across multiple fiscal years for strategic planning.',
-      icon: <TimelineIcon />,
-      color: '#00BCD4',
-      image: '/features/FiscalYearRecords/historical-analysis.png'
     }
   ];
 
