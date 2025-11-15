@@ -1,4 +1,4 @@
-import { Analytics as AnalyticsIcon, Feedback as FeedbackIcon, RateReview as RateReviewIcon, Star as StarIcon, TrendingUp as TrendingUpIcon, Visibility as VisibilityIcon } from '@mui/icons-material';
+import { Feedback as FeedbackIcon, RateReview as RateReviewIcon, Star as StarIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -17,7 +17,7 @@ const CustomerReviews = () => {
       content: 'Automatically collect reviews from customers across multiple platforms with seamless integration and real-time updates.',
       icon: <RateReviewIcon />,
       color: '#4CAF50',
-      image: '/features/CustomerReviews/review-collection.png'
+      image: '/features/CustomerReviews/review-collection.jpeg'
     },
     {
       title: 'Rating Analytics',
@@ -34,30 +34,6 @@ const CustomerReviews = () => {
       icon: <FeedbackIcon />,
       color: '#FF9800',
       image: '/features/CustomerReviews/feedback-insights.png'
-    },
-    {
-      title: 'Response Management',
-      description: 'Engage with customers',
-      content: 'Easily respond to customer reviews and manage interactions with automated response suggestions.',
-      icon: <TrendingUpIcon />,
-      color: '#9C27B0',
-      image: '/features/CustomerReviews/response-management.png'
-    },
-    {
-      title: 'Review Moderation',
-      description: 'Quality control system',
-      content: 'Moderate and filter reviews to maintain quality standards with intelligent content filtering.',
-      icon: <VisibilityIcon />,
-      color: '#F44336',
-      image: '/features/CustomerReviews/review-moderation.png'
-    },
-    {
-      title: 'Performance Tracking',
-      description: 'Satisfaction monitoring',
-      content: 'Track review performance and customer satisfaction trends with comprehensive analytics dashboard.',
-      icon: <AnalyticsIcon />,
-      color: '#00BCD4',
-      image: '/features/CustomerReviews/performance-tracking.png'
     }
   ];
 
