@@ -1,4 +1,4 @@
-import { Assignment as AssignmentIcon, Notifications as NotificationsIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Speed as SpeedIcon, Timeline as TimelineIcon } from '@mui/icons-material';
+import { Assignment as AssignmentIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Speed as SpeedIcon, Timeline as TimelineIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -14,50 +14,42 @@ const KOTSystem = () => {
     {
       title: 'Kitchen Order Tickets',
       description: 'Automated ticket generation',
-      content: 'Generate kitchen order tickets automatically for efficient food preparation and streamlined kitchen operations.',
+      content: 'Automatically generate detailed kitchen tickets that include table numbers, course sequencing, and priority indicators so every station knows exactly what to fire next. Tickets sync instantly across kitchen displays and printers, eliminating handwriting errors and wasted prep time.',
       icon: <ReceiptIcon />,
       color: '#4CAF50',
-      image: '/features/KOTSystem/kitchen-order-tickets.png'
+      image: '/features/KOTSystem/kitchen-order-tickets.jpeg'
     },
     {
       title: 'Real-time Order Tracking',
       description: 'Live order status updates',
-      content: 'Track order status in real-time from placement to completion with comprehensive order monitoring.',
+      content: 'Monitor every order from the moment it is placed until it hits the pass, with clear states such as queued, firing, plating, and delivered. Managers receive live visibility into bottlenecks and can reassign work or trigger alerts before delays impact guests.',
       icon: <TimelineIcon />,
       color: '#2196F3',
-      image: '/features/KOTSystem/real-time-order-tracking.png'
+      image: '/features/KOTSystem/real-time-order-tracking.jpeg'
     },
     {
       title: 'Kitchen Workflow',
       description: 'Optimized preparation process',
-      content: 'Streamline kitchen workflow with organized order management and efficient food preparation processes.',
+      content: 'Organize prep work by station, cooking method, or course so teams can batch similar tasks, maintain mise en place, and reduce cross-traffic. Built-in handoff notes and allergen tags keep communication tight between grill, garde manger, pastry, and expo.',
       icon: <RestaurantIcon />,
       color: '#FF9800',
-      image: '/features/KOTSystem/kitchen-workflow.png'
-    },
-    {
-      title: 'Order Notifications',
-      description: 'Instant kitchen alerts',
-      content: 'Receive instant notifications for new orders, modifications, and special instructions in the kitchen.',
-      icon: <NotificationsIcon />,
-      color: '#9C27B0',
-      image: '/features/KOTSystem/order-notifications.png'
+      image: '/features/KOTSystem/kitchen-workflow.jpeg'
     },
     {
       title: 'Fast Processing',
       description: 'Quick order handling',
-      content: 'Process orders quickly with optimized ticket generation and efficient kitchen communication systems.',
+      content: 'Accelerate throughput with auto-prioritized queues, audible alerts for rush tickets, and smart batching that combines identical dishes. Integrated messaging keeps front-of-house and kitchen synchronized so special requests are actioned immediately.',
       icon: <SpeedIcon />,
       color: '#F44336',
-      image: '/features/KOTSystem/fast-processing.png'
+      image: '/features/KOTSystem/fast-processing.jpeg'
     },
     {
       title: 'Order Management',
       description: 'Complete order control',
-      content: 'Manage all orders efficiently with detailed tracking, status updates, and comprehensive order history.',
+      content: 'Maintain a searchable history of every ticket, including modification logs, void reasons, and fulfillment times. Export data to analyze prep speed trends, staff performance, and ingredient demand to continuously fine-tune operations.',
       icon: <AssignmentIcon />,
       color: '#00BCD4',
-      image: '/features/KOTSystem/order-management.png'
+      image: '/features/KOTSystem/order-management.jpeg'
     }
   ];
 
