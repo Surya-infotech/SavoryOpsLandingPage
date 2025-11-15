@@ -1,4 +1,4 @@
-import { AccountBalance as AccountBalanceIcon, Assessment as AssessmentIcon, Gavel as GavelIcon, ReceiptLong as ReceiptLongIcon, Security as SecurityIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { AccountBalance as AccountBalanceIcon, ReceiptLong as ReceiptLongIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
@@ -14,7 +14,7 @@ const BranchTaxManagement = () => {
     {
       title: 'Local Tax Compliance',
       description: 'Branch-specific tax management',
-      content: 'Manage different tax rates and regulations for each branch location with automated compliance.',
+      content: 'Keep every branch aligned with its municipal, state, or national tax rules using location-aware profiles that automatically apply the right GST, VAT, or service charges. Automated checks highlight conflicts and missing certificates before filings are submitted, protecting you from penalties.',
       icon: <ReceiptLongIcon />,
       color: '#4CAF50',
       image: '/features/BranchTaxManagement/local-tax-compliance.png'
@@ -22,42 +22,10 @@ const BranchTaxManagement = () => {
     {
       title: 'Tax Rate Management',
       description: 'Flexible tax configuration',
-      content: 'Configure and manage different tax rates for various categories and locations.',
+      content: 'Build reusable tax templates for dine-in, delivery, or retail categories, then clone them across branches with unique overrides when needed. Any percentage adjustment or rule change cascades automatically, ensuring menus, invoices, and reports always reference accurate rates.',
       icon: <AccountBalanceIcon />,
       color: '#2196F3',
       image: '/features/BranchTaxManagement/tax-rate-management.png'
-    },
-    {
-      title: 'Tax Reporting',
-      description: 'Comprehensive tax analytics',
-      content: 'Generate detailed tax reports and analytics for each branch and overall operations.',
-      icon: <AssessmentIcon />,
-      color: '#FF9800',
-      image: '/features/BranchTaxManagement/tax-reporting.png'
-    },
-    {
-      title: 'Regulatory Compliance',
-      description: 'Legal requirement adherence',
-      content: 'Ensure compliance with local and national tax regulations and legal requirements.',
-      icon: <GavelIcon />,
-      color: '#9C27B0',
-      image: '/features/BranchTaxManagement/regulatory-compliance.png'
-    },
-    {
-      title: 'Tax Optimization',
-      description: 'Strategic tax planning',
-      content: 'Optimize tax strategies and planning for maximum efficiency and compliance.',
-      icon: <TrendingUpIcon />,
-      color: '#F44336',
-      image: '/features/BranchTaxManagement/tax-optimization.png'
-    },
-    {
-      title: 'Audit Support',
-      description: 'Tax audit assistance',
-      content: 'Provide comprehensive support and documentation for tax audits and inspections.',
-      icon: <SecurityIcon />,
-      color: '#00BCD4',
-      image: '/features/BranchTaxManagement/audit-support.png'
     }
   ];
 
