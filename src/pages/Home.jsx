@@ -1,9 +1,10 @@
 import Benefits from './Benefits';
-import Blog from './Blog';
 import CTA from './CTA';
 import Features from './Features';
 import Hero from './Hero';
 import AppDownloads from './AppDownloads';
+import Languages from './Languages';
+import FreeSoftware from './FreeSoftware';
 
 const Home = () => {
   return (
@@ -11,9 +12,10 @@ const Home = () => {
       <Hero />
       <Features />
       <Benefits />
+      <Languages />
+      <FreeSoftware />
       <AppDownloads />
       <CTA />
-      <Blog />
     </>
   );
 };

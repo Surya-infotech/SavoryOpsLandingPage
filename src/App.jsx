@@ -4,12 +4,12 @@ import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import ScrollToTopButton from './components/ScrollToTop';
 import { LanguageProvider } from './context/LanguageContext.jsx';
-import BlogPage from './pages/BlogPage';
 import DataDeletionPolicy from './pages/DataDeletionPolicy';
 import FeaturesPage from './pages/FeaturesPage';
 import OwnerLogin from './pages/General/Signin.jsx';
 import OwnerSignUp from './pages/General/Signup.jsx';
 import Home from './pages/Home';
+import Pricing from './pages/Pricing';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Sitemap from './pages/Sitemap';
 import AdvancedReports from './pages/features/AdvancedReports';
@@ -96,7 +96,7 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<FeaturesPage />} />
-        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/pricing" element={<Pricing />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
         <Route path="/sitemap" element={<Sitemap />} />

@@ -1,0 +1,126 @@
+.pricing-page {
+  padding-top: 64px; // Account for fixed navbar
+}
+
+.pricing-details-section {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+
+  @media (min-width: 960px) {
+    padding: 80px 0;
+  }
+}
+
+.pricing-content-box {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+  @media (min-width: 960px) {
+    padding: 32px;
+    max-width: 1100px;
+  }
+}
+
+.pricing-features-title {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: #1a1a1a;
+  margin-bottom: 32px;
+  text-align: center;
+  background: linear-gradient(135deg, #1b5e20, #2e7d32, #4caf50);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media (min-width: 960px) {
+    font-size: 2.25rem;
+    margin-bottom: 40px;
+  }
+}
+
+.pricing-features-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @media (min-width: 960px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+.pricing-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out both;
+
+  @for $i from 1 through 13 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.05}s;
+    }
+  }
+
+  &:hover {
+    background-color: #f1f8f4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+  }
+}
+
+.pricing-feature-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+
+  svg {
+    font-size: 18px;
+  }
+}
+
+.pricing-feature-text {
+  color: #333333;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  flex: 1;
+
+  @media (min-width: 960px) {
+    font-size: 1.05rem;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

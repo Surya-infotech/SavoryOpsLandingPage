@@ -1,4 +1,4 @@
-import { Article as ArticleIcon, Assessment as AssessmentIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, CurrencyExchange as CurrencyIcon, Inventory as InventoryIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { Article as ArticleIcon, Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, CurrencyExchange as CurrencyIcon, Inventory as InventoryIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
 const Footer = () => {
   const productFeatures = [
@@ -22,7 +22,7 @@ const Footer = () => {
   const companyLinks = [
     // { name: 'About Us', icon: <InfoIcon />, href: '#' },
     // { name: 'Careers', icon: <WorkIcon />, href: '#' },
-    { name: 'Blog', icon: <ArticleIcon />, href: '/blog' },
+    { name: 'Pricing', icon: <AttachMoneyIcon />, href: '/pricing' },
     { name: 'Sitemap', icon: <ArticleIcon />, href: '/sitemap' }
   ];
 

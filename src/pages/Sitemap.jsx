@@ -7,7 +7,7 @@ const Sitemap = () => {
   const mainPages = [
     { name: 'Home', path: '/', icon: <HomeIcon />, description: 'Main landing page with hero section and overview' },
     { name: 'Features', path: '/features', icon: <AppsIcon />, description: 'Overview of all available features' },
-    { name: 'Blog', path: '/blog', icon: <ArticleIcon />, description: 'Latest articles and insights' }
+    { name: 'Pricing', path: '/pricing', icon: <ArticleIcon />, description: 'Pricing information and free tier features' }
   ];
 
   const featurePages = [
