@@ -12,6 +12,7 @@ import Home from './pages/Home';
 import Pricing from './pages/Pricing';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Sitemap from './pages/Sitemap';
+import UpcomingFeatures from './pages/UpcomingFeatures';
 import AdvancedReports from './pages/features/AdvancedReports';
 import BranchPricing from './pages/features/BranchPricing';
 import BranchStaffManagement from './pages/features/BranchStaffManagement';
@@ -97,6 +98,7 @@ const AppContent = () => {
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<FeaturesPage />} />
         <Route path="/pricing" element={<Pricing />} />
+        <Route path="/upcoming-features" element={<UpcomingFeatures />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
         <Route path="/sitemap" element={<Sitemap />} />

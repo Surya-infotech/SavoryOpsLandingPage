@@ -1,4 +1,4 @@
-import { Apps as AppsIcon, Article as ArticleIcon, Assessment as AssessmentIcon, Business as BusinessIcon, Cloud as CloudIcon, Dashboard as DashboardIcon, Home as HomeIcon, MenuBook as MenuBookIcon, People as PeopleIcon, QrCode as QrCodeIcon } from '@mui/icons-material';
+import { Apps as AppsIcon, Article as ArticleIcon, Assessment as AssessmentIcon, Business as BusinessIcon, Cloud as CloudIcon, Dashboard as DashboardIcon, Home as HomeIcon, MenuBook as MenuBookIcon, People as PeopleIcon, QrCode as QrCodeIcon, Rocket as RocketIcon } from '@mui/icons-material';
 import { Box, Card, CardContent, Container, Divider, Grid, Link, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import '../styles/pages/sitemap.scss';
@@ -7,7 +7,8 @@ const Sitemap = () => {
   const mainPages = [
     { name: 'Home', path: '/', icon: <HomeIcon />, description: 'Main landing page with hero section and overview' },
     { name: 'Features', path: '/features', icon: <AppsIcon />, description: 'Overview of all available features' },
-    { name: 'Pricing', path: '/pricing', icon: <ArticleIcon />, description: 'Pricing information and free tier features' }
+    { name: 'Pricing', path: '/pricing', icon: <ArticleIcon />, description: 'Pricing information and free tier features' },
+    { name: 'Upcoming Features', path: '/upcoming-features', icon: <RocketIcon />, description: 'Exciting new features coming soon to SavoryOps' }
   ];
 
   const featurePages = [

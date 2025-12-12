@@ -1,4 +1,4 @@
-import { Article as ArticleIcon, Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, CurrencyExchange as CurrencyIcon, Inventory as InventoryIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { Article as ArticleIcon, Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, CurrencyExchange as CurrencyIcon, Inventory as InventoryIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Rocket as RocketIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
 const Footer = () => {
   const productFeatures = [
@@ -23,6 +23,7 @@ const Footer = () => {
     // { name: 'About Us', icon: <InfoIcon />, href: '#' },
     // { name: 'Careers', icon: <WorkIcon />, href: '#' },
     { name: 'Pricing', icon: <AttachMoneyIcon />, href: '/pricing' },
+    { name: 'Upcoming Features', icon: <RocketIcon />, href: '/upcoming-features' },
     { name: 'Sitemap', icon: <ArticleIcon />, href: '/sitemap' }
   ];
 
@@ -48,8 +49,8 @@ const Footer = () => {
       <Container maxWidth="lg">
         {/* Main Footer Content */}
         <Grid container spacing={4}>
-          {/* Logo, Description, and Social Media Box */}
-          <Grid item xs={12} md={3}>
+          {/* Logo and Description */}
+          <Grid item xs={12} md={6}>
             <Box className="footer-brand">
               <Link
                 href="/"
@@ -94,13 +95,15 @@ const Footer = () => {
                 </Box>
               </Link>
             </Box>
-
             <Typography variant="body1" className="footer-description">
               Transform your restaurant operations with our comprehensive management platform.
               Streamline workflows, enhance customer experience, and drive sustainable growth
               with powerful tools designed for modern hospitality businesses.
             </Typography>
+          </Grid>
 
+          {/* Social Links and Contact Info */}
+          <Grid item xs={12} md={6}>
             {/* Social Links */}
             <Box className="social-links">
               {socialLinks.map((social, index) => (
@@ -145,7 +148,7 @@ const Footer = () => {
           </Grid>
 
           {/* Features and Reports Section */}
-          <Grid item xs={12} md={9}>
+          <Grid item xs={12}>
             <Grid container spacing={6}>
               {/* Features */}
               <Grid item xs={12} sm={6}>

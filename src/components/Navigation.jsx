@@ -14,7 +14,8 @@ const Navigation = () => {
   const menuItems = [
     { text: 'Home', path: '/' },
     { text: 'Features', path: '/features' },
-    { text: 'Pricing', path: '/pricing' }
+    { text: 'Pricing', path: '/pricing' },
+    { text: 'Upcoming Features', path: '/upcoming-features' }
   ];
 
   return (
