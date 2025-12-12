@@ -4,6 +4,7 @@ import 'react-phone-number-input/style.css';
 import { NavLink } from 'react-router-dom';
 import Flag from 'react-world-flags';
 import { useLanguage } from '../../context/LanguageContext';
+import { getLanguageOptions } from '../../constants/languages';
 import '../../styles/General/signup.scss';
 import WarningModal from '../Custom/WarningModal';
 
@@ -33,17 +34,7 @@ const OwnerSignUp = () => {
     const [warningMessage, setWarningMessage] = useState("");
     const [showWarning, setShowWarning] = useState(false);
 
-    const languages = [
-        { name: 'English', code: 'GB' },
-        { name: 'Spanish', code: 'ES' },
-        { name: 'French', code: 'FR' },
-        { name: 'German', code: 'DE' },
-        { name: 'Italian', code: 'IT' },
-        { name: 'Irish', code: 'IE' },
-        { name: 'Romanian', code: 'RO' },
-        { name: 'Greek', code: 'GR' },
-        { name: 'Dutch', code: 'NL' },
-    ].sort((a, b) => a.name.localeCompare(b.name));
+    const languages = getLanguageOptions();
 
     const toggleLanguageDropdown = () => setLanguageDropdownVisible(!isLanguageDropdownVisible);
 

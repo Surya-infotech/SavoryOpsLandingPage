@@ -87,7 +87,8 @@ body {
 
   .login-container {
     min-width: 420px !important;
-    height: 380px !important;
+    min-height: 380px !important;
+    height: auto !important;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
