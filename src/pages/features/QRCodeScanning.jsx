@@ -14,6 +14,27 @@ import "../../styles/pages/feature/qrcodescanning.scss";
 const QRCodeScanning = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = 'QR Code Scanning - SavoryOps';
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Scan QR codes for instant order placement and seamless customer experience. QR code system revolutionizes dining by allowing customers to access menus, place orders, and track food preparation in real-time.');
+    
+    // Update or create meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'QR code scanning, QR code ordering, contactless ordering, QR menu, mobile ordering, restaurant QR code, digital menu, SavoryOps');
   }, []);
 
   const benefits = [

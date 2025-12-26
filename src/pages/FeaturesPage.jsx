@@ -10,6 +10,27 @@ const FeaturesPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = 'Features - SavoryOps';
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Discover powerful restaurant management features including Smart Dashboard, Multiple Business & Branches, Menu Management, KOT System, QR Code Scanning, Business Analytics, Cloud-Based System, and more. Streamline your restaurant operations with SavoryOps.');
+    
+    // Update or create meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'restaurant features, restaurant management features, POS features, restaurant dashboard, menu management, KOT system, QR code ordering, business analytics, cloud restaurant system, multi-branch management, SavoryOps features');
   }, []);
 
   const handleCardClick = (featureTitle) => {

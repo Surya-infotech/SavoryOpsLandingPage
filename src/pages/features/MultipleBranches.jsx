@@ -8,6 +8,27 @@ import '../../styles/pages/feature/multiplebranches.scss';
 const MultipleBranches = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = 'Multiple Branches - SavoryOps';
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Efficiently manage multiple restaurant branches with unified operations and reporting. Centralized control while maintaining independent operations for each location, ensuring consistent quality.');
+    
+    // Update or create meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'multiple branches, branch management, multi-branch system, restaurant branches, branch network, centralized reporting, SavoryOps');
   }, []);
 
   const benefits = [

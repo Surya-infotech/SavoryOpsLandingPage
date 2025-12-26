@@ -8,6 +8,27 @@ import '../../styles/pages/feature/smartdashboard.scss';
 const SmartDashboard = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = 'Smart Dashboard - SavoryOps';
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Get instant insights into your restaurant performance with our intelligent dashboard. Monitor sales, track orders, analyze staff performance, and make data-driven decisions to optimize operations.');
+    
+    // Update or create meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'smart dashboard, restaurant dashboard, business intelligence, real-time monitoring, restaurant analytics, performance tracking, SavoryOps');
   }, []);
 
   const benefits = [

@@ -8,6 +8,27 @@ import '../../styles/pages/feature/customerreviews.scss';
 const CustomerReviews = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = 'Customer Reviews - SavoryOps';
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Manage customer reviews and feedback with SavoryOps. Automated review collection, rating analytics, and AI-powered sentiment analysis to build stronger customer relationships.');
+    
+    // Update or create meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'customer reviews, feedback management, restaurant reviews, rating analytics, customer satisfaction, review collection, sentiment analysis, SavoryOps');
   }, []);
 
   const benefits = [

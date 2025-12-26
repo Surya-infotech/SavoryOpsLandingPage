@@ -8,6 +8,27 @@ import '../../styles/pages/feature/advancedreports.scss';
 const AdvancedReports = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = 'Advanced Reports - SavoryOps';
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Comprehensive business reports and analytics with SavoryOps. Growth intelligence, performance analytics, and visual reports for strategic business planning and optimization.');
+    
+    // Update or create meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'advanced reports, business intelligence, restaurant analytics, growth intelligence, performance metrics, visual reports, business reports, SavoryOps');
   }, []);
 
   const benefits = [

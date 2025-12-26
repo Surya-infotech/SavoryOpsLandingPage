@@ -1,9 +1,34 @@
 import { Apps as AppsIcon, Article as ArticleIcon, Assessment as AssessmentIcon, Business as BusinessIcon, Cloud as CloudIcon, Dashboard as DashboardIcon, Home as HomeIcon, MenuBook as MenuBookIcon, People as PeopleIcon, QrCode as QrCodeIcon, Rocket as RocketIcon } from '@mui/icons-material';
 import { Box, Card, CardContent, Container, Divider, Grid, Link, Typography } from '@mui/material';
+import { useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import '../styles/pages/sitemap.scss';
 
 const Sitemap = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = 'Sitemap - SavoryOps';
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Navigate through all pages and features of SavoryOps platform. Find links to features, pricing, policies, and all available restaurant management tools.');
+    
+    // Update or create meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'sitemap, site map, navigation, SavoryOps pages, feature pages, restaurant management pages');
+  }, []);
   const mainPages = [
     { name: 'Home', path: '/', icon: <HomeIcon />, description: 'Main landing page with hero section and overview' },
     { name: 'Features', path: '/features', icon: <AppsIcon />, description: 'Overview of all available features' },

@@ -8,6 +8,27 @@ import '../../styles/pages/feature/ordersummary.scss';
 const OrderSummary = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = 'Order Summary - SavoryOps';
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Complete order details with status tracking and timeline for better order management. Comprehensive order tracking, detailed reports, and real-time visibility into all order activities.');
+    
+    // Update or create meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'order summary, order tracking, order management, order timeline, order history, order reports, restaurant orders, SavoryOps');
   }, []);
 
   const benefits = [

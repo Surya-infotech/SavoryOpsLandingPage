@@ -8,6 +8,27 @@ import '../../styles/pages/feature/businessanalytics.scss';
 const BusinessAnalytics = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = 'Business Analytics - SavoryOps';
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Make data-driven decisions with comprehensive business analytics. Sales analytics, performance metrics, financial reports, and trend analysis for restaurant growth and profitability.');
+    
+    // Update or create meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'business analytics, restaurant analytics, sales analytics, performance metrics, financial reports, trend analysis, data-driven decisions, SavoryOps');
   }, []);
 
   const benefits = [

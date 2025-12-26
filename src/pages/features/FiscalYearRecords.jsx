@@ -8,6 +8,27 @@ import '../../styles/pages/feature/fiscalyearrecords.scss';
 const FiscalYearRecords = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = 'Fiscal Year Records - SavoryOps';
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Organized fiscal year records for better financial management and compliance. Comprehensive data organization, reporting, and historical analysis for strategic business planning.');
+    
+    // Update or create meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'fiscal year records, financial records, fiscal year management, financial reporting, year-over-year analysis, financial data organization, SavoryOps');
   }, []);
 
   const benefits = [

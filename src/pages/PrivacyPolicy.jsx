@@ -6,6 +6,27 @@ const PrivacyPolicy = () => {
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = 'Privacy Policy - SavoryOps';
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Read SavoryOps Privacy Policy to understand how we collect, use, and protect your personal information. Learn about our data protection practices and your privacy rights.');
+    
+    // Update or create meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'privacy policy, data protection, privacy rights, data security, GDPR compliance, user privacy, SavoryOps privacy');
   }, []);
 
   return (

@@ -8,6 +8,27 @@ import '../../styles/pages/feature/branchtaxmanagement.scss';
 const BranchTaxManagement = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = 'Branch-wise Tax Management - SavoryOps';
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Manage different tax rates and regulations for each branch location. Comprehensive tax compliance, automated reporting, and regulatory adherence for all your restaurant locations.');
+    
+    // Update or create meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'branch tax management, tax compliance, tax rates, local tax compliance, tax rate management, restaurant tax, tax reporting, SavoryOps');
   }, []);
 
   const benefits = [

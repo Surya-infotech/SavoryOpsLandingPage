@@ -8,6 +8,27 @@ import '../../styles/pages/feature/multitenantarchitecture.scss';
 const MultiTenantArchitecture = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = 'Multi Tenant Architecture - SavoryOps';
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Experience multi-tenant architecture with complete tenant isolation, shared infrastructure, and dedicated resources. Secure, scalable, and cost-effective solutions for managing multiple restaurant businesses.');
+    
+    // Update or create meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'multi tenant architecture, tenant isolation, data security, database separation, shared infrastructure, restaurant management, SavoryOps');
   }, []);
 
   const benefits = [

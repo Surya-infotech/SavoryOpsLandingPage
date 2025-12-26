@@ -8,6 +8,27 @@ import '../../styles/pages/feature/customsubdomain.scss';
 const CustomSubdomain = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Update document title
+    document.title = 'Custom Subdomain - SavoryOps';
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Each restaurant owner gets their own custom subdomain for a personalized and branded experience. Create a unique web presence with your own subdomain that reflects your restaurant identity.');
+    
+    // Update or create meta keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'custom subdomain, branded subdomain, restaurant subdomain, personalized domain, restaurant branding, custom URL, SavoryOps');
   }, []);
 
   const benefits = [
