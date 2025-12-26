@@ -63,13 +63,21 @@
 </script>
 
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CHBDNW43S"></script>
+  <!-- Google Analytics ID is configured via VITE_GA_ID environment variable -->
+  <!-- Set VITE_GA_ID in .env file or leave empty to disable Google Analytics -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    const gaId = import.meta.env.VITE_GA_ID;
+    if (gaId) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+      document.head.appendChild(script);
 
-    gtag('config', 'G-5CHBDNW43S');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', gaId);
+    }
   </script>
 
 </head>
