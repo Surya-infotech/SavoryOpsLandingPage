@@ -20,8 +20,8 @@ const Home = () => {
       <Hero />
       <Features />
       <Benefits />
-      <Languages />
       <FreeSoftware />
+      <Languages />
       <AppDownloads />
       <CTA />
     </>
