@@ -18,7 +18,6 @@ import AdvancedReports from './pages/features/AdvancedReports';
 import BranchPricing from './pages/features/BranchPricing';
 import BranchStaffManagement from './pages/features/BranchStaffManagement';
 import BranchTaxManagement from './pages/features/BranchTaxManagement';
-import BusinessAnalytics from './pages/features/BusinessAnalytics';
 import CloudBasedSystem from './pages/features/CloudBasedSystem';
 import CustomSubdomain from './pages/features/CustomSubdomain';
 import CustomerReviews from './pages/features/CustomerReviews';
@@ -123,7 +122,6 @@ const AppContent = () => {
         <Route path="/features/multiple-languages" element={<MultipleLanguages />} />
         <Route path="/features/kot-system" element={<KOTSystem />} />
         <Route path="/features/order-summary" element={<OrderSummary />} />
-        <Route path="/features/business-analytics" element={<BusinessAnalytics />} />
         <Route path="/features/customer-reviews" element={<CustomerReviews />} />
         <Route path="/features/multiple-business" element={<MultipleBusiness />} />
         <Route path="/features/multiple-branches" element={<MultipleBranches />} />

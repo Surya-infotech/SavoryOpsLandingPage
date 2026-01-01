@@ -1,17 +1,82 @@
-import { CheckCircle as CheckCircleIcon } from '@mui/icons-material';
-import { Box, Container, Grid, Typography } from '@mui/material';
-import { useEffect } from 'react';
+import { Check as CheckIcon, Close as CloseIcon, LocalOffer as DiscountIcon, Star as StarIcon } from '@mui/icons-material';
+import { Box, Container, Typography, Tabs, Tab } from '@mui/material';
+import { useEffect, useState } from 'react';
 import FreeSoftware from './FreeSoftware';
 import CTA from '../components/CTA';
+import { formatCurrency } from '../utils/currency';
 import '../styles/pages/pricing.scss';
 
 const Pricing = () => {
+  const [plans, setPlans] = useState([]);
+  const [currency, setCurrency] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState(0); // 0 for monthly, 1 for yearly
+  const adminPanelBackendPath = import.meta.env.VITE_BACKEND_URL;
+
+  useEffect(() => {
+    const fetchPricingData = async () => {
+      try {
+        const response = await fetch(`${adminPanelBackendPath}/Subscription/GetPlans_landingpage`, {
+          method: "GET",
+          headers: { "Content-Type": "application/json", "x-user": "admin" },
+        });
+        const data = await response.json();
+
+        if (response.ok && data) {
+          const plansData = data.plans || [];
+          const currencyData = data.currency || {};
+
+          // Filter and sort plans (show active plans, sort by duration and duration value)
+          const activePlans = plansData
+            .filter(plan => plan.status === true)
+            .sort((a, b) => {
+              // Helper function to get sort value for duration types
+              const getDurationSortValue = (plan) => {
+                if (plan.plantype === 'limited') return 4; // Lifetime
+                if (!plan.duration) return 5; // No duration
+
+                const duration = plan.duration.toLowerCase();
+                if (duration.includes('month')) return 2; // Then months
+                if (duration.includes('year')) return 3; // Then years
+                return 6; // Unknown duration types last
+              };
+
+              const sortA = getDurationSortValue(a);
+              const sortB = getDurationSortValue(b);
+
+              // First sort by duration type (weeks < months < years < lifetime)
+              if (sortA !== sortB) {
+                return sortA - sortB;
+              }
+
+              // If same duration type, sort by duration value (ascending)
+              const valueA = a.durationvalue || 0;
+              const valueB = b.durationvalue || 0;
+              return valueA - valueB;
+            });
+
+          setPlans(activePlans);
+          setCurrency(currencyData);
+        }
+      } catch {
+        console.log("Failed to fetch pricing data, using defaults");
+        // Fallback to empty arrays if API fails
+        setPlans([]);
+        setCurrency({});
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPricingData();
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Pricing - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +85,7 @@ const Pricing = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Get started with SavoryOps for free! All features available in free tier including Dashboard, KOT, Multi Business, Multi Branches, Menu Management, QR Code Scanning, and comprehensive reporting.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -31,48 +96,211 @@ const Pricing = () => {
     metaKeywords.setAttribute('content', 'pricing, free restaurant management, restaurant POS pricing, free tier, restaurant software pricing, SavoryOps pricing, free restaurant software');
   }, []);
 
-  const features = [
-    'Dashboard',
-    'KOT',
-    'Multi Business',
-    'Multi Branches',
-    'Menu Management',
-    'Digital Menu',
-    'QR Code Scanning',
-    'Employee Management',
-    'Tax management',
-    'Branch Report',
-    'Order Report',
-    'Day Wise Reports'
-  ];
+
+  // Function to get plan limits with defaults
+  const getPlanLimits = (plan) => {
+    // Define standard pages that should always be shown
+    const defaultPages = ['Business', 'Branch', 'Employee', 'Item'];
+
+    // If plan has unlimited access, show all pages as available
+    if (plan.planaccess === 'unlimited') {
+      return defaultPages.map(page => ({
+        page: page,
+        limit: 'Unlimited'
+      }));
+    }
+
+    // Create a map of existing limits for quick lookup
+    const existingLimits = {};
+    if (plan.planlimits && Array.isArray(plan.planlimits)) {
+      plan.planlimits.forEach(limit => {
+        existingLimits[limit.page] = limit.limit;
+      });
+    }
+
+    // Return standardized list with database values or 0
+    return defaultPages.map(page => ({
+      page: page,
+      limit: existingLimits[page] || '0'
+    }));
+  };
+
+  // Function to format plan duration with proper singular/plural handling
+  const formatDuration = (plan) => {
+    if (plan.plantype === 'free') {
+      if (!plan.duration || !plan.durationvalue) return 'Free Trial';
+      return `${plan.durationvalue} ${getDurationWord(plan.duration, plan.durationvalue)}`;
+    }
+
+    if (!plan.duration || !plan.durationvalue) {
+      return plan.plantype === 'limited' ? 'Lifetime' : 'One-time';
+    }
+
+    return `${plan.durationvalue} ${getDurationWord(plan.duration, plan.durationvalue)}`;
+  };
+
+  // Helper function to get proper singular/plural duration words
+  const getDurationWord = (duration, value) => {
+    const isSingular = value === 1;
+    const durationLower = duration.toLowerCase();
+
+    // Handle different duration types with proper singular/plural forms
+    switch (durationLower) {
+      case 'month':
+      case 'months':
+        return isSingular ? 'month' : 'months';
+      case 'year':
+      case 'years':
+        return isSingular ? 'year' : 'years';
+      case 'week':
+      case 'weeks':
+        return isSingular ? 'week' : 'weeks';
+      case 'day':
+      case 'days':
+        return isSingular ? 'day' : 'days';
+      case 'hour':
+      case 'hours':
+        return isSingular ? 'hour' : 'hours';
+      case 'minute':
+      case 'minutes':
+        return isSingular ? 'minute' : 'minutes';
+      default:
+        // For unknown duration types, try to handle common plural patterns
+        if (isSingular && durationLower.endsWith('s')) {
+          return durationLower.slice(0, -1); // Remove 's' for singular
+        } else if (!isSingular && !durationLower.endsWith('s')) {
+          return durationLower + 's'; // Add 's' for plural
+        }
+        return durationLower; // Return as-is if already correct
+    }
+  };
+
+  // Function to filter plans by duration tab
+  const getFilteredPlans = () => {
+    if (activeTab === 0) {
+      // Monthly paid plans (duration === 'month' && plantype === 'paid')
+      return plans.filter(plan => plan.duration === 'month' && plan.plantype === 'paid');
+    } else {
+      // Yearly paid plans (duration === 'year' && plantype === 'paid')
+      return plans.filter(plan => plan.duration === 'year' && plan.plantype === 'paid');
+    }
+  };
+
+  // Handle tab change
+  const handleTabChange = (event, newValue) => {
+    setActiveTab(newValue);
+  };
 
   return (
     <Box className="pricing-page">
       <FreeSoftware />
 
-      {/* Features List Section */}
-      <Box className="pricing-details-section">
+      {/* Pricing Plans Section */}
+      <Box className="pricing-plans-section">
         <Container maxWidth="lg">
-          <Box className="pricing-content-box">
-            <Typography variant="h4" component="h2" className="pricing-features-title">
-              All Features Available in Free Tier
+          <Box className="pricing-header">
+            <Typography variant="h3" component="h1" className="pricing-main-title">
+              Choose Your Plan
             </Typography>
-            <Box className="pricing-features-grid">
-              {features.map((feature, index) => (
-                <Box key={index} className="pricing-feature-item">
-                  <Box className="pricing-feature-icon">
-                    <CheckCircleIcon />
-                  </Box>
-                  <Typography variant="body1" className="pricing-feature-text">
-                    {feature}
-                  </Typography>
-                </Box>
-              ))}
+            <Typography variant="h5" className="pricing-subtitle">
+              Select the perfect plan for your restaurant business
+            </Typography>
+
+            {/* Pricing Tabs */}
+            <Box className="pricing-tabs-container">
+              <Tabs
+                value={activeTab}
+                onChange={handleTabChange}
+                className="pricing-tabs"
+                centered
+              >
+                <Tab label="Monthly Plans" />
+                <Tab label="Yearly Plans" />
+              </Tabs>
             </Box>
           </Box>
+
+          <Box className="pricing-plans-grid">
+            {loading ? (
+              // Show loading state
+              Array.from({ length: 6 }, (_, index) => (
+                <Box key={index} className="pricing-plan-card loading">
+                  <Typography variant="h5" className="plan-name">Loading...</Typography>
+                  <Typography variant="h4" className="plan-price">£--</Typography>
+                  <Typography variant="body2" className="plan-duration">--</Typography>
+                </Box>
+              ))
+            ) : getFilteredPlans().length > 0 ? (
+              // Show actual plans
+              getFilteredPlans().map((plan, index) => (
+                <Box key={plan._id || index} className={`pricing-plan-card ${plan.ismostpopular ? 'featured' : ''}`}>
+                  {plan.ismostpopular && (
+                    <Box className="featured-indicator">
+                      <StarIcon fontSize="small" />
+                    </Box>
+                  )}
+                  {plan.isdiscount && (
+                    <Box className="plan-discount-top-left">
+                      <Box className="plan-discount-badge">
+                        <DiscountIcon className="discount-icon" fontSize="small" />
+                        <Typography variant="body2" className="plan-discount-text">
+                          {plan.discounttype === 'percentage' ? `${plan.discount}% OFF` : `Save ${formatCurrency(plan.discount, currency)}`}
+                        </Typography>
+                      </Box>
+                    </Box>
+                  )}
+
+                  <Box className="plan-header">
+                    <Typography variant="h5" component="h3" className="plan-name">
+                      {plan.planname}
+                    </Typography>
+                    <Box className="plan-price-section">
+                      <Typography variant="h4" className="plan-price">
+                        {formatCurrency(plan.price, currency)}
+                      </Typography>
+                      <Typography variant="body2" className="plan-duration">
+                        {formatDuration(plan)}
+                      </Typography>
+                    </Box>
+                  </Box>
+
+                  <Box className="plan-features">
+
+                    <Box className="plan-limits">
+                      <Typography variant="body2" className="plan-limits-title">
+                        Access Limits
+                      </Typography>
+                      {getPlanLimits(plan).map((limit, index) => (
+                        <Typography key={index} variant="body2" className={`plan-limit-item ${(limit.limit === '0' || limit.limit === 'Not included') ? 'limit-unavailable' : 'limit-available'}`}>
+                          {(limit.limit === '0' || limit.limit === 'Not included') ? <CloseIcon fontSize="small" /> : <CheckIcon fontSize="small" />} {limit.page}: {limit.limit}
+                        </Typography>
+                      ))}
+                    </Box>
+                  </Box>
+
+                  <Box className="plan-action">
+                    <Typography variant="button" className="plan-button">
+                      {plan.plantype === 'free' ? 'Get Started Free' : 'Choose Plan'}
+                    </Typography>
+                  </Box>
+                </Box>
+              ))
+            ) : (
+              // Show fallback message if no plans
+              <Box className="no-plans-message">
+                <Typography variant="h6" className="no-plans-title">
+                  No pricing plans available at the moment
+                </Typography>
+                <Typography variant="body1" className="no-plans-subtitle">
+                  Please check back later or contact us for more information.
+                </Typography>
+              </Box>
+            )}
+          </Box>
+
           <CTA
-            title="Ready to Get Started?"
-            description="Start using SavoryOps today and experience all these features for free."
+            title="Need Help Choosing?"
+            description="Contact our sales team to find the perfect plan for your restaurant business."
             variant="default"
           />
         </Container>
@@ -82,4 +310,3 @@ const Pricing = () => {
 };
 
 export default Pricing;
-
