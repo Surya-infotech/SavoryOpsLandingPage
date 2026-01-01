@@ -69,7 +69,7 @@ const Pricing = () => {
     };
 
     fetchPricingData();
-  }, []);
+  }, [adminPanelBackendPath]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -200,10 +200,10 @@ const Pricing = () => {
         <Container maxWidth="lg">
           <Box className="pricing-header">
             <Typography variant="h3" component="h1" className="pricing-main-title">
-              Choose Your Plan
+              Transform Your Restaurant Operations
             </Typography>
             <Typography variant="h5" className="pricing-subtitle">
-              Select the perfect plan for your restaurant business
+              Choose the perfect plan to streamline your workflow, boost efficiency, and grow your business with powerful restaurant management tools
             </Typography>
 
             {/* Pricing Tabs */}
