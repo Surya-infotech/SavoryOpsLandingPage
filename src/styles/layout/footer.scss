@@ -1,5 +1,19 @@
 // Footer Styles
 
+// Import variables from main
+$primary-green: #2e7d32;
+$primary-green-hover: #1b5e20;
+$white: #ffffff;
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$font-weight-bold: 700;
+$transition-normal: 0.3s ease;
+$breakpoint-lg: 1280px;
+$breakpoint-md: 960px;
+$breakpoint-sm: 600px;
+
 .footer {
   background: linear-gradient(135deg, $primary-green 0%, $primary-green-hover 100%);
   color: $white;
@@ -24,12 +38,21 @@
       text-decoration: none;
       color: inherit;
       display: inline-block;
+      outline: none;
 
       &:hover {
         .brand-content {
           transform: translateY(-3px);
           filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
         }
+      }
+
+      &:focus,
+      &:active,
+      &:visited {
+        outline: none;
+        border: none;
+        box-shadow: none;
       }
     }
 
@@ -42,6 +65,12 @@
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
+      outline: none;
+
+      &:focus {
+        outline: none;
+        border: none;
+      }
     }
 
     .brand-logo {
@@ -272,7 +301,7 @@
       align-items: center;
       margin-bottom: 8px;
       transition: all 0.3s ease;
-      cursor: pointer;
+      cursor: default !important;
 
       &:last-child {
         margin-bottom: 20px;
@@ -281,6 +310,7 @@
       &:hover {
         color: $white;
         transform: translateX(4px);
+        cursor: default !important;
 
         .contact-icon {
           opacity: 1;

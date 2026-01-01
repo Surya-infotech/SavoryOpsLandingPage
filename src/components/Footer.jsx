@@ -1,6 +1,65 @@
-import { Article as ArticleIcon, Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, CurrencyExchange as CurrencyIcon, Inventory as InventoryIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Rocket as RocketIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { useEffect, useState } from 'react';
+import { Article as ArticleIcon, Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, CurrencyExchange as CurrencyIcon, Email as EmailIcon, Facebook as FacebookIcon, Inventory as InventoryIcon, Instagram as InstagramIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Phone as PhoneIcon, Pinterest as PinterestIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Rocket as RocketIcon, TrendingUp as TrendingUpIcon, Twitter as TwitterIcon, WhatsApp as WhatsAppIcon, YouTube as YouTubeIcon } from '@mui/icons-material';
 import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
+import { useAuth } from '../Middleware/Auth.jsx';
+import '../styles/layout/footer.scss';
+
 const Footer = () => {
+  const { logoutUser } = useAuth();
+  const adminPanelBackendPath = import.meta.env.VITE_BACKEND_URL;
+  const [footerData, setFooterData] = useState({
+    description: "",
+    email: "",
+    phone: "",
+    version: "",
+    copyright: "",
+    maintainedBy: "",
+    address: "",
+    cityname: "",
+    statename: "",
+    countryname: "",
+    postalcode: "",
+    socialmedia: []
+  });
+
+  useEffect(() => {
+    const fetchFooterData = async () => {
+
+      try {
+        const response = await fetch(`${adminPanelBackendPath}/System/GetGeneralSetting_landingpage`, {
+          method: "GET",
+          headers: { "Content-Type": "application/json", "x-user": "admin" },
+        });
+        const data = await response.json();
+
+        if (response.ok && data) {
+          const generalSetting = data.generalSetting || {};
+          const socialMedia = data.socialMedia || [];
+
+          setFooterData({
+            description: generalSetting.description || "",
+            email: generalSetting.email || "",
+            phone: generalSetting.phone || "",
+            version: generalSetting.version || "",
+            copyright: generalSetting.copyright || "",
+            maintainedBy: generalSetting.maintainedby || "",
+            address: generalSetting.address || "",
+            cityname: generalSetting.cityname || "",
+            statename: generalSetting.statename || "",
+            countryname: generalSetting.countryname || "",
+            postalcode: generalSetting.postalcode || "",
+            socialmedia: socialMedia
+          });
+        }
+      } catch {
+        // Keep default values if API fails
+        console.log("Failed to fetch footer data, using defaults");
+      }
+    };
+
+    fetchFooterData();
+  }, [adminPanelBackendPath, logoutUser]);
+
   const productFeatures = [
     { name: 'KOT Tracking System', icon: <RestaurantIcon />, href: '/features/kot-system' },
     { name: 'Multiple Business', icon: <BusinessIcon />, href: '/features/multiple-business' },
@@ -33,15 +92,51 @@ const Footer = () => {
     // { name: 'Terms of Service', href: '#' }
   ];
 
-  const socialLinks = [
-    // { icon: <FacebookIcon />, href: '#', label: 'Facebook' },
-    { icon: <LinkedInIcon />, href: "https://linkedin.com/company/dholakiya-nexus", label: 'LinkedIn' },
-    // { icon: <InstagramIcon />, href: '#', label: 'Instagram' }
-  ];
+  // Function to map platform names to icons
+  const getSocialIcon = (platform) => {
+    const platformLower = platform.toLowerCase();
+    switch (platformLower) {
+      case 'facebook':
+        return <FacebookIcon />;
+      case 'linkedin':
+        return <LinkedInIcon />;
+      case 'instagram':
+        return <InstagramIcon />;
+      case 'twitter':
+        return <TwitterIcon />;
+      case 'youtube':
+        return <YouTubeIcon />;
+      case 'pinterest':
+        return <PinterestIcon />;
+      case 'whatsapp':
+        return <WhatsAppIcon />;
+      default:
+        return <LinkedInIcon />; // Default fallback
+    }
+  };
+
+  // Build dynamic social links from backend data
+  const socialLinks = footerData.socialmedia.map((social) => ({
+    icon: getSocialIcon(social.platform),
+    href: social.url,
+    label: social.platform
+  }));
+
+  // Build dynamic address from backend data
+  const buildAddress = () => {
+    const addressParts = [];
+    if (footerData.address) addressParts.push(footerData.address);
+    if (footerData.cityname) addressParts.push(footerData.cityname);
+    if (footerData.statename) addressParts.push(footerData.statename);
+    if (footerData.countryname) addressParts.push(footerData.countryname);
+    if (footerData.postalcode) addressParts.push(footerData.postalcode);
+    return addressParts.length > 0 ? addressParts.join(', ') : 'Surat, Gujarat, India';
+  };
 
   const contactInfo = [
-    // { icon: <EmailIcon />, text: 'hello@savoryops.com', href: 'mailto:hello@savoryops.com' },
-    { icon: <LocationIcon />, text: 'Surat, Gujarat, India', href: '#' }
+    ...(footerData.email ? [{ icon: <EmailIcon />, text: footerData.email, href: `mailto:${footerData.email}` }] : []),
+    ...(footerData.phone ? [{ icon: <PhoneIcon />, text: footerData.phone, href: `tel:${footerData.phone}` }] : []),
+    { icon: <LocationIcon />, text: buildAddress(), href: '#' }
   ];
 
   return (
@@ -55,38 +150,9 @@ const Footer = () => {
               <Link
                 href="/"
                 className="brand-link"
-                sx={{
-                  textDecoration: 'none',
-                  outline: 'none',
-                  '&:focus': {
-                    outline: 'none',
-                    border: 'none',
-                    boxShadow: 'none'
-                  },
-                  '&:active': {
-                    outline: 'none',
-                    border: 'none',
-                    boxShadow: 'none'
-                  },
-                  '&:visited': {
-                    outline: 'none',
-                    border: 'none'
-                  }
-                }}
               >
                 <Box
                   className="brand-content"
-                  sx={{
-                    outline: 'none',
-                    '&:focus': {
-                      outline: 'none',
-                      border: 'none'
-                    },
-                    '&:active': {
-                      outline: 'none',
-                      border: 'none'
-                    }
-                  }}
                 >
                   <img src="/logo.png" alt="SavoryOps Logo" className="brand-logo" />
                   <Typography variant="h5" className="brand-name">
@@ -96,9 +162,7 @@ const Footer = () => {
               </Link>
             </Box>
             <Typography variant="body1" className="footer-description">
-              Transform your restaurant operations with our comprehensive management platform.
-              Streamline workflows, enhance customer experience, and drive sustainable growth
-              with powerful tools designed for modern hospitality businesses.
+              {footerData.description}
             </Typography>
           </Grid>
 
@@ -126,15 +190,6 @@ const Footer = () => {
                 <Box
                   key={index}
                   className="contact-item"
-                  display="flex"
-                  alignItems="center"
-                  gap={1}
-                  sx={{
-                    cursor: 'default !important',
-                    '&:hover': {
-                      cursor: 'default !important'
-                    }
-                  }}
                 >
                   <Box className="contact-icon">
                     {contact.icon}
@@ -225,7 +280,7 @@ const Footer = () => {
         <Box className="footer-bottom">
           <Box className="footer-bottom-left">
             <Typography variant="body2" className="copyright">
-              © 2025 Dholakiya Nexus. All rights reserved.
+              {footerData.copyright}
             </Typography>
             <Box className="footer-bottom-links">
               {legalLinks.map((link, index) => (
@@ -241,11 +296,13 @@ const Footer = () => {
             </Box>
           </Box>
 
-          {/* <Box className="footer-bottom-right">
-            <Typography variant="body2" className="footer-version">
-              Version 1.0.0
-            </Typography>
-          </Box> */}
+          {footerData.version && (
+            <Box className="footer-bottom-right">
+              <Typography variant="body2" className="footer-version">
+                Version {footerData.version}
+              </Typography>
+            </Box>
+          )}
         </Box>
       </Container>
     </Box>
