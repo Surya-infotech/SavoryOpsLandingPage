@@ -138,17 +138,17 @@ const FreeSoftware = () => {
           <Box className="badge-container">
             <Chip
               icon={<StarIcon />}
-              label="Limited Time Offer"
+              label="Free Forever - No Hidden Costs"
               className="offer-chip"
             />
           </Box>
 
           <Typography variant="h2" component="h2" className="section-title">
-            Our Software is Free for Limited Time
+            Transform Your Restaurant Operations Free Forever
           </Typography>
 
           <Typography variant="h5" className="section-subtitle">
-            Start using SavoryOps today at no cost. Get full access to all features and transform your restaurant operations without any upfront investment. This offer won't last forever!
+            Experience the power of SavoryOps at no cost. Choose from our free trial or lifetime access plans and revolutionize your restaurant management with cutting-edge tools designed for modern hospitality businesses.
           </Typography>
         </Box>
 
@@ -196,7 +196,7 @@ const FreeSoftware = () => {
 
                       <Box className="plan-features">
                         <Typography variant="body2" className="plan-limits">
-                          Plan Includes:
+                          Plan Includes
                         </Typography>
                         {getPlanLimits(plan).map((limit, limitIndex) => (
                           <Typography key={limitIndex} variant="body2" className={`plan-limit-item ${limit.limit === '0' ? 'limit-unavailable' : 'limit-available'}`}>
