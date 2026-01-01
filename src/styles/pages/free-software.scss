@@ -73,148 +73,230 @@
     }
   }
 
-  .features-list {
-    margin-bottom: 32px;
+  .content-section {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @media (min-width: 960px) {
+      max-width: 1200px;
+    }
   }
 
-  .feature-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
+
+
+  .pricing-comparison {
+    margin-top: 40px;
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.05), rgba(46, 125, 50, 0.05));
+    border-radius: 16px;
+    border: 1px solid rgba(76, 175, 80, 0.1);
+
+    @media (min-width: 960px) {
+      margin-top: 48px;
+      padding: 32px;
+    }
+  }
+
+  .comparison-title {
+    font-weight: 700;
+    color: #2e7d32;
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+
+    @media (min-width: 960px) {
+      font-size: 1.3rem;
+      margin-bottom: 32px;
+    }
+  }
+
+
+  .savings-text {
+    text-align: center;
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 16px;
+
+    @media (min-width: 960px) {
+      font-size: 1.1rem;
+      margin-top: 20px;
+    }
+  }
+
+  .plans-detailed-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 24px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    @media (min-width: 960px) {
+      gap: 40px;
+      margin-top: 32px;
+    }
+  }
+
+  .pricing-plan-card {
+    background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
+    border-radius: 20px;
+    padding: 24px 28px;
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.08),
+      0 2px 8px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(76, 175, 80, 0.08);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: visible;
     animation: fadeInUp 0.6s ease-out both;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     @for $i from 1 through 6 {
       &:nth-child(#{$i}) {
         animation-delay: #{$i * 0.1}s;
       }
     }
-  }
-
-  .feature-icon {
-    width: 32px;
-    height: 32px;
-    background: linear-gradient(135deg, #4caf50, #66bb6a);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 16px;
-    color: white;
-    flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
-
-    svg {
-      font-size: 18px;
-    }
-  }
-
-  .feature-text {
-    color: #333333;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.5;
-  }
-
-  .cta-button {
-    padding: 14px 36px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 50px;
-    min-height: 52px;
-    background: linear-gradient(135deg, #2e7d32, #4caf50);
-    animation: fadeInUp 0.8s ease-out 0.6s both;
-    transition: all 0.3s ease;
 
     &:hover {
-      background: linear-gradient(135deg, #1b5e20, #2e7d32);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(46, 125, 50, 0.3);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow:
+        0 20px 50px rgba(76, 175, 80, 0.15),
+        0 8px 20px rgba(76, 175, 80, 0.1),
+        0 4px 10px rgba(76, 175, 80, 0.08);
+      border-color: rgba(76, 175, 80, 0.25);
+      background: linear-gradient(145deg, #ffffff 0%, #f8fdf9 100%);
     }
-  }
-
-  .visual-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    animation: fadeInUp 0.8s ease-out 0.4s both;
-  }
-
-  .free-badge {
-    position: relative;
-    width: 280px;
-    height: 280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-    border-radius: 50%;
-    box-shadow: 0 16px 48px rgba(255, 107, 53, 0.2);
-    border: 8px solid #ff8c42;
-    padding: 32px;
 
     @media (min-width: 960px) {
-      width: 350px;
-      height: 350px;
+      padding: 28px 32px;
     }
   }
 
-  .free-text {
-    font-size: 4rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #ff6b35, #ff8c42);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 8px;
-
-    @media (min-width: 960px) {
-      font-size: 5rem;
-    }
-  }
-
-  .forever-text {
-    color: #e65100;
-    font-weight: 700;
-    font-size: 1.1rem;
+  .plan-header {
     text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .plan-name {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 
     @media (min-width: 960px) {
-      font-size: 1.3rem;
+      font-size: 1.8rem;
     }
   }
 
-  .stars-container {
+  .plan-price {
+    font-weight: 800;
+    font-size: 2.4rem;
+    color: #2e7d32;
+    display: block;
+    margin-bottom: 4px;
+    text-shadow: 0 2px 4px rgba(46, 125, 50, 0.1);
+    letter-spacing: -0.03em;
+
+    @media (min-width: 960px) {
+      font-size: 2.8rem;
+    }
+  }
+
+  .plan-duration {
+    font-size: 0.9rem;
+    color: #666666;
+    text-transform: capitalize;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .plan-type,
+  .plan-discount,
+  .plan-access {
+    font-size: 0.9rem;
+    color: #555555;
+    margin-bottom: 8px;
     display: flex;
-    gap: 4px;
-    margin-top: 16px;
+    align-items: center;
 
-    svg {
-      color: #ff8c42;
-      font-size: 1.5rem;
+    &::before {
+      content: '•';
+      color: #4caf50;
+      font-weight: bold;
+      margin-right: 8px;
     }
   }
 
-  .decorative-circle {
-    position: absolute;
-    border-radius: 50%;
-    z-index: -1;
+  .plan-limits {
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(76, 175, 80, 0.1);
+    padding-bottom: 4px;
+  }
 
-    &.top-right {
-      top: -20px;
-      right: -20px;
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(46, 125, 50, 0.1));
+  .plan-limit-item {
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+    padding-left: 8px;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    &.limit-available {
+      color: #2e7d32;
+      font-weight: 500;
     }
 
-    &.bottom-left {
-      bottom: -20px;
-      left: -20px;
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, rgba(255, 140, 66, 0.1), rgba(255, 107, 53, 0.1));
+    &.limit-unavailable {
+      color: #d32f2f;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+  }
+
+
+  .plan-button {
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 50%, #66bb6a 100%);
+    color: white;
+    padding: 14px 36px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 700;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    box-shadow:
+      0 4px 15px rgba(76, 175, 80, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+    &:hover {
+      background: linear-gradient(135deg, #43a047 0%, #388e3c 50%, #4caf50 100%);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow:
+        0 8px 25px rgba(76, 175, 80, 0.4),
+        0 4px 12px rgba(76, 175, 80, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    &:active {
+      transform: translateY(-1px) scale(0.98);
     }
   }
 }
@@ -227,5 +309,25 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
   }
 }
