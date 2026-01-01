@@ -56,13 +56,6 @@ const Features = ({ showHeading = true }) => {
       color: '#388e3c'
     },
     {
-      id: 'business-analytics',
-      icon: <AnalyticsIcon />,
-      title: 'Analytics & Reports',
-      description: 'Comprehensive insights to optimize your business performance',
-      color: '#2e7d32'
-    },
-    {
       id: 'advanced-reports',
       icon: <DashboardIcon />,
       title: 'Revenue Analytics',

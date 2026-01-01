@@ -21,7 +21,7 @@ const FeaturesPage = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Discover powerful restaurant management features including Smart Dashboard, Multiple Business & Branches, Menu Management, KOT System, QR Code Scanning, Business Analytics, Cloud-Based System, and more. Streamline your restaurant operations with SavoryOps.');
+    metaDescription.setAttribute('content', 'Discover powerful restaurant management features including Smart Dashboard, Multiple Business & Branches, Menu Management, KOT System, QR Code Scanning, Cloud-Based System, and more. Streamline your restaurant operations with SavoryOps.');
     
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -43,7 +43,6 @@ const FeaturesPage = () => {
       'KOT System': '/features/kot-system',
       'Order Summary & Timeline': '/features/order-summary',
       'QR Code Scanning': '/features/qr-code-scanning',
-      'Business Analytics': '/features/business-analytics',
       'Customer Reviews': '/features/customer-reviews',
       'Cloud-Based System': '/features/cloud-based-system',
       'Separate Database': '/features/multi-tenant-architecture',
@@ -182,13 +181,6 @@ const FeaturesPage = () => {
       subtitle: 'Future Requirements',
       description: 'Users can download digital invoices for future requirements and record keeping.',
       color: '#388e3c'
-    },
-    {
-      icon: <AnalyticsIcon sx={{ fontSize: 24 }} />,
-      title: 'Business Analytics',
-      subtitle: 'Data-Driven Decisions',
-      description: 'Make informed decisions with comprehensive business analytics and reporting.',
-      color: '#2e7d32'
     },
     {
       icon: <AssessmentIcon sx={{ fontSize: 24 }} />,

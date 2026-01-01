@@ -41,7 +41,6 @@ const Pricing = () => {
     'QR Code Scanning',
     'Employee Management',
     'Tax management',
-    'Business Report',
     'Branch Report',
     'Order Report',
     'Day Wise Reports'

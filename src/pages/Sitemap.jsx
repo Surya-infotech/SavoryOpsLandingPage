@@ -100,7 +100,6 @@ const Sitemap = () => {
 
   const footerReports = [
     { name: 'Daily Wise Report', path: '/features/advanced-reports' },
-    { name: 'Business Wise Report', path: '/features/business-analytics' },
     { name: 'Branch Wise Report', path: '/features/advanced-reports' },
     { name: 'Order Summary', path: '/features/order-summary' }
   ];

@@ -73,7 +73,6 @@ const Footer = () => {
 
   const reportList = [
     { name: 'Daily Wise Report', icon: <AssessmentIcon />, href: '/features/advanced-reports' },
-    { name: 'Business Wise Report', icon: <TrendingUpIcon />, href: '/features/business-analytics' },
     { name: 'Branch Wise Report', icon: <BarChartIcon />, href: '/features/advanced-reports' },
     { name: 'Order Summary', icon: <ReceiptIcon />, href: '/features/order-summary' }
   ];
