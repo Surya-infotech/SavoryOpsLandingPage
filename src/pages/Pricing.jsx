@@ -1,6 +1,7 @@
 import { Check as CheckIcon, Close as CloseIcon, LocalOffer as DiscountIcon, Star as StarIcon } from '@mui/icons-material';
 import { Box, Container, Typography, Tabs, Tab } from '@mui/material';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import FreeSoftware from './FreeSoftware';
 import CTA from '../components/CTA';
 import { formatCurrency } from '../utils/currency';
@@ -12,6 +13,7 @@ const Pricing = () => {
   const [currency, setCurrency] = useState({});
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState(0); // 0 for monthly, 1 for yearly
+  const navigate = useNavigate();
   const adminPanelBackendPath = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
@@ -115,6 +117,11 @@ const Pricing = () => {
     setActiveTab(newValue);
   };
 
+  // Handle plan button click (redirect to sign-in)
+  const handlePlanButtonClick = () => {
+    navigate('/signin');
+  };
+
   return (
     <Box className="pricing-page">
       <FreeSoftware />
@@ -203,7 +210,12 @@ const Pricing = () => {
                   </Box>
 
                   <Box className="plan-action">
-                    <Typography variant="button" className="plan-button">
+                    <Typography
+                      variant="button"
+                      className="plan-button"
+                      onClick={handlePlanButtonClick}
+                      style={{ cursor: 'pointer' }}
+                    >
                       {plan.plantype === 'free' ? 'Get Started Free' : 'Choose Plan'}
                     </Typography>
                   </Box>

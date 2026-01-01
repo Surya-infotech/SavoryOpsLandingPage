@@ -1,14 +1,19 @@
 import { Close as CloseIcon, Menu as MenuIcon } from '@mui/icons-material';
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navigation = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+
+  const handleGetStartedClick = () => {
+    navigate('/signin');
   };
 
   const menuItems = [
@@ -74,14 +79,13 @@ const Navigation = () => {
                 {item.text}
               </Button>
             ))}
-            {/* <Button
+            <Button
               variant="contained"
-              component={Link}
-              to="/features"
+              onClick={handleGetStartedClick}
               className="cta-button"
             >
               Get Started
-            </Button> */}
+            </Button>
           </Box>
 
           <IconButton
@@ -196,6 +200,28 @@ const Navigation = () => {
                   </Box>
                 </Link>
               ))}
+
+              {/* Get Started Button for Mobile */}
+              <Box sx={{ padding: '20px', borderTop: '1px solid #e0e0e0' }}>
+                <Button
+                  variant="contained"
+                  onClick={() => {
+                    handleGetStartedClick();
+                    handleDrawerToggle();
+                  }}
+                  sx={{
+                    backgroundColor: '#2e7d32',
+                    color: 'white',
+                    fontWeight: 'bold',
+                    width: '100%',
+                    '&:hover': {
+                      backgroundColor: '#1b5e20',
+                    }
+                  }}
+                >
+                  Get Started
+                </Button>
+              </Box>
             </Box>
           </Box>
         </>
