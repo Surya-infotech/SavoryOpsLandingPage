@@ -56,5 +56,6 @@
   "resendotp": "Resend OTP",
   "back": "Back",
   "accountcreatedsuccessfully": "Account created successfully!",
-  "finishup": "Finish up"
+  "finishup": "Finish up",
+  "signingin":"Signing In..."
 }

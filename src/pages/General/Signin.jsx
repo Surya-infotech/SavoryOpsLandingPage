@@ -147,13 +147,10 @@ const OwnerLogin = () => {
                             required
                         />
                     </div>
-                    {/* <div className="form-group forgot-password">
-                        <NavLink to="/forgot-password">{translations.forgotpassword}</NavLink>
-                    </div> */}
 
                     {formError && <div className="error-message">{formError}</div>}
                     <button type="submit" className="login-button" disabled={isLoading}>
-                        {isLoading ? 'Signing In...' : translations.signin}
+                        {isLoading ? translations.signingin : translations.signin}
                     </button>
                 </form>
                 <div className="form-group signup">

@@ -165,21 +165,6 @@ body {
         @include form_mixin.form-input;
       }
 
-      &.forgot-password {
-        text-align: right;
-        margin-top: 10px;
-
-        a {
-          color: var.$primary_text_color;
-          text-decoration: none;
-          font-size: 14px;
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-
       &.signup {
         display: flex;
         justify-content: center;
