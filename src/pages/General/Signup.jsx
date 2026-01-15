@@ -491,8 +491,6 @@ const OwnerSignUp = () => {
                                     />
                                     <label htmlFor="terms-checkbox">
                                         {translations.bysignupingyouagreetoour}
-                                        {/* <a href="/terms" target="_blank" rel="noopener noreferrer">{translations.termsandconditions}</a> */}
-                                        {/* {translations.and} */}
                                         <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">{translations.privacypolicy}</a>.
                                     </label>
                                 </div>

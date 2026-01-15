@@ -78,8 +78,6 @@ const Footer = () => {
   ];
 
   const companyLinks = [
-    // { name: 'About Us', icon: <InfoIcon />, href: '#' },
-    // { name: 'Careers', icon: <WorkIcon />, href: '#' },
     { name: 'Pricing', icon: <AttachMoneyIcon />, href: '/pricing' },
     { name: 'Upcoming Features', icon: <RocketIcon />, href: '/upcoming-features' },
     { name: 'Sitemap', icon: <ArticleIcon />, href: '/sitemap' }
@@ -88,7 +86,6 @@ const Footer = () => {
   const legalLinks = [
     { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Data Deletion Policy', href: '/data-deletion-policy' },
-    // { name: 'Terms of Service', href: '#' }
   ];
 
   // Function to map platform names to icons
@@ -160,9 +157,11 @@ const Footer = () => {
                 </Box>
               </Link>
             </Box>
-            <Typography variant="body1" className="footer-description">
-              {footerData.description}
-            </Typography>
+            {footerData.description && (
+              <Typography variant="body1" className="footer-description">
+                {footerData.description}
+              </Typography>
+            )}
           </Grid>
 
           {/* Social Links and Contact Info */}
@@ -278,9 +277,11 @@ const Footer = () => {
         {/* Bottom Footer */}
         <Box className="footer-bottom">
           <Box className="footer-bottom-left">
-            <Typography variant="body2" className="copyright">
-              {footerData.copyright}
-            </Typography>
+            {footerData.copyright && (
+              <Typography variant="body2" className="copyright">
+                {footerData.copyright}
+              </Typography>
+            )}
             <Box className="footer-bottom-links">
               {legalLinks.map((link, index) => (
                 <Link

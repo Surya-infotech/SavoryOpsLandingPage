@@ -7,12 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-      135deg,
-      rgba(138, 177, 125, 0.1) 0%,
-      rgba(245, 245, 220, 0.1) 100%
-    ),
-    url("/signin.jpg");
+  background-image: url("/signin.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -90,6 +85,7 @@
         opacity: 0;
         transform: translateY(-10px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -142,6 +138,7 @@
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -343,11 +340,9 @@
           z-index: 1;
 
           &.completed {
-            background: linear-gradient(
-              to bottom,
-              var.$primary_text_color,
-              var.$primary_text_color
-            );
+            background: linear-gradient(to bottom,
+                var.$primary_text_color,
+                var.$primary_text_color );
           }
 
           @media (max-width: 1024px) {
@@ -360,11 +355,9 @@
 
         &.active {
           .step-icon {
-            background: linear-gradient(
-              135deg,
-              var.$primary_text_color 0%,
-              #50c878 100%
-            );
+            background: linear-gradient(135deg,
+                var.$primary_text_color 0%,
+                #50c878 100%);
             border-color: var.$primary_text_color;
             transform: scale(1.1);
             box-shadow: 0 6px 20px rgba(138, 177, 125, 0.5);
@@ -382,11 +375,9 @@
 
         &.completed {
           .step-icon {
-            background: linear-gradient(
-              135deg,
-              var.$primary_text_color 0%,
-              #50c878 100%
-            );
+            background: linear-gradient(135deg,
+                var.$primary_text_color 0%,
+                #50c878 100%);
             border-color: var.$primary_text_color;
             box-shadow: 0 4px 15px rgba(138, 177, 125, 0.4);
 
@@ -404,7 +395,7 @@
               height: 100%;
             }
 
-            > * {
+            >* {
               opacity: 0;
             }
 
@@ -436,6 +427,7 @@
           opacity: 0;
           transform: translateX(10px);
         }
+
         to {
           opacity: 1;
           transform: translateX(0);
@@ -457,11 +449,9 @@
         font-weight: 700;
         color: #333;
         margin-bottom: 6px;
-        background: linear-gradient(
-          135deg,
-          var.$primary_text_color 0%,
-          #50c878 100%
-        );
+        background: linear-gradient(135deg,
+            var.$primary_text_color 0%,
+            #50c878 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -910,11 +900,9 @@
       margin-top: 18px !important;
       width: 100%;
       padding: 12px 20px;
-      background: linear-gradient(
-        135deg,
-        var.$primary_text_color 0%,
-        #50c878 100%
-      );
+      background: linear-gradient(135deg,
+          var.$primary_text_color 0%,
+          #50c878 100%);
       color: white;
       border: none;
       border-radius: 10px;
@@ -938,12 +926,10 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
-        );
+        background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
         transition: left 0.5s;
       }
 
@@ -1124,10 +1110,12 @@
         }
 
         @keyframes bounce {
+
           0%,
           100% {
             transform: translateY(0);
           }
+
           50% {
             transform: translateY(-10px);
           }
@@ -1189,12 +1177,10 @@
         .divider-line {
           flex: 1;
           height: 1px;
-          background: linear-gradient(
-            to right,
-            transparent,
-            #e0e0e0,
-            transparent
-          );
+          background: linear-gradient(to right,
+              transparent,
+              #e0e0e0,
+              transparent);
         }
 
         .divider-content {
@@ -1242,13 +1228,16 @@
       animation: shake 0.5s ease;
 
       @keyframes shake {
+
         0%,
         100% {
           transform: translateX(0);
         }
+
         25% {
           transform: translateX(-5px);
         }
+
         75% {
           transform: translateX(5px);
         }
