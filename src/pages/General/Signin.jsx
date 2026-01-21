@@ -21,6 +21,7 @@ const OwnerLogin = () => {
     const [formError, setFormError] = useState('');
     const [warningMessage, setWarningMessage] = useState("");
     const [showWarning, setShowWarning] = useState(false);
+    const [showDemoButtons, setShowDemoButtons] = useState(false);
 
     const languages = getLanguageOptions();
 
@@ -38,11 +39,37 @@ const OwnerLogin = () => {
         if (languageDropdown && !languageDropdown.contains(event.target)) setLanguageDropdownVisible(false);
     };
 
+    const fetchIntegrationData = async () => {
+        try {
+            const response = await fetch(`${BackendPath}/System/GetIntegrationSettingFrontend`, {
+                method: "GET",
+                headers: { 'Content-Type': 'application/json', "x-user": "admin" },
+            });
+
+            const data = await response.json();
+            if (response.ok && data) {
+                // Check if dummy credentials are enabled and show/hide demo buttons
+                if (data.integrationSetting?.dummycredentails === true) {
+                    setShowDemoButtons(true);
+                } else {
+                    setShowDemoButtons(false);
+                }
+            }
+        } catch (error) {
+            console.log("Error fetching integration data:", error);
+            setShowDemoButtons(false);
+        }
+    };
+
     useEffect(() => {
         if (isLanguageDropdownVisible) document.addEventListener('mousedown', handleClickOutside);
         else document.removeEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isLanguageDropdownVisible]);
+
+    useEffect(() => {
+        fetchIntegrationData();
+    }, []);
 
     // useEffect(() => {
     //     const urlParams = new URLSearchParams(window.location.search);
@@ -157,6 +184,25 @@ const OwnerLogin = () => {
                     <h6>{translations.donothaveanaccount}</h6>
                     <NavLink to="/Signup">{translations.signup}</NavLink>
                 </div>
+
+                {showDemoButtons && (
+                    <div className="demo-buttons">
+                        <h5>Demo Login</h5>
+                        <div className="demo-button-row">
+                            <button className="demo-owner-button" onClick={() => {
+                                setEmail('owner@savoryops.com');
+                                setPassword('12345678');
+                            }}>
+                                Restaurant Owner
+                            </button>
+                            <button className="demo-admin-button" onClick={() => {
+                                window.location.href = 'https://savoryopsadminpanel.savoryops.com';
+                            }}>
+                                Super Admin
+                            </button>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     </>);
