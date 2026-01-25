@@ -82,9 +82,9 @@ const OwnerLogin = () => {
                 };
                 setFormError(errorMessages[data.message] || data.message);
             }
-        } catch (err) {
-            console.log(err.message || 'Something went wrong');
+        } catch{
             setWarningMessage(translations.servererror);
+            setShowWarning(true);
         } finally {
             setIsLoading(false);
         }
