@@ -56,5 +56,6 @@
   "resendotp": "重新发送OTP验证码",
   "back": "返回",
   "accountcreatedsuccessfully": "账户创建成功！",
-  "finishup": "完成"
+  "finishup": "完成",
+  "signingin": "正在登录..."
 }

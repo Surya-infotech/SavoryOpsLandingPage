@@ -56,5 +56,6 @@
   "resendotp": "OTP erneut senden",
   "back": "Zurück",
   "accountcreatedsuccessfully": "Konto erfolgreich erstellt!",
-  "finishup": "Abschließen"
+  "finishup": "Abschließen",
+  "signingin": "Anmeldung läuft..."
 }

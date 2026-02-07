@@ -56,5 +56,6 @@
   "resendotp": "OTP кодун кайра жөнөтүү",
   "back": "Артка",
   "accountcreatedsuccessfully": "Аккаунт ийгиликтүү түзүлдү!",
-  "finishup": "Аяктоо"
+  "finishup": "Аяктоо",
+  "signingin": "Кируу..."
 }

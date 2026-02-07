@@ -77,10 +77,12 @@ body {
       align-items: center;
       transition: background-color 0.3s;
 
-      &:hover {
+      &:hover ,
+      &.selected {
         background-color: var.$hover_color;
         text-decoration: none;
         color: var.$text_hover_color;
+        transform: translateX(4px);
       }
     }
   }

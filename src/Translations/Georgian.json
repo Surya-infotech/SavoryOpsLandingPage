@@ -56,5 +56,6 @@
   "resendotp": "OTP კოდის ხელახლა გაგზავნა",
   "back": "უკან",
   "accountcreatedsuccessfully": "ანგარიში წარმატებით შეიქმნა!",
-  "finishup": "დასრულება"
+  "finishup": "დასრულება",
+  "signingin": "შესვლა მიმდინარეობს..."
 }

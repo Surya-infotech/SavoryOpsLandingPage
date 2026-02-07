@@ -112,12 +112,13 @@
       align-items: center;
       transition: all 0.2s ease;
 
-      &:hover {
+      &:hover,
+      &.selected {
         background-color: var.$hover_color;
         text-decoration: none;
         color: var.$text_hover_color;
         transform: translateX(4px);
-      }
+        }
     }
   }
 

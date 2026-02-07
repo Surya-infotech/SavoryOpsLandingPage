@@ -56,5 +56,6 @@
   "resendotp": "Skicka OTP-kod igen",
   "back": "Tillbaka",
   "accountcreatedsuccessfully": "Kontot skapades framgångsrikt!",
-  "finishup": "Slutför"
+  "finishup": "Slutför",
+  "signingin": "Loggar in..."
 }

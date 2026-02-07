@@ -56,5 +56,6 @@
   "resendotp": "OTP opnieuw verzenden",
   "back": "Terug",
   "accountcreatedsuccessfully": "Account succesvol aangemaakt!",
-  "finishup": "Afronden"
+  "finishup": "Afronden",
+  "signingin": "Bezig met inloggen..."
 }

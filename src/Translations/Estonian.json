@@ -56,5 +56,6 @@
   "resendotp": "Saada OTP kood uuesti",
   "back": "Tagasi",
   "accountcreatedsuccessfully": "Konto loodud edukalt!",
-  "finishup": "Lõpeta"
+  "finishup": "Lõpeta",
+  "signingin": "Sisselogimine..."
 }

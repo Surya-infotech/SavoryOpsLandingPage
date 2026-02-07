@@ -56,5 +56,6 @@
   "resendotp": "Znovu odoslať OTP kód",
   "back": "Späť",
   "accountcreatedsuccessfully": "Účet bol úspešne vytvorený!",
-  "finishup": "Dokončiť"
+  "finishup": "Dokončiť",
+  "signingin": "Prihlásenie..."
 }

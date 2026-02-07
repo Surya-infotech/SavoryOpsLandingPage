@@ -18,6 +18,7 @@ const LANGUAGE_OPTIONS = [
     { name: 'Norwegian', code: 'NO' },
     { name: 'Swedish', code: 'SE' },
     { name: 'Finnish', code: 'FI' },
+    { name: 'Arabic', code: 'SA' },
     { name: 'Belarusian', code: 'BY' },
     { name: 'Serbian', code: 'RS' },
     { name: 'Turkish', code: 'TR' },

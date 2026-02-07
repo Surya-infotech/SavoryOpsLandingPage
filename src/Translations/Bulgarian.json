@@ -56,5 +56,6 @@
   "resendotp": "Изпратете отново OTP код",
   "back": "Назад",
   "accountcreatedsuccessfully": "Акаунтът е създаден успешно!",
-  "finishup": "Завърши"
+  "finishup": "Завърши",
+  "signingin": "Влизане..."
 }

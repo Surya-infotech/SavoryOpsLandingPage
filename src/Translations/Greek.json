@@ -56,5 +56,6 @@
   "resendotp": "Αποστολή ξανά OTP",
   "back": "Πίσω",
   "accountcreatedsuccessfully": "Ο λογαριασμός δημιουργήθηκε με επιτυχία!",
-  "finishup": "Ολοκλήρωση"
+  "finishup": "Ολοκλήρωση",
+  "signingin": "Σύνδεση σε εξέλιξη..."
 }

@@ -56,5 +56,6 @@
   "resendotp": "Retrimite OTP",
   "back": "Înapoi",
   "accountcreatedsuccessfully": "Cont creat cu succes!",
-  "finishup": "Finalizează"
+  "finishup": "Finalizează",
+  "signingin": "Se conectează..."
 }

@@ -56,5 +56,6 @@
   "resendotp": "Ponovno pošlji OTP kodo",
   "back": "Nazaj",
   "accountcreatedsuccessfully": "Račun je bil uspešno ustvarjen!",
-  "finishup": "Končaj"
+  "finishup": "Končaj",
+  "signingin": "Prijava..."
 }

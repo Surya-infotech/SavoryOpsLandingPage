@@ -56,5 +56,6 @@
   "resendotp": "OTPコードを再送信",
   "back": "戻る",
   "accountcreatedsuccessfully": "アカウントが正常に作成されました！",
-  "finishup": "完了"
+  "finishup": "完了",
+  "signingin": "ログイン中..."
 }

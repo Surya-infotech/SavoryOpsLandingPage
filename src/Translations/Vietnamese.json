@@ -56,5 +56,6 @@
   "resendotp": "Gửi lại mã OTP",
   "back": "Quay lại",
   "accountcreatedsuccessfully": "Tài khoản đã được tạo thành công!",
-  "finishup": "Hoàn tất"
+  "finishup": "Hoàn tất",
+  "signingin": "Đang đăng nhập..."
 }

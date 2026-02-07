@@ -56,5 +56,6 @@
   "resendotp": "Send OTP-kode igen",
   "back": "Tilbage",
   "accountcreatedsuccessfully": "Konto oprettet med succes!",
-  "finishup": "Afslut"
+  "finishup": "Afslut",
+  "signingin": "Logger ind..."
 }

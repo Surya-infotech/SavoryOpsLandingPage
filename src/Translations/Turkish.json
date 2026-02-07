@@ -56,5 +56,6 @@
   "resendotp": "OTP Kodunu Yeniden Gönder",
   "back": "Geri",
   "accountcreatedsuccessfully": "Hesap başarıyla oluşturuldu!",
-  "finishup": "Bitir"
+  "finishup": "Bitir",
+  "signingin": "Giriş yapılıyor..."
 }

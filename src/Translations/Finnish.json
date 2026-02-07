@@ -56,5 +56,6 @@
   "resendotp": "Lähetä OTP-koodi uudelleen",
   "back": "Takaisin",
   "accountcreatedsuccessfully": "Tili luotu onnistuneesti!",
-  "finishup": "Viimeistele"
+  "finishup": "Viimeistele",
+  "signingin": "Kirjaudutaan sisään..."
 }

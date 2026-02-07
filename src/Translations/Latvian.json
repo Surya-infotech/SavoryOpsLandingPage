@@ -56,5 +56,6 @@
   "resendotp": "Nosūtīt OTP kodu atkārtoti",
   "back": "Atpakaļ",
   "accountcreatedsuccessfully": "Konts veiksmīgi izveidots!",
-  "finishup": "Pabeigt"
+  "finishup": "Pabeigt",
+  "signingin": "Pierakstīšanās..."
 }

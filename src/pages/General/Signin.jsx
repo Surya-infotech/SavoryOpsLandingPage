@@ -108,7 +108,11 @@ const OwnerLogin = () => {
                         <div className="language-dropdown-menu">
                             <ul>
                                 {languages.map((language, index) => (
-                                    <li key={index} onClick={() => handleLanguageSelect(language)}>
+                                    <li
+                                        key={index}
+                                        className={language.name === selectedLanguage ? 'selected' : ''}
+                                        onClick={() => handleLanguageSelect(language)}
+                                    >
                                         <Flag code={language.code} style={{ width: '20px', marginRight: '10px' }} alt={language.name} />
                                         {language.name}
                                     </li>

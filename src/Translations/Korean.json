@@ -56,5 +56,6 @@
   "resendotp": "OTP 코드 다시 보내기",
   "back": "뒤로",
   "accountcreatedsuccessfully": "계정이 성공적으로 생성되었습니다!",
-  "finishup": "완료"
+  "finishup": "완료",
+  "signingin": "로그인 중..."
 }

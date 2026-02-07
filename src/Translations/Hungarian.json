@@ -56,5 +56,6 @@
   "resendotp": "OTP kód újraküldése",
   "back": "Vissza",
   "accountcreatedsuccessfully": "A fiók sikeresen létrehozva!",
-  "finishup": "Befejezés"
+  "finishup": "Befejezés",
+  "signingin": "Bejelentkezés..."
 }

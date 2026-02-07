@@ -56,5 +56,6 @@
   "resendotp": "Reenviar código OTP",
   "back": "Voltar",
   "accountcreatedsuccessfully": "Conta criada com sucesso!",
-  "finishup": "Finalizar"
+  "finishup": "Finalizar",
+  "signingin": "Entrando..."
 }
