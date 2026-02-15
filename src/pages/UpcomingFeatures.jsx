@@ -4,7 +4,6 @@ import {
   DeliveryDining as DeliveryDiningIcon, 
   DirectionsCar as DirectionsCarIcon, 
   Groups as GroupsIcon, 
-  Help as HelpIcon,
   LocalShipping as LocalShippingIcon, 
   Loyalty as LoyaltyIcon, 
   MenuBook as MenuBookIcon,

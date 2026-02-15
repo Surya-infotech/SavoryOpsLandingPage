@@ -1,5 +1,5 @@
 import { Star as StarIcon } from '@mui/icons-material';
-import { Box, Chip, Container, Grid, Typography } from '@mui/material';
+import { Box, Chip, Container, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { formatDuration, getPlanLimits } from '../utils/planUtils';

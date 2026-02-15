@@ -1,4 +1,4 @@
-import { Category as CategoryIcon, Edit as EditIcon, Image as ImageIcon, Menu as MenuIcon, PriceChange as PriceChangeIcon, Schedule as ScheduleIcon, Add as AddIcon, List as ListIcon, Description as DescriptionIcon } from '@mui/icons-material';
+import { Category as CategoryIcon, Edit as EditIcon, Menu as MenuIcon, PriceChange as PriceChangeIcon, Add as AddIcon, Description as DescriptionIcon } from '@mui/icons-material';
 import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';

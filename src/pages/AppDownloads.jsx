@@ -1,5 +1,5 @@
 import { PhoneAndroid as PhoneAndroidIcon } from '@mui/icons-material';
-import { Avatar, Box, Chip, Container, Grid, Stack, Typography } from '@mui/material';
+import { Avatar, Box, Chip, Container, Stack, Typography } from '@mui/material';
 
 const googlePlayBadgeUrl =
   'https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png';
