@@ -107,9 +107,9 @@ const FreeSoftware = () => {
                           {plan.planname}
                         </Typography>
                         <Box className="plan-price-section">
-                            <Typography variant="h6" className="plan-price">
-                              FREE
-                            </Typography>
+                          <Typography variant="h6" className="plan-price">
+                            FREE
+                          </Typography>
                           {plan.plantype === 'free' && (
                             <Typography variant="body2" className="plan-duration">
                               {formatDuration(plan)}
@@ -129,7 +129,7 @@ const FreeSoftware = () => {
                         </Typography>
                         {getPlanLimits(plan).map((limit, limitIndex) => (
                           <Typography key={limitIndex} variant="body2" className={`plan-limit-item ${limit.limit === '0' ? 'limit-unavailable' : 'limit-available'}`}>
-                            {limit.page}: {limit.limit}
+                            {limit.limit} {limit.page}
                           </Typography>
                         ))}
                       </Box>

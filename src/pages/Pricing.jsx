@@ -203,7 +203,7 @@ const Pricing = () => {
                       </Typography>
                       {getPlanLimits(plan).map((limit, index) => (
                         <Typography key={index} variant="body2" className={`plan-limit-item ${(limit.limit === '0' || limit.limit === 'Not included') ? 'limit-unavailable' : 'limit-available'}`}>
-                          {(limit.limit === '0' || limit.limit === 'Not included') ? <CloseIcon fontSize="small" /> : <CheckIcon fontSize="small" />} {limit.page}: {limit.limit}
+                          {(limit.limit === '0' || limit.limit === 'Not included') ? <CloseIcon fontSize="small" /> : <CheckIcon fontSize="small" />} {limit.limit} {limit.page}
                         </Typography>
                       ))}
                     </Box>
