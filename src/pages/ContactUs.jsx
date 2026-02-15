@@ -4,24 +4,14 @@ import { Email as EmailIcon, LocationOn as LocationIcon, Phone as PhoneIcon, Sen
 import { Box, Button, Chip, Container, Grid, TextField, Typography } from '@mui/material';
 import '../styles/pages/contact-us.scss';
 
+const MESSAGE_MAX_LENGTH = 1000;
+
 const ContactUs = () => {
   const location = useLocation();
   const isStandalonePage = location.pathname === '/contact-us';
   const backendPath = import.meta.env.VITE_BACKEND_URL;
-  const [contactData, setContactData] = useState({
-    email: '',
-    phone: '',
-    address: '',
-    cityname: '',
-    statename: '',
-    countryname: '',
-    postalcode: ''
-  });
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [contactData, setContactData] = useState({ email: '', phone: '', address: '', cityname: '', statename: '', countryname: '', postalcode: '' });
+  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [formError, setFormError] = useState('');
   const [formSuccess, setFormSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -76,9 +66,10 @@ const ContactUs = () => {
     const { name, value } = e.target;
     setFormState(prev => ({ ...prev, [name]: value }));
     setFormError('');
+    setFormSuccess(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setFormError('');
 
@@ -94,6 +85,10 @@ const ContactUs = () => {
       setFormError('Please enter your message.');
       return;
     }
+    if (formState.message.length > MESSAGE_MAX_LENGTH) {
+      setFormError(`Message must be ${MESSAGE_MAX_LENGTH} characters or less.`);
+      return;
+    }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formState.email)) {
@@ -102,31 +97,43 @@ const ContactUs = () => {
     }
 
     setIsSubmitting(true);
+    setFormError('');
 
-    const mailtoSubject = encodeURIComponent(`Contact from ${formState.name}`);
-    const mailtoBody = encodeURIComponent(
-      `Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`
-    );
-    const mailtoEmail = contactData.email || 'support@savoryops.com';
-    const mailtoLink = `mailto:${mailtoEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
+    try {
+      const response = await fetch(`${backendPath}/System/AddContactUs`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-user': 'admin', },
+        body: JSON.stringify({
+          name: formState.name.trim(),
+          email: formState.email.trim(),
+          message: formState.message.trim(),
+        }),
+      });
 
-    window.location.href = mailtoLink;
-    setFormSuccess(true);
-    setFormState({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
+      if (response.ok) {
+        setFormSuccess(true);
+        setFormState({ name: '', email: '', message: '' });
+      } else {
+        setFormError('Failed to submit. Please try again.');
+      }
+    } catch {
+      setFormError('Unable to connect. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactCards = [
     {
       icon: <EmailIcon sx={{ fontSize: 32 }} />,
       title: 'Email',
-      value: contactData.email || 'support@savoryops.com',
-      href: `mailto:${contactData.email || 'support@savoryops.com'}`
+      value: contactData.email,
+      href: `mailto:${contactData.email}`
     },
     {
       icon: <PhoneIcon sx={{ fontSize: 32 }} />,
       title: 'Phone',
-      value: contactData.phone || '+1 (555) 000-0000',
+      value: contactData.phone,
       href: contactData.phone ? `tel:${contactData.phone}` : '#'
     },
     {
@@ -257,131 +264,145 @@ const ContactUs = () => {
           <Grid container spacing={8} alignItems="flex-start" sx={{ maxWidth: 1400, justifyContent: 'center' }}>
             {/* Left: Email, Phone, Address cards in one column */}
             <Grid item xs={12} md={3} order={{ xs: 1, md: 1 }}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-              {contactCards.map((card, index) => renderContactCard(card, index))}
-            </Box>
-          </Grid>
-
-          {/* Right: Form */}
-          <Grid item xs={12} md={9} order={{ xs: 2, md: 2 }}>
-            <Box
-              component="form"
-              onSubmit={handleSubmit}
-              className="contact-form-box"
-              sx={{
-                width: '100%',
-                minWidth: 0,
-                padding: { xs: 3, md: 4 },
-                borderRadius: '16px',
-                backgroundColor: 'white',
-                boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
-                animation: 'fadeInUp 0.6s ease-out 0.3s both'
-              }}
-            >
-              <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: '#1a1a1a' }}>
-                Send us a Message
-              </Typography>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                <Grid container spacing={2} sx={{ width: '100%' }}>
-                  <Grid item xs={12} sm={6} sx={{ minWidth: { sm: 280 } }}>
-                    <TextField
-                      fullWidth
-                      label="Full Name"
-                      name="name"
-                      value={formState.name}
-                      onChange={handleInputChange}
-                      required
-                      size="medium"
-                      sx={{
-                        '& .MuiOutlinedInput-root': {
-                          backgroundColor: 'white',
-                          minWidth: 280,
-                          '&:hover fieldset': { borderColor: '#2e7d32' },
-                          '&.Mui-focused fieldset': { borderColor: '#2e7d32', borderWidth: 2 }
-                        },
-                        '& .MuiInputLabel-root.Mui-focused': { color: '#2e7d32' }
-                      }}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6} sx={{ minWidth: { sm: 280 } }}>
-                    <TextField
-                      fullWidth
-                      label="Email Address"
-                      name="email"
-                      type="email"
-                      value={formState.email}
-                      onChange={handleInputChange}
-                      required
-                      size="medium"
-                      sx={{
-                        '& .MuiOutlinedInput-root': {
-                          backgroundColor: 'white',
-                          minWidth: 280,
-                          '&:hover fieldset': { borderColor: '#2e7d32' },
-                          '&.Mui-focused fieldset': { borderColor: '#2e7d32', borderWidth: 2 }
-                        },
-                        '& .MuiInputLabel-root.Mui-focused': { color: '#2e7d32' }
-                      }}
-                    />
-                  </Grid>
-                </Grid>
-                <TextField
-                  fullWidth
-                  label="Message"
-                  name="message"
-                  value={formState.message}
-                  onChange={handleInputChange}
-                  required
-                  multiline
-                  rows={5}
-                  placeholder="Tell us about your project requirements..."
-                  sx={{
-                    '& .MuiOutlinedInput-root': {
-                      backgroundColor: 'white',
-                      '&:hover fieldset': { borderColor: '#2e7d32' },
-                      '&.Mui-focused fieldset': { borderColor: '#2e7d32', borderWidth: 2 }
-                    },
-                    '& .MuiInputLabel-root.Mui-focused': { color: '#2e7d32' }
-                  }}
-                />
-                {formError && (
-                  <Typography variant="body2" color="error">
-                    {formError}
-                  </Typography>
-                )}
-                {formSuccess && (
-                  <Typography variant="body2" sx={{ color: '#2e7d32', fontWeight: 500 }}>
-                    Your email client will open. Please send the pre-filled message to contact us.
-                  </Typography>
-                )}
-                <Button
-                  type="submit"
-                  variant="contained"
-                  disabled={isSubmitting}
-                  startIcon={<SendIcon />}
-                  sx={{
-                    alignSelf: 'flex-start',
-                    background: 'linear-gradient(135deg, #2e7d32, #43a047)',
-                    color: 'white',
-                    fontWeight: 600,
-                    padding: '12px 32px',
-                    borderRadius: '10px',
-                    textTransform: 'none',
-                    fontSize: '1rem',
-                    boxShadow: '0 8px 20px rgba(46, 125, 50, 0.25)',
-                    '&:hover': {
-                      background: 'linear-gradient(135deg, #1b5e20, #2e7d32)',
-                      boxShadow: '0 12px 24px rgba(46, 125, 50, 0.3)',
-                      transform: 'translateY(-2px)'
-                    }
-                  }}
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                </Button>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+                {contactCards.map((card, index) => renderContactCard(card, index))}
               </Box>
-            </Box>
+            </Grid>
+
+            {/* Right: Form */}
+            <Grid item xs={12} md={9} order={{ xs: 2, md: 2 }}>
+              <Box
+                component="form"
+                onSubmit={handleSubmit}
+                className="contact-form-box"
+                sx={{
+                  width: '100%',
+                  minWidth: 0,
+                  padding: { xs: 3, md: 4 },
+                  borderRadius: '16px',
+                  backgroundColor: 'white',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+                  animation: 'fadeInUp 0.6s ease-out 0.3s both'
+                }}
+              >
+                <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: '#1a1a1a' }}>
+                  Send us a Message
+                </Typography>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                  <Grid container spacing={2} sx={{ width: '100%' }}>
+                    <Grid item xs={12} sm={6} sx={{ minWidth: { sm: 280 } }}>
+                      <TextField
+                        fullWidth
+                        label="Full Name"
+                        name="name"
+                        value={formState.name}
+                        onChange={handleInputChange}
+                        required
+                        size="medium"
+                        sx={{
+                          '& .MuiOutlinedInput-root': {
+                            backgroundColor: 'white',
+                            minWidth: 280,
+                            '&:hover fieldset': { borderColor: '#2e7d32' },
+                            '&.Mui-focused fieldset': { borderColor: '#2e7d32', borderWidth: 2 }
+                          },
+                          '& .MuiInputLabel-root.Mui-focused': { color: '#2e7d32' }
+                        }}
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={6} sx={{ minWidth: { sm: 280 } }}>
+                      <TextField
+                        fullWidth
+                        label="Email Address"
+                        name="email"
+                        type="email"
+                        value={formState.email}
+                        onChange={handleInputChange}
+                        required
+                        size="medium"
+                        sx={{
+                          '& .MuiOutlinedInput-root': {
+                            backgroundColor: 'white',
+                            minWidth: 280,
+                            '&:hover fieldset': { borderColor: '#2e7d32' },
+                            '&.Mui-focused fieldset': { borderColor: '#2e7d32', borderWidth: 2 }
+                          },
+                          '& .MuiInputLabel-root.Mui-focused': { color: '#2e7d32' }
+                        }}
+                      />
+                    </Grid>
+                  </Grid>
+                  <Box>
+                    <TextField
+                      fullWidth
+                      label="Message"
+                      name="message"
+                      value={formState.message}
+                      onChange={handleInputChange}
+                      required
+                      multiline
+                      rows={5}
+                      placeholder="Tell us about your project requirements..."
+                      inputProps={{ maxLength: MESSAGE_MAX_LENGTH }}
+                      sx={{
+                        '& .MuiOutlinedInput-root': {
+                          backgroundColor: 'white',
+                          '&:hover fieldset': { borderColor: '#2e7d32' },
+                          '&.Mui-focused fieldset': { borderColor: '#2e7d32', borderWidth: 2 }
+                        },
+                        '& .MuiInputLabel-root.Mui-focused': { color: '#2e7d32' }
+                      }}
+                    />
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        display: 'block',
+                        textAlign: 'right',
+                        mt: 0.5,
+                        color: formState.message.length >= MESSAGE_MAX_LENGTH ? '#d32f2f' : '#666'
+                      }}
+                    >
+                      {formState.message.length}/{MESSAGE_MAX_LENGTH}
+                    </Typography>
+                  </Box>
+                  {formError && (
+                    <Typography variant="body2" color="error">
+                      {formError}
+                    </Typography>
+                  )}
+                  {formSuccess && (
+                    <Typography variant="body2" sx={{ color: '#2e7d32', fontWeight: 500 }}>
+                      Thank you for your message! We will get back to you soon.
+                    </Typography>
+                  )}
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    disabled={isSubmitting}
+                    startIcon={<SendIcon />}
+                    sx={{
+                      alignSelf: 'flex-start',
+                      background: 'linear-gradient(135deg, #2e7d32, #43a047)',
+                      color: 'white',
+                      fontWeight: 600,
+                      padding: '12px 32px',
+                      borderRadius: '10px',
+                      textTransform: 'none',
+                      fontSize: '1rem',
+                      boxShadow: '0 8px 20px rgba(46, 125, 50, 0.25)',
+                      '&:hover': {
+                        background: 'linear-gradient(135deg, #1b5e20, #2e7d32)',
+                        boxShadow: '0 12px 24px rgba(46, 125, 50, 0.3)',
+                        transform: 'translateY(-2px)'
+                      }
+                    }}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </Button>
+                </Box>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
         </Box>
       </Container>
     </Box>
