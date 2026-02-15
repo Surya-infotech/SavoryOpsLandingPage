@@ -1,4 +1,4 @@
-import { Apps as AppsIcon, Article as ArticleIcon, Assessment as AssessmentIcon, Business as BusinessIcon, Cloud as CloudIcon, Dashboard as DashboardIcon, Home as HomeIcon, MenuBook as MenuBookIcon, People as PeopleIcon, QrCode as QrCodeIcon, Rocket as RocketIcon } from '@mui/icons-material';
+import { Apps as AppsIcon, Article as ArticleIcon, Assessment as AssessmentIcon, Business as BusinessIcon, Cloud as CloudIcon, ContactMail as ContactMailIcon, Dashboard as DashboardIcon, Home as HomeIcon, MenuBook as MenuBookIcon, People as PeopleIcon, QrCode as QrCodeIcon, Rocket as RocketIcon } from '@mui/icons-material';
 import { Box, Card, CardContent, Container, Divider, Grid, Link, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
@@ -33,7 +33,8 @@ const Sitemap = () => {
     { name: 'Home', path: '/', icon: <HomeIcon />, description: 'Main landing page with hero section and overview' },
     { name: 'Features', path: '/features', icon: <AppsIcon />, description: 'Overview of all available features' },
     { name: 'Pricing', path: '/pricing', icon: <ArticleIcon />, description: 'Pricing information and free tier features' },
-    { name: 'Upcoming Features', path: '/upcoming-features', icon: <RocketIcon />, description: 'Exciting new features coming soon to SavoryOps' }
+    { name: 'Upcoming Features', path: '/upcoming-features', icon: <RocketIcon />, description: 'Exciting new features coming soon to SavoryOps' },
+    { name: 'Contact Us', path: '/contact-us', icon: <ContactMailIcon />, description: 'Get in touch with us for support and inquiries' }
   ];
 
   const featurePages = [

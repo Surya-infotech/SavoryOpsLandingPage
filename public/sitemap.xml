@@ -25,6 +25,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://savoryops.com/contact-us</loc>
+    <lastmod>2025-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://savoryops.com/features/smart-dashboard</loc>
     <lastmod>2025-01-06</lastmod>
     <changefreq>monthly</changefreq>

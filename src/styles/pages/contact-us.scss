@@ -1,0 +1,23 @@
+// Contact Us Section - matches Languages, Benefits design
+.contact-us-section {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.02) 0%, rgba(76, 175, 80, 0.02) 100%);
+    pointer-events: none;
+  }
+
+  .contact-card {
+    cursor: default;
+
+    &[href] {
+      cursor: pointer;
+    }
+  }
+}

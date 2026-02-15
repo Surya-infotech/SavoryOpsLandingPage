@@ -3,7 +3,7 @@ import GetStartedButton from '../components/GetStartedButton';
 
 const CTA = () => {
   return (
-    <Box id="contact" className="cta-section">
+    <Box id="cta" className="cta-section">
       <Container maxWidth="md">
         <Box className="cta-content">
           <Typography variant="h2" component="h2" className="cta-title">

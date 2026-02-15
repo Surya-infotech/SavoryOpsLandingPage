@@ -20,7 +20,8 @@ const Navigation = () => {
     { text: 'Home', path: '/' },
     { text: 'Features', path: '/features' },
     { text: 'Pricing', path: '/pricing' },
-    { text: 'Upcoming Features', path: '/upcoming-features' }
+    { text: 'Upcoming Features', path: '/upcoming-features' },
+    { text: 'Contact Us', path: '/contact-us' }
   ];
 
   return (

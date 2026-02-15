@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Benefits from './Benefits';
 import CTA from './CTA';
+import ContactUs from './ContactUs';
 import Features from './Features';
 import Hero from './Hero';
 import AppDownloads from './AppDownloads';
@@ -23,6 +24,7 @@ const Home = () => {
       <FreeSoftware />
       <Languages />
       <AppDownloads />
+      <ContactUs />
       <CTA />
     </>
   );

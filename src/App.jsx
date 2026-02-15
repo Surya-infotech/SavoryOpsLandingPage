@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import ScrollToTopButton from './components/ScrollToTop';
 import { LanguageProvider } from './context/LanguageContext.jsx';
 import { restoreDefaultMetaTags } from './utils/seoMetaTags';
+import ContactUs from './pages/ContactUs';
 import DataDeletionPolicy from './pages/DataDeletionPolicy';
 import FeaturesPage from './pages/FeaturesPage';
 import OwnerLogin from './pages/General/Signin.jsx';
@@ -114,6 +115,7 @@ const AppContent = () => {
         <Route path="/features" element={<FeaturesPage />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/upcoming-features" element={<UpcomingFeatures />} />
+        <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
         <Route path="/sitemap" element={<Sitemap />} />
