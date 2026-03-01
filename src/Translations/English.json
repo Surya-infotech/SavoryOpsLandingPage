@@ -57,5 +57,8 @@
   "back": "Back",
   "accountcreatedsuccessfully": "Account created successfully!",
   "finishup": "Finish up",
-  "signingin":"Signing In..."
+  "signingin": "Signing In...",
+  "demoaccounts": "Demo Accounts",
+  "demoowner": "Demo Owner",
+  "demosuperadmin": "Demo Super Admin"
 }

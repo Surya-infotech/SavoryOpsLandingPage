@@ -82,12 +82,21 @@ const OwnerLogin = () => {
                 };
                 setFormError(errorMessages[data.message] || data.message);
             }
-        } catch{
+        } catch {
             setWarningMessage(translations.servererror);
             setShowWarning(true);
         } finally {
             setIsLoading(false);
         }
+    };
+
+    const handleDemoOwner = () => {
+        setEmail('marcushayes@gmail.com');
+        setPassword('12345678');
+    };
+
+    const handleDemoSuperAdmin = () => {
+        window.location.href = 'https://savoryopssunpanel.savoryops.com';
     };
 
     return (<>
@@ -159,6 +168,17 @@ const OwnerLogin = () => {
                 <div className="form-group signup">
                     <h6>{translations.donothaveanaccount}</h6>
                     <NavLink to="/Signup">{translations.signup}</NavLink>
+                </div>
+                <div className="demo-buttons-container">
+                    <h6>{translations.demoaccounts}</h6>
+                    <div className="demo-buttons">
+                        <button type="button" className="demo-button owner" onClick={handleDemoOwner}>
+                            {translations.demoowner}
+                        </button>
+                        <button type="button" className="demo-button super-admin" onClick={handleDemoSuperAdmin}>
+                            {translations.demosuperadmin}
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
