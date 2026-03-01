@@ -57,5 +57,8 @@
   "back": "Zurück",
   "accountcreatedsuccessfully": "Konto erfolgreich erstellt!",
   "finishup": "Abschließen",
-  "signingin": "Anmeldung läuft..."
+  "signingin": "Wird angemeldet...",
+  "demoaccounts": "Demo-Konten",
+  "demoowner": "Demo-Inhaber",
+  "demosuperadmin": "Demo-Superadministrator"
 }

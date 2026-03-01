@@ -57,5 +57,8 @@
   "back": "Natrag",
   "accountcreatedsuccessfully": "Račun je uspješno kreiran!",
   "finishup": "Završi",
-  "signingin": "Prijava u tijeku..."
+  "signingin": "Prijava u tijeku...",
+  "demoaccounts": "Demo računi",
+  "demoowner": "Demo vlasnik",
+  "demosuperadmin": "Demo super administrator"
 }

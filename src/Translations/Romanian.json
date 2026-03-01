@@ -57,5 +57,8 @@
   "back": "Înapoi",
   "accountcreatedsuccessfully": "Cont creat cu succes!",
   "finishup": "Finalizează",
-  "signingin": "Se conectează..."
+  "signingin": "Se conectează...",
+  "demoaccounts": "Conturi demo",
+  "demoowner": "Proprietar demo",
+  "demosuperadmin": "Super administrator demo"
 }

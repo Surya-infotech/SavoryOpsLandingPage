@@ -57,5 +57,8 @@
   "back": "Quay lại",
   "accountcreatedsuccessfully": "Tài khoản đã được tạo thành công!",
   "finishup": "Hoàn tất",
-  "signingin": "Đang đăng nhập..."
+  "signingin": "Đang đăng nhập...",
+  "demoaccounts": "Tài khoản demo",
+  "demoowner": "Chủ sở hữu demo",
+  "demosuperadmin": "Quản trị viên cấp cao demo"
 }

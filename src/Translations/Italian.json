@@ -57,5 +57,8 @@
   "back": "Indietro",
   "accountcreatedsuccessfully": "Account creato con successo!",
   "finishup": "Concludi",
-  "signingin": "Accesso in corso..."
+  "signingin": "Accesso in corso...",
+  "demoaccounts": "Conti demo",
+  "demoowner": "Proprietario demo",
+  "demosuperadmin": "Super amministratore demo"
 }

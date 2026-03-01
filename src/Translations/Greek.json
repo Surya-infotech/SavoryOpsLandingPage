@@ -57,5 +57,8 @@
   "back": "Πίσω",
   "accountcreatedsuccessfully": "Ο λογαριασμός δημιουργήθηκε με επιτυχία!",
   "finishup": "Ολοκλήρωση",
-  "signingin": "Σύνδεση σε εξέλιξη..."
+  "signingin": "Σύνδεση...",
+  "demoaccounts": "Λογαριασμοί επίδειξης",
+  "demoowner": "Κάτοχος επίδειξης",
+  "demosuperadmin": "Υπερ-διαχειριστής επίδειξης"
 }

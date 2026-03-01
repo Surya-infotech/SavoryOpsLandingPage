@@ -57,5 +57,8 @@
   "back": "Tagasi",
   "accountcreatedsuccessfully": "Konto loodud edukalt!",
   "finishup": "Lõpeta",
-  "signingin": "Sisselogimine..."
+  "signingin": "Sisselogimine...",
+  "demoaccounts": "Demokontod",
+  "demoowner": "Demoomanik",
+  "demosuperadmin": "Demo superadministraator"
 }

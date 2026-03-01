@@ -57,5 +57,8 @@
   "back": "กลับ",
   "accountcreatedsuccessfully": "สร้างบัญชีสำเร็จแล้ว!",
   "finishup": "เสร็จสิ้น",
-  "signingin": "กำลังเข้าสู่ระบบ..."
+  "signingin": "กำลังเข้าสู่ระบบ...",
+  "demoaccounts": "บัญชีทดลอง",
+  "demoowner": "เจ้าของบัญชีทดลอง",
+  "demosuperadmin": "ผู้ดูแลระบบขั้นสูงบัญชีทดลอง"
 }

@@ -57,5 +57,8 @@
   "back": "Артка",
   "accountcreatedsuccessfully": "Аккаунт ийгиликтүү түзүлдү!",
   "finishup": "Аяктоо",
-  "signingin": "Кируу..."
+  "signingin": "Системага кирүүдө...",
+  "demoaccounts": "Демо эсептер",
+  "demoowner": "Демо ээси",
+  "demosuperadmin": "Демо супер администратор"
 }

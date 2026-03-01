@@ -57,5 +57,8 @@
   "back": "뒤로",
   "accountcreatedsuccessfully": "계정이 성공적으로 생성되었습니다!",
   "finishup": "완료",
-  "signingin": "로그인 중..."
+  "signingin": "로그인 중...",
+  "demoaccounts": "데모 계정",
+  "demoowner": "데모 소유자",
+  "demosuperadmin": "데모 최고 관리자"
 }

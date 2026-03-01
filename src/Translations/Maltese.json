@@ -57,5 +57,8 @@
   "back": "Lura",
   "accountcreatedsuccessfully": "Il-kont inħoloq b'suċċess!",
   "finishup": "Temmi",
-  "signingin": "Qed tindħol..."
+  "signingin": "Dħul fis-sistema...",
+  "demoaccounts": "Kontijiet Demo",
+  "demoowner": "Sid tad-Demo",
+  "demosuperadmin": "Super Amministratur tad-Demo"
 }

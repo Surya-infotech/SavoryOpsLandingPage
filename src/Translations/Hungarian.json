@@ -57,5 +57,8 @@
   "back": "Vissza",
   "accountcreatedsuccessfully": "A fiók sikeresen létrehozva!",
   "finishup": "Befejezés",
-  "signingin": "Bejelentkezés..."
+  "signingin": "Bejelentkezés...",
+  "demoaccounts": "Demószámlák",
+  "demoowner": "Demó tulajdonos",
+  "demosuperadmin": "Demó szuperadminisztrátor"
 }

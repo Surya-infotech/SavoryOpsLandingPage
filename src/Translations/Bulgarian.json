@@ -57,5 +57,8 @@
   "back": "Назад",
   "accountcreatedsuccessfully": "Акаунтът е създаден успешно!",
   "finishup": "Завърши",
-  "signingin": "Влизане..."
+  "signingin": "Влизане...",
+  "demoaccounts": "Демо сметки",
+  "demoowner": "Демо собственик",
+  "demosuperadmin": "Демо супер администратор"
 }

@@ -57,5 +57,8 @@
   "back": "Geri",
   "accountcreatedsuccessfully": "Hesap başarıyla oluşturuldu!",
   "finishup": "Bitir",
-  "signingin": "Giriş yapılıyor..."
+  "signingin": "Giriş yapılıyor...",
+  "demoaccounts": "Demo hesaplar",
+  "demoowner": "Demo Sahibi",
+  "demosuperadmin": "Demo Süper Yönetici"
 }

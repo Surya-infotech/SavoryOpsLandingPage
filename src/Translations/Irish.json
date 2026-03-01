@@ -57,5 +57,8 @@
   "back": "Ar ais",
   "accountcreatedsuccessfully": "Cruthaíodh an cuntas go rathúil!",
   "finishup": "Críochnaigh",
-  "signingin": "Ag logáil isteach..."
+  "signingin": "Ag logáil isteach...",
+  "demoaccounts": "Cuntais Taispeána",
+  "demoowner": "Úinéir Taispeána",
+  "demosuperadmin": "Sár-riarthóir Taispeána"
 }

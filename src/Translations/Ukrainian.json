@@ -57,5 +57,8 @@
   "back": "Назад",
   "accountcreatedsuccessfully": "Обліковий запис успішно створено!",
   "finishup": "Завершити",
-  "signingin": "Вхід..."
+  "signingin": "Вхід до системи...",
+  "demoaccounts": "Демо-рахунки",
+  "demoowner": "Власник демо",
+  "demosuperadmin": "Супер адміністратор демо"
 }

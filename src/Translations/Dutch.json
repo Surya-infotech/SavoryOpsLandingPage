@@ -57,5 +57,8 @@
   "back": "Terug",
   "accountcreatedsuccessfully": "Account succesvol aangemaakt!",
   "finishup": "Afronden",
-  "signingin": "Bezig met inloggen..."
+  "signingin": "Bezig met inloggen...",
+  "demoaccounts": "Demo-accounts",
+  "demoowner": "Demo-eigenaar",
+  "demosuperadmin": "Demo Superbeheerder"
 }

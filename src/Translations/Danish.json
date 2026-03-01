@@ -57,5 +57,8 @@
   "back": "Tilbage",
   "accountcreatedsuccessfully": "Konto oprettet med succes!",
   "finishup": "Afslut",
-  "signingin": "Logger ind..."
+  "signingin": "Logger ind...",
+  "demoaccounts": "Demokonti",
+  "demoowner": "Demo ejer",
+  "demosuperadmin": "Demo superadministrator"
 }

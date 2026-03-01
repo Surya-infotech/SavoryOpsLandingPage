@@ -57,5 +57,8 @@
   "back": "Nazaj",
   "accountcreatedsuccessfully": "Račun je bil uspešno ustvarjen!",
   "finishup": "Končaj",
-  "signingin": "Prijava..."
+  "signingin": "Prijava v poteku...",
+  "demoaccounts": "Demo računi",
+  "demoowner": "Lastnik demo",
+  "demosuperadmin": "Super administrator demo"
 }

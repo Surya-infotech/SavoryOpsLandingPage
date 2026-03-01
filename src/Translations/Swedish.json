@@ -57,5 +57,8 @@
   "back": "Tillbaka",
   "accountcreatedsuccessfully": "Kontot skapades framgångsrikt!",
   "finishup": "Slutför",
-  "signingin": "Loggar in..."
+  "signingin": "Loggar in...",
+  "demoaccounts": "Demokonton",
+  "demoowner": "Demoägare",
+  "demosuperadmin": "Superadministratör för demo"
 }

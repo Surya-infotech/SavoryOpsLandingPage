@@ -57,5 +57,8 @@
   "back": "Tilbake",
   "accountcreatedsuccessfully": "Konto opprettet vellykket!",
   "finishup": "Fullfør",
-  "signingin": "Logger inn..."
+  "signingin": "Logger inn...",
+  "demoaccounts": "Demokontoer",
+  "demoowner": "Demoeier",
+  "demosuperadmin": "Demosuperadministrator"
 }

@@ -57,5 +57,8 @@
   "back": "Назад",
   "accountcreatedsuccessfully": "Акаўнт створаны паспяхова!",
   "finishup": "Скончыць",
-  "signingin": "Уваход у сістэму..."
+  "signingin": "Уваход у сістэму...",
+  "demoaccounts": "Дэма-рахункі",
+  "demoowner": "Дэма-ўладальнік",
+  "demosuperadmin": "Дэма-супер адміністратар"
 }

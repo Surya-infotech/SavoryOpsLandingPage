@@ -57,5 +57,8 @@
   "back": "Kembali",
   "accountcreatedsuccessfully": "Akaun berjaya dicipta!",
   "finishup": "Selesaikan",
-  "signingin": "Memasuki..."
+  "signingin": "Log masuk...",
+  "demoaccounts": "Akaun Demo",
+  "demoowner": "Pemilik Demo",
+  "demosuperadmin": "Pentadbir Super Demo"
 }

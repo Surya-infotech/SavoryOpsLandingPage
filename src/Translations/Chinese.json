@@ -57,5 +57,8 @@
   "back": "返回",
   "accountcreatedsuccessfully": "账户创建成功！",
   "finishup": "完成",
-  "signingin": "正在登录..."
+  "signingin": "正在登录...",
+  "demoaccounts": "模拟账户",
+  "demoowner": "模拟所有者",
+  "demosuperadmin": "模拟超级管理员"
 }

@@ -57,5 +57,8 @@
   "back": "Takaisin",
   "accountcreatedsuccessfully": "Tili luotu onnistuneesti!",
   "finishup": "Viimeistele",
-  "signingin": "Kirjaudutaan sisään..."
+  "signingin": "Kirjaudutaan sisään...",
+  "demoaccounts": "Demotilit",
+  "demoowner": "Demon omistaja",
+  "demosuperadmin": "Demon superylläpitäjä"
 }

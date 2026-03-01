@@ -57,5 +57,8 @@
   "back": "رجوع",
   "accountcreatedsuccessfully": "تم إنشاء الحساب بنجاح!",
   "finishup": "إنهاء",
-  "signingin": "جاري تسجيل الدخول..."
+  "signingin": "جاري تسجيل الدخول...",
+  "demoaccounts": "حسابات تجريبية",
+  "demoowner": "مالك تجريبي",
+  "demosuperadmin": "مسؤول تجريبي فائق"
 }

@@ -57,5 +57,8 @@
   "back": "Späť",
   "accountcreatedsuccessfully": "Účet bol úspešne vytvorený!",
   "finishup": "Dokončiť",
-  "signingin": "Prihlásenie..."
+  "signingin": "Prihlasovanie...",
+  "demoaccounts": "Demo účty",
+  "demoowner": "Vlastník dema",
+  "demosuperadmin": "Super administrátor dema"
 }

@@ -57,5 +57,8 @@
   "back": "Atpakaļ",
   "accountcreatedsuccessfully": "Konts veiksmīgi izveidots!",
   "finishup": "Pabeigt",
-  "signingin": "Pierakstīšanās..."
+  "signingin": "Pierakstīšanās...",
+  "demoaccounts": "Demo konti",
+  "demoowner": "Demo īpašnieks",
+  "demosuperadmin": "Demo super administrators"
 }

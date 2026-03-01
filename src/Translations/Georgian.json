@@ -57,5 +57,8 @@
   "back": "უკან",
   "accountcreatedsuccessfully": "ანგარიში წარმატებით შეიქმნა!",
   "finishup": "დასრულება",
-  "signingin": "შესვლა მიმდინარეობს..."
+  "signingin": "შესვლა მიმდინარეობს...",
+  "demoaccounts": "დემო ანგარიშები",
+  "demoowner": "დემო მფლობელი",
+  "demosuperadmin": "დემო სუპერ ადმინისტრატორი"
 }

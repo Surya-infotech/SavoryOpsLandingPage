@@ -57,5 +57,8 @@
   "back": "Назад",
   "accountcreatedsuccessfully": "Налог је успешно креиран!",
   "finishup": "Заврши",
-  "signingin": "Пријава..."
+  "signingin": "Пријављивање...",
+  "demoaccounts": "Demo nalozi",
+  "demoowner": "Vlasnik demo",
+  "demosuperadmin": "Super administrator demo"
 }
