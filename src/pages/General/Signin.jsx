@@ -96,7 +96,7 @@ const OwnerLogin = () => {
     };
 
     const handleDemoSuperAdmin = () => {
-        window.location.href = 'https://savoryopssunpanel.savoryops.com';
+        window.location.href = 'https://adminpanel.savoryops.com';
     };
 
     return (<>
