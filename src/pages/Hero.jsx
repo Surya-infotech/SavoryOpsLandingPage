@@ -1,5 +1,6 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
 import GetStartedButton from '../components/GetStartedButton';
+import BuyNowButton from '../components/BuyNowButton';
 
 const Hero = () => {
   return (
@@ -73,6 +74,16 @@ const Hero = () => {
             >
               <GetStartedButton
                 className="coming-soon-text"
+                sx={{
+                  px: 4,
+                  py: 2,
+                  fontSize: '1.1rem',
+                  fontWeight: 600,
+                  minHeight: '48px',
+                  animation: 'fadeInUp 0.8s ease-out 0.6s both'
+                }}
+              />
+              <BuyNowButton
                 sx={{
                   px: 4,
                   py: 2,

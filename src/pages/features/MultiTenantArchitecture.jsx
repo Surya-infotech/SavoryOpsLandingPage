@@ -3,15 +3,16 @@ import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
+import BuyNowButton from '../../components/BuyNowButton';
 import '../../styles/pages/feature/multitenantarchitecture.scss';
 
 const MultiTenantArchitecture = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Multi Tenant Architecture - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +21,7 @@ const MultiTenantArchitecture = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Experience multi-tenant architecture with complete tenant isolation, shared infrastructure, and dedicated resources. Secure, scalable, and cost-effective solutions for managing multiple restaurant businesses.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -93,8 +94,9 @@ const MultiTenantArchitecture = () => {
                 and dedicated resources. Our platform provides secure, scalable, and cost-effective solutions for
                 managing multiple restaurant businesses with complete data separation.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 

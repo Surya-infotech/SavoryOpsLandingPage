@@ -2,6 +2,7 @@ import { Close as CloseIcon, Menu as MenuIcon } from '@mui/icons-material';
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import BuyNowButton from './BuyNowButton';
 
 const Navigation = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -87,6 +88,7 @@ const Navigation = () => {
             >
               Get Started
             </Button>
+            <BuyNowButton className="cta-button" />
           </Box>
 
           <IconButton
@@ -203,7 +205,7 @@ const Navigation = () => {
               ))}
 
               {/* Get Started Button for Mobile */}
-              <Box sx={{ padding: '20px', borderTop: '1px solid #e0e0e0' }}>
+              <Box sx={{ padding: '20px', borderTop: '1px solid #e0e0e0', display: 'flex', flexDirection: 'column', gap: 2 }}>
                 <Button
                   variant="contained"
                   onClick={() => {
@@ -222,6 +224,7 @@ const Navigation = () => {
                 >
                   Get Started
                 </Button>
+                <BuyNowButton fullWidth />
               </Box>
             </Box>
           </Box>

@@ -3,15 +3,16 @@ import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
+import BuyNowButton from '../../components/BuyNowButton';
 import '../../styles/pages/feature/fiscalyearrecords.scss';
 
 const FiscalYearRecords = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Fiscal Year Records - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +21,7 @@ const FiscalYearRecords = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Organized fiscal year records for better financial management and compliance. Comprehensive data organization, reporting, and historical analysis for strategic business planning.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -77,8 +78,9 @@ const FiscalYearRecords = () => {
                 Our fiscal year records system provides comprehensive data organization, reporting,
                 and historical analysis for strategic business planning and regulatory compliance.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 

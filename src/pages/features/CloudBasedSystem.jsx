@@ -3,15 +3,16 @@ import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
+import BuyNowButton from '../../components/BuyNowButton';
 import '../../styles/pages/feature/cloudbasedsystem.scss';
 
 const CloudBasedSystem = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Cloud Based System - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +21,7 @@ const CloudBasedSystem = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Experience cloud computing with our enterprise-grade platform. Built on scalable cloud infrastructure with high availability, automatic backups, real-time synchronization, and global accessibility.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -93,8 +94,9 @@ const CloudBasedSystem = () => {
                 Built on scalable cloud infrastructure, our system provides high availability,
                 automatic backups, real-time synchronization, and global accessibility for your restaurant operations.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 

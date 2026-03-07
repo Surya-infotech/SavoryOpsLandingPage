@@ -3,6 +3,7 @@ import { Box, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import GetStartedButton from '../components/GetStartedButton';
+import BuyNowButton from '../components/BuyNowButton';
 import '../styles/pages/featurespage.scss';
 
 const FeaturesPage = () => {
@@ -10,10 +11,10 @@ const FeaturesPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Features - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -22,7 +23,7 @@ const FeaturesPage = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Discover powerful restaurant management features including Smart Dashboard, Multiple Business & Branches, Menu Management, KOT System, QR Code Scanning, Cloud-Based System, and more. Streamline your restaurant operations with SavoryOps.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -258,9 +259,18 @@ const FeaturesPage = () => {
               className="feature-chip"
             />
           </Box>
-          <Box className="cta-section">
+          <Box className="cta-section" sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
             <GetStartedButton
               className="coming-soon-text"
+              sx={{
+                px: 4,
+                py: 2,
+                fontSize: '1.1rem',
+                fontWeight: 600,
+                minHeight: '48px'
+              }}
+            />
+            <BuyNowButton
               sx={{
                 px: 4,
                 py: 2,

@@ -3,15 +3,16 @@ import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
+import BuyNowButton from '../../components/BuyNowButton';
 import '../../styles/pages/feature/smartdashboard.scss';
 
 const SmartDashboard = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Smart Dashboard - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +21,7 @@ const SmartDashboard = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Get instant insights into your restaurant performance with our intelligent dashboard. Monitor sales, track orders, analyze staff performance, and make data-driven decisions to optimize operations.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -94,8 +95,9 @@ const SmartDashboard = () => {
                 Monitor sales, track orders, analyze staff performance, and make data-driven decisions
                 to optimize your operations and boost profitability.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 

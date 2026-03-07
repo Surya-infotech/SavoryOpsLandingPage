@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { formatDuration, getPlanLimits } from '../utils/planUtils';
 import '../styles/pages/free-software.scss';
+import BuyNowButton from '../components/BuyNowButton';
 
 const FreeSoftware = () => {
   const [plans, setPlans] = useState([]);
@@ -134,7 +135,7 @@ const FreeSoftware = () => {
                         ))}
                       </Box>
 
-                      <Box className="plan-action">
+                      <Box className="plan-action" sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                         <Typography
                           variant="button"
                           className="plan-button"
@@ -143,6 +144,7 @@ const FreeSoftware = () => {
                         >
                           {plan.plantype === 'free' ? 'Start Free Trial' : 'Get Free Lifetime Access'}
                         </Typography>
+                        <BuyNowButton fullWidth sx={{ borderRadius: '4px', py: 1 }} />
                       </Box>
                     </Box>
                   ))}
@@ -153,7 +155,7 @@ const FreeSoftware = () => {
 
               {/* View More Button - Only show when not on pricing page */}
               {location.pathname !== '/pricing' && (
-                <Box className="view-more-container">
+                <Box className="view-more-container" sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
                   <Typography
                     variant="button"
                     className="view-more-button"
@@ -162,6 +164,7 @@ const FreeSoftware = () => {
                   >
                     View More Plans
                   </Typography>
+                  <BuyNowButton sx={{ borderRadius: '50px' }} />
                 </Box>
               )}
             </Box>

@@ -3,15 +3,16 @@ import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
+import BuyNowButton from '../../components/BuyNowButton';
 import '../../styles/pages/feature/multiplelanguages.scss';
 
 const MultipleLanguages = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Multiple Languages - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +21,7 @@ const MultipleLanguages = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Support for multiple languages to serve diverse customer bases worldwide. Comprehensive localization, translation services, and culturally adapted content for global restaurant operations.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -77,8 +78,9 @@ const MultipleLanguages = () => {
                 Our multi-language system provides comprehensive localization, translation services,
                 and culturally adapted content for global restaurant operations and customer satisfaction.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 

@@ -2,6 +2,7 @@ import { ArrowBack as ArrowBackIcon, ArrowForward as ArrowForwardIcon, Bolt as B
 import { Box, Button, Card, CardContent, Chip, Container, IconButton, Typography } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import BuyNowButton from '../components/BuyNowButton';
 import '../styles/pages/features.scss';
 
 const Features = ({ showHeading = true }) => {
@@ -307,7 +308,7 @@ const Features = ({ showHeading = true }) => {
             ))}
           </Box>
         </Box>
-        <Box className="features-action">
+        <Box className="features-action" sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
           <Button
             component={Link}
             to="/features"
@@ -318,6 +319,7 @@ const Features = ({ showHeading = true }) => {
           >
             View All Features
           </Button>
+          <BuyNowButton />
         </Box>
       </Container>
     </Box>

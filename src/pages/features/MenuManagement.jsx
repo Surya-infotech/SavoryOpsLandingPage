@@ -3,15 +3,16 @@ import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
+import BuyNowButton from '../../components/BuyNowButton';
 import '../../styles/pages/feature/menumangement.scss';
 
 const MenuManagement = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Menu Management - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +21,7 @@ const MenuManagement = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Update menus instantly and manage pricing with real-time control. Comprehensive menu management system to create, edit, and organize menu items with ease, ensuring customers always see current offerings.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -101,8 +102,9 @@ const MenuManagement = () => {
                 menu management system allows you to create, edit, and organize your menu items
                 with ease, ensuring your customers always see the most current offerings.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 

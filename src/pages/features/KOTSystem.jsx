@@ -3,15 +3,16 @@ import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
+import BuyNowButton from '../../components/BuyNowButton';
 import '../../styles/pages/feature/kotsystem.scss';
 
 const KOTSystem = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'KOT System - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +21,7 @@ const KOTSystem = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Streamlined kitchen order management with real-time ticket generation and tracking. Efficient order processing, real-time status updates, and optimized workflow management for maximum productivity.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -93,8 +94,9 @@ const KOTSystem = () => {
                 Our KOT system revolutionizes kitchen operations by providing efficient order processing,
                 real-time status updates, and optimized workflow management for maximum productivity.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 

@@ -3,15 +3,16 @@ import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
+import BuyNowButton from '../../components/BuyNowButton';
 import '../../styles/pages/feature/branchpricing.scss';
 
 const BranchPricing = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Branch-wise Pricing - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +21,7 @@ const BranchPricing = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Set different item prices for each branch based on local market conditions. Flexible price management, market-based pricing, and revenue optimization for maximum profitability across all locations.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -77,8 +78,9 @@ const BranchPricing = () => {
                 Our branch-wise pricing system provides flexible price management, market-based pricing,
                 and revenue optimization for maximum profitability across all locations.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 

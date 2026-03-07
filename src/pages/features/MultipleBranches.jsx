@@ -3,15 +3,16 @@ import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
+import BuyNowButton from '../../components/BuyNowButton';
 import '../../styles/pages/feature/multiplebranches.scss';
 
 const MultipleBranches = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Multiple Branches - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +21,7 @@ const MultipleBranches = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Efficiently manage multiple restaurant branches with unified operations and reporting. Centralized control while maintaining independent operations for each location, ensuring consistent quality.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -93,8 +94,9 @@ const MultipleBranches = () => {
                 Our multi-branch system provides centralized control while maintaining independent
                 operations for each location, ensuring consistent quality and streamlined management.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 

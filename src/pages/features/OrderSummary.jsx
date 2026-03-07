@@ -3,15 +3,16 @@ import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
+import BuyNowButton from '../../components/BuyNowButton';
 import '../../styles/pages/feature/ordersummary.scss';
 
 const OrderSummary = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Order Summary - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +21,7 @@ const OrderSummary = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Complete order details with status tracking and timeline for better order management. Comprehensive order tracking, detailed reports, and real-time visibility into all order activities.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -77,8 +78,9 @@ const OrderSummary = () => {
                 Our order summary system provides comprehensive order tracking, detailed reports,
                 and real-time visibility into all order activities for maximum efficiency.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 

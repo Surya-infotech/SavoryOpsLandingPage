@@ -3,15 +3,16 @@ import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
+import BuyNowButton from '../../components/BuyNowButton';
 import '../../styles/pages/feature/multiplebusiness.scss';
 
 const MultipleBusiness = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Multiple Business - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +21,7 @@ const MultipleBusiness = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Manage multiple business entities from a single platform with centralized control. Multi-tenant architecture provides dedicated database, custom subdomain, and complete data isolation.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -93,8 +94,9 @@ const MultipleBusiness = () => {
                 Our multi-tenant architecture provides each restaurant owner with their own dedicated
                 database, custom subdomain, and complete data isolation while maintaining unified management.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 

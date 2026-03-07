@@ -1,6 +1,7 @@
 import { CheckCircle as CheckCircleIcon, Star as StarIcon } from '@mui/icons-material';
 import { Box, Chip, Container, Grid, Typography } from '@mui/material';
 import GetStartedButton from '../components/GetStartedButton';
+import BuyNowButton from '../components/BuyNowButton';
 
 const Benefits = () => {
   const benefits = [
@@ -124,17 +125,29 @@ const Benefits = () => {
               ))}
             </Box>
 
-            <GetStartedButton
-              className="coming-soon-text"
-              sx={{
-                padding: '12px 32px',
-                fontSize: '1.1rem',
-                fontWeight: 600,
-                borderRadius: '50px',
-                minHeight: '48px',
-                animation: 'fadeInUp 0.8s ease-out 0.6s both'
-              }}
-            />
+            <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+              <GetStartedButton
+                className="coming-soon-text"
+                sx={{
+                  padding: '12px 32px',
+                  fontSize: '1.1rem',
+                  fontWeight: 600,
+                  borderRadius: '50px',
+                  minHeight: '48px',
+                  animation: 'fadeInUp 0.8s ease-out 0.6s both'
+                }}
+              />
+              <BuyNowButton
+                sx={{
+                  padding: '12px 32px',
+                  fontSize: '1.1rem',
+                  fontWeight: 600,
+                  borderRadius: '50px',
+                  minHeight: '48px',
+                  animation: 'fadeInUp 0.8s ease-out 0.6s both'
+                }}
+              />
+            </Box>
           </Grid>
 
           {/* Right Column - POS&KOT Image */}

@@ -3,15 +3,16 @@ import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
+import BuyNowButton from '../../components/BuyNowButton';
 import '../../styles/pages/feature/branchtaxmanagement.scss';
 
 const BranchTaxManagement = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Branch-wise Tax Management - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +21,7 @@ const BranchTaxManagement = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Manage different tax rates and regulations for each branch location. Comprehensive tax compliance, automated reporting, and regulatory adherence for all your restaurant locations.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -69,8 +70,9 @@ const BranchTaxManagement = () => {
                 Our branch-wise tax management system provides comprehensive tax compliance,
                 automated reporting, and regulatory adherence for all your restaurant locations.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 

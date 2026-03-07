@@ -3,15 +3,16 @@ import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
+import BuyNowButton from '../../components/BuyNowButton';
 import '../../styles/pages/feature/branchstaffmanagement.scss';
 
 const BranchStaffManagement = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Branch-wise Staff Management - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +21,7 @@ const BranchStaffManagement = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Manage staff separately for each branch with localized permissions and scheduling. Comprehensive workforce control, performance tracking, and efficient task distribution for optimal operations.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -69,8 +70,9 @@ const BranchStaffManagement = () => {
                 Our branch-wise staff management system provides comprehensive workforce control,
                 performance tracking, and efficient task distribution for optimal restaurant operations.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 

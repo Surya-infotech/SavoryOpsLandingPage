@@ -9,15 +9,16 @@ import { Box, Container, Typography } from "@mui/material";
 import { useEffect } from "react";
 import CTA from "../../components/CTA";
 import GetStartedButton from "../../components/GetStartedButton";
+import BuyNowButton from "../../components/BuyNowButton";
 import "../../styles/pages/feature/qrcodescanning.scss";
 
 const QRCodeScanning = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'QR Code Scanning - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -26,7 +27,7 @@ const QRCodeScanning = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Scan QR codes for instant order placement and seamless customer experience. QR code system revolutionizes dining by allowing customers to access menus, place orders, and track food preparation in real-time.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -109,8 +110,9 @@ const QRCodeScanning = () => {
                 experience by allowing customers to access menus, place orders,
                 and track their food preparation in real-time.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 

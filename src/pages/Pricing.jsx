@@ -7,6 +7,7 @@ import CTA from '../components/CTA';
 import { formatCurrency } from '../utils/currency';
 import { formatDuration, getPlanLimits } from '../utils/planUtils';
 import '../styles/pages/pricing.scss';
+import BuyNowButton from '../components/BuyNowButton';
 
 const Pricing = () => {
   const [plans, setPlans] = useState([]);
@@ -209,7 +210,7 @@ const Pricing = () => {
                     </Box>
                   </Box>
 
-                  <Box className="plan-action">
+                  <Box className="plan-action" sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                     <Typography
                       variant="button"
                       className="plan-button"
@@ -218,6 +219,7 @@ const Pricing = () => {
                     >
                       {plan.plantype === 'free' ? 'Get Started Free' : 'Choose Plan'}
                     </Typography>
+                    <BuyNowButton fullWidth sx={{ borderRadius: '4px', py: 1 }} />
                   </Box>
                 </Box>
               ))

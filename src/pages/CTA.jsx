@@ -1,5 +1,6 @@
 import { Box, Container, Typography } from '@mui/material';
 import GetStartedButton from '../components/GetStartedButton';
+import BuyNowButton from '../components/BuyNowButton';
 
 const CTA = () => {
   return (
@@ -12,16 +13,29 @@ const CTA = () => {
           <Typography variant="h6" className="cta-subtitle">
             Join thousands of restaurants already using SavoryOps to streamline their operations
           </Typography>
-          <GetStartedButton
-            className="coming-soon-text"
-            sx={{
-              px: 4,
-              py: 2,
-              fontSize: '1.1rem',
-              fontWeight: 600,
-              minHeight: '48px'
-            }}
-          />
+          <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap', mt: 4 }}>
+            <GetStartedButton
+              className="coming-soon-text"
+              sx={{
+                px: 4,
+                py: 2,
+                fontSize: '1.1rem',
+                fontWeight: 600,
+                minHeight: '48px'
+              }}
+            />
+            <BuyNowButton
+              className="coming-soon-text"
+              sx={{
+                px: 4,
+                py: 2,
+                fontSize: '1.1rem',
+                fontWeight: 600,
+                minHeight: '48px',
+                mt: 0
+              }}
+            />
+          </Box>
         </Box>
       </Container>
     </Box>

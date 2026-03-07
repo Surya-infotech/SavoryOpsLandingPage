@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import GetStartedButton from './GetStartedButton';
+import BuyNowButton from './BuyNowButton';
 import '../styles/components/cta.scss';
 
 const CTA = ({
@@ -16,7 +17,19 @@ const CTA = ({
         <Typography variant="body1" className="cta-description">
           {description}
         </Typography>
-        <GetStartedButton className="coming-soon-text" />
+        <Box
+          className="cta-buttons"
+          sx={{
+            display: 'flex',
+            gap: 2,
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            mt: 4
+          }}
+        >
+          <GetStartedButton className="coming-soon-text" sx={{ mt: 0 }} />
+          <BuyNowButton className="coming-soon-text" sx={{ mt: 0 }} />
+        </Box>
       </Box>
     </Box>
   );

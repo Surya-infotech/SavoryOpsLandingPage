@@ -3,15 +3,16 @@ import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
+import BuyNowButton from '../../components/BuyNowButton';
 import '../../styles/pages/feature/customerreviews.scss';
 
 const CustomerReviews = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Update document title
     document.title = 'Customer Reviews - SavoryOps';
-    
+
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -20,7 +21,7 @@ const CustomerReviews = () => {
       document.head.appendChild(metaDescription);
     }
     metaDescription.setAttribute('content', 'Manage customer reviews and feedback with SavoryOps. Automated review collection, rating analytics, and AI-powered sentiment analysis to build stronger customer relationships.');
-    
+
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -77,8 +78,9 @@ const CustomerReviews = () => {
                 Our comprehensive review management system helps you understand customer
                 satisfaction, respond to feedback, and build stronger relationships with your customers.
               </Typography>
-              <Box className="cta-button-container">
+              <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
+                <BuyNowButton />
               </Box>
             </Box>
 
