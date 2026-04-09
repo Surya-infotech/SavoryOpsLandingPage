@@ -53,7 +53,7 @@ const Languages = () => {
               textShadow: '0 2px 4px rgba(0,0,0,0.1)'
             }}
           >
-            Available in 35+ Languages
+            Available in {languages.length} Languages
           </Typography>
 
           <Typography
@@ -67,7 +67,7 @@ const Languages = () => {
               fontWeight: 500
             }}
           >
-            Break language barriers and serve customers worldwide with our comprehensive multilingual support
+            Break language barriers with {languages.length} built-in interface languages—so teams and guests feel at home wherever you operate
           </Typography>
         </Box>
 
@@ -77,9 +77,9 @@ const Languages = () => {
             display: 'grid',
             gridTemplateColumns: {
               xs: 'repeat(2, 1fr)',
-              sm: 'repeat(3, 1fr)',
+              sm: 'repeat(4, 1fr)',
               md: 'repeat(4, 1fr)',
-              lg: 'repeat(5, 1fr)'
+              lg: 'repeat(4, 1fr)'
             },
             gap: { xs: 2, md: 3 },
             mt: 4
@@ -153,8 +153,8 @@ const Languages = () => {
               fontWeight: 400
             }}
           >
-            Our platform supports <strong style={{ color: '#2e7d32' }}>35+ languages</strong>, ensuring that
-            restaurant owners and staff can use the system in their preferred language, no matter where they are in the world.
+            Our platform is available in <strong style={{ color: '#2e7d32' }}>{languages.length} languages</strong>, so
+            restaurant owners and staff can run day-to-day operations in the language that fits their team and market.
           </Typography>
         </Box>
       </Container>
