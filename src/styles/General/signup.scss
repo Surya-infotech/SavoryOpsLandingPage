@@ -36,7 +36,8 @@
     position: relative;
     display: inline-block;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: color-mix(in srgb, var(--primary-color) 6%, white);
+    border: 1px solid color-mix(in srgb, var(--primary-color) 25%, white);
     border-radius: 12px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -48,18 +49,22 @@
 
     button {
       background: none;
-      border: 1px solid var(--border-color);
+      border: 1px solid color-mix(in srgb, var(--primary-color) 35%, white);
       padding: 8px 12px;
       border-radius: 8px;
       display: flex;
       align-items: center;
-      color: var(--text-color);
+      color: var(--primary-color);
       cursor: pointer;
       transition: all 0.3s ease;
       font-weight: 500;
 
       &:hover {
-        background-color: rgba(138, 177, 125, 0.1);
+        background: linear-gradient(
+          135deg,
+          color-mix(in srgb, var(--primary-color) 10%, transparent) 0%,
+          color-mix(in srgb, var(--secondary-color) 10%, transparent) 100%
+        );
       }
     }
   }
@@ -70,7 +75,7 @@
     right: 0;
     margin-top: 8px;
     background-color: var(--background-color);
-    border: 1px solid var(--border-color);
+    border: 1px solid color-mix(in srgb, var(--primary-color) 20%, white);
     border-radius: 12px;
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
     list-style: none;
@@ -114,11 +119,15 @@
 
       &:hover,
       &.selected {
-        background-color: var.$hover_color;
+        background: linear-gradient(
+          135deg,
+          color-mix(in srgb, var(--primary-color) 16%, transparent) 0%,
+          color-mix(in srgb, var(--secondary-color) 16%, transparent) 100%
+        );
         text-decoration: none;
-        color: var.$text_hover_color;
+        color: var(--primary-color);
         transform: translateX(4px);
-        }
+      }
     }
   }
 
@@ -205,7 +214,7 @@
         h2 {
           text-align: center;
           margin: 0;
-          color: var.$primary_text_color;
+          color: var(--primary-color);
           font-size: 24px;
           font-weight: 700;
         }
@@ -231,7 +240,7 @@
     .progress-tracker {
       flex: 0 0 350px;
       padding-top: 15px;
-      border-right: 2px solid rgba(138, 177, 125, 0.1);
+      border-right: 2px solid color-mix(in srgb, var(--primary-color) 10%, transparent);
       padding-bottom: 0;
       margin-bottom: 0;
       position: sticky;
@@ -251,7 +260,7 @@
         margin-left: 0;
         padding-bottom: 30px;
         border-right: none;
-        border-bottom: 2px solid rgba(138, 177, 125, 0.1);
+        border-bottom: 2px solid color-mix(in srgb, var(--primary-color) 10%, transparent);
         background: transparent;
         border-radius: 0;
       }
@@ -342,8 +351,8 @@
 
           &.completed {
             background: linear-gradient(to bottom,
-                var.$primary_text_color,
-                var.$primary_text_color );
+                var(--primary-color),
+                var(--primary-color) );
           }
 
           @media (max-width: 1024px) {
@@ -357,15 +366,15 @@
         &.active {
           .step-icon {
             background: linear-gradient(135deg,
-                var.$primary_text_color 0%,
-                #50c878 100%);
-            border-color: var.$primary_text_color;
+                var(--primary-color) 0%,
+                var(--secondary-color) 100%);
+            border-color: var(--primary-color);
             transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(138, 177, 125, 0.5);
+            box-shadow: 0 6px 20px color-mix(in srgb, var(--primary-color) 50%, transparent);
           }
 
           .step-content .step-title {
-            color: var.$primary_text_color;
+            color: var(--primary-color);
             font-weight: 700;
           }
 
@@ -377,10 +386,10 @@
         &.completed {
           .step-icon {
             background: linear-gradient(135deg,
-                var.$primary_text_color 0%,
-                #50c878 100%);
-            border-color: var.$primary_text_color;
-            box-shadow: 0 4px 15px rgba(138, 177, 125, 0.4);
+                var(--primary-color) 0%,
+                var(--secondary-color) 100%);
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 15px color-mix(in srgb, var(--primary-color) 40%, transparent);
 
             &::before {
               content: "✓";
@@ -408,7 +417,7 @@
           }
 
           .step-content .step-title {
-            color: var.$primary_text_color;
+            color: var(--primary-color);
           }
 
           .step-content .step-description {
@@ -451,8 +460,8 @@
         color: #333;
         margin-bottom: 6px;
         background: linear-gradient(135deg,
-            var.$primary_text_color 0%,
-            #50c878 100%);
+            var(--primary-color) 0%,
+            var(--secondary-color) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -524,9 +533,9 @@
           @include form_mixin.form-input;
 
           &:focus {
-            border-color: var.$primary_text_color;
+            border-color: var(--primary-color);
             background-color: #fff;
-            box-shadow: 0 0 0 3px rgba(138, 177, 125, 0.1);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 10%, transparent);
             outline: none;
             transform: translateY(-1px);
           }
@@ -570,7 +579,7 @@
               }
 
               &.valid {
-                color: var.$primary_text_color;
+                color: var(--primary-color);
                 font-weight: 600;
               }
 
@@ -614,9 +623,9 @@
             }
 
             &:focus-within {
-              border-color: var.$primary_text_color !important;
+              border-color: var(--primary-color) !important;
               background-color: #fff;
-              box-shadow: 0 0 0 4px rgba(138, 177, 125, 0.1) !important;
+              box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary-color) 10%, transparent) !important;
               transform: translateY(-2px);
             }
 
@@ -756,7 +765,7 @@
             cursor: pointer;
 
             &:hover {
-              background-color: rgba(138, 177, 125, 0.1);
+              background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
             }
 
             input[type="radio"] {
@@ -764,7 +773,7 @@
               height: 20px;
               margin: 0;
               cursor: pointer;
-              accent-color: var.$primary_text_color;
+              accent-color: var(--primary-color);
               transition: all 0.2s ease;
 
               &:checked {
@@ -783,10 +792,10 @@
             }
 
             &:has(input:checked) {
-              background-color: rgba(138, 177, 125, 0.15);
+              background-color: color-mix(in srgb, var(--primary-color) 15%, transparent);
 
               label {
-                color: var.$primary_text_color;
+                color: var(--primary-color);
                 font-weight: 600;
               }
             }
@@ -807,8 +816,8 @@
       transition: all 0.3s ease;
 
       &:has(input:checked) {
-        border-color: var.$primary_text_color;
-        background-color: rgba(138, 177, 125, 0.05);
+        border-color: var(--primary-color);
+        background-color: color-mix(in srgb, var(--primary-color) 5%, transparent);
       }
 
       input[type="checkbox"] {
@@ -816,7 +825,7 @@
         width: 22px !important;
         height: 22px !important;
         cursor: pointer !important;
-        accent-color: var.$primary_text_color;
+        accent-color: var(--primary-color);
         flex-shrink: 0;
         transition: all 0.2s ease;
 
@@ -843,14 +852,14 @@
 
         a {
           margin: 0 4px;
-          color: var.$primary_text_color;
+          color: var(--primary-color);
           text-decoration: none;
           font-weight: 600;
           transition: all 0.2s ease;
 
           &:hover {
             text-decoration: underline;
-            color: #50c878;
+            color: var(--secondary-color);
           }
         }
       }
@@ -877,9 +886,9 @@
         @include form_mixin.form-input;
 
         &:focus {
-          border-color: var.$primary_text_color;
+          border-color: var(--primary-color);
           background-color: #fff;
-          box-shadow: 0 0 0 3px rgba(138, 177, 125, 0.1);
+          box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 10%, transparent);
           outline: none;
           transform: translateY(-1px);
         }
@@ -902,8 +911,8 @@
       width: 100%;
       padding: 12px 20px;
       background: linear-gradient(135deg,
-          var.$primary_text_color 0%,
-          #50c878 100%);
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%);
       color: white;
       border: none;
       border-radius: 10px;
@@ -916,7 +925,7 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      box-shadow: 0 4px 12px rgba(138, 177, 125, 0.3);
+      box-shadow: 0 4px 12px color-mix(in srgb, var(--primary-color) 30%, transparent);
       position: relative;
       overflow: hidden;
 
@@ -936,7 +945,7 @@
 
       &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(138, 177, 125, 0.4);
+        box-shadow: 0 6px 20px color-mix(in srgb, var(--primary-color) 40%, transparent);
 
         &::before {
           left: 100%;
@@ -945,7 +954,7 @@
 
       &:active {
         transform: translateY(0);
-        box-shadow: 0 2px 10px rgba(138, 177, 125, 0.3);
+        box-shadow: 0 2px 10px color-mix(in srgb, var(--primary-color) 30%, transparent);
       }
 
       &:disabled {
@@ -1027,9 +1036,9 @@
           }
 
           &:focus {
-            border-color: var.$primary_text_color;
+            border-color: var(--primary-color);
             background-color: #fff;
-            box-shadow: 0 0 0 4px rgba(138, 177, 125, 0.1);
+            box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary-color) 10%, transparent);
             outline: none;
             transform: scale(1.05);
           }
@@ -1062,7 +1071,7 @@
         .resend-button {
           background: none;
           border: none;
-          color: var.$primary_text_color;
+          color: var(--primary-color);
           cursor: pointer;
           font-weight: 600;
           font-size: 12px;
@@ -1074,7 +1083,7 @@
           gap: 6px;
 
           &:hover:not(:disabled) {
-            background-color: rgba(138, 177, 125, 0.1);
+            background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
             text-decoration: underline;
           }
 
@@ -1086,8 +1095,8 @@
           .spinner {
             width: 14px;
             height: 14px;
-            border: 2px solid rgba(138, 177, 125, 0.4);
-            border-top-color: var.$primary_text_color;
+            border: 2px solid color-mix(in srgb, var(--primary-color) 40%, transparent);
+            border-top-color: var(--primary-color);
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
           }
@@ -1199,7 +1208,7 @@
       }
 
       .signin-link {
-        color: var.$primary_text_color;
+        color: var(--primary-color);
         text-decoration: none;
         font-weight: 600;
         font-size: 13px;
@@ -1208,7 +1217,7 @@
         transition: all 0.3s ease;
 
         &:hover {
-          background-color: rgba(138, 177, 125, 0.1);
+          background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
           text-decoration: none;
           transform: translateY(-2px);
         }
