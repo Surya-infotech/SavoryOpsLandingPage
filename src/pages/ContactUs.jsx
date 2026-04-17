@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Email as EmailIcon, LocationOn as LocationIcon, Phone as PhoneIcon, Send as SendIcon, ContactMail as ContactMailIcon } from '@mui/icons-material';
 import { Box, Button, Chip, Container, Grid, TextField, Typography } from '@mui/material';
@@ -11,8 +11,7 @@ const ContactUs = () => {
   const location = useLocation();
   const isStandalonePage = location.pathname === '/contact-us';
   const backendPath = import.meta.env.VITE_BACKEND_URL;
-  const { softwareName } = useAppSettings();
-  const [contactData, setContactData] = useState({ email: '', phone: '', address: '', cityname: '', statename: '', countryname: '', postalcode: '' });
+  const { softwareName, generalSetting } = useAppSettings();
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [formError, setFormError] = useState('');
   const [formSuccess, setFormSuccess] = useState(false);
@@ -24,45 +23,6 @@ const ContactUs = () => {
       document.title = `Contact Us - ${softwareName}`;
     }
   }, [isStandalonePage, softwareName]);
-
-  useEffect(() => {
-    const fetchContactData = async () => {
-      try {
-        const response = await fetch(`${backendPath}/System/GetGeneralSetting_landingpage`, {
-          method: 'GET',
-          headers: { 'Content-Type': 'application/json', 'x-user': 'admin' },
-        });
-        const data = await response.json();
-
-        if (response.ok && data) {
-          const generalSetting = data.generalSetting || {};
-          setContactData({
-            email: generalSetting.email || '',
-            phone: generalSetting.phone || '',
-            address: generalSetting.address || '',
-            cityname: generalSetting.cityname || '',
-            statename: generalSetting.statename || '',
-            countryname: generalSetting.countryname || '',
-            postalcode: generalSetting.postalcode || ''
-          });
-        }
-      } catch {
-        setContactData(prev => ({ ...prev }));
-      }
-    };
-
-    fetchContactData();
-  }, [backendPath]);
-
-  const buildAddress = () => {
-    const parts = [];
-    if (contactData.address) parts.push(contactData.address);
-    if (contactData.cityname) parts.push(contactData.cityname);
-    if (contactData.statename) parts.push(contactData.statename);
-    if (contactData.countryname) parts.push(contactData.countryname);
-    if (contactData.postalcode) parts.push(contactData.postalcode);
-    return parts.length > 0 ? parts.join(', ') : 'Surat, Gujarat, India';
-  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -125,26 +85,37 @@ const ContactUs = () => {
     }
   };
 
-  const contactCards = [
-    {
-      icon: <EmailIcon sx={{ fontSize: 32 }} />,
-      title: 'Email',
-      value: contactData.email,
-      href: `mailto:${contactData.email}`
-    },
-    {
-      icon: <PhoneIcon sx={{ fontSize: 32 }} />,
-      title: 'Phone',
-      value: contactData.phone,
-      href: contactData.phone ? `tel:${contactData.phone}` : '#'
-    },
-    {
-      icon: <LocationIcon sx={{ fontSize: 32 }} />,
-      title: 'Address',
-      value: buildAddress(),
-      href: '#'
-    }
-  ];
+  const contactCards = useMemo(() => {
+    const addressParts = [];
+    if (generalSetting.address) addressParts.push(generalSetting.address);
+    if (generalSetting.cityname) addressParts.push(generalSetting.cityname);
+    if (generalSetting.statename) addressParts.push(generalSetting.statename);
+    if (generalSetting.countryname) addressParts.push(generalSetting.countryname);
+    if (generalSetting.postalcode) addressParts.push(generalSetting.postalcode);
+    const addressLine =
+      addressParts.length > 0 ? addressParts.join(', ') : 'Surat, Gujarat, India';
+
+    return [
+      {
+        icon: <EmailIcon sx={{ fontSize: 32 }} />,
+        title: 'Email',
+        value: generalSetting.email || '',
+        href: generalSetting.email ? `mailto:${generalSetting.email}` : '#',
+      },
+      {
+        icon: <PhoneIcon sx={{ fontSize: 32 }} />,
+        title: 'Phone',
+        value: generalSetting.phone || '',
+        href: generalSetting.phone ? `tel:${generalSetting.phone}` : '#',
+      },
+      {
+        icon: <LocationIcon sx={{ fontSize: 32 }} />,
+        title: 'Address',
+        value: addressLine,
+        href: '#',
+      },
+    ];
+  }, [generalSetting]);
 
   const renderContactCard = (card, index) => (
     <Box
