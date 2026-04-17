@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
 import BuyNowButton from '../../components/BuyNowButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/pages/feature/smartdashboard.scss';
 
 const SmartDashboard = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Smart Dashboard - SavoryOps';
+    document.title = `Smart Dashboard - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -29,8 +32,8 @@ const SmartDashboard = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'smart dashboard, restaurant dashboard, business intelligence, real-time monitoring, restaurant analytics, performance tracking, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'smart dashboard, restaurant dashboard, business intelligence, real-time monitoring, restaurant analytics, performance tracking, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {

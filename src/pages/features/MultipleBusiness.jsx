@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
 import BuyNowButton from '../../components/BuyNowButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/pages/feature/multiplebusiness.scss';
 
 const MultipleBusiness = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Multiple Business - SavoryOps';
+    document.title = `Multiple Business - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -29,8 +32,8 @@ const MultipleBusiness = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'multiple business, multi-entity management, business management, restaurant owner, data isolation, custom subdomain, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'multiple business, multi-entity management, business management, restaurant owner, data isolation, custom subdomain, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {

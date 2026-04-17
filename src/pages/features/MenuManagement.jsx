@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
 import BuyNowButton from '../../components/BuyNowButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/pages/feature/menumangement.scss';
 
 const MenuManagement = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Menu Management - SavoryOps';
+    document.title = `Menu Management - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -29,8 +32,8 @@ const MenuManagement = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'menu management, restaurant menu, menu control, dynamic pricing, menu items, menu categories, menu updates, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'menu management, restaurant menu, menu control, dynamic pricing, menu items, menu categories, menu updates, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {

@@ -8,9 +8,13 @@ const DEFAULT_META_TAGS = {
 /**
  * Restores default SEO meta tags from index.html
  */
-export const restoreDefaultMetaTags = () => {
+export const restoreDefaultMetaTags = (softwareName = 'SavoryOps') => {
+  const safeName = softwareName || 'SavoryOps';
+  const title = DEFAULT_META_TAGS.title.replaceAll('SavoryOps', safeName);
+  const description = DEFAULT_META_TAGS.description.replaceAll('SavoryOps', safeName);
+
   // Update document title
-  document.title = DEFAULT_META_TAGS.title;
+  document.title = title;
   
   // Update or create meta description
   let metaDescription = document.querySelector('meta[name="description"]');
@@ -19,7 +23,7 @@ export const restoreDefaultMetaTags = () => {
     metaDescription.setAttribute('name', 'description');
     document.head.appendChild(metaDescription);
   }
-  metaDescription.setAttribute('content', DEFAULT_META_TAGS.description);
+  metaDescription.setAttribute('content', description);
   
   // Update or create meta keywords
   let metaKeywords = document.querySelector('meta[name="keywords"]');

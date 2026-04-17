@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
 import BuyNowButton from '../../components/BuyNowButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/pages/feature/customerreviews.scss';
 
 const CustomerReviews = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Customer Reviews - SavoryOps';
+    document.title = `Customer Reviews - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -20,7 +23,7 @@ const CustomerReviews = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Manage customer reviews and feedback with SavoryOps. Automated review collection, rating analytics, and AI-powered sentiment analysis to build stronger customer relationships.');
+    metaDescription.setAttribute('content', 'Manage customer reviews and feedback with SavoryOps. Automated review collection, rating analytics, and AI-powered sentiment analysis to build stronger customer relationships.'.replaceAll('SavoryOps', softwareName));
 
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -29,8 +32,8 @@ const CustomerReviews = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'customer reviews, feedback management, restaurant reviews, rating analytics, customer satisfaction, review collection, sentiment analysis, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'customer reviews, feedback management, restaurant reviews, rating analytics, customer satisfaction, review collection, sentiment analysis, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {

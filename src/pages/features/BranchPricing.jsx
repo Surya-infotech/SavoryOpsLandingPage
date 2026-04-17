@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
 import BuyNowButton from '../../components/BuyNowButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/pages/feature/branchpricing.scss';
 
 const BranchPricing = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Branch-wise Pricing - SavoryOps';
+    document.title = `Branch-wise Pricing - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -29,8 +32,8 @@ const BranchPricing = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'branch pricing, flexible pricing, market-based pricing, revenue optimization, branch pricing management, restaurant pricing, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'branch pricing, flexible pricing, market-based pricing, revenue optimization, branch pricing management, restaurant pricing, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {

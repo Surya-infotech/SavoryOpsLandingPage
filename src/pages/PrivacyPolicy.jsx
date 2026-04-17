@@ -1,14 +1,17 @@
 import { Box, Container, Divider, Typography } from '@mui/material';
 import { useEffect } from 'react';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/privacy-policy.scss';
 
 const PrivacyPolicy = () => {
+  const { softwareName } = useAppSettings();
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
     
     // Update document title
-    document.title = 'Privacy Policy - SavoryOps';
+    document.title = `Privacy Policy - ${softwareName}`;
     
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -17,7 +20,13 @@ const PrivacyPolicy = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Read SavoryOps Privacy Policy to understand how we collect, use, and protect your personal information. Learn about our data protection practices and your privacy rights.');
+    metaDescription.setAttribute(
+      'content',
+      'Read SavoryOps Privacy Policy to understand how we collect, use, and protect your personal information. Learn about our data protection practices and your privacy rights.'.replaceAll(
+        'SavoryOps',
+        softwareName,
+      ),
+    );
     
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -26,8 +35,14 @@ const PrivacyPolicy = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'privacy policy, data protection, privacy rights, data security, GDPR compliance, user privacy, SavoryOps privacy');
-  }, []);
+    metaKeywords.setAttribute(
+      'content',
+      'privacy policy, data protection, privacy rights, data security, GDPR compliance, user privacy, SavoryOps privacy'.replaceAll(
+        'SavoryOps',
+        softwareName,
+      ),
+    );
+  }, [softwareName]);
 
   return (
     <Box className="privacy-policy-page">

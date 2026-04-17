@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Flag from 'react-world-flags';
 import { useLanguage } from '../../context/LanguageContext';
 import { getLanguageOptions } from '../../constants/languages';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/General/signin.scss';
 import AlertMessage from '../Custom/AlertMessage';
 import WarningModal from '../Custom/WarningModal';
@@ -22,6 +23,7 @@ const OwnerLogin = () => {
     const [warningMessage, setWarningMessage] = useState("");
     const [showWarning, setShowWarning] = useState(false);
     const languages = getLanguageOptions();
+    const { logoUrl, softwareName, fallbackLogoUrl, setLogoUrl } = useAppSettings();
 
     const toggleLanguageDropdown = () => setLanguageDropdownVisible(!isLanguageDropdownVisible);
 
@@ -134,8 +136,13 @@ const OwnerLogin = () => {
             <div className="login-container">
                 <div className="logo-container">
                     <a href="/" className="logo-button">
-                        <img src="/logo.png" alt="Logo" className="logo" />
-                        <h2>SavoryOps</h2>
+                        <img
+                            src={logoUrl}
+                            alt={`${softwareName} Logo`}
+                            className="logo"
+                            onError={() => setLogoUrl(fallbackLogoUrl)}
+                        />
+                        <h2>{softwareName}</h2>
                     </a>
                 </div>
                 <form onSubmit={handleSubmit}>

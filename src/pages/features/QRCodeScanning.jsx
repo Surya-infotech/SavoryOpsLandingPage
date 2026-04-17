@@ -10,14 +10,17 @@ import { useEffect } from "react";
 import CTA from "../../components/CTA";
 import GetStartedButton from "../../components/GetStartedButton";
 import BuyNowButton from "../../components/BuyNowButton";
+import { useAppSettings } from "../../context/AppSettingsContext.jsx";
 import "../../styles/pages/feature/qrcodescanning.scss";
 
 const QRCodeScanning = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'QR Code Scanning - SavoryOps';
+    document.title = `QR Code Scanning - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -35,8 +38,8 @@ const QRCodeScanning = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'QR code scanning, QR code ordering, contactless ordering, QR menu, mobile ordering, restaurant QR code, digital menu, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'QR code scanning, QR code ordering, contactless ordering, QR menu, mobile ordering, restaurant QR code, digital menu, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {

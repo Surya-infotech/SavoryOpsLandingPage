@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
 import BuyNowButton from '../../components/BuyNowButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/pages/feature/multiplecurrency.scss';
 
 const MultipleCurrency = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Multiple Currency - SavoryOps';
+    document.title = `Multiple Currency - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -29,8 +32,8 @@ const MultipleCurrency = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'multiple currency, multi-currency support, international transactions, currency exchange, global payments, restaurant currency, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'multiple currency, multi-currency support, international transactions, currency exchange, global payments, restaurant currency, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {

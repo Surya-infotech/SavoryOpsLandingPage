@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
 import BuyNowButton from '../../components/BuyNowButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/pages/feature/cloudbasedsystem.scss';
 
 const CloudBasedSystem = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Cloud Based System - SavoryOps';
+    document.title = `Cloud Based System - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -29,8 +32,8 @@ const CloudBasedSystem = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'cloud based system, cloud platform, cloud infrastructure, SaaS, cloud restaurant management, cloud POS, data security, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'cloud based system, cloud platform, cloud infrastructure, SaaS, cloud restaurant management, cloud POS, data security, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {

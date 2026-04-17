@@ -18,14 +18,17 @@ import {
 import { Box, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../components/CTA';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/upcoming-features.scss';
 
 const UpcomingFeatures = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
     
     // Update document title
-    document.title = 'Upcoming Features - SavoryOps';
+    document.title = `Upcoming Features - ${softwareName}`;
     
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -34,7 +37,13 @@ const UpcomingFeatures = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Discover exciting upcoming features for SavoryOps including Table Reservation System, Pickup Orders, Delivery Management, Loyalty Programs, HRM System, Coupons, Combo Meals, Membership System, and more. Stay updated on new features!');
+    metaDescription.setAttribute(
+      'content',
+      'Discover exciting upcoming features for SavoryOps including Table Reservation System, Pickup Orders, Delivery Management, Loyalty Programs, HRM System, Coupons, Combo Meals, Membership System, and more. Stay updated on new features!'.replaceAll(
+        'SavoryOps',
+        softwareName,
+      ),
+    );
     
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -43,8 +52,14 @@ const UpcomingFeatures = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'upcoming features, restaurant features, table reservation, pickup orders, delivery management, loyalty program, HRM system, coupons, combo meals, membership system, SavoryOps features');
-  }, []);
+    metaKeywords.setAttribute(
+      'content',
+      'upcoming features, restaurant features, table reservation, pickup orders, delivery management, loyalty program, HRM system, coupons, combo meals, membership system, SavoryOps features'.replaceAll(
+        'SavoryOps',
+        softwareName,
+      ),
+    );
+  }, [softwareName]);
 
   const upcomingFeatures = [
     {
@@ -181,7 +196,7 @@ const UpcomingFeatures = () => {
             paragraph
             className="description"
           >
-            We're constantly working to enhance SavoryOps with powerful new features that will transform your restaurant operations
+            We're constantly working to enhance {softwareName} with powerful new features that will transform your restaurant operations
           </Typography>
         </Box>
 

@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
 import BuyNowButton from '../../components/BuyNowButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/pages/feature/fiscalyearrecords.scss';
 
 const FiscalYearRecords = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Fiscal Year Records - SavoryOps';
+    document.title = `Fiscal Year Records - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -29,8 +32,8 @@ const FiscalYearRecords = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'fiscal year records, financial records, fiscal year management, financial reporting, year-over-year analysis, financial data organization, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'fiscal year records, financial records, fiscal year management, financial reporting, year-over-year analysis, financial data organization, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {

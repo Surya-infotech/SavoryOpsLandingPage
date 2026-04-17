@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
 import BuyNowButton from '../../components/BuyNowButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/pages/feature/branchstaffmanagement.scss';
 
 const BranchStaffManagement = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Branch-wise Staff Management - SavoryOps';
+    document.title = `Branch-wise Staff Management - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -29,8 +32,8 @@ const BranchStaffManagement = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'branch staff management, staff management, workforce management, employee management, role-based permissions, restaurant staff, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'branch staff management, staff management, workforce management, employee management, role-based permissions, restaurant staff, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {

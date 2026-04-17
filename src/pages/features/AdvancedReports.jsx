@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
 import BuyNowButton from '../../components/BuyNowButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/pages/feature/advancedreports.scss';
 
 const AdvancedReports = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Advanced Reports - SavoryOps';
+    document.title = `Advanced Reports - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -20,7 +23,7 @@ const AdvancedReports = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Comprehensive business reports and analytics with SavoryOps. Growth intelligence, performance analytics, and visual reports for strategic business planning and optimization.');
+    metaDescription.setAttribute('content', 'Comprehensive business reports and analytics with SavoryOps. Growth intelligence, performance analytics, and visual reports for strategic business planning and optimization.'.replaceAll('SavoryOps', softwareName));
 
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -29,8 +32,8 @@ const AdvancedReports = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'advanced reports, business intelligence, restaurant analytics, growth intelligence, performance metrics, visual reports, business reports, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'advanced reports, business intelligence, restaurant analytics, growth intelligence, performance metrics, visual reports, business reports, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {

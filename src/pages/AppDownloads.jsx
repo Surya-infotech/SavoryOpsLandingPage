@@ -1,5 +1,6 @@
 import { PhoneAndroid as PhoneAndroidIcon } from '@mui/icons-material';
 import { Avatar, Box, Chip, Container, Stack, Typography } from '@mui/material';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 
 const googlePlayBadgeUrl =
   'https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png';
@@ -26,6 +27,14 @@ const appLinks = [
 ];
 
 const AppDownloads = () => {
+  const { softwareName } = useAppSettings();
+
+  const resolvedAppLinks = appLinks.map((app) => {
+    if (app.id === 'user') return { ...app, name: `${softwareName} User App` };
+    if (app.id === 'employee') return { ...app, name: `${softwareName} Employee App` };
+    return app;
+  });
+
   return (
     <Box component="section" id="mobile-apps" className="app-downloads-section">
       <Container maxWidth="lg">
@@ -33,7 +42,7 @@ const AppDownloads = () => {
           <Chip icon={<PhoneAndroidIcon />} label="Mobile Apps" className="app-downloads-chip" />
 
           <Typography variant="h2" component="h2" className="app-downloads-title">
-            SavoryOps Mobile Apps
+            {softwareName} Mobile Apps
           </Typography>
 
           <Typography variant="h5" className="app-downloads-subtitle">
@@ -47,7 +56,7 @@ const AppDownloads = () => {
           spacing={3}
           className="app-downloads-cards"
         >
-          {appLinks.map((app) => (
+          {resolvedAppLinks.map((app) => (
             <Box
               key={app.id}
               className="app-download-card"

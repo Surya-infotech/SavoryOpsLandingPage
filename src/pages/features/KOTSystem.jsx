@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
 import BuyNowButton from '../../components/BuyNowButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/pages/feature/kotsystem.scss';
 
 const KOTSystem = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'KOT System - SavoryOps';
+    document.title = `KOT System - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -29,8 +32,8 @@ const KOTSystem = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'KOT system, kitchen order tickets, kitchen management, order tickets, kitchen workflow, restaurant kitchen, order processing, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'KOT system, kitchen order tickets, kitchen management, order tickets, kitchen workflow, restaurant kitchen, order processing, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {

@@ -1,64 +1,29 @@
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import { Article as ArticleIcon, Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, ContactMail as ContactMailIcon, CurrencyExchange as CurrencyIcon, Email as EmailIcon, Facebook as FacebookIcon, Inventory as InventoryIcon, Instagram as InstagramIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Phone as PhoneIcon, Pinterest as PinterestIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Rocket as RocketIcon, Twitter as TwitterIcon, WhatsApp as WhatsAppIcon, YouTube as YouTubeIcon } from '@mui/icons-material';
 import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
-import { useAuth } from '../Middleware/Auth.jsx';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/layout/footer.scss';
 
 const Footer = () => {
-  const { logoutUser } = useAuth();
-  const adminPanelBackendPath = import.meta.env.VITE_BACKEND_URL;
-  const [footerData, setFooterData] = useState({
-    description: "",
-    email: "",
-    phone: "",
-    version: "",
-    copyright: "",
-    maintainedBy: "",
-    address: "",
-    cityname: "",
-    statename: "",
-    countryname: "",
-    postalcode: "",
-    socialmedia: []
-  });
+  const { logoUrl, softwareName, fallbackLogoUrl, setLogoUrl, generalSetting, socialMedia } = useAppSettings();
 
-  useEffect(() => {
-    const fetchFooterData = async () => {
-
-      try {
-        const response = await fetch(`${adminPanelBackendPath}/System/GetGeneralSetting_landingpage`, {
-          method: "GET",
-          headers: { "Content-Type": "application/json", "x-user": "admin" },
-        });
-        const data = await response.json();
-
-        if (response.ok && data) {
-          const generalSetting = data.generalSetting || {};
-          const socialMedia = data.socialMedia || [];
-
-          setFooterData({
-            description: generalSetting.description || "",
-            email: generalSetting.email || "",
-            phone: generalSetting.phone || "",
-            version: generalSetting.version || "",
-            copyright: generalSetting.copyright || "",
-            maintainedBy: generalSetting.maintainedby || "",
-            address: generalSetting.address || "",
-            cityname: generalSetting.cityname || "",
-            statename: generalSetting.statename || "",
-            countryname: generalSetting.countryname || "",
-            postalcode: generalSetting.postalcode || "",
-            socialmedia: socialMedia
-          });
-        }
-      } catch {
-        // Keep default values if API fails
-        console.log("Failed to fetch footer data, using defaults");
-      }
-    };
-
-    fetchFooterData();
-  }, [adminPanelBackendPath, logoutUser]);
+  const footerData = useMemo(
+    () => ({
+      description: generalSetting.description || '',
+      email: generalSetting.email || '',
+      phone: generalSetting.phone || '',
+      version: generalSetting.version || '',
+      copyright: generalSetting.copyright || '',
+      maintainedBy: generalSetting.maintainedby || '',
+      address: generalSetting.address || '',
+      cityname: generalSetting.cityname || '',
+      statename: generalSetting.statename || '',
+      countryname: generalSetting.countryname || '',
+      postalcode: generalSetting.postalcode || '',
+      socialmedia: socialMedia,
+    }),
+    [generalSetting, socialMedia],
+  );
 
   const productFeatures = [
     { name: 'KOT Tracking System', icon: <RestaurantIcon />, href: '/features/kot-system' },
@@ -151,9 +116,14 @@ const Footer = () => {
                 <Box
                   className="brand-content"
                 >
-                  <img src="/logo.png" alt="SavoryOps Logo" className="brand-logo" />
+                  <img
+                    src={logoUrl}
+                    alt={`${softwareName} Logo`}
+                    className="brand-logo"
+                    onError={() => setLogoUrl(fallbackLogoUrl)}
+                  />
                   <Typography variant="h5" className="brand-name">
-                    SavoryOps
+                    {softwareName}
                   </Typography>
                 </Box>
               </Link>

@@ -1,9 +1,11 @@
 import { FormatQuote as QuoteIcon, Star as StarIcon } from '@mui/icons-material';
 import { Avatar, Box, Card, CardContent, Container, Typography } from '@mui/material';
 import { useEffect, useRef } from 'react';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 
 const Testimonials = () => {
   const scrollContainerRef = useRef(null);
+  const { softwareName } = useAppSettings();
 
   const testimonials = [
     {
@@ -352,7 +354,7 @@ const Testimonials = () => {
                         }
                       }}
                     >
-                      "{testimonial.content}"
+                      "{testimonial.content.replaceAll('SavoryOps', softwareName)}"
                     </Typography>
                   </Box>
 

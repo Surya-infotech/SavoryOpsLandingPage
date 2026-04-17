@@ -4,16 +4,18 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import GetStartedButton from '../components/GetStartedButton';
 import BuyNowButton from '../components/BuyNowButton';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/featurespage.scss';
 
 const FeaturesPage = () => {
   const navigate = useNavigate();
+  const { softwareName } = useAppSettings();
 
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Features - SavoryOps';
+    document.title = `Features - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -22,7 +24,13 @@ const FeaturesPage = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Discover powerful restaurant management features including Smart Dashboard, Multiple Business & Branches, Menu Management, KOT System, QR Code Scanning, Cloud-Based System, and more. Streamline your restaurant operations with SavoryOps.');
+    metaDescription.setAttribute(
+      'content',
+      'Discover powerful restaurant management features including Smart Dashboard, Multiple Business & Branches, Menu Management, KOT System, QR Code Scanning, Cloud-Based System, and more. Streamline your restaurant operations with SavoryOps.'.replaceAll(
+        'SavoryOps',
+        softwareName,
+      ),
+    );
 
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -31,8 +39,14 @@ const FeaturesPage = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'restaurant features, restaurant management features, POS features, restaurant dashboard, menu management, KOT system, QR code ordering, business analytics, cloud restaurant system, multi-branch management, SavoryOps features');
-  }, []);
+    metaKeywords.setAttribute(
+      'content',
+      'restaurant features, restaurant management features, POS features, restaurant dashboard, menu management, KOT system, QR code ordering, business analytics, cloud restaurant system, multi-branch management, SavoryOps features'.replaceAll(
+        'SavoryOps',
+        softwareName,
+      ),
+    );
+  }, [softwareName]);
 
   const handleCardClick = (featureTitle) => {
     const routeMap = {

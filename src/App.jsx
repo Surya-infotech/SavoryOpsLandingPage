@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import ScrollToTopButton from './components/ScrollToTop';
 import { LanguageProvider } from './context/LanguageContext.jsx';
+import { useAppSettings } from './context/AppSettingsContext.jsx';
 import { restoreDefaultMetaTags } from './utils/seoMetaTags';
 import ContactUs from './pages/ContactUs';
 import DataDeletionPolicy from './pages/DataDeletionPolicy';
@@ -73,12 +74,13 @@ const ScrollToTop = () => {
 // Component to restore default meta tags on route changes
 const SEOHandler = () => {
   const location = useLocation();
+  const { softwareName } = useAppSettings();
 
   useEffect(() => {
     // Restore default meta tags when route changes
     // Pages that set their own meta tags will override these defaults
     // Pages that don't set meta tags will use the defaults
-    restoreDefaultMetaTags();
+    restoreDefaultMetaTags(softwareName);
   }, [location.pathname]);
 
   return null;

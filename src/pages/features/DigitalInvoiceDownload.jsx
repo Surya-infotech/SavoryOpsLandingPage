@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
 import BuyNowButton from '../../components/BuyNowButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/pages/feature/digitalinvoicedownload.scss';
 
 const DigitalInvoiceDownload = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Digital Invoice Download - SavoryOps';
+    document.title = `Digital Invoice Download - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -29,8 +32,8 @@ const DigitalInvoiceDownload = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'digital invoice, invoice download, invoice management, digital invoicing, paperless invoice, invoice system, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'digital invoice, invoice download, invoice management, digital invoicing, paperless invoice, invoice system, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {

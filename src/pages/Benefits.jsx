@@ -2,8 +2,11 @@ import { CheckCircle as CheckCircleIcon, Star as StarIcon } from '@mui/icons-mat
 import { Box, Chip, Container, Grid, Typography } from '@mui/material';
 import GetStartedButton from '../components/GetStartedButton';
 import BuyNowButton from '../components/BuyNowButton';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 
 const Benefits = () => {
+  const { softwareName } = useAppSettings();
+
   const benefits = [
     'Increase operational efficiency',
     'Improve customer satisfaction',
@@ -61,7 +64,7 @@ const Benefits = () => {
               textShadow: '0 2px 4px rgba(0,0,0,0.1)'
             }}
           >
-            Why Choose SavoryOps?
+            Why Choose {softwareName}?
           </Typography>
 
           <Typography

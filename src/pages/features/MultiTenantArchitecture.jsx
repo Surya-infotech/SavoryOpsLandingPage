@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
 import BuyNowButton from '../../components/BuyNowButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/pages/feature/multitenantarchitecture.scss';
 
 const MultiTenantArchitecture = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Multi Tenant Architecture - SavoryOps';
+    document.title = `Multi Tenant Architecture - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -29,8 +32,8 @@ const MultiTenantArchitecture = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'multi tenant architecture, tenant isolation, data security, database separation, shared infrastructure, restaurant management, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'multi tenant architecture, tenant isolation, data security, database separation, shared infrastructure, restaurant management, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {

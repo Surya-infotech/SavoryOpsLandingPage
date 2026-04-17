@@ -6,6 +6,7 @@ import FreeSoftware from './FreeSoftware';
 import CTA from '../components/CTA';
 import { formatCurrency } from '../utils/currency';
 import { formatDuration, getPlanLimits } from '../utils/planUtils';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/pricing.scss';
 import BuyNowButton from '../components/BuyNowButton';
 
@@ -16,6 +17,7 @@ const Pricing = () => {
   const [activeTab, setActiveTab] = useState(0); // 0 for monthly, 1 for yearly
   const navigate = useNavigate();
   const adminPanelBackendPath = import.meta.env.VITE_BACKEND_URL;
+  const { softwareName } = useAppSettings();
 
   useEffect(() => {
     const fetchPricingData = async () => {
@@ -79,7 +81,7 @@ const Pricing = () => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Pricing - SavoryOps';
+    document.title = `Pricing - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -88,7 +90,13 @@ const Pricing = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Get started with SavoryOps for free! All features available in free tier including Dashboard, KOT, Multi Business, Multi Branches, Menu Management, QR Code Scanning, and comprehensive reporting.');
+    metaDescription.setAttribute(
+      'content',
+      'Get started with SavoryOps for free! All features available in free tier including Dashboard, KOT, Multi Business, Multi Branches, Menu Management, QR Code Scanning, and comprehensive reporting.'.replaceAll(
+        'SavoryOps',
+        softwareName,
+      ),
+    );
 
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -97,8 +105,14 @@ const Pricing = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'pricing, free restaurant management, restaurant POS pricing, free tier, restaurant software pricing, SavoryOps pricing, free restaurant software');
-  }, []);
+    metaKeywords.setAttribute(
+      'content',
+      'pricing, free restaurant management, restaurant POS pricing, free tier, restaurant software pricing, SavoryOps pricing, free restaurant software'.replaceAll(
+        'SavoryOps',
+        softwareName,
+      ),
+    );
+  }, [softwareName]);
 
 
 

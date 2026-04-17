@@ -1,14 +1,17 @@
 import { Box, Container, Divider, Typography } from '@mui/material';
 import { useEffect } from 'react';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/privacy-policy.scss';
 
 const DataDeletionPolicy = () => {
+  const { softwareName } = useAppSettings();
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
     
     // Update document title
-    document.title = 'Data Deletion Policy - SavoryOps';
+    document.title = `Data Deletion Policy - ${softwareName}`;
     
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -17,7 +20,13 @@ const DataDeletionPolicy = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Learn about SavoryOps Data Deletion Policy. Understand how to request account deletion and permanent removal of your personal data from our restaurant management platform.');
+    metaDescription.setAttribute(
+      'content',
+      'Learn about SavoryOps Data Deletion Policy. Understand how to request account deletion and permanent removal of your personal data from our restaurant management platform.'.replaceAll(
+        'SavoryOps',
+        softwareName,
+      ),
+    );
     
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -26,8 +35,14 @@ const DataDeletionPolicy = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'data deletion policy, account deletion, data removal, right to deletion, GDPR data deletion, user data deletion, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute(
+      'content',
+      'data deletion policy, account deletion, data removal, right to deletion, GDPR data deletion, user data deletion, SavoryOps'.replaceAll(
+        'SavoryOps',
+        softwareName,
+      ),
+    );
+  }, [softwareName]);
 
   return (
     <Box className="privacy-policy-page">

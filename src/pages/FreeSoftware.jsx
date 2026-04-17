@@ -3,6 +3,7 @@ import { Box, Chip, Container, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { formatDuration, getPlanLimits } from '../utils/planUtils';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/free-software.scss';
 import BuyNowButton from '../components/BuyNowButton';
 
@@ -12,6 +13,7 @@ const FreeSoftware = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const adminPanelBackendPath = import.meta.env.VITE_BACKEND_URL;
+  const { softwareName } = useAppSettings();
 
 
   useEffect(() => {
@@ -80,7 +82,7 @@ const FreeSoftware = () => {
           </Typography>
 
           <Typography variant="h5" className="section-subtitle">
-            Experience the power of SavoryOps at no cost. Choose from our free trial or lifetime access plans and revolutionize your restaurant management with cutting-edge tools designed for modern hospitality businesses.
+            Experience the power of {softwareName} at no cost. Choose from our free trial or lifetime access plans and revolutionize your restaurant management with cutting-edge tools designed for modern hospitality businesses.
           </Typography>
         </Box>
 

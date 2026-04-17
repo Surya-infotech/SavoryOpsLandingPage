@@ -2,12 +2,14 @@ import { Close as CloseIcon, Menu as MenuIcon } from '@mui/icons-material';
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import BuyNowButton from './BuyNowButton';
 
 const Navigation = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { logoUrl, softwareName, fallbackLogoUrl, setLogoUrl } = useAppSettings();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -41,8 +43,8 @@ const Navigation = () => {
               }}
             >
               <img
-                src="/logo.png"
-                alt="SavoryOps Logo"
+                src={logoUrl}
+                alt={`${softwareName} Logo`}
                 style={{
                   height: '40px',
                   width: 'auto',
@@ -50,10 +52,7 @@ const Navigation = () => {
                   objectFit: 'contain',
                   maxWidth: '120px'
                 }}
-                onError={(e) => {
-                  console.log('Logo failed to load');
-                  e.target.style.display = 'none';
-                }}
+                onError={() => setLogoUrl(fallbackLogoUrl)}
               />
             </Link>
             <Link
@@ -64,7 +63,7 @@ const Navigation = () => {
               }}
             >
               <Typography variant="h6" component="div" className="brand-name">
-                SavoryOps
+                {softwareName}
               </Typography>
             </Link>
           </Box>
@@ -156,16 +155,17 @@ const Navigation = () => {
             >
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <img
-                  src="/logo.png"
-                  alt="SavoryOps Logo"
+                  src={logoUrl}
+                  alt={`${softwareName} Logo`}
                   style={{
                     height: '32px',
                     width: 'auto',
                     marginRight: '12px'
                   }}
+                  onError={() => setLogoUrl(fallbackLogoUrl)}
                 />
                 <Typography variant="h6" sx={{ color: '#2e7d32', fontWeight: 'bold' }}>
-                  SavoryOps
+                  {softwareName}
                 </Typography>
               </Box>
               <IconButton onClick={handleDrawerToggle} sx={{ color: '#666' }}>

@@ -1,8 +1,11 @@
 import { Box, Container, Typography } from '@mui/material';
 import GetStartedButton from '../components/GetStartedButton';
 import BuyNowButton from '../components/BuyNowButton';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 
 const CTA = () => {
+  const { softwareName } = useAppSettings();
+
   return (
     <Box id="cta" className="cta-section">
       <Container maxWidth="md">
@@ -11,7 +14,7 @@ const CTA = () => {
             Ready to Transform Your Restaurant?
           </Typography>
           <Typography variant="h6" className="cta-subtitle">
-            Join thousands of restaurants already using SavoryOps to streamline their operations
+            Join thousands of restaurants already using {softwareName} to streamline their operations
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap', mt: 4 }}>
             <GetStartedButton

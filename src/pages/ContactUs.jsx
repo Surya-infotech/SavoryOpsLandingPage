@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Email as EmailIcon, LocationOn as LocationIcon, Phone as PhoneIcon, Send as SendIcon, ContactMail as ContactMailIcon } from '@mui/icons-material';
 import { Box, Button, Chip, Container, Grid, TextField, Typography } from '@mui/material';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/contact-us.scss';
 
 const MESSAGE_MAX_LENGTH = 1000;
@@ -10,6 +11,7 @@ const ContactUs = () => {
   const location = useLocation();
   const isStandalonePage = location.pathname === '/contact-us';
   const backendPath = import.meta.env.VITE_BACKEND_URL;
+  const { softwareName } = useAppSettings();
   const [contactData, setContactData] = useState({ email: '', phone: '', address: '', cityname: '', statename: '', countryname: '', postalcode: '' });
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [formError, setFormError] = useState('');
@@ -19,9 +21,9 @@ const ContactUs = () => {
   useEffect(() => {
     if (isStandalonePage) {
       window.scrollTo(0, 0);
-      document.title = 'Contact Us - SavoryOps';
+      document.title = `Contact Us - ${softwareName}`;
     }
-  }, [isStandalonePage]);
+  }, [isStandalonePage, softwareName]);
 
   useEffect(() => {
     const fetchContactData = async () => {

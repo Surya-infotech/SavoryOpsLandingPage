@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import Flag from 'react-world-flags';
 import { useLanguage } from '../../context/LanguageContext';
 import { getLanguageOptions } from '../../constants/languages';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/General/signup.scss';
 import WarningModal from '../Custom/WarningModal';
 
@@ -33,6 +34,7 @@ const OwnerSignUp = () => {
     const [formError, setFormError] = useState('');
     const [warningMessage, setWarningMessage] = useState("");
     const [showWarning, setShowWarning] = useState(false);
+    const { logoUrl, softwareName, fallbackLogoUrl, setLogoUrl } = useAppSettings();
 
     const languages = getLanguageOptions();
 
@@ -343,8 +345,13 @@ const OwnerSignUp = () => {
             <div className="signup-container">
                 <div className="logo-container">
                     <a href="/" className="logo-button">
-                        <img src="/logo.png" alt="Logo" className="logo" />
-                        <h2>SavoryOps</h2>
+                        <img
+                            src={logoUrl}
+                            alt={`${softwareName} Logo`}
+                            className="logo"
+                            onError={() => setLogoUrl(fallbackLogoUrl)}
+                        />
+                        <h2>{softwareName}</h2>
                     </a>
                 </div>
                 <div className="signup-wrapper">

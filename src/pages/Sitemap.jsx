@@ -2,14 +2,17 @@ import { Apps as AppsIcon, Article as ArticleIcon, Assessment as AssessmentIcon,
 import { Box, Card, CardContent, Container, Divider, Grid, Link, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/sitemap.scss';
 
 const Sitemap = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
     
     // Update document title
-    document.title = 'Sitemap - SavoryOps';
+    document.title = `Sitemap - ${softwareName}`;
     
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -18,7 +21,13 @@ const Sitemap = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Navigate through all pages and features of SavoryOps platform. Find links to features, pricing, policies, and all available restaurant management tools.');
+    metaDescription.setAttribute(
+      'content',
+      'Navigate through all pages and features of SavoryOps platform. Find links to features, pricing, policies, and all available restaurant management tools.'.replaceAll(
+        'SavoryOps',
+        softwareName,
+      ),
+    );
     
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -27,8 +36,14 @@ const Sitemap = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'sitemap, site map, navigation, SavoryOps pages, feature pages, restaurant management pages');
-  }, []);
+    metaKeywords.setAttribute(
+      'content',
+      'sitemap, site map, navigation, SavoryOps pages, feature pages, restaurant management pages'.replaceAll(
+        'SavoryOps',
+        softwareName,
+      ),
+    );
+  }, [softwareName]);
   const mainPages = [
     { name: 'Home', path: '/', icon: <HomeIcon />, description: 'Main landing page with hero section and overview' },
     { name: 'Features', path: '/features', icon: <AppsIcon />, description: 'Overview of all available features' },

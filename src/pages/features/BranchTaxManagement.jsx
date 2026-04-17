@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import CTA from '../../components/CTA';
 import GetStartedButton from '../../components/GetStartedButton';
 import BuyNowButton from '../../components/BuyNowButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/pages/feature/branchtaxmanagement.scss';
 
 const BranchTaxManagement = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = 'Branch-wise Tax Management - SavoryOps';
+    document.title = `Branch-wise Tax Management - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -29,8 +32,8 @@ const BranchTaxManagement = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'branch tax management, tax compliance, tax rates, local tax compliance, tax rate management, restaurant tax, tax reporting, SavoryOps');
-  }, []);
+    metaKeywords.setAttribute('content', 'branch tax management, tax compliance, tax rates, local tax compliance, tax rate management, restaurant tax, tax reporting, SavoryOps'.replaceAll('SavoryOps', softwareName));
+  }, [softwareName]);
 
   const benefits = [
     {
