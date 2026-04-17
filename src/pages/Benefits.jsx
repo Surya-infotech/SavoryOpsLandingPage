@@ -1,5 +1,5 @@
 import { CheckCircle as CheckCircleIcon, Star as StarIcon } from '@mui/icons-material';
-import { Box, Chip, Container, Grid, Typography } from '@mui/material';
+import { Box, Chip, Container, Typography } from '@mui/material';
 import GetStartedButton from '../components/GetStartedButton';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 
@@ -21,8 +21,8 @@ const Benefits = () => {
   return (
     <Box
       id="benefits"
+      className="benefits-section"
       sx={{
-        backgroundColor: '#ffffff',
         padding: { xs: '60px 0', md: '80px 0' },
         position: 'relative',
         overflow: 'hidden'
@@ -81,44 +81,66 @@ const Benefits = () => {
           </Typography>
         </Box>
 
-        <Grid container spacing={8} alignItems="center">
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', md: 'minmax(0, 1fr) minmax(0, 0.95fr)' },
+            gap: { xs: 4, md: 6 },
+            alignItems: 'center'
+          }}
+        >
           {/* Left Column - Benefits List */}
-          <Grid item xs={12} md={6}>
-            <Box sx={{ mb: 4 }}>
+          <Box>
+            <Box
+              sx={{
+                mb: 4,
+                maxWidth: 620,
+                mx: { xs: 'auto', md: 0 },
+                display: 'grid',
+                gap: 1.5,
+                width: '100%'
+              }}
+            >
               {benefits.map((benefit, index) => (
                 <Box
                   key={index}
                   sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    mb: 3,
-                    animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
+                    display: 'grid',
+                    gridTemplateColumns: '34px minmax(0, 1fr)',
+                    alignItems: 'start',
+                    columnGap: 2,
+                    borderRadius: '12px',
+                    padding: '8px 10px',
+                    backgroundColor: 'rgba(255,255,255,0.65)',
+                    border: '1px solid rgba(15, 23, 42, 0.06)',
+                    width: '100%'
                   }}
                 >
                   <Box
                     sx={{
-                      width: '40px',
-                      height: '40px',
+                      width: '34px',
+                      height: '34px',
                       background: 'linear-gradient(135deg, var(--secondary-color), color-mix(in srgb, var(--secondary-color) 80%, #fff))',
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      marginRight: 2,
                       color: 'white',
                       flexShrink: 0,
                       boxShadow: '0 4px 12px color-mix(in srgb, var(--secondary-color) 30%, transparent)'
                     }}
                   >
-                    <CheckCircleIcon sx={{ fontSize: 20 }} />
+                    <CheckCircleIcon sx={{ fontSize: 18 }} />
                   </Box>
                   <Typography
                     variant="body1"
                     sx={{
                       color: '#333333',
-                      fontSize: '1.1rem',
+                      fontSize: { xs: '1rem', md: '1.08rem' },
                       fontWeight: 500,
-                      lineHeight: 1.5
+                      lineHeight: 1.45,
+                      textAlign: 'left',
+                      pt: '4px'
                     }}
                   >
                     {benefit}
@@ -140,37 +162,34 @@ const Benefits = () => {
                 }}
               />
             </Box>
-          </Grid>
+          </Box>
 
           {/* Right Column - POS&KOT Image */}
-          <Grid item xs={12} md={6}>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: { xs: 'center', md: 'flex-end' },
+              alignItems: 'center',
+              width: '100%'
+            }}
+          >
             <Box
+              component="img"
+              src="/POS&KOT.png"
+              alt="POS and KOT System Interface"
               sx={{
-                display: 'flex',
-                justifyContent: 'flex-end',
-                alignItems: 'center',
                 width: '100%',
-                paddingLeft: { md: 4 },
-                animation: 'fadeInUp 0.8s ease-out 0.4s both'
+                maxWidth: { xs: 520, md: 560, lg: 620 },
+                height: 'auto',
+                borderRadius: '16px',
+                boxShadow: '0 16px 48px rgba(0,0,0,0.15)',
+                border: '1px solid color-mix(in srgb, var(--secondary-color) 10%, transparent)',
+                marginLeft: { md: 'auto' },
+                display: 'block'
               }}
-            >
-              <img
-                src="/POS&KOT.png"
-                alt="POS and KOT System Interface"
-                style={{
-                  width: '100%',
-                  maxWidth: '500px',
-                  height: 'auto',
-                  borderRadius: '16px',
-                  boxShadow: '0 16px 48px rgba(0,0,0,0.15)',
-                  border: '1px solid color-mix(in srgb, var(--secondary-color) 10%, transparent)',
-                  marginLeft: 'auto',
-                  display: 'block'
-                }}
-              />
-            </Box>
-          </Grid>
-        </Grid>
+            />
+          </Box>
+        </Box>
       </Container>
     </Box>
   );

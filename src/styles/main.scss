@@ -13,12 +13,12 @@ $accent-green: #66bb6a;
 $white: #ffffff;
 $light-gray: #fafafa;
 $medium-gray: #f5f5f5;
-$text-gray: #666666;
-$text-primary: #333333;
-$text-secondary: #666666;
+$text-gray: #6b7280;
+$text-primary: #111827;
+$text-secondary: #6b7280;
 
 // Typography
-$font-family-primary: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-family-primary: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
@@ -76,7 +76,10 @@ body {
   font-family: $font-family-primary;
   line-height: 1.6;
   color: $text-primary;
-  background-color: $white;
+  background:
+    radial-gradient(circle at 8% 6%, rgba(59, 130, 246, 0.05), transparent 34%),
+    radial-gradient(circle at 92% 8%, rgba(16, 185, 129, 0.06), transparent 30%),
+    #f4f7fb;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
@@ -103,26 +106,55 @@ body {
   padding: 0;
 }
 
-// Remove any toast containers that might be causing white space
-[class*="toast"],
-[class*="notification"],
-[class*="snackbar"],
-[class*="alert"],
-[class*="popup"],
-[class*="modal"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  height: 0 !important;
-  width: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
+// Premium layout rhythm for landing sections/pages
+.hero-section,
+.features-section,
+.benefits-section,
+.testimonials-section,
+.languages-section,
+.app-downloads-section,
+.free-software-section,
+.contact-us-section,
+.cta-section,
+.pricing-details-section,
+.pricing-plans-section,
+.features-header,
+.upcoming-features-header,
+.feature-header {
+  position: relative;
+  z-index: 1;
 }
 
+.features-page,
+.upcoming-features-page,
+.pricing-page,
+.feature-detail-page,
+.privacy-policy-page,
+.sitemap-page {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(59, 130, 246, 0.05), transparent 28%),
+    radial-gradient(circle at 88% 14%, rgba(16, 185, 129, 0.07), transparent 30%),
+    #f4f7fb;
+}
 
+.features-page main,
+.upcoming-features-page main,
+.pricing-page main,
+.feature-detail-page main,
+.privacy-policy-page main,
+.sitemap-page main {
+  max-width: 1320px;
+  margin-inline: auto;
+}
+
+.section-title,
+.main-heading,
+.pricing-main-title,
+.features-title,
+.app-downloads-title {
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
 
 // Custom Scrollbar
 ::-webkit-scrollbar {
@@ -143,14 +175,20 @@ body {
 }
 
 // Focus Styles for Accessibility
-*:focus {
+*:focus-visible {
   outline: 2px solid $primary-green;
   outline-offset: 2px;
 }
 
-// Smooth Transitions
-* {
-  transition: $transition-normal;
+// Keep transitions only on interactive elements
+a,
+button,
+input,
+textarea,
+select,
+.MuiButton-root,
+.MuiCard-root {
+  transition: all $transition-normal;
 }
 
 // ============================================================================
@@ -337,11 +375,11 @@ h3 {
   color: $white !important;
 }
 
-.text-primary {
+.text-body {
   color: $text-primary !important;
 }
 
-.text-secondary {
+.text-muted {
   color: $text-secondary !important;
 }
 
@@ -616,6 +654,7 @@ h3 {
 
 // Page Components
 @import './pages/hero';
+@import './pages/home-premium';
 @import './pages/features';
 @import './pages/benefits';
 @import './pages/app-downloads';

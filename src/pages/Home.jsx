@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import { useEffect } from 'react';
 import Benefits from './Benefits';
 import CTA from './CTA';
@@ -17,16 +18,16 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <Box className="home-page">
       <Hero />
       <Features />
       <Benefits />
       <FreeSoftware />
       <Languages />
       <AppDownloads />
-      <ContactUs />
       <CTA />
-    </>
+      <ContactUs />
+    </Box>
   );
 };
 

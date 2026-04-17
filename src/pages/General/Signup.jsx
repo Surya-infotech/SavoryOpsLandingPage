@@ -346,10 +346,10 @@ const OwnerSignUp = () => {
                 <div className="logo-container">
                     <a href="/" className="logo-button">
                         <img
-                            src={logoUrl}
+                            src={logoUrl || undefined}
                             alt={`${softwareName} Logo`}
                             className="logo"
-                            onError={() => setLogoUrl('')}
+                            onError={() => setLogoUrl(null)}
                         />
                         <h2>{softwareName}</h2>
                     </a>

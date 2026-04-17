@@ -117,10 +117,10 @@ const Footer = () => {
                   className="brand-content"
                 >
                   <img
-                    src={logoUrl}
+                    src={logoUrl || undefined}
                     alt={`${softwareName} Logo`}
                     className="brand-logo"
-                    onError={() => setLogoUrl('')}
+                    onError={() => setLogoUrl(null)}
                   />
                   <Typography variant="h5" className="brand-name">
                     {softwareName}

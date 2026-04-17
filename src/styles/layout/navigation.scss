@@ -1,9 +1,10 @@
 // Navigation Styles
 
 .navigation-appbar {
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  border-bottom: 1px solid color-mix(in srgb, var(--primary-color) 10%, transparent);
+  backdrop-filter: blur(14px);
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-color) 16%, transparent);
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
   color: $primary-green !important;
 
   // Logo styles
@@ -40,8 +41,9 @@
 
   .brand-name {
     font-weight: $font-weight-bold;
-    color: $primary-green !important;
-    font-size: 1.5rem;
+    color: #111827 !important;
+    font-size: 1.4rem;
+    letter-spacing: 0.2px;
 
     a {
       text-decoration: none;
@@ -64,42 +66,37 @@
   }
 
   .nav-link {
-    color: $primary-green !important;
+    color: #1f2937 !important;
     font-weight: $font-weight-medium;
-    margin: 0 0.5rem;
+    margin: 0 0.2rem;
+    padding: 8px 14px;
+    border-radius: 10px;
     transition: all $transition-normal;
 
     &:hover {
-      color: $primary-green-hover !important;
+      color: var(--primary-color) !important;
+      background-color: color-mix(in srgb, var(--primary-color) 9%, transparent);
       transform: translateY(-1px);
     }
 
     &.active {
-      color: $primary-green-hover !important;
+      color: var(--primary-color) !important;
       font-weight: $font-weight-bold;
-      position: relative;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 20px;
-        height: 3px;
-        background-color: $primary-green;
-        border-radius: 2px;
-      }
+      background: color-mix(in srgb, var(--primary-color) 14%, transparent);
     }
   }
 
   .cta-button {
-    background-color: $primary-green !important;
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--primary-color) 88%, #000),
+      var(--primary-color)
+    ) !important;
     border-color: $primary-green !important;
     color: $white !important;
     font-weight: $font-weight-bold;
-    padding: 12px 24px;
-    border-radius: $border-radius-md;
+    padding: 11px 22px;
+    border-radius: 12px;
     transition: all $transition-normal;
 
     &:hover {

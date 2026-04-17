@@ -1,4 +1,5 @@
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
+import { CheckCircle as CheckCircleIcon, Verified as VerifiedIcon } from '@mui/icons-material';
 import GetStartedButton from '../components/GetStartedButton';
 
 const Hero = () => {
@@ -7,7 +8,6 @@ const Hero = () => {
       id="home"
       className="hero-section"
       sx={{
-        background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
         position: 'relative',
         overflow: 'hidden',
         minHeight: '90vh',
@@ -16,22 +16,32 @@ const Hero = () => {
       }}
     >
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-        <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={6}>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+            gap: { xs: 5, md: 8 },
+            alignItems: 'center'
+          }}
+        >
+          <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+            <Box className="hero-badge">
+              <VerifiedIcon sx={{ fontSize: 18 }} />
+              <Typography component="span">Trusted by modern restaurants</Typography>
+            </Box>
+
             {/* Main Heading */}
             <Typography
               variant="h1"
               component="h1"
               className="hero-title"
               sx={{
-                fontWeight: 700,
+                fontWeight: 800,
                 fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
-                lineHeight: 1.2,
+                lineHeight: 1.12,
                 mb: 3,
-                color: '#1a1a1a',
                 animation: 'fadeInUp 0.8s ease-out',
                 '& span': {
-                  color: 'var(--primary-color)',
                   display: 'block',
                   animation: 'fadeInUp 0.8s ease-out 0.2s both'
                 }
@@ -50,16 +60,25 @@ const Hero = () => {
               sx={{
                 fontSize: { xs: '1.1rem', md: '1.25rem' },
                 lineHeight: 1.6,
-                color: '#666666',
                 mb: 4,
                 fontWeight: 400,
-                maxWidth: '500px',
+                maxWidth: { xs: '100%', md: '560px' },
+                mx: { xs: 'auto', md: 0 },
                 animation: 'fadeInUp 0.8s ease-out 0.4s both'
               }}
             >
               Streamline your restaurant management with our comprehensive platform.
               From inventory to staff scheduling, we've got you covered.
             </Typography>
+
+            <Box className="hero-highlights">
+              {['Real-time operations view', 'Multi-branch ready', 'Fast onboarding'].map((item) => (
+                <Box key={item} className="hero-highlight-item">
+                  <CheckCircleIcon sx={{ fontSize: 18 }} />
+                  <Typography component="span">{item}</Typography>
+                </Box>
+              ))}
+            </Box>
 
             {/* CTA Button */}
             <Box
@@ -68,6 +87,7 @@ const Hero = () => {
                 display: 'flex',
                 gap: 2,
                 flexWrap: 'wrap',
+                justifyContent: { xs: 'center', md: 'flex-start' },
                 animation: 'fadeInUp 0.8s ease-out 0.6s both'
               }}
             >
@@ -83,34 +103,56 @@ const Hero = () => {
                 }}
               />
             </Box>
-          </Grid>
 
-          <Grid item xs={12} md={6}>
+            <Box className="hero-proof">
+              <Box className="hero-proof-item">
+                <Typography className="hero-proof-number">99.9%</Typography>
+                <Typography className="hero-proof-label">Platform uptime</Typography>
+              </Box>
+              <Box className="hero-proof-item">
+                <Typography className="hero-proof-number">24/7</Typography>
+                <Typography className="hero-proof-label">Operational support</Typography>
+              </Box>
+              <Box className="hero-proof-item">
+                <Typography className="hero-proof-number">Fast</Typography>
+                <Typography className="hero-proof-label">Setup experience</Typography>
+              </Box>
+            </Box>
+          </Box>
+
+          <Box>
             <Box
               sx={{
                 display: 'flex',
-                justifyContent: 'center',
+                justifyContent: { xs: 'center', md: 'flex-end' },
                 alignItems: 'center',
+                width: '100%',
                 animation: 'fadeInUp 0.8s ease-out 0.8s both'
               }}
             >
               {/* Clean Image Display */}
               <Box
                 sx={{
-                  borderRadius: '12px',
+                  borderRadius: '18px',
                   overflow: 'hidden',
-                  boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                  bgcolor: 'white',
-                  p: 2,
-                  maxWidth: '100%'
+                  boxShadow: '0 20px 48px rgba(15,23,42,0.22)',
+                  bgcolor: 'rgba(255,255,255,0.92)',
+                  border: '1px solid rgba(255,255,255,0.28)',
+                  backdropFilter: 'blur(10px)',
+                  p: 1.5,
+                  width: '100%',
+                  maxWidth: 560
                 }}
               >
+                <Box className="hero-image-label">
+                  Live Dashboard Preview
+                </Box>
                 <img
                   src="/design.png"
                   alt="SavoryOps Restaurant Management Platform"
                   style={{
                     width: '100%',
-                    maxWidth: '500px',
+                    maxWidth: '100%',
                     height: 'auto',
                     borderRadius: '8px',
                     display: 'block'
@@ -118,8 +160,8 @@ const Hero = () => {
                 />
               </Box>
             </Box>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Email as EmailIcon, LocationOn as LocationIcon, Phone as PhoneIcon, Send as SendIcon, ContactMail as ContactMailIcon } from '@mui/icons-material';
-import { Box, Button, Chip, Container, Grid, TextField, Typography } from '@mui/material';
+import { Box, Button, Chip, Container, TextField, Typography } from '@mui/material';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/contact-us.scss';
 
@@ -97,25 +97,45 @@ const ContactUs = () => {
 
     return [
       {
-        icon: <EmailIcon sx={{ fontSize: 32 }} />,
+        icon: <EmailIcon sx={{ fontSize: 24 }} />,
         title: 'Email',
         value: generalSetting.email || '',
         href: generalSetting.email ? `mailto:${generalSetting.email}` : '#',
       },
       {
-        icon: <PhoneIcon sx={{ fontSize: 32 }} />,
+        icon: <PhoneIcon sx={{ fontSize: 24 }} />,
         title: 'Phone',
         value: generalSetting.phone || '',
         href: generalSetting.phone ? `tel:${generalSetting.phone}` : '#',
       },
       {
-        icon: <LocationIcon sx={{ fontSize: 32 }} />,
+        icon: <LocationIcon sx={{ fontSize: 24 }} />,
         title: 'Address',
         value: addressLine,
         href: '#',
       },
     ];
   }, [generalSetting]);
+
+  const fieldSx = {
+    '& .MuiOutlinedInput-root': {
+      backgroundColor: '#fff',
+      borderRadius: '10px',
+      '& fieldset': {
+        borderColor: 'rgba(15, 23, 42, 0.12)'
+      },
+      '&:hover fieldset': {
+        borderColor: 'var(--primary-color)'
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'var(--primary-color)',
+        borderWidth: 2
+      }
+    },
+    '& .MuiInputLabel-root.Mui-focused': {
+      color: 'var(--primary-color)'
+    }
+  };
 
   const renderContactCard = (card, index) => (
     <Box
@@ -124,17 +144,26 @@ const ContactUs = () => {
       href={card.href !== '#' ? card.href : undefined}
       className="contact-card"
       sx={{
-        display: 'flex',
-        alignItems: 'flex-start',
-        gap: 2,
-        padding: 3,
-        borderRadius: '12px',
-        backgroundColor: 'white',
-        boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+        display: 'grid',
+        gridTemplateColumns: '50px minmax(0, 1fr)',
+        alignItems: 'center',
+        columnGap: 1.5,
+        width: '100%',
+        padding: { xs: 2.25, md: 2.5 },
+        borderRadius: '14px',
+        backgroundColor: 'rgba(255,255,255,0.96)',
+        border: '1px solid rgba(15, 23, 42, 0.08)',
+        boxShadow: '0 10px 24px rgba(15, 23, 42, 0.08)',
+        minHeight: 110,
         textDecoration: 'none',
         color: 'inherit',
+        textAlign: 'left',
         transition: 'all 0.3s ease',
         animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
+        '&:link, &:visited, &:active': {
+          color: 'inherit',
+          textDecoration: 'none'
+        },
         '&:hover': {
           transform: 'translateY(-4px)',
           boxShadow: '0 8px 24px color-mix(in srgb, var(--primary-color) 20%, transparent)',
@@ -144,13 +173,14 @@ const ContactUs = () => {
     >
       <Box
         sx={{
-          width: '56px',
-          height: '56px',
+          width: '50px',
+          height: '50px',
           borderRadius: '12px',
           background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          alignSelf: 'center',
           color: 'white',
           flexShrink: 0,
           boxShadow: '0 4px 12px color-mix(in srgb, var(--secondary-color) 30%, transparent)'
@@ -158,11 +188,21 @@ const ContactUs = () => {
       >
         {card.icon}
       </Box>
-      <Box>
-        <Typography variant="subtitle2" sx={{ color: 'var(--primary-color)', fontWeight: 600, mb: 0.5 }}>
+      <Box
+        sx={{
+          minWidth: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          gap: 0.25,
+          pt: 0,
+          alignSelf: 'center'
+        }}
+      >
+        <Typography variant="subtitle2" sx={{ color: 'var(--primary-color)', fontWeight: 700, mb: 0, lineHeight: 1.2 }}>
           {card.title}
         </Typography>
-        <Typography variant="body1" sx={{ color: '#333', lineHeight: 1.5 }}>
+        <Typography variant="body1" sx={{ color: '#333', lineHeight: 1.45, fontSize: { xs: '0.95rem', md: '1rem' }, wordBreak: 'break-word' }}>
           {card.value}
         </Typography>
       </Box>
@@ -174,7 +214,6 @@ const ContactUs = () => {
       id="contact"
       className="contact-us-section"
       sx={{
-        backgroundColor: '#f8f9fa',
         padding: { xs: '60px 0', md: '80px 0' },
         position: 'relative',
         overflow: 'hidden'
@@ -233,78 +272,86 @@ const ContactUs = () => {
           </Typography>
         </Box>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-          <Grid container spacing={8} alignItems="flex-start" sx={{ maxWidth: 1400, justifyContent: 'center' }}>
-            {/* Left: Email, Phone, Address cards in one column */}
-            <Grid item xs={12} md={3} order={{ xs: 1, md: 1 }}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-                {contactCards.map((card, index) => renderContactCard(card, index))}
-              </Box>
-            </Grid>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', md: 'minmax(300px, 360px) minmax(0, 1fr)', lg: 'minmax(320px, 380px) minmax(0, 1fr)' },
+            gap: { xs: 3, md: 3.5, lg: 4 },
+            alignItems: 'stretch',
+            maxWidth: 1200,
+            mx: 'auto',
+            width: '100%',
+            p: { xs: 2, md: 2.5 },
+            borderRadius: '20px',
+            background: 'linear-gradient(180deg, rgba(255,255,255,0.74) 0%, rgba(255,255,255,0.54) 100%)',
+            border: '1px solid rgba(15, 23, 42, 0.07)',
+            boxShadow: '0 16px 36px rgba(15, 23, 42, 0.08)'
+          }}
+        >
+          {/* Left: Email, Phone, Address cards in one column */}
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.75 }}>
+            {contactCards.map((card, index) => renderContactCard(card, index))}
+          </Box>
 
-            {/* Right: Form */}
-            <Grid item xs={12} md={9} order={{ xs: 2, md: 2 }}>
-              <Box
-                component="form"
-                onSubmit={handleSubmit}
-                className="contact-form-box"
-                sx={{
-                  width: '100%',
-                  minWidth: 0,
-                  padding: { xs: 3, md: 4 },
-                  borderRadius: '16px',
-                  backgroundColor: 'white',
-                  boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
-                  animation: 'fadeInUp 0.6s ease-out 0.3s both'
-                }}
-              >
+          {/* Right: Form */}
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            className="contact-form-box"
+            sx={{
+              width: '100%',
+              minWidth: 0,
+              padding: { xs: 3, md: 4 },
+              borderRadius: '16px',
+              backgroundColor: 'white',
+              border: '1px solid rgba(15, 23, 42, 0.08)',
+              boxShadow: '0 14px 30px rgba(15, 23, 42, 0.1)',
+              animation: 'fadeInUp 0.6s ease-out 0.3s both',
+              height: '100%'
+            }}
+          >
                 <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: '#1a1a1a' }}>
                   Send us a Message
                 </Typography>
+                <Typography variant="body2" sx={{ mb: 1.5, color: '#667085' }}>
+                  Tell us your requirement and our team will respond quickly.
+                </Typography>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                  <Grid container spacing={2} sx={{ width: '100%' }}>
-                    <Grid item xs={12} sm={6} sx={{ minWidth: { sm: 280 } }}>
-                      <TextField
-                        fullWidth
-                        label="Full Name"
-                        name="name"
-                        value={formState.name}
-                        onChange={handleInputChange}
-                        required
-                        size="medium"
-                        sx={{
-                          '& .MuiOutlinedInput-root': {
-                            backgroundColor: 'white',
-                            minWidth: 280,
-                            '&:hover fieldset': { borderColor: 'var(--primary-color)' },
-                            '&.Mui-focused fieldset': { borderColor: 'var(--primary-color)', borderWidth: 2 }
-                          },
-                          '& .MuiInputLabel-root.Mui-focused': { color: 'var(--primary-color)' }
-                        }}
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6} sx={{ minWidth: { sm: 280 } }}>
-                      <TextField
-                        fullWidth
-                        label="Email Address"
-                        name="email"
-                        type="email"
-                        value={formState.email}
-                        onChange={handleInputChange}
-                        required
-                        size="medium"
-                        sx={{
-                          '& .MuiOutlinedInput-root': {
-                            backgroundColor: 'white',
-                            minWidth: 280,
-                            '&:hover fieldset': { borderColor: 'var(--primary-color)' },
-                            '&.Mui-focused fieldset': { borderColor: 'var(--primary-color)', borderWidth: 2 }
-                          },
-                          '& .MuiInputLabel-root.Mui-focused': { color: 'var(--primary-color)' }
-                        }}
-                      />
-                    </Grid>
-                  </Grid>
+                  <Box
+                    sx={{
+                      display: 'grid',
+                      gridTemplateColumns: { xs: '1fr', sm: 'minmax(0, 1fr) minmax(0, 1fr)' },
+                      gap: 2,
+                      width: '100%',
+                      justifyItems: 'stretch',
+                      '& .MuiFormControl-root': {
+                        width: '100%',
+                        minWidth: 0
+                      }
+                    }}
+                  >
+                    <TextField
+                      fullWidth
+                      label="Full Name"
+                      name="name"
+                      value={formState.name}
+                      onChange={handleInputChange}
+                      required
+                      size="medium"
+                      sx={{ ...fieldSx, width: '100%' }}
+                    />
+                    <TextField
+                      fullWidth
+                      label="Email Address"
+                      name="email"
+                      type="email"
+                      value={formState.email}
+                      onChange={handleInputChange}
+                      required
+                      size="medium"
+                      sx={{ ...fieldSx, width: '100%' }}
+                    />
+                  </Box>
                   <Box>
                     <TextField
                       fullWidth
@@ -317,14 +364,7 @@ const ContactUs = () => {
                       rows={5}
                       placeholder="Tell us about your project requirements..."
                       inputProps={{ maxLength: MESSAGE_MAX_LENGTH }}
-                      sx={{
-                        '& .MuiOutlinedInput-root': {
-                          backgroundColor: 'white',
-                          '&:hover fieldset': { borderColor: 'var(--primary-color)' },
-                          '&.Mui-focused fieldset': { borderColor: 'var(--primary-color)', borderWidth: 2 }
-                        },
-                        '& .MuiInputLabel-root.Mui-focused': { color: 'var(--primary-color)' }
-                      }}
+                      sx={fieldSx}
                     />
                     <Typography
                       variant="caption"
@@ -373,9 +413,7 @@ const ContactUs = () => {
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </Box>
-              </Box>
-            </Grid>
-          </Grid>
+          </Box>
         </Box>
       </Container>
     </Box>

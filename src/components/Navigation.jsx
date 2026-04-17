@@ -42,7 +42,7 @@ const Navigation = () => {
               }}
             >
               <img
-                src={logoUrl}
+                src={logoUrl || undefined}
                 alt={`${softwareName} Logo`}
                 style={{
                   height: '40px',
@@ -51,7 +51,7 @@ const Navigation = () => {
                   objectFit: 'contain',
                   maxWidth: '120px'
                 }}
-                onError={() => setLogoUrl('')}
+                onError={() => setLogoUrl(null)}
               />
             </Link>
             <Link
@@ -153,14 +153,14 @@ const Navigation = () => {
             >
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <img
-                  src={logoUrl}
+                  src={logoUrl || undefined}
                   alt={`${softwareName} Logo`}
                   style={{
                     height: '32px',
                     width: 'auto',
                     marginRight: '12px'
                   }}
-                  onError={() => setLogoUrl('')}
+                  onError={() => setLogoUrl(null)}
                 />
                 <Typography variant="h6" sx={{ color: 'var(--primary-color)', fontWeight: 'bold' }}>
                   {softwareName}

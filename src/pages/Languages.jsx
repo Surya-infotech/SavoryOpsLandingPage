@@ -1,5 +1,5 @@
 import { Language as LanguageIcon } from '@mui/icons-material';
-import { Box, Chip, Container, Grid, Typography } from '@mui/material';
+import { Box, Chip, Container, Typography } from '@mui/material';
 import Flag from 'react-world-flags';
 import { getLanguageOptions } from '../constants/languages';
 import '../styles/pages/languages.scss';
@@ -12,7 +12,6 @@ const Languages = () => {
       id="languages"
       className="languages-section"
       sx={{
-        backgroundColor: '#f8f9fa',
         padding: { xs: '60px 0', md: '80px 0' },
         position: 'relative',
         overflow: 'hidden'
@@ -77,8 +76,8 @@ const Languages = () => {
             display: 'grid',
             gridTemplateColumns: {
               xs: 'repeat(2, 1fr)',
-              sm: 'repeat(4, 1fr)',
-              md: 'repeat(4, 1fr)',
+              sm: 'repeat(2, 1fr)',
+              md: 'repeat(3, 1fr)',
               lg: 'repeat(4, 1fr)'
             },
             gap: { xs: 2, md: 3 },
@@ -90,9 +89,11 @@ const Languages = () => {
               key={language.code}
               className="language-item"
               sx={{
-                display: 'flex',
+                display: 'grid',
+                gridTemplateColumns: '32px minmax(0, 1fr)',
                 alignItems: 'center',
-                gap: 1.5,
+                columnGap: 1.25,
+                minHeight: { xs: 64, md: 72 },
                 padding: { xs: '12px', md: '16px' },
                 backgroundColor: 'white',
                 borderRadius: '12px',
@@ -124,7 +125,11 @@ const Languages = () => {
                   color: '#333333',
                   fontSize: { xs: '0.875rem', md: '0.95rem' },
                   fontWeight: 500,
-                  flex: 1
+                  textAlign: 'left',
+                  lineHeight: 1.2,
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis'
                 }}
               >
                 {language.name}

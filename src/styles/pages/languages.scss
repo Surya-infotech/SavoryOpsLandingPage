@@ -13,11 +13,7 @@
   }
 
   .language-item {
-    @media (max-width: 600px) {
-      flex-direction: column;
-      text-align: center;
-      gap: 8px;
-    }
+    width: 100%;
   }
 }
 

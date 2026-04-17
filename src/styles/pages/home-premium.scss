@@ -1,0 +1,91 @@
+.home-page {
+  position: relative;
+
+  .hero-section,
+  .features-section,
+  .benefits-section,
+  .free-software-section,
+  .languages-section,
+  .app-downloads-section,
+  .contact-us-section,
+  .testimonials-section,
+  .cta-section {
+    padding-block: clamp(56px, 8vw, 96px);
+  }
+
+  .features-section,
+  .languages-section,
+  .contact-us-section,
+  .testimonials-section {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0.88)),
+      radial-gradient(circle at top right, rgba(16, 185, 129, 0.05), transparent 38%);
+  }
+
+  .benefits-section,
+  .free-software-section,
+  .app-downloads-section {
+    background: rgba(255, 255, 255, 0.92);
+  }
+
+  .hero-section .hero-title {
+    color: #ffffff;
+    text-shadow: 0 8px 28px rgba(15, 23, 42, 0.34);
+  }
+
+  .hero-section .hero-subtitle {
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .hero-section .hero-buttons .coming-soon-text {
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.24);
+  }
+
+  .features-section .features-header,
+  .benefits-section .MuiBox-root:first-child,
+  .languages-section .MuiBox-root:first-child,
+  .app-downloads-section .app-downloads-header,
+  .contact-us-section .MuiBox-root:first-child,
+  .testimonials-section .section-header {
+    max-width: 980px;
+    margin-inline: auto;
+  }
+
+  .features-section .features-title,
+  .benefits-section h2,
+  .languages-section h2,
+  .app-downloads-section .app-downloads-title,
+  .contact-us-section h2,
+  .testimonials-section .section-title {
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+  }
+
+  .benefits-section img,
+  .hero-section img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .contact-us-section .contact-form-box,
+  .app-downloads-section .app-download-card,
+  .languages-section .language-item {
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  }
+
+  .contact-us-section .contact-form-box {
+    max-width: 100%;
+  }
+
+  @media (max-width: 960px) {
+    .hero-section,
+    .benefits-section,
+    .app-downloads-section,
+    .contact-us-section {
+      padding-block: 56px;
+    }
+  }
+}

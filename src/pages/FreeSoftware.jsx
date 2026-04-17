@@ -59,7 +59,6 @@ const FreeSoftware = () => {
       id="free-software"
       className="free-software-section"
       sx={{
-        backgroundColor: '#ffffff',
         padding: { xs: '60px 0', md: '80px 0' },
         position: 'relative',
         overflow: 'hidden'
