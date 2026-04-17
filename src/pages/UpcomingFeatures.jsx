@@ -8,7 +8,6 @@ import {
   Loyalty as LoyaltyIcon, 
   MenuBook as MenuBookIcon,
   Payment as PaymentIcon,
-  RestaurantMenu as RestaurantMenuIcon,
   Rocket as RocketIcon, 
   Star as StarIcon,
   SupportAgent as SupportAgentIcon,
@@ -63,13 +62,6 @@ const UpcomingFeatures = () => {
 
   const upcomingFeatures = [
     {
-      title: 'Table Reservation System',
-      subtitle: 'Online Booking Management',
-      description: 'Allow customers to book tables online with real-time availability and automated confirmations.',
-      icon: <CalendarTodayIcon sx={{ fontSize: 24 }} />,
-      color: 'var(--secondary-color)'
-    },
-    {
       title: 'Pickup',
       subtitle: 'Order Pickup System',
       description: 'Enable customers to place orders for pickup with order tracking and ready notifications.',
@@ -110,13 +102,6 @@ const UpcomingFeatures = () => {
       description: 'Create and manage discount coupons with flexible rules, expiration dates, and usage tracking.',
       icon: <CardGiftcardIcon sx={{ fontSize: 24 }} />,
       color: 'var(--secondary-color)'
-    },
-    {
-      title: 'Combo Meal',
-      subtitle: 'Meal Package System',
-      description: 'Design and manage combo meals with bundled items at special prices to increase sales.',
-      icon: <RestaurantMenuIcon sx={{ fontSize: 24 }} />,
-      color: 'color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color))'
     },
     {
       title: 'Membership System',

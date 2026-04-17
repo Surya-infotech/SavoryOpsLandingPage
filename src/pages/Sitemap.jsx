@@ -84,10 +84,10 @@ const Sitemap = () => {
       description: 'Multi-business management capabilities'
     },
     {
-      name: 'QR Code Scanning',
-      path: '/features/qr-code-scanning',
+      name: 'QR-Based Menu',
+      path: '/features/qr-based-menu',
       icon: <QrCodeIcon />,
-      description: 'QR code integration for orders and payments'
+      description: 'Contactless QR menu experience for faster ordering and service'
     },
     {
       name: 'Cloud Based System',

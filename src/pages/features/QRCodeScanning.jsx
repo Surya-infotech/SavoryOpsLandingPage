@@ -19,7 +19,7 @@ const QRCodeScanning = () => {
     window.scrollTo(0, 0);
 
     // Update document title
-    document.title = `QR Code Scanning - ${softwareName}`;
+    document.title = `QR-Based Menu - ${softwareName}`;
 
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -28,7 +28,7 @@ const QRCodeScanning = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Scan QR codes for instant order placement and seamless customer experience. QR code system revolutionizes dining by allowing customers to access menus, place orders, and track food preparation in real-time.');
+    metaDescription.setAttribute('content', 'Enable contactless QR-based menu ordering with live menu updates, seamless mobile checkout, and real-time order tracking for faster table service.');
 
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -37,7 +37,7 @@ const QRCodeScanning = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'QR code scanning, QR code ordering, contactless ordering, QR menu, mobile ordering, restaurant QR code, digital menu, SavoryOps'.replaceAll('SavoryOps', softwareName));
+    metaKeywords.setAttribute('content', 'QR-based menu, contactless menu, QR ordering, digital menu, mobile ordering, restaurant QR menu, real-time menu updates, SavoryOps'.replaceAll('SavoryOps', softwareName));
   }, [softwareName]);
 
   const benefits = [
@@ -97,20 +97,20 @@ const QRCodeScanning = () => {
             {/* Left Side - Content */}
             <Box className="feature-hero">
               <Typography variant="h1" component="h1" className="feature-title">
-                QR Code Scanning
+                QR-Based Menu
               </Typography>
               <Typography
                 variant="h4"
                 color="text.secondary"
                 className="feature-subtitle"
               >
-                Smart Order Processing
+                Contactless Menu Experience
               </Typography>
               <Typography variant="body1" className="feature-description">
-                Scan QR codes for instant order placement and seamless customer
-                experience. Our QR code system revolutionizes the dining
-                experience by allowing customers to access menus, place orders,
-                and track their food preparation in real-time.
+                Enable contactless ordering with dynamic QR menus, live updates,
+                and faster table turnover. Our QR-based menu system helps guests
+                browse, customize, and place orders instantly while staff and
+                kitchen teams receive updates in real time.
               </Typography>
               <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
@@ -122,7 +122,7 @@ const QRCodeScanning = () => {
               <Box className="qr-image">
                 <img
                   src="/features/QRCodeScanning/qr-code-scanning.png"
-                  alt="QR Code Scanning Interface"
+                  alt="QR-Based Menu Interface"
                   className="qr-preview-image"
                 />
               </Box>
@@ -134,16 +134,16 @@ const QRCodeScanning = () => {
         <Box className="benefits-section">
           <Box className="benefits-header">
             <Typography variant="h3" component="h2" className="section-title">
-              Why Choose Our QR Code Scanning?
+              Why Choose Our QR-Based Menu?
             </Typography>
             <Typography
               variant="body1"
               color="text.secondary"
               className="benefits-description"
             >
-              Experience the future of restaurant ordering with instant QR code
-              access, seamless mobile integration, and real-time tracking that
-              revolutionizes the dining experience
+              Deliver a modern contactless dining flow with instant menu access,
+              mobile-first ordering, and real-time status visibility from table
+              to kitchen.
             </Typography>
           </Box>
           <Box className="benefits-grid">
@@ -184,7 +184,7 @@ const QRCodeScanning = () => {
           </Box>
           <CTA
             title="Ready to Modernize Your Ordering System?"
-            description="Experience the power of QR code technology with our innovative restaurant ordering platform."
+            description="Offer a faster, contactless guest journey with dynamic QR menus and seamless digital ordering."
             variant="default"
           />
         </Box>

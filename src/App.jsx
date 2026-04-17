@@ -21,6 +21,7 @@ import BranchPricing from './pages/features/BranchPricing';
 import BranchStaffManagement from './pages/features/BranchStaffManagement';
 import BranchTaxManagement from './pages/features/BranchTaxManagement';
 import CloudBasedSystem from './pages/features/CloudBasedSystem';
+import ComboMeal from './pages/features/ComboMeal';
 import CustomSubdomain from './pages/features/CustomSubdomain';
 import CustomerReviews from './pages/features/CustomerReviews';
 import DigitalInvoiceDownload from './pages/features/DigitalInvoiceDownload';
@@ -35,6 +36,7 @@ import MultipleLanguages from './pages/features/MultipleLanguages';
 import OrderSummary from './pages/features/OrderSummary';
 import QRCodeScanning from './pages/features/QRCodeScanning';
 import SmartDashboard from './pages/features/SmartDashboard';
+import TableReservation from './pages/features/TableReservation';
 import './styles/main.scss';
 
 const ScrollToTop = () => {
@@ -129,7 +131,7 @@ const AppContent = () => {
         <Route path="/features/customer-reviews" element={<CustomerReviews />} />
         <Route path="/features/multiple-business" element={<MultipleBusiness />} />
         <Route path="/features/multiple-branches" element={<MultipleBranches />} />
-        <Route path="/features/qr-code-scanning" element={<QRCodeScanning />} />
+        <Route path="/features/qr-based-menu" element={<QRCodeScanning />} />
         <Route path="/features/cloud-based-system" element={<CloudBasedSystem />} />
         <Route path="/features/multi-tenant-architecture" element={<MultiTenantArchitecture />} />
         <Route path="/features/branch-staff-management" element={<BranchStaffManagement />} />
@@ -140,6 +142,8 @@ const AppContent = () => {
         <Route path="/features/digital-invoice-download" element={<DigitalInvoiceDownload />} />
         <Route path="/features/advanced-reports" element={<AdvancedReports />} />
         <Route path="/features/custom-subdomain" element={<CustomSubdomain />} />
+        <Route path="/features/table-reservation" element={<TableReservation />} />
+        <Route path="/features/combo-meal" element={<ComboMeal />} />
         <Route path="/Signin" element={<OwnerLogin />} />
         <Route path="/Signup" element={<OwnerSignUp />} />
       </Routes>

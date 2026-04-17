@@ -72,6 +72,7 @@ const Features = ({ showHeading = true }) => {
     },
     {
       id: 'unlimited-meal',
+      routeTo: 'combo-meal',
       icon: <LocalDiningIcon />,
       title: 'Unlimited Meal',
       description: 'Manage unlimited buffet-style plans with timing controls and customer eligibility tracking.',
@@ -159,7 +160,7 @@ const Features = ({ showHeading = true }) => {
               <Box key={feature.id} className="feature-grid-item">
                 <Card
                   className="feature-card clickable-card"
-                  onClick={() => handleFeatureClick(feature.id)}
+                  onClick={() => handleFeatureClick(feature.routeTo || feature.id)}
                 >
                   <CardContent className="card-content">
                     <Box

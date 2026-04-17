@@ -1,4 +1,4 @@
-import { AccountTree as AccountTreeIcon, Assessment as AssessmentIcon, Bolt as BoltIcon, Business as BusinessIcon, CalendarMonth as CalendarMonthIcon, Cloud as CloudIcon, CurrencyExchange as CurrencyExchangeIcon, Dashboard as DashboardIcon, Download as DownloadIcon, Groups as GroupsIcon, Language as LanguageIcon, Menu as MenuIcon, PriceChange as PriceChangeIcon, Public as PublicIcon, QrCode as QrCodeIcon, RateReview as RateReviewIcon, ReceiptLong as ReceiptLongIcon, Restaurant as RestaurantIcon, Rocket as RocketIcon, Security as SecurityIcon, Star as StarIcon, Storage as StorageIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { AccountTree as AccountTreeIcon, Assessment as AssessmentIcon, Bolt as BoltIcon, Business as BusinessIcon, CalendarMonth as CalendarMonthIcon, Cloud as CloudIcon, CurrencyExchange as CurrencyExchangeIcon, Dashboard as DashboardIcon, Download as DownloadIcon, Groups as GroupsIcon, Language as LanguageIcon, Menu as MenuIcon, PriceChange as PriceChangeIcon, Public as PublicIcon, QrCode as QrCodeIcon, RateReview as RateReviewIcon, ReceiptLong as ReceiptLongIcon, Restaurant as RestaurantIcon, RestaurantMenu as RestaurantMenuIcon, Rocket as RocketIcon, Security as SecurityIcon, Star as StarIcon, Storage as StorageIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -56,7 +56,7 @@ const FeaturesPage = () => {
       'Multiple Languages': '/features/multiple-languages',
       'KOT System': '/features/kot-system',
       'Order Summary & Timeline': '/features/order-summary',
-      'QR Code Scanning': '/features/qr-code-scanning',
+      'QR-Based Menu': '/features/qr-based-menu',
       'Customer Reviews': '/features/customer-reviews',
       'Cloud-Based System': '/features/cloud-based-system',
       'Separate Database': '/features/multi-tenant-architecture',
@@ -67,7 +67,9 @@ const FeaturesPage = () => {
       'Fiscal Year Records': '/features/fiscal-year-records',
       'Digital Invoice Download': '/features/digital-invoice-download',
       'Advanced Reports': '/features/advanced-reports',
-      'Custom Subdomain': '/features/custom-subdomain'
+      'Custom Subdomain': '/features/custom-subdomain',
+      'Table Reservation': '/features/table-reservation',
+      'Combo Meal': '/features/combo-meal'
     };
 
     const route = routeMap[featureTitle];
@@ -142,9 +144,9 @@ const FeaturesPage = () => {
     },
     {
       icon: <QrCodeIcon sx={{ fontSize: 24 }} />,
-      title: 'QR Code Scanning',
-      subtitle: 'Smart Order Processing',
-      description: 'Scan QR codes for instant order placement and seamless customer experience.',
+      title: 'QR-Based Menu',
+      subtitle: 'Contactless Menu Experience',
+      description: 'Enable contactless ordering with dynamic QR menus, live updates, and faster table turnover.',
       color: 'var(--primary-color)'
     },
     {
@@ -152,6 +154,20 @@ const FeaturesPage = () => {
       title: 'KOT System',
       subtitle: 'Kitchen Order Tickets',
       description: 'Streamlined kitchen order management with real-time ticket generation and tracking.',
+      color: 'var(--primary-color)'
+    },
+    {
+      icon: <CalendarMonthIcon sx={{ fontSize: 24 }} />,
+      title: 'Table Reservation',
+      subtitle: 'Online Booking Management',
+      description: 'Allow customers to reserve tables with real-time slot availability and instant confirmations.',
+      color: 'var(--primary-color)'
+    },
+    {
+      icon: <RestaurantMenuIcon sx={{ fontSize: 24 }} />,
+      title: 'Combo Meal',
+      subtitle: 'Meal Package System',
+      description: 'Create bundled meal offers with flexible pricing rules to improve order value and customer satisfaction.',
       color: 'var(--primary-color)'
     },
     {
