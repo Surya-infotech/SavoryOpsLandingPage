@@ -372,10 +372,6 @@ const OwnerSignUp = () => {
                     <div className="signup-content">
                         {currentStep === 1 ? (
                             <form onSubmit={handleBasicInfoSubmit} className="signup-form">
-                                <div className="step-header">
-                                    <h2 className="step-title">{translations.yourdetails}</h2>
-                                    <p className="step-subtitle">{translations.provideemailandpassword}</p>
-                                </div>
                                 <div className="form-group name-fields">
                                     <div className="name-field">
                                         <label>{translations.firstname}</label>
@@ -523,12 +519,6 @@ const OwnerSignUp = () => {
                         ) : currentStep === 2 ? (
                             <form onSubmit={handleOtpSubmit}>
                                 <div className="otp-container">
-                                    <div className="step-header">
-                                        <h3>{translations.verifyyourphone}</h3>
-                                        <p className="otp-description">
-                                            {translations.otpsentmessage}
-                                        </p>
-                                    </div>
                                     <div className="otp-input-group">
                                         {otp.map((digit, index) => (
                                             <input
@@ -580,12 +570,6 @@ const OwnerSignUp = () => {
                             </form>
                         ) : (
                             <div className="welcome-container">
-                                <div className="step-header">
-                                    <h2>{translations.welcometosystem}</h2>
-                                    <p className="welcome-description">
-                                        {translations.getupandrunning}
-                                    </p>
-                                </div>
                                 <div className="welcome-content">
                                     <div className="welcome-icon">🎉</div>
                                     <p>{translations.accountcreatedsuccessfully}</p>

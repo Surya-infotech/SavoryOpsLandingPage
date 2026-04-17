@@ -172,9 +172,17 @@ const OwnerLogin = () => {
                         {isLoading ? translations.signingin : translations.signin}
                     </button>
                 </form>
-                <div className="form-group signup">
-                    <h6>{translations.donothaveanaccount}</h6>
-                    <NavLink to="/Signup">{translations.signup}</NavLink>
+                <div className="form-group signin">
+                    <div className="signin-divider">
+                        <span className="divider-line"></span>
+                        <div className="divider-content">
+                            <span className="divider-text">{translations.donothaveanaccount}</span>
+                            <NavLink to="/Signup" className="signin-link">
+                                {translations.signup}
+                            </NavLink>
+                        </div>
+                        <span className="divider-line"></span>
+                    </div>
                 </div>
                 <div className="demo-buttons-container">
                     <h6>{translations.demoaccounts}</h6>

@@ -28,16 +28,16 @@
 @mixin form_input {
     background-color: var(--form-input-color);
     display: block;
-    padding: 8px;
+    padding: 10px 12px;
     border: var.$form_input_border_color !important;
     border-radius: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 15px !important;
     outline: none;
     color: var(--text-color) !important;
 
     &:focus,
     &:hover {
-        box-shadow: var.$box-shadow !important;
+        box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--primary-color) 35%, transparent) !important;
     }
 
     &::placeholder {
@@ -74,6 +74,11 @@
     color: var(--text-color) !important;
     align-items: center !important;
     border: var.$form_input_border_color !important;
+    border-radius: 5px;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    margin-bottom: 15px !important;
 
     &::after {
         content: none !important;
@@ -82,8 +87,8 @@
     &:hover,
     &:active {
         background-color: transparent !important;
-        box-shadow: var.$box-shadow !important;
-        border: none;
+        border-color: var(--primary-color) !important;
+        box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--primary-color) 35%, transparent) !important;
     }
 }
 
@@ -92,6 +97,7 @@
     overflow-y: auto;
     display: block;
     width: 100%;
+    margin-top: -15px !important;
     border-color: var(--border-color);
     background-color: var(--form-input-color);
     color: var(--text-color) !important;
@@ -106,9 +112,9 @@
         color: var(--text-color) !important;
 
         &:hover {
-            background-color: var.$hover_color;
+            background-color: var(--secondary-color);
             border-radius: 10px;
-            color: var.$primary_text_color !important;
+            color: var(--primary-color) !important;
         }
 
         &:active {

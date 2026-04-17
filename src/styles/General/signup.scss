@@ -22,6 +22,12 @@
     left: 0;
     right: 0;
     bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(17, 24, 39, 0.72) 0%,
+      rgba(17, 24, 39, 0.52) 45%,
+      rgba(17, 24, 39, 0.72) 100%
+    );
     z-index: 0;
   }
 
@@ -135,9 +141,9 @@
     width: 100%;
     max-width: 1100px;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(255, 255, 255, 0.93);
     border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 28px 58px rgba(15, 23, 42, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.15);
     position: relative;
     z-index: 1;
     backdrop-filter: blur(10px);
@@ -175,7 +181,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px !important;
 
       .logo-button {
         display: flex;
@@ -205,18 +211,22 @@
         }
 
         .logo {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          object-fit: contain;
+          width: 72px;
+          height: 72px;
+          border-radius: 14px;
+          object-fit: contain !important;
+          background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+          padding: 8px;
+          box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
         }
 
         h2 {
-          text-align: center;
+          text-align: center !important;
           margin: 0;
-          color: var(--primary-color);
+          color: #111827;
           font-size: 24px;
           font-weight: 700;
+          letter-spacing: 0.2px;
         }
       }
     }
@@ -238,7 +248,7 @@
     }
 
     .progress-tracker {
-      flex: 0 0 350px;
+      flex: 0 0 280px;
       padding-top: 15px;
       border-right: 2px solid color-mix(in srgb, var(--primary-color) 10%, transparent);
       padding-bottom: 0;
@@ -522,7 +532,7 @@
           letter-spacing: 0.2px;
         }
 
-        input {
+        input:not([type="radio"]):not([type="checkbox"]) {
           width: 100%;
           padding: 10px 14px;
           border: 2px solid #e0e0e0;
@@ -875,7 +885,7 @@
         letter-spacing: 0.2px;
       }
 
-      input {
+      input:not([type="radio"]):not([type="checkbox"]) {
         width: 100%;
         padding: 10px 14px;
         border: 2px solid #e0e0e0;
