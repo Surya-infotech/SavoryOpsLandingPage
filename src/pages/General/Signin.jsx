@@ -93,7 +93,7 @@ const OwnerLogin = () => {
     };
 
     const handleDemoOwner = () => {
-        setEmail('marcushayes@gmail.com');
+        setEmail('marcus@gmail.com');
         setPassword('12345678');
     };
 
