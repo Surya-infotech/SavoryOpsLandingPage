@@ -14,8 +14,8 @@ const ScrollToTop = ({ show, onClick }) => {
         position: 'fixed',
         bottom: 16,
         right: 16,
-        backgroundColor: '#2e7d32',
-        '&:hover': { backgroundColor: '#1b5e20' }
+        backgroundColor: 'var(--primary-color)',
+        '&:hover': { backgroundColor: 'color-mix(in srgb, var(--primary-color) 70%, #000)' }
       }}
     >
       <KeyboardArrowUpIcon />

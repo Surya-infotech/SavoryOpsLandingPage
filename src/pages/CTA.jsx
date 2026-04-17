@@ -1,6 +1,5 @@
 import { Box, Container, Typography } from '@mui/material';
 import GetStartedButton from '../components/GetStartedButton';
-import BuyNowButton from '../components/BuyNowButton';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 
 const CTA = () => {
@@ -25,17 +24,6 @@ const CTA = () => {
                 fontSize: '1.1rem',
                 fontWeight: 600,
                 minHeight: '48px'
-              }}
-            />
-            <BuyNowButton
-              className="coming-soon-text"
-              sx={{
-                px: 4,
-                py: 2,
-                fontSize: '1.1rem',
-                fontWeight: 600,
-                minHeight: '48px',
-                mt: 0
               }}
             />
           </Box>

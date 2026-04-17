@@ -6,9 +6,9 @@
 // ============================================================================
 
 // Color Variables
-$primary-green: #2e7d32;
-$primary-green-light: #4caf50;
-$primary-green-hover: #1b5e20;
+$primary-green: var(--primary-color);
+$primary-green-light: var(--secondary-color);
+$primary-green-hover: color-mix(in srgb, var(--primary-color) 70%, #000);
 $accent-green: #66bb6a;
 $white: #ffffff;
 $light-gray: #fafafa;
@@ -49,7 +49,7 @@ $border-radius-xl: 16px;
 $shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
 $shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
 $shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.15);
-$shadow-primary: 0 4px 12px rgba(46, 125, 50, 0.3);
+$shadow-primary: 0 4px 12px color-mix(in srgb, var(--primary-color) 30%, transparent);
 
 // Transitions
 $transition-fast: 0.2s ease;

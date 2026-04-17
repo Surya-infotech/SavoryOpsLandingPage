@@ -5,7 +5,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { formatDuration, getPlanLimits } from '../utils/planUtils';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/free-software.scss';
-import BuyNowButton from '../components/BuyNowButton';
 
 const FreeSoftware = () => {
   const [plans, setPlans] = useState([]);
@@ -146,7 +145,6 @@ const FreeSoftware = () => {
                         >
                           {plan.plantype === 'free' ? 'Start Free Trial' : 'Get Free Lifetime Access'}
                         </Typography>
-                        <BuyNowButton fullWidth sx={{ borderRadius: '4px', py: 1 }} />
                       </Box>
                     </Box>
                   ))}
@@ -166,7 +164,6 @@ const FreeSoftware = () => {
                   >
                     View More Plans
                   </Typography>
-                  <BuyNowButton sx={{ borderRadius: '50px' }} />
                 </Box>
               )}
             </Box>

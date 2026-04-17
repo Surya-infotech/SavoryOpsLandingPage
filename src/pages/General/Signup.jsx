@@ -34,7 +34,7 @@ const OwnerSignUp = () => {
     const [formError, setFormError] = useState('');
     const [warningMessage, setWarningMessage] = useState("");
     const [showWarning, setShowWarning] = useState(false);
-    const { logoUrl, softwareName, fallbackLogoUrl, setLogoUrl } = useAppSettings();
+    const { logoUrl, softwareName, setLogoUrl } = useAppSettings();
 
     const languages = getLanguageOptions();
 
@@ -349,7 +349,7 @@ const OwnerSignUp = () => {
                             src={logoUrl}
                             alt={`${softwareName} Logo`}
                             className="logo"
-                            onError={() => setLogoUrl(fallbackLogoUrl)}
+                            onError={() => setLogoUrl('')}
                         />
                         <h2>{softwareName}</h2>
                     </a>

@@ -2,7 +2,6 @@ import { ArrowBack as ArrowBackIcon, ArrowForward as ArrowForwardIcon, Bolt as B
 import { Box, Button, Card, CardContent, Chip, Container, IconButton, Typography } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import BuyNowButton from '../components/BuyNowButton';
 import '../styles/pages/features.scss';
 
 const Features = ({ showHeading = true }) => {
@@ -19,49 +18,49 @@ const Features = ({ showHeading = true }) => {
       icon: <DashboardIcon />,
       title: 'Dashboard',
       description: 'Real-time overview of your restaurant operations with intuitive analytics',
-      color: '#4caf50'
+      color: 'var(--secondary-color)'
     },
     {
       id: 'multiple-business',
       icon: <StarIcon />,
       title: 'Multiple Business',
       description: 'Create and manage multiple restaurant businesses from a single platform',
-      color: '#4caf50'
+      color: 'var(--secondary-color)'
     },
     {
       id: 'multiple-branches',
       icon: <TrendingUpIcon />,
       title: 'Multiple Branches',
       description: 'Manage multiple branches with centralized control and reporting',
-      color: '#2e7d32'
+      color: 'var(--primary-color)'
     },
     {
       id: 'branch-pricing',
       icon: <PaymentIcon />,
       title: 'Branch-wise Pricing',
       description: 'Set different item prices for each branch with flexible pricing control',
-      color: '#4caf50'
+      color: 'var(--secondary-color)'
     },
     {
       id: 'branch-staff-management',
       icon: <PeopleIcon />,
       title: 'Staff Management',
       description: 'Add branch-wise employees, assign roles, schedule shifts, and manage payroll',
-      color: '#388e3c'
+      color: 'color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color))'
     },
     {
       id: 'order-summary',
       icon: <ScheduleIcon />,
       title: 'Order Management',
       description: 'Track order details with complete status history and timeline',
-      color: '#388e3c'
+      color: 'color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color))'
     },
     {
       id: 'advanced-reports',
       icon: <DashboardIcon />,
       title: 'Revenue Analytics',
       description: 'Business and branch-wise order revenue with fiscal year tracking',
-      color: '#4caf50'
+      color: 'var(--secondary-color)'
     }
   ];
 
@@ -292,7 +291,13 @@ const Features = ({ showHeading = true }) => {
                   onClick={() => handleFeatureClick(feature.id)}
                 >
                   <CardContent className="card-content">
-                    <Box className="feature-icon">
+                    <Box
+                      className="feature-icon"
+                      sx={{
+                        background: `linear-gradient(135deg, ${feature.color}, color-mix(in srgb, ${feature.color} 87%, transparent))`,
+                        boxShadow: `0 8px 24px color-mix(in srgb, ${feature.color} 25%, transparent), 0 4px 12px color-mix(in srgb, ${feature.color} 19%, transparent)`,
+                      }}
+                    >
                       {feature.icon}
                     </Box>
                     <Typography variant="h6" component="h3" className="feature-title" >
@@ -319,7 +324,6 @@ const Features = ({ showHeading = true }) => {
           >
             View All Features
           </Button>
-          <BuyNowButton />
         </Box>
       </Container>
     </Box>

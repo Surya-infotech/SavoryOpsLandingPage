@@ -8,7 +8,6 @@ import { formatCurrency } from '../utils/currency';
 import { formatDuration, getPlanLimits } from '../utils/planUtils';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/pricing.scss';
-import BuyNowButton from '../components/BuyNowButton';
 
 const Pricing = () => {
   const [plans, setPlans] = useState([]);
@@ -233,7 +232,6 @@ const Pricing = () => {
                     >
                       {plan.plantype === 'free' ? 'Get Started Free' : 'Choose Plan'}
                     </Typography>
-                    <BuyNowButton fullWidth sx={{ borderRadius: '4px', py: 1 }} />
                   </Box>
                 </Box>
               ))

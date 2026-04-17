@@ -8,7 +8,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(46, 125, 50, 0.02) 0%, rgba(76, 175, 80, 0.02) 100%);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 2%, transparent) 0%, color-mix(in srgb, var(--secondary-color) 2%, transparent) 100%);
     pointer-events: none;
   }
 

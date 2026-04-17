@@ -1,7 +1,6 @@
 import { CheckCircle as CheckCircleIcon, Star as StarIcon } from '@mui/icons-material';
 import { Box, Chip, Container, Grid, Typography } from '@mui/material';
 import GetStartedButton from '../components/GetStartedButton';
-import BuyNowButton from '../components/BuyNowButton';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 
 const Benefits = () => {
@@ -37,7 +36,7 @@ const Benefits = () => {
               icon={<StarIcon />}
               label="Why Choose Us"
               sx={{
-                background: 'linear-gradient(135deg, #2e7d32, #4caf50)',
+                background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
                 color: 'white',
                 fontWeight: 600,
                 fontSize: '0.9rem',
@@ -57,7 +56,7 @@ const Benefits = () => {
               fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
               color: '#1a1a1a',
               mb: 2,
-              background: 'linear-gradient(135deg, #1b5e20, #2e7d32, #4caf50)',
+              background: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000), var(--primary-color), var(--secondary-color))',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -100,7 +99,7 @@ const Benefits = () => {
                     sx={{
                       width: '40px',
                       height: '40px',
-                      background: 'linear-gradient(135deg, #4caf50, #66bb6a)',
+                      background: 'linear-gradient(135deg, var(--secondary-color), color-mix(in srgb, var(--secondary-color) 80%, #fff))',
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
@@ -108,7 +107,7 @@ const Benefits = () => {
                       marginRight: 2,
                       color: 'white',
                       flexShrink: 0,
-                      boxShadow: '0 4px 12px rgba(76, 175, 80, 0.3)'
+                      boxShadow: '0 4px 12px color-mix(in srgb, var(--secondary-color) 30%, transparent)'
                     }}
                   >
                     <CheckCircleIcon sx={{ fontSize: 20 }} />
@@ -131,16 +130,6 @@ const Benefits = () => {
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
               <GetStartedButton
                 className="coming-soon-text"
-                sx={{
-                  padding: '12px 32px',
-                  fontSize: '1.1rem',
-                  fontWeight: 600,
-                  borderRadius: '50px',
-                  minHeight: '48px',
-                  animation: 'fadeInUp 0.8s ease-out 0.6s both'
-                }}
-              />
-              <BuyNowButton
                 sx={{
                   padding: '12px 32px',
                   fontSize: '1.1rem',
@@ -174,7 +163,7 @@ const Benefits = () => {
                   height: 'auto',
                   borderRadius: '16px',
                   boxShadow: '0 16px 48px rgba(0,0,0,0.15)',
-                  border: '1px solid rgba(76, 175, 80, 0.1)',
+                  border: '1px solid color-mix(in srgb, var(--secondary-color) 10%, transparent)',
                   marginLeft: 'auto',
                   display: 'block'
                 }}

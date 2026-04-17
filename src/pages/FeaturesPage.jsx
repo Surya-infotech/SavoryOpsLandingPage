@@ -3,7 +3,6 @@ import { Box, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import GetStartedButton from '../components/GetStartedButton';
-import BuyNowButton from '../components/BuyNowButton';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/featurespage.scss';
 
@@ -83,133 +82,133 @@ const FeaturesPage = () => {
       title: 'Smart Dashboard',
       subtitle: 'Real-time Business Intelligence',
       description: 'Get instant insights into your restaurant performance with our intelligent dashboard.',
-      color: '#4caf50'
+      color: 'var(--primary-color)'
     },
     {
       icon: <BusinessIcon sx={{ fontSize: 24 }} />,
       title: 'Multiple Business',
       subtitle: 'Multi-Entity Management',
       description: 'Manage multiple business entities from a single platform with centralized control.',
-      color: '#388e3c'
+      color: 'var(--primary-color)'
     },
     {
       icon: <AccountTreeIcon sx={{ fontSize: 24 }} />,
       title: 'Multiple Branches',
       subtitle: 'Branch Network Management',
       description: 'Efficiently manage multiple branches with unified operations and reporting.',
-      color: '#4caf50'
+      color: 'var(--primary-color)'
     },
     {
       icon: <StorageIcon sx={{ fontSize: 24 }} />,
       title: 'Separate Database',
       subtitle: 'Multi-Tenant Architecture',
       description: 'Each restaurant owner gets their own dedicated database with complete data isolation and security.',
-      color: '#2e7d32'
+      color: 'var(--primary-color)'
     },
     {
       icon: <PublicIcon sx={{ fontSize: 24 }} />,
       title: 'Custom Subdomain',
       subtitle: 'Restaurant Owner-wise',
       description: 'Each restaurant owner gets their own custom subdomain for a personalized and branded experience.',
-      color: '#388e3c'
+      color: 'var(--primary-color)'
     },
     {
       icon: <CloudIcon sx={{ fontSize: 24 }} />,
       title: 'Cloud-Based System',
       subtitle: 'Access Anywhere, Anytime',
       description: 'Fully cloud-based platform ensuring secure access from anywhere with automatic updates and backups.',
-      color: '#2e7d32'
+      color: 'var(--primary-color)'
     },
     {
       icon: <GroupsIcon sx={{ fontSize: 24 }} />,
       title: 'Branch-wise Staff Management',
       subtitle: 'Local Workforce Control',
       description: 'Manage staff separately for each branch with localized permissions and scheduling.',
-      color: '#4caf50'
+      color: 'var(--primary-color)'
     },
     {
       icon: <MenuIcon sx={{ fontSize: 24 }} />,
       title: 'Menu Management',
       subtitle: 'Dynamic Menu Control',
       description: 'Update menus instantly and manage pricing with real-time control.',
-      color: '#4caf50'
+      color: 'var(--primary-color)'
     },
     {
       icon: <PriceChangeIcon sx={{ fontSize: 24 }} />,
       title: 'Branch-wise Pricing',
       subtitle: 'Flexible Price Management',
       description: 'Set different item prices for each branch based on local market conditions.',
-      color: '#4caf50'
+      color: 'var(--primary-color)'
     },
     {
       icon: <QrCodeIcon sx={{ fontSize: 24 }} />,
       title: 'QR Code Scanning',
       subtitle: 'Smart Order Processing',
       description: 'Scan QR codes for instant order placement and seamless customer experience.',
-      color: '#4caf50'
+      color: 'var(--primary-color)'
     },
     {
       icon: <RestaurantIcon sx={{ fontSize: 24 }} />,
       title: 'KOT System',
       subtitle: 'Kitchen Order Tickets',
       description: 'Streamlined kitchen order management with real-time ticket generation and tracking.',
-      color: '#388e3c'
+      color: 'var(--primary-color)'
     },
     {
       icon: <TimelineIcon sx={{ fontSize: 24 }} />,
       title: 'Order Summary & Timeline',
       subtitle: 'Detailed Order Tracking',
       description: 'Complete order details with status tracking and timeline for better order management.',
-      color: '#2e7d32'
+      color: 'var(--primary-color)'
     },
     {
       icon: <LanguageIcon sx={{ fontSize: 24 }} />,
       title: 'Multiple Languages',
       subtitle: 'Global Communication',
       description: 'Support for multiple languages to serve diverse customer bases worldwide.',
-      color: '#2e7d32'
+      color: 'var(--primary-color)'
     },
     {
       icon: <CurrencyExchangeIcon sx={{ fontSize: 24 }} />,
       title: 'Multiple Currency',
       subtitle: 'International Transactions',
       description: 'Accept payments in multiple currencies for global business operations.',
-      color: '#388e3c'
+      color: 'var(--primary-color)'
     },
     {
       icon: <ReceiptLongIcon sx={{ fontSize: 24 }} />,
       title: 'Branch-wise Tax Management',
       subtitle: 'Local Tax Compliance',
       description: 'Manage different tax rates and regulations for each branch location.',
-      color: '#388e3c'
+      color: 'var(--primary-color)'
     },
     {
       icon: <CalendarMonthIcon sx={{ fontSize: 24 }} />,
       title: 'Fiscal Year Records',
       subtitle: 'Organized Financial Data',
       description: 'Keep organized records fiscal year wise for better financial management and compliance.',
-      color: '#4caf50'
+      color: 'var(--primary-color)'
     },
     {
       icon: <DownloadIcon sx={{ fontSize: 24 }} />,
       title: 'Digital Invoice Download',
       subtitle: 'Future Requirements',
       description: 'Users can download digital invoices for future requirements and record keeping.',
-      color: '#388e3c'
+      color: 'var(--primary-color)'
     },
     {
       icon: <AssessmentIcon sx={{ fontSize: 24 }} />,
       title: 'Advanced Reports',
       subtitle: 'Growth Intelligence',
       description: 'Comprehensive reports and analytics to make the best decisions for your business growth.',
-      color: '#2e7d32'
+      color: 'var(--primary-color)'
     },
     {
       icon: <RateReviewIcon sx={{ fontSize: 24 }} />,
       title: 'Customer Reviews',
       subtitle: 'Feedback Management',
       description: 'Review pages to see customer feedback and ratings for continuous improvement.',
-      color: '#2e7d32'
+      color: 'var(--primary-color)'
     }
   ];
 
@@ -284,15 +283,6 @@ const FeaturesPage = () => {
                 minHeight: '48px'
               }}
             />
-            <BuyNowButton
-              sx={{
-                px: 4,
-                py: 2,
-                fontSize: '1.1rem',
-                fontWeight: 600,
-                minHeight: '48px'
-              }}
-            />
           </Box>
         </Box>
         <Grid container spacing={{ xs: 2, sm: 2, md: 2 }} className="features-grid">
@@ -315,8 +305,8 @@ const FeaturesPage = () => {
                   <Box
                     className="feature-icon"
                     style={{
-                      background: `linear-gradient(135deg, ${feature.color}, ${feature.color}dd)`,
-                      boxShadow: `0 8px 24px ${feature.color}40, 0 4px 12px ${feature.color}30`
+                      background: `linear-gradient(135deg, ${feature.color}, color-mix(in srgb, ${feature.color} 87%, transparent))`,
+                      boxShadow: `0 8px 24px color-mix(in srgb, ${feature.color} 25%, transparent), 0 4px 12px color-mix(in srgb, ${feature.color} 19%, transparent)`
                     }}
                   >
                     {feature.icon}

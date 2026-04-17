@@ -34,7 +34,7 @@
   color: #1a1a1a;
   margin-bottom: 32px;
   text-align: center;
-  background: linear-gradient(135deg, #1b5e20, #2e7d32, #4caf50);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000), var(--primary-color), var(--secondary-color));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -81,21 +81,21 @@
   &:hover {
     background-color: #f1f8f4;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--primary-color) 15%, transparent);
   }
 }
 
 .pricing-feature-icon {
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg, #4caf50, #66bb6a);
+  background: linear-gradient(135deg, var(--secondary-color), #66bb6a);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--secondary-color) 30%, transparent);
 
   svg {
     font-size: 18px;
@@ -154,7 +154,7 @@
     width: 120%;
     height: 100%;
     background:
-      radial-gradient(circle at 20% 20%, rgba(76, 175, 80, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--secondary-color) 4%, transparent) 0%, transparent 50%),
       radial-gradient(circle at 80% 80%, rgba(102, 187, 106, 0.03) 0%, transparent 50%);
     border-radius: 20px;
     z-index: -1;
@@ -170,11 +170,11 @@
   font-size: 2.8rem;
   color: #1a1a1a;
   margin-bottom: 20px !important;
-  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 30%, #4caf50 70%, #66bb6a 100%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000) 0%, var(--primary-color) 30%, var(--secondary-color) 70%, #66bb6a 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 2px 4px rgba(76, 175, 80, 0.1);
+  text-shadow: 0 2px 4px color-mix(in srgb, var(--secondary-color) 10%, transparent);
   letter-spacing: -0.02em;
   line-height: 1.2;
   position: relative;
@@ -187,7 +187,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(135deg, #4caf50, #66bb6a);
+    background: linear-gradient(135deg, var(--secondary-color), #66bb6a);
     border-radius: 2px;
     opacity: 0.8;
   }
@@ -232,9 +232,9 @@
     right: 0;
     bottom: 0;
     background: linear-gradient(135deg,
-      rgba(76, 175, 80, 0.03) 0%,
+      color-mix(in srgb, var(--secondary-color) 3%, transparent) 0%,
       rgba(102, 187, 106, 0.02) 50%,
-      rgba(76, 175, 80, 0.03) 100%);
+      color-mix(in srgb, var(--secondary-color) 3%, transparent) 100%);
     border-radius: 12px;
     z-index: -1;
     opacity: 0.5;
@@ -275,20 +275,20 @@
     transition: all 0.3s ease;
 
     &.Mui-selected {
-      color: #2e7d32;
+      color: var(--primary-color);
       font-weight: 600;
     }
 
     &:hover {
-      color: #4caf50;
-      background-color: rgba(76, 175, 80, 0.04);
+      color: var(--secondary-color);
+      background-color: color-mix(in srgb, var(--secondary-color) 4%, transparent);
     }
   }
 
   .MuiTabs-indicator {
     height: 3px;
     border-radius: 2px;
-    background-color: #4caf50;
+    background-color: var(--secondary-color);
   }
 }
 
@@ -319,7 +319,7 @@
     0 8px 32px rgba(0, 0, 0, 0.08),
     0 2px 8px rgba(0, 0, 0, 0.04),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(76, 175, 80, 0.08);
+  border: 1px solid color-mix(in srgb, var(--secondary-color) 8%, transparent);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: visible;
@@ -336,10 +336,10 @@
   &:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow:
-      0 25px 60px rgba(76, 175, 80, 0.15),
-      0 10px 25px rgba(76, 175, 80, 0.1),
-      0 4px 12px rgba(76, 175, 80, 0.08);
-    border-color: rgba(76, 175, 80, 0.25);
+      0 25px 60px color-mix(in srgb, var(--secondary-color) 15%, transparent),
+      0 10px 25px color-mix(in srgb, var(--secondary-color) 10%, transparent),
+      0 4px 12px color-mix(in srgb, var(--secondary-color) 8%, transparent);
+    border-color: color-mix(in srgb, var(--secondary-color) 25%, transparent);
     background: linear-gradient(145deg, #ffffff 0%, #f8fdf9 100%);
   }
 
@@ -424,10 +424,10 @@
 .plan-price {
   font-weight: 800;
   font-size: 2.8rem;
-  color: #2e7d32;
+  color: var(--primary-color);
   display: block;
   margin-bottom: 4px;
-  text-shadow: 0 2px 4px rgba(46, 125, 50, 0.1);
+  text-shadow: 0 2px 4px color-mix(in srgb, var(--primary-color) 10%, transparent);
   letter-spacing: -0.03em;
 
   @media (min-width: 960px) {
@@ -458,7 +458,7 @@
 
   &::before {
     content: '•';
-    color: #4caf50;
+    color: var(--secondary-color);
     font-weight: bold;
     margin-right: 8px;
   }
@@ -542,7 +542,7 @@
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border-bottom: 2px solid rgba(76, 175, 80, 0.1);
+  border-bottom: 2px solid color-mix(in srgb, var(--secondary-color) 10%, transparent);
   padding-bottom: 4px;
 }
 
@@ -556,7 +556,7 @@
   gap: 6px;
 
   &.limit-available {
-    color: #2e7d32;
+    color: var(--primary-color);
     font-weight: 500;
   }
 
@@ -572,7 +572,7 @@
 }
 
 .plan-button {
-  background: linear-gradient(135deg, #4caf50 0%, #45a049 50%, #66bb6a 100%);
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #45a049 50%, #66bb6a 100%);
   color: white;
   padding: 14px 36px;
   border-radius: 12px;
@@ -586,15 +586,15 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   box-shadow:
-    0 4px 15px rgba(76, 175, 80, 0.3),
+    0 4px 15px color-mix(in srgb, var(--secondary-color) 30%, transparent),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 
   &:hover {
-    background: linear-gradient(135deg, #43a047 0%, #388e3c 50%, #4caf50 100%);
+    background: linear-gradient(135deg, #43a047 0%, #388e3c 50%, var(--secondary-color) 100%);
     transform: translateY(-3px) scale(1.02);
     box-shadow:
-      0 8px 25px rgba(76, 175, 80, 0.4),
-      0 4px 12px rgba(76, 175, 80, 0.3),
+      0 8px 25px color-mix(in srgb, var(--secondary-color) 40%, transparent),
+      0 4px 12px color-mix(in srgb, var(--secondary-color) 30%, transparent),
       inset 0 1px 0 rgba(255, 255, 255, 0.3);
     border-color: rgba(255, 255, 255, 0.3);
   }

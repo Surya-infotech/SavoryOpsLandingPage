@@ -27,7 +27,7 @@
       color: $primary-green;
       font-weight: 800;
       margin-bottom: $spacing-md;
-      background: linear-gradient(135deg, #1b5e20, #2e7d32, #4caf50);
+      background: linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000), var(--primary-color), var(--secondary-color));
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -75,7 +75,7 @@
 
       &:hover {
         transform: translateY(-16px) scale(1.03) translateZ(0);
-        box-shadow: 0 32px 80px rgba(46, 125, 50, 0.3);
+        box-shadow: 0 32px 80px color-mix(in srgb, var(--primary-color) 30%, transparent);
       }
     }
   }
@@ -88,7 +88,7 @@
     height: 380px;
     box-shadow: $shadow-md;
     transition: all $transition-normal;
-    border: 1px solid rgba(46, 125, 50, 0.1);
+    border: 1px solid color-mix(in srgb, var(--primary-color) 10%, transparent);
     position: relative;
     overflow: hidden;
 
@@ -106,7 +106,7 @@
 
     &:hover {
       transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 16px 48px rgba(46, 125, 50, 0.2);
+      box-shadow: 0 16px 48px color-mix(in srgb, var(--primary-color) 20%, transparent);
       border-color: $primary-green;
 
       &::before {
@@ -131,7 +131,7 @@
         position: absolute;
         top: 16px;
         right: 16px;
-        color: rgba(76, 175, 80, 0.1);
+        color: color-mix(in srgb, var(--secondary-color) 10%, transparent);
         font-size: 48px;
         transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }

@@ -1,0 +1,141 @@
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider, alpha, createTheme, darken, lighten } from '@mui/material/styles';
+import { useMemo } from 'react';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
+
+function buildTheme(primaryMain, secondaryMain) {
+  const hasApiTheme = Boolean(primaryMain && secondaryMain);
+  const hoverShadow = hasApiTheme
+    ? `0 4px 12px ${alpha(primaryMain, 0.35)}`
+    : '0 4px 12px rgba(0, 0, 0, 0.18)';
+  const appBarBorder = hasApiTheme ? `1px solid ${alpha(primaryMain, 0.12)}` : '1px solid rgba(0, 0, 0, 0.08)';
+
+  return createTheme({
+    palette: {
+      ...(hasApiTheme
+        ? {
+            primary: {
+              main: primaryMain,
+              light: lighten(primaryMain, 0.12),
+              dark: darken(primaryMain, 0.18),
+              contrastText: '#ffffff',
+            },
+            secondary: {
+              main: secondaryMain,
+              light: lighten(secondaryMain, 0.08),
+              dark: darken(secondaryMain, 0.12),
+              contrastText: '#333333',
+            },
+          }
+        : {}),
+      background: {
+        default: '#ffffff',
+        paper: '#fafafa',
+      },
+      text: {
+        primary: '#333333',
+        secondary: '#666666',
+      },
+    },
+    typography: {
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+      h1: {
+        fontWeight: 700,
+        fontSize: '3.5rem',
+        '@media (max-width:960px)': { fontSize: '2.5rem' },
+        '@media (max-width:600px)': { fontSize: '2rem' },
+      },
+      h2: {
+        fontWeight: 700,
+        fontSize: '2.5rem',
+        '@media (max-width:960px)': { fontSize: '2rem' },
+        '@media (max-width:600px)': { fontSize: '1.75rem' },
+      },
+      h3: {
+        fontWeight: 700,
+        fontSize: '2rem',
+        '@media (max-width:960px)': { fontSize: '1.75rem' },
+        '@media (max-width:600px)': { fontSize: '1.5rem' },
+      },
+      h4: { fontWeight: 600 },
+      h5: { fontWeight: 600 },
+      h6: { fontWeight: 600 },
+      button: { fontWeight: 600, textTransform: 'none' },
+    },
+    shape: { borderRadius: 8 },
+    components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            borderRadius: 8,
+            textTransform: 'none',
+            fontWeight: 600,
+            padding: '12px 24px',
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              transform: 'translateY(-2px)',
+              boxShadow: hoverShadow,
+            },
+          },
+          contained: {
+            '&:hover': {
+              transform: 'translateY(-2px)',
+              boxShadow: hoverShadow,
+            },
+          },
+          outlined: {
+            '&:hover': {
+              transform: 'translateY(-2px)',
+              boxShadow: hoverShadow,
+            },
+          },
+        },
+      },
+      MuiCard: {
+        styleOverrides: {
+          root: {
+            borderRadius: 12,
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              transform: 'translateY(-8px)',
+              boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+            },
+          },
+        },
+      },
+      MuiAppBar: {
+        styleOverrides: {
+          root: {
+            backdropFilter: 'blur(10px)',
+            backgroundColor: 'rgba(255, 255, 255, 0.95)',
+            borderBottom: appBarBorder,
+          },
+        },
+      },
+      MuiFab: {
+        styleOverrides: {
+          root: {
+            transition: 'all 0.3s ease',
+            '&:hover': { transform: 'translateY(-2px)' },
+          },
+        },
+      },
+    },
+  });
+}
+
+export default function DynamicMuiTheme({ children }) {
+  const { primaryColor, secondaryColor } = useAppSettings();
+  const theme = useMemo(
+    () => buildTheme(primaryColor, secondaryColor),
+    [primaryColor, secondaryColor],
+  );
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      {children}
+    </ThemeProvider>
+  );
+}

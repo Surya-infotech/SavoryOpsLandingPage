@@ -23,7 +23,7 @@ const OwnerLogin = () => {
     const [warningMessage, setWarningMessage] = useState("");
     const [showWarning, setShowWarning] = useState(false);
     const languages = getLanguageOptions();
-    const { logoUrl, softwareName, fallbackLogoUrl, setLogoUrl } = useAppSettings();
+    const { logoUrl, softwareName, setLogoUrl } = useAppSettings();
 
     const toggleLanguageDropdown = () => setLanguageDropdownVisible(!isLanguageDropdownVisible);
 
@@ -140,7 +140,7 @@ const OwnerLogin = () => {
                             src={logoUrl}
                             alt={`${softwareName} Logo`}
                             className="logo"
-                            onError={() => setLogoUrl(fallbackLogoUrl)}
+                            onError={() => setLogoUrl('')}
                         />
                         <h2>{softwareName}</h2>
                     </a>

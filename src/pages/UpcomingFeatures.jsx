@@ -67,98 +67,98 @@ const UpcomingFeatures = () => {
       subtitle: 'Online Booking Management',
       description: 'Allow customers to book tables online with real-time availability and automated confirmations.',
       icon: <CalendarTodayIcon sx={{ fontSize: 24 }} />,
-      color: '#4caf50'
+      color: 'var(--secondary-color)'
     },
     {
       title: 'Pickup',
       subtitle: 'Order Pickup System',
       description: 'Enable customers to place orders for pickup with order tracking and ready notifications.',
       icon: <LocalShippingIcon sx={{ fontSize: 24 }} />,
-      color: '#388e3c'
+      color: 'color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color))'
     },
     {
       title: 'In-Car',
       subtitle: 'Drive-Through Service',
       description: 'Streamlined ordering system for drive-through and curbside pickup services.',
       icon: <DirectionsCarIcon sx={{ fontSize: 24 }} />,
-      color: '#4caf50'
+      color: 'var(--secondary-color)'
     },
     {
       title: 'Delivery Order Types',
       subtitle: 'Multi-Delivery Options',
       description: 'Comprehensive delivery management with multiple delivery options and real-time tracking.',
       icon: <DeliveryDiningIcon sx={{ fontSize: 24 }} />,
-      color: '#2e7d32'
+      color: 'var(--primary-color)'
     },
     {
       title: 'Loyalty and Referral System',
       subtitle: 'Customer Rewards Program',
       description: 'Reward loyal customers and grow your business through referral programs and points system.',
       icon: <LoyaltyIcon sx={{ fontSize: 24 }} />,
-      color: '#4caf50'
+      color: 'var(--secondary-color)'
     },
     {
       title: 'HRM System',
       subtitle: 'Human Resource Management',
       description: 'Complete Human Resource Management with employee records, payroll, and performance tracking.',
       icon: <GroupsIcon sx={{ fontSize: 24 }} />,
-      color: '#388e3c'
+      color: 'color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color))'
     },
     {
       title: 'Coupon',
       subtitle: 'Discount Management',
       description: 'Create and manage discount coupons with flexible rules, expiration dates, and usage tracking.',
       icon: <CardGiftcardIcon sx={{ fontSize: 24 }} />,
-      color: '#4caf50'
+      color: 'var(--secondary-color)'
     },
     {
       title: 'Combo Meal',
       subtitle: 'Meal Package System',
       description: 'Design and manage combo meals with bundled items at special prices to increase sales.',
       icon: <RestaurantMenuIcon sx={{ fontSize: 24 }} />,
-      color: '#388e3c'
+      color: 'color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color))'
     },
     {
       title: 'Membership System',
       subtitle: 'Customer Membership',
       description: 'Manage customer memberships with tiered benefits, exclusive offers, and membership renewals.',
       icon: <VpnKeyIcon sx={{ fontSize: 24 }} />,
-      color: '#2e7d32'
+      color: 'var(--primary-color)'
     },
     {
       title: 'Promotional Banners',
       subtitle: 'Marketing Campaigns',
       description: 'Create and display promotional banners across your platform to highlight special offers and events.',
       icon: <MenuBookIcon sx={{ fontSize: 24 }} />,
-      color: '#4caf50'
+      color: 'var(--secondary-color)'
     },
     {
       title: 'Tips Management',
       subtitle: 'Gratuity Handling',
       description: 'Efficiently manage and distribute tips among staff with automated calculations and reporting.',
       icon: <TipsAndUpdatesIcon sx={{ fontSize: 24 }} />,
-      color: '#388e3c'
+      color: 'color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color))'
     },
     {
       title: 'Split Bill',
       subtitle: 'Bill Division System',
       description: 'Allow customers to split bills among multiple parties with flexible payment options.',
       icon: <PaymentIcon sx={{ fontSize: 24 }} />,
-      color: '#4caf50'
+      color: 'var(--secondary-color)'
     },
     {
       title: 'Catering & Event Booking',
       subtitle: 'Event Management',
       description: 'Manage catering orders and event bookings with detailed planning, scheduling, and coordination tools.',
       icon: <CalendarTodayIcon sx={{ fontSize: 24 }} />,
-      color: '#2e7d32'
+      color: 'var(--primary-color)'
     },
     {
       title: 'Help Desk System',
       subtitle: 'Customer Support',
       description: 'Comprehensive help desk system for managing customer inquiries, tickets, and support requests.',
       icon: <SupportAgentIcon sx={{ fontSize: 24 }} />,
-      color: '#388e3c'
+      color: 'color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color))'
     }
   ];
 
@@ -218,8 +218,8 @@ const UpcomingFeatures = () => {
                   <Box
                     className="feature-icon"
                     style={{
-                      background: `linear-gradient(135deg, ${feature.color}, ${feature.color}dd)`,
-                      boxShadow: `0 8px 24px ${feature.color}40, 0 4px 12px ${feature.color}30`
+                      background: `linear-gradient(135deg, ${feature.color}, color-mix(in srgb, ${feature.color} 87%, transparent))`,
+                      boxShadow: `0 8px 24px color-mix(in srgb, ${feature.color} 25%, transparent), 0 4px 12px color-mix(in srgb, ${feature.color} 19%, transparent)`
                     }}
                   >
                     {feature.icon}

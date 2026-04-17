@@ -62,8 +62,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 80%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(46, 125, 50, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 80%, color-mix(in srgb, var(--secondary-color) 10%, transparent) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--primary-color) 10%, transparent) 0%, transparent 50%);
     pointer-events: none;
   }
 }
@@ -80,14 +80,14 @@
     margin-bottom: 32px;
 
     .coming-soon-chip {
-      background: linear-gradient(135deg, #2e7d32, #4caf50);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: white;
       font-weight: 700;
       font-size: 1rem;
       padding: 12px 24px;
       height: auto;
       border-radius: 25px;
-      box-shadow: 0 4px 20px rgba(46, 125, 50, 0.3);
+      box-shadow: 0 4px 20px color-mix(in srgb, var(--primary-color) 30%, transparent);
 
       .MuiChip-icon {
         color: white;
@@ -98,7 +98,7 @@
 
   .main-heading {
     font-weight: 900;
-    background: linear-gradient(135deg, #1b5e20, #2e7d32, #4caf50);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000), var(--primary-color), var(--secondary-color));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -124,7 +124,7 @@
       transform: translateX(-50%);
       width: 80px;
       height: 4px;
-      background: linear-gradient(90deg, #4caf50, #2e7d32);
+      background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
       border-radius: 2px;
     }
   }
@@ -142,17 +142,17 @@
       align-items: center;
       gap: 8px;
       padding: 8px 20px;
-      background: rgba(76, 175, 80, 0.1);
+      background: color-mix(in srgb, var(--secondary-color) 10%, transparent);
       border-radius: 50px;
-      border: 1px solid rgba(76, 175, 80, 0.2);
+      border: 1px solid color-mix(in srgb, var(--secondary-color) 20%, transparent);
 
       .star-icon {
-        color: #4caf50;
+        color: var(--secondary-color);
         font-size: 1.2rem;
       }
 
       .platform-text {
-        color: #2e7d32;
+        color: var(--primary-color);
         font-weight: 600;
         font-size: 0.95rem;
       }
@@ -206,10 +206,10 @@
     height: auto;
     padding: 1.5rem;
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border: 2px solid rgba(76, 175, 80, 0.1);
+    border: 2px solid color-mix(in srgb, var(--secondary-color) 10%, transparent);
     box-shadow:
       0 8px 32px rgba(0, 0, 0, 0.08),
-      0 4px 16px rgba(76, 175, 80, 0.05),
+      0 4px 16px color-mix(in srgb, var(--secondary-color) 5%, transparent),
       inset 0 1px 0 rgba(255, 255, 255, 0.8);
     position: relative;
     overflow: hidden;
@@ -236,27 +236,27 @@
     &:hover {
       transform: translateY(-12px) scale(1.03);
       box-shadow:
-        0 20px 60px rgba(46, 125, 50, 0.25),
-        0 8px 24px rgba(76, 175, 80, 0.15),
+        0 20px 60px color-mix(in srgb, var(--primary-color) 25%, transparent),
+        0 8px 24px color-mix(in srgb, var(--secondary-color) 15%, transparent),
         inset 0 1px 0 rgba(255, 255, 255, 0.9);
-      border-color: #4caf50;
+      border-color: var(--secondary-color);
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 255, 248, 1) 100%);
 
       .feature-icon {
         transform: scale(1.15) rotate(8deg);
         box-shadow:
-          0 15px 40px rgba(76, 175, 80, 0.4),
-          0 8px 20px rgba(46, 125, 50, 0.3) !important;
+          0 15px 40px color-mix(in srgb, var(--secondary-color) 40%, transparent),
+          0 8px 20px color-mix(in srgb, var(--primary-color) 30%, transparent) !important;
       }
 
       .feature-title {
         transform: translateY(-2px);
-        color: #1b5e20;
+        color: color-mix(in srgb, var(--primary-color) 70%, #000);
       }
 
       .feature-subtitle {
         transform: translateY(-1px);
-        color: #2e7d32;
+        color: var(--primary-color);
       }
 
       .feature-description {
@@ -272,7 +272,7 @@
       left: 0;
       right: 0;
       height: 5px;
-      background: linear-gradient(90deg, #4caf50, #66bb6a, #4caf50);
+      background: linear-gradient(90deg, var(--secondary-color), #66bb6a, var(--secondary-color));
       transform: scaleX(0);
       transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       border-radius: 20px 20px 0 0;
@@ -290,7 +290,7 @@
       left: 50%;
       width: 140%;
       height: 140%;
-      background: radial-gradient(circle, rgba(76, 175, 80, 0.06) 0%, transparent 60%);
+      background: radial-gradient(circle, color-mix(in srgb, var(--secondary-color) 6%, transparent) 0%, transparent 60%);
       transform: translate(-50%, -50%) scale(0);
       transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       z-index: 0;
@@ -322,8 +322,8 @@
         position: relative;
         animation: float 4s ease-in-out infinite;
         box-shadow:
-          0 8px 24px rgba(76, 175, 80, 0.3),
-          0 4px 12px rgba(46, 125, 50, 0.2);
+          0 8px 24px color-mix(in srgb, var(--secondary-color) 30%, transparent),
+          0 4px 12px color-mix(in srgb, var(--primary-color) 20%, transparent);
 
         svg {
           font-size: 26px !important;
@@ -388,7 +388,7 @@
       }
 
       .feature-subtitle {
-        color: #4caf50;
+        color: var(--secondary-color);
         font-weight: 700;
         font-size: 0.85rem;
         text-align: center;
@@ -431,12 +431,12 @@
         margin-top: auto;
 
         .coming-soon-chip-small {
-          background: linear-gradient(135deg, #2e7d32, #4caf50);
+          background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
           color: white;
           font-weight: 600;
           font-size: 0.75rem;
           height: 24px;
-          box-shadow: 0 2px 8px rgba(46, 125, 50, 0.3);
+          box-shadow: 0 2px 8px color-mix(in srgb, var(--primary-color) 30%, transparent);
 
           .MuiChip-label {
             padding: 0 10px;

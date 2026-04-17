@@ -123,7 +123,7 @@
   font-size: 0.875rem;
   margin-top: $spacing-sm;
   padding: $spacing-sm;
-  background-color: rgba(76, 175, 80, 0.1);
+  background-color: color-mix(in srgb, var(--secondary-color) 10%, transparent);
   border-radius: $border-radius-sm;
   border-left: 3px solid $primary-green;
 }

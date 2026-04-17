@@ -1,6 +1,5 @@
 import { Box, Typography } from '@mui/material';
 import GetStartedButton from './GetStartedButton';
-import BuyNowButton from './BuyNowButton';
 import '../styles/components/cta.scss';
 
 const CTA = ({
@@ -28,7 +27,6 @@ const CTA = ({
           }}
         >
           <GetStartedButton className="coming-soon-text" sx={{ mt: 0 }} />
-          <BuyNowButton className="coming-soon-text" sx={{ mt: 0 }} />
         </Box>
       </Box>
     </Box>

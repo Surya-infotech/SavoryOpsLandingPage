@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Theme values are applied only from backend API response. */
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -39,17 +43,17 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2e7d32;
+  background: var(--primary-color);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1b5e20;
+  background: color-mix(in srgb, var(--primary-color) 70%, #000);
 }
 
 /* Focus Styles for Accessibility */
 *:focus {
-  outline: 2px solid #2e7d32;
+  outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
 
@@ -173,11 +177,11 @@ code {
 
 /* Color Utility Classes */
 .text-primary {
-  color: #2e7d32 !important;
+  color: var(--primary-color) !important;
 }
 
 .text-secondary {
-  color: #4caf50 !important;
+  color: var(--secondary-color) !important;
 }
 
 .text-white {
@@ -193,11 +197,11 @@ code {
 }
 
 .bg-primary {
-  background-color: #2e7d32 !important;
+  background-color: var(--primary-color) !important;
 }
 
 .bg-secondary {
-  background-color: #4caf50 !important;
+  background-color: var(--secondary-color) !important;
 }
 
 .bg-white {
@@ -214,7 +218,7 @@ code {
 }
 
 .border-primary {
-  border-color: #2e7d32 !important;
+  border-color: var(--primary-color) !important;
 }
 
 .border-radius {
@@ -379,7 +383,7 @@ code {
 
 .spinner {
   border: 3px solid #f3f3f3;
-  border-top: 3px solid #2e7d32;
+  border-top: 3px solid var(--primary-color);
   border-radius: 50%;
   width: 30px;
   height: 30px;

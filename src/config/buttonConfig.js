@@ -11,7 +11,7 @@ export const buyNowConfig = {
 
     // Custom styles using Material UI sx prop
     sx: {
-        background: 'linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%)',
+        background: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000) 0%, var(--primary-color) 100%)',
         color: '#ffffff',
         fontWeight: 700,
         textTransform: 'none',
@@ -27,7 +27,7 @@ export const buyNowConfig = {
         letterSpacing: '0.3px',
         transition: 'all 0.3s ease',
         '&:hover': {
-            background: 'linear-gradient(135deg, #0a3d0e 0%, #1b5e20 100%)',
+            background: 'linear-gradient(135deg, #0a3d0e 0%, color-mix(in srgb, var(--primary-color) 70%, #000) 100%)',
             boxShadow: '0 12px 24px rgba(27, 94, 32, 0.35)',
             transform: 'translateY(-2px)'
         },

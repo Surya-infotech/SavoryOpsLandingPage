@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
 const baseStyles = {
-  background: 'linear-gradient(135deg, #2e7d32 0%, #43a047 100%)',
+  background: 'linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%)',
   color: '#ffffff',
   fontWeight: 600,
   textTransform: 'none',
@@ -13,14 +13,14 @@ const baseStyles = {
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
-  boxShadow: '0 8px 20px rgba(46, 125, 50, 0.25)',
+  boxShadow: '0 8px 20px color-mix(in srgb, var(--primary-color) 25%, transparent)',
   gap: '8px',
   fontSize: '1rem',
   letterSpacing: '0.3px',
   transition: 'all 0.3s ease',
   '&:hover': {
-    background: 'linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%)',
-    boxShadow: '0 12px 24px rgba(46, 125, 50, 0.3)',
+    background: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000) 0%, var(--primary-color) 100%)',
+    boxShadow: '0 12px 24px color-mix(in srgb, var(--primary-color) 30%, transparent)',
     transform: 'translateY(-2px)'
   },
   '&:active': {

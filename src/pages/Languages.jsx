@@ -26,7 +26,7 @@ const Languages = () => {
               icon={<LanguageIcon />}
               label="Global Reach"
               sx={{
-                background: 'linear-gradient(135deg, #2e7d32, #4caf50)',
+                background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
                 color: 'white',
                 fontWeight: 600,
                 fontSize: '0.9rem',
@@ -46,7 +46,7 @@ const Languages = () => {
               fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
               color: '#1a1a1a',
               mb: 2,
-              background: 'linear-gradient(135deg, #1b5e20, #2e7d32, #4caf50)',
+              background: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000), var(--primary-color), var(--secondary-color))',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -102,7 +102,7 @@ const Languages = () => {
                 animation: `fadeInUp 0.6s ease-out ${index * 0.05}s both`,
                 '&:hover': {
                   transform: 'translateY(-4px)',
-                  boxShadow: '0 8px 24px rgba(46, 125, 50, 0.2)',
+                  boxShadow: '0 8px 24px color-mix(in srgb, var(--primary-color) 20%, transparent)',
                   backgroundColor: '#f1f8f4'
                 }
               }}
@@ -153,7 +153,7 @@ const Languages = () => {
               fontWeight: 400
             }}
           >
-            Our platform is available in <strong style={{ color: '#2e7d32' }}>{languages.length} languages</strong>, so
+            Our platform is available in <strong style={{ color: 'var(--primary-color)' }}>{languages.length} languages</strong>, so
             restaurant owners and staff can run day-to-day operations in the language that fits their team and market.
           </Typography>
         </Box>

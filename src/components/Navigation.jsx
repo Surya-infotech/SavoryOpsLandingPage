@@ -3,13 +3,12 @@ import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/mater
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
-import BuyNowButton from './BuyNowButton';
 
 const Navigation = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const { logoUrl, softwareName, fallbackLogoUrl, setLogoUrl } = useAppSettings();
+  const { logoUrl, softwareName, setLogoUrl } = useAppSettings();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -52,7 +51,7 @@ const Navigation = () => {
                   objectFit: 'contain',
                   maxWidth: '120px'
                 }}
-                onError={() => setLogoUrl(fallbackLogoUrl)}
+                onError={() => setLogoUrl('')}
               />
             </Link>
             <Link
@@ -87,7 +86,6 @@ const Navigation = () => {
             >
               Get Started
             </Button>
-            <BuyNowButton className="cta-button" />
           </Box>
 
           <IconButton
@@ -100,7 +98,7 @@ const Navigation = () => {
               zIndex: 9999,
               position: 'relative',
               '&:hover': {
-                backgroundColor: 'rgba(46, 125, 50, 0.1)'
+                backgroundColor: 'color-mix(in srgb, var(--primary-color) 10%, transparent)'
               }
             }}
           >
@@ -162,9 +160,9 @@ const Navigation = () => {
                     width: 'auto',
                     marginRight: '12px'
                   }}
-                  onError={() => setLogoUrl(fallbackLogoUrl)}
+                  onError={() => setLogoUrl('')}
                 />
-                <Typography variant="h6" sx={{ color: '#2e7d32', fontWeight: 'bold' }}>
+                <Typography variant="h6" sx={{ color: 'var(--primary-color)', fontWeight: 'bold' }}>
                   {softwareName}
                 </Typography>
               </Box>
@@ -185,15 +183,15 @@ const Navigation = () => {
                   <Box
                     sx={{
                       padding: '16px 20px',
-                      color: location.pathname === item.path ? '#2e7d32' : '#333',
-                      backgroundColor: location.pathname === item.path ? 'rgba(46, 125, 50, 0.1)' : 'transparent',
-                      borderLeft: location.pathname === item.path ? '3px solid #2e7d32' : '3px solid transparent',
+                      color: location.pathname === item.path ? 'var(--primary-color)' : '#333',
+                      backgroundColor: location.pathname === item.path ? 'color-mix(in srgb, var(--primary-color) 10%, transparent)' : 'transparent',
+                      borderLeft: location.pathname === item.path ? '3px solid var(--primary-color)' : '3px solid transparent',
                       fontWeight: location.pathname === item.path ? 'bold' : 'normal',
                       cursor: 'pointer',
                       transition: 'all 0.2s ease',
                       '&:hover': {
-                        backgroundColor: 'rgba(46, 125, 50, 0.05)',
-                        color: '#2e7d32'
+                        backgroundColor: 'color-mix(in srgb, var(--primary-color) 5%, transparent)',
+                        color: 'var(--primary-color)'
                       }
                     }}
                   >
@@ -213,18 +211,17 @@ const Navigation = () => {
                     handleDrawerToggle();
                   }}
                   sx={{
-                    backgroundColor: '#2e7d32',
+                    backgroundColor: 'var(--primary-color)',
                     color: 'white',
                     fontWeight: 'bold',
                     width: '100%',
                     '&:hover': {
-                      backgroundColor: '#1b5e20',
+                      backgroundColor: 'color-mix(in srgb, var(--primary-color) 70%, #000)',
                     }
                   }}
                 >
                   Get Started
                 </Button>
-                <BuyNowButton fullWidth />
               </Box>
             </Box>
           </Box>

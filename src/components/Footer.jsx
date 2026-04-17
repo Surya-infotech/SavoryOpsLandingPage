@@ -5,7 +5,7 @@ import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/layout/footer.scss';
 
 const Footer = () => {
-  const { logoUrl, softwareName, fallbackLogoUrl, setLogoUrl, generalSetting, socialMedia } = useAppSettings();
+  const { logoUrl, softwareName, setLogoUrl, generalSetting, socialMedia } = useAppSettings();
 
   const footerData = useMemo(
     () => ({
@@ -120,7 +120,7 @@ const Footer = () => {
                     src={logoUrl}
                     alt={`${softwareName} Logo`}
                     className="brand-logo"
-                    onError={() => setLogoUrl(fallbackLogoUrl)}
+                    onError={() => setLogoUrl('')}
                   />
                   <Typography variant="h5" className="brand-name">
                     {softwareName}

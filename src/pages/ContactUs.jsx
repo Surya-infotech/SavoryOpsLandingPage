@@ -137,7 +137,7 @@ const ContactUs = () => {
         animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
         '&:hover': {
           transform: 'translateY(-4px)',
-          boxShadow: '0 8px 24px rgba(46, 125, 50, 0.2)',
+          boxShadow: '0 8px 24px color-mix(in srgb, var(--primary-color) 20%, transparent)',
           backgroundColor: card.href !== '#' ? '#f1f8f4' : 'white'
         }
       }}
@@ -147,19 +147,19 @@ const ContactUs = () => {
           width: '56px',
           height: '56px',
           borderRadius: '12px',
-          background: 'linear-gradient(135deg, #2e7d32, #4caf50)',
+          background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           color: 'white',
           flexShrink: 0,
-          boxShadow: '0 4px 12px rgba(76, 175, 80, 0.3)'
+          boxShadow: '0 4px 12px color-mix(in srgb, var(--secondary-color) 30%, transparent)'
         }}
       >
         {card.icon}
       </Box>
       <Box>
-        <Typography variant="subtitle2" sx={{ color: '#2e7d32', fontWeight: 600, mb: 0.5 }}>
+        <Typography variant="subtitle2" sx={{ color: 'var(--primary-color)', fontWeight: 600, mb: 0.5 }}>
           {card.title}
         </Typography>
         <Typography variant="body1" sx={{ color: '#333', lineHeight: 1.5 }}>
@@ -188,7 +188,7 @@ const ContactUs = () => {
               icon={<ContactMailIcon />}
               label="Get in Touch"
               sx={{
-                background: 'linear-gradient(135deg, #2e7d32, #4caf50)',
+                background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
                 color: 'white',
                 fontWeight: 600,
                 fontSize: '0.9rem',
@@ -208,7 +208,7 @@ const ContactUs = () => {
               fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
               color: '#1a1a1a',
               mb: 2,
-              background: 'linear-gradient(135deg, #1b5e20, #2e7d32, #4caf50)',
+              background: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000), var(--primary-color), var(--secondary-color))',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -276,10 +276,10 @@ const ContactUs = () => {
                           '& .MuiOutlinedInput-root': {
                             backgroundColor: 'white',
                             minWidth: 280,
-                            '&:hover fieldset': { borderColor: '#2e7d32' },
-                            '&.Mui-focused fieldset': { borderColor: '#2e7d32', borderWidth: 2 }
+                            '&:hover fieldset': { borderColor: 'var(--primary-color)' },
+                            '&.Mui-focused fieldset': { borderColor: 'var(--primary-color)', borderWidth: 2 }
                           },
-                          '& .MuiInputLabel-root.Mui-focused': { color: '#2e7d32' }
+                          '& .MuiInputLabel-root.Mui-focused': { color: 'var(--primary-color)' }
                         }}
                       />
                     </Grid>
@@ -297,10 +297,10 @@ const ContactUs = () => {
                           '& .MuiOutlinedInput-root': {
                             backgroundColor: 'white',
                             minWidth: 280,
-                            '&:hover fieldset': { borderColor: '#2e7d32' },
-                            '&.Mui-focused fieldset': { borderColor: '#2e7d32', borderWidth: 2 }
+                            '&:hover fieldset': { borderColor: 'var(--primary-color)' },
+                            '&.Mui-focused fieldset': { borderColor: 'var(--primary-color)', borderWidth: 2 }
                           },
-                          '& .MuiInputLabel-root.Mui-focused': { color: '#2e7d32' }
+                          '& .MuiInputLabel-root.Mui-focused': { color: 'var(--primary-color)' }
                         }}
                       />
                     </Grid>
@@ -320,10 +320,10 @@ const ContactUs = () => {
                       sx={{
                         '& .MuiOutlinedInput-root': {
                           backgroundColor: 'white',
-                          '&:hover fieldset': { borderColor: '#2e7d32' },
-                          '&.Mui-focused fieldset': { borderColor: '#2e7d32', borderWidth: 2 }
+                          '&:hover fieldset': { borderColor: 'var(--primary-color)' },
+                          '&.Mui-focused fieldset': { borderColor: 'var(--primary-color)', borderWidth: 2 }
                         },
-                        '& .MuiInputLabel-root.Mui-focused': { color: '#2e7d32' }
+                        '& .MuiInputLabel-root.Mui-focused': { color: 'var(--primary-color)' }
                       }}
                     />
                     <Typography
@@ -344,7 +344,7 @@ const ContactUs = () => {
                     </Typography>
                   )}
                   {formSuccess && (
-                    <Typography variant="body2" sx={{ color: '#2e7d32', fontWeight: 500 }}>
+                    <Typography variant="body2" sx={{ color: 'var(--primary-color)', fontWeight: 500 }}>
                       Thank you for your message! We will get back to you soon.
                     </Typography>
                   )}
@@ -355,17 +355,17 @@ const ContactUs = () => {
                     startIcon={<SendIcon />}
                     sx={{
                       alignSelf: 'flex-start',
-                      background: 'linear-gradient(135deg, #2e7d32, #43a047)',
+                      background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
                       color: 'white',
                       fontWeight: 600,
                       padding: '12px 32px',
                       borderRadius: '10px',
                       textTransform: 'none',
                       fontSize: '1rem',
-                      boxShadow: '0 8px 20px rgba(46, 125, 50, 0.25)',
+                      boxShadow: '0 8px 20px color-mix(in srgb, var(--primary-color) 25%, transparent)',
                       '&:hover': {
-                        background: 'linear-gradient(135deg, #1b5e20, #2e7d32)',
-                        boxShadow: '0 12px 24px rgba(46, 125, 50, 0.3)',
+                        background: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000), var(--primary-color))',
+                        boxShadow: '0 12px 24px color-mix(in srgb, var(--primary-color) 30%, transparent)',
                         transform: 'translateY(-2px)'
                       }
                     }}

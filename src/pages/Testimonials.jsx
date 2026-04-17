@@ -230,7 +230,7 @@ const Testimonials = () => {
                   width: '400px',
                   height: '380px',
                   transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                  border: '1px solid rgba(76, 175, 80, 0.1)',
+                  border: '1px solid color-mix(in srgb, var(--secondary-color) 10%, transparent)',
                   boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
                   position: 'relative',
                   overflow: 'hidden',
@@ -239,8 +239,8 @@ const Testimonials = () => {
                   willChange: 'transform, box-shadow',
                   '&:hover': {
                     transform: 'translateY(-16px) scale(1.03) translateZ(0)',
-                    boxShadow: '0 32px 80px rgba(46, 125, 50, 0.3)',
-                    borderColor: '#4caf50',
+                    boxShadow: '0 32px 80px color-mix(in srgb, var(--primary-color) 30%, transparent)',
+                    borderColor: 'var(--secondary-color)',
                     '& .quote-icon': {
                       transform: 'scale(1.2) rotate(8deg)',
                       opacity: 0.9
@@ -256,7 +256,7 @@ const Testimonials = () => {
                     left: 0,
                     right: 0,
                     height: '4px',
-                    background: 'linear-gradient(90deg, #4caf50, #66bb6a)',
+                    background: 'linear-gradient(90deg, var(--secondary-color), color-mix(in srgb, var(--secondary-color) 80%, #fff))',
                     transform: 'scaleX(0)',
                     transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
                   },
@@ -270,7 +270,7 @@ const Testimonials = () => {
                     left: '50%',
                     width: '100%',
                     height: '100%',
-                    background: 'radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle, color-mix(in srgb, var(--secondary-color) 10%, transparent) 0%, transparent 70%)',
                     transform: 'translate(-50%, -50%) scale(0)',
                     transition: 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                     zIndex: 0
@@ -297,7 +297,7 @@ const Testimonials = () => {
                       position: 'absolute',
                       top: '16px',
                       right: '16px',
-                      color: 'rgba(76, 175, 80, 0.1)',
+                      color: 'color-mix(in srgb, var(--secondary-color) 10%, transparent)',
                       fontSize: '48px',
                       transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                       transform: 'translateZ(0)',
@@ -364,7 +364,7 @@ const Testimonials = () => {
                       sx={{
                         width: 48,
                         height: 48,
-                        backgroundColor: '#4caf50',
+                        backgroundColor: 'var(--secondary-color)',
                         color: 'white',
                         fontWeight: 600,
                         fontSize: '1.1rem'
@@ -377,7 +377,7 @@ const Testimonials = () => {
                         variant="subtitle1"
                         sx={{
                           fontWeight: 600,
-                          color: '#2e7d32',
+                          color: 'var(--primary-color)',
                           fontSize: '1rem'
                         }}
                       >
@@ -395,7 +395,7 @@ const Testimonials = () => {
                       <Typography
                         variant="body2"
                         sx={{
-                          color: '#4caf50',
+                          color: 'var(--secondary-color)',
                           fontSize: '0.8rem',
                           fontWeight: 500
                         }}

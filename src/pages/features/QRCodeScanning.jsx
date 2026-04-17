@@ -9,7 +9,6 @@ import { Box, Container, Typography } from "@mui/material";
 import { useEffect } from "react";
 import CTA from "../../components/CTA";
 import GetStartedButton from "../../components/GetStartedButton";
-import BuyNowButton from "../../components/BuyNowButton";
 import { useAppSettings } from "../../context/AppSettingsContext.jsx";
 import "../../styles/pages/feature/qrcodescanning.scss";
 
@@ -115,7 +114,6 @@ const QRCodeScanning = () => {
               </Typography>
               <Box className="cta-button-container" sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <GetStartedButton className="coming-soon-text" />
-                <BuyNowButton />
               </Box>
             </Box>
 

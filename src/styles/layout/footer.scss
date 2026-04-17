@@ -1,8 +1,8 @@
 // Footer Styles
 
 // Import variables from main
-$primary-green: #2e7d32;
-$primary-green-hover: #1b5e20;
+$primary-green: var(--primary-color);
+$primary-green-hover: color-mix(in srgb, var(--primary-color) 70%, #000);
 $white: #ffffff;
 $spacing-xs: 0.25rem;
 $spacing-sm: 0.5rem;
