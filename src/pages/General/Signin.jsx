@@ -14,6 +14,8 @@ const OwnerLogin = () => {
     const BackendPath = import.meta.env.VITE_BACKEND_URL;
     const host = import.meta.env.VITE_HOST;
     const tld = import.meta.env.VITE_TLD;
+    const HOME_URL = import.meta.env.VITE_HOME_URL || '/';
+    const adminPanelUrl = import.meta.env.VITE_ADMIN_PANEL_URL?.trim() || '';
     const [alertMessage, setAlertMessage] = useState("");
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
@@ -22,10 +24,15 @@ const OwnerLogin = () => {
     const [formError, setFormError] = useState('');
     const [warningMessage, setWarningMessage] = useState("");
     const [showWarning, setShowWarning] = useState(false);
-    const languages = getLanguageOptions();
     const { logoUrl, softwareName, setLogoUrl } = useAppSettings();
 
+    const languages = getLanguageOptions();
+
     const toggleLanguageDropdown = () => setLanguageDropdownVisible(!isLanguageDropdownVisible);
+
+    useEffect(() => {
+        if (translations.signin) document.title = translations.signin;
+    }, [translations]);
 
     const handleLanguageSelect = (language) => {
         setSelectedLanguage(language.name);
@@ -97,35 +104,31 @@ const OwnerLogin = () => {
         setPassword('12345678');
     };
 
-    const handleDemoSuperAdmin = () => {
-        window.location.href = 'https://adminpanel.savoryops.com';
-    };
-
     return (<>
         {showWarning && <WarningModal message={warningMessage} onClose={() => setShowWarning(false)} />}
         {alertMessage && <AlertMessage message={alertMessage} onClose={() => setAlertMessage("")} />}
         <div className="full-page">
             <div className="language-container">
                 <div className="language-dropdown" onClick={toggleLanguageDropdown}>
-                    <button onClick={toggleLanguageDropdown}>
+                    <button type="button">
                         <Flag
                             code={languages.find(lang => lang.name === selectedLanguage)?.code}
-                            style={{ width: '20px', marginRight: '5px' }}
+                            style={{ width: '20px' }}
                             alt={selectedLanguage}
                         />
-                        {selectedLanguage.substring(0, 3)}
+                        <span className="language-dropdown__name">{selectedLanguage.substring(0, 3)}</span>
                     </button>
                     {isLanguageDropdownVisible && (
                         <div className="language-dropdown-menu">
                             <ul>
-                                {languages.map((language, index) => (
+                                {languages.map((language) => (
                                     <li
-                                        key={index}
+                                        key={language.code}
                                         className={language.name === selectedLanguage ? 'selected' : ''}
                                         onClick={() => handleLanguageSelect(language)}
                                     >
-                                        <Flag code={language.code} style={{ width: '20px', marginRight: '10px' }} alt={language.name} />
-                                        {language.name}
+                                        <Flag code={language.code} style={{ width: '20px' }} alt={language.name} />
+                                        <span className="language-dropdown__name">{language.name}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -135,13 +138,15 @@ const OwnerLogin = () => {
             </div>
             <div className="login-container">
                 <div className="logo-container">
-                    <a href="/" className="logo-button">
-                        <img
-                            src={logoUrl || undefined}
-                            alt={`${softwareName} Logo`}
-                            className="logo"
-                            onError={() => setLogoUrl(null)}
-                        />
+                    <a href={HOME_URL} className="logo-button">
+                        {logoUrl ? (
+                            <img
+                                src={logoUrl}
+                                className="logo"
+                                alt=""
+                                onError={() => setLogoUrl(null)}
+                            />
+                        ) : null}
                         <h2>{softwareName}</h2>
                     </a>
                 </div>
@@ -150,7 +155,7 @@ const OwnerLogin = () => {
                         <label>{translations.email}</label>
                         <input
                             type="email"
-                            placeholder={translations.emailplaceholder}
+                            placeholder={translations.emailidplaceholder || translations.emailplaceholder}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
@@ -171,6 +176,9 @@ const OwnerLogin = () => {
                     <button type="submit" className="login-button" disabled={isLoading}>
                         {isLoading ? translations.signingin : translations.signin}
                     </button>
+                    <button type="button" className="demo-admin-button" onClick={handleDemoOwner}>
+                        {translations.demoowner}
+                    </button>
                 </form>
                 <div className="form-group signin">
                     <div className="signin-divider">
@@ -184,17 +192,13 @@ const OwnerLogin = () => {
                         <span className="divider-line"></span>
                     </div>
                 </div>
-                <div className="demo-buttons-container">
-                    <h6>{translations.demoaccounts}</h6>
-                    <div className="demo-buttons">
-                        <button type="button" className="demo-button owner" onClick={handleDemoOwner}>
-                            {translations.demoowner}
-                        </button>
-                        <button type="button" className="demo-button super-admin" onClick={handleDemoSuperAdmin}>
+                {adminPanelUrl ? (
+                    <div className="signin-admin-link">
+                        <a href={adminPanelUrl} target="_blank" rel="noopener noreferrer">
                             {translations.demosuperadmin}
-                        </button>
+                        </a>
                     </div>
-                </div>
+                ) : null}
             </div>
         </div>
     </>);

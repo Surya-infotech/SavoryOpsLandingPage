@@ -1,234 +1,67 @@
 @use "../Customize/Mixin/form_mixin.scss" as form_mixin;
 @use "../Customize/var.scss" as var;
 
+body {
+  padding-bottom: 0px !important;
+}
+
 .full-page {
   width: 100% !important;
   min-height: 100vh !important;
+  height: auto !important;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background-image: url("/signin.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  padding: 20px;
+  padding: 24px 16px;
   position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   &::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: linear-gradient(
       135deg,
       rgba(17, 24, 39, 0.72) 0%,
-      rgba(17, 24, 39, 0.52) 45%,
+      rgba(17, 24, 39, 0.55) 40%,
       rgba(17, 24, 39, 0.72) 100%
     );
     z-index: 0;
   }
 
-  .language-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-  }
-
-  .language-dropdown {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    background-color: color-mix(in srgb, var(--primary-color) 6%, white);
-    border: 1px solid color-mix(in srgb, var(--primary-color) 25%, white);
-    border-radius: 12px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-
-    &:hover {
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-      transform: translateY(-2px);
-    }
-
-    button {
-      background: none;
-      border: 1px solid color-mix(in srgb, var(--primary-color) 35%, white);
-      padding: 8px 12px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      color: var(--primary-color);
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-weight: 500;
-
-      &:hover {
-        background: linear-gradient(
-          135deg,
-          color-mix(in srgb, var(--primary-color) 10%, transparent) 0%,
-          color-mix(in srgb, var(--secondary-color) 10%, transparent) 100%
-        );
-      }
-    }
-  }
-
-  .language-dropdown-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin-top: 8px;
-    background-color: var(--background-color);
-    border: 1px solid color-mix(in srgb, var(--primary-color) 20%, white);
-    border-radius: 12px;
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-height: 250px;
-    overflow-y: auto;
-    animation: slideDown 0.3s ease;
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    ul {
-      list-style: none;
-      padding: 8px 0;
-      margin: 0;
-    }
-
-    li {
-      margin-left: 10px !important;
-      margin-right: 10px !important;
-      margin-top: 2px !important;
-      margin-bottom: 2px !important;
-      padding: 8px 12px;
-      border-radius: 10px !important;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 500 !important;
-      display: flex;
-      align-items: center;
-      transition: all 0.2s ease;
-
-      &:hover,
-      &.selected {
-        background: linear-gradient(
-          135deg,
-          color-mix(in srgb, var(--primary-color) 16%, transparent) 0%,
-          color-mix(in srgb, var(--secondary-color) 16%, transparent) 100%
-        );
-        text-decoration: none;
-        color: var(--primary-color);
-        transform: translateX(4px);
-      }
-    }
-  }
-
   .signup-container {
     width: 100%;
     max-width: 1100px;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.93);
-    border-radius: 20px;
-    box-shadow: 0 28px 58px rgba(15, 23, 42, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.15);
+    margin: 0 auto;
+    padding: 26px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: var(--radius-lg, 14px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: var(--shadow-lg, 0 18px 44px rgba(0, 0, 0, 0.14));
     position: relative;
     z-index: 1;
     backdrop-filter: blur(10px);
-    animation: fadeInUp 0.5s ease;
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    -webkit-backdrop-filter: blur(10px);
 
     @media (max-width: 1024px) {
       max-width: 700px;
     }
 
     @media (max-width: 768px) {
-      padding: 30px 20px;
-      margin: 10px;
-      border-radius: 16px;
+      padding: 22px 18px;
+      margin: 8px;
+      border-radius: var(--radius-lg, 14px);
     }
 
     @media (max-width: 480px) {
-      padding: 25px 15px;
-      margin: 5px;
-      border-radius: 12px;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 25px !important;
-
-      .logo-button {
-        display: flex;
-        align-items: center !important;
-        justify-content: center !important;
-        flex-direction: row !important;
-        gap: 12px;
-        background: none;
-        border: none;
-        padding: 0;
-        margin: 0;
-        cursor: pointer;
-        text-decoration: none;
-        color: inherit;
-        text-align: center;
-
-        &:focus {
-          outline: 0px !important;
-          outline-offset: 0px !important;
-        }
-
-        &:hover,
-        &:active,
-        &:visited {
-          text-decoration: none;
-          color: inherit;
-        }
-
-        .logo {
-          width: 72px;
-          height: 72px;
-          border-radius: 14px;
-          object-fit: contain !important;
-          background: color-mix(in srgb, var(--primary-color) 10%, transparent);
-          padding: 8px;
-          box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
-        }
-
-        h2 {
-          text-align: center !important;
-          margin: 0;
-          color: #111827;
-          font-size: 24px;
-          font-weight: 700;
-          letter-spacing: 0.2px;
-        }
-      }
+      padding: 18px 14px;
+      margin: 4px;
+      border-radius: var(--radius-md, 12px);
     }
 
     .signup-wrapper {
@@ -493,19 +326,6 @@
       }
     }
 
-    .signup-form {
-      .form-group {
-        label {
-          display: block;
-          margin-bottom: 6px;
-          font-weight: 600;
-          font-size: 12px;
-          color: #333;
-          letter-spacing: 0.2px;
-        }
-      }
-    }
-
     .name-fields {
       display: flex;
       justify-content: space-between;
@@ -523,43 +343,17 @@
           width: 100%;
         }
 
-        label {
+        & > label {
           display: block;
-          margin-bottom: 6px;
-          font-weight: 600;
-          font-size: 12px;
-          color: #333;
-          letter-spacing: 0.2px;
+          margin-bottom: 5px;
+          font-weight: 700;
+          color: rgba(17, 24, 39, 0.75);
         }
 
         input:not([type="radio"]):not([type="checkbox"]) {
           width: 100%;
-          padding: 10px 14px;
-          border: 2px solid #e0e0e0;
-          border-radius: 8px;
-          font-size: 13px;
-          transition: all 0.3s ease;
-          background-color: #fafafa;
-          @include form_mixin.form-input;
-
-          &:focus {
-            border-color: var(--primary-color);
-            background-color: #fff;
-            box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 10%, transparent);
-            outline: none;
-            transform: translateY(-1px);
-          }
-
-          &:hover:not(:focus) {
-            border-color: #ccc;
-            background-color: #fff;
-          }
-
-          &::placeholder {
-            color: #999;
-            opacity: 0.7;
-            font-size: 13px;
-          }
+          @include form_mixin.form_input;
+          border-radius: var(--radius-sm, 10px);
         }
 
         .password-input-wrapper {
@@ -619,24 +413,20 @@
           .PhoneInput {
             display: flex;
             width: 100% !important;
-            border: 2px solid #e0e0e0;
-            border-radius: 5px !important;
-            background-color: #fafafa;
-            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm, 10px) !important;
+            background-color: var(--form-input-color);
+            transition: box-shadow 0.2s ease, border-color 0.2s ease;
             overflow: visible !important;
             position: relative;
 
             &:hover {
-              border-color: #ccc !important;
-              background-color: #fff;
-              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+              border-color: color-mix(in srgb, var(--primary-color) 35%, var(--border-color)) !important;
             }
 
             &:focus-within {
               border-color: var(--primary-color) !important;
-              background-color: #fff;
-              box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary-color) 10%, transparent) !important;
-              transform: translateY(-2px);
+              box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--primary-color) 35%, transparent) !important;
             }
 
             .PhoneInputCountry {
@@ -875,132 +665,40 @@
       }
     }
 
-    .form-group {
-      label {
-        display: block;
-        margin-bottom: 6px;
-        font-weight: 600;
-        font-size: 12px;
-        color: #333;
-        letter-spacing: 0.2px;
-      }
-
-      input:not([type="radio"]):not([type="checkbox"]) {
-        width: 100%;
-        padding: 10px 14px;
-        border: 2px solid #e0e0e0;
-        border-radius: 8px;
-        font-size: 13px;
-        transition: all 0.3s ease;
-        background-color: #fafafa;
-        @include form_mixin.form-input;
-
-        &:focus {
-          border-color: var(--primary-color);
-          background-color: #fff;
-          box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 10%, transparent);
-          outline: none;
-          transform: translateY(-1px);
-        }
-
-        &:hover:not(:focus) {
-          border-color: #ccc;
-          background-color: #fff;
-        }
-
-        &::placeholder {
-          color: #999;
-          opacity: 0.7;
-          font-size: 13px;
-        }
-      }
-    }
-
-    .signup-button {
-      margin-top: 18px !important;
-      width: 100%;
-      padding: 12px 20px;
-      background: linear-gradient(135deg,
-          var(--primary-color) 0%,
-          var(--secondary-color) 100%);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    .signup-login-button {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      box-shadow: 0 4px 12px color-mix(in srgb, var(--primary-color) 30%, transparent);
-      position: relative;
-      overflow: hidden;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg,
-            transparent,
-            rgba(255, 255, 255, 0.2),
-            transparent);
-        transition: left 0.5s;
-      }
-
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px color-mix(in srgb, var(--primary-color) 40%, transparent);
-
-        &::before {
-          left: 100%;
-        }
-      }
-
-      &:active {
-        transform: translateY(0);
-        box-shadow: 0 2px 10px color-mix(in srgb, var(--primary-color) 30%, transparent);
-      }
-
-      &:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-        transform: none;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-        &:hover {
-          transform: none;
-        }
-      }
+      gap: 8px;
 
       .spinner {
         width: 16px;
         height: 16px;
-        border: 2.5px solid rgba(255, 255, 255, 0.3);
-        border-top-color: white;
+        border: 2.5px solid rgba(255, 255, 255, 0.35);
+        border-top-color: #fff;
         border-radius: 50%;
-        animation: spin 0.8s linear infinite;
-      }
-
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
-        }
+        animation: signup-spin 0.8s linear infinite;
+        flex-shrink: 0;
       }
 
       .button-arrow {
         font-size: 16px;
-        transition: transform 0.3s ease;
+        transition: transform 0.2s ease;
       }
 
       &:hover:not(:disabled) .button-arrow {
-        transform: translateX(4px);
+        transform: translateX(3px);
       }
+    }
+
+    @keyframes signup-spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .signup-back-button {
+      margin-top: 12px !important;
     }
 
     // OTP Container Styles
@@ -1022,14 +720,14 @@
         .otp-input {
           width: 48px;
           height: 48px;
-          border: 2px solid #e0e0e0;
-          border-radius: 10px;
+          border: 1px solid var(--border-color);
+          border-radius: var(--radius-sm, 10px);
           font-size: 20px;
           font-weight: 600;
           text-align: center;
-          background-color: #fafafa;
-          transition: all 0.3s ease;
-          color: #333;
+          background-color: var(--form-input-color);
+          transition: box-shadow 0.2s ease, border-color 0.2s ease;
+          color: var(--text-color);
 
           @media (max-width: 768px) {
             width: 42px;
@@ -1047,15 +745,12 @@
 
           &:focus {
             border-color: var(--primary-color);
-            background-color: #fff;
-            box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary-color) 10%, transparent);
             outline: none;
-            transform: scale(1.05);
+            box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--primary-color) 35%, transparent);
           }
 
           &:hover:not(:focus) {
-            border-color: #ccc;
-            background-color: #fff;
+            border-color: color-mix(in srgb, var(--primary-color) 35%, var(--border-color));
           }
 
           &::placeholder {
@@ -1108,7 +803,7 @@
             border: 2px solid color-mix(in srgb, var(--primary-color) 40%, transparent);
             border-top-color: var(--primary-color);
             border-radius: 50%;
-            animation: spin 0.8s linear infinite;
+            animation: signup-spin 0.8s linear infinite;
           }
         }
       }
@@ -1154,65 +849,31 @@
       }
     }
 
-    // Back Button
-    .back-button {
-      margin-top: 12px !important;
-      width: 100%;
-      padding: 10px 20px;
-      background: transparent;
-      color: #666;
-      border: 2px solid #e0e0e0;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: #fafafa;
-        border-color: #ccc;
-        color: #333;
-        transform: translateY(-2px);
-      }
-
-      &:active {
-        transform: translateY(0);
-      }
-    }
-
     .signin {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-top: 30px;
+      margin-top: 18px;
 
       .signin-divider {
         display: flex;
         align-items: center;
         width: 100%;
-        margin-bottom: 20px;
         gap: 12px;
 
         .divider-line {
           flex: 1;
           height: 1px;
-          background: linear-gradient(to right,
-              transparent,
-              #e0e0e0,
-              transparent);
+          background: linear-gradient(to right, transparent, rgba(17, 24, 39, 0.12), transparent);
         }
 
         .divider-content {
           display: flex;
           align-items: center;
           gap: 8px;
+          flex-shrink: 0;
         }
 
         .divider-text {
-          padding: 0 12px;
           font-size: 12px;
-          color: #666;
+          color: rgba(17, 24, 39, 0.55);
           font-weight: 500;
         }
       }
@@ -1222,33 +883,18 @@
         text-decoration: none;
         font-weight: 600;
         font-size: 13px;
-        padding: 0 8px;
-        border-radius: 6px;
-        transition: all 0.3s ease;
 
         &:hover {
-          background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
-          text-decoration: none;
-          transform: translateY(-2px);
+          text-decoration: underline;
         }
       }
     }
 
     .error-message {
-      color: white;
-      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
-      padding: 10px 16px !important;
-      text-align: center !important;
-      margin-top: 16px;
-      font-size: 12px;
-      font-weight: 600;
-      border-radius: 8px;
       width: 100% !important;
-      box-shadow: 0 3px 10px rgba(255, 107, 107, 0.3);
-      animation: shake 0.5s ease;
+      animation: signup-error-shake 0.5s ease;
 
-      @keyframes shake {
-
+      @keyframes signup-error-shake {
         0%,
         100% {
           transform: translateX(0);

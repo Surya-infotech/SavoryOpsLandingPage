@@ -6,6 +6,7 @@ import Flag from 'react-world-flags';
 import { useLanguage } from '../../context/LanguageContext';
 import { getLanguageOptions } from '../../constants/languages';
 import { useAppSettings } from '../../context/AppSettingsContext.jsx';
+import '../../styles/General/signin.scss';
 import '../../styles/General/signup.scss';
 import WarningModal from '../Custom/WarningModal';
 
@@ -25,6 +26,7 @@ const OwnerSignUp = () => {
     const BackendPath = import.meta.env.VITE_BACKEND_URL;
     const host = import.meta.env.VITE_HOST;
     const tld = import.meta.env.VITE_TLD;
+    const HOME_URL = import.meta.env.VITE_HOME_URL || '/';
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
     const { translations } = useLanguage();
@@ -57,6 +59,10 @@ const OwnerSignUp = () => {
         else document.removeEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isLanguageDropdownVisible]);
+
+    useEffect(() => {
+        if (translations.signup) document.title = translations.signup;
+    }, [translations]);
 
     const handlePhoneChange = (value) => {
         setPhone(value || '');
@@ -316,13 +322,13 @@ const OwnerSignUp = () => {
         <div className="full-page">
             <div className="language-container">
                 <div className="language-dropdown" onClick={toggleLanguageDropdown}>
-                    <button onClick={toggleLanguageDropdown}>
+                    <button type="button">
                         <Flag
                             code={languages.find(lang => lang.name === selectedLanguage)?.code}
-                            style={{ width: '20px', marginRight: '5px' }}
+                            style={{ width: '20px' }}
                             alt={selectedLanguage}
                         />
-                        {selectedLanguage.substring(0, 3)}
+                        <span className="language-dropdown__name">{selectedLanguage.substring(0, 3)}</span>
                     </button>
                     {isLanguageDropdownVisible && (
                         <div className="language-dropdown-menu">
@@ -333,8 +339,8 @@ const OwnerSignUp = () => {
                                         className={language.name === selectedLanguage ? 'selected' : ''}
                                         onClick={() => handleLanguageSelect(language)}
                                     >
-                                        <Flag code={language.code} style={{ width: '20px', marginRight: '10px' }} alt={language.name} />
-                                        {language.name}
+                                        <Flag code={language.code} style={{ width: '20px' }} alt={language.name} />
+                                        <span className="language-dropdown__name">{language.name}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -344,13 +350,15 @@ const OwnerSignUp = () => {
             </div>
             <div className="signup-container">
                 <div className="logo-container">
-                    <a href="/" className="logo-button">
-                        <img
-                            src={logoUrl || undefined}
-                            alt={`${softwareName} Logo`}
-                            className="logo"
-                            onError={() => setLogoUrl(null)}
-                        />
+                    <a href={HOME_URL} className="logo-button">
+                        {logoUrl ? (
+                            <img
+                                src={logoUrl}
+                                className="logo"
+                                alt=""
+                                onError={() => setLogoUrl(null)}
+                            />
+                        ) : null}
                         <h2>{softwareName}</h2>
                     </a>
                 </div>
@@ -399,7 +407,7 @@ const OwnerSignUp = () => {
                                         <label>{translations.email}</label>
                                         <input
                                             type="email"
-                                            placeholder={translations.emailplaceholder}
+                                            placeholder={translations.emailidplaceholder || translations.emailplaceholder}
                                             value={email}
                                             onChange={(e) => setEmail(e.target.value)}
                                             required
@@ -502,7 +510,7 @@ const OwnerSignUp = () => {
                                     </label>
                                 </div>
                                 {formError && <div className="error-message">{formError}</div>}
-                                <button type="submit" className="signup-button" disabled={isSendingOtp}>
+                                <button type="submit" className="login-button signup-login-button" disabled={isSendingOtp}>
                                     {isSendingOtp ? (
                                         <>
                                             <span className="spinner"></span>
@@ -537,7 +545,7 @@ const OwnerSignUp = () => {
                                         ))}
                                     </div>
                                     {otpError && <div className="error-message">{otpError}</div>}
-                                    <button type="submit" className="signup-button" disabled={isVerifyingOtp || isResendingOtp}>
+                                    <button type="submit" className="login-button signup-login-button" disabled={isVerifyingOtp || isResendingOtp}>
                                         {isVerifyingOtp ? (
                                             <>
                                                 <span className="spinner"></span>
@@ -563,7 +571,7 @@ const OwnerSignUp = () => {
                                             )}
                                         </button>
                                     </div>
-                                    <button type="button" onClick={() => setCurrentStep(1)} className="back-button">
+                                    <button type="button" onClick={() => setCurrentStep(1)} className="demo-admin-button signup-back-button">
                                         {translations.back}
                                     </button>
                                 </div>
@@ -574,7 +582,7 @@ const OwnerSignUp = () => {
                                     <div className="welcome-icon">🎉</div>
                                     <p>{translations.accountcreatedsuccessfully}</p>
                                 </div>
-                                <button onClick={handleFinish} className="signup-button finish-button">
+                                <button type="button" onClick={handleFinish} className="login-button signup-login-button finish-button">
                                     {translations.finishup}
                                     <span className="button-arrow">→</span>
                                 </button>
