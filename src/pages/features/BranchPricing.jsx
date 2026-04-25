@@ -12,10 +12,8 @@ const BranchPricing = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Branch-wise Pricing - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const BranchPricing = () => {
     }
     metaDescription.setAttribute('content', 'Set different item prices for each branch based on local market conditions. Flexible price management, market-based pricing, and revenue optimization for maximum profitability across all locations.');
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

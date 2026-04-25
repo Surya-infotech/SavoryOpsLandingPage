@@ -12,10 +12,8 @@ const KOTSystem = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `KOT System - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const KOTSystem = () => {
     }
     metaDescription.setAttribute('content', 'Streamlined kitchen order management with real-time ticket generation and tracking. Efficient order processing, real-time status updates, and optimized workflow management for maximum productivity.');
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

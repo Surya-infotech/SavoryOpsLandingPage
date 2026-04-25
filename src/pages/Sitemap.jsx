@@ -11,10 +11,8 @@ const Sitemap = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     
-    // Update document title
     document.title = `Sitemap - ${softwareName}`;
     
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -29,7 +27,6 @@ const Sitemap = () => {
       ),
     );
     
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

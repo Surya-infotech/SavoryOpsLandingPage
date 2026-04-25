@@ -12,10 +12,8 @@ const BranchStaffManagement = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Branch-wise Staff Management - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const BranchStaffManagement = () => {
     }
     metaDescription.setAttribute('content', 'Manage staff separately for each branch with localized permissions and scheduling. Comprehensive workforce control, performance tracking, and efficient task distribution for optimal operations.');
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

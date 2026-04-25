@@ -12,10 +12,8 @@ const CloudBasedSystem = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Cloud Based System - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const CloudBasedSystem = () => {
     }
     metaDescription.setAttribute('content', 'Experience cloud computing with our enterprise-grade platform. Built on scalable cloud infrastructure with high availability, automatic backups, real-time synchronization, and global accessibility.');
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

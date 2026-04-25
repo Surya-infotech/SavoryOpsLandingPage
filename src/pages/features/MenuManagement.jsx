@@ -12,10 +12,8 @@ const MenuManagement = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Menu Management - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const MenuManagement = () => {
     }
     metaDescription.setAttribute('content', 'Update menus instantly and manage pricing with real-time control. Comprehensive menu management system to create, edit, and organize menu items with ease, ensuring customers always see current offerings.');
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

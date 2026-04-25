@@ -12,10 +12,8 @@ const BranchTaxManagement = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Branch-wise Tax Management - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const BranchTaxManagement = () => {
     }
     metaDescription.setAttribute('content', 'Manage different tax rates and regulations for each branch location. Comprehensive tax compliance, automated reporting, and regulatory adherence for all your restaurant locations.');
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

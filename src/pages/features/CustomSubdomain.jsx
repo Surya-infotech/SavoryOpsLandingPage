@@ -12,10 +12,8 @@ const CustomSubdomain = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Custom Subdomain - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const CustomSubdomain = () => {
     }
     metaDescription.setAttribute('content', 'Each restaurant owner gets their own custom subdomain for a personalized and branded experience. Create a unique web presence with your own subdomain that reflects your restaurant identity.');
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

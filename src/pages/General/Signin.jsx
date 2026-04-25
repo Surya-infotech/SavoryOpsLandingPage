@@ -52,19 +52,6 @@ const OwnerLogin = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isLanguageDropdownVisible]);
 
-    // useEffect(() => {
-    //     const urlParams = new URLSearchParams(window.location.search);
-    //     const successMessage = urlParams.get('message');
-
-    //     if (successMessage) {
-    //         setAlertMessage(decodeURIComponent(successMessage));
-    //         urlParams.delete('message');
-    //         const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
-    //         window.history.replaceState({}, '', newUrl);
-    //     }
-
-    // }, []);
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);

@@ -13,7 +13,7 @@ const Pricing = () => {
   const [plans, setPlans] = useState([]);
   const [currency, setCurrency] = useState({});
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState(0); // 0 for monthly, 1 for yearly
+  const [activeTab, setActiveTab] = useState(0);
   const navigate = useNavigate();
   const adminPanelBackendPath = import.meta.env.VITE_BACKEND_URL;
   const { softwareName } = useAppSettings();
@@ -31,30 +31,26 @@ const Pricing = () => {
           const plansData = data.plans || [];
           const currencyData = data.currency || {};
 
-          // Filter and sort plans (show active plans, sort by duration and duration value)
           const activePlans = plansData
             .filter(plan => plan.status === true)
             .sort((a, b) => {
-              // Helper function to get sort value for duration types
               const getDurationSortValue = (plan) => {
-                if (plan.plantype === 'limited') return 4; // Lifetime
-                if (!plan.duration) return 5; // No duration
+                if (plan.plantype === 'limited') return 4;
+                if (!plan.duration) return 5;
 
                 const duration = plan.duration.toLowerCase();
-                if (duration.includes('month')) return 2; // Then months
-                if (duration.includes('year')) return 3; // Then years
-                return 6; // Unknown duration types last
+                if (duration.includes('month')) return 2;
+                if (duration.includes('year')) return 3;
+                return 6;
               };
 
               const sortA = getDurationSortValue(a);
               const sortB = getDurationSortValue(b);
 
-              // First sort by duration type (weeks < months < years < lifetime)
               if (sortA !== sortB) {
                 return sortA - sortB;
               }
 
-              // If same duration type, sort by duration value (ascending)
               const valueA = a.durationvalue || 0;
               const valueB = b.durationvalue || 0;
               return valueA - valueB;
@@ -65,7 +61,6 @@ const Pricing = () => {
         }
       } catch {
         console.log("Failed to fetch pricing data, using defaults");
-        // Fallback to empty arrays if API fails
         setPlans([]);
         setCurrency({});
       } finally {
@@ -79,10 +74,8 @@ const Pricing = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Pricing - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -97,7 +90,6 @@ const Pricing = () => {
       ),
     );
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');
@@ -113,25 +105,18 @@ const Pricing = () => {
     );
   }, [softwareName]);
 
-
-
-  // Function to filter plans by duration tab
   const getFilteredPlans = () => {
     if (activeTab === 0) {
-      // Monthly paid plans (duration === 'month' && plantype === 'paid')
       return plans.filter(plan => plan.duration === 'month' && plan.plantype === 'paid');
     } else {
-      // Yearly paid plans (duration === 'year' && plantype === 'paid')
       return plans.filter(plan => plan.duration === 'year' && plan.plantype === 'paid');
     }
   };
 
-  // Handle tab change
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
   };
 
-  // Handle plan button click (redirect to sign-in)
   const handlePlanButtonClick = () => {
     navigate('/signin');
   };
@@ -167,7 +152,6 @@ const Pricing = () => {
 
           <Box className="pricing-plans-grid">
             {loading ? (
-              // Show loading state
               Array.from({ length: 6 }, (_, index) => (
                 <Box key={index} className="pricing-plan-card loading">
                   <Typography variant="h5" className="plan-name">Loading...</Typography>
@@ -176,7 +160,6 @@ const Pricing = () => {
                 </Box>
               ))
             ) : getFilteredPlans().length > 0 ? (
-              // Show actual plans
               getFilteredPlans().map((plan, index) => (
                 <Box key={plan._id || index} className={`pricing-plan-card ${plan.ismostpopular ? 'featured' : ''}`}>
                   {plan.ismostpopular && (
@@ -236,7 +219,6 @@ const Pricing = () => {
                 </Box>
               ))
             ) : (
-              // Show fallback message if no plans
               <Box className="no-plans-message">
                 <Typography variant="h6" className="no-plans-title">
                   No pricing plans available at the moment

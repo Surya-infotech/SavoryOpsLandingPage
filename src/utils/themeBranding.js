@@ -64,6 +64,10 @@ export function getCachedThemeColors() {
   }
 }
 
+/**
+ * Applies cached primary/secondary colors on first paint to avoid a flash of wrong branding before settings load.
+ * @returns {{ primary: string, secondary: string }}
+ */
 export function applyCachedThemeColorsFromStorage() {
   const { primary, secondary } = getCachedThemeColors();
   if (primary && secondary) {

@@ -12,10 +12,8 @@ const FiscalYearRecords = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Fiscal Year Records - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const FiscalYearRecords = () => {
     }
     metaDescription.setAttribute('content', 'Organized fiscal year records for better financial management and compliance. Comprehensive data organization, reporting, and historical analysis for strategic business planning.');
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

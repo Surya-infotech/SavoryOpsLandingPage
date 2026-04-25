@@ -12,10 +12,8 @@ const AdvancedReports = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Advanced Reports - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const AdvancedReports = () => {
     }
     metaDescription.setAttribute('content', 'Comprehensive business reports and analytics with SavoryOps. Growth intelligence, performance analytics, and visual reports for strategic business planning and optimization.'.replaceAll('SavoryOps', softwareName));
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

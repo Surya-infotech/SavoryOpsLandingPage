@@ -1,15 +1,11 @@
 /**
- * Configuration for the dynamic Buy Now button.
- * You can easily change the redirect URL and styles here.
+ * Dynamic "Buy Now" CTA: listing URL, label, and MUI `sx` overrides.
  */
 export const buyNowConfig = {
-    // The URL where the button should redirect to
     url: 'https://flippa.com/12473902-savoryops-white-label-multi-tenant-restaurant-saas-react-node-native-5-panels-apps-razorpay-aws-ready-1-mo-free-support-setup-for-global-entrepreneurs',
 
-    // The label text for the button
     label: 'Buy Now',
 
-    // Custom styles using Material UI sx prop
     sx: {
         background: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000) 0%, var(--primary-color) 100%)',
         color: '#ffffff',

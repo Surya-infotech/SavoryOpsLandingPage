@@ -6,14 +6,11 @@ import '../styles/pages/privacy-policy.scss';
 const DataDeletionPolicy = () => {
   const { softwareName } = useAppSettings();
 
-  // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
     
-    // Update document title
     document.title = `Data Deletion Policy - ${softwareName}`;
     
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -28,7 +25,6 @@ const DataDeletionPolicy = () => {
       ),
     );
     
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

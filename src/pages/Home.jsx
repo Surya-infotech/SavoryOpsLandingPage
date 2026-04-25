@@ -13,7 +13,6 @@ import { restoreDefaultMetaTags } from '../utils/seoMetaTags';
 const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    // Home page uses default meta tags from index.html
     restoreDefaultMetaTags();
   }, []);
 

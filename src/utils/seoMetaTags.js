@@ -1,4 +1,4 @@
-// Default SEO meta tags from index.html
+/** Baseline title, description, and keywords (aligned with `index.html`). */
 const DEFAULT_META_TAGS = {
   title: 'SavoryOps - Complete Restaurant Management System | Streamline Your Operations',
   description: 'Transform your restaurant operations with SavoryOps. Complete restaurant management system with inventory, staff scheduling, analytics, and more. Start your free trial today!',
@@ -6,17 +6,16 @@ const DEFAULT_META_TAGS = {
 };
 
 /**
- * Restores default SEO meta tags from index.html
+ * Restores document title and meta description/keywords to the marketing defaults.
+ * @param {string} [softwareName='SavoryOps'] - Replaces the product name in title and description.
  */
 export const restoreDefaultMetaTags = (softwareName = 'SavoryOps') => {
   const safeName = softwareName || 'SavoryOps';
   const title = DEFAULT_META_TAGS.title.replaceAll('SavoryOps', safeName);
   const description = DEFAULT_META_TAGS.description.replaceAll('SavoryOps', safeName);
 
-  // Update document title
   document.title = title;
   
-  // Update or create meta description
   let metaDescription = document.querySelector('meta[name="description"]');
   if (!metaDescription) {
     metaDescription = document.createElement('meta');
@@ -25,7 +24,6 @@ export const restoreDefaultMetaTags = (softwareName = 'SavoryOps') => {
   }
   metaDescription.setAttribute('content', description);
   
-  // Update or create meta keywords
   let metaKeywords = document.querySelector('meta[name="keywords"]');
   if (!metaKeywords) {
     metaKeywords = document.createElement('meta');
@@ -42,10 +40,8 @@ export const restoreDefaultMetaTags = (softwareName = 'SavoryOps') => {
  * @param {string} keywords - Page keywords
  */
 export const setPageMetaTags = (title, description, keywords) => {
-  // Update document title
   document.title = title;
   
-  // Update or create meta description
   let metaDescription = document.querySelector('meta[name="description"]');
   if (!metaDescription) {
     metaDescription = document.createElement('meta');
@@ -54,7 +50,6 @@ export const setPageMetaTags = (title, description, keywords) => {
   }
   metaDescription.setAttribute('content', description);
   
-  // Update or create meta keywords
   let metaKeywords = document.querySelector('meta[name="keywords"]');
   if (!metaKeywords) {
     metaKeywords = document.createElement('meta');

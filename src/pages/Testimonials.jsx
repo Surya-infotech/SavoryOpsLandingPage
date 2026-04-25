@@ -72,30 +72,29 @@ const Testimonials = () => {
     let isScrolling = true;
     let currentIndex = 0;
     let isHovering = false;
-    let scrollDirection = 1; // 1 for forward, -1 for backward
+    let scrollDirection = 1;
 
     const startAutoScroll = () => {
       scrollInterval = setInterval(() => {
         if (scrollContainer && isScrolling && !isHovering) {
           currentIndex += scrollDirection;
 
-          // Change direction when reaching the end or beginning
           if (currentIndex >= testimonials.length - 1) {
-            scrollDirection = -1; // Start scrolling backward
+            scrollDirection = -1;
             currentIndex = testimonials.length - 1;
           } else if (currentIndex <= 0) {
-            scrollDirection = 1; // Start scrolling forward
+            scrollDirection = 1;
             currentIndex = 0;
           }
 
-          const scrollPosition = currentIndex * (400 + 24); // card width + gap
+          const scrollPosition = currentIndex * (400 + 24);
           scrollContainer.scrollTo({
             left: scrollPosition,
             behavior: 'smooth',
             duration: 800
           });
         }
-      }, 3000); // Scroll every 3 seconds for better pacing
+      }, 3000);
     };
 
     const pauseScroll = () => {
@@ -117,7 +116,7 @@ const Testimonials = () => {
       const distanceFromCenter = mouseX - centerX;
       const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
 
-      const cardWidth = 400 + 24; // card width + gap
+      const cardWidth = 400 + 24;
       const totalCards = testimonials.length;
       const scrollRatio = distanceFromCenter / (rect.width / 2);
       const targetCardIndex = Math.round((totalCards - 1) * (scrollRatio + 1) / 2);
@@ -136,7 +135,7 @@ const Testimonials = () => {
       if (!isHovering) return;
 
       e.preventDefault();
-      const scrollAmount = e.deltaY > 0 ? 400 : -400; // Scroll one card width
+      const scrollAmount = e.deltaY > 0 ? 400 : -400;
       scrollContainer.scrollBy({
         left: scrollAmount,
         behavior: 'smooth',
@@ -149,7 +148,7 @@ const Testimonials = () => {
     };
 
     const handleTouchEnd = () => {
-      setTimeout(resumeScroll, 1000); // Resume after 1 second of no touch
+      setTimeout(resumeScroll, 1000);
     };
 
     startAutoScroll();

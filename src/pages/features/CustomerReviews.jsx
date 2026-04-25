@@ -12,10 +12,8 @@ const CustomerReviews = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Customer Reviews - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const CustomerReviews = () => {
     }
     metaDescription.setAttribute('content', 'Manage customer reviews and feedback with SavoryOps. Automated review collection, rating analytics, and AI-powered sentiment analysis to build stronger customer relationships.'.replaceAll('SavoryOps', softwareName));
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

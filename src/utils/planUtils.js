@@ -1,4 +1,3 @@
-// Plan utility functions shared between FreeSoftware and Pricing pages
 
 /**
  * Formats plan duration with proper singular/plural handling
@@ -28,7 +27,6 @@ export const getDurationWord = (duration, value) => {
   const isSingular = value === 1;
   const durationLower = duration.toLowerCase();
 
-  // Handle different duration types with proper singular/plural forms
   switch (durationLower) {
     case 'month':
     case 'months':
@@ -49,13 +47,12 @@ export const getDurationWord = (duration, value) => {
     case 'minutes':
       return isSingular ? 'minute' : 'minutes';
     default:
-      // For unknown duration types, try to handle common plural patterns
       if (isSingular && durationLower.endsWith('s')) {
-        return durationLower.slice(0, -1); // Remove 's' for singular
+        return durationLower.slice(0, -1);
       } else if (!isSingular && !durationLower.endsWith('s')) {
-        return durationLower + 's'; // Add 's' for plural
+        return durationLower + 's';
       }
-      return durationLower; // Return as-is if already correct
+      return durationLower;
   }
 };
 
@@ -65,10 +62,8 @@ export const getDurationWord = (duration, value) => {
  * @returns {Array} Array of plan limit objects
  */
 export const getPlanLimits = (plan) => {
-  // Define standard pages that should always be shown
   const defaultPages = ['Business', 'Branch', 'Employee', 'Item'];
 
-  // If plan has unlimited access, show all pages as available
   if (plan.planaccess === 'unlimited') {
     return defaultPages.map(page => ({
       page: page,
@@ -76,7 +71,6 @@ export const getPlanLimits = (plan) => {
     }));
   }
 
-  // Create a map of existing limits for quick lookup
   const existingLimits = {};
   if (plan.planlimits && Array.isArray(plan.planlimits)) {
     plan.planlimits.forEach(limit => {
@@ -84,7 +78,6 @@ export const getPlanLimits = (plan) => {
     });
   }
 
-  // Return standardized list with database values or 0
   return defaultPages.map(page => ({
     page: page,
     limit: existingLimits[page] || '0'

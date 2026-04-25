@@ -18,10 +18,8 @@ const QRCodeScanning = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `QR-Based Menu - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -30,7 +28,6 @@ const QRCodeScanning = () => {
     }
     metaDescription.setAttribute('content', 'Enable contactless QR-based menu ordering with live menu updates, seamless mobile checkout, and real-time order tracking for faster table service.');
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

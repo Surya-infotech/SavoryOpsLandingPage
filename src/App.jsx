@@ -39,21 +39,20 @@ import SmartDashboard from './pages/features/SmartDashboard';
 import TableReservation from './pages/features/TableReservation';
 import './styles/main.scss';
 
+/** Short ease-out scroll on route change so the new page starts near the top without a long animation. */
 const ScrollToTop = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Fast scroll to top when route changes
     const fastScrollToTop = () => {
       const startPosition = window.pageYOffset;
       const startTime = performance.now();
-      const duration = 10; // 100ms for ultra fast scroll
+      const duration = 10;
 
       const animateScroll = (currentTime) => {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
 
-        // Easing function for smooth but fast animation
         const easeOutCubic = 1 - Math.pow(1 - progress, 3);
         const currentPosition = startPosition * (1 - easeOutCubic);
 
@@ -73,15 +72,14 @@ const ScrollToTop = () => {
   return null;
 };
 
-// Component to restore default meta tags on route changes
+/**
+ * Resets title and meta tags on navigation; pages that call `setPageMetaTags` replace them in their own effect.
+ */
 const SEOHandler = () => {
   const location = useLocation();
   const { softwareName } = useAppSettings();
 
   useEffect(() => {
-    // Restore default meta tags when route changes
-    // Pages that set their own meta tags will override these defaults
-    // Pages that don't set meta tags will use the defaults
     restoreDefaultMetaTags(softwareName);
   }, [location.pathname]);
 

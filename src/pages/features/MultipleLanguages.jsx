@@ -12,10 +12,8 @@ const MultipleLanguages = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Multiple Languages - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const MultipleLanguages = () => {
     }
     metaDescription.setAttribute('content', 'Support for multiple languages to serve diverse customer bases worldwide. Comprehensive localization, translation services, and culturally adapted content for global restaurant operations.');
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

@@ -12,10 +12,8 @@ const SmartDashboard = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Smart Dashboard - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const SmartDashboard = () => {
     }
     metaDescription.setAttribute('content', 'Get instant insights into your restaurant performance with our intelligent dashboard. Monitor sales, track orders, analyze staff performance, and make data-driven decisions to optimize operations.');
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

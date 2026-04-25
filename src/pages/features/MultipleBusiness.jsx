@@ -12,10 +12,8 @@ const MultipleBusiness = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Multiple Business - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const MultipleBusiness = () => {
     }
     metaDescription.setAttribute('content', 'Manage multiple business entities from a single platform with centralized control. Multi-tenant architecture provides dedicated database, custom subdomain, and complete data isolation.');
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

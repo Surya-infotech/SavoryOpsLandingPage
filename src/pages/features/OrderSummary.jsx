@@ -12,10 +12,8 @@ const OrderSummary = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Order Summary - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const OrderSummary = () => {
     }
     metaDescription.setAttribute('content', 'Complete order details with status tracking and timeline for better order management. Comprehensive order tracking, detailed reports, and real-time visibility into all order activities.');
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');

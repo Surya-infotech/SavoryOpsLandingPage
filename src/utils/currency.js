@@ -1,4 +1,3 @@
-// Currency formatting utilities
 
 /**
  * Formats a price according to currency configuration
@@ -15,20 +14,16 @@ export const formatCurrency = (price, currencyInfo) => {
   const decimalSep = currencyInfo.decimalseparator || '.';
   const decimals = currencyInfo.decimal || 2;
 
-  // Format number with proper decimal separator first
   let formattedPrice = price.toFixed(decimals);
 
-  // Replace the dot with the actual decimal separator
   if (decimalSep !== '.') {
     formattedPrice = formattedPrice.replace('.', decimalSep);
   }
 
-  // Add thousand separators (but avoid adding them to the decimal part)
   const [wholePart, decimalPart] = formattedPrice.split(decimalSep);
   const formattedWholePart = wholePart.replace(/\B(?=(\d{3})+(?!\d))/g, thousandSep);
   formattedPrice = decimalPart ? `${formattedWholePart}${decimalSep}${decimalPart}` : formattedWholePart;
 
-  // Apply currency symbol positioning
   if (position === 'left') {
     return `${symbol}${formattedPrice}`;
   } else if (position === 'left-space') {

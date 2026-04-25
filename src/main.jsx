@@ -7,7 +7,6 @@ import { AuthProvider } from './Middleware/Auth.jsx'
 import { AppSettingsProvider } from './context/AppSettingsContext.jsx'
 import { applyCachedThemeColorsFromStorage } from './utils/themeBranding.js'
 
-// Apply last successful theme immediately to avoid flash before API resolves.
 applyCachedThemeColorsFromStorage()
 
 createRoot(document.getElementById('root')).render(

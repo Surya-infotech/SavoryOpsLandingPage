@@ -27,14 +27,12 @@ const FreeSoftware = () => {
         if (response.ok && data) {
           const plansData = data.plans || [];
 
-          // Filter active plans
           const activePlans = plansData.filter(plan => plan.status === true);
 
           setPlans(activePlans);
         }
       } catch {
         console.log("Failed to fetch pricing data for free software section");
-        // Fallback to empty arrays if API fails
         setPlans([]);
       } finally {
         setLoading(false);
@@ -44,12 +42,10 @@ const FreeSoftware = () => {
     fetchPricingData();
   }, [adminPanelBackendPath]);
 
-  // Function to handle view more button click
   const handleViewMoreClick = () => {
     navigate('/pricing');
   };
 
-  // Function to handle plan button click (redirect to sign-in)
   const handlePlanButtonClick = () => {
     navigate('/signin');
   };
@@ -96,10 +92,9 @@ const FreeSoftware = () => {
                 {plans
                   .filter(plan => plan.plantype === 'free' || plan.plantype === 'limited')
                   .sort((a, b) => {
-                    // Show free plans first, then limited plans
                     if (a.plantype === 'free' && b.plantype === 'limited') return -1;
                     if (a.plantype === 'limited' && b.plantype === 'free') return 1;
-                    return 0; // Keep same plantype plans in their original order
+                    return 0;
                   })
                   .map((plan, index) => (
                     <Box key={plan._id || index} className="pricing-plan-card">

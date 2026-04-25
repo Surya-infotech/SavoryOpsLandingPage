@@ -54,7 +54,6 @@ const Footer = () => {
     { name: 'Data Deletion Policy', href: '/data-deletion-policy' },
   ];
 
-  // Function to map platform names to icons
   const getSocialIcon = (platform) => {
     const platformLower = platform.toLowerCase();
     switch (platformLower) {
@@ -73,18 +72,16 @@ const Footer = () => {
       case 'whatsapp':
         return <WhatsAppIcon />;
       default:
-        return <LinkedInIcon />; // Default fallback
+        return <LinkedInIcon />;
     }
   };
 
-  // Build dynamic social links from backend data
   const socialLinks = footerData.socialmedia.map((social) => ({
     icon: getSocialIcon(social.platform),
     href: social.url,
     label: social.platform
   }));
 
-  // Build dynamic address from backend data
   const buildAddress = () => {
     const addressParts = [];
     if (footerData.address) addressParts.push(footerData.address);

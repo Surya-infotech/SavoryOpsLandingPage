@@ -12,10 +12,8 @@ const MultipleBranches = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Update document title
     document.title = `Multiple Branches - ${softwareName}`;
 
-    // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -24,7 +22,6 @@ const MultipleBranches = () => {
     }
     metaDescription.setAttribute('content', 'Efficiently manage multiple restaurant branches with unified operations and reporting. Centralized control while maintaining independent operations for each location, ensuring consistent quality.');
 
-    // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');
