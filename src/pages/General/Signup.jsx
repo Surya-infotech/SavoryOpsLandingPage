@@ -30,9 +30,13 @@ const OwnerSignUp = () => {
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
     const { translations } = useLanguage();
+    const [referralCode, setReferralCode] = useState('');
+    const [referralError, setReferralError] = useState('');
     const [isSendingOtp, setIsSendingOtp] = useState(false);
     const [isVerifyingOtp, setIsVerifyingOtp] = useState(false);
     const [isResendingOtp, setIsResendingOtp] = useState(false);
+    const [isValidatingReferral, setIsValidatingReferral] = useState(false);
+    const [isCreatingAccount, setIsCreatingAccount] = useState(false);
     const [formError, setFormError] = useState('');
     const [warningMessage, setWarningMessage] = useState("");
     const [showWarning, setShowWarning] = useState(false);
@@ -190,6 +194,52 @@ const OwnerSignUp = () => {
         if (nextInput) nextInput.focus();
     };
 
+    const createAccount = async (usedReferralCode = null) => {
+        setIsCreatingAccount(true);
+        setReferralError('');
+        setFormError('');
+
+        try {
+            const signupBody = {
+                ownerfirstname: firstName,
+                ownerlastname: lastName,
+                email,
+                password,
+                phone,
+                gender
+            };
+
+            if (usedReferralCode) {
+                signupBody.usedreferralcode = usedReferralCode.trim().toUpperCase();
+            }
+
+            const signupResponse = await fetch(`${BackendPath}/General/owner/Signup`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json", "x-user": "admin" },
+                body: JSON.stringify(signupBody),
+            });
+            const signupResult = await signupResponse.json();
+            if (signupResponse.ok) {
+                setSignupData(signupResult);
+                setCurrentStep(4);
+                setFormError('');
+            } else {
+                const errorMessages = {
+                    "All fields are required": translations.allfieldrequired,
+                    "Email ID Already Exists": translations.emailalreadyexists,
+                    "Invalid referral code": translations.invalidreferralcode,
+                    "Server error": translations.servererror
+                };
+                setReferralError(errorMessages[signupResult.message] || translations.servererror);
+            }
+        } catch {
+            setWarningMessage(translations.servererror);
+            setShowWarning(true);
+        } finally {
+            setIsCreatingAccount(false);
+        }
+    };
+
     const handleOtpSubmit = async (e) => {
         e.preventDefault();
         setIsVerifyingOtp(true);
@@ -213,37 +263,10 @@ const OwnerSignUp = () => {
             if (response.ok) {
                 setOtpError('');
                 setOtp(['', '', '', '', '', '']);
-
-                try {
-                    const signupResponse = await fetch(`${BackendPath}/General/owner/Signup`, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json", "x-user": "admin" },
-                        body: JSON.stringify({
-                            ownerfirstname: firstName,
-                            ownerlastname: lastName,
-                            email,
-                            password,
-                            phone,
-                            gender
-                        }),
-                    });
-                    const signupResult = await signupResponse.json();
-                    if (signupResponse.ok) {
-                        setSignupData(signupResult);
-                        setCurrentStep(3);
-                        setFormError('');
-                    } else {
-                        const errorMessages = {
-                            "All fields are required": translations.allfieldrequired,
-                            "Email ID Already Exists": translations.emailalreadyexists,
-                            "Server error": translations.servererror
-                        };
-                        setOtpError(errorMessages[signupResult.message] || translations.servererror);
-                    }
-                } catch {
-                    setWarningMessage(translations.servererror);
-                    setShowWarning(true);
-                }
+                setReferralCode('');
+                setReferralError('');
+                setCurrentStep(3);
+                setFormError('');
             } else {
                 const errorMessages = {
                     "Invalid OTP format. OTP must be 6 digits.": translations.invalidotpformatotpmustbe6digits,
@@ -260,6 +283,47 @@ const OwnerSignUp = () => {
         } finally {
             setIsVerifyingOtp(false);
         }
+    };
+
+    const handleReferralSubmit = async (e) => {
+        e.preventDefault();
+        setReferralError('');
+
+        const trimmedCode = referralCode.trim();
+        if (!trimmedCode) {
+            setReferralError(translations.enterreferralcoderequired);
+            return;
+        }
+
+        setIsValidatingReferral(true);
+        try {
+            const response = await fetch(`${BackendPath}/General/owner/ValidateReferralCode`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json", "x-user": "admin" },
+                body: JSON.stringify({ referralcode: trimmedCode }),
+            });
+            const data = await response.json();
+            if (response.ok) {
+                await createAccount(trimmedCode);
+            } else {
+                const errorMessages = {
+                    "Referral code is required": translations.enterreferralcoderequired,
+                    "Invalid referral code": translations.invalidreferralcode,
+                    "Server error": translations.servererror
+                };
+                setReferralError(errorMessages[data.message] || translations.invalidreferralcode);
+            }
+        } catch {
+            setWarningMessage(translations.servererror);
+            setShowWarning(true);
+        } finally {
+            setIsValidatingReferral(false);
+        }
+    };
+
+    const handleReferralSkip = async () => {
+        setReferralError('');
+        await createAccount(null);
     };
 
     const handleResendOtp = async () => {
@@ -311,6 +375,12 @@ const OwnerSignUp = () => {
         },
         {
             number: 3,
+            title: translations.referralcode,
+            description: translations.referralcodedescription,
+            icon: "🎁"
+        },
+        {
+            number: 4,
             title: translations.welcometosystem,
             description: translations.getupandrunning,
             icon: "🚀"
@@ -525,7 +595,7 @@ const OwnerSignUp = () => {
                                 </button>
                             </form>
                         ) : currentStep === 2 ? (
-                            <form onSubmit={handleOtpSubmit}>
+                            <form onSubmit={handleOtpSubmit} className="signup-form">
                                 <div className="otp-container">
                                     <div className="otp-input-group">
                                         {otp.map((digit, index) => (
@@ -575,6 +645,57 @@ const OwnerSignUp = () => {
                                         {translations.back}
                                     </button>
                                 </div>
+                            </form>
+                        ) : currentStep === 3 ? (
+                            <form onSubmit={handleReferralSubmit} className="signup-form referral-form">
+                                <div className="form-group">
+                                    <label>{translations.referralcode}</label>
+                                    <input
+                                        type="text"
+                                        placeholder={translations.enterreferralcodeplaceholder}
+                                        value={referralCode}
+                                        onChange={(e) => {
+                                            setReferralCode(e.target.value.toUpperCase());
+                                            setReferralError('');
+                                        }}
+                                        maxLength={6}
+                                        autoFocus
+                                    />
+                                </div>
+                                {referralError && <div className="error-message">{referralError}</div>}
+                                <button
+                                    type="submit"
+                                    className="login-button signup-login-button"
+                                    disabled={isValidatingReferral || isCreatingAccount}
+                                >
+                                    {isValidatingReferral || isCreatingAccount ? (
+                                        <>
+                                            <span className="spinner"></span>
+                                            {isValidatingReferral ? translations.validatingreferralcode : translations.creatingaccount}
+                                        </>
+                                    ) : (
+                                        <>
+                                            {translations.continue}
+                                            <span className="button-arrow">→</span>
+                                        </>
+                                    )}
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={handleReferralSkip}
+                                    className="demo-admin-button referral-skip-button"
+                                    disabled={isValidatingReferral || isCreatingAccount}
+                                >
+                                    {translations.skip}
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setCurrentStep(2)}
+                                    className="demo-admin-button signup-back-button"
+                                    disabled={isValidatingReferral || isCreatingAccount}
+                                >
+                                    {translations.back}
+                                </button>
                             </form>
                         ) : (
                             <div className="welcome-container">
