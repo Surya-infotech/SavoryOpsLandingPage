@@ -124,6 +124,8 @@ function buildTheme(primaryMain, secondaryMain) {
             backdropFilter: 'blur(10px)',
             backgroundColor: 'rgba(255, 255, 255, 0.95)',
             borderBottom: appBarBorder,
+            borderTopLeftRadius: 0,
+            borderTopRightRadius: 0,
           },
         },
       },

@@ -3,6 +3,9 @@
 
   .hero-section,
   .features-section,
+  .order-types-section,
+  .reports-section,
+  .employee-roles-section,
   .benefits-section,
   .free-software-section,
   .languages-section,
@@ -14,6 +17,7 @@
   }
 
   .features-section,
+  .reports-section,
   .languages-section,
   .contact-us-section,
   .testimonials-section {
@@ -22,6 +26,8 @@
       radial-gradient(circle at top right, rgba(16, 185, 129, 0.05), transparent 38%);
   }
 
+  .order-types-section,
+  .employee-roles-section,
   .benefits-section,
   .free-software-section,
   .app-downloads-section {

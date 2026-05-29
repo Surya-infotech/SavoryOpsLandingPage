@@ -144,9 +144,6 @@ const Hero = () => {
                   maxWidth: 560
                 }}
               >
-                <Box className="hero-image-label">
-                  Live Dashboard Preview
-                </Box>
                 <img
                   src="/design.png"
                   alt="SavoryOps Restaurant Management Platform"

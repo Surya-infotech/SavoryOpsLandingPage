@@ -1,8 +1,6 @@
 import {
   CalendarToday as CalendarTodayIcon,
-  CardGiftcard as CardGiftcardIcon,
   Groups as GroupsIcon,
-  Loyalty as LoyaltyIcon,
   MenuBook as MenuBookIcon,
   Payment as PaymentIcon,
   Rocket as RocketIcon,
@@ -32,7 +30,7 @@ const UpcomingFeatures = () => {
     }
     metaDescription.setAttribute(
       'content',
-      'Discover exciting upcoming features for SavoryOps including Loyalty Programs, HRM System, Coupons, Membership System, Split Bill, Catering, and more. Stay updated on new features!'.replaceAll(
+      'Discover exciting upcoming features for SavoryOps including HRM System, Membership System, Split Bill, Catering, and more. Stay updated on new features!'.replaceAll(
         'SavoryOps',
         softwareName,
       ),
@@ -46,7 +44,7 @@ const UpcomingFeatures = () => {
     }
     metaKeywords.setAttribute(
       'content',
-      'upcoming features, restaurant features, loyalty program, HRM system, coupons, membership system, split bill, catering, SavoryOps features'.replaceAll(
+      'upcoming features, restaurant features, HRM system, membership system, split bill, catering, SavoryOps features'.replaceAll(
         'SavoryOps',
         softwareName,
       ),
@@ -55,25 +53,11 @@ const UpcomingFeatures = () => {
 
   const upcomingFeatures = [
     {
-      title: 'Loyalty and Referral System',
-      subtitle: 'Customer Rewards Program',
-      description: 'Reward loyal customers and grow your business through referral programs and points system.',
-      icon: <LoyaltyIcon sx={{ fontSize: 24 }} />,
-      color: 'var(--secondary-color)'
-    },
-    {
       title: 'HRM System',
       subtitle: 'Human Resource Management',
       description: 'Complete Human Resource Management with employee records, payroll, and performance tracking.',
       icon: <GroupsIcon sx={{ fontSize: 24 }} />,
       color: 'color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color))'
-    },
-    {
-      title: 'Coupon',
-      subtitle: 'Discount Management',
-      description: 'Create and manage discount coupons with flexible rules, expiration dates, and usage tracking.',
-      icon: <CardGiftcardIcon sx={{ fontSize: 24 }} />,
-      color: 'var(--secondary-color)'
     },
     {
       title: 'Membership System',

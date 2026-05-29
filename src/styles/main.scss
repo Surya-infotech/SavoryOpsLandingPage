@@ -109,6 +109,9 @@ body {
 // Premium layout rhythm for landing sections/pages
 .hero-section,
 .features-section,
+.order-types-section,
+.reports-section,
+.employee-roles-section,
 .benefits-section,
 .testimonials-section,
 .languages-section,
@@ -651,6 +654,9 @@ h3 {
 @import './pages/hero';
 @import './pages/home-premium';
 @import './pages/features';
+@import './pages/order-types';
+@import './pages/reports';
+@import './pages/employee-roles';
 @import './pages/benefits';
 @import './pages/app-downloads';
 @import './pages/testimonials';
