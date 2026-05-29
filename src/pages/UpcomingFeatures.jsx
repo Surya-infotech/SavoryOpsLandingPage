@@ -1,18 +1,14 @@
-import { 
-  CalendarToday as CalendarTodayIcon, 
+import {
+  CalendarToday as CalendarTodayIcon,
   CardGiftcard as CardGiftcardIcon,
-  DeliveryDining as DeliveryDiningIcon, 
-  DirectionsCar as DirectionsCarIcon, 
-  Groups as GroupsIcon, 
-  LocalShipping as LocalShippingIcon, 
-  Loyalty as LoyaltyIcon, 
+  Groups as GroupsIcon,
+  Loyalty as LoyaltyIcon,
   MenuBook as MenuBookIcon,
   Payment as PaymentIcon,
-  Rocket as RocketIcon, 
+  Rocket as RocketIcon,
   Star as StarIcon,
-  SupportAgent as SupportAgentIcon,
   TipsAndUpdates as TipsAndUpdatesIcon,
-  VpnKey as VpnKeyIcon
+  VpnKey as VpnKeyIcon,
 } from '@mui/icons-material';
 import { Box, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
 import { useEffect } from 'react';
@@ -36,7 +32,7 @@ const UpcomingFeatures = () => {
     }
     metaDescription.setAttribute(
       'content',
-      'Discover exciting upcoming features for SavoryOps including Table Reservation System, Pickup Orders, Delivery Management, Loyalty Programs, HRM System, Coupons, Combo Meals, Membership System, and more. Stay updated on new features!'.replaceAll(
+      'Discover exciting upcoming features for SavoryOps including Loyalty Programs, HRM System, Coupons, Membership System, Split Bill, Catering, and more. Stay updated on new features!'.replaceAll(
         'SavoryOps',
         softwareName,
       ),
@@ -50,7 +46,7 @@ const UpcomingFeatures = () => {
     }
     metaKeywords.setAttribute(
       'content',
-      'upcoming features, restaurant features, table reservation, pickup orders, delivery management, loyalty program, HRM system, coupons, combo meals, membership system, SavoryOps features'.replaceAll(
+      'upcoming features, restaurant features, loyalty program, HRM system, coupons, membership system, split bill, catering, SavoryOps features'.replaceAll(
         'SavoryOps',
         softwareName,
       ),
@@ -58,27 +54,6 @@ const UpcomingFeatures = () => {
   }, [softwareName]);
 
   const upcomingFeatures = [
-    {
-      title: 'Pickup',
-      subtitle: 'Order Pickup System',
-      description: 'Enable customers to place orders for pickup with order tracking and ready notifications.',
-      icon: <LocalShippingIcon sx={{ fontSize: 24 }} />,
-      color: 'color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color))'
-    },
-    {
-      title: 'In-Car',
-      subtitle: 'Drive-Through Service',
-      description: 'Streamlined ordering system for drive-through and curbside pickup services.',
-      icon: <DirectionsCarIcon sx={{ fontSize: 24 }} />,
-      color: 'var(--secondary-color)'
-    },
-    {
-      title: 'Delivery Order Types',
-      subtitle: 'Multi-Delivery Options',
-      description: 'Comprehensive delivery management with multiple delivery options and real-time tracking.',
-      icon: <DeliveryDiningIcon sx={{ fontSize: 24 }} />,
-      color: 'var(--primary-color)'
-    },
     {
       title: 'Loyalty and Referral System',
       subtitle: 'Customer Rewards Program',
@@ -134,13 +109,6 @@ const UpcomingFeatures = () => {
       description: 'Manage catering orders and event bookings with detailed planning, scheduling, and coordination tools.',
       icon: <CalendarTodayIcon sx={{ fontSize: 24 }} />,
       color: 'var(--primary-color)'
-    },
-    {
-      title: 'Help Desk System',
-      subtitle: 'Customer Support',
-      description: 'Comprehensive help desk system for managing customer inquiries, tickets, and support requests.',
-      icon: <SupportAgentIcon sx={{ fontSize: 24 }} />,
-      color: 'color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color))'
     }
   ];
 
