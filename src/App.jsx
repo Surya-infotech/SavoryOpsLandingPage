@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import BuyNowFloatingButton from './components/BuyNowFloatingButton';
@@ -101,6 +101,7 @@ const AppContent = () => {
         <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
         <Route path="/Signin" element={<OwnerLogin />} />
         <Route path="/Signup" element={<OwnerSignUp />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
       {!isAuthPage && <Footer />}
