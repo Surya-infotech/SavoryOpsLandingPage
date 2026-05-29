@@ -1,11 +1,9 @@
 import { ArrowForward as ArrowForwardIcon, Bolt as BoltIcon, CalendarMonth as CalendarMonthIcon, CurrencyExchange as CurrencyIcon, Dashboard as DashboardIcon, Language as LanguageIcon, LocalDining as LocalDiningIcon, Payment as PaymentIcon, People as PeopleIcon, QrCode2 as QrCode2Icon, Restaurant as RestaurantIcon, Schedule as ScheduleIcon, Star as StarIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Button, Card, CardContent, Chip, Container, Typography } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../styles/pages/features.scss';
 
 const Features = ({ showHeading = true }) => {
-  const navigate = useNavigate();
-
   const features = [
     {
       id: 'smart-dashboard',
@@ -72,7 +70,6 @@ const Features = ({ showHeading = true }) => {
     },
     {
       id: 'unlimited-meal',
-      routeTo: 'combo-meal',
       icon: <LocalDiningIcon />,
       title: 'Unlimited Meal',
       description: 'Manage unlimited buffet-style plans with timing controls and customer eligibility tracking.',
@@ -93,10 +90,6 @@ const Features = ({ showHeading = true }) => {
       color: 'var(--primary-color)'
     }
   ];
-
-  const handleFeatureClick = (featureId) => {
-    navigate(`/features/${featureId}`);
-  };
 
   return (
     <Box id="features" className="features-section" >
@@ -158,10 +151,7 @@ const Features = ({ showHeading = true }) => {
           <Box className="features-cards-grid">
             {features.map((feature) => (
               <Box key={feature.id} className="feature-grid-item">
-                <Card
-                  className="feature-card clickable-card"
-                  onClick={() => handleFeatureClick(feature.routeTo || feature.id)}
-                >
+                <Card className="feature-card">
                   <CardContent className="card-content">
                     <Box
                       className="feature-icon"

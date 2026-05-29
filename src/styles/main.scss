@@ -119,8 +119,7 @@ body {
 .pricing-details-section,
 .pricing-plans-section,
 .features-header,
-.upcoming-features-header,
-.feature-header {
+.upcoming-features-header {
   position: relative;
   z-index: 1;
 }
@@ -128,9 +127,7 @@ body {
 .features-page,
 .upcoming-features-page,
 .pricing-page,
-.feature-detail-page,
-.privacy-policy-page,
-.sitemap-page {
+.privacy-policy-page {
   background:
     radial-gradient(circle at 12% 8%, rgba(59, 130, 246, 0.05), transparent 28%),
     radial-gradient(circle at 88% 14%, rgba(16, 185, 129, 0.07), transparent 30%),
@@ -140,9 +137,7 @@ body {
 .features-page main,
 .upcoming-features-page main,
 .pricing-page main,
-.feature-detail-page main,
-.privacy-policy-page main,
-.sitemap-page main {
+.privacy-policy-page main {
   max-width: 1320px;
   margin-inline: auto;
 }
@@ -661,7 +656,6 @@ h3 {
 @import './pages/testimonials';
 @import './pages/cta';
 @import './pages/privacy-policy';
-@import './pages/sitemap';
 @import './pages/upcoming-features';
 
 // UI Components

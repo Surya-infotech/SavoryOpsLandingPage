@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { Article as ArticleIcon, Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, ContactMail as ContactMailIcon, CurrencyExchange as CurrencyIcon, Email as EmailIcon, Facebook as FacebookIcon, Inventory as InventoryIcon, Instagram as InstagramIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Phone as PhoneIcon, Pinterest as PinterestIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Rocket as RocketIcon, Twitter as TwitterIcon, WhatsApp as WhatsAppIcon, YouTube as YouTubeIcon } from '@mui/icons-material';
+import { Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, ContactMail as ContactMailIcon, CurrencyExchange as CurrencyIcon, Email as EmailIcon, Facebook as FacebookIcon, Inventory as InventoryIcon, Instagram as InstagramIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, LocationOn as LocationIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Phone as PhoneIcon, Pinterest as PinterestIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Rocket as RocketIcon, Twitter as TwitterIcon, WhatsApp as WhatsAppIcon, YouTube as YouTubeIcon } from '@mui/icons-material';
 import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/layout/footer.scss';
@@ -26,27 +26,26 @@ const Footer = () => {
   );
 
   const productFeatures = [
-    { name: 'KOT Tracking System', icon: <RestaurantIcon />, href: '/features/kot-system' },
-    { name: 'Multiple Business', icon: <BusinessIcon />, href: '/features/multiple-business' },
-    { name: 'Multiple Branches', icon: <BranchIcon />, href: '/features/multiple-branches' },
-    { name: 'Multiple Languages', icon: <LanguageIcon />, href: '/features/multiple-languages' },
-    { name: 'Multiple Currency', icon: <CurrencyIcon />, href: '/features/multiple-currency' },
-    { name: 'Menu Management', icon: <MenuBookIcon />, href: '/features/menu-management' },
-    { name: 'Item Management', icon: <InventoryIcon />, href: '/features/menu-management' },
-    { name: 'Staff Management', icon: <PeopleIcon />, href: '/features/branch-staff-management' }
+    { name: 'KOT Tracking System', icon: <RestaurantIcon />, href: '/features' },
+    { name: 'Multiple Business', icon: <BusinessIcon />, href: '/features' },
+    { name: 'Multiple Branches', icon: <BranchIcon />, href: '/features' },
+    { name: 'Multiple Languages', icon: <LanguageIcon />, href: '/features' },
+    { name: 'Multiple Currency', icon: <CurrencyIcon />, href: '/features' },
+    { name: 'Menu Management', icon: <MenuBookIcon />, href: '/features' },
+    { name: 'Item Management', icon: <InventoryIcon />, href: '/features' },
+    { name: 'Staff Management', icon: <PeopleIcon />, href: '/features' }
   ];
 
   const reportList = [
-    { name: 'Daily Wise Report', icon: <AssessmentIcon />, href: '/features/advanced-reports' },
-    { name: 'Branch Wise Report', icon: <BarChartIcon />, href: '/features/advanced-reports' },
-    { name: 'Order Summary', icon: <ReceiptIcon />, href: '/features/order-summary' }
+    { name: 'Daily Wise Report', icon: <AssessmentIcon />, href: '/features' },
+    { name: 'Branch Wise Report', icon: <BarChartIcon />, href: '/features' },
+    { name: 'Order Summary', icon: <ReceiptIcon />, href: '/features' }
   ];
 
   const companyLinks = [
     { name: 'Pricing', icon: <AttachMoneyIcon />, href: '/pricing' },
     { name: 'Upcoming Features', icon: <RocketIcon />, href: '/upcoming-features' },
-    { name: 'Contact Us', icon: <ContactMailIcon />, href: '/contact-us' },
-    { name: 'Sitemap', icon: <ArticleIcon />, href: '/sitemap' }
+    { name: 'Contact Us', icon: <ContactMailIcon />, href: '/contact-us' }
   ];
 
   const legalLinks = [

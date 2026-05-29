@@ -14,29 +14,7 @@ import OwnerSignUp from './pages/General/Signup.jsx';
 import Home from './pages/Home';
 import Pricing from './pages/Pricing';
 import PrivacyPolicy from './pages/PrivacyPolicy';
-import Sitemap from './pages/Sitemap';
 import UpcomingFeatures from './pages/UpcomingFeatures';
-import AdvancedReports from './pages/features/AdvancedReports';
-import BranchPricing from './pages/features/BranchPricing';
-import BranchStaffManagement from './pages/features/BranchStaffManagement';
-import BranchTaxManagement from './pages/features/BranchTaxManagement';
-import CloudBasedSystem from './pages/features/CloudBasedSystem';
-import ComboMeal from './pages/features/ComboMeal';
-import CustomSubdomain from './pages/features/CustomSubdomain';
-import CustomerReviews from './pages/features/CustomerReviews';
-import DigitalInvoiceDownload from './pages/features/DigitalInvoiceDownload';
-import FiscalYearRecords from './pages/features/FiscalYearRecords';
-import KOTSystem from './pages/features/KOTSystem';
-import MenuManagement from './pages/features/MenuManagement';
-import MultiTenantArchitecture from './pages/features/MultiTenantArchitecture';
-import MultipleBranches from './pages/features/MultipleBranches';
-import MultipleBusiness from './pages/features/MultipleBusiness';
-import MultipleCurrency from './pages/features/MultipleCurrency';
-import MultipleLanguages from './pages/features/MultipleLanguages';
-import OrderSummary from './pages/features/OrderSummary';
-import QRCodeScanning from './pages/features/QRCodeScanning';
-import SmartDashboard from './pages/features/SmartDashboard';
-import TableReservation from './pages/features/TableReservation';
 import './styles/main.scss';
 
 /** Short ease-out scroll on route change so the new page starts near the top without a long animation. */
@@ -120,28 +98,6 @@ const AppContent = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
-        <Route path="/sitemap" element={<Sitemap />} />
-        <Route path="/features/smart-dashboard" element={<SmartDashboard />} />
-        <Route path="/features/menu-management" element={<MenuManagement />} />
-        <Route path="/features/multiple-languages" element={<MultipleLanguages />} />
-        <Route path="/features/kot-system" element={<KOTSystem />} />
-        <Route path="/features/order-summary" element={<OrderSummary />} />
-        <Route path="/features/customer-reviews" element={<CustomerReviews />} />
-        <Route path="/features/multiple-business" element={<MultipleBusiness />} />
-        <Route path="/features/multiple-branches" element={<MultipleBranches />} />
-        <Route path="/features/qr-based-menu" element={<QRCodeScanning />} />
-        <Route path="/features/cloud-based-system" element={<CloudBasedSystem />} />
-        <Route path="/features/multi-tenant-architecture" element={<MultiTenantArchitecture />} />
-        <Route path="/features/branch-staff-management" element={<BranchStaffManagement />} />
-        <Route path="/features/branch-pricing" element={<BranchPricing />} />
-        <Route path="/features/multiple-currency" element={<MultipleCurrency />} />
-        <Route path="/features/branch-tax-management" element={<BranchTaxManagement />} />
-        <Route path="/features/fiscal-year-records" element={<FiscalYearRecords />} />
-        <Route path="/features/digital-invoice-download" element={<DigitalInvoiceDownload />} />
-        <Route path="/features/advanced-reports" element={<AdvancedReports />} />
-        <Route path="/features/custom-subdomain" element={<CustomSubdomain />} />
-        <Route path="/features/table-reservation" element={<TableReservation />} />
-        <Route path="/features/combo-meal" element={<ComboMeal />} />
         <Route path="/Signin" element={<OwnerLogin />} />
         <Route path="/Signup" element={<OwnerSignUp />} />
       </Routes>

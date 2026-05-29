@@ -1,13 +1,11 @@
 import { AccountTree as AccountTreeIcon, Assessment as AssessmentIcon, Bolt as BoltIcon, Business as BusinessIcon, CalendarMonth as CalendarMonthIcon, Cloud as CloudIcon, CurrencyExchange as CurrencyExchangeIcon, Dashboard as DashboardIcon, Download as DownloadIcon, Groups as GroupsIcon, Language as LanguageIcon, Menu as MenuIcon, PriceChange as PriceChangeIcon, Public as PublicIcon, QrCode as QrCodeIcon, RateReview as RateReviewIcon, ReceiptLong as ReceiptLongIcon, Restaurant as RestaurantIcon, RestaurantMenu as RestaurantMenuIcon, Rocket as RocketIcon, Security as SecurityIcon, Star as StarIcon, Storage as StorageIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import GetStartedButton from '../components/GetStartedButton';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/featurespage.scss';
 
 const FeaturesPage = () => {
-  const navigate = useNavigate();
   const { softwareName } = useAppSettings();
 
   useEffect(() => {
@@ -43,37 +41,6 @@ const FeaturesPage = () => {
       ),
     );
   }, [softwareName]);
-
-  const handleCardClick = (featureTitle) => {
-    const routeMap = {
-      'Smart Dashboard': '/features/smart-dashboard',
-      'Multiple Business': '/features/multiple-business',
-      'Multiple Branches': '/features/multiple-branches',
-      'Menu Management': '/features/menu-management',
-      'Multiple Languages': '/features/multiple-languages',
-      'KOT System': '/features/kot-system',
-      'Order Summary & Timeline': '/features/order-summary',
-      'QR-Based Menu': '/features/qr-based-menu',
-      'Customer Reviews': '/features/customer-reviews',
-      'Cloud-Based System': '/features/cloud-based-system',
-      'Separate Database': '/features/multi-tenant-architecture',
-      'Branch-wise Staff Management': '/features/branch-staff-management',
-      'Branch-wise Pricing': '/features/branch-pricing',
-      'Multiple Currency': '/features/multiple-currency',
-      'Branch-wise Tax Management': '/features/branch-tax-management',
-      'Fiscal Year Records': '/features/fiscal-year-records',
-      'Digital Invoice Download': '/features/digital-invoice-download',
-      'Advanced Reports': '/features/advanced-reports',
-      'Custom Subdomain': '/features/custom-subdomain',
-      'Table Reservation': '/features/table-reservation',
-      'Combo Meal': '/features/combo-meal'
-    };
-
-    const route = routeMap[featureTitle];
-    if (route) {
-      navigate(route);
-    }
-  };
 
   const detailedFeatures = [
     {
@@ -304,15 +271,6 @@ const FeaturesPage = () => {
               <Card
                 className="feature-card"
                 style={{ animationDelay: `${index * 0.1}s` }}
-                onClick={() => handleCardClick(feature.title)}
-                sx={{
-                  cursor: 'pointer !important',
-                  '&:hover': {
-                    cursor: 'pointer !important',
-                    transform: 'translateY(-4px)',
-                    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)'
-                  }
-                }}
               >
                 <CardContent className="card-content">
                   <Box
