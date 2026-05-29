@@ -281,8 +281,7 @@
     position: relative;
     overflow: hidden;
     animation: fadeInUp 0.8s ease-out both;
-    cursor: pointer;
-    text-decoration: none;
+    cursor: default;
     color: inherit;
 
     // Mobile responsive adjustments
@@ -519,25 +518,4 @@
   min-height: 50px !important;
   width: 50px !important;
   height: 50px !important;
-}
-
-// Enhanced card interactions
-.feature-card {
-  &:active {
-    transform: translateY(-8px) scale(1.01);
-    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-}
-
-// Override Link component styling to maintain card appearance
-a.MuiCard-root {
-  text-decoration: none !important;
-  color: inherit !important;
-  display: block;
-}
-
-// Ensure Link component doesn't interfere with card styling
-.MuiCard-root[component="a"] {
-  text-decoration: none !important;
-  color: inherit !important;
 }
