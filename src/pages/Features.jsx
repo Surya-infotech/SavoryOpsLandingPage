@@ -1,116 +1,272 @@
-import { ArrowForward as ArrowForwardIcon, Bolt as BoltIcon, CalendarMonth as CalendarMonthIcon, CurrencyExchange as CurrencyIcon, Dashboard as DashboardIcon, Language as LanguageIcon, LocalDining as LocalDiningIcon, Payment as PaymentIcon, People as PeopleIcon, QrCode2 as QrCode2Icon, Restaurant as RestaurantIcon, Schedule as ScheduleIcon, Star as StarIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import {
+  AccountTree as AccountTreeIcon,
+  ArrowForward as ArrowForwardIcon,
+  Assessment as AssessmentIcon,
+  Bolt as BoltIcon,
+  Business as BusinessIcon,
+  CalendarMonth as CalendarMonthIcon,
+  Cloud as CloudIcon,
+  ConfirmationNumber as CouponIcon,
+  ContactSupport as HelpCenterIcon,
+  CurrencyExchange as CurrencyIcon,
+  Dashboard as DashboardIcon,
+  Download as DownloadIcon,
+  Fastfood as FastfoodIcon,
+  Language as LanguageIcon,
+  Menu as MenuIcon,
+  Payment as PaymentIcon,
+  People as PeopleIcon,
+  PointOfSale as PosIcon,
+  Public as PublicIcon,
+  QrCode2 as QrCode2Icon,
+  RateReview as RateReviewIcon,
+  ReceiptLong as TaxReportIcon,
+  Restaurant as RestaurantIcon,
+  RestaurantMenu as RestaurantMenuIcon,
+  Share as ReferralIcon,
+  Star as StarIcon,
+  Storage as StorageIcon,
+  Timeline as TimelineIcon,
+  TrendingUp as TrendingUpIcon,
+} from '@mui/icons-material';
 import { Box, Button, Card, CardContent, Chip, Container, Typography } from '@mui/material';
+import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/pages/features.scss';
 
+const FEATURE_COLOR = 'var(--primary-color)';
+
+const FEATURES = [
+  {
+    id: 'pos',
+    priority: 1,
+    icon: <PosIcon />,
+    title: 'POS',
+    description:
+      'Fast, reliable point-of-sale billing with payments, discounts, and order sync across counters.',
+  },
+  {
+    id: 'smart-dashboard',
+    priority: 2,
+    icon: <DashboardIcon />,
+    title: 'Dashboard',
+    description:
+      'Real-time overview of your restaurant operations with intuitive analytics and performance insights.',
+  },
+  {
+    id: 'qsr',
+    priority: 3,
+    icon: <FastfoodIcon />,
+    title: 'QSR',
+    description:
+      'Quick-service workflows built for high-volume outlets with faster order and kitchen handoff.',
+  },
+  {
+    id: 'kot-system',
+    priority: 4,
+    icon: <RestaurantIcon />,
+    title: 'KOT System',
+    description:
+      'Streamlined kitchen order management with real-time ticket generation and tracking.',
+  },
+  {
+    id: 'order-summary',
+    priority: 5,
+    icon: <TimelineIcon />,
+    title: 'Order Management',
+    description:
+      'Track order details with complete status history, timeline, and end-to-end visibility.',
+  },
+  {
+    id: 'menu-management',
+    priority: 6,
+    icon: <MenuIcon />,
+    title: 'Menu Management',
+    description: 'Update menus instantly, manage categories, items, add-ons, and pricing in real time.',
+  },
+  {
+    id: 'qr-based-menu',
+    priority: 7,
+    icon: <QrCode2Icon />,
+    title: 'QR-Based Menu',
+    description:
+      'Enable contactless ordering with dynamic QR menus, live updates, and faster table turnover.',
+  },
+  {
+    id: 'table-reservation',
+    priority: 8,
+    icon: <CalendarMonthIcon />,
+    title: 'Table Reservation',
+    description:
+      'Allow customers to reserve tables online with slot-based scheduling and instant confirmation.',
+  },
+  {
+    id: 'combo-unlimited-meal',
+    priority: 9,
+    icon: <RestaurantMenuIcon />,
+    title: 'Combo & Unlimited Meal',
+    description:
+      'Create profitable combo offers with smart bundling and pricing, plus unlimited buffet-style plans with timing controls and eligibility tracking.',
+  },
+  {
+    id: 'multiple-business',
+    priority: 10,
+    icon: <BusinessIcon />,
+    title: 'Multiple Business',
+    description: 'Create and manage multiple restaurant businesses from a single platform.',
+  },
+  {
+    id: 'multiple-branches',
+    priority: 11,
+    icon: <AccountTreeIcon />,
+    title: 'Multiple Branches',
+    description: 'Manage multiple branches with centralized control, reporting, and operations.',
+  },
+  {
+    id: 'branch-pricing',
+    priority: 12,
+    icon: <PaymentIcon />,
+    title: 'Branch-wise Pricing',
+    description: 'Set different item prices for each branch with flexible pricing control.',
+  },
+  {
+    id: 'branch-staff-management',
+    priority: 13,
+    icon: <PeopleIcon />,
+    title: 'Staff Management',
+    description:
+      'Add branch-wise employees, assign roles, schedule shifts, and manage workforce access.',
+  },
+  {
+    id: 'coupon',
+    priority: 14,
+    icon: <CouponIcon />,
+    title: 'Coupon',
+    description: 'Create and manage discount coupons with flexible rules, validity, and usage limits.',
+  },
+  {
+    id: 'referral-system',
+    priority: 15,
+    icon: <ReferralIcon />,
+    title: 'Referral System',
+    description:
+      'Grow your customer base with referral codes, rewards, and trackable referral performance.',
+  },
+  {
+    id: 'customer-reviews',
+    priority: 16,
+    icon: <RateReviewIcon />,
+    title: 'Customer Reviews',
+    description: 'Collect and review customer feedback and ratings to improve service quality.',
+  },
+  {
+    id: 'advanced-reports',
+    priority: 17,
+    icon: <AssessmentIcon />,
+    title: 'Advanced Reports',
+    description:
+      'Business and branch-wise revenue, growth intelligence, and fiscal year tracking.',
+  },
+  {
+    id: 'tax-report',
+    priority: 18,
+    icon: <TaxReportIcon />,
+    title: 'Tax Report',
+    description: 'Branch-wise tax summaries and compliance-ready reports for accurate filing and audits.',
+  },
+  {
+    id: 'branch-tax-management',
+    priority: 19,
+    icon: <TaxReportIcon />,
+    title: 'Branch-wise Tax Management',
+    description: 'Manage different tax rates and regulations for each branch location.',
+  },
+  {
+    id: 'fiscal-year-records',
+    priority: 20,
+    icon: <CalendarMonthIcon />,
+    title: 'Fiscal Year Records',
+    description: 'Keep organized records fiscal year wise for better financial management and compliance.',
+  },
+  {
+    id: 'digital-invoice-download',
+    priority: 21,
+    icon: <DownloadIcon />,
+    title: 'Digital Invoice Download',
+    description: 'Download digital invoices for record keeping and future business requirements.',
+  },
+  {
+    id: 'cloud-based-system',
+    priority: 22,
+    icon: <CloudIcon />,
+    title: 'Cloud-Based System',
+    description:
+      'Fully cloud-based platform with secure access anywhere, automatic updates, and backups.',
+  },
+  {
+    id: 'multi-tenant-architecture',
+    priority: 23,
+    icon: <StorageIcon />,
+    title: 'Separate Database',
+    description:
+      'Dedicated database per restaurant owner with complete data isolation and security.',
+  },
+  {
+    id: 'custom-subdomain',
+    priority: 24,
+    icon: <PublicIcon />,
+    title: 'Custom Subdomain',
+    description: 'Personalized subdomain for each restaurant owner for a branded experience.',
+  },
+  {
+    id: 'multiple-languages',
+    priority: 25,
+    icon: <LanguageIcon />,
+    title: 'Multiple Languages',
+    description: 'Support for multiple languages to serve diverse customer bases worldwide.',
+  },
+  {
+    id: 'multiple-currency',
+    priority: 26,
+    icon: <CurrencyIcon />,
+    title: 'Multiple Currency',
+    description: 'Accept payments in multiple currencies for global business operations.',
+  },
+  {
+    id: 'help-center',
+    priority: 27,
+    icon: <HelpCenterIcon />,
+    title: 'Help Center',
+    description:
+      'Centralized support resources, guides, and answers so your team resolves issues faster.',
+  },
+];
+
 const Features = ({ showHeading = true }) => {
-  const features = [
-    {
-      id: 'smart-dashboard',
-      icon: <DashboardIcon />,
-      title: 'Dashboard',
-      description: 'Real-time overview of your restaurant operations with intuitive analytics',
-      color: 'var(--primary-color)'
-    },
-    {
-      id: 'multiple-business',
-      icon: <StarIcon />,
-      title: 'Multiple Business',
-      description: 'Create and manage multiple restaurant businesses from a single platform',
-      color: 'var(--primary-color)'
-    },
-    {
-      id: 'multiple-branches',
-      icon: <TrendingUpIcon />,
-      title: 'Multiple Branches',
-      description: 'Manage multiple branches with centralized control and reporting',
-      color: 'var(--primary-color)'
-    },
-    {
-      id: 'branch-pricing',
-      icon: <PaymentIcon />,
-      title: 'Branch-wise Pricing',
-      description: 'Set different item prices for each branch with flexible pricing control',
-      color: 'var(--primary-color)'
-    },
-    {
-      id: 'branch-staff-management',
-      icon: <PeopleIcon />,
-      title: 'Staff Management',
-      description: 'Add branch-wise employees, assign roles, schedule shifts, and manage payroll',
-      color: 'var(--primary-color)'
-    },
-    {
-      id: 'order-summary',
-      icon: <ScheduleIcon />,
-      title: 'Order Management',
-      description: 'Track order details with complete status history and timeline',
-      color: 'var(--primary-color)'
-    },
-    {
-      id: 'advanced-reports',
-      icon: <DashboardIcon />,
-      title: 'Revenue Analytics',
-      description: 'Business and branch-wise order revenue with fiscal year tracking',
-      color: 'var(--primary-color)'
-    },
-    {
-      id: 'table-reservation',
-      icon: <CalendarMonthIcon />,
-      title: 'Table Reservation',
-      description: 'Allow customers to reserve tables online with slot-based scheduling and instant confirmation.',
-      color: 'var(--primary-color)'
-    },
-    {
-      id: 'combo-meal',
-      icon: <LocalDiningIcon />,
-      title: 'Combo Meal',
-      description: 'Create and promote profitable combo offers with smart pricing and menu bundling options.',
-      color: 'var(--primary-color)'
-    },
-    {
-      id: 'unlimited-meal',
-      icon: <LocalDiningIcon />,
-      title: 'Unlimited Meal',
-      description: 'Manage unlimited buffet-style plans with timing controls and customer eligibility tracking.',
-      color: 'var(--primary-color)'
-    },
-    {
-      id: 'qr-based-menu',
-      icon: <QrCode2Icon />,
-      title: 'QR-Based Menu',
-      description: 'Enable contactless ordering with dynamic QR menus, live updates, and faster table turnover.',
-      color: 'var(--primary-color)'
-    },
-    {
-      id: 'kot-system',
-      icon: <RestaurantIcon />,
-      title: 'KOT System',
-      description: 'Streamlined kitchen order management with real-time ticket generation and tracking.',
-      color: 'var(--primary-color)'
-    }
-  ];
+  const features = useMemo(
+    () =>
+      [...FEATURES]
+        .sort((a, b) => a.priority - b.priority)
+        .map((feature) => ({ ...feature, color: FEATURE_COLOR })),
+    [],
+  );
 
   return (
-    <Box id="features" className="features-section" >
+    <Box id="features" className="features-section">
       <Container maxWidth="lg">
         {showHeading && (
           <Box className="features-header">
             <Box className="features-badge">
-              <Chip
-                icon={<StarIcon />}
-                label="Premium Features"
-                className="features-badge-chip"
-              />
+              <Chip icon={<StarIcon />} label="Premium Features" className="features-badge-chip" />
             </Box>
-            <Typography variant="h2" component="h2" className="features-title" >
+            <Typography variant="h2" component="h2" className="features-title">
               Powerful Features
             </Typography>
-            <Typography variant="h5" className="features-subtitle" >
+            <Typography variant="h5" className="features-subtitle">
               Everything you need to streamline your restaurant operations and boost profitability
             </Typography>
             <Typography className="features-meta">
-              12 core capabilities built for fast-moving restaurant teams
+              {features.length} core capabilities built for fast-moving restaurant teams
             </Typography>
             <Box className="features-badges">
               <Chip
@@ -162,11 +318,11 @@ const Features = ({ showHeading = true }) => {
                     >
                       {feature.icon}
                     </Box>
-                    <Typography variant="h6" component="h3" className="feature-title" >
+                    <Typography variant="h6" component="h3" className="feature-title">
                       {feature.title}
                     </Typography>
 
-                    <Typography variant="body2" className="feature-description" >
+                    <Typography variant="body2" className="feature-description">
                       {feature.description}
                     </Typography>
                   </CardContent>
