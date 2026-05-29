@@ -4,6 +4,7 @@ import { buyNowConfig } from '../config/buttonConfig';
 
 const BuyNowButton = ({ className = '', sx = {}, fullWidth = false }) => {
     const handleButtonClick = () => {
+        if (!buyNowConfig.url) return;
         window.open(buyNowConfig.url, '_blank', 'noopener,noreferrer');
     };
 

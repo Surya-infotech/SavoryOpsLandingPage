@@ -1,8 +1,10 @@
 /**
- * Dynamic "Buy Now" CTA: listing URL, label, and MUI `sx` overrides.
+ * Dynamic "Buy Now" CTA: URL from VITE_WEBSITE_URL, label, and MUI `sx` overrides.
  */
+const buyNowUrl = import.meta.env.VITE_WEBSITE_URL?.trim() || '';
+
 export const buyNowConfig = {
-    url: 'https://flippa.com/12473902-savoryops-white-label-multi-tenant-restaurant-saas-react-node-native-5-panels-apps-razorpay-aws-ready-1-mo-free-support-setup-for-global-entrepreneurs',
+    url: buyNowUrl,
 
     label: 'Buy Now',
 

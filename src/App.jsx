@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
+import BuyNowFloatingButton from './components/BuyNowFloatingButton';
 import ScrollToTopButton from './components/ScrollToTop';
 import { LanguageProvider } from './context/LanguageContext.jsx';
 import { useAppSettings } from './context/AppSettingsContext.jsx';
@@ -103,6 +104,8 @@ const AppContent = () => {
       </Routes>
 
       {!isAuthPage && <Footer />}
+
+      {!isAuthPage && <BuyNowFloatingButton />}
 
       {!isAuthPage && <ScrollToTopButton show={scrollTop > 300} onClick={scrollToTop} />}
     </div>
