@@ -15,7 +15,7 @@ const Navigation = () => {
   };
 
   const handleGetStartedClick = () => {
-    navigate('/signin');
+    navigate('/Signin');
   };
 
   const menuItems = [

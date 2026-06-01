@@ -19,37 +19,7 @@ const UpcomingFeatures = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    
-    document.title = `Upcoming Features - ${softwareName}`;
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute(
-      'content',
-      'Discover exciting upcoming features for SavoryOps including HRM System, Membership System, Split Bill, Catering, and more. Stay updated on new features!'.replaceAll(
-        'SavoryOps',
-        softwareName,
-      ),
-    );
-    
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute(
-      'content',
-      'upcoming features, restaurant features, HRM system, membership system, split bill, catering, SavoryOps features'.replaceAll(
-        'SavoryOps',
-        softwareName,
-      ),
-    );
-  }, [softwareName]);
+  }, []);
 
   const upcomingFeatures = [
     {

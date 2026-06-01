@@ -1,8 +1,31 @@
-/** Baseline title, description, and keywords (aligned with `index.html`). */
-const DEFAULT_META_TAGS = {
-  title: 'SavoryOps - Complete Restaurant Management System | Streamline Your Operations',
-  description: 'Transform your restaurant operations with SavoryOps. Complete restaurant management system with inventory, staff scheduling, analytics, and more. Start your free trial today!',
-  keywords: 'restaurant management, POS system, inventory management, staff scheduling, restaurant analytics, restaurant software, food service management'
+import { PAGE_META } from '../config/pageMeta.js';
+import { getCanonicalUrl, resolvePageMetaKey } from './htmlMetaInject.js';
+
+const withSoftwareName = (text, softwareName) => text.replaceAll('SavoryOps', softwareName || 'SavoryOps');
+
+const upsertMeta = (selector, attributes) => {
+  let element = document.querySelector(selector);
+  if (!element) {
+    element = document.createElement('meta');
+    Object.entries(attributes).forEach(([name, value]) => {
+      element.setAttribute(name, value);
+    });
+    document.head.appendChild(element);
+    return;
+  }
+  Object.entries(attributes).forEach(([name, value]) => {
+    element.setAttribute(name, value);
+  });
+};
+
+const upsertCanonical = (href) => {
+  let link = document.querySelector('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    document.head.appendChild(link);
+  }
+  link.setAttribute('href', href);
 };
 
 /**
@@ -10,52 +33,43 @@ const DEFAULT_META_TAGS = {
  * @param {string} [softwareName='SavoryOps'] - Replaces the product name in title and description.
  */
 export const restoreDefaultMetaTags = (softwareName = 'SavoryOps') => {
-  const safeName = softwareName || 'SavoryOps';
-  const title = DEFAULT_META_TAGS.title.replaceAll('SavoryOps', safeName);
-  const description = DEFAULT_META_TAGS.description.replaceAll('SavoryOps', safeName);
-
-  document.title = title;
-  
-  let metaDescription = document.querySelector('meta[name="description"]');
-  if (!metaDescription) {
-    metaDescription = document.createElement('meta');
-    metaDescription.setAttribute('name', 'description');
-    document.head.appendChild(metaDescription);
-  }
-  metaDescription.setAttribute('content', description);
-  
-  let metaKeywords = document.querySelector('meta[name="keywords"]');
-  if (!metaKeywords) {
-    metaKeywords = document.createElement('meta');
-    metaKeywords.setAttribute('name', 'keywords');
-    document.head.appendChild(metaKeywords);
-  }
-  metaKeywords.setAttribute('content', DEFAULT_META_TAGS.keywords);
+  applyPageMeta('/', softwareName);
 };
 
 /**
- * Sets custom SEO meta tags for a page
- * @param {string} title - Page title
- * @param {string} description - Page description
- * @param {string} keywords - Page keywords
+ * Applies route-specific title, meta description, and keywords.
+ * @param {string} pathname - Current route path (e.g. `/pricing`).
+ * @param {string} [softwareName='SavoryOps']
  */
-export const setPageMetaTags = (title, description, keywords) => {
-  document.title = title;
-  
-  let metaDescription = document.querySelector('meta[name="description"]');
-  if (!metaDescription) {
-    metaDescription = document.createElement('meta');
-    metaDescription.setAttribute('name', 'description');
-    document.head.appendChild(metaDescription);
-  }
-  metaDescription.setAttribute('content', description);
-  
-  let metaKeywords = document.querySelector('meta[name="keywords"]');
-  if (!metaKeywords) {
-    metaKeywords = document.createElement('meta');
-    metaKeywords.setAttribute('name', 'keywords');
-    document.head.appendChild(metaKeywords);
-  }
-  metaKeywords.setAttribute('content', keywords);
+export const applyPageMeta = (pathname, softwareName = 'SavoryOps') => {
+  const key = resolvePageMetaKey(pathname);
+  const meta = PAGE_META[key] || PAGE_META['/'];
+  setPageMetaTags(
+    withSoftwareName(meta.title, softwareName),
+    withSoftwareName(meta.description, softwareName),
+    withSoftwareName(meta.keywords, softwareName),
+    key,
+  );
 };
 
+/**
+ * Sets custom SEO meta tags for a page (runtime — updates live DOM after React loads).
+ * @param {string} title
+ * @param {string} description
+ * @param {string} keywords
+ * @param {string} [pathname='/']
+ */
+export const setPageMetaTags = (title, description, keywords, pathname = '/') => {
+  document.title = title;
+
+  upsertMeta('meta[name="description"]', { name: 'description', content: description });
+  upsertMeta('meta[name="keywords"]', { name: 'keywords', content: keywords });
+  upsertMeta('meta[property="og:title"]', { property: 'og:title', content: title });
+  upsertMeta('meta[property="og:description"]', { property: 'og:description', content: description });
+  upsertMeta('meta[name="twitter:title"]', { name: 'twitter:title', content: title });
+  upsertMeta('meta[name="twitter:description"]', { name: 'twitter:description', content: description });
+
+  const canonical = getCanonicalUrl(pathname);
+  upsertMeta('meta[property="og:url"]', { property: 'og:url', content: canonical });
+  upsertCanonical(canonical);
+};

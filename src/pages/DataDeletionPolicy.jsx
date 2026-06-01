@@ -8,37 +8,7 @@ const DataDeletionPolicy = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    
-    document.title = `Data Deletion Policy - ${softwareName}`;
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute(
-      'content',
-      'Learn about SavoryOps Data Deletion Policy. Understand how to request account deletion and permanent removal of your personal data from our restaurant management platform.'.replaceAll(
-        'SavoryOps',
-        softwareName,
-      ),
-    );
-    
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute(
-      'content',
-      'data deletion policy, account deletion, data removal, right to deletion, GDPR data deletion, user data deletion, SavoryOps'.replaceAll(
-        'SavoryOps',
-        softwareName,
-      ),
-    );
-  }, [softwareName]);
+  }, []);
 
   return (
     <Box className="privacy-policy-page">

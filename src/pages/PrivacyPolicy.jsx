@@ -8,37 +8,7 @@ const PrivacyPolicy = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    
-    document.title = `Privacy Policy - ${softwareName}`;
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute(
-      'content',
-      'Read SavoryOps Privacy Policy to understand how we collect, use, and protect your personal information. Learn about our data protection practices and your privacy rights.'.replaceAll(
-        'SavoryOps',
-        softwareName,
-      ),
-    );
-    
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute(
-      'content',
-      'privacy policy, data protection, privacy rights, data security, GDPR compliance, user privacy, SavoryOps privacy'.replaceAll(
-        'SavoryOps',
-        softwareName,
-      ),
-    );
-  }, [softwareName]);
+  }, []);
 
   return (
     <Box className="privacy-policy-page">

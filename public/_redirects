@@ -1,0 +1,12 @@
+# Serve pre-rendered HTML (route-specific meta) before SPA fallback.
+/features  /features/index.html  200
+/pricing  /pricing/index.html  200
+/upcoming-features  /upcoming-features/index.html  200
+/contact-us  /contact-us/index.html  200
+/privacy-policy  /privacy-policy/index.html  200
+/data-deletion-policy  /data-deletion-policy/index.html  200
+/Signin  /Signin/index.html  200
+/signin  /signin/index.html  200
+/Signup  /Signup/index.html  200
+/signup  /signup/index.html  200
+/*  /index.html  200

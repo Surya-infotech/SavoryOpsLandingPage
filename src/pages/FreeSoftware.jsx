@@ -47,7 +47,7 @@ const FreeSoftware = () => {
   };
 
   const handlePlanButtonClick = () => {
-    navigate('/signin');
+    navigate('/Signin');
   };
 
   return (

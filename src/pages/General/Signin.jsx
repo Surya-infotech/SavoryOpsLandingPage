@@ -30,10 +30,6 @@ const OwnerLogin = () => {
 
     const toggleLanguageDropdown = () => setLanguageDropdownVisible(!isLanguageDropdownVisible);
 
-    useEffect(() => {
-        if (translations.signin) document.title = translations.signin;
-    }, [translations]);
-
     const handleLanguageSelect = (language) => {
         setSelectedLanguage(language.name);
         localStorage.setItem('selectedLanguage', language.name);

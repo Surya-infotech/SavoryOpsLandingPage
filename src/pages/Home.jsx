@@ -1,5 +1,4 @@
 import { Box } from '@mui/material';
-import { useEffect } from 'react';
 import Benefits from './Benefits';
 import CTA from './CTA';
 import ContactUs from './ContactUs';
@@ -11,14 +10,7 @@ import EmployeeRoles from './EmployeeRoles';
 import AppDownloads from './AppDownloads';
 import Languages from './Languages';
 import FreeSoftware from './FreeSoftware';
-import { restoreDefaultMetaTags } from '../utils/seoMetaTags';
-
 const Home = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    restoreDefaultMetaTags();
-  }, []);
-
   return (
     <Box className="home-page">
       <Hero />

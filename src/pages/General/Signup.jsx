@@ -64,10 +64,6 @@ const OwnerSignUp = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isLanguageDropdownVisible]);
 
-    useEffect(() => {
-        if (translations.signup) document.title = translations.signup;
-    }, [translations]);
-
     const handlePhoneChange = (value) => {
         setPhone(value || '');
 

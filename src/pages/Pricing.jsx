@@ -73,37 +73,7 @@ const Pricing = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    document.title = `Pricing - ${softwareName}`;
-
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute(
-      'content',
-      'Get started with SavoryOps for free! All features available in free tier including Dashboard, KOT, Multi Business, Multi Branches, Menu Management, QR Code Scanning, and comprehensive reporting.'.replaceAll(
-        'SavoryOps',
-        softwareName,
-      ),
-    );
-
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute(
-      'content',
-      'pricing, free restaurant management, restaurant POS pricing, free tier, restaurant software pricing, SavoryOps pricing, free restaurant software'.replaceAll(
-        'SavoryOps',
-        softwareName,
-      ),
-    );
-  }, [softwareName]);
+  }, []);
 
   const getFilteredPlans = () => {
     if (activeTab === 0) {
@@ -118,7 +88,7 @@ const Pricing = () => {
   };
 
   const handlePlanButtonClick = () => {
-    navigate('/signin');
+    navigate('/Signin');
   };
 
   return (

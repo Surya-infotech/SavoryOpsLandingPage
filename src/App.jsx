@@ -6,7 +6,7 @@ import BuyNowFloatingButton from './components/BuyNowFloatingButton';
 import ScrollToTopButton from './components/ScrollToTop';
 import { LanguageProvider } from './context/LanguageContext.jsx';
 import { useAppSettings } from './context/AppSettingsContext.jsx';
-import { restoreDefaultMetaTags } from './utils/seoMetaTags';
+import { applyPageMeta } from './utils/seoMetaTags';
 import ContactUs from './pages/ContactUs';
 import DataDeletionPolicy from './pages/DataDeletionPolicy';
 import FeaturesPage from './pages/FeaturesPage';
@@ -51,16 +51,14 @@ const ScrollToTop = () => {
   return null;
 };
 
-/**
- * Resets title and meta tags on navigation; pages that call `setPageMetaTags` replace them in their own effect.
- */
+/** Sets route-specific title, meta description, and keywords on navigation. */
 const SEOHandler = () => {
   const location = useLocation();
   const { softwareName } = useAppSettings();
 
   useEffect(() => {
-    restoreDefaultMetaTags(softwareName);
-  }, [location.pathname]);
+    applyPageMeta(location.pathname, softwareName);
+  }, [location.pathname, softwareName]);
 
   return null;
 };
@@ -100,7 +98,9 @@ const AppContent = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
         <Route path="/Signin" element={<OwnerLogin />} />
+        <Route path="/signin" element={<OwnerLogin />} />
         <Route path="/Signup" element={<OwnerSignUp />} />
+        <Route path="/signup" element={<OwnerSignUp />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 

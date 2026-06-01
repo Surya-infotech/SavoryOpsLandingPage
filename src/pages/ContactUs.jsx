@@ -20,9 +20,8 @@ const ContactUs = () => {
   useEffect(() => {
     if (isStandalonePage) {
       window.scrollTo(0, 0);
-      document.title = `Contact Us - ${softwareName}`;
     }
-  }, [isStandalonePage, softwareName]);
+  }, [isStandalonePage]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

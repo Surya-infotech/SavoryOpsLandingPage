@@ -2,7 +2,6 @@ import { AccountTree as AccountTreeIcon, Assessment as AssessmentIcon, Bolt as B
 import { Box, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
 import { useEffect, useMemo } from 'react';
 import GetStartedButton from '../components/GetStartedButton';
-import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/featurespage.scss';
 
 const ICON_SIZE = { fontSize: 24 };
@@ -239,41 +238,9 @@ const DETAILED_FEATURES = [
 ];
 
 const FeaturesPage = () => {
-  const { softwareName } = useAppSettings();
-
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    document.title = `Features - ${softwareName}`;
-
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute(
-      'content',
-      'Discover powerful restaurant management features including Smart Dashboard, Multiple Business & Branches, Menu Management, KOT System, QR Code Scanning, Cloud-Based System, and more. Streamline your restaurant operations with SavoryOps.'.replaceAll(
-        'SavoryOps',
-        softwareName,
-      ),
-    );
-
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute(
-      'content',
-      'restaurant features, restaurant management features, POS features, restaurant dashboard, menu management, KOT system, QR code ordering, business analytics, cloud restaurant system, multi-branch management, SavoryOps features'.replaceAll(
-        'SavoryOps',
-        softwareName,
-      ),
-    );
-  }, [softwareName]);
+  }, []);
 
   const detailedFeatures = useMemo(
     () =>
