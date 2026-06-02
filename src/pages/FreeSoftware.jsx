@@ -6,7 +6,7 @@ import { formatDuration, getPlanLimits } from '../utils/planUtils';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/free-software.scss';
 
-const FreeSoftware = () => {
+const FreeSoftware = ({ hideHeader = false }) => {
   const [plans, setPlans] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -55,30 +55,33 @@ const FreeSoftware = () => {
       id="free-software"
       className="free-software-section"
       sx={{
-        padding: { xs: '60px 0', md: '80px 0' },
+        padding: hideHeader ? { xs: '0 0 32px', md: '0 0 48px' } : { xs: '60px 0', md: '80px 0' },
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
       }}
     >
       <Container maxWidth="lg">
-        {/* Header Section */}
-        <Box className="header-section">
-          <Box className="badge-container">
-            <Chip
-              icon={<StarIcon />}
-              label="Free Forever - No Hidden Costs"
-              className="offer-chip"
-            />
+        {!hideHeader && (
+          <Box className="header-section">
+            <Box className="badge-container">
+              <Chip
+                icon={<StarIcon />}
+                label="Free Forever - No Hidden Costs"
+                className="offer-chip"
+              />
+            </Box>
+
+            <Typography variant="h2" component="h2" className="section-title">
+              Transform Your Restaurant Operations Free Forever
+            </Typography>
+
+            <Typography variant="h5" component="p" className="section-subtitle">
+              Experience the power of {softwareName} at no cost. Choose from our free trial or
+              lifetime access plans and revolutionize your restaurant management with cutting-edge
+              tools designed for modern hospitality businesses.
+            </Typography>
           </Box>
-
-          <Typography variant="h2" component="h2" className="section-title">
-            Transform Your Restaurant Operations Free Forever
-          </Typography>
-
-          <Typography variant="h5" className="section-subtitle">
-            Experience the power of {softwareName} at no cost. Choose from our free trial or lifetime access plans and revolutionize your restaurant management with cutting-edge tools designed for modern hospitality businesses.
-          </Typography>
-        </Box>
+        )}
 
         <Box className="content-section">
 

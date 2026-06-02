@@ -1,12 +1,18 @@
-import { Check as CheckIcon, Close as CloseIcon, LocalOffer as DiscountIcon, Star as StarIcon } from '@mui/icons-material';
-import { Box, Container, Typography, Tabs, Tab } from '@mui/material';
+import {
+  AttachMoney as AttachMoneyIcon,
+  Check as CheckIcon,
+  Close as CloseIcon,
+  LocalOffer as DiscountIcon,
+  Star as StarIcon,
+} from '@mui/icons-material';
+import { Box, Chip, Container, Tab, Tabs, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import FreeSoftware from './FreeSoftware';
 import CTA from '../components/CTA';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import { formatCurrency } from '../utils/currency';
 import { formatDuration, getPlanLimits } from '../utils/planUtils';
-import { useAppSettings } from '../context/AppSettingsContext.jsx';
+import FreeSoftware from './FreeSoftware';
 import '../styles/pages/pricing.scss';
 
 const Pricing = () => {
@@ -22,8 +28,8 @@ const Pricing = () => {
     const fetchPricingData = async () => {
       try {
         const response = await fetch(`${adminPanelBackendPath}/Subscription/GetPlans_landingpage`, {
-          method: "GET",
-          headers: { "Content-Type": "application/json", "x-user": "admin" },
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json', 'x-user': 'admin' },
         });
         const data = await response.json();
 
@@ -32,7 +38,7 @@ const Pricing = () => {
           const currencyData = data.currency || {};
 
           const activePlans = plansData
-            .filter(plan => plan.status === true)
+            .filter((plan) => plan.status === true)
             .sort((a, b) => {
               const getDurationSortValue = (plan) => {
                 if (plan.plantype === 'limited') return 4;
@@ -60,7 +66,7 @@ const Pricing = () => {
           setCurrency(currencyData);
         }
       } catch {
-        console.log("Failed to fetch pricing data, using defaults");
+        console.log('Failed to fetch pricing data, using defaults');
         setPlans([]);
         setCurrency({});
       } finally {
@@ -77,13 +83,12 @@ const Pricing = () => {
 
   const getFilteredPlans = () => {
     if (activeTab === 0) {
-      return plans.filter(plan => plan.duration === 'month' && plan.plantype === 'paid');
-    } else {
-      return plans.filter(plan => plan.duration === 'year' && plan.plantype === 'paid');
+      return plans.filter((plan) => plan.duration === 'month' && plan.plantype === 'paid');
     }
+    return plans.filter((plan) => plan.duration === 'year' && plan.plantype === 'paid');
   };
 
-  const handleTabChange = (event, newValue) => {
+  const handleTabChange = (_event, newValue) => {
     setActiveTab(newValue);
   };
 
@@ -93,27 +98,46 @@ const Pricing = () => {
 
   return (
     <Box className="pricing-page">
-      <FreeSoftware />
+      <Container maxWidth="lg">
+        <Box className="pricing-page-header">
+          <Box className="pricing-badge">
+            <Chip icon={<AttachMoneyIcon />} label="Flexible Pricing" className="pricing-chip" />
+          </Box>
 
-      {/* Pricing Plans Section */}
+          <Typography variant="h1" component="h1" gutterBottom className="main-heading">
+            Pricing
+          </Typography>
+
+          <Box className="subtitle-section">
+            <Box className="platform-badge">
+              <StarIcon className="star-icon" />
+              <Typography variant="body1" className="platform-text">
+                Plans for Every Restaurant
+              </Typography>
+            </Box>
+          </Box>
+
+          <Typography variant="h5" color="text.secondary" paragraph className="description">
+            Get started with {softwareName} for free or choose a paid plan with monthly and yearly
+            billing to streamline operations and grow your business.
+          </Typography>
+        </Box>
+      </Container>
+
+      <FreeSoftware hideHeader />
+
       <Box className="pricing-plans-section">
         <Container maxWidth="lg">
-          <Box className="pricing-header">
-            <Typography variant="h3" component="h1" className="pricing-main-title">
-              Transform Your Restaurant Operations
+          <Box className="pricing-section-intro">
+            <Typography variant="h4" component="h2" className="section-heading">
+              Paid Plans
             </Typography>
-            <Typography variant="h5" className="pricing-subtitle">
-              Choose the perfect plan to streamline your workflow, boost efficiency, and grow your business with powerful restaurant management tools
+            <Typography variant="body1" className="section-description">
+              Choose monthly or yearly billing that fits your restaurant.
             </Typography>
 
-            {/* Pricing Tabs */}
             <Box className="pricing-tabs-container">
-              <Tabs
-                value={activeTab}
-                onChange={handleTabChange}
-                className="pricing-tabs"
-                centered
-              >
+              <Tabs value={activeTab} onChange={handleTabChange} className="pricing-tabs" centered>
                 <Tab label="Monthly Plans" />
                 <Tab label="Yearly Plans" />
               </Tabs>
@@ -124,14 +148,23 @@ const Pricing = () => {
             {loading ? (
               Array.from({ length: 6 }, (_, index) => (
                 <Box key={index} className="pricing-plan-card loading">
-                  <Typography variant="h5" className="plan-name">Loading...</Typography>
-                  <Typography variant="h4" className="plan-price">£--</Typography>
-                  <Typography variant="body2" className="plan-duration">--</Typography>
+                  <Typography variant="h5" className="plan-name">
+                    Loading...
+                  </Typography>
+                  <Typography variant="h4" className="plan-price">
+                    £--
+                  </Typography>
+                  <Typography variant="body2" className="plan-duration">
+                    --
+                  </Typography>
                 </Box>
               ))
             ) : getFilteredPlans().length > 0 ? (
               getFilteredPlans().map((plan, index) => (
-                <Box key={plan._id || index} className={`pricing-plan-card ${plan.ismostpopular ? 'featured' : ''}`}>
+                <Box
+                  key={plan._id || index}
+                  className={`pricing-plan-card ${plan.ismostpopular ? 'featured' : ''}`}
+                >
                   {plan.ismostpopular && (
                     <Box className="featured-indicator">
                       <StarIcon fontSize="small" />
@@ -142,7 +175,9 @@ const Pricing = () => {
                       <Box className="plan-discount-badge">
                         <DiscountIcon className="discount-icon" fontSize="small" />
                         <Typography variant="body2" className="plan-discount-text">
-                          {plan.discounttype === 'percentage' ? `${plan.discount}% OFF` : `Save ${formatCurrency(plan.discount, currency)}`}
+                          {plan.discounttype === 'percentage'
+                            ? `${plan.discount}% OFF`
+                            : `Save ${formatCurrency(plan.discount, currency)}`}
                         </Typography>
                       </Box>
                     </Box>
@@ -163,14 +198,22 @@ const Pricing = () => {
                   </Box>
 
                   <Box className="plan-features">
-
                     <Box className="plan-limits">
                       <Typography variant="body2" className="plan-limits-title">
                         Access Limits
                       </Typography>
-                      {getPlanLimits(plan).map((limit, index) => (
-                        <Typography key={index} variant="body2" className={`plan-limit-item ${(limit.limit === '0' || limit.limit === 'Not included') ? 'limit-unavailable' : 'limit-available'}`}>
-                          {(limit.limit === '0' || limit.limit === 'Not included') ? <CloseIcon fontSize="small" /> : <CheckIcon fontSize="small" />} {limit.limit} {limit.page}
+                      {getPlanLimits(plan).map((limit, limitIndex) => (
+                        <Typography
+                          key={limitIndex}
+                          variant="body2"
+                          className={`plan-limit-item ${limit.limit === '0' || limit.limit === 'Not included' ? 'limit-unavailable' : 'limit-available'}`}
+                        >
+                          {limit.limit === '0' || limit.limit === 'Not included' ? (
+                            <CloseIcon fontSize="small" />
+                          ) : (
+                            <CheckIcon fontSize="small" />
+                          )}{' '}
+                          {limit.limit} {limit.page}
                         </Typography>
                       ))}
                     </Box>
