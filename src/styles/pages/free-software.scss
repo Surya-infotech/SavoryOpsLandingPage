@@ -198,301 +198,338 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
-    margin-top: 24px;
+    margin: 24px auto 0;
+    max-width: 420px;
+    align-items: stretch;
 
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      max-width: 820px;
+    }
+
+    @media (min-width: 960px) {
       gap: 32px;
-    }
-
-    @media (min-width: 960px) {
-      gap: 40px;
       margin-top: 32px;
-    }
-  }
-
-  .pricing-plan-card {
-    background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 50%, #f0f4ff 100%);
-    border-radius: 24px;
-    padding: 32px 32px;
-    box-shadow:
-      0 12px 40px rgba(0, 0, 0, 0.08),
-      0 4px 16px rgba(0, 0, 0, 0.04),
-      inset 0 1px 0 rgba(255, 255, 255, 0.9),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.02);
-    border: 1px solid color-mix(in srgb, var(--secondary-color) 12%, transparent);
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    position: relative;
-    overflow: hidden;
-    animation: fadeInUp 0.6s ease-out both;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(135deg,
-        color-mix(in srgb, var(--secondary-color) 80%, transparent) 0%,
-        color-mix(in srgb, var(--primary-color) 80%, transparent) 50%,
-        color-mix(in srgb, var(--secondary-color) 80%, transparent) 100%);
-      border-radius: 24px 24px 0 0;
-      box-shadow: 0 2px 8px color-mix(in srgb, var(--secondary-color) 30%, transparent);
+      max-width: 900px;
     }
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(
-        45deg,
-        transparent 25%,
-        color-mix(in srgb, var(--secondary-color) 3%, transparent) 45%,
-        color-mix(in srgb, var(--secondary-color) 6%, transparent) 50%,
-        color-mix(in srgb, var(--secondary-color) 3%, transparent) 55%,
-        transparent 75%
-      );
-      transform: rotate(45deg);
-      transition: all 0.8s ease;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    @for $i from 1 through 6 {
-      &:nth-child(#{$i}) {
-        animation-delay: #{$i * 0.1}s;
-      }
-    }
-
-    &:hover {
-      transform: translateY(-12px) scale(1.03);
-      box-shadow:
-        0 28px 64px color-mix(in srgb, var(--secondary-color) 18%, transparent),
-        0 12px 28px color-mix(in srgb, var(--secondary-color) 12%, transparent),
-        0 6px 14px color-mix(in srgb, var(--secondary-color) 8%, transparent),
-        inset 0 1px 0 rgba(255, 255, 255, 1),
-        inset 0 -1px 0 color-mix(in srgb, var(--secondary-color) 10%, transparent);
-      border-color: color-mix(in srgb, var(--secondary-color) 30%, transparent);
-      background: linear-gradient(145deg, #ffffff 0%, #f0fdf4 50%, #f8fdf9 100%);
-
-      &::after {
-        opacity: 1;
-        animation: shimmer 2s ease-in-out infinite;
-      }
-
-      &::before {
-        background: linear-gradient(135deg,
-          color-mix(in srgb, var(--secondary-color) 100%, transparent) 0%,
-          color-mix(in srgb, var(--primary-color) 100%, transparent) 50%,
-          color-mix(in srgb, var(--secondary-color) 100%, transparent) 100%);
-        box-shadow: 0 4px 12px color-mix(in srgb, var(--secondary-color) 50%, transparent);
-      }
-    }
-
-    @media (min-width: 960px) {
-      padding: 36px 40px;
-    }
-  }
-
-  .plan-header {
-    text-align: center;
-    margin-bottom: 24px;
-    position: relative;
-  }
-
-  .plan-name {
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: #1a1a1a;
-    margin-bottom: 10px;
-    letter-spacing: -0.02em;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-
-    @media (min-width: 960px) {
-      font-size: 1.6rem;
-    }
-  }
-
-  .plan-price {
-    font-weight: 800;
-    font-size: 2.0rem;
-    color: var(--primary-color);
-    display: block;
-    margin-bottom: 4px;
-    text-shadow: 0 2px 4px color-mix(in srgb, var(--primary-color) 10%, transparent);
-    letter-spacing: -0.03em;
-
-    @media (min-width: 960px) {
-      font-size: 2.4rem;
-    }
-  }
-
-  .plan-duration {
-    font-size: 0.9rem;
-    color: #666666;
-    text-transform: capitalize;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    text-align: center;
-  }
-
-  .plan-type {
-    font-size: 0.8rem;
-    color: #555555;
-    margin-bottom: 6px;
-    text-align: center;
-    display: block;
-    list-style: none;
-
-    &::before {
-      display: none !important;
-    }
-
-    &::after {
-      display: none !important;
-    }
-  }
-
-  .plan-discount,
-  .plan-access {
-    font-size: 0.9rem;
-    color: #555555;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-
-    &::before {
-      content: '•';
-      color: var(--secondary-color);
-      font-weight: bold;
-      margin-right: 8px;
-    }
-  }
-
-  .plan-limits {
-    color: #2c3e50;
-    font-weight: 700;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    font-size: 0.9rem;
-    border-bottom: 2px solid color-mix(in srgb, var(--secondary-color) 20%, transparent);
-    padding-bottom: 6px;
-    position: relative;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 30px;
-      height: 2px;
-      background: linear-gradient(135deg, var(--secondary-color), #66bb6a);
-      border-radius: 1px;
-    }
-  }
-
-  .plan-limit-item {
-    font-size: 0.9rem;
-    margin-bottom: 6px;
-    padding: 6px 12px;
-    line-height: 1.5;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid color-mix(in srgb, var(--secondary-color) 10%, transparent);
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.8);
-      transform: translateX(2px);
-    }
-
-    &.limit-available {
-      color: var(--primary-color);
-      font-weight: 600;
-      background: linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 8%, transparent), color-mix(in srgb, var(--secondary-color) 5%, transparent));
-      border-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
-    }
-
-    &.limit-unavailable {
-      color: #d32f2f;
-      font-weight: 500;
-      background: rgba(211, 47, 47, 0.05);
-      border-color: rgba(211, 47, 47, 0.2);
-      opacity: 0.9;
-    }
-  }
-
-
-  .plan-button {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, #45a049 30%, #66bb6a 70%, #81c784 100%);
-    color: white;
-    padding: 12px 28px;
-    border-radius: 12px;
-    text-decoration: none;
-    display: inline-block;
-    font-weight: 700;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    cursor: pointer;
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
-    box-shadow:
-      0 4px 16px color-mix(in srgb, var(--secondary-color) 30%, transparent),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3),
-      inset 0 -1px 0 color-mix(in srgb, var(--secondary-color) 20%, transparent);
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
+    .pricing-plan-card {
+      display: flex;
+      flex-direction: column;
       height: 100%;
-      background: linear-gradient(90deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.3) 50%,
-        transparent 100%);
-      transition: left 0.6s ease;
-    }
-
-    &:hover {
-      background: linear-gradient(135deg, #43a047 0%, #388e3c 30%, var(--secondary-color) 70%, #66bb6a 100%);
-      transform: translateY(-3px) scale(1.03);
+      min-height: 100%;
+      background: linear-gradient(165deg, #ffffff 0%, #f8fbf9 100%);
+      border-radius: 22px;
+      padding: 24px;
       box-shadow:
-        0 8px 24px color-mix(in srgb, var(--secondary-color) 40%, transparent),
-        0 4px 12px color-mix(in srgb, var(--secondary-color) 30%, transparent),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4),
-        inset 0 -1px 0 color-mix(in srgb, var(--secondary-color) 30%, transparent);
-      border-color: rgba(255, 255, 255, 0.4);
+        0 12px 32px rgba(15, 23, 42, 0.08),
+        0 2px 8px rgba(15, 23, 42, 0.04);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.6s ease-out both;
 
-      &::before {
-        left: 100%;
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 0.08}s;
+        }
       }
-    }
 
-    &:active {
-      transform: translateY(-1px) scale(0.97);
-      box-shadow:
-        0 2px 8px color-mix(in srgb, var(--secondary-color) 30%, transparent),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    }
+      .plan-card-accent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          color-mix(in srgb, var(--primary-color) 80%, #000),
+          var(--primary-color),
+          var(--secondary-color)
+        );
+      }
 
-    @media (min-width: 960px) {
-      padding: 14px 32px;
-      font-size: 1rem;
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow:
+          0 20px 44px rgba(15, 23, 42, 0.12),
+          0 8px 20px color-mix(in srgb, var(--primary-color) 10%, transparent);
+        border-color: color-mix(in srgb, var(--primary-color) 22%, transparent);
+      }
+
+      &.featured {
+        border: 2px solid color-mix(in srgb, var(--primary-color) 45%, transparent);
+        background: linear-gradient(
+          165deg,
+          color-mix(in srgb, var(--primary-color) 6%, white) 0%,
+          #ffffff 55%,
+          color-mix(in srgb, var(--secondary-color) 4%, white) 100%
+        );
+        box-shadow:
+          0 16px 40px color-mix(in srgb, var(--primary-color) 18%, transparent),
+          0 4px 14px rgba(15, 23, 42, 0.06);
+
+        .plan-card-accent {
+          height: 5px;
+        }
+
+        .plan-price {
+          color: color-mix(in srgb, var(--primary-color) 85%, #000);
+        }
+
+        .plan-button {
+          background: linear-gradient(
+            135deg,
+            color-mix(in srgb, var(--primary-color) 75%, #000),
+            var(--primary-color)
+          ) !important;
+          box-shadow: 0 8px 22px color-mix(in srgb, var(--primary-color) 32%, transparent) !important;
+
+          &:hover {
+            background: linear-gradient(
+              135deg,
+              color-mix(in srgb, var(--primary-color) 85%, #000),
+              color-mix(in srgb, var(--primary-color) 70%, #000)
+            ) !important;
+          }
+        }
+
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow:
+            0 24px 52px color-mix(in srgb, var(--primary-color) 22%, transparent),
+            0 10px 24px rgba(15, 23, 42, 0.08);
+        }
+      }
+
+      &.loading {
+        opacity: 0.75;
+        pointer-events: none;
+        min-height: 360px;
+      }
+
+      .plan-card-badges {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        min-height: 32px;
+        margin-bottom: 12px;
+      }
+
+      .plan-badge-spacer {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .plan-type-badge {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+        color: #fff !important;
+        font-weight: 700 !important;
+        border: none !important;
+        box-shadow: 0 4px 14px color-mix(in srgb, var(--primary-color) 28%, transparent);
+        flex-shrink: 0;
+
+        .MuiChip-icon {
+          color: #fff !important;
+        }
+      }
+
+      .plan-skeleton {
+        border-radius: 10px;
+        background: linear-gradient(
+          90deg,
+          rgba(15, 23, 42, 0.06) 25%,
+          rgba(15, 23, 42, 0.1) 50%,
+          rgba(15, 23, 42, 0.06) 75%
+        );
+        background-size: 200% 100%;
+        animation: planShimmer 1.4s ease-in-out infinite;
+      }
+
+      .plan-skeleton-title {
+        height: 28px;
+        width: 60%;
+        margin: 24px auto 16px;
+      }
+
+      .plan-skeleton-price {
+        height: 44px;
+        width: 45%;
+        margin: 0 auto 20px;
+      }
+
+      .plan-skeleton-line {
+        height: 14px;
+        width: 85%;
+        margin: 0 auto 10px;
+
+        &.short {
+          width: 65%;
+        }
+      }
+
+      .plan-skeleton-button {
+        height: 48px;
+        width: 100%;
+        margin-top: auto;
+      }
+
+      .plan-header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .plan-name {
+        font-weight: 800;
+        font-size: 1.35rem;
+        color: #1a1a1a;
+        margin-bottom: 14px;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+
+        @media (min-width: 960px) {
+          font-size: 1.5rem;
+        }
+      }
+
+      .plan-price-block {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 14px 20px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        min-width: min(100%, 220px);
+      }
+
+      .plan-price {
+        font-weight: 800;
+        font-size: 2.25rem;
+        color: var(--primary-color);
+        margin: 0;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+
+        @media (min-width: 960px) {
+          font-size: 2.5rem;
+        }
+      }
+
+      .plan-duration {
+        font-size: 0.875rem;
+        color: #64748b;
+        text-transform: capitalize;
+        font-weight: 600;
+        margin: 0;
+        text-align: center;
+      }
+
+      .plan-features {
+        flex: 1;
+        margin-bottom: 20px;
+      }
+
+      .plan-limits-title {
+        display: block;
+        font-size: 0.72rem;
+        color: #64748b;
+        font-weight: 700;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .plan-limits-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(15, 23, 42, 0.06);
+      }
+
+      .plan-limit-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.875rem;
+        line-height: 1.45;
+
+        .plan-limit-icon {
+          flex-shrink: 0;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px;
+          margin-top: 1px;
+        }
+
+        .plan-limit-text {
+          flex: 1;
+        }
+
+        &.limit-available {
+          color: #1e293b;
+
+          .plan-limit-icon {
+            background: color-mix(in srgb, var(--primary-color) 12%, white);
+            color: var(--primary-color);
+          }
+        }
+
+        &.limit-unavailable {
+          color: #94a3b8;
+
+          .plan-limit-icon {
+            background: rgba(148, 163, 184, 0.15);
+            color: #94a3b8;
+          }
+
+          .plan-limit-text {
+            text-decoration: line-through;
+            text-decoration-color: rgba(148, 163, 184, 0.5);
+          }
+        }
+      }
+
+      .plan-action {
+        margin-top: auto;
+        padding-top: 4px;
+      }
+
+      .plan-button {
+        border-radius: 12px !important;
+        padding: 12px 20px !important;
+        font-weight: 700 !important;
+        font-size: 0.95rem !important;
+        text-transform: none !important;
+        letter-spacing: 0.01em;
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color),
+          color-mix(in srgb, var(--secondary-color) 80%, var(--primary-color))
+        ) !important;
+        box-shadow: 0 6px 18px color-mix(in srgb, var(--secondary-color) 28%, transparent) !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 24px color-mix(in srgb, var(--secondary-color) 35%, transparent) !important;
+        }
+      }
     }
   }
 }
@@ -508,22 +545,12 @@
   }
 }
 
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 4px 12px color-mix(in srgb, var(--secondary-color) 30%, transparent);
-  }
-  50% {
-    transform: scale(1.02);
-    box-shadow: 0 6px 16px color-mix(in srgb, var(--secondary-color) 40%, transparent);
-  }
-}
-
-@keyframes shimmer {
+@keyframes planShimmer {
   0% {
-    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    background-position: 200% 0;
   }
+
   100% {
-    transform: translateX(100%) translateY(100%) rotate(45deg);
+    background-position: -200% 0;
   }
 }
