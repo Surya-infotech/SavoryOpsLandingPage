@@ -5,8 +5,6 @@ import Navigation from './components/Navigation';
 import BuyNowFloatingButton from './components/BuyNowFloatingButton';
 import ScrollToTopButton from './components/ScrollToTop';
 import { LanguageProvider } from './context/LanguageContext.jsx';
-import { useAppSettings } from './context/AppSettingsContext.jsx';
-import { applyPageMeta } from './utils/seoMetaTags';
 import ContactUs from './pages/ContactUs';
 import DataDeletionPolicy from './pages/DataDeletionPolicy';
 import FeaturesPage from './pages/FeaturesPage';
@@ -51,18 +49,6 @@ const ScrollToTop = () => {
   return null;
 };
 
-/** Sets route-specific title, meta description, and keywords on navigation. */
-const SEOHandler = () => {
-  const location = useLocation();
-  const { softwareName } = useAppSettings();
-
-  useEffect(() => {
-    applyPageMeta(location.pathname, softwareName);
-  }, [location.pathname, softwareName]);
-
-  return null;
-};
-
 const AppContent = () => {
   const [scrollTop, setScrollTop] = useState(0);
   const location = useLocation();
@@ -85,7 +71,6 @@ const AppContent = () => {
   return (
     <div className="App">
       <ScrollToTop />
-      <SEOHandler />
 
       {!isAuthPage && <Navigation />}
 
