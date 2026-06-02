@@ -5,7 +5,7 @@ import {
   LocalOffer as DiscountIcon,
   Star as StarIcon,
 } from '@mui/icons-material';
-import { Box, Chip, Container, Tab, Tabs, Typography } from '@mui/material';
+import { Box, Button, Chip, Container, Tab, Tabs, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CTA from '../components/CTA';
@@ -148,89 +148,111 @@ const Pricing = () => {
             {loading ? (
               Array.from({ length: 6 }, (_, index) => (
                 <Box key={index} className="pricing-plan-card loading">
-                  <Typography variant="h5" className="plan-name">
-                    Loading...
-                  </Typography>
-                  <Typography variant="h4" className="plan-price">
-                    £--
-                  </Typography>
-                  <Typography variant="body2" className="plan-duration">
-                    --
-                  </Typography>
+                  <Box className="plan-card-accent" aria-hidden />
+                  <Box className="plan-skeleton plan-skeleton-title" />
+                  <Box className="plan-skeleton plan-skeleton-price" />
+                  <Box className="plan-skeleton plan-skeleton-line" />
+                  <Box className="plan-skeleton plan-skeleton-line short" />
+                  <Box className="plan-skeleton plan-skeleton-button" />
                 </Box>
               ))
             ) : getFilteredPlans().length > 0 ? (
-              getFilteredPlans().map((plan, index) => (
-                <Box
-                  key={plan._id || index}
-                  className={`pricing-plan-card ${plan.ismostpopular ? 'featured' : ''}`}
-                >
-                  {plan.ismostpopular && (
-                    <Box className="featured-indicator">
-                      <StarIcon fontSize="small" />
-                    </Box>
-                  )}
-                  {plan.isdiscount && (
-                    <Box className="plan-discount-top-left">
-                      <Box className="plan-discount-badge">
-                        <DiscountIcon className="discount-icon" fontSize="small" />
-                        <Typography variant="body2" className="plan-discount-text">
-                          {plan.discounttype === 'percentage'
-                            ? `${plan.discount}% OFF`
-                            : `Save ${formatCurrency(plan.discount, currency)}`}
+              getFilteredPlans().map((plan, index) => {
+                const limits = getPlanLimits(plan);
+
+                return (
+                  <Box
+                    key={plan._id || index}
+                    className={`pricing-plan-card${plan.ismostpopular ? ' featured' : ''}`}
+                  >
+                    <Box className="plan-card-accent" aria-hidden />
+
+                    {(plan.isdiscount || plan.ismostpopular) && (
+                      <Box className="plan-card-badges">
+                        {plan.isdiscount ? (
+                          <Box className="plan-discount-badge">
+                            <DiscountIcon className="discount-icon" fontSize="small" />
+                            <Typography variant="body2" component="span" className="plan-discount-text">
+                              {plan.discounttype === 'percentage'
+                                ? `${plan.discount}% OFF`
+                                : `Save ${formatCurrency(plan.discount, currency)}`}
+                            </Typography>
+                          </Box>
+                        ) : (
+                          <span className="plan-badge-spacer" aria-hidden />
+                        )}
+
+                        {plan.ismostpopular ? (
+                          <Chip
+                            icon={<StarIcon />}
+                            label="Most Popular"
+                            className="popular-badge"
+                            size="small"
+                          />
+                        ) : (
+                          <span className="plan-badge-spacer" aria-hidden />
+                        )}
+                      </Box>
+                    )}
+
+                    <Box className="plan-header">
+                      <Typography variant="h5" component="h3" className="plan-name">
+                        {plan.planname}
+                      </Typography>
+                      <Box className="plan-price-block">
+                        <Typography variant="h4" component="p" className="plan-price">
+                          {formatCurrency(plan.price, currency)}
+                        </Typography>
+                        <Typography variant="body2" component="p" className="plan-duration">
+                          {formatDuration(plan)}
                         </Typography>
                       </Box>
                     </Box>
-                  )}
 
-                  <Box className="plan-header">
-                    <Typography variant="h5" component="h3" className="plan-name">
-                      {plan.planname}
-                    </Typography>
-                    <Box className="plan-price-section">
-                      <Typography variant="h4" className="plan-price">
-                        {formatCurrency(plan.price, currency)}
+                    <Box className="plan-features">
+                      <Typography variant="overline" className="plan-limits-title">
+                        What&apos;s included
                       </Typography>
-                      <Typography variant="body2" className="plan-duration">
-                        {formatDuration(plan)}
-                      </Typography>
+                      <Box className="plan-limits-list">
+                        {limits.map((limit, limitIndex) => {
+                          const unavailable =
+                            limit.limit === '0' || limit.limit === 'Not included';
+
+                          return (
+                            <Box
+                              key={limitIndex}
+                              className={`plan-limit-item${unavailable ? ' limit-unavailable' : ' limit-available'}`}
+                            >
+                              <span className="plan-limit-icon" aria-hidden>
+                                {unavailable ? (
+                                  <CloseIcon fontSize="inherit" />
+                                ) : (
+                                  <CheckIcon fontSize="inherit" />
+                                )}
+                              </span>
+                              <span className="plan-limit-text">
+                                {limit.limit} {limit.page}
+                              </span>
+                            </Box>
+                          );
+                        })}
+                      </Box>
+                    </Box>
+
+                    <Box className="plan-action">
+                      <Button
+                        type="button"
+                        variant="contained"
+                        className="plan-button"
+                        fullWidth
+                        onClick={handlePlanButtonClick}
+                      >
+                        {plan.plantype === 'free' ? 'Get Started Free' : 'Choose Plan'}
+                      </Button>
                     </Box>
                   </Box>
-
-                  <Box className="plan-features">
-                    <Box className="plan-limits">
-                      <Typography variant="body2" className="plan-limits-title">
-                        Access Limits
-                      </Typography>
-                      {getPlanLimits(plan).map((limit, limitIndex) => (
-                        <Typography
-                          key={limitIndex}
-                          variant="body2"
-                          className={`plan-limit-item ${limit.limit === '0' || limit.limit === 'Not included' ? 'limit-unavailable' : 'limit-available'}`}
-                        >
-                          {limit.limit === '0' || limit.limit === 'Not included' ? (
-                            <CloseIcon fontSize="small" />
-                          ) : (
-                            <CheckIcon fontSize="small" />
-                          )}{' '}
-                          {limit.limit} {limit.page}
-                        </Typography>
-                      ))}
-                    </Box>
-                  </Box>
-
-                  <Box className="plan-action" sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-                    <Typography
-                      variant="button"
-                      className="plan-button"
-                      onClick={handlePlanButtonClick}
-                      style={{ cursor: 'pointer' }}
-                    >
-                      {plan.plantype === 'free' ? 'Get Started Free' : 'Choose Plan'}
-                    </Typography>
-                  </Box>
-                </Box>
-              ))
+                );
+              })
             ) : (
               <Box className="no-plans-message">
                 <Typography variant="h6" className="no-plans-title">
