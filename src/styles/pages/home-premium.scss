@@ -11,16 +11,14 @@
   .languages-section,
   .app-downloads-section,
   .contact-us-section,
-  .testimonials-section,
-  .cta-section {
+  .home-cta {
     padding-block: clamp(56px, 8vw, 96px);
   }
 
   .features-section,
   .reports-section,
   .languages-section,
-  .contact-us-section,
-  .testimonials-section {
+  .contact-us-section {
     background:
       linear-gradient(180deg, rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0.88)),
       radial-gradient(circle at top right, rgba(16, 185, 129, 0.05), transparent 38%);
@@ -52,8 +50,7 @@
   .benefits-section .MuiBox-root:first-child,
   .languages-section .MuiBox-root:first-child,
   .app-downloads-section .app-downloads-header,
-  .contact-us-section .MuiBox-root:first-child,
-  .testimonials-section .section-header {
+  .contact-us-section .MuiBox-root:first-child {
     max-width: 980px;
     margin-inline: auto;
   }
@@ -62,8 +59,7 @@
   .benefits-section h2,
   .languages-section h2,
   .app-downloads-section .app-downloads-title,
-  .contact-us-section h2,
-  .testimonials-section .section-title {
+  .contact-us-section h2 {
     letter-spacing: -0.02em;
     line-height: 1.12;
   }

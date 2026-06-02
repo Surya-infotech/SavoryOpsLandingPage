@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import Benefits from './Benefits';
-import CTA from './CTA';
+import CTA from '../components/CTA';
 import ContactUs from './ContactUs';
 import Features from './Features';
 import Hero from './Hero';
@@ -10,7 +11,10 @@ import EmployeeRoles from './EmployeeRoles';
 import AppDownloads from './AppDownloads';
 import Languages from './Languages';
 import FreeSoftware from './FreeSoftware';
+
 const Home = () => {
+  const { softwareName } = useAppSettings();
+
   return (
     <Box className="home-page">
       <Hero />
@@ -22,7 +26,12 @@ const Home = () => {
       <FreeSoftware />
       <Languages />
       <AppDownloads />
-      <CTA />
+      <Box id="cta" className="home-cta">
+        <CTA
+          title="Ready to Transform Your Restaurant?"
+          description={`Join thousands of restaurants already using ${softwareName} to streamline their operations`}
+        />
+      </Box>
       <ContactUs />
     </Box>
   );
