@@ -4,6 +4,7 @@ import Flag from 'react-world-flags';
 import { useLanguage } from '../../context/LanguageContext';
 import { getLanguageOptions } from '../../constants/languages';
 import { useAppSettings } from '../../context/AppSettingsContext.jsx';
+import { getBrowserAndDeviceDetails, getIpAndLocation } from '../../utils/deviceDetails';
 import '../../styles/General/signin.scss';
 import AlertMessage from '../Custom/AlertMessage';
 import WarningModal from '../Custom/WarningModal';
@@ -53,10 +54,20 @@ const OwnerLogin = () => {
         setIsLoading(true);
         setFormError('');
         try {
+            const { browserdetails, device } = getBrowserAndDeviceDetails();
+            const { ipaddress, location } = await getIpAndLocation();
+
             const response = await fetch(`${BackendPath}/General/owner/Signin`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', "x-user": "admin" },
-                body: JSON.stringify({ email, password }),
+                body: JSON.stringify({
+                    email,
+                    password,
+                    browserdetails,
+                    ipaddress,
+                    device,
+                    location
+                }),
             });
 
             const data = await response.json();

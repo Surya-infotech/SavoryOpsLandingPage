@@ -6,6 +6,7 @@ import Flag from 'react-world-flags';
 import { useLanguage } from '../../context/LanguageContext';
 import { getLanguageOptions } from '../../constants/languages';
 import { useAppSettings } from '../../context/AppSettingsContext.jsx';
+import { getBrowserAndDeviceDetails, getIpAndLocation } from '../../utils/deviceDetails';
 import '../../styles/General/signin.scss';
 import '../../styles/General/signup.scss';
 import WarningModal from '../Custom/WarningModal';
@@ -196,13 +197,20 @@ const OwnerSignUp = () => {
         setFormError('');
 
         try {
+            const { browserdetails, device } = getBrowserAndDeviceDetails();
+            const { ipaddress, location } = await getIpAndLocation();
+
             const signupBody = {
                 ownerfirstname: firstName,
                 ownerlastname: lastName,
                 email,
                 password,
                 phone,
-                gender
+                gender,
+                browserdetails,
+                ipaddress,
+                device,
+                location
             };
 
             if (usedReferralCode) {
