@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import BuyNowFloatingButton from './components/BuyNowFloatingButton';
 import ScrollToTopButton from './components/ScrollToTop';
 import { LanguageProvider } from './context/LanguageContext.jsx';
+import { useAppSettings } from './context/AppSettingsContext.jsx';
 import ContactUs from './pages/ContactUs';
 import DataDeletionPolicy from './pages/DataDeletionPolicy';
 import FeaturesPage from './pages/FeaturesPage';
@@ -52,6 +53,7 @@ const ScrollToTop = () => {
 const AppContent = () => {
   const [scrollTop, setScrollTop] = useState(0);
   const location = useLocation();
+  const { softwareName } = useAppSettings();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -65,6 +67,47 @@ const AppContent = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const baseTitle = softwareName || 'SavoryOps';
+    let pageTitle = '';
+
+    const path = location.pathname.toLowerCase();
+    switch (path) {
+      case '/':
+        pageTitle = 'Home';
+        break;
+      case '/features':
+        pageTitle = 'Features';
+        break;
+      case '/pricing':
+        pageTitle = 'Pricing';
+        break;
+      case '/upcoming-features':
+        pageTitle = 'Upcoming Features';
+        break;
+      case '/contact-us':
+        pageTitle = 'Contact Us';
+        break;
+      case '/privacy-policy':
+        pageTitle = 'Privacy Policy';
+        break;
+      case '/data-deletion-policy':
+        pageTitle = 'Data Deletion Policy';
+        break;
+      case '/signin':
+        pageTitle = 'Sign In';
+        break;
+      case '/signup':
+        pageTitle = 'Sign Up';
+        break;
+      default:
+        pageTitle = 'Page Not Found';
+        break;
+    }
+
+    document.title = `${pageTitle} | ${baseTitle}`;
+  }, [location.pathname, softwareName]);
 
   const isAuthPage = location.pathname === '/Signin' || location.pathname === '/Signup' || location.pathname === '/signin' || location.pathname === '/signup';
 
