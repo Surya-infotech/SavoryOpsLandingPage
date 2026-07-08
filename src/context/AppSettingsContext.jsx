@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { applyBrandingFromThemeSetting, getCachedThemeColors } from '../utils/themeBranding.js';
+import { applyBrandingFromThemeSetting } from '../utils/themeBranding.js';
 
 const AppSettingsContext = createContext(null);
 
@@ -15,12 +15,11 @@ const emptyGeneralSetting = {
   statename: '',
   countryname: '',
   postalcode: '',
-  softwarename: '',
+  softwarename: 'SavoryOps',
 };
 
 export const AppSettingsProvider = ({ children }) => {
   const backendPath = import.meta.env.VITE_BACKEND_URL;
-  const cachedTheme = getCachedThemeColors();
   const [softwareName, setSoftwareName] = useState('SavoryOps');
   const [logoUrl, setLogoUrl] = useState('/logo.png');
   const [generalSetting, setGeneralSetting] = useState(emptyGeneralSetting);
@@ -40,7 +39,8 @@ export const AppSettingsProvider = ({ children }) => {
         if (!response.ok || !data) return;
 
         const gs = data?.generalSetting || {};
-        setGeneralSetting({ ...emptyGeneralSetting, ...gs });
+        const cleanGs = { ...gs, softwarename: 'SavoryOps' };
+        setGeneralSetting({ ...emptyGeneralSetting, ...cleanGs });
         setSocialMedia(Array.isArray(data?.socialMedia) ? data.socialMedia : []);
 
         const ts = data?.themeSetting || {};

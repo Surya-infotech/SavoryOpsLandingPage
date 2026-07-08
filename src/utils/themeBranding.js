@@ -1,6 +1,3 @@
-/** Same localStorage key and API fields as SavoryOpsAdminPanel (`applyThemeColors.js` / `applyThemeFavicon.js`). */
-export const THEME_COLORS_STORAGE_KEY = 'themeColors';
-
 function removeFaviconLinks() {
   document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"]').forEach((el) => el.remove());
 }
@@ -40,28 +37,6 @@ function setMetaThemeColor(hex) {
   };
   ensure('theme-color');
   ensure('msapplication-TileColor');
-}
-
-function persistThemeColors(primary, secondary) {
-  try {
-    localStorage.setItem(THEME_COLORS_STORAGE_KEY, JSON.stringify({ primary, secondary }));
-  } catch {
-    /* ignore */
-  }
-}
-
-export function getCachedThemeColors() {
-  try {
-    const raw = localStorage.getItem(THEME_COLORS_STORAGE_KEY);
-    if (!raw) return { primary: '', secondary: '' };
-    const parsed = JSON.parse(raw);
-    return {
-      primary: parsed?.primary || '',
-      secondary: parsed?.secondary || '',
-    };
-  } catch {
-    return { primary: '', secondary: '' };
-  }
 }
 
 /**
