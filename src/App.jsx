@@ -106,7 +106,7 @@ const AppContent = () => {
         break;
     }
 
-    document.title = `${pageTitle} | ${baseTitle}`;
+    document.title = `${pageTitle} - SavoryOps`;
   }, [location.pathname, softwareName]);
 
   const isAuthPage = location.pathname === '/Signin' || location.pathname === '/Signup' || location.pathname === '/signin' || location.pathname === '/signup';

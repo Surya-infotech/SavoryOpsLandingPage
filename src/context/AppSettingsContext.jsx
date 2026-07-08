@@ -21,13 +21,13 @@ const emptyGeneralSetting = {
 export const AppSettingsProvider = ({ children }) => {
   const backendPath = import.meta.env.VITE_BACKEND_URL;
   const cachedTheme = getCachedThemeColors();
-  const [softwareName, setSoftwareName] = useState('');
-  const [logoUrl, setLogoUrl] = useState('');
+  const [softwareName, setSoftwareName] = useState('SavoryOps');
+  const [logoUrl, setLogoUrl] = useState('/logo.png');
   const [generalSetting, setGeneralSetting] = useState(emptyGeneralSetting);
   const [socialMedia, setSocialMedia] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [primaryColor, setPrimaryColor] = useState(cachedTheme.primary);
-  const [secondaryColor, setSecondaryColor] = useState(cachedTheme.secondary);
+  const [primaryColor, setPrimaryColor] = useState('#028802');
+  const [secondaryColor, setSecondaryColor] = useState('#69e869');
 
   useEffect(() => {
     const fetchLandingPageSettings = async () => {
@@ -48,11 +48,14 @@ export const AppSettingsProvider = ({ children }) => {
         const nextName = gs?.softwarename;
 
         const { primary, secondary } = applyBrandingFromThemeSetting(ts);
-        setPrimaryColor(primary);
-        setSecondaryColor(secondary);
+        // Explicitly keep colors static instead of using fetched theme colors
+        // setPrimaryColor(primary);
+        // setSecondaryColor(secondary);
 
-        if (nextLogo) setLogoUrl(nextLogo);
-        if (nextName) setSoftwareName(nextName);
+        // Explicitly use the default logo instead of the logo URL fetched from backend
+        // if (nextLogo) setLogoUrl(nextLogo);
+        // Explicitly use the default software name/base title instead of fetching from backend
+        // if (nextName) setSoftwareName(nextName);
       } catch {
         /* keep defaults when API fails */
       }

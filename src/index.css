@@ -9,7 +9,8 @@
 }
 
 :root {
-  /* Theme values are applied only from backend API response. */
+  --primary-color: #028802;
+  --secondary-color: #69e869;
 }
 
 html {
