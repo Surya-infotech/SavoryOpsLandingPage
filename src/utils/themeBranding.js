@@ -59,15 +59,10 @@ export function pickThemeColors(themeSetting) {
 
 /** Same behavior as admin `applyThemeFavicon`: icon only when `faviconurl` is set. */
 export function applyThemeFaviconFromUrl(faviconUrl) {
-  if (!faviconUrl) {
-    removeFaviconLinks();
-    return;
-  }
-  setFaviconLink(faviconUrl);
+  // Dynamic favicon disabled; using static assets
 }
 
 export function applyBrandingFromThemeSetting(themeSetting) {
-  // Always apply favicon from backend theme settings, but keep colors static
-  applyThemeFaviconFromUrl(themeSetting?.faviconurl);
+  // Dynamic favicon disabled; using static assets
   return { primary: '#028802', secondary: '#69e869' };
 }
