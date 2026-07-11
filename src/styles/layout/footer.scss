@@ -12,14 +12,14 @@ $breakpoint-sm: 600px;
   // Cohesive dark slate background tinted with the dynamic primary color
   background: linear-gradient(180deg, color-mix(in srgb, var(--primary-color) 4%, #0b0f19) 0%, color-mix(in srgb, var(--primary-color) 2%, #05070c) 100%);
   color: rgba(255, 255, 255, 0.6);
-  padding: 60px 0 0;
+  padding: 40px 0 0;
   margin-top: auto;
   position: relative;
   border-top: 1px solid rgba(255, 255, 255, 0.04);
   font-family: 'Poppins', 'Inter', sans-serif;
 
   .footer-brand {
-    margin-bottom: $spacing-md;
+    margin-bottom: $spacing-sm;
 
     .brand-link {
       text-decoration: none;
@@ -45,8 +45,8 @@ $breakpoint-sm: 600px;
     }
 
     .brand-logo {
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       margin-right: $spacing-md;
       object-fit: contain;
       flex-shrink: 0;
@@ -56,35 +56,35 @@ $breakpoint-sm: 600px;
 
     .brand-name {
       font-weight: 700;
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       color: #ffffff;
       letter-spacing: -0.2px;
     }
   }
 
   .footer-description {
-    font-size: 0.92rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.5;
     color: rgba(255, 255, 255, 0.55);
-    margin-top: 15px;
-    margin-bottom: 20px;
+    margin-top: 12px;
+    margin-bottom: 16px;
     max-width: 360px;
   }
 
   .social-links {
     display: flex;
     gap: 12px;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 
     .social-link {
       color: rgba(255, 255, 255, 0.5);
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 50%;
-      padding: 10px;
-      width: 40px;
-      height: 40px;
+      padding: 8px;
+      width: 36px;
+      height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -99,27 +99,27 @@ $breakpoint-sm: 600px;
       }
 
       .MuiSvgIcon-root {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
     }
   }
 
   .footer-section-title {
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #ffffff;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     position: relative;
-    padding-bottom: 8px;
+    padding-bottom: 6px;
 
     &::after {
       content: '';
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 24px;
+      width: 20px;
       height: 2px;
       background: var(--primary-color);
       border-radius: 2px;
@@ -129,12 +129,12 @@ $breakpoint-sm: 600px;
   .footer-links {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 
     .footer-link {
       color: rgba(255, 255, 255, 0.6);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 500;
       transition: all 0.25s ease;
       display: flex;
@@ -143,7 +143,7 @@ $breakpoint-sm: 600px;
       gap: 8px;
 
       .MuiSvgIcon-root {
-        font-size: 1.05rem;
+        font-size: 0.95rem;
         color: var(--primary-color);
         opacity: 0.8;
         transition: transform 0.25s ease;
@@ -154,7 +154,7 @@ $breakpoint-sm: 600px;
         transform: translateX(4px);
 
         .MuiSvgIcon-root {
-          transform: scale(1.2);
+          transform: scale(1.15);
           opacity: 1;
         }
       }
@@ -164,7 +164,7 @@ $breakpoint-sm: 600px;
   .footer-contact {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
 
     .contact-item-wrapper {
       width: 100%;
@@ -173,7 +173,7 @@ $breakpoint-sm: 600px;
     .contact-item {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
+      gap: 10px;
       color: rgba(255, 255, 255, 0.6);
       text-decoration: none;
       transition: all 0.25s ease;
@@ -193,33 +193,33 @@ $breakpoint-sm: 600px;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 32px;
-        height: 32px;
-        border-radius: 8px;
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
         background: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.06);
         color: var(--primary-color);
-        font-size: 1rem;
+        font-size: 0.9rem;
         flex-shrink: 0;
         transition: all 0.25s ease;
 
         .MuiSvgIcon-root {
-          font-size: 1.1rem;
+          font-size: 0.95rem;
         }
       }
 
       p {
         margin: 0;
-        font-size: 0.9rem;
-        line-height: 1.5;
+        font-size: 0.85rem;
+        line-height: 1.4;
       }
     }
   }
 
   .footer-divider {
     border-color: rgba(255, 255, 255, 0.08);
-    margin-top: 50px;
-    margin-bottom: 24px;
+    margin-top: 30px;
+    margin-bottom: 20px;
   }
 
   .footer-bottom {
