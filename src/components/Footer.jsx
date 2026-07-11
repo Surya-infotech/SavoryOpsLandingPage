@@ -26,24 +26,26 @@ const Footer = () => {
   );
 
   const productFeatures = [
-    { name: 'KOT Tracking System', icon: <RestaurantIcon />, href: '/features' },
-    { name: 'Multiple Business', icon: <BusinessIcon />, href: '/features' },
-    { name: 'Multiple Branches', icon: <BranchIcon />, href: '/features' },
-    { name: 'Multiple Languages', icon: <LanguageIcon />, href: '/features' },
-    { name: 'Multiple Currency', icon: <CurrencyIcon />, href: '/features' },
-    { name: 'Menu Management', icon: <MenuBookIcon />, href: '/features' },
-    { name: 'Item Management', icon: <InventoryIcon />, href: '/features' },
-    { name: 'Staff Management', icon: <PeopleIcon />, href: '/features' }
+    { name: 'Menu & Category Management', icon: <MenuBookIcon />, href: '/features' },
+    { name: 'Item & Add-ons Management', icon: <InventoryIcon />, href: '/features' },
+    { name: 'Table & QR Area Management', icon: <BranchIcon />, href: '/features' },
+    { name: 'Deals & Bundles', icon: <RestaurantIcon />, href: '/features' },
+    { name: 'Multiple Business & Branches', icon: <BusinessIcon />, href: '/features' },
+    { name: 'Staff & Role Management', icon: <PeopleIcon />, href: '/features' },
+    { name: 'Customer Management', icon: <PeopleIcon />, href: '/features' },
+    { name: 'Subdomain & Multi-tenant', icon: <LanguageIcon />, href: '/features' }
   ];
 
   const reportList = [
-    { name: 'Daily Wise Report', icon: <AssessmentIcon />, href: '/features' },
+    { name: 'Date Wise Report', icon: <AssessmentIcon />, href: '/features' },
     { name: 'Branch Wise Report', icon: <BarChartIcon />, href: '/features' },
-    { name: 'Order Summary', icon: <ReceiptIcon />, href: '/features' }
+    { name: 'Item Wise Report', icon: <ReceiptIcon />, href: '/features' },
+    { name: 'Revenue & Tax Report', icon: <AttachMoneyIcon />, href: '/features' },
+    { name: 'Reviews & Feedback', icon: <AssessmentIcon />, href: '/features' }
   ];
 
   const companyLinks = [
-    { name: 'Pricing', icon: <AttachMoneyIcon />, href: '/pricing' },
+    { name: 'Subscription Plans', icon: <AttachMoneyIcon />, href: '/pricing' },
     { name: 'Upcoming Features', icon: <RocketIcon />, href: '/upcoming-features' },
     { name: 'Contact Us', icon: <ContactMailIcon />, href: '/contact-us' }
   ];
