@@ -103,15 +103,10 @@ const Footer = () => {
         {/* Main Footer Content */}
         <Grid container spacing={4}>
           {/* Logo and Description */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={4}>
             <Box className="footer-brand">
-              <Link
-                href="/"
-                className="brand-link"
-              >
-                <Box
-                  className="brand-content"
-                >
+              <Link href="/" className="brand-link">
+                <Box className="brand-content">
                   <img
                     src={logoUrl || undefined}
                     alt={`${softwareName} Logo`}
@@ -129,10 +124,6 @@ const Footer = () => {
                 {footerData.description}
               </Typography>
             )}
-          </Grid>
-
-          {/* Social Links and Contact Info */}
-          <Grid item xs={12} md={6}>
             {/* Social Links */}
             <Box className="social-links">
               {socialLinks.map((social, index) => (
@@ -148,92 +139,103 @@ const Footer = () => {
                 </IconButton>
               ))}
             </Box>
-
-            {/* Contact Details */}
-            <Box className="footer-contact">
-              {contactInfo.map((contact, index) => (
-                <Box
-                  key={index}
-                  className="contact-item"
-                >
-                  <Box className="contact-icon">
-                    {contact.icon}
-                  </Box>
-                  <Typography variant="body2">
-                    {contact.text}
-                  </Typography>
-                </Box>
-              ))}
-            </Box>
           </Grid>
 
-          {/* Features and Reports Section */}
-          <Grid item xs={12}>
-            <Grid container spacing={6}>
-              {/* Features */}
-              <Grid item xs={12} sm={6}>
-                <Typography variant="h6" className="footer-section-title">
-                  Features
-                </Typography>
-                <Box className="footer-links">
-                  {productFeatures.map((feature, index) => (
-                    <Link
-                      key={index}
-                      href={feature.href}
-                      className="footer-link"
-                      display="flex"
-                      alignItems="center"
-                      gap={1}
-                    >
-                      {feature.icon}
-                      {feature.name}
-                    </Link>
-                  ))}
-                </Box>
-              </Grid>
-
-              {/* Reports */}
-              <Grid item xs={12} sm={6}>
-                <Typography variant="h6" className="footer-section-title">
-                  Reports
-                </Typography>
-                <Box className="footer-links">
-                  {reportList.map((report, index) => (
-                    <Link
-                      key={index}
-                      href={report.href}
-                      className="footer-link"
-                      display="flex"
-                      alignItems="center"
-                      gap={1}
-                    >
-                      {report.icon}
-                      {report.name}
-                    </Link>
-                  ))}
-                </Box>
-              </Grid>
-            </Grid>
-          </Grid>
-
-          {/* Company Links - Full Width */}
-          <Grid item xs={12}>
+          {/* Features Column */}
+          <Grid item xs={6} sm={4} md={2.5}>
             <Typography variant="h6" className="footer-section-title">
-              Company
+              Features
             </Typography>
             <Box className="footer-links">
-              {companyLinks.map((link, index) => (
+              {productFeatures.map((feature, index) => (
                 <Link
                   key={index}
-                  href={link.href}
+                  href={feature.href}
                   className="footer-link"
                   display="flex"
                   alignItems="center"
                   gap={1}
                 >
-                  {link.icon}
-                  {link.name}
+                  {feature.icon}
+                  {feature.name}
                 </Link>
+              ))}
+            </Box>
+          </Grid>
+
+          {/* Reports and Company Column */}
+          <Grid item xs={6} sm={4} md={2.5}>
+            <Box sx={{ mb: 4 }}>
+              <Typography variant="h6" className="footer-section-title">
+                Reports
+              </Typography>
+              <Box className="footer-links">
+                {reportList.map((report, index) => (
+                  <Link
+                    key={index}
+                    href={report.href}
+                    className="footer-link"
+                    display="flex"
+                    alignItems="center"
+                    gap={1}
+                  >
+                    {report.icon}
+                    {report.name}
+                  </Link>
+                ))}
+              </Box>
+            </Box>
+
+            <Box>
+              <Typography variant="h6" className="footer-section-title">
+                Company
+              </Typography>
+              <Box className="footer-links">
+                {companyLinks.map((link, index) => (
+                  <Link
+                    key={index}
+                    href={link.href}
+                    className="footer-link"
+                    display="flex"
+                    alignItems="center"
+                    gap={1}
+                  >
+                    {link.icon}
+                    {link.name}
+                  </Link>
+                ))}
+              </Box>
+            </Box>
+          </Grid>
+
+          {/* Contact Details Column */}
+          <Grid item xs={12} sm={4} md={3}>
+            <Typography variant="h6" className="footer-section-title">
+              Get in Touch
+            </Typography>
+            <Box className="footer-contact">
+              {contactInfo.map((contact, index) => (
+                <Box key={index} className="contact-item-wrapper">
+                  {contact.href && contact.href !== '#' ? (
+                    <Link href={contact.href} className="contact-item contact-link">
+                      <Box className="contact-icon">
+                        {contact.icon}
+                      </Box>
+                      <Typography variant="body2">
+                        {contact.text}
+                      </Typography>
+                    </Link>
+                  ) : (
+                    <Box className="contact-item">
+                      <Box className="contact-icon">
+                        {contact.icon}
+                      </Box>
+                      <Typography variant="body2">
+                        {contact.text}
+                      </Typography>
+                    </Box>
+                  )}
+                </Box>
               ))}
             </Box>
           </Grid>
