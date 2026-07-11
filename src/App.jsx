@@ -75,7 +75,7 @@ const AppContent = () => {
     const path = location.pathname.toLowerCase();
     switch (path) {
       case '/':
-        pageTitle = 'Home';
+        pageTitle = '';
         break;
       case '/features':
         pageTitle = 'Features';
@@ -106,7 +106,11 @@ const AppContent = () => {
         break;
     }
 
-    document.title = `${pageTitle} - SavoryOps`;
+    if (pageTitle) {
+      document.title = `${pageTitle} - ${baseTitle}`;
+    } else {
+      document.title = `${baseTitle} - Complete Restaurant Management System | Streamline Your Operations`;
+    }
   }, [location.pathname, softwareName]);
 
   const isAuthPage = location.pathname === '/Signin' || location.pathname === '/Signup' || location.pathname === '/signin' || location.pathname === '/signup';
