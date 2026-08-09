@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/generate_sitemap.js && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "fetch-keywords": "node scripts/fetch_keywords.js",
+    "generate-sitemap": "node scripts/generate_sitemap.js",
+    "seo-audit": "node scripts/audit_seo.js"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

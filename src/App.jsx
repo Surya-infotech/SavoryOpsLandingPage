@@ -15,6 +15,7 @@ import Home from './pages/Home';
 import Pricing from './pages/Pricing';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import UpcomingFeatures from './pages/UpcomingFeatures';
+import SEOLandingPage from './pages/seo/SEOLandingPage';
 import './styles/main.scss';
 
 /** Short ease-out scroll on route change so the new page starts near the top without a long animation. */
@@ -129,6 +130,15 @@ const AppContent = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
+        
+        {/* Programmatic SEO Routes */}
+        <Route path="/solutions/restaurant-pos-system" element={<SEOLandingPage clusterId="restaurant-pos-system" />} />
+        <Route path="/solutions/kitchen-display-system" element={<SEOLandingPage clusterId="kitchen-display-system" />} />
+        <Route path="/solutions/restaurant-inventory-management" element={<SEOLandingPage clusterId="restaurant-inventory-management" />} />
+        <Route path="/alternatives/toast-pos-alternative" element={<SEOLandingPage clusterId="toast-pos-alternative" />} />
+        <Route path="/alternatives/square-pos-alternative" element={<SEOLandingPage clusterId="square-pos-alternative" />} />
+        <Route path="/resources/food-cost-percentage-guide" element={<SEOLandingPage clusterId="food-cost-percentage-guide" />} />
+
         <Route path="/Signin" element={<OwnerLogin />} />
         <Route path="/signin" element={<OwnerLogin />} />
         <Route path="/Signup" element={<OwnerSignUp />} />

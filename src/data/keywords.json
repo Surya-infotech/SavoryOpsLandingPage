@@ -1,0 +1,240 @@
+{
+  "clusters": [
+    {
+      "id": "restaurant-pos-system",
+      "slug": "solutions/restaurant-pos-system",
+      "bucket": "Transactional",
+      "primaryKeyword": "Best Restaurant POS System",
+      "secondaryKeywords": [
+        "Cloud-based restaurant management system",
+        "Multi-location restaurant POS software",
+        "Modern all-in-one restaurant POS"
+      ],
+      "searchIntent": "Transactional",
+      "metaTitle": "Best Restaurant POS System & Management Software | SavoryOps",
+      "metaDescription": "SavoryOps is the all-in-one restaurant POS system built for speed, offline reliability, multi-location analytics, and seamless kitchen operations. Start your free trial today!",
+      "h1": "The All-in-One Restaurant POS System Built for Modern Growth",
+      "subheading": "Streamline dining room orders, kitchen displays, inventory control, and staff scheduling with zero hidden processing markups.",
+      "valueProps": [
+        "Lightning-fast touchscreen ordering for dine-in, takeaway, and QR ordering",
+        "Full offline mode ensures uninterrupted sales during internet outages",
+        "Transparent payment processing integrations without locked-in contracts",
+        "Real-time multi-outlet sales dashboard & operational analytics"
+      ],
+      "heroBadge": "Rated #1 Modern Restaurant Management SaaS",
+      "comparisonTitle": "Why Restaurants Switch to SavoryOps POS",
+      "comparisonItems": [
+        {"feature": "Software Monthly Cost", "savoryOps": "Fixed Predictable Pricing", "legacy": "Surge pricing & expensive add-on modules"},
+        {"feature": "Payment Gateway Lock-in", "savoryOps": "Freedom of Choice", "legacy": "Mandatory high-fee processing"},
+        {"feature": "Offline Reliability", "savoryOps": "Full Local Cache & Auto-Sync", "legacy": "Limited or no offline order taking"},
+        {"feature": "Kitchen Display System (KDS)", "savoryOps": "Included Natively", "legacy": "Extra per-screen monthly fee"}
+      ],
+      "faqs": [
+        {
+          "question": "What is SavoryOps Restaurant POS System?",
+          "answer": "SavoryOps is a cloud-based restaurant POS and management platform designed to unify table service, kitchen displays, inventory tracking, and employee management in one real-time software suite."
+        },
+        {
+          "question": "Can I use SavoryOps offline if the internet drops?",
+          "answer": "Yes! SavoryOps features an offline-first architecture. Your staff can continue taking orders and sending tickets to the kitchen display even during network disruptions."
+        },
+        {
+          "question": "Does SavoryOps lock me into a specific payment gateway?",
+          "answer": "No. Unlike legacy vendors, SavoryOps allows you to integrate with competitive payment processors so you keep more of your hard-earned revenue."
+        }
+      ]
+    },
+    {
+      "id": "toast-pos-alternative",
+      "slug": "alternatives/toast-pos-alternative",
+      "bucket": "Comparative",
+      "primaryKeyword": "Best Toast POS Alternative",
+      "secondaryKeywords": [
+        "Toast POS competitor",
+        "Toast alternative without processing fees",
+        "Lower fee restaurant software than Toast"
+      ],
+      "searchIntent": "Comparative",
+      "metaTitle": "Top Toast POS Alternative with No Processor Lock-In | SavoryOps",
+      "metaDescription": "Looking for a Toast POS alternative? Switch to SavoryOps for flexible payment processing, lower total cost of ownership, native KDS, and 24/7 dedicated support.",
+      "h1": "The Top-Rated Toast POS Alternative Without Mandatory Fees",
+      "subheading": "Tired of rising payment processing rates and expensive hardware lock-ins? Discover how SavoryOps gives independent restaurants their freedom back.",
+      "valueProps": [
+        "No forced payment processing markups or hidden monthly add-on fees",
+        "Run on standard hardware (iPads, Android tablets, or touch terminals)",
+        "Included Kitchen Display System & ingredient-level inventory tracking",
+        "Instant live migration assistant to import your existing menu & database"
+      ],
+      "heroBadge": "The #1 Independent Choice vs Toast POS",
+      "comparisonTitle": "SavoryOps vs. Toast POS",
+      "comparisonItems": [
+        {"feature": "Processing Flexibility", "savoryOps": "Freedom of Processor", "legacy": "Mandatory Toast Processing"},
+        {"feature": "Hardware Compatibility", "savoryOps": "iOS, Android & Web", "legacy": "Proprietary Toast Hardware"},
+        {"feature": "Kitchen Display System", "savoryOps": "Included in standard plan", "legacy": "$25-$50 extra per screen/mo"},
+        {"feature": "Contract Commitment", "savoryOps": "Month-to-month flexibility", "legacy": "Multi-year binding contracts"}
+      ],
+      "faqs": [
+        {
+          "question": "Why are restaurants switching from Toast to SavoryOps?",
+          "answer": "Restaurant owners choose SavoryOps to eliminate Toast's mandatory processing markups, proprietary hardware restrictions, and hidden add-on costs while enjoying an intuitive kitchen display system and responsive support."
+        },
+        {
+          "question": "How long does it take to migrate from Toast POS to SavoryOps?",
+          "answer": "Our automated migration tools allow you to export your Toast menu and customer list into SavoryOps in under 24 hours."
+        }
+      ]
+    },
+    {
+      "id": "square-pos-alternative",
+      "slug": "alternatives/square-pos-alternative",
+      "bucket": "Comparative",
+      "primaryKeyword": "Square for Restaurants Alternative",
+      "secondaryKeywords": [
+        "Square POS alternative for food service",
+        "Advanced kitchen management software vs Square",
+        "Multi-location restaurant software"
+      ],
+      "searchIntent": "Comparative",
+      "metaTitle": "Square for Restaurants Alternative for Growing Venues | SavoryOps",
+      "metaDescription": "Outgrown Square for Restaurants? SavoryOps delivers advanced KDS workflows, automated ingredient inventory, and multi-unit restaurant analytics.",
+      "h1": "Outgrown Square? Step Up to SavoryOps Restaurant POS",
+      "subheading": "Built specifically for high-volume cafes, quick-service venues, and full-service dining that need deep operational control.",
+      "valueProps": [
+        "Advanced multi-kitchen routing for line cooks, prep stations, and bar displays",
+        "Automated ingredient-level cost breakdown & real-time recipe tracking",
+        "Complex menu modifier groups and table-side coursing controls",
+        "Integrated staff scheduling with tip pooling and role permissions"
+      ],
+      "heroBadge": "Designed for Growing High-Volume Venues",
+      "comparisonTitle": "SavoryOps vs. Square for Restaurants",
+      "comparisonItems": [
+        {"feature": "Kitchen Display Routing", "savoryOps": "Multi-station prep & line routing", "legacy": "Basic ticket listing"},
+        {"feature": "Inventory Tracking", "savoryOps": "Recipe & ingredient level tracking", "legacy": "Item quantity count only"},
+        {"feature": "Staff Permissions & Roles", "savoryOps": "Granular custom permissions", "legacy": "Basic role presets"},
+        {"feature": "Multi-Location Scaling", "savoryOps": "Centralized catalog & reporting", "legacy": "Requires manual per-store setup"}
+      ],
+      "faqs": [
+        {
+          "question": "Is SavoryOps better than Square for multi-location restaurants?",
+          "answer": "Yes. SavoryOps offers centralized menu management, consolidated cross-location financial reports, and multi-station kitchen display routing optimized for expanding restaurant groups."
+        }
+      ]
+    },
+    {
+      "id": "kitchen-display-system",
+      "slug": "solutions/kitchen-display-system",
+      "bucket": "Problem / Solution",
+      "primaryKeyword": "Kitchen Display System Software",
+      "secondaryKeywords": [
+        "KDS software for small restaurants",
+        "Digital kitchen ticket screen",
+        "Kitchen workflow optimization software"
+      ],
+      "searchIntent": "Transactional",
+      "metaTitle": "Smart Kitchen Display System (KDS) Software | SavoryOps",
+      "metaDescription": "Eliminate paper tickets and speed up prep times with SavoryOps KDS. Real-time order routing, cook timer alerts, and seamless front-of-house synchronization.",
+      "h1": "Smarter Kitchen Display System (KDS) for High-Speed Kitchens",
+      "subheading": "Replace paper chaos with real-time digital kitchen order screens that boost kitchen velocity and eliminate order errors.",
+      "valueProps": [
+        "Color-coded order timers so kitchen staff prioritize urgent tickets instantly",
+        "Station-specific order routing (Grill, Prep, Fryer, Assembly, Bar)",
+        "Instant bump-bar or touchscreen order clearing with front-of-house status sync",
+        "Detailed kitchen performance analytics: average ticket fulfillment time & prep bottlenecks"
+      ],
+      "heroBadge": "Cut Ticket Times by 25%",
+      "comparisonTitle": "Paper Tickets vs. SavoryOps Digital KDS",
+      "comparisonItems": [
+        {"feature": "Order Accuracy", "savoryOps": "100% digital, zero lost tickets", "legacy": "Lost or misread paper tickets"},
+        {"feature": "Preparation Velocity", "savoryOps": "Automated timer alerts & pacing", "legacy": "Manual ticket sequencing"},
+        {"feature": "Kitchen-FOH Sync", "savoryOps": "Real-time order status updates", "legacy": "Shouting across pass-through window"},
+        {"feature": "Operational Data", "savoryOps": "Track exact prep time per dish", "legacy": "No visibility into kitchen speed"}
+      ],
+      "faqs": [
+        {
+          "question": "What hardware do I need for SavoryOps Kitchen Display System?",
+          "answer": "SavoryOps KDS runs on standard Android tablets, iPads, or commercial touch monitors with optional bump bar support."
+        },
+        {
+          "question": "Can SavoryOps KDS separate bar orders from kitchen orders?",
+          "answer": "Yes. SavoryOps automatically routes food items to the kitchen prep screens and drink items directly to the bar display."
+        }
+      ]
+    },
+    {
+      "id": "restaurant-inventory-management",
+      "slug": "solutions/restaurant-inventory-management",
+      "bucket": "Problem / Solution",
+      "primaryKeyword": "Restaurant Inventory Management Software",
+      "secondaryKeywords": [
+        "Automatic food cost tracking software",
+        "Ingredient level inventory software for restaurants",
+        "Prevent restaurant food waste software"
+      ],
+      "searchIntent": "Transactional",
+      "metaTitle": "Automated Restaurant Inventory Management Software | SavoryOps",
+      "metaDescription": "Control food cost and prevent waste with SavoryOps ingredient-level inventory tracking software. Real-time stock alerts and recipe costing.",
+      "h1": "Take Control of Food Cost with Automated Inventory Tracking",
+      "subheading": "Stop losing profits to food waste and portion variance. SavoryOps automatically deducts raw ingredients as orders are sold.",
+      "valueProps": [
+        "Real-time ingredient depletion as POS orders are punched in",
+        "Automated low-stock threshold notifications & purchase order generation",
+        "Recipe costing & variance analysis to catch theft and waste instantly",
+        "Vendor invoice management and historical food price trend reporting"
+      ],
+      "heroBadge": "Reduce Food Waste & Protect Margins",
+      "comparisonTitle": "Manual Spreadsheet Counting vs. SavoryOps Inventory",
+      "comparisonItems": [
+        {"feature": "Real-Time Tracking", "savoryOps": "Live automatic order deduction", "legacy": "End-of-week manual counting"},
+        {"feature": "Recipe Variance", "savoryOps": "Calculates expected vs actual stock", "legacy": "Guesswork on portion control"},
+        {"feature": "Purchase Orders", "savoryOps": "Auto-generates POs based on min stock", "legacy": "Manual vendor text messages"},
+        {"feature": "Profit Insight", "savoryOps": "Per-dish gross profit margin analysis", "legacy": "Overall estimated cost of goods"}
+      ],
+      "faqs": [
+        {
+          "question": "How does ingredient-level inventory tracking work in SavoryOps?",
+          "answer": "You input your recipe ingredients (e.g. 150g beef patty per burger). Every time a burger is sold at the POS, SavoryOps automatically deducts 150g of beef from your real-time inventory count."
+        }
+      ]
+    },
+    {
+      "id": "food-cost-percentage-guide",
+      "slug": "resources/food-cost-percentage-guide",
+      "bucket": "Informational",
+      "primaryKeyword": "How to Calculate Food Cost Percentage",
+      "secondaryKeywords": [
+        "Restaurant food cost formula",
+        "Ideal food cost percentage for restaurants",
+        "How to lower restaurant food costs"
+      ],
+      "searchIntent": "Informational",
+      "metaTitle": "How to Calculate Restaurant Food Cost Percentage (Guide) | SavoryOps",
+      "metaDescription": "Learn how to calculate and optimize your restaurant food cost percentage with our step-by-step formula guide and automated management software.",
+      "h1": "The Ultimate Guide to Calculating & Lowering Restaurant Food Cost Percentage",
+      "subheading": "Food cost is one of the biggest drivers of restaurant profitability. Learn the exact formula top operators use to keep margins healthy.",
+      "valueProps": [
+        "Step-by-step Food Cost Percentage formula with real-world examples",
+        "Benchmark ranges for quick-service, fine dining, and cafes",
+        "5 actionable strategies to lower food cost without sacrificing quality",
+        "How automated POS inventory software handles food costing for you"
+      ],
+      "heroBadge": "Free Educational Resource & Strategy Guide",
+      "comparisonTitle": "Industry Food Cost Benchmarks",
+      "comparisonItems": [
+        {"feature": "Fast Casual / QSR", "savoryOps": "25% - 30% Ideal Range", "legacy": "Above 33% indicates food waste"},
+        {"feature": "Full-Service Dining", "savoryOps": "28% - 34% Ideal Range", "legacy": "Above 36% signals high prep loss"},
+        {"feature": "Steakhouses & Seafood", "savoryOps": "32% - 38% Ideal Range", "legacy": "High prime cost risk"},
+        {"feature": "Pizzerias & Italian", "savoryOps": "20% - 26% Ideal Range", "legacy": "High margin opportunity"}
+      ],
+      "faqs": [
+        {
+          "question": "What is the formula for restaurant food cost percentage?",
+          "answer": "Food Cost Percentage = (Beginning Inventory + Purchases - Ending Inventory) / Total Food Sales x 100."
+        },
+        {
+          "question": "What is a good food cost percentage for a restaurant?",
+          "answer": "Most profitable restaurants target a food cost percentage between 28% and 32%, depending on their service model and menu composition."
+        }
+      ]
+    }
+  ]
+}

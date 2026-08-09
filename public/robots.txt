@@ -1,27 +1,6 @@
-# SavoryOps Robots.txt
-
-# Allow all web crawlers to access the main website
+# Robots.txt for SavoryOps Landing Page
 User-agent: *
 Allow: /
 
-# Disallow access to common admin, private, and sensitive areas
-# These are internal files and should not be in search results
-Disallow: /node_modules/
-Disallow: /src/
-Disallow: /.git/
-Disallow: /.env
-Disallow: /package.json
-Disallow: /package-lock.json
-
-# Disallow access to common sensitive files (e.g., database backups, log files)
-# The `$` at the end ensures it's an exact match for the file type.
-Disallow: /*.log$
-Disallow: /*.sql$
-Disallow: /*.bak$
-Disallow: /*.tmp$
-
-# It is not necessary to block subdomains from the main domain's robots.txt.
-# You should place a separate robots.txt file on each subdomain you want to block.
-
-# Sitemap location for main website
+# Directives
 Sitemap: https://savoryops.com/sitemap.xml

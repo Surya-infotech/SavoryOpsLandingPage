@@ -55,6 +55,18 @@ const Footer = () => {
     { name: 'Data Deletion Policy', href: '/data-deletion-policy' },
   ];
 
+  const seoSolutionsLinks = [
+    { name: 'Restaurant POS System', href: '/solutions/restaurant-pos-system' },
+    { name: 'Kitchen Display System', href: '/solutions/kitchen-display-system' },
+    { name: 'Inventory Management', href: '/solutions/restaurant-inventory-management' }
+  ];
+
+  const seoAlternativesLinks = [
+    { name: 'Toast POS Alternative', href: '/alternatives/toast-pos-alternative' },
+    { name: 'Square POS Alternative', href: '/alternatives/square-pos-alternative' },
+    { name: 'Food Cost Calculator Guide', href: '/resources/food-cost-percentage-guide' }
+  ];
+
   const getSocialIcon = (platform) => {
     const platformLower = platform.toLowerCase();
     switch (platformLower) {
@@ -172,7 +184,7 @@ const Footer = () => {
           </Grid>
 
           {/* Company Column */}
-          <Grid item xs={6} sm={4} md={2.5}>
+          <Grid item xs={6} sm={4} md={2}>
             <Typography variant="h6" className="footer-section-title">
               Company
             </Typography>
@@ -187,6 +199,42 @@ const Footer = () => {
                   gap={1}
                 >
                   {link.icon}
+                  {link.name}
+                </Link>
+              ))}
+            </Box>
+          </Grid>
+
+          {/* Solutions Column */}
+          <Grid item xs={6} sm={4} md={2.5}>
+            <Typography variant="h6" className="footer-section-title">
+              Solutions
+            </Typography>
+            <Box className="footer-links">
+              {seoSolutionsLinks.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.href}
+                  className="footer-link"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </Box>
+          </Grid>
+
+          {/* Alternatives Column */}
+          <Grid item xs={6} sm={4} md={2.5}>
+            <Typography variant="h6" className="footer-section-title">
+              Compare & Learn
+            </Typography>
+            <Box className="footer-links">
+              {seoAlternativesLinks.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.href}
+                  className="footer-link"
+                >
                   {link.name}
                 </Link>
               ))}
