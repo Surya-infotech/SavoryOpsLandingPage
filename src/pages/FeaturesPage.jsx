@@ -2,6 +2,7 @@ import { AccountTree as AccountTreeIcon, Assessment as AssessmentIcon, Bolt as B
 import { Box, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
 import { useEffect, useMemo } from 'react';
 import GetStartedButton from '../components/GetStartedButton';
+import SEOHead from '../components/SEO/SEOHead';
 import '../styles/pages/featurespage.scss';
 
 const ICON_SIZE = { fontSize: 24 };
@@ -252,6 +253,19 @@ const FeaturesPage = () => {
 
   return (
     <Box className="features-page">
+      <SEOHead
+        title="Restaurant Software Features & POS Modules | SavoryOps"
+        description="Explore the complete feature suite of SavoryOps: Point of Sale (POS), Kitchen Order Tickets (KOT), Real-time Inventory, Multi-branch Management, and Analytics."
+        keywords={[
+          "restaurant POS features",
+          "kitchen order ticket software",
+          "QR menu ordering system",
+          "restaurant inventory management software",
+          "multi-branch restaurant POS",
+          "POS billing software"
+        ]}
+        primaryKeyword="Restaurant POS Features"
+      />
       <Container maxWidth="lg">
         <Box className="features-header">
           <Box className="premium-badge">

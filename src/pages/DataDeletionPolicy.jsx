@@ -1,5 +1,6 @@
 import { Box, Container, Divider, Typography } from '@mui/material';
 import { useEffect } from 'react';
+import SEOHead from '../components/SEO/SEOHead';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/privacy-policy.scss';
 
@@ -12,6 +13,12 @@ const DataDeletionPolicy = () => {
 
   return (
     <Box className="privacy-policy-page">
+      <SEOHead
+        title="Data Deletion Policy | SavoryOps SaaS"
+        description="SavoryOps Data Deletion Policy. Learn how to request complete deletion of account records, customer data, and operational logs from our systems."
+        keywords={["SavoryOps data deletion policy", "restaurant SaaS privacy rights"]}
+        primaryKeyword="Data Deletion Policy"
+      />
       <Container maxWidth="lg" className="privacy-policy-container">
         {/* Header */}
         <Box className="privacy-policy-header">

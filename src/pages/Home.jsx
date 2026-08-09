@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
+import SEOHead from '../components/SEO/SEOHead';
 import Benefits from './Benefits';
 import CTA from '../components/CTA';
 import ContactUs from './ContactUs';
@@ -17,6 +18,19 @@ const Home = () => {
 
   return (
     <Box className="home-page">
+      <SEOHead
+        title="SavoryOps — Complete Restaurant Management System & POS SaaS"
+        description="Streamline your restaurant operations with SavoryOps. All-in-one POS, kitchen order tickets (KOT), ingredient inventory, multi-branch reporting, and staff scheduling."
+        keywords={[
+          "restaurant management system",
+          "restaurant POS software",
+          "kitchen display system",
+          "restaurant inventory tracking",
+          "multi-branch restaurant software",
+          "cloud POS SaaS"
+        ]}
+        primaryKeyword="Restaurant Management System"
+      />
       <Hero />
       <Features />
       <OrderTypes />

@@ -9,6 +9,7 @@ import { Box, Button, Chip, Container, Tab, Tabs, Typography } from '@mui/materi
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CTA from '../components/CTA';
+import SEOHead from '../components/SEO/SEOHead';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import { formatCurrency } from '../utils/currency';
 import { formatDuration, getPlanLimits } from '../utils/planUtils';
@@ -98,6 +99,17 @@ const Pricing = () => {
 
   return (
     <Box className="pricing-page">
+      <SEOHead
+        title="SavoryOps Pricing & Subscription Plans | Predictable Restaurant POS Cost"
+        description="Affordable and transparent subscription plans for SavoryOps Restaurant Management System. Zero mandatory processing fees, zero locked-in contracts."
+        keywords={[
+          "restaurant POS pricing",
+          "restaurant software subscription",
+          "affordable restaurant management SaaS",
+          "cloud POS cost"
+        ]}
+        primaryKeyword="Restaurant POS Pricing"
+      />
       <Container maxWidth="lg">
         <Box className="pricing-page-header">
           <Box className="pricing-badge">

@@ -11,6 +11,7 @@ import {
 import { Box, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import CTA from '../components/CTA';
+import SEOHead from '../components/SEO/SEOHead';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/upcoming-features.scss';
 
@@ -68,6 +69,17 @@ const UpcomingFeatures = () => {
 
   return (
     <Box className="upcoming-features-page">
+      <SEOHead
+        title="Upcoming Features & Product Roadmap | SavoryOps SaaS"
+        description="Discover what's next for SavoryOps: HRM systems, membership programs, automated tip distribution, split billing, and catering event management."
+        keywords={[
+          "restaurant software roadmap",
+          "restaurant HRM system",
+          "restaurant membership software",
+          "tip management software"
+        ]}
+        primaryKeyword="Upcoming Features"
+      />
       <Container maxWidth="lg">
         {/* Header Section */}
         <Box className="upcoming-features-header">

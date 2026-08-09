@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Email as EmailIcon, LocationOn as LocationIcon, Phone as PhoneIcon, Send as SendIcon, ContactMail as ContactMailIcon } from '@mui/icons-material';
 import { Box, Button, Chip, Container, TextField, Typography } from '@mui/material';
+import SEOHead from '../components/SEO/SEOHead';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/contact-us.scss';
 
@@ -218,6 +219,19 @@ const ContactUs = () => {
         overflow: 'hidden'
       }}
     >
+      {isStandalonePage && (
+        <SEOHead
+          title="Contact SavoryOps Sales & 24/7 Restaurant Support | SavoryOps"
+          description="Get in touch with the SavoryOps team. Schedule a personalized restaurant management software walkthrough, inquire about enterprise plans, or receive 24/7 technical assistance."
+          keywords={[
+            "contact SavoryOps",
+            "restaurant POS support",
+            "SavoryOps sales",
+            "restaurant software demo"
+          ]}
+          primaryKeyword="Contact SavoryOps"
+        />
+      )}
       <Container maxWidth="lg">
         {/* Header Section - matches Benefits, Languages */}
         <Box sx={{ textAlign: 'center', mb: { xs: 4, md: 6 } }}>

@@ -1,5 +1,6 @@
 import { Box, Container, Divider, Typography } from '@mui/material';
 import { useEffect } from 'react';
+import SEOHead from '../components/SEO/SEOHead';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/privacy-policy.scss';
 
@@ -12,6 +13,12 @@ const PrivacyPolicy = () => {
 
   return (
     <Box className="privacy-policy-page">
+      <SEOHead
+        title="Privacy Policy | SavoryOps SaaS"
+        description="SavoryOps Privacy Policy. Learn how we collect, protect, and handle data across our restaurant management system, customer ordering apps, and employee applications."
+        keywords={["SavoryOps privacy policy", "restaurant SaaS data security"]}
+        primaryKeyword="Privacy Policy"
+      />
       <Container maxWidth="lg" className="privacy-policy-container">
         {/* Header */}
         <Box className="privacy-policy-header">
