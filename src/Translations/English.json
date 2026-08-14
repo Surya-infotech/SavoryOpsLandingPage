@@ -42,7 +42,7 @@
   "sendingotp": "Sending OTP...",
   "verifying": "Verifying OTP...",
   "continue": "Continue",
-  "otpsentmessage": "We have sent a 6-digit OTP to your phone number.",
+  "otpsentmessage": "We have sent an OTP to your phone number.",
   "verify": "Verify",
   "didntreceiveotp": "Didn't receive the OTP?",
   "resendotp": "Resend OTP",

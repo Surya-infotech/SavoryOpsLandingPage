@@ -710,6 +710,25 @@ body {
     .otp-container {
       text-align: center;
 
+      .otp-header {
+        margin-bottom: 10px;
+
+        .otp-description {
+          font-size: 14px;
+          color: #4b5563;
+          margin-bottom: 6px;
+          font-weight: 500;
+          line-height: 1.5;
+        }
+
+        .otp-phone-number {
+          font-size: 17px;
+          font-weight: 700;
+          color: var(--primary-color, #111827);
+          letter-spacing: 1px;
+        }
+      }
+
       .otp-input-group {
         display: flex;
         justify-content: center;

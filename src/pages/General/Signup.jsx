@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import PhoneInput, { isValidPhoneNumber, parsePhoneNumber } from "react-phone-number-input";
 import 'react-phone-number-input/style.css';
 import { NavLink } from 'react-router-dom';
 import Flag from 'react-world-flags';
@@ -92,6 +92,30 @@ const OwnerSignUp = () => {
                 setPhoneError("");
             }
         }
+    };
+
+    const getMaskedPhone = (phoneNum) => {
+        if (!phoneNum) return '';
+        try {
+            const parsed = parsePhoneNumber(phoneNum);
+            if (parsed) {
+                const countryCode = `+${parsed.countryCallingCode}`;
+                const national = parsed.nationalNumber || '';
+                if (national.length > 3) {
+                    const last3 = national.slice(-3);
+                    const mask = '*'.repeat(Math.max(national.length - 3, 4));
+                    return `${countryCode} ${mask}${last3}`;
+                }
+            }
+        } catch {
+            // fallback if parse fails
+        }
+        const str = String(phoneNum).trim();
+        if (str.length <= 4) return str;
+        const last3 = str.slice(-3);
+        const prefix = str.startsWith('+') ? str.slice(0, str.length > 6 ? 3 : 2) : str.slice(0, 2);
+        const mask = '*'.repeat(Math.max(str.length - prefix.length - 3, 4));
+        return `${prefix} ${mask}${last3}`;
     };
 
     const validateReferralCode = async (codeToValidate) => {
@@ -550,6 +574,14 @@ const OwnerSignUp = () => {
                         ) : currentStep === 2 ? (
                             <form onSubmit={handleOtpSubmit} className="signup-form">
                                 <div className="otp-container">
+                                    <div className="otp-header">
+                                        <p className="otp-description">
+                                            {translations.otpsentmessage}
+                                        </p>
+                                        <p className="otp-phone-number">
+                                            {getMaskedPhone(phone)}
+                                        </p>
+                                    </div>
                                     <div className="otp-input-group">
                                         {otp.map((digit, index) => (
                                             <input
