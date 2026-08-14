@@ -30,6 +30,7 @@
   "gender": "Φύλο",
   "invalidotpmessage": "Παρακαλώ εισαγάγετε ένα έγκυρο OTP 6 ψηφίων",
   "invalidotpformatotpmustbe6digits": "Μη έγκυρη μορφή OTP. Το OTP πρέπει να έχει 6 ψηφία.",
+  "invalidotppleaseentercorrectotp": "Μη έγκυρο OTP. Εισαγάγετε το σωστό OTP.",
   "otpnotfoundorexpires": "Το OTP δεν βρέθηκε ή έχει λήξει. Ζητήστε ένα νέο.",
   "otphasexpiresrequestanewotp": "Το OTP έληξε. Ζητήστε ένα νέο.",
   "maximumverificationattemptsexceeded": "Υπερβήκατε το μέγιστο αριθμό προσπαθειών. Ζητήστε ένα νέο OTP.",

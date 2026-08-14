@@ -30,6 +30,7 @@
   "gender": "Gender",
   "invalidotpmessage": "Please enter a valid 6-digit OTP",
   "invalidotpformatotpmustbe6digits": "Invalid OTP format. OTP must be 6 digits.",
+  "invalidotppleaseentercorrectotp": "Invalid OTP. Please enter correct OTP.",
   "otpnotfoundorexpires": "OTP not found or expired. Please request a new OTP.",
   "otphasexpiresrequestanewotp": "OTP has expired. Please request a new OTP.",
   "maximumverificationattemptsexceeded": "Maximum verification attempts exceeded. Please request a new OTP.",

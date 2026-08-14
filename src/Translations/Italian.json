@@ -30,6 +30,7 @@
   "gender": "Genere",
   "invalidotpmessage": "Inserisci un OTP valido di 6 cifre",
   "invalidotpformatotpmustbe6digits": "Formato OTP non valido. L'OTP deve essere di 6 cifre.",
+  "invalidotppleaseentercorrectotp": "OTP non valido. Si prega di inserire l'OTP corretto.",
   "otpnotfoundorexpires": "OTP non trovato o scaduto. Richiedi un nuovo OTP.",
   "otphasexpiresrequestanewotp": "L'OTP è scaduto. Richiedi un nuovo OTP.",
   "maximumverificationattemptsexceeded": "Numero massimo di tentativi superato. Richiedi un nuovo OTP.",

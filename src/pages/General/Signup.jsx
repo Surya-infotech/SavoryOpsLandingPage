@@ -356,6 +356,7 @@ const OwnerSignUp = () => {
             } else {
                 const errorMessages = {
                     "Invalid OTP format. OTP must be 6 digits.": translations.invalidotpformatotpmustbe6digits,
+                    "Invalid OTP. Please Enter Correct OTP.": translations.invalidotppleaseentercorrectotp,
                     "OTP not found or expired. Please request a new OTP.": translations.otpnotfoundorexpires,
                     "OTP has expired. Please request a new OTP.": translations.otphasexpiresrequestanewotp,
                     "Maximum verification attempts exceeded. Please request a new OTP.": translations.maximumverificationattemptsexceeded,
