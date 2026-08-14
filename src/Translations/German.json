@@ -47,6 +47,7 @@
   "verify": "Überprüfen",
   "didntreceiveotp": "OTP nicht erhalten?",
   "resendotp": "OTP erneut senden",
+  "resendotpin": "OTP erneut senden in",
   "back": "Zurück",
   "accountcreatedsuccessfully": "Konto erfolgreich erstellt!",
   "finishup": "Abschließen",

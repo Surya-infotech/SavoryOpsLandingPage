@@ -41,7 +41,26 @@ const OwnerSignUp = () => {
     const [formError, setFormError] = useState('');
     const [warningMessage, setWarningMessage] = useState("");
     const [showWarning, setShowWarning] = useState(false);
+    const [timer, setTimer] = useState(0);
     const { logoUrl, softwareName, setLogoUrl } = useAppSettings();
+
+    useEffect(() => {
+        let interval = null;
+        if (timer > 0) {
+            interval = setInterval(() => {
+                setTimer((prev) => prev - 1);
+            }, 1000);
+        } else {
+            clearInterval(interval);
+        }
+        return () => clearInterval(interval);
+    }, [timer]);
+
+    const formatTimer = (seconds) => {
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    };
 
     const languages = getLanguageOptions();
 
@@ -227,6 +246,7 @@ const OwnerSignUp = () => {
             if (response.ok) {
                 setOtp(['', '', '', '', '', '']);
                 setOtpError('');
+                setTimer(60);
                 setCurrentStep(2);
                 setFormError('');
             } else {
@@ -391,6 +411,8 @@ const OwnerSignUp = () => {
             const data = await response.json();
             if (response.ok) {
                 setOtp(['', '', '', '', '', '']);
+                setOtpError('');
+                setTimer(60);
                 setFormError('');
             } else {
                 setOtpError(data.message || translations.servererror);
@@ -406,6 +428,7 @@ const OwnerSignUp = () => {
     const handleBackToStepOne = () => {
         setOtp(['', '', '', '', '', '']);
         setOtpError('');
+        setTimer(0);
         setCurrentStep(1);
     };
 
@@ -628,17 +651,25 @@ const OwnerSignUp = () => {
                                         )}
                                     </button>
                                     <div className="resend-otp">
-                                        <span>{translations.didntreceiveotp}</span>
-                                        <button type="button" onClick={handleResendOtp} disabled={isResendingOtp || isVerifyingOtp || isCreatingAccount} className="resend-button">
-                                            {isResendingOtp ? (
-                                                <>
-                                                    <span className="spinner"></span>
-                                                    {translations.sendingotp}
-                                                </>
-                                            ) : (
-                                                translations.resendotp
-                                            )}
-                                        </button>
+                                        {timer > 0 ? (
+                                            <span className="timer-text">
+                                                {translations.resendotpin} <strong className="timer-count">{formatTimer(timer)}</strong>
+                                            </span>
+                                        ) : (
+                                            <>
+                                                <span>{translations.didntreceiveotp}</span>
+                                                <button type="button" onClick={handleResendOtp} disabled={isResendingOtp || isVerifyingOtp || isCreatingAccount} className="resend-button">
+                                                    {isResendingOtp ? (
+                                                        <>
+                                                            <span className="spinner"></span>
+                                                            {translations.sendingotp}
+                                                        </>
+                                                    ) : (
+                                                        translations.resendotp
+                                                    )}
+                                                </button>
+                                            </>
+                                        )}
                                     </div>
                                     <button type="button" onClick={handleBackToStepOne} className="demo-admin-button signup-back-button" disabled={isVerifyingOtp || isCreatingAccount}>
                                         {translations.back}

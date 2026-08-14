@@ -47,6 +47,7 @@
   "verify": "Verifiëren",
   "didntreceiveotp": "OTP niet ontvangen?",
   "resendotp": "OTP opnieuw verzenden",
+  "resendotpin": "Stuur OTP opnieuw in",
   "back": "Terug",
   "accountcreatedsuccessfully": "Account succesvol aangemaakt!",
   "finishup": "Afronden",

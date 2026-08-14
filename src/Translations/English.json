@@ -47,6 +47,7 @@
   "verify": "Verify",
   "didntreceiveotp": "Didn't receive the OTP?",
   "resendotp": "Resend OTP",
+  "resendotpin": "Resend OTP in",
   "back": "Back",
   "accountcreatedsuccessfully": "Account created successfully!",
   "finishup": "Finish up",
