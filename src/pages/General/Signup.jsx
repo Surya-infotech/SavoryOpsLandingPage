@@ -18,7 +18,6 @@ const OwnerSignUp = () => {
     const [password, setPassword] = useState('');
     const [phone, setPhone] = useState('');
     const [phoneError, setPhoneError] = useState('');
-    const [gender, setGender] = useState('Male');
     const [termsAccepted, setTermsAccepted] = useState(false);
     const [currentStep, setCurrentStep] = useState(1);
     const [otp, setOtp] = useState(['', '', '', '', '', '']);
@@ -175,12 +174,6 @@ const OwnerSignUp = () => {
 
         setPhoneError("");
 
-        if (!gender) {
-            setFormError(translations.allfieldrequired);
-            setIsSendingOtp(false);
-            return;
-        }
-
         if (!termsAccepted) {
             setFormError(translations.youmustacceptthetermsandconditions);
             setIsSendingOtp(false);
@@ -271,7 +264,6 @@ const OwnerSignUp = () => {
                 email,
                 password,
                 phone,
-                gender,
                 browserdetails,
                 ipaddress,
                 device,
@@ -389,27 +381,6 @@ const OwnerSignUp = () => {
         }
     };
 
-    const steps = [
-        {
-            number: 1,
-            title: translations.yourdetails,
-            description: translations.provideemailandpassword,
-            icon: "👤"
-        },
-        {
-            number: 2,
-            title: translations.verifyyourphone,
-            description: translations.enteryourverificationcode,
-            icon: "📱"
-        },
-        {
-            number: 3,
-            title: translations.welcometosystem,
-            description: translations.getupandrunning,
-            icon: "🚀"
-        }
-    ];
-
     return (<>
         {showWarning && <WarningModal message={warningMessage} onClose={() => setShowWarning(false)} />}
         <div className="full-page">
@@ -456,20 +427,6 @@ const OwnerSignUp = () => {
                     </a>
                 </div>
                 <div className="signup-wrapper">
-                    <div className="progress-tracker">
-                        {steps.map((step, index) => (
-                            <div key={step.number} className={`progress-step ${currentStep >= step.number ? 'active' : ''} ${currentStep > step.number ? 'completed' : ''}`}>
-                                <div className="step-icon">{step.icon}</div>
-                                <div className="step-content">
-                                    <div className="step-title">{step.title}</div>
-                                    <div className="step-description">{step.description}</div>
-                                </div>
-                                {index < steps.length - 1 && (
-                                    <div className={`step-connector ${currentStep > step.number ? 'completed' : ''}`}></div>
-                                )}
-                            </div>
-                        ))}
-                    </div>
                     <div className="signup-content">
                         {currentStep === 1 ? (
                             <form onSubmit={handleBasicInfoSubmit} className="signup-form">
@@ -547,49 +504,6 @@ const OwnerSignUp = () => {
                                         </div>
                                     </div>
                                     <div className="name-field">
-                                        <label>{translations.gender}</label>
-                                        <div className="radio-group">
-                                            <div className="radio-option">
-                                                <input
-                                                    type="radio"
-                                                    id="gender-male"
-                                                    name="gender"
-                                                    value="Male"
-                                                    checked={gender === 'Male'}
-                                                    onChange={(e) => setGender(e.target.value)}
-                                                    required
-                                                />
-                                                <label htmlFor="gender-male">{translations.male}</label>
-                                            </div>
-                                            <div className="radio-option">
-                                                <input
-                                                    type="radio"
-                                                    id="gender-female"
-                                                    name="gender"
-                                                    value="Female"
-                                                    checked={gender === 'Female'}
-                                                    onChange={(e) => setGender(e.target.value)}
-                                                    required
-                                                />
-                                                <label htmlFor="gender-female">{translations.female}</label>
-                                            </div>
-                                            <div className="radio-option">
-                                                <input
-                                                    type="radio"
-                                                    id="gender-intersex"
-                                                    name="gender"
-                                                    value="Intersex"
-                                                    checked={gender === 'Intersex'}
-                                                    onChange={(e) => setGender(e.target.value)}
-                                                    required
-                                                />
-                                                <label htmlFor="gender-intersex">{translations.intersex}</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="form-group name-fields">
-                                    <div className="name-field">
                                         <label>{translations.referralcode}</label>
                                         <input
                                             type="text"
@@ -605,7 +519,6 @@ const OwnerSignUp = () => {
                                         />
                                         {referralError && <div className="error-message">{referralError}</div>}
                                     </div>
-                                    <div className="name-field"></div>
                                 </div>
                                 <div className="checkbox">
                                     <input
