@@ -225,6 +225,8 @@ const OwnerSignUp = () => {
             });
             const data = await response.json();
             if (response.ok) {
+                setOtp(['', '', '', '', '', '']);
+                setOtpError('');
                 setCurrentStep(2);
                 setFormError('');
             } else {
@@ -363,6 +365,11 @@ const OwnerSignUp = () => {
                     "Server error": translations.servererror
                 };
                 setOtpError(errorMessages[data.message] || translations.servererror);
+                setOtp(['', '', '', '', '', '']);
+                setTimeout(() => {
+                    const firstInput = document.getElementById('otp-0');
+                    if (firstInput) firstInput.focus();
+                }, 50);
             }
         } catch {
             setWarningMessage(translations.servererror);
@@ -394,6 +401,12 @@ const OwnerSignUp = () => {
         } finally {
             setIsResendingOtp(false);
         }
+    };
+
+    const handleBackToStepOne = () => {
+        setOtp(['', '', '', '', '', '']);
+        setOtpError('');
+        setCurrentStep(1);
     };
 
     const handleFinish = () => {
@@ -627,7 +640,7 @@ const OwnerSignUp = () => {
                                             )}
                                         </button>
                                     </div>
-                                    <button type="button" onClick={() => setCurrentStep(1)} className="demo-admin-button signup-back-button" disabled={isVerifyingOtp || isCreatingAccount}>
+                                    <button type="button" onClick={handleBackToStepOne} className="demo-admin-button signup-back-button" disabled={isVerifyingOtp || isCreatingAccount}>
                                         {translations.back}
                                     </button>
                                 </div>
