@@ -1,8 +1,11 @@
 import {
+  AccessTimeFilledRounded as AccessTimeFilledRoundedIcon,
   ArrowForward as ArrowForwardIcon,
-  CheckCircleOutline as CheckCircleOutlineIcon,
+  ArrowForwardRounded as ArrowForwardRoundedIcon,
+  AutoAwesomeRounded as AutoAwesomeRoundedIcon,
+  CheckCircleRounded as CheckCircleRoundedIcon,
   FlashOn as FlashOnIcon,
-  ScheduleOutlined as ScheduleOutlinedIcon,
+  LockOutlined as LockOutlinedIcon,
 } from '@mui/icons-material';
 import { Box, Button, Chip, Container, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
@@ -115,74 +118,78 @@ const FreeSoftware = ({ hideHeader = false }) => {
                   return (
                     <article
                       key={planId}
-                      className="plan-card"
+                      className="free-plan-card-layout"
                     >
-                      <div className="plan-card-inner">
-                        <header className="plan-card-hero">
-                          <div className="plan-price-row">
-                            <div className="plan-price">
-                              <span className="plan-amount plan-amount--free">
-                                FREE
-                              </span>
-                            </div>
+                      {/* Top: Centered Plan Header & Details */}
+                      <div className="free-plan-header-center">
+                        <div className="free-plan-badge-row">
+                          <span className="free-plan-badge">
+                            <AutoAwesomeRoundedIcon className="plan-badge-icon" aria-hidden />
+                            100% FREE
+                          </span>
+                        </div>
+                        <h3 className="free-plan-title">
+                          {plan.planname || 'Free Trial'}
+                        </h3>
+                        {durationText && (
+                          <div className="free-plan-duration-chip">
+                            <AccessTimeFilledRoundedIcon
+                              className="plan-duration-icon"
+                              aria-hidden
+                            />
+                            <span>{durationText} Full Access</span>
                           </div>
-
-                          <div className="plan-title-duration-row">
-                            <h3 className="plan-card-title">
-                              {plan.planname || 'Free Trial'}
-                            </h3>
-                            {durationText && (
-                              <span className="plan-card-duration">
-                                <ScheduleOutlinedIcon
-                                  className="plan-card-inline-icon"
-                                  aria-hidden
-                                />
-                                {durationText}
-                              </span>
-                            )}
-                          </div>
-                        </header>
-
-                        <section className="plan-limits">
-                          <div className="plan-limits-list">
-                            {limits.map((limit, limitIndex) => (
-                              <div key={`limit-${limitIndex}`} className="plan-limit-row">
-                                <div className="plan-limit-label">
-                                  <CheckCircleOutlineIcon
-                                    className="plan-limit-icon"
-                                    aria-hidden
-                                  />
-                                  <span>
-                                    <strong>{limit.limit}</strong> {limit.page}
-                                  </span>
-                                </div>
-                              </div>
-                            ))}
-                            {enabledModules.map((mod, modIndex) => (
-                              <div key={`mod-${modIndex}`} className="plan-limit-row">
-                                <div className="plan-limit-label">
-                                  <CheckCircleOutlineIcon
-                                    className="plan-limit-icon"
-                                    aria-hidden
-                                  />
-                                  <span>{mod.label}</span>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </section>
+                        )}
                       </div>
 
-                      <button
-                        type="button"
-                        className="select-plan-btn"
-                        onClick={handlePlanButtonClick}
-                      >
-                        Start Free Trial
-                      </button>
-                      <span className="plan-action-note">
-                        No credit card required
-                      </span>
+                      {/* Middle: Horizontal Plan Limits and Module Details */}
+                      <div className="free-plan-features-horizontal">
+                        <div className="free-plan-limits-row">
+                          {limits.map((limit, limitIndex) => (
+                            <div key={`limit-${limitIndex}`} className="free-plan-limit-pill">
+                              <div className="limit-icon-circle">
+                                <CheckCircleRoundedIcon
+                                  className="plan-limit-icon"
+                                  aria-hidden
+                                />
+                              </div>
+                              <div className="limit-text-wrap">
+                                <span className="limit-val">{limit.limit}</span>
+                                <span className="limit-lbl">{limit.page}</span>
+                              </div>
+                            </div>
+                          ))}
+                          {enabledModules.map((mod, modIndex) => (
+                            <div key={`mod-${modIndex}`} className="free-plan-limit-pill">
+                              <div className="limit-icon-circle">
+                                <CheckCircleRoundedIcon
+                                  className="plan-limit-icon"
+                                  aria-hidden
+                                />
+                              </div>
+                              <div className="limit-text-wrap">
+                                <span className="limit-val">{mod.label}</span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Bottom: Centered Start Free Trial Button */}
+                      <div className="free-plan-action-bottom">
+                        <button
+                          type="button"
+                          className="select-plan-btn select-plan-btn--hero"
+                          onClick={handlePlanButtonClick}
+                        >
+                          <span>Start Free Trial</span>
+                          <ArrowForwardRoundedIcon className="btn-arrow-icon" aria-hidden />
+                        </button>
+                        <div className="plan-action-trust-badge">
+                          <LockOutlinedIcon className="trust-lock-icon" aria-hidden />
+                          <span>No credit card required</span>
+                        </div>
+                      </div>
                     </article>
                   );
                 })
