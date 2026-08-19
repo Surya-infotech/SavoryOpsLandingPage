@@ -16,7 +16,6 @@ const OwnerLogin = () => {
     const host = import.meta.env.VITE_HOST;
     const tld = import.meta.env.VITE_TLD;
     const HOME_URL = import.meta.env.VITE_HOME_URL || '/';
-    const adminPanelUrl = import.meta.env.VITE_ADMIN_PANEL_URL?.trim() || '';
     const [alertMessage, setAlertMessage] = useState("");
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
@@ -93,11 +92,6 @@ const OwnerLogin = () => {
         }
     };
 
-    const handleDemoOwner = () => {
-        setEmail('marcus@gmail.com');
-        setPassword('12345678');
-    };
-
     return (<>
         {showWarning && <WarningModal message={warningMessage} onClose={() => setShowWarning(false)} />}
         {alertMessage && <AlertMessage message={alertMessage} onClose={() => setAlertMessage("")} />}
@@ -170,9 +164,6 @@ const OwnerLogin = () => {
                     <button type="submit" className="login-button" disabled={isLoading}>
                         {isLoading ? translations.signingin : translations.signin}
                     </button>
-                    <button type="button" className="demo-admin-button" onClick={handleDemoOwner}>
-                        {translations.demoowner}
-                    </button>
                 </form>
                 <div className="form-group signin">
                     <div className="signin-divider">
@@ -186,13 +177,6 @@ const OwnerLogin = () => {
                         <span className="divider-line"></span>
                     </div>
                 </div>
-                {adminPanelUrl ? (
-                    <div className="signin-admin-link">
-                        <a href={adminPanelUrl} target="_blank" rel="noopener noreferrer">
-                            {translations.demosuperadmin}
-                        </a>
-                    </div>
-                ) : null}
             </div>
         </div>
     </>);
