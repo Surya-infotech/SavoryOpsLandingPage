@@ -136,3 +136,111 @@ export const getEnabledModules = (plan) => {
 
   return [];
 };
+
+/**
+ * Gets the feature value for a specific feature name from plan limits
+ * @param {object} plan - Plan object
+ * @param {string} featureName - Feature name to search for (e.g. 'business', 'branch')
+ * @param {boolean} defaultUnlimited - Whether to default to Unlimited if not explicitly found
+ * @returns {string} Feature limit value, 'Unlimited', or '-'
+ */
+export const getFeatureValue = (plan, featureName, defaultUnlimited = false) => {
+  if (plan.planaccess === 'unlimited') {
+    return 'Unlimited';
+  }
+
+  const featureNameLower = featureName.toLowerCase();
+
+  if (plan.planlimits && Array.isArray(plan.planlimits) && plan.planlimits.length > 0) {
+    const pageLimit = plan.planlimits.find((l) => {
+      if (!l || !l.page) return false;
+      const pageName = l.page.toLowerCase();
+      return (
+        pageName === featureNameLower ||
+        pageName.includes(featureNameLower) ||
+        featureNameLower.includes(pageName)
+      );
+    });
+
+    if (pageLimit && pageLimit.limit) {
+      const limitValue = pageLimit.limit.trim();
+      if (
+        limitValue.toLowerCase() === 'unlimited' ||
+        limitValue === '' ||
+        limitValue === '-1'
+      ) {
+        return 'Unlimited';
+      }
+      return limitValue;
+    }
+  }
+
+  if (defaultUnlimited) {
+    return 'Unlimited';
+  }
+
+  return '-';
+};
+
+export const getLimitDisplay = (plan, pageName) => {
+  if (plan.planaccess === 'unlimited') {
+    return 'Unlimited';
+  }
+  if (!plan.planlimits || !Array.isArray(plan.planlimits)) return '-';
+  const featureNameLower = pageName.toLowerCase();
+  const pageLimit = plan.planlimits.find((l) => {
+    if (!l || !l.page) return false;
+    const pName = l.page.toLowerCase();
+    return (
+      pName === featureNameLower ||
+      pName.includes(featureNameLower) ||
+      featureNameLower.includes(pName)
+    );
+  });
+  if (!pageLimit || !pageLimit.limit) return '-';
+  const limitValue = pageLimit.limit.trim();
+  if (
+    limitValue.toLowerCase() === 'unlimited' ||
+    limitValue === '' ||
+    limitValue === '-1'
+  ) {
+    return 'Unlimited';
+  }
+  return limitValue;
+};
+
+export const COMPARISON_ORDER_TYPES = [
+  { key: 'dinein', name: 'Dine In' },
+  { key: 'delivery', name: 'Delivery' },
+  { key: 'pickup', name: 'Pickup' },
+  { key: 'quick', name: 'Quick Order' },
+  { key: 'takeaway', name: 'Takeaway' },
+];
+
+export const COMPARISON_EMPLOYEE_ROLES = [
+  { key: 'waiter', name: 'Waiter Role' },
+  { key: 'cashier', name: 'Cashier Role' },
+  { key: 'chef', name: 'Chef Role' },
+  { key: 'headchef', name: 'Head Chef Role' },
+  { key: 'deliverydriver', name: 'Delivery Driver Role' },
+  { key: 'host', name: 'Host Role' },
+];
+
+export const COMPARISON_CORE_FEATURES = [
+  { key: 'qrmenu', name: 'QR Menu' },
+  { key: 'onlinepayment', name: 'Online Payment Support' },
+  { key: 'support', name: 'Support Management' },
+  { key: 'dealsbundles', name: 'Deals & Bundles' },
+  { key: 'tipmanagement', name: 'Tip Management' },
+];
+
+export const COMPARISON_MODULE_DEFS = [
+  { key: 'inventory', name: 'Inventory Management' },
+  { key: 'hrms', name: 'HRMS (Staff Management)' },
+  { key: 'assetmanagement', name: 'Asset Management' },
+  { key: 'coupon', name: 'Coupons & Discounts' },
+  { key: 'membership', name: 'Membership System' },
+  { key: 'rewards', name: 'Loyalty & Rewards' },
+  { key: 'giftcoupon', name: 'Gift Coupons' },
+  { key: 'tablereservation', name: 'Table Reservation' },
+];
