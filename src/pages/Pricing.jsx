@@ -219,11 +219,12 @@ const Pricing = () => {
                                   {formatCurrency(
                                     hasDiscount ? finalPrice : originalPrice,
                                     currency,
+                                    true,
                                   )}
                                 </span>
                                 {hasDiscount && (
                                   <span className="original-price">
-                                    {formatCurrency(originalPrice, currency)}
+                                    {formatCurrency(originalPrice, currency, true)}
                                   </span>
                                 )}
                               </>
@@ -234,7 +235,7 @@ const Pricing = () => {
                               <span className="plan-discount-chip">
                                 {plan.discounttype === 'percentage'
                                   ? `${plan.discount}% Off`
-                                  : `${formatCurrency(plan.discount, currency)} Off`}
+                                  : `${formatCurrency(plan.discount, currency, true)} Off`}
                               </span>
                             )}
                           </div>
