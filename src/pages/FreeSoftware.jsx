@@ -12,7 +12,7 @@ import { Box, Button, Chip, Container, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { formatCurrency } from '../utils/currency';
-import { formatDuration, getPlanLimits } from '../utils/planUtils';
+import { formatDuration, getEnabledModules, getPlanLimits } from '../utils/planUtils';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/free-software.scss';
 
@@ -114,6 +114,7 @@ const FreeSoftware = ({ hideHeader = false }) => {
               ) : freePlans.length > 0 ? (
                 freePlans.map((plan, index) => {
                   const limits = getPlanLimits(plan);
+                  const enabledModules = getEnabledModules(plan);
 
                   return (
                     <Box
@@ -177,7 +178,7 @@ const FreeSoftware = ({ hideHeader = false }) => {
 
                             return (
                               <Box
-                                key={limitIndex}
+                                key={`limit-${limitIndex}`}
                                 className={`plan-limit-item${unavailable ? ' limit-unavailable' : ' limit-available'}`}
                               >
                                 <span className="plan-limit-icon" aria-hidden>
@@ -193,6 +194,19 @@ const FreeSoftware = ({ hideHeader = false }) => {
                               </Box>
                             );
                           })}
+                          {enabledModules.map((mod, modIndex) => (
+                            <Box
+                              key={`module-${modIndex}`}
+                              className="plan-limit-item limit-available"
+                            >
+                              <span className="plan-limit-icon" aria-hidden>
+                                <CheckIcon fontSize="inherit" />
+                              </span>
+                              <span className="plan-limit-text">
+                                {mod.label}
+                              </span>
+                            </Box>
+                          ))}
                         </Box>
                       </Box>
 

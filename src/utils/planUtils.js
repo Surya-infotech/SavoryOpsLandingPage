@@ -83,3 +83,56 @@ export const getPlanLimits = (plan) => {
     limit: existingLimits[page] || '0'
   }));
 };
+
+/**
+ * Module display labels map
+ */
+export const MODULE_DISPLAY_NAMES = {
+  inventory: 'Inventory Management',
+  hrms: 'HRMS (Staff Management)',
+  assetmanagement: 'Asset Management',
+  coupon: 'Coupons & Discounts',
+  membership: 'Membership System',
+  rewards: 'Loyalty & Rewards',
+  giftcoupon: 'Gift Coupons',
+  tablereservation: 'Table Reservation',
+};
+
+/**
+ * Gets list of enabled modules for a plan
+ * @param {object} plan - Plan object
+ * @returns {Array} Array of enabled module objects { key, label }
+ */
+export const getEnabledModules = (plan) => {
+  if (!plan || !plan.modules) return [];
+
+  // Handle object format: { inventory: true, ... }
+  if (typeof plan.modules === 'object' && !Array.isArray(plan.modules)) {
+    return Object.entries(plan.modules)
+      .filter(([, isEnabled]) => isEnabled === true || isEnabled === 'true')
+      .map(([key]) => ({
+        key,
+        label:
+          MODULE_DISPLAY_NAMES[key.toLowerCase()] ||
+          key.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase()),
+      }));
+  }
+
+  // Handle array format: ['inventory', 'hrms'] or [{ module: 'inventory', status: true }]
+  if (Array.isArray(plan.modules)) {
+    return plan.modules
+      .filter((item) => {
+        if (typeof item === 'string') return true;
+        return item.status === true || item.enabled === true;
+      })
+      .map((item) => {
+        const key = typeof item === 'string' ? item : item.module || item.modulename || item.name || '';
+        return {
+          key,
+          label: MODULE_DISPLAY_NAMES[key.toLowerCase()] || key,
+        };
+      });
+  }
+
+  return [];
+};
