@@ -130,7 +130,7 @@ const FreeSoftware = ({ hideHeader = false }) => {
                           size="small"
                         />
                         <Chip
-                          icon={<NoCardIcon style={{ fontSize: '1rem' }} />}
+                          icon={<NoCardIcon style={{ fontSize: '0.9rem' }} />}
                           label="No Credit Card"
                           className="plan-perk-badge"
                           size="small"
@@ -149,7 +149,7 @@ const FreeSoftware = ({ hideHeader = false }) => {
 
                       <Box className="plan-header">
                         <Typography variant="h5" component="h3" className="plan-name">
-                          {plan.planname || 'Free Trial Plan'}
+                          {plan.planname || 'Free Trial'}
                         </Typography>
                         {plan.description && (
                           <Typography variant="body2" className="plan-description">
@@ -166,24 +166,9 @@ const FreeSoftware = ({ hideHeader = false }) => {
                         </Box>
                       </Box>
 
-                      <Box className="plan-highlights-bar">
-                        <Box className="highlight-item">
-                          <VerifiedIcon className="highlight-icon" />
-                          <span>Instant Activation</span>
-                        </Box>
-                        <Box className="highlight-item">
-                          <VerifiedIcon className="highlight-icon" />
-                          <span>Full Core Features</span>
-                        </Box>
-                        <Box className="highlight-item">
-                          <VerifiedIcon className="highlight-icon" />
-                          <span>Upgrade Anytime</span>
-                        </Box>
-                      </Box>
-
                       <Box className="plan-features">
                         <Typography variant="overline" className="plan-limits-title">
-                          Plan Capacity &amp; Resource Limits
+                          What&apos;s included
                         </Typography>
                         <Box className="plan-limits-list">
                           {limits.map((limit, limitIndex) => {
@@ -223,7 +208,7 @@ const FreeSoftware = ({ hideHeader = false }) => {
                           Start Free Trial
                         </Button>
                         <Typography variant="caption" className="plan-action-note">
-                          No credit card required • Instant setup in 2 minutes
+                          No credit card required • Instant setup
                         </Typography>
                       </Box>
                     </Box>
@@ -241,25 +226,17 @@ const FreeSoftware = ({ hideHeader = false }) => {
               )}
             </Box>
 
-            {!loading && freePlans.length > 0 && (
-              <>
-                <Typography variant="body2" className="savings-text">
-                  Looking for multi-branch support, unlimited staff, and premium features?
-                </Typography>
-
-                {location.pathname !== '/pricing' && (
-                  <Box className="view-more-container">
-                    <Typography
-                      variant="button"
-                      className="view-more-button"
-                      onClick={handleViewMoreClick}
-                      style={{ cursor: 'pointer' }}
-                    >
-                      View All Pricing Plans
-                    </Typography>
-                  </Box>
-                )}
-              </>
+            {!loading && freePlans.length > 0 && location.pathname !== '/pricing' && (
+              <Box className="view-more-container">
+                <Button
+                  variant="outlined"
+                  className="view-more-button"
+                  endIcon={<ArrowForwardIcon />}
+                  onClick={handleViewMoreClick}
+                >
+                  View All Pricing Plans
+                </Button>
+              </Box>
             )}
           </Box>
         </Box>
