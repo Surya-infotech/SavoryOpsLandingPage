@@ -1,6 +1,11 @@
 import {
   CalendarToday as CalendarTodayIcon,
+  CardGiftcard as CardGiftcardIcon,
+  DevicesOther as DevicesOtherIcon,
   Groups as GroupsIcon,
+  Inventory2 as Inventory2Icon,
+  LocalOffer as LocalOfferIcon,
+  Loyalty as LoyaltyIcon,
   MenuBook as MenuBookIcon,
   Payment as PaymentIcon,
   Rocket as RocketIcon,
@@ -64,6 +69,41 @@ const UpcomingFeatures = () => {
       description: 'Manage catering orders and event bookings with detailed planning, scheduling, and coordination tools.',
       icon: <CalendarTodayIcon sx={{ fontSize: 24 }} />,
       color: 'var(--primary-color)'
+    },
+    {
+      title: 'Inventory Tracking',
+      subtitle: 'Stock & Supply Control',
+      description: 'Real-time ingredient tracking, low-stock automated alerts, purchase order management, and wastage reduction.',
+      icon: <Inventory2Icon sx={{ fontSize: 24 }} />,
+      color: 'var(--primary-color)'
+    },
+    {
+      title: 'Gift Coupon',
+      subtitle: 'Digital & Physical Vouchers',
+      description: 'Create, sell, and redeem branded digital and printable gift cards with balance tracking and expiry management.',
+      icon: <CardGiftcardIcon sx={{ fontSize: 24 }} />,
+      color: 'var(--secondary-color)'
+    },
+    {
+      title: 'Coupon',
+      subtitle: 'Discounts & Promo Codes',
+      description: 'Launch targeted promotional discount codes with custom percentage or flat rate rules and usage restrictions.',
+      icon: <LocalOfferIcon sx={{ fontSize: 24 }} />,
+      color: 'color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color))'
+    },
+    {
+      title: 'Asset Management',
+      subtitle: 'Equipment & Asset Control',
+      description: 'Track restaurant kitchen hardware, POS terminals, maintenance schedules, and equipment depreciation.',
+      icon: <DevicesOtherIcon sx={{ fontSize: 24 }} />,
+      color: 'var(--primary-color)'
+    },
+    {
+      title: 'Referral Reward System',
+      subtitle: 'Customer & Staff Referrals',
+      description: 'Drive organic growth with automated referral codes, reward point distribution, and customer loyalty bonuses.',
+      icon: <LoyaltyIcon sx={{ fontSize: 24 }} />,
+      color: 'var(--secondary-color)'
     }
   ];
 
