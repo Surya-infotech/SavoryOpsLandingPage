@@ -29,12 +29,10 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(17, 24, 39, 0.72) 0%,
-      rgba(17, 24, 39, 0.55) 40%,
-      rgba(17, 24, 39, 0.72) 100%
-    );
+    background: linear-gradient(135deg,
+        rgba(17, 24, 39, 0.72) 0%,
+        rgba(17, 24, 39, 0.55) 40%,
+        rgba(17, 24, 39, 0.72) 100%);
     z-index: 0;
   }
 
@@ -199,7 +197,7 @@ body {
           &.completed {
             background: linear-gradient(to bottom,
                 var(--primary-color),
-                var(--primary-color) );
+                var(--primary-color));
           }
 
           @media (max-width: 1024px) {
@@ -348,7 +346,7 @@ body {
           width: 100%;
         }
 
-        & > label {
+        &>label {
           display: block;
           margin-bottom: 5px;
           font-weight: 700;
@@ -655,7 +653,8 @@ body {
         line-height: 1.5;
         color: #555;
 
-        a {
+        a,
+        .privacy-policy-link {
           margin: 0 4px;
           color: var(--primary-color);
           text-decoration: none;
@@ -663,8 +662,8 @@ body {
           transition: all 0.2s ease;
 
           &:hover {
+            color: var(--primary-color);
             text-decoration: underline;
-            color: var(--secondary-color);
           }
         }
       }
@@ -940,6 +939,7 @@ body {
       animation: signup-error-shake 0.5s ease;
 
       @keyframes signup-error-shake {
+
         0%,
         100% {
           transform: translateX(0);

@@ -589,8 +589,10 @@ const OwnerSignUp = () => {
                                         onChange={() => setTermsAccepted(!termsAccepted)}
                                     />
                                     <label htmlFor="terms-checkbox">
-                                        {translations.bysignupingyouagreetoour}
-                                        <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">{translations.privacypolicy}</a>.
+                                        {translations.bysignupingyouagreetoour}{' '}
+                                        <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="privacy-policy-link">
+                                            {translations.privacypolicy}
+                                        </a>.
                                     </label>
                                 </div>
                                 {formError && <div className="error-message">{formError}</div>}
