@@ -1,12 +1,9 @@
 import { Box, Container, Divider, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import SEOHead from '../components/SEO/SEOHead';
-import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/privacy-policy.scss';
 
 const DataDeletionPolicy = () => {
-  const { softwareName } = useAppSettings();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

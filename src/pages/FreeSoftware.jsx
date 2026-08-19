@@ -7,14 +7,12 @@ import {
 import { Box, Button, Chip, Container, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { formatCurrency } from '../utils/currency';
 import { formatDuration, getEnabledModules, getPlanLimits } from '../utils/planUtils';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/free-software.scss';
 
 const FreeSoftware = ({ hideHeader = false }) => {
   const [plans, setPlans] = useState([]);
-  const [currency, setCurrency] = useState({});
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
@@ -32,15 +30,12 @@ const FreeSoftware = ({ hideHeader = false }) => {
 
         if (response.ok && data) {
           const plansData = data.plans || [];
-          const currencyData = data.currency || {};
           const activePlans = plansData.filter((plan) => plan.status === true);
           setPlans(activePlans);
-          setCurrency(currencyData);
         }
       } catch {
         console.log('Failed to fetch pricing data for free software section');
         setPlans([]);
-        setCurrency({});
       } finally {
         setLoading(false);
       }

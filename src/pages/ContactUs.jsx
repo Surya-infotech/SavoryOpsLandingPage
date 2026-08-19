@@ -12,7 +12,7 @@ const ContactUs = () => {
   const location = useLocation();
   const isStandalonePage = location.pathname === '/contact-us';
   const backendPath = import.meta.env.VITE_BACKEND_URL;
-  const { softwareName, generalSetting } = useAppSettings();
+  const { generalSetting } = useAppSettings();
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [formError, setFormError] = useState('');
   const [formSuccess, setFormSuccess] = useState(false);

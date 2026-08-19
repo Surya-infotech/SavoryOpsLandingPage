@@ -25,8 +25,8 @@ export const AppSettingsProvider = ({ children }) => {
   const [generalSetting, setGeneralSetting] = useState(emptyGeneralSetting);
   const [socialMedia, setSocialMedia] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [primaryColor, setPrimaryColor] = useState('#028802');
-  const [secondaryColor, setSecondaryColor] = useState('#69e869');
+  const [primaryColor] = useState('#028802');
+  const [secondaryColor] = useState('#69e869');
 
   useEffect(() => {
     const fetchLandingPageSettings = async () => {
@@ -44,18 +44,7 @@ export const AppSettingsProvider = ({ children }) => {
         setSocialMedia(Array.isArray(data?.socialMedia) ? data.socialMedia : []);
 
         const ts = data?.themeSetting || {};
-        const nextLogo = ts.logourl;
-        const nextName = gs?.softwarename;
-
-        const { primary, secondary } = applyBrandingFromThemeSetting(ts);
-        // Explicitly keep colors static instead of using fetched theme colors
-        // setPrimaryColor(primary);
-        // setSecondaryColor(secondary);
-
-        // Explicitly use the default logo instead of the logo URL fetched from backend
-        // if (nextLogo) setLogoUrl(nextLogo);
-        // Explicitly use the default software name/base title instead of fetching from backend
-        // if (nextName) setSoftwareName(nextName);
+        applyBrandingFromThemeSetting(ts);
       } catch {
         /* keep defaults when API fails */
       }

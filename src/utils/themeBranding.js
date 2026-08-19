@@ -1,23 +1,3 @@
-function removeFaviconLinks() {
-  document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"]').forEach((el) => el.remove());
-}
-
-function setFaviconLink(href) {
-  if (!href) {
-    removeFaviconLinks();
-    return;
-  }
-  removeFaviconLinks();
-  const link = document.createElement('link');
-  link.rel = 'icon';
-  link.href = href;
-  const lower = href.split('?')[0].toLowerCase();
-  if (lower.endsWith('.ico')) link.type = 'image/x-icon';
-  else if (lower.endsWith('.svg')) link.type = 'image/svg+xml';
-  else link.type = 'image/png';
-  document.head.appendChild(link);
-}
-
 function applyCssThemeColors(primary, secondary) {
   const root = document.documentElement;
   if (primary) root.style.setProperty('--primary-color', primary);
@@ -57,12 +37,10 @@ export function pickThemeColors(themeSetting) {
   return { primary, secondary };
 }
 
-/** Same behavior as admin `applyThemeFavicon`: icon only when `faviconurl` is set. */
-export function applyThemeFaviconFromUrl(faviconUrl) {
-  // Dynamic favicon disabled; using static assets
+export function applyThemeFaviconFromUrl() {
+  // Static assets used
 }
 
-export function applyBrandingFromThemeSetting(themeSetting) {
-  // Dynamic favicon disabled; using static assets
+export function applyBrandingFromThemeSetting() {
   return { primary: '#028802', secondary: '#69e869' };
 }
