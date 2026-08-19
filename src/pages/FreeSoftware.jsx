@@ -1,17 +1,24 @@
 import {
+  ArrowForward as ArrowForwardIcon,
   Check as CheckIcon,
   Close as CloseIcon,
+  CreditCardOff as NoCardIcon,
+  FlashOn as FlashOnIcon,
+  LocalOffer as DiscountIcon,
   Star as StarIcon,
+  Verified as VerifiedIcon,
 } from '@mui/icons-material';
 import { Box, Button, Chip, Container, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { formatCurrency } from '../utils/currency';
 import { formatDuration, getPlanLimits } from '../utils/planUtils';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/free-software.scss';
 
 const FreeSoftware = ({ hideHeader = false }) => {
   const [plans, setPlans] = useState([]);
+  const [currency, setCurrency] = useState({});
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
@@ -29,12 +36,15 @@ const FreeSoftware = ({ hideHeader = false }) => {
 
         if (response.ok && data) {
           const plansData = data.plans || [];
+          const currencyData = data.currency || {};
           const activePlans = plansData.filter((plan) => plan.status === true);
           setPlans(activePlans);
+          setCurrency(currencyData);
         }
       } catch {
         console.log('Failed to fetch pricing data for free software section');
         setPlans([]);
+        setCurrency({});
       } finally {
         setLoading(false);
       }
@@ -51,13 +61,7 @@ const FreeSoftware = ({ hideHeader = false }) => {
     navigate('/Signin');
   };
 
-  const freePlans = plans
-    .filter((plan) => plan.plantype === 'free' || plan.plantype === 'limited')
-    .sort((a, b) => {
-      if (a.plantype === 'free' && b.plantype === 'limited') return -1;
-      if (a.plantype === 'limited' && b.plantype === 'free') return 1;
-      return 0;
-    });
+  const freePlans = plans.filter((plan) => plan.plantype === 'free');
 
   return (
     <Box
@@ -74,20 +78,19 @@ const FreeSoftware = ({ hideHeader = false }) => {
           <Box className="header-section">
             <Box className="badge-container">
               <Chip
-                icon={<StarIcon />}
-                label="Free Forever - No Hidden Costs"
+                icon={<FlashOnIcon />}
+                label="Start 100% Free • No Credit Card Required"
                 className="offer-chip"
               />
             </Box>
 
             <Typography variant="h2" component="h2" className="section-title">
-              Transform Your Restaurant Operations Free Forever
+              Transform Your Restaurant Operations — Start Free
             </Typography>
 
             <Typography variant="h5" component="p" className="section-subtitle">
-              Experience the power of {softwareName} at no cost. Choose from our free trial or
-              lifetime access plans and revolutionize your restaurant management with cutting-edge
-              tools designed for modern hospitality businesses.
+              Experience the power of {softwareName} at no cost. Get full access to explore our
+              restaurant management tools with zero upfront commitment and instant onboarding.
             </Typography>
           </Box>
         )}
@@ -95,61 +98,92 @@ const FreeSoftware = ({ hideHeader = false }) => {
         <Box className="content-section">
           <Box className="pricing-comparison">
             <Typography variant="h6" className="comparison-title">
-              Our Free and Limited-Time Plans
+              Everything Included in Your Free Plan
             </Typography>
 
             <Box className="plans-detailed-grid">
               {loading ? (
-                Array.from({ length: 2 }, (_, index) => (
-                  <Box key={index} className="pricing-plan-card loading">
-                    <Box className="plan-card-accent" aria-hidden />
-                    <Box className="plan-skeleton plan-skeleton-title" />
-                    <Box className="plan-skeleton plan-skeleton-price" />
-                    <Box className="plan-skeleton plan-skeleton-line" />
-                    <Box className="plan-skeleton plan-skeleton-line short" />
-                    <Box className="plan-skeleton plan-skeleton-button" />
-                  </Box>
-                ))
+                <Box className="pricing-plan-card loading">
+                  <Box className="plan-card-accent" aria-hidden />
+                  <Box className="plan-skeleton plan-skeleton-title" />
+                  <Box className="plan-skeleton plan-skeleton-price" />
+                  <Box className="plan-skeleton plan-skeleton-line" />
+                  <Box className="plan-skeleton plan-skeleton-line short" />
+                  <Box className="plan-skeleton plan-skeleton-button" />
+                </Box>
               ) : freePlans.length > 0 ? (
                 freePlans.map((plan, index) => {
                   const limits = getPlanLimits(plan);
-                  const isLimited = plan.plantype === 'limited';
-                  const planBadgeLabel = isLimited ? 'Lifetime Access' : 'Free Trial';
 
                   return (
                     <Box
                       key={plan._id || index}
-                      className={`pricing-plan-card${isLimited ? ' featured' : ''}`}
+                      className="pricing-plan-card featured-free-card"
                     >
                       <Box className="plan-card-accent" aria-hidden />
 
                       <Box className="plan-card-badges">
                         <Chip
                           icon={<StarIcon />}
-                          label={planBadgeLabel}
+                          label="Free Trial"
                           className="plan-type-badge"
                           size="small"
                         />
-                        <span className="plan-badge-spacer" aria-hidden />
+                        <Chip
+                          icon={<NoCardIcon style={{ fontSize: '1rem' }} />}
+                          label="No Credit Card"
+                          className="plan-perk-badge"
+                          size="small"
+                        />
+                        {plan.isdiscount && (
+                          <Box className="plan-discount-badge">
+                            <DiscountIcon className="discount-icon" fontSize="small" />
+                            <Typography variant="body2" component="span" className="plan-discount-text">
+                              {plan.discounttype === 'percentage'
+                                ? `${plan.discount}% OFF`
+                                : `Save ${formatCurrency(plan.discount, currency)}`}
+                            </Typography>
+                          </Box>
+                        )}
                       </Box>
 
                       <Box className="plan-header">
                         <Typography variant="h5" component="h3" className="plan-name">
-                          {plan.planname}
+                          {plan.planname || 'Free Trial Plan'}
                         </Typography>
+                        {plan.description && (
+                          <Typography variant="body2" className="plan-description">
+                            {plan.description}
+                          </Typography>
+                        )}
                         <Box className="plan-price-block">
                           <Typography variant="h4" component="p" className="plan-price">
-                            FREE
+                            {plan.price ? formatCurrency(plan.price, currency) : 'FREE'}
                           </Typography>
                           <Typography variant="body2" component="p" className="plan-duration">
-                            {isLimited ? 'Free with limited access' : formatDuration(plan)}
+                            {formatDuration(plan)}
                           </Typography>
+                        </Box>
+                      </Box>
+
+                      <Box className="plan-highlights-bar">
+                        <Box className="highlight-item">
+                          <VerifiedIcon className="highlight-icon" />
+                          <span>Instant Activation</span>
+                        </Box>
+                        <Box className="highlight-item">
+                          <VerifiedIcon className="highlight-icon" />
+                          <span>Full Core Features</span>
+                        </Box>
+                        <Box className="highlight-item">
+                          <VerifiedIcon className="highlight-icon" />
+                          <span>Upgrade Anytime</span>
                         </Box>
                       </Box>
 
                       <Box className="plan-features">
                         <Typography variant="overline" className="plan-limits-title">
-                          What&apos;s included
+                          Plan Capacity &amp; Resource Limits
                         </Typography>
                         <Box className="plan-limits-list">
                           {limits.map((limit, limitIndex) => {
@@ -169,7 +203,7 @@ const FreeSoftware = ({ hideHeader = false }) => {
                                   )}
                                 </span>
                                 <span className="plan-limit-text">
-                                  {limit.limit} {limit.page}
+                                  <strong>{limit.limit}</strong> {limit.page}
                                 </span>
                               </Box>
                             );
@@ -183,22 +217,34 @@ const FreeSoftware = ({ hideHeader = false }) => {
                           variant="contained"
                           className="plan-button"
                           fullWidth
+                          endIcon={<ArrowForwardIcon />}
                           onClick={handlePlanButtonClick}
                         >
-                          {isLimited ? 'Get Free Lifetime Access' : 'Start Free Trial'}
+                          Start Free Trial
                         </Button>
+                        <Typography variant="caption" className="plan-action-note">
+                          No credit card required • Instant setup in 2 minutes
+                        </Typography>
                       </Box>
                     </Box>
                   );
                 })
-              ) : null}
+              ) : (
+                <Box className="no-plans-message">
+                  <Typography variant="h6" className="no-plans-title">
+                    No free trial plan available at the moment
+                  </Typography>
+                  <Typography variant="body1" className="no-plans-subtitle">
+                    Please check back later or explore our paid plans below.
+                  </Typography>
+                </Box>
+              )}
             </Box>
 
             {!loading && freePlans.length > 0 && (
               <>
                 <Typography variant="body2" className="savings-text">
-                  Choose the plan that best fits your restaurant&apos;s needs and start transforming
-                  your operations today!
+                  Looking for multi-branch support, unlimited staff, and premium features?
                 </Typography>
 
                 {location.pathname !== '/pricing' && (
@@ -209,7 +255,7 @@ const FreeSoftware = ({ hideHeader = false }) => {
                       onClick={handleViewMoreClick}
                       style={{ cursor: 'pointer' }}
                     >
-                      View More Plans
+                      View All Pricing Plans
                     </Typography>
                   </Box>
                 )}

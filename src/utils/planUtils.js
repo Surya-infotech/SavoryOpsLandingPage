@@ -62,7 +62,7 @@ export const getDurationWord = (duration, value) => {
  * @returns {Array} Array of plan limit objects
  */
 export const getPlanLimits = (plan) => {
-  const defaultPages = ['Business', 'Branch', 'Employee', 'Item'];
+  const defaultPages = ['Business', 'Branch'];
 
   if (plan.planaccess === 'unlimited') {
     return defaultPages.map(page => ({
