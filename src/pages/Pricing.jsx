@@ -1,26 +1,43 @@
 import {
   AttachMoney as AttachMoneyIcon,
-  Check as CheckIcon,
-  Close as CloseIcon,
-  LocalOffer as DiscountIcon,
+  CheckCircleOutline as CheckCircleOutlineIcon,
+  ScheduleOutlined as ScheduleOutlinedIcon,
   Star as StarIcon,
+  StarRounded as StarRoundedIcon,
 } from '@mui/icons-material';
-import { Box, Button, Chip, Container, Tab, Tabs, Typography } from '@mui/material';
+import { Box, Chip, Container, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CTA from '../components/CTA';
 import SEOHead from '../components/SEO/SEOHead';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import { formatCurrency } from '../utils/currency';
-import { formatDuration, getPlanLimits } from '../utils/planUtils';
+import { formatDuration, getEnabledModules, getPlanLimits } from '../utils/planUtils';
 import FreeSoftware from './FreeSoftware';
 import '../styles/pages/pricing.scss';
+
+const getPlanPricing = (plan) => {
+  const originalPrice = plan.price || 0;
+  const discountAmount =
+    plan.isdiscount && plan.discount
+      ? plan.discounttype === 'percentage'
+        ? (originalPrice * plan.discount) / 100
+        : plan.discount
+      : 0;
+  return {
+    originalPrice,
+    discountAmount,
+    finalPrice: originalPrice - discountAmount,
+    hasDiscount: discountAmount > 0,
+  };
+};
 
 const Pricing = () => {
   const [plans, setPlans] = useState([]);
   const [currency, setCurrency] = useState({});
+  const [yearlyDiscount, setYearlyDiscount] = useState('');
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState('month');
   const navigate = useNavigate();
   const adminPanelBackendPath = import.meta.env.VITE_BACKEND_URL;
   const { softwareName } = useAppSettings();
@@ -37,37 +54,18 @@ const Pricing = () => {
         if (response.ok && data) {
           const plansData = data.plans || [];
           const currencyData = data.currency || {};
+          const discountData = data.yearlydiscount || '';
 
           const activePlans = plansData
             .filter((plan) => plan.status === true)
-            .sort((a, b) => {
-              const getDurationSortValue = (plan) => {
-                if (plan.plantype === 'limited') return 4;
-                if (!plan.duration) return 5;
-
-                const duration = plan.duration.toLowerCase();
-                if (duration.includes('month')) return 2;
-                if (duration.includes('year')) return 3;
-                return 6;
-              };
-
-              const sortA = getDurationSortValue(a);
-              const sortB = getDurationSortValue(b);
-
-              if (sortA !== sortB) {
-                return sortA - sortB;
-              }
-
-              const valueA = a.durationvalue || 0;
-              const valueB = b.durationvalue || 0;
-              return valueA - valueB;
-            });
+            .sort((a, b) => (Number(a.sortorder) || 0) - (Number(b.sortorder) || 0));
 
           setPlans(activePlans);
           setCurrency(currencyData);
+          setYearlyDiscount(discountData);
         }
       } catch {
-        console.log('Failed to fetch pricing data, using defaults');
+        console.log('Failed to fetch pricing data');
         setPlans([]);
         setCurrency({});
       } finally {
@@ -83,19 +81,22 @@ const Pricing = () => {
   }, []);
 
   const getFilteredPlans = () => {
-    if (activeTab === 0) {
-      return plans.filter((plan) => plan.duration === 'month' && plan.plantype === 'paid');
-    }
-    return plans.filter((plan) => plan.duration === 'year' && plan.plantype === 'paid');
-  };
+    return plans.filter((plan) => {
+      if (plan.plantype === 'free') return false;
 
-  const handleTabChange = (_event, newValue) => {
-    setActiveTab(newValue);
+      const duration = (plan.duration || '').toLowerCase();
+      if (activeTab === 'month') {
+        return duration === 'month' || duration === 'months';
+      }
+      return duration === 'year' || duration === 'years';
+    });
   };
 
   const handlePlanButtonClick = () => {
     navigate('/Signin');
   };
+
+  const filteredPlans = getFilteredPlans();
 
   return (
     <Box className="pricing-page">
@@ -103,10 +104,10 @@ const Pricing = () => {
         title="SavoryOps Pricing & Subscription Plans | Predictable Restaurant POS Cost"
         description="Affordable and transparent subscription plans for SavoryOps Restaurant Management System. Zero mandatory processing fees, zero locked-in contracts."
         keywords={[
-          "restaurant POS pricing",
-          "restaurant software subscription",
-          "affordable restaurant management SaaS",
-          "cloud POS cost"
+          'restaurant POS pricing',
+          'restaurant software subscription',
+          'affordable restaurant management SaaS',
+          'cloud POS cost',
         ]}
         primaryKeyword="Restaurant POS Pricing"
       />
@@ -148,17 +149,38 @@ const Pricing = () => {
               Choose monthly or yearly billing that fits your restaurant.
             </Typography>
 
-            <Box className="pricing-tabs-container">
-              <Tabs value={activeTab} onChange={handleTabChange} className="pricing-tabs" centered>
-                <Tab label="Monthly Plans" />
-                <Tab label="Yearly Plans" />
-              </Tabs>
-            </Box>
+            <div className="plan-period-toggle-wrap">
+              <div className="plan-period-toggle" role="tablist" aria-label="Subscription Plans">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={activeTab === 'month'}
+                  className={`plan-period-btn ${activeTab === 'month' ? 'is-active' : ''}`}
+                  onClick={() => setActiveTab('month')}
+                >
+                  Monthly
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={activeTab === 'year'}
+                  className={`plan-period-btn ${activeTab === 'year' ? 'is-active' : ''}`}
+                  onClick={() => setActiveTab('year')}
+                >
+                  Yearly
+                  {yearlyDiscount && Number(yearlyDiscount) > 0 && (
+                    <span className="yearly-discount-badge">
+                      {yearlyDiscount}% Off
+                    </span>
+                  )}
+                </button>
+              </div>
+            </div>
           </Box>
 
           <Box className="pricing-plans-grid">
             {loading ? (
-              Array.from({ length: 6 }, (_, index) => (
+              Array.from({ length: 3 }).map((_, index) => (
                 <Box key={index} className="pricing-plan-card loading">
                   <Box className="plan-card-accent" aria-hidden />
                   <Box className="plan-skeleton plan-skeleton-title" />
@@ -168,101 +190,116 @@ const Pricing = () => {
                   <Box className="plan-skeleton plan-skeleton-button" />
                 </Box>
               ))
-            ) : getFilteredPlans().length > 0 ? (
-              getFilteredPlans().map((plan, index) => {
+            ) : filteredPlans.length > 0 ? (
+              filteredPlans.map((plan, index) => {
+                const planId = plan._id || plan.id || index;
+                const { originalPrice, finalPrice, hasDiscount } = getPlanPricing(plan);
                 const limits = getPlanLimits(plan);
+                const enabledModules = getEnabledModules(plan);
+                const isPopular = Boolean(plan.ismostpopular);
+                const durationText =
+                  plan.duration && plan.durationvalue
+                    ? formatDuration(plan)
+                    : activeTab === 'year'
+                      ? '1 Year'
+                      : '1 Month';
 
                 return (
-                  <Box
-                    key={plan._id || index}
-                    className={`pricing-plan-card${plan.ismostpopular ? ' featured' : ''}`}
+                  <article
+                    key={planId}
+                    className={`plan-card${isPopular ? ' is-popular' : ''}${hasDiscount ? ' has-discount' : ''}`}
                   >
-                    <Box className="plan-card-accent" aria-hidden />
-
-                    {(plan.isdiscount || plan.ismostpopular) && (
-                      <Box className="plan-card-badges">
-                        {plan.isdiscount ? (
-                          <Box className="plan-discount-badge">
-                            <DiscountIcon className="discount-icon" fontSize="small" />
-                            <Typography variant="body2" component="span" className="plan-discount-text">
-                              {plan.discounttype === 'percentage'
-                                ? `${plan.discount}% OFF`
-                                : `Save ${formatCurrency(plan.discount, currency)}`}
-                            </Typography>
-                          </Box>
-                        ) : (
-                          <span className="plan-badge-spacer" aria-hidden />
-                        )}
-
-                        {plan.ismostpopular ? (
-                          <Chip
-                            icon={<StarIcon />}
-                            label="Most Popular"
-                            className="popular-badge"
-                            size="small"
-                          />
-                        ) : (
-                          <span className="plan-badge-spacer" aria-hidden />
-                        )}
-                      </Box>
-                    )}
-
-                    <Box className="plan-header">
-                      <Typography variant="h5" component="h3" className="plan-name">
-                        {plan.planname}
-                      </Typography>
-                      <Box className="plan-price-block">
-                        <Typography variant="h4" component="p" className="plan-price">
-                          {formatCurrency(plan.price, currency)}
-                        </Typography>
-                        <Typography variant="body2" component="p" className="plan-duration">
-                          {formatDuration(plan)}
-                        </Typography>
-                      </Box>
-                    </Box>
-
-                    <Box className="plan-features">
-                      <Typography variant="overline" className="plan-limits-title">
-                        What&apos;s included
-                      </Typography>
-                      <Box className="plan-limits-list">
-                        {limits.map((limit, limitIndex) => {
-                          const unavailable =
-                            limit.limit === '0' || limit.limit === 'Not included';
-
-                          return (
-                            <Box
-                              key={limitIndex}
-                              className={`plan-limit-item${unavailable ? ' limit-unavailable' : ' limit-available'}`}
-                            >
-                              <span className="plan-limit-icon" aria-hidden>
-                                {unavailable ? (
-                                  <CloseIcon fontSize="inherit" />
-                                ) : (
-                                  <CheckIcon fontSize="inherit" />
+                    <div className="plan-card-inner">
+                      <header className="plan-card-hero">
+                        <div className="plan-price-row">
+                          <div className="plan-price">
+                            {plan.price ? (
+                              <>
+                                <span className="plan-amount">
+                                  {formatCurrency(
+                                    hasDiscount ? finalPrice : originalPrice,
+                                    currency,
+                                  )}
+                                </span>
+                                {hasDiscount && (
+                                  <span className="original-price">
+                                    {formatCurrency(originalPrice, currency)}
+                                  </span>
                                 )}
+                              </>
+                            ) : (
+                              <span className="plan-amount plan-amount--free">FREE</span>
+                            )}
+                            {hasDiscount && (
+                              <span className="plan-discount-chip">
+                                {plan.discounttype === 'percentage'
+                                  ? `${plan.discount}% Off`
+                                  : `${formatCurrency(plan.discount, currency)} Off`}
                               </span>
-                              <span className="plan-limit-text">
-                                {limit.limit} {limit.page}
-                              </span>
-                            </Box>
-                          );
-                        })}
-                      </Box>
-                    </Box>
+                            )}
+                          </div>
+                        </div>
 
-                    <Box className="plan-action">
-                      <Button
-                        type="button"
-                        variant="contained"
-                        className="plan-button"
-                        fullWidth
-                        onClick={handlePlanButtonClick}
-                      >
-                        {plan.plantype === 'free' ? 'Get Started Free' : 'Choose Plan'}
-                      </Button>
-                    </Box>
-                  </Box>
+                        <div className="plan-title-duration-row">
+                          <h3 className="plan-card-title">
+                            {isPopular && (
+                              <StarRoundedIcon
+                                className="plan-title-star-icon"
+                                aria-hidden
+                              />
+                            )}
+                            {plan.planname || 'Plan'}
+                          </h3>
+                          {durationText && (
+                            <span className="plan-card-duration">
+                              <ScheduleOutlinedIcon
+                                className="plan-card-inline-icon"
+                                aria-hidden
+                              />
+                              {durationText}
+                            </span>
+                          )}
+                        </div>
+                      </header>
+
+                      <section className="plan-limits">
+                        <div className="plan-limits-list">
+                          {limits.map((limit, limitIndex) => (
+                            <div key={`limit-${limitIndex}`} className="plan-limit-row">
+                              <div className="plan-limit-label">
+                                <CheckCircleOutlineIcon
+                                  className="plan-limit-icon"
+                                  aria-hidden
+                                />
+                                <span>
+                                  <strong>{limit.limit}</strong> {limit.page}
+                                </span>
+                              </div>
+                            </div>
+                          ))}
+                          {enabledModules.map((mod, modIndex) => (
+                            <div key={`mod-${modIndex}`} className="plan-limit-row">
+                              <div className="plan-limit-label">
+                                <CheckCircleOutlineIcon
+                                  className="plan-limit-icon"
+                                  aria-hidden
+                                />
+                                <span>{mod.label}</span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </section>
+                    </div>
+
+                    <button
+                      type="button"
+                      className="select-plan-btn"
+                      onClick={handlePlanButtonClick}
+                    >
+                      Select Plan
+                    </button>
+                  </article>
                 );
               })
             ) : (

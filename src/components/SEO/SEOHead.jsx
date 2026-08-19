@@ -39,8 +39,13 @@ const SEOHead = ({
     if (description) {
       setMetaTag('meta[name="description"]', 'name', 'description', description);
     }
-    if (keywords.length > 0) {
-      setMetaTag('meta[name="keywords"]', 'name', 'keywords', keywords.join(', '));
+    const keywordsContent = Array.isArray(keywords)
+      ? keywords.join(', ')
+      : typeof keywords === 'string'
+      ? keywords
+      : '';
+    if (keywordsContent) {
+      setMetaTag('meta[name="keywords"]', 'name', 'keywords', keywordsContent);
     }
 
     // 3. Open Graph Tags

@@ -1,12 +1,8 @@
 import {
   ArrowForward as ArrowForwardIcon,
-  Check as CheckIcon,
-  Close as CloseIcon,
-  CreditCardOff as NoCardIcon,
+  CheckCircleOutline as CheckCircleOutlineIcon,
   FlashOn as FlashOnIcon,
-  LocalOffer as DiscountIcon,
-  Star as StarIcon,
-  Verified as VerifiedIcon,
+  ScheduleOutlined as ScheduleOutlinedIcon,
 } from '@mui/icons-material';
 import { Box, Button, Chip, Container, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
@@ -113,119 +109,86 @@ const FreeSoftware = ({ hideHeader = false }) => {
                 </Box>
               ) : freePlans.length > 0 ? (
                 freePlans.map((plan, index) => {
+                  const planId = plan._id || plan.id || index;
                   const limits = getPlanLimits(plan);
                   const enabledModules = getEnabledModules(plan);
+                  const durationText =
+                    plan.duration && plan.durationvalue
+                      ? formatDuration(plan)
+                      : '4 Weeks';
 
                   return (
-                    <Box
-                      key={plan._id || index}
-                      className="pricing-plan-card featured-free-card"
+                    <article
+                      key={planId}
+                      className="plan-card"
                     >
-                      <Box className="plan-card-accent" aria-hidden />
-
-                      <Box className="plan-card-badges">
-                        <Chip
-                          icon={<StarIcon />}
-                          label="Free Trial"
-                          className="plan-type-badge"
-                          size="small"
-                        />
-                        <Chip
-                          icon={<NoCardIcon style={{ fontSize: '0.9rem' }} />}
-                          label="No Credit Card"
-                          className="plan-perk-badge"
-                          size="small"
-                        />
-                        {plan.isdiscount && (
-                          <Box className="plan-discount-badge">
-                            <DiscountIcon className="discount-icon" fontSize="small" />
-                            <Typography variant="body2" component="span" className="plan-discount-text">
-                              {plan.discounttype === 'percentage'
-                                ? `${plan.discount}% OFF`
-                                : `Save ${formatCurrency(plan.discount, currency)}`}
-                            </Typography>
-                          </Box>
-                        )}
-                      </Box>
-
-                      <Box className="plan-header">
-                        <Typography variant="h5" component="h3" className="plan-name">
-                          {plan.planname || 'Free Trial'}
-                        </Typography>
-                        {plan.description && (
-                          <Typography variant="body2" className="plan-description">
-                            {plan.description}
-                          </Typography>
-                        )}
-                        <Box className="plan-price-block">
-                          <Typography variant="h4" component="p" className="plan-price">
-                            {plan.price ? formatCurrency(plan.price, currency) : 'FREE'}
-                          </Typography>
-                          <Typography variant="body2" component="p" className="plan-duration">
-                            {formatDuration(plan)}
-                          </Typography>
-                        </Box>
-                      </Box>
-
-                      <Box className="plan-features">
-                        <Typography variant="overline" className="plan-limits-title">
-                          What&apos;s included
-                        </Typography>
-                        <Box className="plan-limits-list">
-                          {limits.map((limit, limitIndex) => {
-                            const unavailable =
-                              limit.limit === '0' || limit.limit === 'Not included';
-
-                            return (
-                              <Box
-                                key={`limit-${limitIndex}`}
-                                className={`plan-limit-item${unavailable ? ' limit-unavailable' : ' limit-available'}`}
-                              >
-                                <span className="plan-limit-icon" aria-hidden>
-                                  {unavailable ? (
-                                    <CloseIcon fontSize="inherit" />
-                                  ) : (
-                                    <CheckIcon fontSize="inherit" />
-                                  )}
-                                </span>
-                                <span className="plan-limit-text">
-                                  <strong>{limit.limit}</strong> {limit.page}
-                                </span>
-                              </Box>
-                            );
-                          })}
-                          {enabledModules.map((mod, modIndex) => (
-                            <Box
-                              key={`module-${modIndex}`}
-                              className="plan-limit-item limit-available"
-                            >
-                              <span className="plan-limit-icon" aria-hidden>
-                                <CheckIcon fontSize="inherit" />
+                      <div className="plan-card-inner">
+                        <header className="plan-card-hero">
+                          <div className="plan-price-row">
+                            <div className="plan-price">
+                              <span className="plan-amount plan-amount--free">
+                                FREE
                               </span>
-                              <span className="plan-limit-text">
-                                {mod.label}
-                              </span>
-                            </Box>
-                          ))}
-                        </Box>
-                      </Box>
+                            </div>
+                          </div>
 
-                      <Box className="plan-action">
-                        <Button
-                          type="button"
-                          variant="contained"
-                          className="plan-button"
-                          fullWidth
-                          endIcon={<ArrowForwardIcon />}
-                          onClick={handlePlanButtonClick}
-                        >
-                          Start Free Trial
-                        </Button>
-                        <Typography variant="caption" className="plan-action-note">
-                          No credit card required • Instant setup
-                        </Typography>
-                      </Box>
-                    </Box>
+                          <div className="plan-title-duration-row">
+                            <h3 className="plan-card-title">
+                              {plan.planname || 'Free Trial'}
+                            </h3>
+                            {durationText && (
+                              <span className="plan-card-duration">
+                                <ScheduleOutlinedIcon
+                                  className="plan-card-inline-icon"
+                                  aria-hidden
+                                />
+                                {durationText}
+                              </span>
+                            )}
+                          </div>
+                        </header>
+
+                        <section className="plan-limits">
+                          <div className="plan-limits-list">
+                            {limits.map((limit, limitIndex) => (
+                              <div key={`limit-${limitIndex}`} className="plan-limit-row">
+                                <div className="plan-limit-label">
+                                  <CheckCircleOutlineIcon
+                                    className="plan-limit-icon"
+                                    aria-hidden
+                                  />
+                                  <span>
+                                    <strong>{limit.limit}</strong> {limit.page}
+                                  </span>
+                                </div>
+                              </div>
+                            ))}
+                            {enabledModules.map((mod, modIndex) => (
+                              <div key={`mod-${modIndex}`} className="plan-limit-row">
+                                <div className="plan-limit-label">
+                                  <CheckCircleOutlineIcon
+                                    className="plan-limit-icon"
+                                    aria-hidden
+                                  />
+                                  <span>{mod.label}</span>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </section>
+                      </div>
+
+                      <button
+                        type="button"
+                        className="select-plan-btn"
+                        onClick={handlePlanButtonClick}
+                      >
+                        Start Free Trial
+                      </button>
+                      <span className="plan-action-note">
+                        No credit card required
+                      </span>
+                    </article>
                   );
                 })
               ) : (

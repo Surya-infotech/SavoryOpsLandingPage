@@ -185,341 +185,217 @@
       max-width: 380px;
     }
 
-    .pricing-plan-card {
+    .plan-card {
       display: flex;
       flex-direction: column;
-      height: 100%;
+      min-width: 0;
       min-height: 100%;
-      background: linear-gradient(165deg, #ffffff 0%, #f8fbf9 100%);
-      border-radius: 20px;
-      padding: 22px 20px 18px;
-      box-shadow:
-        0 12px 30px rgba(15, 23, 42, 0.08),
-        0 2px 8px rgba(15, 23, 42, 0.04);
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
-      position: relative;
+      border-radius: 14px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: #ffffff;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
       overflow: hidden;
-      animation: fadeInUp 0.6s ease-out both;
-
-      .plan-card-accent {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg,
-            color-mix(in srgb, var(--primary-color) 80%, #000),
-            var(--primary-color),
-            var(--secondary-color));
-      }
+      position: relative;
+      transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
 
       &:hover {
-        transform: translateY(-5px);
-        box-shadow:
-          0 18px 40px rgba(15, 23, 42, 0.12),
-          0 6px 20px color-mix(in srgb, var(--primary-color) 12%, transparent);
-        border-color: color-mix(in srgb, var(--primary-color) 25%, transparent);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+        border-color: color-mix(in srgb, var(--primary-color) 35%, rgba(0, 0, 0, 0.12));
+      }
+    }
+
+    .plan-card-inner {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      min-width: 0;
+      padding: 16px 16px 0;
+      gap: 12px;
+    }
+
+    .plan-card-hero {
+      padding: 18px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--primary-color) 12%, #ffffff) 0%,
+        #ffffff 58%
+      );
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .plan-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .plan-price {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .plan-amount {
+      font-size: 1.8rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--primary-color);
+
+      &--free {
+        font-size: 1.8rem;
+      }
+    }
+
+    .plan-title-duration-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .plan-card-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #1e293b;
+      word-break: break-word;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .plan-card-duration {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #6c757d;
+      flex-shrink: 0;
+    }
+
+    .plan-card-inline-icon {
+      font-size: 1rem !important;
+      color: var(--primary-color);
+      flex-shrink: 0;
+    }
+
+    .plan-limits {
+      margin: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .plan-limits-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .plan-limit-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      font-size: 0.875rem;
+
+      &:last-child {
+        border-bottom: none;
       }
 
-      &.featured-free-card {
-        border: 2px solid color-mix(in srgb, var(--primary-color) 35%, transparent);
-        background: linear-gradient(165deg,
-            color-mix(in srgb, var(--primary-color) 4%, #ffffff) 0%,
-            #ffffff 50%,
-            color-mix(in srgb, var(--secondary-color) 3%, #ffffff) 100%);
-        box-shadow:
-          0 14px 36px color-mix(in srgb, var(--primary-color) 14%, transparent),
-          0 4px 14px rgba(15, 23, 42, 0.05);
+      &:nth-child(even) {
+        background: color-mix(in srgb, var(--primary-color) 4%, transparent);
+      }
+    }
 
-        .plan-price {
-          color: color-mix(in srgb, var(--primary-color) 90%, #000);
-        }
+    .plan-limit-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: #1e293b;
+      min-width: 0;
+      flex: 1;
+    }
 
-        .plan-button {
-          background: linear-gradient(135deg,
-              var(--primary-color),
-              color-mix(in srgb, var(--primary-color) 85%, #000)) !important;
-          box-shadow: 0 6px 18px color-mix(in srgb, var(--primary-color) 30%, transparent) !important;
+    .plan-limit-icon {
+      font-size: 1.05rem !important;
+      color: #16a34a;
+      flex-shrink: 0;
+    }
 
-          &:hover {
-            background: linear-gradient(135deg,
-                color-mix(in srgb, var(--primary-color) 90%, #000),
-                var(--primary-color)) !important;
-          }
-        }
+    .select-plan-btn {
+      width: calc(100% - 32px);
+      margin: 16px auto 16px;
+      padding: 13px 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      cursor: pointer;
+      background: linear-gradient(
+        135deg,
+        var(--primary-color) 0%,
+        var(--secondary-color, var(--primary-color)) 100%
+      );
+      box-shadow: 0 4px 12px color-mix(in srgb, var(--primary-color) 25%, transparent);
+      transition:
+        filter 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+      &:hover {
+        filter: brightness(1.06);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px color-mix(in srgb, var(--primary-color) 35%, transparent);
       }
 
-      &.loading {
-        opacity: 0.75;
-        pointer-events: none;
-        min-height: 320px;
+      &:active {
+        filter: brightness(0.96);
+        transform: translateY(0);
       }
+    }
 
-      .plan-card-badges {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px;
-        min-height: 28px;
-        margin-bottom: 12px;
-      }
+    .plan-action-note {
+      display: block;
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #64748b;
+      margin: -6px auto 14px;
+    }
 
-      .plan-type-badge {
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
-        color: #fff !important;
-        font-weight: 700 !important;
-        border: none !important;
-        box-shadow: 0 3px 10px color-mix(in srgb, var(--primary-color) 25%, transparent);
-        font-size: 0.78rem !important;
-
-        .MuiChip-icon {
-          color: #fff !important;
-        }
-      }
-
-      .plan-perk-badge {
-        background: #f0fdf4 !important;
-        color: #166534 !important;
-        border: 1px solid #bbf7d0 !important;
-        font-weight: 600 !important;
-        font-size: 0.75rem !important;
-
-        .MuiChip-icon {
-          color: #16a34a !important;
-        }
-      }
-
-      .plan-discount-badge {
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        color: white;
-        padding: 3px 8px;
-        border-radius: 999px;
-        box-shadow: 0 3px 10px color-mix(in srgb, var(--primary-color) 25%, transparent);
-        border: 1px solid rgba(255, 255, 255, 0.35);
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-        font-weight: 700;
-        font-size: 0.7rem;
-        text-transform: uppercase;
-
-        .discount-icon {
-          font-size: 0.8rem;
-        }
-      }
-
-      .plan-skeleton {
-        border-radius: 10px;
-        background: linear-gradient(90deg,
-            rgba(15, 23, 42, 0.06) 25%,
-            rgba(15, 23, 42, 0.1) 50%,
-            rgba(15, 23, 42, 0.06) 75%);
-        background-size: 200% 100%;
-        animation: planShimmer 1.4s ease-in-out infinite;
-      }
-
-      .plan-skeleton-title {
-        height: 24px;
-        width: 60%;
-        margin: 16px auto 12px;
-      }
-
-      .plan-skeleton-price {
-        height: 38px;
-        width: 45%;
-        margin: 0 auto 16px;
-      }
-
-      .plan-skeleton-line {
-        height: 12px;
-        width: 85%;
-        margin: 0 auto 8px;
-
-        &.short {
-          width: 65%;
-        }
-      }
-
-      .plan-skeleton-button {
-        height: 42px;
-        width: 100%;
-        margin-top: auto;
-      }
-
-      .plan-header {
-        text-align: center;
-        margin-bottom: 14px;
-      }
-
-      .plan-name {
-        font-weight: 800;
-        font-size: 1.3rem;
-        color: #0f172a;
-        margin-bottom: 6px;
-        letter-spacing: -0.02em;
-        line-height: 1.2;
-
-        @media (min-width: 960px) {
-          font-size: 1.4rem;
-        }
-      }
-
-      .plan-description {
-        color: #64748b;
-        font-size: 0.84rem;
-        line-height: 1.4;
-        max-width: 320px;
-        margin: 0 auto 10px;
-      }
-
-      .plan-price-block {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2px;
-        padding: 10px 20px;
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.9);
-        border: 1px solid rgba(15, 23, 42, 0.08);
-        box-shadow:
-          0 3px 10px rgba(15, 23, 42, 0.04),
-          inset 0 1px 0 rgba(255, 255, 255, 0.9);
-        min-width: 160px;
-      }
-
-      .plan-price {
-        font-weight: 800;
-        font-size: 1.95rem;
-        color: var(--primary-color);
-        margin: 0;
-        line-height: 1;
-        letter-spacing: -0.03em;
-
-        @media (min-width: 960px) {
-          font-size: 2.15rem;
-        }
-      }
-
-      .plan-duration {
-        font-size: 0.82rem;
-        color: #475569;
-        text-transform: capitalize;
-        font-weight: 600;
-        margin: 0;
-        text-align: center;
-      }
-
-      .plan-features {
-        flex: 1;
-        margin-bottom: 14px;
-      }
-
-      .plan-limits-title {
-        display: block;
-        font-size: 0.72rem;
-        color: #64748b;
-        font-weight: 700;
-        margin-bottom: 8px;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        text-align: left;
-      }
-
-      .plan-limits-list {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        padding: 12px 14px;
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.85);
-        border: 1px solid rgba(15, 23, 42, 0.07);
-      }
-
-      .plan-limit-item {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 0.85rem;
-        line-height: 1.35;
-        padding: 1px 0;
-
-        .plan-limit-icon {
-          flex-shrink: 0;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 13px;
-        }
-
-        .plan-limit-text {
-          flex: 1;
-
-          strong {
-            font-weight: 700;
-            color: #0f172a;
-          }
-        }
-
-        &.limit-available {
-          color: #334155;
-
-          .plan-limit-icon {
-            background: color-mix(in srgb, var(--primary-color) 14%, white);
-            color: var(--primary-color);
-          }
-        }
-
-        &.limit-unavailable {
-          color: #94a3b8;
-
-          .plan-limit-icon {
-            background: rgba(148, 163, 184, 0.15);
-            color: #94a3b8;
-          }
-
-          .plan-limit-text {
-            text-decoration: line-through;
-            text-decoration-color: rgba(148, 163, 184, 0.5);
-          }
-        }
-      }
-
-      .plan-action {
-        margin-top: auto;
-        padding-top: 4px;
-        text-align: center;
-      }
-
-      .plan-button {
-        border-radius: 12px !important;
-        padding: 11px 20px !important;
-        font-weight: 700 !important;
-        font-size: 0.95rem !important;
-        text-transform: none !important;
-        letter-spacing: 0.01em;
-        transition: transform 0.25s ease, box-shadow 0.25s ease !important;
-
-        &:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 22px color-mix(in srgb, var(--primary-color) 35%, transparent) !important;
-        }
-      }
-
-      .plan-action-note {
-        display: block;
-        color: #64748b;
-        font-size: 0.78rem;
-        margin-top: 10px;
-        font-weight: 500;
-      }
+    .pricing-plan-card.loading {
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 16px;
+      min-height: 360px;
     }
 
     .no-plans-message {
