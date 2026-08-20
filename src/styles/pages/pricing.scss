@@ -948,3 +948,288 @@
     }
   }
 }
+
+// ============================================================================
+// PLAN ADDONS STYLES (MATCHING OWNER WEB PLANLIST)
+// ============================================================================
+
+.plan-addons-wrapper {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.plan-addons-header {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.plan-addons-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-color, #1e293b);
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+.plan-addons-subtitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary, #6c757d);
+  margin: 0;
+}
+
+.no-addons-message {
+  text-align: center;
+  padding: 36px 24px;
+  border-radius: 12px;
+  border: 1px dashed var(--border-color, #e2e8f0);
+  background: #ffffff;
+  color: var(--text-secondary, #6c757d);
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+}
+
+.addon-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  align-items: stretch;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.addon-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-radius: 14px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
+    border-color: color-mix(in srgb, var(--primary-color) 35%, var(--border-color, #e2e8f0));
+  }
+}
+
+.addon-card-inner {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding: 16px;
+  gap: 14px;
+}
+
+.addon-card-hero {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  background: linear-gradient(135deg,
+      color-mix(in srgb, var(--primary-color) 10%, #ffffff) 0%,
+      #ffffff 65%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.addon-card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.addon-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.675rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  .addon-badge-icon {
+    font-size: 0.85rem !important;
+  }
+
+  &.is-limit {
+    color: #0284c7;
+    background: color-mix(in srgb, #0284c7 12%, transparent);
+    border: 1px solid color-mix(in srgb, #0284c7 24%, transparent);
+  }
+
+  &.is-module {
+    color: #7c3aed;
+    background: color-mix(in srgb, #7c3aed 12%, transparent);
+    border: 1px solid color-mix(in srgb, #7c3aed 24%, transparent);
+  }
+}
+
+.addon-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.addon-price {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.addon-amount {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--primary-color);
+}
+
+.addon-period {
+  font-size: 0.775rem;
+  font-weight: 500;
+  color: var(--text-secondary, #6c757d);
+}
+
+.addon-card-title {
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-color, #1e293b);
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.addon-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.addon-limit-highlight {
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  background: color-mix(in srgb, #ffffff 96%, var(--border-color, #e2e8f0));
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.addon-limit-value-box {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.addon-limit-plus {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #16a34a;
+  line-height: 1;
+}
+
+.addon-limit-qty {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-color, #1e293b);
+  line-height: 1;
+}
+
+.addon-limit-target {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color, #1e293b);
+  text-transform: capitalize;
+}
+
+.addon-limit-desc {
+  margin: 0;
+  font-size: 0.825rem;
+  color: var(--text-secondary, #6c757d);
+  line-height: 1.4;
+
+  strong {
+    color: var(--text-color, #1e293b);
+    text-transform: capitalize;
+  }
+}
+
+.addon-modules-box {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  background: color-mix(in srgb, #ffffff 96%, var(--border-color, #e2e8f0));
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.addon-modules-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary, #6c757d);
+}
+
+.addon-modules-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.addon-module-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-color, #1e293b);
+
+  .addon-module-icon {
+    font-size: 1rem !important;
+    color: #16a34a;
+    flex-shrink: 0;
+  }
+}
+
+.addon-empty-modules {
+  margin: 0;
+  font-size: 0.825rem;
+  color: var(--text-secondary, #6c757d);
+}

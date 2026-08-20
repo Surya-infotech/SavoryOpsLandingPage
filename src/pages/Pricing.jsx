@@ -1,8 +1,10 @@
 import {
+  AddCircleOutline as AddCircleOutlineIcon,
   AttachMoney as AttachMoneyIcon,
   CheckCircle as CheckCircleIcon,
   CheckCircleOutline as CheckCircleOutlineIcon,
   Close as CloseIcon,
+  ExtensionOutlined as ExtensionOutlinedIcon,
   ScheduleOutlined as ScheduleOutlinedIcon,
   Star as StarIcon,
   StarRounded as StarRoundedIcon,
@@ -43,8 +45,30 @@ const getPlanPricing = (plan) => {
   };
 };
 
+const formatAddonDuration = (addon, currentTab) => {
+  if (addon.duration && addon.durationvalue) {
+    const isSingular = Number(addon.durationvalue) === 1;
+    const durationLower = (addon.duration || '').toLowerCase();
+    let durationWord = '';
+    if (durationLower === 'month' || durationLower === 'months') {
+      durationWord = isSingular ? 'Month' : 'Months';
+    } else if (durationLower === 'year' || durationLower === 'years') {
+      durationWord = isSingular ? 'Year' : 'Years';
+    } else if (durationLower === 'week' || durationLower === 'weeks') {
+      durationWord = isSingular ? 'Week' : 'Weeks';
+    } else if (durationLower === 'day' || durationLower === 'days') {
+      durationWord = isSingular ? 'Day' : 'Days';
+    } else {
+      durationWord = addon.duration.charAt(0).toUpperCase() + addon.duration.slice(1) + (isSingular ? '' : 's');
+    }
+    return `${addon.durationvalue} ${durationWord}`;
+  }
+  return currentTab === 'month' ? '1 Month' : '1 Year';
+};
+
 const Pricing = () => {
   const [plans, setPlans] = useState([]);
+  const [addons, setAddons] = useState([]);
   const [currency, setCurrency] = useState({});
   const [yearlyDiscount, setYearlyDiscount] = useState('');
   const [loading, setLoading] = useState(true);
@@ -55,16 +79,23 @@ const Pricing = () => {
   useEffect(() => {
     const fetchPricingData = async () => {
       try {
-        const response = await fetch(`${adminPanelBackendPath}/Subscription/GetPlans_landingpage`, {
-          method: 'GET',
-          headers: { 'Content-Type': 'application/json', 'x-user': 'admin' },
-        });
-        const data = await response.json();
+        const [plansResponse, addonsResponse] = await Promise.all([
+          fetch(`${adminPanelBackendPath}/Subscription/GetPlans_landingpage`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', 'x-user': 'admin' },
+          }),
+          fetch(`${adminPanelBackendPath}/Subscription/GetAddons_landingpage`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', 'x-user': 'admin' },
+          }).catch(() => null),
+        ]);
+        const data = await plansResponse.json();
 
-        if (response.ok && data) {
+        if (plansResponse.ok && data) {
           const plansData = data.plans || [];
           const currencyData = data.currency || {};
           const discountData = data.yearlydiscount || '';
+          const allAddons = data.addons || [];
 
           const activePlans = plansData
             .filter((plan) => plan.status === true)
@@ -73,10 +104,25 @@ const Pricing = () => {
           setPlans(activePlans);
           setCurrency(currencyData);
           setYearlyDiscount(discountData);
+          if (allAddons.length > 0) {
+            setAddons(allAddons);
+          }
+        }
+
+        if (addonsResponse && addonsResponse.ok) {
+          const addonData = await addonsResponse.json();
+          const fetchedAddons = addonData.addons || (Array.isArray(addonData) ? addonData : []);
+          if (fetchedAddons.length > 0) {
+            setAddons(fetchedAddons);
+          }
+          if (addonData.currency && (!data || !data.currency)) {
+            setCurrency(addonData.currency);
+          }
         }
       } catch {
         console.log('Failed to fetch pricing data');
         setPlans([]);
+        setAddons([]);
         setCurrency({});
       } finally {
         setLoading(false);
@@ -107,6 +153,22 @@ const Pricing = () => {
   };
 
   const filteredPlans = getFilteredPlans();
+
+  const filteredAddons = useMemo(
+    () =>
+      addons
+        .filter((addon) => {
+          const isStatusActive =
+            addon.status === undefined || addon.status === null || addon.status === true;
+          if (!isStatusActive) return false;
+          const addonDuration = (addon.duration || '').toLowerCase();
+          return activeTab === 'month'
+            ? addonDuration === 'month' || addonDuration === 'months'
+            : addonDuration === 'year' || addonDuration === 'years';
+        })
+        .sort((a, b) => (Number(a.price) || 0) - (Number(b.price) || 0)),
+    [addons, activeTab],
+  );
 
   const customLimitPages = useMemo(() => {
     const pagesSet = new Set();
@@ -348,6 +410,138 @@ const Pricing = () => {
               </Box>
             )}
           </Box>
+
+          {/* Available Add-ons Section */}
+          <div className="plan-addons-wrapper">
+            <div className="plan-addons-header">
+              <h3 className="plan-addons-title">
+                Available Add-ons
+              </h3>
+              <p className="plan-addons-subtitle">
+                Enhance your plan with powerful add-ons tailored to your restaurant's needs
+              </p>
+            </div>
+
+            {filteredAddons.length === 0 ? (
+              <div className="no-addons-message">
+                <p>
+                  No add-ons available for this billing period
+                </p>
+              </div>
+            ) : (
+              <div className="addon-cards-grid">
+                {filteredAddons.map((addon) => {
+                  const addonId = addon._id || addon.id || addon.addonid;
+                  const isLimitAddon = addon.addontype === 'limit';
+                  const durationText = formatAddonDuration(addon, activeTab);
+                  const pageLabel = addon.pagename || '';
+
+                  const activeModules =
+                    !isLimitAddon && addon.modules
+                      ? COMPARISON_MODULE_DEFS.filter((mod) =>
+                          Boolean(addon.modules[mod.key]),
+                        )
+                      : [];
+
+                  return (
+                    <article key={addonId} className="addon-card">
+                      <div className="addon-card-inner">
+                        <header className="addon-card-hero">
+                          <div className="addon-card-top-row">
+                            <span
+                              className={`addon-type-badge ${isLimitAddon ? 'is-limit' : 'is-module'}`}
+                            >
+                              {isLimitAddon ? (
+                                <>
+                                  <ExtensionOutlinedIcon
+                                    className="addon-badge-icon"
+                                    aria-hidden
+                                  />
+                                  Limit Add-on
+                                </>
+                              ) : (
+                                <>
+                                  <AddCircleOutlineIcon
+                                    className="addon-badge-icon"
+                                    aria-hidden
+                                  />
+                                  Module Add-on
+                                </>
+                              )}
+                            </span>
+                          </div>
+
+                          <div className="addon-price-row">
+                            <div className="addon-price">
+                              <span className="addon-amount">
+                                {formatCurrency(
+                                  addon.price,
+                                  currency,
+                                  true,
+                                )}
+                              </span>
+                              <span className="addon-period">
+                                / {durationText}
+                              </span>
+                            </div>
+                          </div>
+
+                          <h4 className="addon-card-title">
+                            {addon.addonname || '-'}
+                          </h4>
+                        </header>
+
+                        <section className="addon-card-body">
+                          {isLimitAddon ? (
+                            <div className="addon-limit-highlight">
+                              <div className="addon-limit-value-box">
+                                <span className="addon-limit-plus">+</span>
+                                <span className="addon-limit-qty">
+                                  {addon.pagelimit}
+                                </span>
+                                <span className="addon-limit-target">
+                                  {pageLabel}
+                                </span>
+                              </div>
+                              <p className="addon-limit-desc">
+                                Extra limit for <strong>{pageLabel}</strong>
+                              </p>
+                            </div>
+                          ) : (
+                            <div className="addon-modules-box">
+                              <div className="addon-modules-title">
+                                Included Modules
+                              </div>
+                              {activeModules.length > 0 ? (
+                                <ul className="addon-modules-list">
+                                  {activeModules.map((mod) => (
+                                    <li
+                                      key={mod.key}
+                                      className="addon-module-item"
+                                    >
+                                      <CheckCircleOutlineIcon
+                                        className="addon-module-icon"
+                                        aria-hidden
+                                      />
+                                      <span>{mod.name}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              ) : (
+                                <p className="addon-empty-modules">
+                                  Module details not specified
+                                </p>
+                              )}
+                            </div>
+                          )}
+                        </section>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            )}
+          </div>
 
           {/* Plan Comparison Section */}
           {filteredPlans.length > 0 && (
