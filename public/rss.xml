@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SavoryOps - Product Updates &amp; Releases</title>
+    <link>https://savoryops.com/</link>
+    <description>Latest product releases, feature updates, and improvements from SavoryOps Restaurant Management System SaaS.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 21 Aug 2026 06:15:00 GMT</lastBuildDate>
+    <atom:link href="https://savoryops.com/rss.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>SavoryOps Cloud POS &amp; Real-Time Kitchen Display System (KDS) Released</title>
+      <link>https://savoryops.com/upcoming-features</link>
+      <guid isPermaLink="true">https://savoryops.com/upcoming-features#kds-pos-release</guid>
+      <pubDate>Fri, 21 Aug 2026 06:00:00 GMT</pubDate>
+      <description><![CDATA[Experience lightning-fast table billing, automated kitchen order ticket (KOT) routing, real-time inventory deduction, and multi-station synchronization on SavoryOps.]]></description>
+    </item>
+
+    <item>
+      <title>Automated Staff Scheduling, Tips Management &amp; Gratuity Handling</title>
+      <link>https://savoryops.com/upcoming-features</link>
+      <guid isPermaLink="true">https://savoryops.com/upcoming-features#hrm-tips-management</guid>
+      <pubDate>Mon, 17 Aug 2026 10:00:00 GMT</pubDate>
+      <description><![CDATA[New HRM module featuring role-based permission control, biometric attendance tracking, shift scheduling, and smart tip pool distribution.]]></description>
+    </item>
+
+    <item>
+      <title>Customer Loyalty Rewards, Gift Coupons &amp; Split Bill Checkout</title>
+      <link>https://savoryops.com/upcoming-features</link>
+      <guid isPermaLink="true">https://savoryops.com/upcoming-features#loyalty-rewards</guid>
+      <pubDate>Sat, 01 Aug 2026 08:30:00 GMT</pubDate>
+      <description><![CDATA[Boost guest retention with tiered membership rewards, digital promo vouchers, automated referral incentives, and split payment checkout at tables.]]></description>
+    </item>
+  </channel>
+</rss>

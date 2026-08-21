@@ -31,9 +31,15 @@
     content="Transform your restaurant operations with SavoryOps. Streamline inventory, staff, and analytics in one platform." />
   <meta name="twitter:image" content="/Web_Logo.png" />
 
-  <!-- Favicon: injected from API themeSetting.faviconurl (same as SavoryOpsAdminPanel). -->
+  <!-- Favicon & Brand Icons for Google & Chrome Knowledge Graph -->
   <link rel="icon" type="image/png" href="/logo.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/logo.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/logo.png">
+  <link rel="apple-touch-icon" href="/logo.png">
   <link rel="manifest" href="/site.webmanifest">
+
+  <!-- RSS Feed for Google Updates & Discover Freshness Signals -->
+  <link rel="alternate" type="application/rss+xml" title="SavoryOps Updates &amp; Changelog" href="https://savoryops.com/rss.xml" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,22 +52,63 @@
   <link rel="preload" href="/src/main.jsx" as="script">
 
   <!-- Updated from API themeSetting.primarycolor at runtime -->
-  <meta name="theme-color" content="#ffffff">
-  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#8AB17D">
+  <meta name="msapplication-TileColor" content="#8AB17D">
 
+  <!-- Structured Data / JSON-LD for Google Knowledge Graph & Entity Logo -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "SavoryOps",
-    "alternateName": "SavoryOps SaaS",
-    "url": "https://savoryops.com/",
-    "logo": "https://savoryops.com/logo.png",
-    "image": "https://savoryops.com/Web_Logo.png",
-    "description": "Complete Restaurant Management System & SaaS Platform to streamline restaurant operations, inventory, staff scheduling, and analytics.",
-    "sameAs": [
-      "https://www.linkedin.com/company/savoryops",
-      "https://www.instagram.com/savoryops"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://savoryops.com/#organization",
+        "name": "SavoryOps",
+        "alternateName": ["SavoryOps SaaS", "SavoryOps Restaurant Management"],
+        "url": "https://savoryops.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://savoryops.com/#logo",
+          "url": "https://savoryops.com/logo.png",
+          "contentUrl": "https://savoryops.com/logo.png",
+          "caption": "SavoryOps Logo",
+          "width": "512",
+          "height": "512"
+        },
+        "image": "https://savoryops.com/Web_Logo.png",
+        "description": "Complete Restaurant Management System & SaaS Platform to streamline restaurant operations, inventory, POS, staff scheduling, and analytics.",
+        "sameAs": [
+          "https://www.linkedin.com/company/savoryops",
+          "https://www.instagram.com/savoryops"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://savoryops.com/#website",
+        "url": "https://savoryops.com/",
+        "name": "SavoryOps",
+        "description": "Streamline Your Restaurant Operations with SavoryOps SaaS",
+        "publisher": {
+          "@id": "https://savoryops.com/#organization"
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://savoryops.com/#software",
+        "name": "SavoryOps",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD",
+          "name": "Free Trial"
+        },
+        "author": {
+          "@id": "https://savoryops.com/#organization"
+        }
+      }
     ]
   }
   </script>
