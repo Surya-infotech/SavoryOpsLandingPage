@@ -2,5 +2,25 @@
 User-agent: *
 Allow: /
 
+# Explicit AI Search & LLM Crawlers Permissions (ChatGPT, Gemini, Perplexity, Claude)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
 # Directives
 Sitemap: https://savoryops.com/sitemap.xml
+Sitemap: https://savoryops.com/rss.xml

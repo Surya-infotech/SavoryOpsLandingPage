@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useLanguage } from '../../context/LanguageContext.jsx';
+import multilingualKeywords from '../../data/multilingualKeywords.json';
 
 /**
  * SEOHead Component
@@ -16,12 +18,21 @@ const SEOHead = ({
   schemaType = 'SoftwareApplication'
 }) => {
   const location = useLocation();
+  const { language } = useLanguage();
   const currentUrl = canonicalUrl || `https://savoryops.com${location.pathname}`;
 
   useEffect(() => {
+    // Determine active language data
+    const langData = multilingualKeywords[language] || multilingualKeywords['English'];
+    const activeLangCode = langData?.langCode || 'en';
+
+    // Update <html lang="..."> attribute dynamically
+    document.documentElement.lang = activeLangCode;
+
     // 1. Update Title Tag
-    if (title) {
-      document.title = title;
+    const resolvedTitle = title || langData?.metaTitle || document.title;
+    if (resolvedTitle) {
+      document.title = resolvedTitle;
     }
 
     // Helper function to update or create meta tags
@@ -35,17 +46,23 @@ const SEOHead = ({
       element.setAttribute('content', content);
     };
 
-    // 2. Standard Meta Tags
-    if (description) {
-      setMetaTag('meta[name="description"]', 'name', 'description', description);
+    // 2. Standard Meta Tags with Multilingual Keyword Merging
+    const resolvedDescription = description || langData?.metaDescription || '';
+    if (resolvedDescription) {
+      setMetaTag('meta[name="description"]', 'name', 'description', resolvedDescription);
     }
-    const keywordsContent = Array.isArray(keywords)
-      ? keywords.join(', ')
-      : typeof keywords === 'string'
+
+    const pageKeywords = Array.isArray(keywords)
       ? keywords
-      : '';
-    if (keywordsContent) {
-      setMetaTag('meta[name="keywords"]', 'name', 'keywords', keywordsContent);
+      : typeof keywords === 'string' && keywords.length > 0
+      ? [keywords]
+      : [];
+
+    const localizedKeywords = langData?.primaryKeywords || [];
+    const mergedKeywords = Array.from(new Set([...pageKeywords, ...localizedKeywords]));
+
+    if (mergedKeywords.length > 0) {
+      setMetaTag('meta[name="keywords"]', 'name', 'keywords', mergedKeywords.join(', '));
     }
 
     // 3. Open Graph Tags
@@ -69,6 +86,30 @@ const SEOHead = ({
       document.head.appendChild(canonical);
     }
     canonical.setAttribute('href', currentUrl);
+
+    // 5b. Multilingual Hreflang Tags for Global Search Ranking
+    const supportedLangs = [
+      { code: 'en', lang: 'en' },
+      { code: 'fr', lang: 'fr' },
+      { code: 'de', lang: 'de' },
+      { code: 'es', lang: 'es' },
+      { code: 'el', lang: 'el' },
+      { code: 'it', lang: 'it' },
+      { code: 'nl', lang: 'nl' },
+      { code: 'ru', lang: 'ru' },
+      { code: 'x-default', lang: 'en' }
+    ];
+
+    supportedLangs.forEach(({ code }) => {
+      let hreflangTag = document.querySelector(`link[rel="alternate"][hreflang="${code}"]`);
+      if (!hreflangTag) {
+        hreflangTag = document.createElement('link');
+        hreflangTag.setAttribute('rel', 'alternate');
+        hreflangTag.setAttribute('hreflang', code);
+        document.head.appendChild(hreflangTag);
+      }
+      hreflangTag.setAttribute('href', currentUrl);
+    });
 
     // 6. JSON-LD Structured Schema Injection
     const schemaId = 'dynamic-seo-jsonld';
