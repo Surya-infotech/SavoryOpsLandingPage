@@ -47,5 +47,20 @@
   "invalidreferralcode": "Μη έγκυρος κωδικός παραπομπής",
   "validatingreferralcode": "Επικύρωση κωδικού παραπομπής...",
   "creatingaccount": "Δημιουργία λογαριασμού...",
-  "signingin": "Σύνδεση..."
+  "signingin": "Σύνδεση...",
+  "forgotpassword": "Ξεχάσατε τον κωδικό σας;",
+  "forgotpasswordtitle": "Ξεχάσατε τον κωδικό πρόσβασης",
+  "forgotpassworddesc": "Εισαγάγετε τον καταχωρημένο αριθμό τηλεφώνου σας για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+  "newpassword": "Νέος κωδικός πρόσβασης",
+  "newpasswordplaceholder": "Εισαγάγετε τον νέο κωδικό πρόσβασής σας",
+  "confirmnewpassword": "Επιβεβαίωση νέου κωδικού πρόσβασης",
+  "confirmnewpasswordplaceholder": "Επανεισάγετε τον νέο κωδικό πρόσβασής σας",
+  "passwordsdonotmatch": "Οι κωδικοί πρόσβασης δεν ταιριάζουν",
+  "passwordresetsuccessful": "Ο κωδικός πρόσβασης επαναφέρθηκε με επιτυχία.",
+  "noaccountfoundwithphone": "Δεν βρέθηκε λογαριασμός για αυτόν τον αριθμό τηλεφώνου.",
+  "resetpassword": "Επαναφορά κωδικού πρόσβασης",
+  "resettingpassword": "Επαναφορά κωδικού πρόσβασης...",
+  "newpassworddesc": "Εισαγάγετε τον νέο σας κωδικό πρόσβασης παρακάτω.",
+  "cancel": "Ακύρωση",
+  "close": "Κλείσιμο"
 }

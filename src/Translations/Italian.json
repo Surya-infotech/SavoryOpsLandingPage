@@ -47,5 +47,20 @@
   "invalidreferralcode": "Codice referral non valido",
   "validatingreferralcode": "Validazione codice referral...",
   "creatingaccount": "Creazione account...",
-  "signingin": "Accesso in corso..."
+  "signingin": "Accesso in corso...",
+  "forgotpassword": "Password dimenticata?",
+  "forgotpasswordtitle": "Password dimenticata",
+  "forgotpassworddesc": "Inserisci il tuo numero di telefono registrato per reimpostare la password.",
+  "newpassword": "Nuova password",
+  "newpasswordplaceholder": "Inserisci la tua nuova password",
+  "confirmnewpassword": "Conferma nuova password",
+  "confirmnewpasswordplaceholder": "Reinserisci la tua nuova password",
+  "passwordsdonotmatch": "Le password non corrispondono",
+  "passwordresetsuccessful": "Password reimpostata con successo.",
+  "noaccountfoundwithphone": "Nessun account trovato per questo numero di telefono.",
+  "resetpassword": "Reimposta password",
+  "resettingpassword": "Reimpostazione password...",
+  "newpassworddesc": "Inserisci la tua nuova password qui sotto.",
+  "cancel": "Annulla",
+  "close": "Chiudi"
 }

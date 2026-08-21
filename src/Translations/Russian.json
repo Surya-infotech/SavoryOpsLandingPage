@@ -47,5 +47,20 @@
   "invalidreferralcode": "Недействительный реферальный код",
   "validatingreferralcode": "Проверка реферального кода...",
   "creatingaccount": "Создание аккаунта...",
-  "signingin": "Вход в систему..."
+  "signingin": "Вход в систему...",
+  "forgotpassword": "Забыли пароль?",
+  "forgotpasswordtitle": "Восстановление пароля",
+  "forgotpassworddesc": "Введите ваш зарегистрированный номер телефона, чтобы сбросить пароль.",
+  "newpassword": "Новый пароль",
+  "newpasswordplaceholder": "Введите новый пароль",
+  "confirmnewpassword": "Подтвердите новый пароль",
+  "confirmnewpasswordplaceholder": "Повторно введите новый пароль",
+  "passwordsdonotmatch": "Пароли не совпадают",
+  "passwordresetsuccessful": "Пароль успешно сброшен.",
+  "noaccountfoundwithphone": "Аккаунт с таким номером телефона не найден.",
+  "resetpassword": "Сбросить пароль",
+  "resettingpassword": "Сброс пароля...",
+  "newpassworddesc": "Введите новый пароль ниже.",
+  "cancel": "Отмена",
+  "close": "Закрыть"
 }

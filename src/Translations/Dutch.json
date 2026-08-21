@@ -47,5 +47,20 @@
   "invalidreferralcode": "Ongeldige verwijzingscode",
   "validatingreferralcode": "Verwijzingscode valideren...",
   "creatingaccount": "Account aanmaken...",
-  "signingin": "Bezig met inloggen..."
+  "signingin": "Bezig met inloggen...",
+  "forgotpassword": "Wachtwoord vergeten?",
+  "forgotpasswordtitle": "Wachtwoord vergeten",
+  "forgotpassworddesc": "Voer uw geregistreerde telefoonnummer in om uw wachtwoord opnieuw in te stellen.",
+  "newpassword": "Nieuw wachtwoord",
+  "newpasswordplaceholder": "Voer uw nieuwe wachtwoord in",
+  "confirmnewpassword": "Bevestig nieuw wachtwoord",
+  "confirmnewpasswordplaceholder": "Voer uw nieuwe wachtwoord opnieuw in",
+  "passwordsdonotmatch": "Wachtwoorden komen niet overeen",
+  "passwordresetsuccessful": "Wachtwoord succesvol gereset.",
+  "noaccountfoundwithphone": "Geen account gevonden voor dit telefoonnummer.",
+  "resetpassword": "Wachtwoord opnieuw instellen",
+  "resettingpassword": "Wachtwoord opnieuw instellen...",
+  "newpassworddesc": "Voer hieronder uw nieuwe wachtwoord in.",
+  "cancel": "Annuleren",
+  "close": "Sluiten"
 }

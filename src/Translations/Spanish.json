@@ -47,5 +47,20 @@
   "invalidreferralcode": "Código de referido no válido",
   "validatingreferralcode": "Validando código de referido...",
   "creatingaccount": "Creando cuenta...",
-  "signingin": "Iniciando sesión..."
+  "signingin": "Iniciando sesión...",
+  "forgotpassword": "¿Olvidaste tu contraseña?",
+  "forgotpasswordtitle": "Recuperar contraseña",
+  "forgotpassworddesc": "Introduce tu número de teléfono registrado para restablecer tu contraseña.",
+  "newpassword": "Nueva contraseña",
+  "newpasswordplaceholder": "Introduce tu nueva contraseña",
+  "confirmnewpassword": "Confirmar nueva contraseña",
+  "confirmnewpasswordplaceholder": "Vuelve a introducir tu nueva contraseña",
+  "passwordsdonotmatch": "Las contraseñas no coinciden",
+  "passwordresetsuccessful": "Contraseña restablecida con éxito.",
+  "noaccountfoundwithphone": "No se encontró ninguna cuenta para este número de teléfono.",
+  "resetpassword": "Restablecer contraseña",
+  "resettingpassword": "Restableciendo contraseña...",
+  "newpassworddesc": "Introduce tu nueva contraseña a continuación.",
+  "cancel": "Cancelar",
+  "close": "Cerrar"
 }

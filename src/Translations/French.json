@@ -47,5 +47,20 @@
   "invalidreferralcode": "Code de parrainage invalide",
   "validatingreferralcode": "Validation du code de parrainage...",
   "creatingaccount": "Création du compte...",
-  "signingin": "Connexion en cours..."
+  "signingin": "Connexion en cours...",
+  "forgotpassword": "Mot de passe oublié ?",
+  "forgotpasswordtitle": "Mot de passe oublié",
+  "forgotpassworddesc": "Entrez votre numéro de téléphone enregistré pour réinitialiser votre mot de passe.",
+  "newpassword": "Nouveau mot de passe",
+  "newpasswordplaceholder": "Entrez votre nouveau mot de passe",
+  "confirmnewpassword": "Confirmer le nouveau mot de passe",
+  "confirmnewpasswordplaceholder": "Ressaisissez votre nouveau mot de passe",
+  "passwordsdonotmatch": "Les mots de passe ne correspondent pas",
+  "passwordresetsuccessful": "Mot de passe réinitialisé avec succès.",
+  "noaccountfoundwithphone": "Aucun compte trouvé pour ce numéro de téléphone.",
+  "resetpassword": "Réinitialiser le mot de passe",
+  "resettingpassword": "Réinitialisation du mot de passe...",
+  "newpassworddesc": "Entrez votre nouveau mot de passe ci-dessous.",
+  "cancel": "Annuler",
+  "close": "Fermer"
 }

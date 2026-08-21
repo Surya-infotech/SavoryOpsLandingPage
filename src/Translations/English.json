@@ -47,5 +47,20 @@
   "invalidreferralcode": "Invalid referral code",
   "validatingreferralcode": "Validating referral code...",
   "creatingaccount": "Creating account...",
-  "signingin": "Signing In..."
+  "signingin": "Signing In...",
+  "forgotpassword": "Forgot Password?",
+  "forgotpasswordtitle": "Forgot Password",
+  "forgotpassworddesc": "Enter your registered phone number to reset your password.",
+  "newpassword": "New Password",
+  "newpasswordplaceholder": "Enter your new password",
+  "confirmnewpassword": "Confirm New Password",
+  "confirmnewpasswordplaceholder": "Re-enter your new password",
+  "passwordsdonotmatch": "Passwords do not match",
+  "passwordresetsuccessful": "Password reset successfully.",
+  "noaccountfoundwithphone": "No account found for this phone number.",
+  "resetpassword": "Reset Password",
+  "resettingpassword": "Resetting Password...",
+  "newpassworddesc": "Enter your new password below.",
+  "cancel": "Cancel",
+  "close": "Close"
 }

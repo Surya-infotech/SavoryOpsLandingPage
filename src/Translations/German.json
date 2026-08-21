@@ -47,5 +47,20 @@
   "invalidreferralcode": "Ungültiger Empfehlungscode",
   "validatingreferralcode": "Empfehlungscode wird geprüft...",
   "creatingaccount": "Konto wird erstellt...",
-  "signingin": "Wird angemeldet..."
+  "signingin": "Wird angemeldet...",
+  "forgotpassword": "Passwort vergessen?",
+  "forgotpasswordtitle": "Passwort vergessen",
+  "forgotpassworddesc": "Geben Sie Ihre registrierte Telefonnummer ein, um Ihr Passwort zurückzusetzen.",
+  "newpassword": "Neues Passwort",
+  "newpasswordplaceholder": "Geben Sie Ihr neues Passwort ein",
+  "confirmnewpassword": "Neues Passwort bestätigen",
+  "confirmnewpasswordplaceholder": "Geben Sie Ihr neues Passwort erneut ein",
+  "passwordsdonotmatch": "Passwörter stimmen nicht überein",
+  "passwordresetsuccessful": "Passwort erfolgreich zurückgesetzt.",
+  "noaccountfoundwithphone": "Kein Konto für diese Telefonnummer gefunden.",
+  "resetpassword": "Passwort zurücksetzen",
+  "resettingpassword": "Passwort wird zurückgesetzt...",
+  "newpassworddesc": "Geben Sie unten Ihr neues Passwort ein.",
+  "cancel": "Abbrechen",
+  "close": "Schließen"
 }
