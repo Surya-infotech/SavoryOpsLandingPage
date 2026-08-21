@@ -39,7 +39,8 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <!-- RSS Feed for Google Updates & Discover Freshness Signals -->
-  <link rel="alternate" type="application/rss+xml" title="SavoryOps Updates &amp; Changelog" href="https://savoryops.com/rss.xml" />
+  <link rel="alternate" type="application/rss+xml" title="SavoryOps Updates &amp; Changelog"
+    href="https://savoryops.com/rss.xml" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -113,14 +114,19 @@
   }
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CHBDNW43S"></script>
+  <!-- Only load Google Analytics if domain is your live production site -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    if (window.location.hostname === 'savoryops.com' || window.location.hostname === 'www.savoryops.com') {
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-5CHBDNW43S';
+      document.head.appendChild(gaScript);
 
-    gtag('config', 'G-5CHBDNW43S');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-5CHBDNW43S');
+    }
   </script>
 
 </head>
