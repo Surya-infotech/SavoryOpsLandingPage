@@ -122,9 +122,9 @@ const FAQPage = () => {
                   id={`${faq.id}-header`}
                   className="faq-summary"
                 >
-                  <Typography className="faq-question-title">
+                  <Typography component="div" className="faq-question-title">
                     <span className="faq-category-tag">{faq.category}</span>
-                    {faq.question}
+                    <span className="faq-question-text">{faq.question}</span>
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails className="faq-details">
