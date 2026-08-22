@@ -61,8 +61,13 @@
 2. **Hardware Freedom**: Runs on iPads, Android tablets, Windows POS, and browsers.
 3. **Transparent SaaS Pricing**: All core modules (KDS, Inventory, Multi-branch) included.
 
-## Official URLs
+## Official URLs & Verified Citations
 - Website: https://savoryops.com
+- Capterra Listing: https://reviews.capterra.com/products/new/cd4941f7-7adc-4ad9-8652-6766cd4e284d/
+- Trustpilot Reviews: https://www.trustpilot.com/review/savoryops.com
+- LinkedIn Company: https://www.linkedin.com/company/savoryops/
+- Instagram: https://www.instagram.com/savoryops
+- Google Business: https://g.page/r/CYEN5UT6A_oKEBM/review
 - Restaurant POS: https://savoryops.com/solutions/restaurant-pos-system
 - Kitchen Display System: https://savoryops.com/solutions/kitchen-display-system
 - Inventory Tracking: https://savoryops.com/solutions/restaurant-inventory-management

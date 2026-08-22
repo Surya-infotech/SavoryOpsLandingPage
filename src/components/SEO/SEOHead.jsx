@@ -125,10 +125,18 @@ const SEOHead = ({
       {
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
-        'name': 'SavoryOps Restaurant Management System',
-        'applicationCategory': 'BusinessApplication',
-        'operatingSystem': 'Web, iOS, Android',
-        'description': description || 'Complete Restaurant Management System & Kitchen Display System SaaS platform.',
+        'name': 'SavoryOps',
+        'alternateName': ['SavoryOps SaaS', 'SavoryOps Restaurant Management System', 'SavoryOps POS'],
+        'applicationCategory': 'RestaurantManagementApplication',
+        'operatingSystem': 'Web, Cloud, iOS, Android',
+        'url': 'https://savoryops.com',
+        'description': description || 'Complete Restaurant Management System, Cloud POS, and Kitchen Display System SaaS platform.',
+        'sameAs': [
+          'https://reviews.capterra.com/products/new/cd4941f7-7adc-4ad9-8652-6766cd4e284d/',
+          'https://www.trustpilot.com/review/savoryops.com',
+          'https://www.linkedin.com/company/savoryops/',
+          'https://www.instagram.com/savoryops'
+        ],
         'offers': {
           '@type': 'Offer',
           'price': '0.00',
