@@ -235,29 +235,111 @@ const Reviews = () => {
           </Box>
         </Box>
 
-        {/* Why Your Review Matters Banner */}
+        {/* Why Your Review Matters & Quick Review Box Banner */}
         <Box className="review-incentive-banner">
-          <div className="incentive-content">
-            <div className="incentive-text">
-              <Typography variant="h5" className="incentive-title">
+          <div className="incentive-grid">
+            <div className="incentive-left">
+              <div className="incentive-badge-wrap">
+                <Chip
+                  icon={<StarIcon sx={{ fontSize: 16, color: '#fbbf24 !important' }} />}
+                  label="Community Feedback"
+                  size="small"
+                  className="incentive-pill-badge"
+                />
+              </div>
+
+              <Typography variant="h4" component="h3" className="incentive-title">
                 Already using {softwareName}? Share your review today!
               </Typography>
-              <Typography variant="body2" className="incentive-subtitle">
-                It takes less than 2 minutes and helps fellow restaurant owners discover modern POS, KOT & inventory automation.
+
+              <Typography variant="body1" className="incentive-subtitle">
+                Your feedback takes less than 2 minutes and helps restaurant owners around the world choose the right POS, KOT, and multi-branch management platform.
               </Typography>
+
+              <div className="incentive-reasons">
+                <div className="reason-pill">
+                  <ThumbUpIcon className="reason-icon" />
+                  <span>Help fellow restaurateurs</span>
+                </div>
+                <div className="reason-pill">
+                  <ChatIcon className="reason-icon" />
+                  <span>Direct impact on features</span>
+                </div>
+                <div className="reason-pill">
+                  <SecurityIcon className="reason-icon" />
+                  <span>100% Verified Reviewers</span>
+                </div>
+              </div>
             </div>
-            <div className="incentive-reasons">
-              <div className="reason-pill">
-                <ThumbUpIcon className="reason-icon" />
-                <span>Help fellow restaurateurs</span>
-              </div>
-              <div className="reason-pill">
-                <ChatIcon className="reason-icon" />
-                <span>Direct impact on updates</span>
-              </div>
-              <div className="reason-pill">
-                <SecurityIcon className="reason-icon" />
-                <span>100% Verified Reviewers</span>
+
+            <div className="incentive-right">
+              <div className="quick-review-box">
+                <Typography variant="subtitle1" className="quick-review-title">
+                  Choose where you'd like to review:
+                </Typography>
+
+                <div className="quick-review-buttons">
+                  <a
+                    href="https://reviews.capterra.com/products/new/cd4941f7-7adc-4ad9-8652-6766cd4e284d/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="quick-btn capterra-btn"
+                  >
+                    <div className="quick-btn-left">
+                      <CapterraIcon />
+                      <div className="quick-btn-text">
+                        <span className="platform-lbl">Capterra</span>
+                        <span className="platform-sub">by Gartner</span>
+                      </div>
+                    </div>
+                    <div className="quick-btn-right">
+                      <span className="quick-rating">4.9 ★</span>
+                      <OpenInNewIcon className="quick-arrow" />
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://www.trustpilot.com/review/savoryops.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="quick-btn trustpilot-btn"
+                  >
+                    <div className="quick-btn-left">
+                      <TrustpilotIcon />
+                      <div className="quick-btn-text">
+                        <span className="platform-lbl">Trustpilot</span>
+                        <span className="platform-sub">Verified Reviews</span>
+                      </div>
+                    </div>
+                    <div className="quick-btn-right">
+                      <span className="quick-rating">4.8 ★</span>
+                      <OpenInNewIcon className="quick-arrow" />
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://g.page/r/CYEN5UT6A_oKEBM/review"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="quick-btn google-btn"
+                  >
+                    <div className="quick-btn-left">
+                      <GoogleReviewIcon />
+                      <div className="quick-btn-text">
+                        <span className="platform-lbl">Google Profile</span>
+                        <span className="platform-sub">Local Business</span>
+                      </div>
+                    </div>
+                    <div className="quick-btn-right">
+                      <span className="quick-rating">5.0 ★</span>
+                      <OpenInNewIcon className="quick-arrow" />
+                    </div>
+                  </a>
+                </div>
+
+                <Typography variant="caption" className="quick-review-footer">
+                  🔒 Direct official links • No registration required on Google
+                </Typography>
               </div>
             </div>
           </div>
