@@ -6,6 +6,7 @@ import {
   AccordionSummary,
   Box,
   Button,
+  Chip,
   Container,
   InputAdornment,
   TextField,
@@ -16,7 +17,8 @@ import {
   HelpOutline as HelpOutlineIcon,
   Search as SearchIcon,
   SupportAgent as SupportAgentIcon,
-  RocketLaunch as RocketLaunchIcon
+  RocketLaunch as RocketLaunchIcon,
+  Star as StarIcon
 } from '@mui/icons-material';
 import SEOHead from '../components/SEO/SEOHead';
 import { faqsData, faqCategories } from '../data/faqsData';
@@ -44,9 +46,9 @@ const FAQPage = () => {
   }, [activeCategory, searchQuery]);
 
   return (
-    <Box className="faq-page-container">
+    <div className="faq-page-container">
       <SEOHead
-        title={`Frequently Asked Questions (FAQ) — ${softwareName || 'SavoryOps'}`}
+        title="Frequently Asked Questions (FAQ) | SavoryOps Restaurant POS"
         description="Have questions about SavoryOps? Read answers on restaurant POS billing, KDS kitchen screens, offline support, QR menus, inventory costing, and pricing."
         keywords={[
           "SavoryOps FAQ",
@@ -63,13 +65,24 @@ const FAQPage = () => {
       <Container maxWidth="lg">
         {/* Hero Header */}
         <Box className="faq-hero-section">
-          <Box className="faq-pill-badge">
-            <HelpOutlineIcon fontSize="small" />
-            <span>Help Center & FAQs</span>
+          <Box className="faq-badge-wrap">
+            <Chip
+              icon={<HelpOutlineIcon sx={{ color: '#ffffff !important', fontSize: '1.15rem' }} />}
+              label="Help Center & FAQs"
+              className="faq-pill-chip"
+            />
           </Box>
-          <Typography variant="h1" className="faq-main-title">
-            Frequently Asked <span>Questions</span>
+          <Typography variant="h1" component="h1" className="main-heading">
+            Frequently Asked Questions
           </Typography>
+          <Box className="subtitle-section">
+            <Box className="platform-badge">
+              <StarIcon className="star-icon" />
+              <Typography variant="body2" className="platform-text">
+                Instant Answers & Knowledge Base
+              </Typography>
+            </Box>
+          </Box>
           <Typography variant="body1" className="faq-main-subtitle">
             Everything you need to know about {softwareName || 'SavoryOps'} cloud POS, kitchen display workflows, table QR menus, and multi-branch management.
           </Typography>
@@ -209,7 +222,7 @@ const FAQPage = () => {
           </Box>
         </Box>
       </Container>
-    </Box>
+    </div>
   );
 };
 

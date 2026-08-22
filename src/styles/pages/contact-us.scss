@@ -1,4 +1,4 @@
-// Contact Us Section - matches Languages, Benefits design
+// Contact Us Section - Unified Hero Design
 .contact-us-section {
   position: relative;
 
@@ -11,6 +11,109 @@
     bottom: 0;
     background: linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 2%, transparent) 0%, color-mix(in srgb, var(--secondary-color) 2%, transparent) 100%);
     pointer-events: none;
+  }
+
+  &.contact-page-standalone {
+    padding-top: 100px !important;
+    min-height: 100vh;
+
+    &::before {
+      height: 550px;
+      background:
+        radial-gradient(circle at 20% 40%, color-mix(in srgb, var(--secondary-color) 8%, transparent) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--primary-color) 8%, transparent) 0%, transparent 50%);
+    }
+  }
+
+  .contact-page-header {
+    text-align: center;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin-inline: auto;
+
+    .contact-badge {
+      margin-bottom: 24px;
+
+      .contact-chip {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 0.95rem;
+        padding: 10px 20px;
+        height: auto;
+        border-radius: 50px;
+        box-shadow: 0 4px 20px color-mix(in srgb, var(--primary-color) 30%, transparent);
+
+        .MuiChip-icon {
+          color: #ffffff !important;
+          font-size: 1.15rem;
+        }
+      }
+    }
+
+    .main-heading {
+      font-weight: 900;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000), var(--primary-color), var(--secondary-color));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 24px;
+      font-size: clamp(2.25rem, 5vw, 3.8rem);
+      line-height: 1.2;
+      position: relative;
+      max-width: 900px;
+      margin-inline: auto;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        border-radius: 2px;
+      }
+    }
+
+    .subtitle-section {
+      margin-top: 20px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: center;
+
+      .platform-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(138, 177, 125, 0.12);
+        color: #3b6e2e;
+        padding: 5px 16px;
+        border-radius: 20px;
+        border: 1px solid rgba(138, 177, 125, 0.3);
+
+        .star-icon {
+          font-size: 1rem;
+          color: #558b4b;
+        }
+
+        .platform-text {
+          font-size: 0.875rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .description {
+      font-size: 1.15rem;
+      color: #64748b;
+      line-height: 1.65;
+      max-width: 720px;
+      margin: 0 auto;
+    }
   }
 
   .contact-card {

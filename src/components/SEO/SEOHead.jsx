@@ -152,20 +152,46 @@ const SEOHead = ({
       {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
-        'itemListElement': [
-          {
-            '@type': 'ListItem',
-            'position': 1,
-            'name': 'Home',
-            'item': 'https://savoryops.com/'
-          },
-          {
-            '@type': 'ListItem',
-            'position': 2,
-            'name': primaryKeyword || title || 'Page',
-            'item': currentUrl
+        'itemListElement': (() => {
+          const pathSegments = location.pathname.split('/').filter(Boolean);
+          if (pathSegments.length <= 1) {
+            return [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://savoryops.com/'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': primaryKeyword || title || 'Page',
+                'item': currentUrl
+              }
+            ];
           }
-        ]
+          const parentName = pathSegments[0].charAt(0).toUpperCase() + pathSegments[0].slice(1);
+          return [
+            {
+              '@type': 'ListItem',
+              'position': 1,
+              'name': 'Home',
+              'item': 'https://savoryops.com/'
+            },
+            {
+              '@type': 'ListItem',
+              'position': 2,
+              'name': parentName,
+              'item': `https://savoryops.com/${pathSegments[0]}`
+            },
+            {
+              '@type': 'ListItem',
+              'position': 3,
+              'name': primaryKeyword || title || 'Page',
+              'item': currentUrl
+            }
+          ];
+        })()
       }
     ];
 

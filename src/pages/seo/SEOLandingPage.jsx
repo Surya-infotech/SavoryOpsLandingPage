@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { Box, Button, Chip, Container, Typography } from '@mui/material';
 import SEOHead from '../../components/SEO/SEOHead';
 import keywordsData from '../../data/keywords.json';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import StarIcon from '@mui/icons-material/Star';
 
 /**
  * Programmatic SEO Landing Page Generator
@@ -15,7 +16,7 @@ const SEOLandingPage = ({ clusterId }) => {
 
   // Find matching cluster from keywordsData based on prop or route pathname
   const currentPath = location.pathname.replace(/^\//, '');
-  const cluster = keywordsData.clusters.find(c => 
+  const cluster = keywordsData.clusters.find(c =>
     (clusterId && c.id === clusterId) || c.slug === currentPath
   ) || keywordsData.clusters[0]; // fallback to first cluster
 
@@ -37,22 +38,47 @@ const SEOLandingPage = ({ clusterId }) => {
 
       {/* 2. Hero Section */}
       <section className="hero-section">
-        {cluster.heroBadge && (
-          <span className="hero-badge">{cluster.heroBadge}</span>
-        )}
-        <h1>{cluster.h1}</h1>
-        <p className="hero-subheading">{cluster.subheading}</p>
+        <Container maxWidth="lg">
+          <Box className="hero-content-wrapper">
+            {cluster.heroBadge && (
+              <Box className="hero-badge-wrap">
+                <Chip
+                  icon={<StarIcon sx={{ fontSize: '1rem', color: '#ffffff !important' }} />}
+                  label={cluster.heroBadge}
+                  className="hero-pill-chip"
+                />
+              </Box>
+            )}
 
-        <div className="cta-group">
-          <Button
-            variant="contained"
-            className="btn-primary"
-            onClick={handleCtaClick}
-            sx={{ cursor: 'pointer', pointerEvents: 'auto', position: 'relative', zIndex: 10 }}
-          >
-            Get Started Today — Free Trial <ArrowForwardIcon style={{ fontSize: '1.1rem', marginLeft: '6px', verticalAlign: 'middle' }} />
-          </Button>
-        </div>
+            <Typography variant="h1" component="h1" className="main-heading">
+              {cluster.h1}
+            </Typography>
+
+            <Box className="subtitle-section">
+              <Box className="platform-badge">
+                <StarIcon className="star-icon" />
+                <Typography variant="body2" className="platform-text">
+                  SavoryOps Restaurant Management Platform
+                </Typography>
+              </Box>
+            </Box>
+
+            <Typography variant="body1" className="hero-subheading">
+              {cluster.subheading}
+            </Typography>
+
+            <div className="cta-group">
+              <Button
+                variant="contained"
+                className="btn-primary"
+                onClick={handleCtaClick}
+                sx={{ cursor: 'pointer', pointerEvents: 'auto', position: 'relative', zIndex: 10 }}
+              >
+                Get Started Today — Free Trial <ArrowForwardIcon style={{ fontSize: '1.1rem', marginLeft: '6px', verticalAlign: 'middle' }} />
+              </Button>
+            </div>
+          </Box>
+        </Container>
       </section>
 
       <div className="content-container">

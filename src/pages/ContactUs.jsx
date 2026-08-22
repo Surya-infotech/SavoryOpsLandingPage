@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Email as EmailIcon, LocationOn as LocationIcon, Phone as PhoneIcon, Send as SendIcon, ContactMail as ContactMailIcon } from '@mui/icons-material';
+import { Email as EmailIcon, LocationOn as LocationIcon, Phone as PhoneIcon, Send as SendIcon, ContactMail as ContactMailIcon, Star as StarIcon } from '@mui/icons-material';
 import { Box, Button, Chip, Container, TextField, Typography } from '@mui/material';
 import SEOHead from '../components/SEO/SEOHead';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
@@ -212,9 +212,9 @@ const ContactUs = () => {
   return (
     <Box
       id="contact"
-      className="contact-us-section"
+      className={`contact-us-section ${isStandalonePage ? 'contact-page-standalone' : ''}`}
       sx={{
-        padding: { xs: '60px 0', md: '80px 0' },
+        padding: isStandalonePage ? { xs: '60px 0 80px', md: '80px 0 100px' } : { xs: '60px 0', md: '80px 0' },
         position: 'relative',
         overflow: 'hidden'
       }}
@@ -233,55 +233,38 @@ const ContactUs = () => {
         />
       )}
       <Container maxWidth="lg">
-        {/* Header Section - matches Benefits, Languages */}
-        <Box sx={{ textAlign: 'center', mb: { xs: 4, md: 6 } }}>
-          <Box sx={{ mb: 3 }}>
+        {/* Header Section */}
+        <Box className="contact-page-header">
+          <Box className="contact-badge">
             <Chip
-              icon={<ContactMailIcon />}
+              icon={<ContactMailIcon sx={{ color: '#ffffff !important', fontSize: '1.15rem' }} />}
               label="Get in Touch"
-              sx={{
-                background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
-                color: 'white',
-                fontWeight: 600,
-                fontSize: '0.9rem',
-                padding: '8px 16px',
-                '& .MuiChip-icon': {
-                  color: 'white'
-                }
-              }}
+              className="contact-chip"
             />
           </Box>
 
           <Typography
-            variant="h2"
-            component="h2"
-            sx={{
-              fontWeight: 800,
-              fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
-              color: '#1a1a1a',
-              mb: 2,
-              background: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000), var(--primary-color), var(--secondary-color))',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              textShadow: '0 2px 4px rgba(0,0,0,0.1)'
-            }}
+            variant={isStandalonePage ? 'h1' : 'h2'}
+            component={isStandalonePage ? 'h1' : 'h2'}
+            className="main-heading"
           >
             Contact Us
           </Typography>
 
+          <Box className="subtitle-section">
+            <Box className="platform-badge">
+              <StarIcon className="star-icon" />
+              <Typography variant="body2" className="platform-text">
+                24/7 Dedicated Support & Sales Team
+              </Typography>
+            </Box>
+          </Box>
+
           <Typography
-            variant="h5"
-            sx={{
-              color: '#666666',
-              fontSize: { xs: '1.1rem', md: '1.25rem' },
-              maxWidth: '700px',
-              margin: '0 auto',
-              lineHeight: 1.6,
-              fontWeight: 500
-            }}
+            variant="body1"
+            className="description"
           >
-            Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+            Have questions? We&apos;d love to hear from you. Send us a message and our team will respond as soon as possible.
           </Typography>
         </Box>
 
