@@ -42,13 +42,13 @@ const Home = () => {
       <Languages />
       <AppDownloads />
       <Reviews />
+      <ContactUs />
       <Box id="cta" className="home-cta">
         <CTA
           title="Ready to Transform Your Restaurant?"
           description={`Join thousands of restaurants already using ${softwareName} to streamline their operations`}
         />
       </Box>
-      <ContactUs />
     </Box>
   );
 };
