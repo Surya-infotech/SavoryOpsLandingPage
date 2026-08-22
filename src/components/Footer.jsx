@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, ContactMail as ContactMailIcon, Facebook as FacebookIcon, Inventory as InventoryIcon, Instagram as InstagramIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Pinterest as PinterestIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Rocket as RocketIcon, Twitter as TwitterIcon, WhatsApp as WhatsAppIcon, YouTube as YouTubeIcon } from '@mui/icons-material';
+import { Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, ContactMail as ContactMailIcon, Facebook as FacebookIcon, Inventory as InventoryIcon, Instagram as InstagramIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Pinterest as PinterestIcon, RateReview as RateReviewIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Rocket as RocketIcon, Star as StarIcon, Twitter as TwitterIcon, WhatsApp as WhatsAppIcon, YouTube as YouTubeIcon, OpenInNew as OpenInNewIcon } from '@mui/icons-material';
 import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/layout/footer.scss';
@@ -48,6 +48,27 @@ const Footer = () => {
     { name: 'Subscription Plans', icon: <AttachMoneyIcon />, href: '/pricing' },
     { name: 'Upcoming Features', icon: <RocketIcon />, href: '/upcoming-features' },
     { name: 'Contact Us', icon: <ContactMailIcon />, href: '/contact-us' }
+  ];
+
+  const reviewLinks = [
+    {
+      name: 'Capterra (Gartner)',
+      badge: '4.9 ★',
+      badgeColor: '#FF5A00',
+      href: 'https://reviews.capterra.com/products/new/cd4941f7-7adc-4ad9-8652-6766cd4e284d/'
+    },
+    {
+      name: 'Trustpilot Reviews',
+      badge: '4.8 ★',
+      badgeColor: '#00B67A',
+      href: 'https://www.trustpilot.com/review/savoryops.com'
+    },
+    {
+      name: 'Google Business Profile',
+      badge: '5.0 ★',
+      badgeColor: '#4285F4',
+      href: 'https://g.page/r/CYEN5UT6A_oKEBM/review'
+    }
   ];
 
   const legalLinks = [
@@ -206,7 +227,7 @@ const Footer = () => {
           </Grid>
 
           {/* Solutions Column */}
-          <Grid item xs={6} sm={4} md={2.5}>
+          <Grid item xs={6} sm={4} md={2}>
             <Typography variant="h6" className="footer-section-title">
               Solutions
             </Typography>
@@ -223,8 +244,8 @@ const Footer = () => {
             </Box>
           </Grid>
 
-          {/* Alternatives Column */}
-          <Grid item xs={6} sm={4} md={2.5}>
+          {/* Compare & Learn Column */}
+          <Grid item xs={6} sm={4} md={2}>
             <Typography variant="h6" className="footer-section-title">
               Compare & Learn
             </Typography>
@@ -236,6 +257,43 @@ const Footer = () => {
                   className="footer-link"
                 >
                   {link.name}
+                </Link>
+              ))}
+            </Box>
+          </Grid>
+
+          {/* Rate & Review Column */}
+          <Grid item xs={12} sm={4} md={2.5}>
+            <Typography variant="h6" className="footer-section-title">
+              Review Us
+            </Typography>
+            <Box className="footer-links">
+              {reviewLinks.map((review, index) => (
+                <Link
+                  key={index}
+                  href={review.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-link footer-review-link"
+                  display="flex"
+                  alignItems="center"
+                  gap={1}
+                >
+                  <StarIcon sx={{ color: review.badgeColor, fontSize: 16 }} />
+                  <span>{review.name}</span>
+                  <span
+                    style={{
+                      fontSize: '0.72rem',
+                      fontWeight: 700,
+                      padding: '2px 6px',
+                      borderRadius: '4px',
+                      backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                      color: review.badgeColor,
+                      marginLeft: 'auto'
+                    }}
+                  >
+                    {review.badge}
+                  </span>
                 </Link>
               ))}
             </Box>

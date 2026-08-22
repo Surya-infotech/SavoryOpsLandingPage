@@ -12,6 +12,7 @@ import EmployeeRoles from './EmployeeRoles';
 import AppDownloads from './AppDownloads';
 import Languages from './Languages';
 import FreeSoftware from './FreeSoftware';
+import Reviews from './Reviews';
 
 const Home = () => {
   const { softwareName } = useAppSettings();
@@ -40,6 +41,7 @@ const Home = () => {
       <FreeSoftware />
       <Languages />
       <AppDownloads />
+      <Reviews />
       <Box id="cta" className="home-cta">
         <CTA
           title="Ready to Transform Your Restaurant?"

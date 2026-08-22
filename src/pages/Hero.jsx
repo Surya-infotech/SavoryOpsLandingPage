@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from '@mui/material';
-import { CheckCircle as CheckCircleIcon, Verified as VerifiedIcon } from '@mui/icons-material';
+import { CheckCircle as CheckCircleIcon, Star as StarIcon, Verified as VerifiedIcon } from '@mui/icons-material';
 import GetStartedButton from '../components/GetStartedButton';
 
 const Hero = () => {
@@ -80,13 +80,14 @@ const Hero = () => {
               ))}
             </Box>
 
-            {/* CTA Button */}
+            {/* CTA Button & Review Social Proof */}
             <Box
               className="hero-buttons"
               sx={{
                 display: 'flex',
                 gap: 2,
                 flexWrap: 'wrap',
+                alignItems: 'center',
                 justifyContent: { xs: 'center', md: 'flex-start' },
                 animation: 'fadeInUp 0.8s ease-out 0.6s both'
               }}
@@ -102,6 +103,38 @@ const Hero = () => {
                   animation: 'fadeInUp 0.8s ease-out 0.6s both'
                 }}
               />
+              <Box
+                component="a"
+                href="#reviews"
+                sx={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 0.8,
+                  textDecoration: 'none',
+                  color: 'rgba(255,255,255,0.92)',
+                  background: 'rgba(255,255,255,0.08)',
+                  border: '1px solid rgba(255,255,255,0.18)',
+                  backdropFilter: 'blur(8px)',
+                  px: 2,
+                  py: 1.2,
+                  borderRadius: '50px',
+                  fontSize: '0.86rem',
+                  fontWeight: 600,
+                  transition: 'all 0.25s ease',
+                  '&:hover': {
+                    background: 'rgba(255,255,255,0.18)',
+                    borderColor: 'rgba(255,255,255,0.35)',
+                    transform: 'translateY(-2px)'
+                  }
+                }}
+              >
+                <Box sx={{ display: 'flex', color: '#f59e0b' }}>
+                  {[...Array(5)].map((_, i) => (
+                    <StarIcon key={i} sx={{ fontSize: 16 }} />
+                  ))}
+                </Box>
+                <span>Rated 4.9 on Capterra & Trustpilot</span>
+              </Box>
             </Box>
 
             <Box className="hero-proof">
