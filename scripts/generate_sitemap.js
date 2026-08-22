@@ -12,6 +12,7 @@ const staticRoutes = [
   '/features',
   '/pricing',
   '/upcoming-features',
+  '/faq',
   '/contact-us',
   '/privacy-policy',
   '/data-deletion-policy'

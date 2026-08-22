@@ -23,6 +23,7 @@ const Navigation = () => {
     { text: 'Features', path: '/features' },
     { text: 'Pricing', path: '/pricing' },
     { text: 'Upcoming Features', path: '/upcoming-features' },
+    { text: 'FAQ', path: '/faq' },
     { text: 'Contact Us', path: '/contact-us' }
   ];
 

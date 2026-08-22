@@ -12,6 +12,7 @@ import EmployeeRoles from './EmployeeRoles';
 import AppDownloads from './AppDownloads';
 import Languages from './Languages';
 import FreeSoftware from './FreeSoftware';
+import HomeFAQ from './HomeFAQ';
 import Reviews from './Reviews';
 
 const Home = () => {
@@ -41,6 +42,7 @@ const Home = () => {
       <FreeSoftware />
       <Languages />
       <AppDownloads />
+      <HomeFAQ />
       <Reviews />
       <ContactUs />
       <Box id="cta" className="home-cta">

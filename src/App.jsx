@@ -7,6 +7,7 @@ import { LanguageProvider } from './context/LanguageContext.jsx';
 import { useAppSettings } from './context/AppSettingsContext.jsx';
 import ContactUs from './pages/ContactUs';
 import DataDeletionPolicy from './pages/DataDeletionPolicy';
+import FAQPage from './pages/FAQPage';
 import FeaturesPage from './pages/FeaturesPage';
 import OwnerLogin from './pages/General/Signin.jsx';
 import OwnerSignUp from './pages/General/Signup.jsx';
@@ -89,6 +90,10 @@ const AppContent = () => {
       case '/contact-us':
         pageTitle = 'Contact Us';
         break;
+      case '/faq':
+      case '/faqs':
+        pageTitle = 'Frequently Asked Questions (FAQ)';
+        break;
       case '/privacy-policy':
         pageTitle = 'Privacy Policy';
         break;
@@ -126,10 +131,12 @@ const AppContent = () => {
         <Route path="/features" element={<FeaturesPage />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/upcoming-features" element={<UpcomingFeatures />} />
+        <Route path="/faq" element={<FAQPage />} />
+        <Route path="/faqs" element={<FAQPage />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
-        
+
         {/* Programmatic SEO Routes */}
         <Route path="/solutions/restaurant-pos-system" element={<SEOLandingPage clusterId="restaurant-pos-system" />} />
         <Route path="/solutions/kitchen-display-system" element={<SEOLandingPage clusterId="kitchen-display-system" />} />
