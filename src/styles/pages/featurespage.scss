@@ -63,7 +63,7 @@
 
 // Main container
 .features-page {
-  padding-top: 64px;
+  padding-top: 64px !important;
   background: transparent;
   min-height: 100vh;
   position: relative;
@@ -75,9 +75,9 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 20% 80%, color-mix(in srgb, var(--secondary-color) 10%, transparent) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--primary-color) 10%, transparent) 0%, transparent 50%);
+    height: 550px;
+    background: radial-gradient(circle at 20% 40%, color-mix(in srgb, var(--secondary-color) 8%, transparent) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--primary-color) 8%, transparent) 0%, transparent 50%);
     pointer-events: none;
   }
 }
@@ -85,28 +85,29 @@
 // Header Section
 .features-header {
   text-align: center;
-  margin-bottom: 64px;
-  padding-top: 100px;
+  margin-bottom: 48px;
+  padding-top: 80px;
   position: relative;
   z-index: 1;
-  max-width: 1180px;
+  max-width: 1100px;
   margin-inline: auto;
 
   .premium-badge {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 
     .MuiChip-root {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      color: white;
+      color: #ffffff;
       font-weight: 700;
-      font-size: 1rem;
-      padding: 12px 24px;
-      border-radius: 25px;
+      font-size: 0.95rem;
+      padding: 10px 22px;
+      height: auto;
+      border-radius: 50px;
       box-shadow: 0 4px 20px color-mix(in srgb, var(--primary-color) 30%, transparent);
 
       .MuiChip-icon {
-        color: white;
-        font-size: 1.2rem;
+        color: #ffffff !important;
+        font-size: 1.15rem;
       }
     }
   }
@@ -118,17 +119,11 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 24px;
-    font-size: 2.5rem;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: clamp(2.35rem, 5vw, 4rem);
+    line-height: 1.2;
     position: relative;
-
-    @media (min-width: 768px) {
-      font-size: 3.5rem;
-    }
-
-    @media (min-width: 1200px) {
-      font-size: 4.5rem;
-    }
+    max-width: 950px;
+    margin-inline: auto;
 
     &::after {
       content: "";
@@ -147,27 +142,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 32px;
-    flex-direction: column;
-    gap: 16px;
-
-    @media (min-width: 768px) {
-      flex-direction: row;
-    }
+    margin-top: 20px;
+    margin-bottom: 24px;
 
     .platform-badge {
-      display: flex;
+      display: inline-flex;
       align-items: center;
+      gap: 8px;
       background: color-mix(in srgb, var(--secondary-color) 10%, transparent);
-      padding: 8px 16px;
-      border-radius: 20px;
+      padding: 6px 18px;
+      border-radius: 50px;
       border: 1px solid color-mix(in srgb, var(--secondary-color) 20%, transparent);
 
       .rocket-icon {
         color: var(--secondary-color);
-        font-size: 1.5rem;
-        margin-right: 8px;
-        animation: float 3s ease-in-out infinite;
+        font-size: 1.15rem;
       }
 
       .platform-text {
@@ -179,13 +168,11 @@
   }
 
   .description {
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 1.7;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #555555;
-    margin-bottom: 32px;
+    max-width: 780px;
+    margin: 0 auto 32px;
+    line-height: 1.65;
+    font-size: 1.15rem;
+    color: #64748b;
 
     @media (min-width: 768px) {
       font-size: 1.4rem;
@@ -487,6 +474,7 @@
         font-weight: 500;
         display: -webkit-box;
         -webkit-line-clamp: 4;
+        line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
         min-height: 5.1em;

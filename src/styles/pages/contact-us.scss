@@ -14,14 +14,20 @@
   }
 
   &.contact-page-standalone {
-    padding-top: 100px !important;
+    padding-top: 64px !important;
+    padding-bottom: 80px;
     min-height: 100vh;
+    background: transparent;
 
     &::before {
       height: 550px;
       background:
         radial-gradient(circle at 20% 40%, color-mix(in srgb, var(--secondary-color) 8%, transparent) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--primary-color) 8%, transparent) 0%, transparent 50%);
+    }
+
+    .contact-page-header {
+      padding-top: 80px;
     }
   }
 
@@ -30,7 +36,7 @@
     margin-bottom: 48px;
     position: relative;
     z-index: 1;
-    max-width: 900px;
+    max-width: 1100px;
     margin-inline: auto;
 
     .contact-badge {
@@ -41,7 +47,7 @@
         color: #ffffff;
         font-weight: 700;
         font-size: 0.95rem;
-        padding: 10px 20px;
+        padding: 10px 22px;
         height: auto;
         border-radius: 50px;
         box-shadow: 0 4px 20px color-mix(in srgb, var(--primary-color) 30%, transparent);
@@ -60,10 +66,10 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 24px;
-      font-size: clamp(2.25rem, 5vw, 3.8rem);
+      font-size: clamp(2.35rem, 5vw, 4rem);
       line-height: 1.2;
       position: relative;
-      max-width: 900px;
+      max-width: 950px;
       margin-inline: auto;
 
       &::after {
@@ -74,35 +80,36 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
         border-radius: 2px;
       }
     }
 
     .subtitle-section {
-      margin-top: 20px;
-      margin-bottom: 16px;
       display: flex;
+      align-items: center;
       justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 24px;
 
       .platform-badge {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        background: rgba(138, 177, 125, 0.12);
-        color: #3b6e2e;
-        padding: 5px 16px;
-        border-radius: 20px;
-        border: 1px solid rgba(138, 177, 125, 0.3);
+        gap: 8px;
+        padding: 6px 18px;
+        background: color-mix(in srgb, var(--secondary-color) 10%, transparent);
+        border-radius: 50px;
+        border: 1px solid color-mix(in srgb, var(--secondary-color) 20%, transparent);
 
         .star-icon {
-          font-size: 1rem;
-          color: #558b4b;
+          color: var(--secondary-color);
+          font-size: 1.15rem;
         }
 
         .platform-text {
-          font-size: 0.875rem;
+          color: var(--primary-color);
           font-weight: 600;
+          font-size: 0.9rem;
         }
       }
     }
@@ -111,7 +118,7 @@
       font-size: 1.15rem;
       color: #64748b;
       line-height: 1.65;
-      max-width: 720px;
+      max-width: 780px;
       margin: 0 auto;
     }
   }
