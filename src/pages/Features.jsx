@@ -17,7 +17,6 @@ import {
   Payment as PaymentIcon,
   People as PeopleIcon,
   PointOfSale as PosIcon,
-  Public as PublicIcon,
   QrCode2 as QrCode2Icon,
   RateReview as RateReviewIcon,
   ReceiptLong as TaxReportIcon,
@@ -25,7 +24,6 @@ import {
   RestaurantMenu as RestaurantMenuIcon,
   Share as ReferralIcon,
   Star as StarIcon,
-  Storage as StorageIcon,
   Timeline as TimelineIcon,
   TrendingUp as TrendingUpIcon,
 } from '@mui/icons-material';
@@ -202,21 +200,6 @@ const FEATURES = [
     title: 'Cloud-Based System',
     description:
       'Fully cloud-based platform with secure access anywhere, automatic updates, and backups.',
-  },
-  {
-    id: 'multi-tenant-architecture',
-    priority: 23,
-    icon: <StorageIcon />,
-    title: 'Separate Database',
-    description:
-      'Dedicated database per restaurant owner with complete data isolation and security.',
-  },
-  {
-    id: 'custom-subdomain',
-    priority: 24,
-    icon: <PublicIcon />,
-    title: 'Custom Subdomain',
-    description: 'Personalized subdomain for each restaurant owner for a branded experience.',
   },
   {
     id: 'multiple-languages',

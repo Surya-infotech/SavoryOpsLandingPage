@@ -1,4 +1,4 @@
-import { AccountTree as AccountTreeIcon, Assessment as AssessmentIcon, Bolt as BoltIcon, Business as BusinessIcon, CalendarMonth as CalendarMonthIcon, Cloud as CloudIcon, ConfirmationNumber as CouponIcon, ContactSupport as HelpCenterIcon, CurrencyExchange as CurrencyExchangeIcon, Dashboard as DashboardIcon, Download as DownloadIcon, Fastfood as QsrIcon, Groups as GroupsIcon, Language as LanguageIcon, Menu as MenuIcon, PointOfSale as PosIcon, PriceChange as PriceChangeIcon, Public as PublicIcon, QrCode as QrCodeIcon, RateReview as RateReviewIcon, ReceiptLong as ReceiptLongIcon, Restaurant as RestaurantIcon, RestaurantMenu as RestaurantMenuIcon, Rocket as RocketIcon, Security as SecurityIcon, Share as ReferralIcon, Star as StarIcon, Storage as StorageIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
+import { AccountTree as AccountTreeIcon, Assessment as AssessmentIcon, Bolt as BoltIcon, Business as BusinessIcon, CalendarMonth as CalendarMonthIcon, Cloud as CloudIcon, ConfirmationNumber as CouponIcon, ContactSupport as HelpCenterIcon, CurrencyExchange as CurrencyExchangeIcon, Dashboard as DashboardIcon, Download as DownloadIcon, Fastfood as QsrIcon, Groups as GroupsIcon, Language as LanguageIcon, Menu as MenuIcon, PointOfSale as PosIcon, PriceChange as PriceChangeIcon, QrCode as QrCodeIcon, RateReview as RateReviewIcon, ReceiptLong as ReceiptLongIcon, Restaurant as RestaurantIcon, RestaurantMenu as RestaurantMenuIcon, Rocket as RocketIcon, Security as SecurityIcon, Share as ReferralIcon, Star as StarIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
 import { Box, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
 import { useEffect, useMemo } from 'react';
 import GetStartedButton from '../components/GetStartedButton';
@@ -192,24 +192,6 @@ const DETAILED_FEATURES = [
     subtitle: 'Access Anywhere, Anytime',
     description:
       'Fully cloud-based platform ensuring secure access from anywhere with automatic updates and backups.',
-  },
-  {
-    id: 'multi-tenant-architecture',
-    priority: 23,
-    icon: <StorageIcon sx={ICON_SIZE} />,
-    title: 'Separate Database',
-    subtitle: 'Multi-Tenant Architecture',
-    description:
-      'Each restaurant owner gets their own dedicated database with complete data isolation and security.',
-  },
-  {
-    id: 'custom-subdomain',
-    priority: 24,
-    icon: <PublicIcon sx={ICON_SIZE} />,
-    title: 'Custom Subdomain',
-    subtitle: 'Restaurant Owner-wise',
-    description:
-      'Each restaurant owner gets their own custom subdomain for a personalized and branded experience.',
   },
   {
     id: 'multiple-languages',
