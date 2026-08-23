@@ -15,6 +15,7 @@ import Home from './pages/Home';
 import Pricing from './pages/Pricing';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import UpcomingFeatures from './pages/UpcomingFeatures';
+import WhySavoryOps from './pages/WhySavoryOps';
 import SEOLandingPage from './pages/seo/SEOLandingPage';
 import './styles/main.scss';
 
@@ -81,6 +82,10 @@ const AppContent = () => {
       case '/features':
         pageTitle = 'Features';
         break;
+      case '/why-savoryops':
+      case '/why-us':
+        pageTitle = `Why ${baseTitle} - Benefits & Comparison`;
+        break;
       case '/pricing':
         pageTitle = 'Pricing';
         break;
@@ -129,6 +134,8 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<FeaturesPage />} />
+        <Route path="/why-savoryops" element={<WhySavoryOps />} />
+        <Route path="/why-us" element={<WhySavoryOps />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/upcoming-features" element={<UpcomingFeatures />} />
         <Route path="/faq" element={<FAQPage />} />

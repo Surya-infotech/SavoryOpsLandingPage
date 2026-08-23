@@ -45,6 +45,7 @@ const Footer = () => {
   ];
 
   const companyLinks = [
+    { name: `Why ${softwareName || 'SavoryOps'}`, icon: <StarIcon />, href: '/why-savoryops' },
     { name: 'Subscription Plans', icon: <AttachMoneyIcon />, href: '/pricing' },
     { name: 'Upcoming Features', icon: <RocketIcon />, href: '/upcoming-features' },
     { name: 'Frequently Asked Questions (FAQ)', icon: <HelpOutlineIcon />, href: '/faq' },

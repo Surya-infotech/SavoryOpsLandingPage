@@ -21,6 +21,7 @@ const Navigation = () => {
   const menuItems = [
     { text: 'Home', path: '/' },
     { text: 'Features', path: '/features' },
+    { text: `Why ${softwareName || 'SavoryOps'}`, path: '/why-savoryops' },
     { text: 'Pricing', path: '/pricing' },
     { text: 'Upcoming Features', path: '/upcoming-features' },
     { text: 'FAQ', path: '/faq' },

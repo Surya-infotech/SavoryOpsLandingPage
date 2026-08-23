@@ -10,6 +10,7 @@ const BASE_URL = 'https://savoryops.com';
 const staticRoutes = [
   '/',
   '/features',
+  '/why-savoryops',
   '/pricing',
   '/upcoming-features',
   '/faq',
