@@ -86,6 +86,17 @@ const OwnerLogin = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isLanguageDropdownVisible]);
 
+    // Pre-request / warm-up browser location so it is instantly available upon Sign In
+    useEffect(() => {
+        if (typeof window !== 'undefined' && navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                () => {},
+                () => {},
+                { enableHighAccuracy: true, timeout: 5000, maximumAge: 300000 }
+            );
+        }
+    }, []);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);

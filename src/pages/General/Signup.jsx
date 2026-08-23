@@ -84,6 +84,17 @@ const OwnerSignUp = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isLanguageDropdownVisible]);
 
+    // Pre-request / warm-up browser location so it is instantly available upon Sign Up
+    useEffect(() => {
+        if (typeof window !== 'undefined' && navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                () => {},
+                () => {},
+                { enableHighAccuracy: true, timeout: 5000, maximumAge: 300000 }
+            );
+        }
+    }, []);
+
     const handlePhoneChange = (value) => {
         setPhone(value || '');
 
