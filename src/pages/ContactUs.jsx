@@ -1,6 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Email as EmailIcon, LocationOn as LocationIcon, Phone as PhoneIcon, Send as SendIcon, ContactMail as ContactMailIcon, Star as StarIcon } from '@mui/icons-material';
+import {
+  ContactMail as ContactMailIcon,
+  Email as EmailIcon,
+  LocationOn as LocationIcon,
+  Phone as PhoneIcon,
+  Send as SendIcon,
+  Star as StarIcon,
+  SupportAgent as SupportAgentIcon
+} from '@mui/icons-material';
 import { Box, Button, Chip, Container, TextField, Typography } from '@mui/material';
 import SEOHead from '../components/SEO/SEOHead';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
@@ -114,6 +122,13 @@ const ContactUs = () => {
         value: addressLine,
         href: '#',
       },
+      {
+        icon: <SupportAgentIcon sx={{ fontSize: 24 }} />,
+        title: 'Support Time',
+        value: '24/7 Live Support (Mon – Sun)',
+        subtext: 'Round-the-clock technical & sales assistance',
+        href: '#',
+      },
     ];
   }, [generalSetting]);
 
@@ -205,6 +220,11 @@ const ContactUs = () => {
         <Typography variant="body1" sx={{ color: '#333', lineHeight: 1.45, fontSize: { xs: '0.95rem', md: '1rem' }, wordBreak: 'break-word' }}>
           {card.value}
         </Typography>
+        {card.subtext && (
+          <Typography variant="caption" sx={{ color: '#64748b', fontSize: '0.8rem', mt: 0.2, lineHeight: 1.3 }}>
+            {card.subtext}
+          </Typography>
+        )}
       </Box>
     </Box>
   );
@@ -306,109 +326,109 @@ const ContactUs = () => {
               height: '100%'
             }}
           >
-                <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: '#1a1a1a' }}>
-                  Send us a Message
+            <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: '#1a1a1a' }}>
+              Send us a Message
+            </Typography>
+            <Typography variant="body2" sx={{ mb: 1.5, color: '#667085' }}>
+              Tell us your requirement and our team will respond quickly.
+            </Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+              <Box
+                sx={{
+                  display: 'grid',
+                  gridTemplateColumns: { xs: '1fr', sm: 'minmax(0, 1fr) minmax(0, 1fr)' },
+                  gap: 2,
+                  width: '100%',
+                  justifyItems: 'stretch',
+                  '& .MuiFormControl-root': {
+                    width: '100%',
+                    minWidth: 0
+                  }
+                }}
+              >
+                <TextField
+                  fullWidth
+                  label="Full Name"
+                  name="name"
+                  value={formState.name}
+                  onChange={handleInputChange}
+                  required
+                  size="medium"
+                  sx={{ ...fieldSx, width: '100%' }}
+                />
+                <TextField
+                  fullWidth
+                  label="Email Address"
+                  name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleInputChange}
+                  required
+                  size="medium"
+                  sx={{ ...fieldSx, width: '100%' }}
+                />
+              </Box>
+              <Box>
+                <TextField
+                  fullWidth
+                  label="Message"
+                  name="message"
+                  value={formState.message}
+                  onChange={handleInputChange}
+                  required
+                  multiline
+                  rows={5}
+                  placeholder="Tell us about your project requirements..."
+                  inputProps={{ maxLength: MESSAGE_MAX_LENGTH }}
+                  sx={fieldSx}
+                />
+                <Typography
+                  variant="caption"
+                  sx={{
+                    display: 'block',
+                    textAlign: 'right',
+                    mt: 0.5,
+                    color: formState.message.length >= MESSAGE_MAX_LENGTH ? '#d32f2f' : '#666'
+                  }}
+                >
+                  {formState.message.length}/{MESSAGE_MAX_LENGTH}
                 </Typography>
-                <Typography variant="body2" sx={{ mb: 1.5, color: '#667085' }}>
-                  Tell us your requirement and our team will respond quickly.
+              </Box>
+              {formError && (
+                <Typography variant="body2" color="error">
+                  {formError}
                 </Typography>
-                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                  <Box
-                    sx={{
-                      display: 'grid',
-                      gridTemplateColumns: { xs: '1fr', sm: 'minmax(0, 1fr) minmax(0, 1fr)' },
-                      gap: 2,
-                      width: '100%',
-                      justifyItems: 'stretch',
-                      '& .MuiFormControl-root': {
-                        width: '100%',
-                        minWidth: 0
-                      }
-                    }}
-                  >
-                    <TextField
-                      fullWidth
-                      label="Full Name"
-                      name="name"
-                      value={formState.name}
-                      onChange={handleInputChange}
-                      required
-                      size="medium"
-                      sx={{ ...fieldSx, width: '100%' }}
-                    />
-                    <TextField
-                      fullWidth
-                      label="Email Address"
-                      name="email"
-                      type="email"
-                      value={formState.email}
-                      onChange={handleInputChange}
-                      required
-                      size="medium"
-                      sx={{ ...fieldSx, width: '100%' }}
-                    />
-                  </Box>
-                  <Box>
-                    <TextField
-                      fullWidth
-                      label="Message"
-                      name="message"
-                      value={formState.message}
-                      onChange={handleInputChange}
-                      required
-                      multiline
-                      rows={5}
-                      placeholder="Tell us about your project requirements..."
-                      inputProps={{ maxLength: MESSAGE_MAX_LENGTH }}
-                      sx={fieldSx}
-                    />
-                    <Typography
-                      variant="caption"
-                      sx={{
-                        display: 'block',
-                        textAlign: 'right',
-                        mt: 0.5,
-                        color: formState.message.length >= MESSAGE_MAX_LENGTH ? '#d32f2f' : '#666'
-                      }}
-                    >
-                      {formState.message.length}/{MESSAGE_MAX_LENGTH}
-                    </Typography>
-                  </Box>
-                  {formError && (
-                    <Typography variant="body2" color="error">
-                      {formError}
-                    </Typography>
-                  )}
-                  {formSuccess && (
-                    <Typography variant="body2" sx={{ color: 'var(--primary-color)', fontWeight: 500 }}>
-                      Thank you for your message! We will get back to you soon.
-                    </Typography>
-                  )}
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    disabled={isSubmitting}
-                    startIcon={<SendIcon />}
-                    sx={{
-                      alignSelf: 'flex-start',
-                      background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
-                      color: 'white',
-                      fontWeight: 600,
-                      padding: '12px 32px',
-                      borderRadius: '10px',
-                      textTransform: 'none',
-                      fontSize: '1rem',
-                      boxShadow: '0 8px 20px color-mix(in srgb, var(--primary-color) 25%, transparent)',
-                      '&:hover': {
-                        background: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000), var(--primary-color))',
-                        boxShadow: '0 12px 24px color-mix(in srgb, var(--primary-color) 30%, transparent)',
-                        transform: 'translateY(-2px)'
-                      }
-                    }}
-                  >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </Button>
-                </Box>
+              )}
+              {formSuccess && (
+                <Typography variant="body2" sx={{ color: 'var(--primary-color)', fontWeight: 500 }}>
+                  Thank you for your message! We will get back to you soon.
+                </Typography>
+              )}
+              <Button
+                type="submit"
+                variant="contained"
+                disabled={isSubmitting}
+                startIcon={<SendIcon />}
+                sx={{
+                  alignSelf: 'flex-start',
+                  background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
+                  color: 'white',
+                  fontWeight: 600,
+                  padding: '12px 32px',
+                  borderRadius: '10px',
+                  textTransform: 'none',
+                  fontSize: '1rem',
+                  boxShadow: '0 8px 20px color-mix(in srgb, var(--primary-color) 25%, transparent)',
+                  '&:hover': {
+                    background: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000), var(--primary-color))',
+                    boxShadow: '0 12px 24px color-mix(in srgb, var(--primary-color) 30%, transparent)',
+                    transform: 'translateY(-2px)'
+                  }
+                }}
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </Button>
+            </Box>
           </Box>
         </Box>
       </Container>
