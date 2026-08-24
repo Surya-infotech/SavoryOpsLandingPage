@@ -124,7 +124,7 @@ const AboutUs = () => {
         ]}
       />
 
-      {/* Hero Section — Designed exactly like WhySavoryOps Hero */}
+      {/* Hero Section */}
       <Box className="why-hero-section">
         <Container maxWidth="lg">
           <Box className="why-hero-badge">
@@ -173,36 +173,70 @@ const AboutUs = () => {
         </Container>
       </Box>
 
-      {/* Dedicated Section: Born from Real Restaurant Challenges */}
+      {/* 1. Born from Real Restaurant Challenges (Styled like Home page section headers) */}
       <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#ffffff', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
         <Container maxWidth="lg">
-          <Box sx={{ maxWidth: 860, mx: 'auto', textAlign: 'center', mb: 6 }}>
-            <Box className="why-hero-badge" sx={{ mb: 2 }}>
-              <RocketIcon sx={{ fontSize: 16, mr: 0.8 }} />
-              <span>WHY WE EXIST</span>
+          <Box sx={{ textAlign: 'center', mb: 6 }}>
+            <Box sx={{ mb: 2 }}>
+              <Chip
+                icon={<RocketIcon sx={{ color: '#fff !important', fontSize: '18px !important' }} />}
+                label="Why We Exist"
+                sx={{
+                  background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
+                  color: '#ffffff',
+                  fontWeight: 600,
+                  fontSize: '0.9rem',
+                  padding: '8px 16px',
+                  borderRadius: '50px',
+                  boxShadow: '0 4px 12px color-mix(in srgb, var(--primary-color) 25%, transparent)'
+                }}
+              />
             </Box>
+
             <Typography
               variant="h2"
+              component="h2"
               sx={{
-                fontSize: { xs: '2rem', sm: '2.6rem', md: '3rem' },
                 fontWeight: 800,
-                color: '#0f172a',
-                lineHeight: 1.25,
-                mb: 3,
+                fontSize: 'clamp(2rem, 4.2vw, 3.4rem)',
+                mb: 1.5,
+                background: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000), var(--primary-color), var(--secondary-color))',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                textAlign: 'center',
                 letterSpacing: '-0.02em'
               }}
             >
               Born from Real Restaurant Challenges
             </Typography>
+
             <Typography
-              variant="body1"
-              sx={{ color: '#475569', lineHeight: 1.8, fontSize: { xs: '1.05rem', md: '1.15rem' }, mb: 2 }}
+              variant="h5"
+              sx={{
+                color: '#666666',
+                fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+                maxWidth: 780,
+                mx: 'auto',
+                lineHeight: 1.6,
+                fontWeight: 500,
+                mb: 2,
+                textAlign: 'center'
+              }}
             >
-              Running a food business is tough. Long shifts, chaotic order rushes, unpredictable raw material costs, and staff turnover leave little room for error. Yet most legacy restaurant software was either painfully complicated, locked behind expensive proprietary hardware, or broken during internet drops.
+              Running a food business is tough. Long shifts, chaotic order rushes, unpredictable raw material costs, and staff turnover leave little room for error.
             </Typography>
+
             <Typography
               variant="body1"
-              sx={{ color: '#475569', lineHeight: 1.8, fontSize: { xs: '1.05rem', md: '1.15rem' } }}
+              sx={{
+                color: '#64748b',
+                fontSize: '1.05rem',
+                maxWidth: 820,
+                mx: 'auto',
+                lineHeight: 1.7,
+                textAlign: 'center'
+              }}
             >
               We built <strong>{name}</strong> to change that. A lightweight, beautiful, and hyper-reliable cloud platform that works smoothly across any tablet, phone, or desktop. We give restaurateurs transparent control over their recipes, stock, kitchen tickets, and revenue in real-time.
             </Typography>
@@ -213,7 +247,8 @@ const AboutUs = () => {
             sx={{
               display: 'grid',
               gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' },
-              gap: 3
+              gap: 3,
+              mt: 5
             }}
           >
             {storyKeypoints.map((point, index) => (
@@ -246,7 +281,7 @@ const AboutUs = () => {
         </Container>
       </Box>
 
-      {/* Dedicated Section: Our Core Promise */}
+      {/* 2. Dedicated Section: Our Core Promise */}
       <Box
         sx={{
           bgcolor: '#0f172a',
@@ -350,26 +385,56 @@ const AboutUs = () => {
         </Container>
       </Box>
 
-      {/* Core Values - 2 CARDS PER ROW */}
+      {/* 3. Core Values (Home Page Header Style) */}
       <Box sx={{ bgcolor: '#f4f7fb', py: { xs: 8, md: 12 }, borderTop: '1px solid #e2e8f0' }}>
         <Container maxWidth="lg">
-          <Box sx={{ textAlign: 'center', maxWidth: 700, mx: 'auto', mb: 7 }}>
-            <Box className="why-hero-badge" sx={{ mb: 2 }}>
-              <StarIcon sx={{ fontSize: 16, mr: 0.8 }} />
-              <span>GUIDING PRINCIPLES</span>
+          <Box sx={{ textAlign: 'center', mb: 6 }}>
+            <Box sx={{ mb: 2 }}>
+              <Chip
+                icon={<StarIcon sx={{ color: '#fff !important', fontSize: '18px !important' }} />}
+                label="Guiding Principles"
+                sx={{
+                  background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
+                  color: '#ffffff',
+                  fontWeight: 600,
+                  fontSize: '0.9rem',
+                  padding: '8px 16px',
+                  borderRadius: '50px',
+                  boxShadow: '0 4px 12px color-mix(in srgb, var(--primary-color) 25%, transparent)'
+                }}
+              />
             </Box>
+
             <Typography
               variant="h2"
+              component="h2"
               sx={{
-                fontSize: { xs: '2rem', md: '2.6rem' },
                 fontWeight: 800,
-                color: '#0f172a',
-                mb: 2
+                fontSize: 'clamp(2rem, 4.2vw, 3.4rem)',
+                mb: 1.5,
+                background: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000), var(--primary-color), var(--secondary-color))',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                textAlign: 'center',
+                letterSpacing: '-0.02em'
               }}
             >
               The Values That Drive Us
             </Typography>
-            <Typography variant="body1" sx={{ color: '#64748b', fontSize: '1.1rem' }}>
+
+            <Typography
+              variant="h5"
+              sx={{
+                color: '#666666',
+                fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+                maxWidth: 760,
+                mx: 'auto',
+                lineHeight: 1.6,
+                fontWeight: 500,
+                textAlign: 'center'
+              }}
+            >
               Every feature we ship and customer conversation we have is rooted in these four pillars.
             </Typography>
           </Box>
@@ -436,25 +501,55 @@ const AboutUs = () => {
         </Container>
       </Box>
 
-      {/* Pillars of the Platform - 2 CARDS PER ROW */}
+      {/* 4. Pillars of the Platform (Home Page Header Style) */}
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
-        <Box sx={{ textAlign: 'center', maxWidth: 700, mx: 'auto', mb: 7 }}>
-          <Box className="why-hero-badge" sx={{ mb: 2 }}>
-            <GroupsIcon sx={{ fontSize: 16, mr: 0.8 }} />
-            <span>WHAT SETS US APART</span>
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Box sx={{ mb: 2 }}>
+            <Chip
+              icon={<GroupsIcon sx={{ color: '#fff !important', fontSize: '18px !important' }} />}
+              label="What Sets Us Apart"
+              sx={{
+                background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
+                color: '#ffffff',
+                fontWeight: 600,
+                fontSize: '0.9rem',
+                padding: '8px 16px',
+                borderRadius: '50px',
+                boxShadow: '0 4px 12px color-mix(in srgb, var(--primary-color) 25%, transparent)'
+              }}
+            />
           </Box>
+
           <Typography
             variant="h2"
+            component="h2"
             sx={{
-              fontSize: { xs: '2rem', md: '2.6rem' },
               fontWeight: 800,
-              color: '#0f172a',
-              mb: 2
+              fontSize: 'clamp(2rem, 4.2vw, 3.4rem)',
+              mb: 1.5,
+              background: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 70%, #000), var(--primary-color), var(--secondary-color))',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              textAlign: 'center',
+              letterSpacing: '-0.02em'
             }}
           >
             Engineering Behind {name}
           </Typography>
-          <Typography variant="body1" sx={{ color: '#64748b', fontSize: '1.1rem' }}>
+
+          <Typography
+            variant="h5"
+            sx={{
+              color: '#666666',
+              fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+              maxWidth: 760,
+              mx: 'auto',
+              lineHeight: 1.6,
+              fontWeight: 500,
+              textAlign: 'center'
+            }}
+          >
             Built with modern web technologies, military-grade encryption, and real-world hospitality insight.
           </Typography>
         </Box>

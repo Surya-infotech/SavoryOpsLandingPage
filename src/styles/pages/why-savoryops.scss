@@ -166,25 +166,39 @@
     .pill-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: #f1f5f9;
-      color: #334155;
-      font-weight: 700;
-      font-size: 0.82rem;
-      letter-spacing: 0.04em;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
-      padding: 6px 14px;
+      padding: 8px 18px;
       border-radius: 50px;
-      margin-bottom: 14px;
-      border: 1px solid #e2e8f0;
+      margin-bottom: 16px;
+      border: none;
+      box-shadow: 0 4px 12px color-mix(in srgb, var(--primary-color) 25%, transparent);
+
+      svg,
+      .MuiSvgIcon-root {
+        color: #ffffff !important;
+        font-size: 18px !important;
+      }
     }
 
     .main-section-title {
-      font-size: 2.45rem;
       font-weight: 800;
-      color: #0f172a;
-      letter-spacing: -0.025em;
-      margin-bottom: 12px;
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg,
+          color-mix(in srgb, var(--primary-color) 70%, #000),
+          var(--primary-color),
+          var(--secondary-color));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+      text-align: center;
 
       @media (max-width: 600px) {
         font-size: 1.85rem;
@@ -192,11 +206,13 @@
     }
 
     .main-section-subtitle {
-      font-size: 1.1rem;
-      color: #64748b;
-      max-width: 680px;
+      color: #666666;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      max-width: 760px;
       margin: 0 auto;
       line-height: 1.6;
+      font-weight: 500;
+      text-align: center;
     }
   }
 
