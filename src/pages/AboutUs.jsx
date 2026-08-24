@@ -608,86 +608,36 @@ const AboutUs = () => {
         </Box>
       </Container>
 
-      {/* Global CTA Section */}
-      <Box
-        sx={{
-          background: 'linear-gradient(135deg, var(--primary-color) 0%, color-mix(in srgb, var(--primary-color) 70%, #000) 100%)',
-          color: '#ffffff',
-          py: { xs: 8, md: 10 },
-          textAlign: 'center'
-        }}
-      >
-        <Container maxWidth="md">
-          <Typography
-            variant="h3"
-            sx={{
-              fontWeight: 800,
-              fontSize: { xs: '2rem', md: '2.8rem' },
-              mb: 2,
-              letterSpacing: '-0.02em'
-            }}
-          >
-            Ready to Upgrade Your Restaurant Operations?
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              fontWeight: 400,
-              color: 'rgba(255,255,255,0.9)',
-              mb: 4,
-              fontSize: { xs: '1.05rem', md: '1.2rem' }
-            }}
-          >
-            Join hundreds of thriving restaurants using {name} to streamline service, reduce waste, and increase profits.
-          </Typography>
-          <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Button
-              variant="contained"
-              size="large"
-              component={Link}
-              to="/signup"
-              sx={{
-                bgcolor: '#ffffff',
-                color: '#0f172a',
-                px: 4,
-                py: 1.6,
-                borderRadius: '50px',
-                fontWeight: 700,
-                fontSize: '1.05rem',
-                textTransform: 'none',
-                '&:hover': {
-                  bgcolor: '#f1f5f9',
-                  transform: 'translateY(-2px)'
-                },
-                transition: 'all 0.2s ease'
-              }}
-            >
-              Get Started Free
-            </Button>
-            <Button
-              variant="outlined"
-              size="large"
-              component={Link}
-              to="/contact-us"
-              sx={{
-                borderColor: 'rgba(255,255,255,0.4)',
-                color: '#ffffff',
-                px: 3.5,
-                py: 1.6,
-                borderRadius: '50px',
-                fontWeight: 600,
-                fontSize: '1.05rem',
-                textTransform: 'none',
-                '&:hover': {
-                  borderColor: '#ffffff',
-                  bgcolor: 'rgba(255,255,255,0.1)',
-                  transform: 'translateY(-2px)'
-                },
-                transition: 'all 0.2s ease'
-              }}
-            >
-              Schedule a Demo
-            </Button>
+      {/* High-Converting Final Call to Action */}
+      <Box className="why-final-cta">
+        <Container maxWidth="lg">
+          <Box className="cta-card-box">
+            <Typography variant="h2" className="cta-title">
+              Ready to Upgrade Your Restaurant Operations?
+            </Typography>
+            <Typography variant="body1" className="cta-subtitle">
+              Join hundreds of high-performing kitchens, cafes, and multi-branch brands that rely on{' '}
+              {name} daily. Get started in minutes with zero risk.
+            </Typography>
+            <Box className="cta-actions">
+              <Button
+                component={Link}
+                to="/signup"
+                variant="contained"
+                className="btn-white-action"
+                endIcon={<ArrowForwardIcon />}
+              >
+                Start Free Trial Today
+              </Button>
+              <Button
+                component={Link}
+                to="/contact-us"
+                variant="outlined"
+                className="btn-outline-white"
+              >
+                Schedule Live Product Demo
+              </Button>
+            </Box>
           </Box>
         </Container>
       </Box>
