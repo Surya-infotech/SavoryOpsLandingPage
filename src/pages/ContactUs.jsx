@@ -377,7 +377,7 @@ const ContactUs = () => {
                   onChange={handleInputChange}
                   required
                   multiline
-                  rows={5}
+                  rows={6}
                   placeholder="Tell us about your project requirements..."
                   inputProps={{ maxLength: MESSAGE_MAX_LENGTH }}
                   sx={fieldSx}
