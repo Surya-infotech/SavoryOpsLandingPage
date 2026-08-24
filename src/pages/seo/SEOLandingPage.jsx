@@ -37,49 +37,43 @@ const SEOLandingPage = ({ clusterId }) => {
       />
 
       {/* 2. Hero Section */}
-      <section className="hero-section">
+      <Box className="why-hero-section">
         <Container maxWidth="lg">
-          <Box className="hero-content-wrapper">
-            {cluster.heroBadge && (
-              <Box className="hero-badge-wrap">
-                <Chip
-                  icon={<StarIcon sx={{ fontSize: '1rem', color: '#ffffff !important' }} />}
-                  label={cluster.heroBadge}
-                  className="hero-pill-chip"
-                />
-              </Box>
-            )}
-
-            <Typography variant="h1" component="h1" className="main-heading">
-              {cluster.h1}
-            </Typography>
-
-            <Box className="subtitle-section">
-              <Box className="platform-badge">
-                <StarIcon className="star-icon" />
-                <Typography variant="body2" className="platform-text">
-                  SavoryOps Restaurant Management Platform
-                </Typography>
-              </Box>
+          {cluster.heroBadge && (
+            <Box className="why-hero-badge">
+              <StarIcon sx={{ fontSize: 16, mr: 0.8 }} />
+              <span>{cluster.heroBadge}</span>
             </Box>
+          )}
 
-            <Typography variant="body1" className="hero-subheading">
-              {cluster.subheading}
-            </Typography>
+          <Typography variant="h1" className="why-hero-title">
+            {cluster.h1}
+          </Typography>
 
-            <div className="cta-group">
-              <Button
-                variant="contained"
-                className="btn-primary"
-                onClick={handleCtaClick}
-                sx={{ cursor: 'pointer', pointerEvents: 'auto', position: 'relative', zIndex: 10 }}
-              >
-                Get Started Today — Free Trial <ArrowForwardIcon style={{ fontSize: '1.1rem', marginLeft: '6px', verticalAlign: 'middle' }} />
-              </Button>
-            </div>
+          <Typography variant="body1" className="why-hero-subtitle">
+            {cluster.subheading}
+          </Typography>
+
+          <Box className="hero-cta-group">
+            <Button
+              variant="contained"
+              className="hero-primary-btn"
+              onClick={handleCtaClick}
+              endIcon={<ArrowForwardIcon />}
+            >
+              Start Free 14-Day Trial
+            </Button>
+            <Button
+              component={Link}
+              to="/contact-us"
+              variant="outlined"
+              className="hero-secondary-btn"
+            >
+              Book a 1-on-1 Demo
+            </Button>
           </Box>
         </Container>
-      </section>
+      </Box>
 
       <div className="content-container">
         {/* 3. Value Propositions Grid */}

@@ -120,41 +120,26 @@ const UpcomingFeatures = () => {
         ]}
         primaryKeyword="Upcoming Features"
       />
+      {/* Hero Header */}
+      <Box className="why-hero-section">
+        <Container maxWidth="lg">
+          <Box className="why-hero-badge">
+            <RocketIcon sx={{ fontSize: 16, mr: 0.8 }} />
+            <span>EXCITING PRODUCT ROADMAP</span>
+          </Box>
+
+          <Typography variant="h1" className="why-hero-title">
+            Upcoming Innovations Built for{' '}
+            <span className="highlight-text">Next-Gen Dining</span>
+          </Typography>
+
+          <Typography variant="body1" className="why-hero-subtitle">
+            We are constantly engineering powerful new capabilities for {softwareName || 'SavoryOps'} to help your restaurant streamline operations, engage guests, and scale revenue.
+          </Typography>
+        </Container>
+      </Box>
+
       <Container maxWidth="lg">
-        {/* Header Section */}
-        <Box className="upcoming-features-header">
-          <Box className="coming-soon-badge">
-            <Chip
-              icon={<RocketIcon />}
-              label="Coming Soon"
-              className="coming-soon-chip"
-            />
-          </Box>
-          <Typography
-            variant="h1"
-            component="h1"
-            gutterBottom
-            className="main-heading"
-          >
-            Upcoming Features
-          </Typography>
-          <Box className="subtitle-section">
-            <Box className="platform-badge">
-              <StarIcon className="star-icon" />
-              <Typography variant="body1" className="platform-text">
-                Exciting New Features on the Horizon
-              </Typography>
-            </Box>
-          </Box>
-          <Typography
-            variant="h5"
-            color="text.secondary"
-            paragraph
-            className="description"
-          >
-            We're constantly working to enhance {softwareName} with powerful new features that will transform your restaurant operations
-          </Typography>
-        </Box>
 
         {/* Features Grid */}
         <Grid container spacing={{ xs: 2, sm: 2, md: 2 }} className="upcoming-features-grid">

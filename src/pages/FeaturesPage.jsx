@@ -1,8 +1,39 @@
-import { AccountTree as AccountTreeIcon, Assessment as AssessmentIcon, Bolt as BoltIcon, Business as BusinessIcon, CalendarMonth as CalendarMonthIcon, Cloud as CloudIcon, ConfirmationNumber as CouponIcon, ContactSupport as HelpCenterIcon, CurrencyExchange as CurrencyExchangeIcon, Dashboard as DashboardIcon, Download as DownloadIcon, Fastfood as QsrIcon, Groups as GroupsIcon, Language as LanguageIcon, Menu as MenuIcon, PointOfSale as PosIcon, PriceChange as PriceChangeIcon, QrCode as QrCodeIcon, RateReview as RateReviewIcon, ReceiptLong as ReceiptLongIcon, Restaurant as RestaurantIcon, RestaurantMenu as RestaurantMenuIcon, Rocket as RocketIcon, Security as SecurityIcon, Share as ReferralIcon, Star as StarIcon, Timeline as TimelineIcon, TrendingUp as TrendingUpIcon } from '@mui/icons-material';
-import { Box, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
+import {
+  AccountTree as AccountTreeIcon,
+  ArrowForward as ArrowForwardIcon,
+  Assessment as AssessmentIcon,
+  Bolt as BoltIcon,
+  Business as BusinessIcon,
+  CalendarMonth as CalendarMonthIcon,
+  Cloud as CloudIcon,
+  ConfirmationNumber as CouponIcon,
+  ContactSupport as HelpCenterIcon,
+  CurrencyExchange as CurrencyExchangeIcon,
+  Dashboard as DashboardIcon,
+  Download as DownloadIcon,
+  Fastfood as QsrIcon,
+  Groups as GroupsIcon,
+  Language as LanguageIcon,
+  Menu as MenuIcon,
+  PointOfSale as PosIcon,
+  PriceChange as PriceChangeIcon,
+  QrCode as QrCodeIcon,
+  RateReview as RateReviewIcon,
+  ReceiptLong as ReceiptLongIcon,
+  Restaurant as RestaurantIcon,
+  RestaurantMenu as RestaurantMenuIcon,
+  Rocket as RocketIcon,
+  Security as SecurityIcon,
+  Share as ReferralIcon,
+  Star as StarIcon,
+  Timeline as TimelineIcon,
+  TrendingUp as TrendingUpIcon
+} from '@mui/icons-material';
+import { Box, Button, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
 import { useEffect, useMemo } from 'react';
-import GetStartedButton from '../components/GetStartedButton';
+import { Link } from 'react-router-dom';
 import SEOHead from '../components/SEO/SEOHead';
+import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/featurespage.scss';
 
 const ICON_SIZE = { fontSize: 24 };
@@ -221,6 +252,8 @@ const DETAILED_FEATURES = [
 ];
 
 const FeaturesPage = () => {
+  const { softwareName } = useAppSettings();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -248,76 +281,46 @@ const FeaturesPage = () => {
         ]}
         primaryKeyword="Restaurant POS Features"
       />
+      {/* Hero Header */}
+      <Box className="why-hero-section">
+        <Container maxWidth="lg">
+          <Box className="why-hero-badge">
+            <StarIcon sx={{ fontSize: 16, mr: 0.8 }} />
+            <span>PREMIUM RESTAURANT MODULES</span>
+          </Box>
+
+          <Typography variant="h1" className="why-hero-title">
+            Powerful Features Built for{' '}
+            <span className="highlight-text">Speed & Profitability</span>
+          </Typography>
+
+          <Typography variant="body1" className="why-hero-subtitle">
+            Everything you need to streamline your restaurant operations, accelerate table turnover, and eliminate inventory waste with {softwareName || 'SavoryOps'}.
+          </Typography>
+
+          <Box className="hero-cta-group">
+            <Button
+              component={Link}
+              to="/signup"
+              variant="contained"
+              className="hero-primary-btn"
+              endIcon={<ArrowForwardIcon />}
+            >
+              Start Free 14-Day Trial
+            </Button>
+            <Button
+              component={Link}
+              to="/contact-us"
+              variant="outlined"
+              className="hero-secondary-btn"
+            >
+              Book a 1-on-1 Demo
+            </Button>
+          </Box>
+        </Container>
+      </Box>
       <Container maxWidth="lg">
         <Box className="features-header">
-          <Box className="premium-badge">
-            <Chip
-              icon={<StarIcon />}
-              label="Premium Features"
-            />
-          </Box>
-          <Typography
-            variant="h1"
-            component="h1"
-            gutterBottom
-            className="main-heading"
-          >
-            Powerful Features
-          </Typography>
-          <Box className="subtitle-section">
-            <Box className="platform-badge">
-              <RocketIcon className="rocket-icon" />
-              <Typography variant="body1" className="platform-text">
-                Restaurant Management Platform
-              </Typography>
-            </Box>
-          </Box>
-          <Typography
-            variant="h5"
-            color="text.secondary"
-            paragraph
-            className="description"
-          >
-            Everything you need to streamline your restaurant operations and boost profitability with our comprehensive management platform
-          </Typography>
-          <Box className="feature-highlights">
-            <Chip
-              icon={<BoltIcon />}
-              label="Lightning Fast"
-              variant="outlined"
-              className="feature-chip"
-            />
-            <Chip
-              icon={<TrendingUpIcon />}
-              label="Boost Efficiency"
-              variant="outlined"
-              className="feature-chip"
-            />
-            <Chip
-              icon={<StarIcon />}
-              label="Premium Quality"
-              variant="outlined"
-              className="feature-chip"
-            />
-            <Chip
-              icon={<SecurityIcon />}
-              label="Enterprise Security"
-              variant="outlined"
-              className="feature-chip"
-            />
-          </Box>
-          <Box className="cta-section" sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <GetStartedButton
-              className="coming-soon-text"
-              sx={{
-                px: 4,
-                py: 2,
-                fontSize: '1.1rem',
-                fontWeight: 600,
-                minHeight: '48px'
-              }}
-            />
-          </Box>
         </Box>
         <Grid container spacing={{ xs: 2, sm: 2, md: 2 }} className="features-grid">
           {detailedFeatures.map((feature, index) => (

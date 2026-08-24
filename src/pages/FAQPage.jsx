@@ -62,33 +62,25 @@ const FAQPage = () => {
         faqs={faqsData}
       />
 
-      <Container maxWidth="lg">
-        {/* Hero Header */}
-        <Box className="faq-hero-section">
-          <Box className="faq-badge-wrap">
-            <Chip
-              icon={<HelpOutlineIcon sx={{ color: '#ffffff !important', fontSize: '1.15rem' }} />}
-              label="Help Center & FAQs"
-              className="faq-pill-chip"
-            />
+      {/* Hero Header */}
+      <Box className="why-hero-section">
+        <Container maxWidth="lg">
+          <Box className="why-hero-badge">
+            <HelpOutlineIcon sx={{ fontSize: 16, mr: 0.8 }} />
+            <span>HELP CENTER & FREQUENTLY ASKED QUESTIONS</span>
           </Box>
-          <Typography variant="h1" component="h1" className="main-heading">
-            Frequently Asked Questions
+
+          <Typography variant="h1" className="why-hero-title">
+            Frequently Asked Questions &{' '}
+            <span className="highlight-text">Instant Answers</span>
           </Typography>
-          <Box className="subtitle-section">
-            <Box className="platform-badge">
-              <StarIcon className="star-icon" />
-              <Typography variant="body2" className="platform-text">
-                Instant Answers & Knowledge Base
-              </Typography>
-            </Box>
-          </Box>
-          <Typography variant="body1" className="faq-main-subtitle">
+
+          <Typography variant="body1" className="why-hero-subtitle">
             Everything you need to know about {softwareName || 'SavoryOps'} cloud POS, kitchen display workflows, table QR menus, and multi-branch management.
           </Typography>
 
           {/* Search Input */}
-          <Box className="faq-search-wrapper">
+          <Box className="faq-search-wrapper" sx={{ maxWidth: 650, mx: 'auto', mt: 1 }}>
             <TextField
               fullWidth
               placeholder="Search questions (e.g. offline, KDS, inventory, hardware, pricing)..."
@@ -98,13 +90,16 @@ const FAQPage = () => {
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <SearchIcon sx={{ color: '#8ab17d' }} />
+                    <SearchIcon sx={{ color: 'var(--primary-color)' }} />
                   </InputAdornment>
                 ),
               }}
             />
           </Box>
-        </Box>
+        </Container>
+      </Box>
+
+      <Container maxWidth="lg">
 
         {/* Category Filter Chips */}
         <Box className="faq-categories-bar">

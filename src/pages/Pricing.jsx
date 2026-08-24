@@ -207,31 +207,24 @@ const Pricing = () => {
         ]}
         primaryKeyword="Restaurant POS Pricing"
       />
-      <Container maxWidth="lg">
-        <Box className="pricing-page-header">
-          <Box className="pricing-badge">
-            <Chip icon={<AttachMoneyIcon />} label="Flexible Pricing" className="pricing-chip" />
+      {/* Hero Header */}
+      <Box className="why-hero-section">
+        <Container maxWidth="lg">
+          <Box className="why-hero-badge">
+            <StarIcon sx={{ fontSize: 16, mr: 0.8 }} />
+            <span>FLEXIBLE SUBSCRIPTION PLANS</span>
           </Box>
 
-          <Typography variant="h1" component="h1" gutterBottom className="main-heading">
-            Simple, Transparent Pricing
+          <Typography variant="h1" className="why-hero-title">
+            Simple, Transparent Pricing with{' '}
+            <span className="highlight-text">Zero Hidden Fees</span>
           </Typography>
 
-          <Box className="subtitle-section">
-            <Box className="platform-badge">
-              <StarIcon className="star-icon" />
-              <Typography variant="body2" className="platform-text">
-                Restaurant Management Platform
-              </Typography>
-            </Box>
-          </Box>
-
-          <Typography variant="body1" className="description">
-            Choose the perfect plan for your business. All plans include full access to our core features
-            with no hidden fees.
+          <Typography variant="body1" className="why-hero-subtitle">
+            Choose the perfect plan for your business. Full access to enterprise-grade POS, kitchen display, and real-time inventory tools without long-term locked-in contracts.
           </Typography>
-        </Box>
-      </Container>
+        </Container>
+      </Box>
 
       <FreeSoftware hideHeader={true} />
 

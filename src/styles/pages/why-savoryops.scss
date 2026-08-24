@@ -9,154 +9,157 @@
   min-height: 100vh;
   padding-bottom: 60px;
   overflow-x: hidden;
+}
 
-  // Hero Section
-  .why-hero-section {
-    padding: 130px 0 60px 0;
-    text-align: center;
-    position: relative;
+// Hero Section (Shared across all pages)
+.why-hero-section {
+  padding: 130px 0 60px 0;
+  text-align: center;
+  position: relative;
 
-    .why-hero-badge {
-      display: inline-flex;
-      align-items: center;
-      background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(59, 130, 246, 0.12));
-      border: 1px solid rgba(34, 197, 94, 0.25);
-      color: var(--primary-color);
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 8px 18px;
-      border-radius: 50px;
-      margin-bottom: 22px;
-      box-shadow: 0 4px 14px rgba(34, 197, 94, 0.08);
+  .why-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(59, 130, 246, 0.12));
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 50px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 14px rgba(34, 197, 94, 0.08);
+  }
+
+  .why-hero-title {
+    font-size: 3.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.18;
+    max-width: 960px;
+    margin: 0 auto 20px auto;
+    letter-spacing: -0.03em;
+
+    .highlight-text {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .why-hero-title {
-      font-size: 3.25rem;
-      font-weight: 800;
-      color: #0f172a;
-      line-height: 1.18;
-      max-width: 960px;
-      margin: 0 auto 20px auto;
-      letter-spacing: -0.03em;
+    @media (max-width: 960px) {
+      font-size: 2.35rem;
+    }
 
-      .highlight-text {
+    @media (max-width: 600px) {
+      font-size: 1.85rem;
+    }
+  }
+
+  .why-hero-subtitle {
+    font-size: 1.2rem;
+    color: #475569;
+    max-width: 780px;
+    margin: 0 auto 36px auto;
+    line-height: 1.65;
+    font-weight: 400;
+
+    @media (max-width: 600px) {
+      font-size: 1.02rem;
+    }
+  }
+
+  .hero-cta-group {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+
+    .hero-primary-btn {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 13px 32px;
+      border-radius: 50px;
+      text-transform: none;
+      box-shadow: 0 8px 24px color-mix(in srgb, var(--primary-color) 35%, transparent);
+
+      &:hover {
+        background: linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 85%, #000), var(--primary-color));
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px color-mix(in srgb, var(--primary-color) 45%, transparent);
+      }
+    }
+
+    .hero-secondary-btn {
+      border: 2px solid #cbd5e1;
+      color: #1e293b;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-transform: none;
+      background: #ffffff;
+
+      &:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+        background: #f8fafc;
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  // Trust Metric Cards
+  .why-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      border-radius: 18px;
+      padding: 24px 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+        border-color: var(--primary-color);
+      }
+
+      .metric-value {
+        font-size: 2.25rem;
+        font-weight: 800;
+        color: #0f172a;
+        line-height: 1.1;
+        margin-bottom: 6px;
         background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
 
-      @media (max-width: 960px) {
-        font-size: 2.35rem;
-      }
-
-      @media (max-width: 600px) {
-        font-size: 1.85rem;
-      }
-    }
-
-    .why-hero-subtitle {
-      font-size: 1.2rem;
-      color: #475569;
-      max-width: 780px;
-      margin: 0 auto 36px auto;
-      line-height: 1.65;
-      font-weight: 400;
-
-      @media (max-width: 600px) {
-        font-size: 1.02rem;
-      }
-    }
-
-    .hero-cta-group {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 48px;
-
-      .hero-primary-btn {
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        color: #ffffff;
-        font-weight: 700;
-        font-size: 1rem;
-        padding: 13px 32px;
-        border-radius: 50px;
-        text-transform: none;
-        box-shadow: 0 8px 24px color-mix(in srgb, var(--primary-color) 35%, transparent);
-
-        &:hover {
-          background: linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 85%, #000), var(--primary-color));
-          transform: translateY(-2px);
-          box-shadow: 0 12px 28px color-mix(in srgb, var(--primary-color) 45%, transparent);
-        }
-      }
-
-      .hero-secondary-btn {
-        border: 2px solid #cbd5e1;
-        color: #1e293b;
-        font-weight: 700;
-        font-size: 1rem;
-        padding: 12px 28px;
-        border-radius: 50px;
-        text-transform: none;
-        background: #ffffff;
-
-        &:hover {
-          border-color: var(--primary-color);
-          color: var(--primary-color);
-          background: #f8fafc;
-          transform: translateY(-2px);
-        }
-      }
-    }
-
-    // Trust Metric Cards
-    .why-metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-
-      .metric-card {
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(14px);
-        border: 1px solid rgba(226, 232, 240, 0.8);
-        border-radius: 18px;
-        padding: 24px 20px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-        &:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
-          border-color: var(--primary-color);
-        }
-
-        .metric-value {
-          font-size: 2.25rem;
-          font-weight: 800;
-          color: #0f172a;
-          line-height: 1.1;
-          margin-bottom: 6px;
-          background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-
-        .metric-label {
-          font-size: 0.92rem;
-          font-weight: 600;
-          color: #64748b;
-          line-height: 1.4;
-        }
+      .metric-label {
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: #64748b;
+        line-height: 1.4;
       }
     }
   }
+}
+
+.why-savoryops-page {
 
   // Section Headers Common
   .section-badge-header {

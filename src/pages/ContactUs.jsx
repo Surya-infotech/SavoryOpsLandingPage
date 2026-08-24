@@ -20,7 +20,7 @@ const ContactUs = () => {
   const location = useLocation();
   const isStandalonePage = location.pathname === '/contact-us';
   const backendPath = import.meta.env.VITE_BACKEND_URL;
-  const { generalSetting } = useAppSettings();
+  const { generalSetting, softwareName } = useAppSettings();
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [formError, setFormError] = useState('');
   const [formSuccess, setFormSuccess] = useState(false);
@@ -252,41 +252,26 @@ const ContactUs = () => {
           primaryKeyword="Contact SavoryOps"
         />
       )}
+      {/* Hero Header */}
+      <Box className="why-hero-section" sx={{ pb: { xs: 4, md: 5 } }}>
+        <Container maxWidth="lg">
+          <Box className="why-hero-badge">
+            <SupportAgentIcon sx={{ fontSize: 16, mr: 0.8 }} />
+            <span>24/7 DEDICATED SUPPORT & SALES TEAM</span>
+          </Box>
+
+          <Typography variant={isStandalonePage ? 'h1' : 'h2'} className="why-hero-title">
+            Get in Touch with{' '}
+            <span className="highlight-text">{softwareName || 'SavoryOps'}</span>
+          </Typography>
+
+          <Typography variant="body1" className="why-hero-subtitle" sx={{ mb: 2 }}>
+            Have questions about our cloud POS, hardware setups, or custom enterprise deployments? Our frontline support team is here to help.
+          </Typography>
+        </Container>
+      </Box>
+
       <Container maxWidth="lg">
-        {/* Header Section */}
-        <Box className="contact-page-header">
-          <Box className="contact-badge">
-            <Chip
-              icon={<ContactMailIcon sx={{ color: '#ffffff !important', fontSize: '1.15rem' }} />}
-              label="Get in Touch"
-              className="contact-chip"
-            />
-          </Box>
-
-          <Typography
-            variant={isStandalonePage ? 'h1' : 'h2'}
-            component={isStandalonePage ? 'h1' : 'h2'}
-            className="main-heading"
-          >
-            Contact Us
-          </Typography>
-
-          <Box className="subtitle-section">
-            <Box className="platform-badge">
-              <StarIcon className="star-icon" />
-              <Typography variant="body2" className="platform-text">
-                24/7 Dedicated Support & Sales Team
-              </Typography>
-            </Box>
-          </Box>
-
-          <Typography
-            variant="body1"
-            className="description"
-          >
-            Have questions? We&apos;d love to hear from you. Send us a message and our team will respond as soon as possible.
-          </Typography>
-        </Box>
 
         <Box
           sx={{
