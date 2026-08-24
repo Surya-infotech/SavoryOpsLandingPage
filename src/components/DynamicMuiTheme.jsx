@@ -14,19 +14,19 @@ function buildTheme(primaryMain, secondaryMain) {
     palette: {
       ...(hasApiTheme
         ? {
-            primary: {
-              main: primaryMain,
-              light: lighten(primaryMain, 0.12),
-              dark: darken(primaryMain, 0.18),
-              contrastText: '#ffffff',
-            },
-            secondary: {
-              main: secondaryMain,
-              light: lighten(secondaryMain, 0.08),
-              dark: darken(secondaryMain, 0.12),
-              contrastText: '#333333',
-            },
-          }
+          primary: {
+            main: primaryMain,
+            light: lighten(primaryMain, 0.12),
+            dark: darken(primaryMain, 0.18),
+            contrastText: '#ffffff',
+          },
+          secondary: {
+            main: secondaryMain,
+            light: lighten(secondaryMain, 0.08),
+            dark: darken(secondaryMain, 0.12),
+            contrastText: '#333333',
+          },
+        }
         : {}),
       background: {
         default: '#f4f7fb',
@@ -68,12 +68,45 @@ function buildTheme(primaryMain, secondaryMain) {
     components: {
       MuiCssBaseline: {
         styleOverrides: {
+          html: {
+            scrollbarWidth: 'thin',
+            scrollbarColor: 'var(--primary-color) transparent',
+          },
           body: {
             background:
               'radial-gradient(circle at top left, rgba(59,130,246,0.06), transparent 45%), radial-gradient(circle at 85% 10%, rgba(16,185,129,0.06), transparent 40%), #f4f7fb',
+            scrollbarWidth: 'thin',
+            scrollbarColor: 'var(--primary-color) transparent',
           },
           '*': {
             scrollbarWidth: 'thin',
+            scrollbarColor: 'var(--primary-color) transparent',
+            '&::-webkit-scrollbar': {
+              width: '8px',
+              height: '8px',
+              backgroundColor: 'transparent',
+            },
+            '&::-webkit-scrollbar-track': {
+              background: 'transparent',
+              backgroundColor: 'transparent',
+            },
+            '&::-webkit-scrollbar-thumb': {
+              background: 'var(--primary-color)',
+              backgroundColor: 'var(--primary-color)',
+              borderRadius: '10px',
+            },
+            '&::-webkit-scrollbar-thumb:hover': {
+              background: 'color-mix(in srgb, var(--primary-color) 80%, #000)',
+              backgroundColor: 'color-mix(in srgb, var(--primary-color) 80%, #000)',
+            },
+            '&::-webkit-scrollbar-button': {
+              display: 'none',
+              width: 0,
+              height: 0,
+            },
+            '&::-webkit-scrollbar-corner': {
+              background: 'transparent',
+            },
           },
         },
       },
