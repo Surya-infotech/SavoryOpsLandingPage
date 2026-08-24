@@ -21,7 +21,7 @@ import {
   Toolbar,
   Typography
 } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 
@@ -36,8 +36,13 @@ const Navigation = () => {
 
   const isMoreMenuOpen = Boolean(moreAnchorEl);
 
+  useEffect(() => {
+    setMoreAnchorEl(null);
+    setMobileOpen(false);
+  }, [location.pathname]);
+
   const handleMoreClick = (event) => {
-    setMoreAnchorEl(event.currentTarget);
+    setMoreAnchorEl((prev) => (prev ? null : event.currentTarget));
   };
 
   const handleMoreClose = () => {
@@ -165,6 +170,7 @@ const Navigation = () => {
               anchorEl={moreAnchorEl}
               open={isMoreMenuOpen}
               onClose={handleMoreClose}
+              disableRestoreFocus
               MenuListProps={{
                 'aria-labelledby': 'nav-more-button'
               }}
