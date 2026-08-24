@@ -62,5 +62,9 @@
   "resettingpassword": "Réinitialisation du mot de passe...",
   "newpassworddesc": "Entrez votre nouveau mot de passe ci-dessous.",
   "cancel": "Annuler",
-  "close": "Fermer"
+  "close": "Fermer",
+  "manageraccountnotfound": "Aucun compte de responsable trouvé pour cette adresse e-mail",
+  "manageraccessrestricted": "Accès restreint. Seuls les responsables actifs peuvent se connecter via ce portail.",
+  "signinAsOwner": "Se connecter en tant que Propriétaire",
+  "signinAsManager": "Se connecter en tant que Responsable"
 }

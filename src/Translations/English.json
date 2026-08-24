@@ -62,5 +62,9 @@
   "resettingpassword": "Resetting Password...",
   "newpassworddesc": "Enter your new password below.",
   "cancel": "Cancel",
-  "close": "Close"
+  "close": "Close",
+  "manageraccountnotfound": "Manager account not found for that email address",
+  "manageraccessrestricted": "Access restricted. Only active Managers can sign in through this portal.",
+  "signinAsOwner": "Sign in as Owner",
+  "signinAsManager": "Sign in as Manager"
 }

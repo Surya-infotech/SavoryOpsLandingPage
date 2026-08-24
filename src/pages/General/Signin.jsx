@@ -132,12 +132,12 @@ const OwnerLogin = () => {
                     const ownerId = data.owner?.id;
                     const subdomain = data.owner?.subdomain;
                     const employeeId = data.employee?._id || data.employee?.id;
-                    const successText = translations.signinsucessful || 'Sign in successful';
+                    const successText = translations.signinsucessful;
                     const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${token}&id=${ownerId}&employeeId=${employeeId}&userType=Manager&success=${encodeURIComponent(successText)}`;
                     window.location.href = subdomainUrl;
                 } else {
                     const { Token, id, subdomain } = data.owner;
-                    const successText = translations.signinsucessful || 'Sign in successful';
+                    const successText = translations.signinsucessful;
                     const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${Token}&id=${id}&userType=Owner&success=${encodeURIComponent(successText)}`;
                     window.location.href = subdomainUrl;
                 }
@@ -145,8 +145,8 @@ const OwnerLogin = () => {
             else {
                 const errorMessages = {
                     "Owner not found": translations.ownernotfound,
-                    "Manager account not found for that email address": translations.manageraccountnotfound || "Manager account not found for that email address",
-                    "Access restricted. Only active Managers can sign in through this portal.": translations.manageraccessrestricted || "Access restricted. Only active Managers can sign in through this portal.",
+                    "Manager account not found for that email address": translations.manageraccountnotfound,
+                    "Access restricted. Only active Managers can sign in through this portal.": translations.manageraccessrestricted,
                     "All fields are required": translations.allfieldrequired,
                     "Invalid email or password": translations.invailidemailorpassword,
                     "Server error": translations.servererror
@@ -769,7 +769,7 @@ const OwnerLogin = () => {
                         onClick={() => { setLoginType('owner'); setFormError(''); }}
                     >
                         <StorefrontIcon className="type-icon" />
-                        <span>{translations.signinAsOwner || 'Sign in as Owner'}</span>
+                        <span>{translations.signinAsOwner}</span>
                     </button>
                     <button
                         type="button"
@@ -777,7 +777,7 @@ const OwnerLogin = () => {
                         onClick={() => { setLoginType('manager'); setFormError(''); }}
                     >
                         <BadgeIcon className="type-icon" />
-                        <span>{translations.signinAsManager || 'Sign in as Manager'}</span>
+                        <span>{translations.signinAsManager}</span>
                     </button>
                 </div>
 

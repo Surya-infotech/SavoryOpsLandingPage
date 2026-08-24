@@ -62,5 +62,9 @@
   "resettingpassword": "Passwort wird zurückgesetzt...",
   "newpassworddesc": "Geben Sie unten Ihr neues Passwort ein.",
   "cancel": "Abbrechen",
-  "close": "Schließen"
+  "close": "Schließen",
+  "manageraccountnotfound": "Kein Manager-Konto für diese E-Mail-Adresse gefunden",
+  "manageraccessrestricted": "Zugriff eingeschränkt. Nur aktive Manager können sich über dieses Portal anmelden.",
+  "signinAsOwner": "Als Inhaber anmelden",
+  "signinAsManager": "Als Manager anmelden"
 }

@@ -62,5 +62,9 @@
   "resettingpassword": "Restableciendo contraseña...",
   "newpassworddesc": "Introduce tu nueva contraseña a continuación.",
   "cancel": "Cancelar",
-  "close": "Cerrar"
+  "close": "Cerrar",
+  "manageraccountnotfound": "No se encontró ninguna cuenta de gerente para esa dirección de correo electrónico",
+  "manageraccessrestricted": "Acceso restringido. Solo los gerentes activos pueden iniciar sesión a través de este portal.",
+  "signinAsOwner": "Iniciar sesión como Propietario",
+  "signinAsManager": "Iniciar sesión como Gerente"
 }
