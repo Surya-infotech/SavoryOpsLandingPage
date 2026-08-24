@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import ScrollToTopButton from './components/ScrollToTop';
 import { LanguageProvider } from './context/LanguageContext.jsx';
 import { useAppSettings } from './context/AppSettingsContext.jsx';
+import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import DataDeletionPolicy from './pages/DataDeletionPolicy';
 import FAQPage from './pages/FAQPage';
@@ -92,6 +93,10 @@ const AppContent = () => {
       case '/upcoming-features':
         pageTitle = 'Upcoming Features';
         break;
+      case '/about-us':
+      case '/about':
+        pageTitle = 'About Us';
+        break;
       case '/contact-us':
         pageTitle = 'Contact Us';
         break;
@@ -138,6 +143,8 @@ const AppContent = () => {
         <Route path="/why-us" element={<WhySavoryOps />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/upcoming-features" element={<UpcomingFeatures />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/faqs" element={<FAQPage />} />
         <Route path="/contact-us" element={<ContactUs />} />

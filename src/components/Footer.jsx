@@ -1,5 +1,32 @@
 import { useMemo } from 'react';
-import { Assessment as AssessmentIcon, AttachMoney as AttachMoneyIcon, BarChart as BarChartIcon, AccountTree as BranchIcon, Business as BusinessIcon, ContactMail as ContactMailIcon, Facebook as FacebookIcon, HelpOutline as HelpOutlineIcon, Inventory as InventoryIcon, Instagram as InstagramIcon, Language as LanguageIcon, LinkedIn as LinkedInIcon, MenuBook as MenuBookIcon, People as PeopleIcon, Pinterest as PinterestIcon, RateReview as RateReviewIcon, Receipt as ReceiptIcon, Restaurant as RestaurantIcon, Rocket as RocketIcon, Star as StarIcon, Twitter as TwitterIcon, WhatsApp as WhatsAppIcon, YouTube as YouTubeIcon, OpenInNew as OpenInNewIcon } from '@mui/icons-material';
+import {
+  Assessment as AssessmentIcon,
+  AttachMoney as AttachMoneyIcon,
+  BarChart as BarChartIcon,
+  AccountTree as BranchIcon,
+  Business as BusinessIcon,
+  ContactMail as ContactMailIcon,
+  Facebook as FacebookIcon,
+  HelpOutline as HelpOutlineIcon,
+  InfoOutlined as InfoOutlinedIcon,
+  Inventory as InventoryIcon,
+  Instagram as InstagramIcon,
+  Language as LanguageIcon,
+  LinkedIn as LinkedInIcon,
+  MenuBook as MenuBookIcon,
+  People as PeopleIcon,
+  Pinterest as PinterestIcon,
+  RateReview as RateReviewIcon,
+  Receipt as ReceiptIcon,
+  Restaurant as RestaurantIcon,
+  Rocket as RocketIcon,
+  Star as StarIcon,
+  SupportAgent as SupportAgentIcon,
+  Twitter as TwitterIcon,
+  WhatsApp as WhatsAppIcon,
+  YouTube as YouTubeIcon,
+  OpenInNew as OpenInNewIcon
+} from '@mui/icons-material';
 import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/layout/footer.scss';
@@ -46,10 +73,11 @@ const Footer = () => {
 
   const companyLinks = [
     { name: `Why ${softwareName || 'SavoryOps'}`, icon: <StarIcon />, href: '/why-savoryops' },
+    { name: 'About Us', icon: <InfoOutlinedIcon />, href: '/about-us' },
     { name: 'Subscription Plans', icon: <AttachMoneyIcon />, href: '/pricing' },
     { name: 'Upcoming Features', icon: <RocketIcon />, href: '/upcoming-features' },
     { name: 'Frequently Asked Questions (FAQ)', icon: <HelpOutlineIcon />, href: '/faq' },
-    { name: 'Contact Us', icon: <ContactMailIcon />, href: '/contact-us' }
+    { name: 'Contact Us', icon: <SupportAgentIcon />, href: '/contact-us' }
   ];
 
   const reviewLinks = [

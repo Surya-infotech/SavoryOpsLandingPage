@@ -13,6 +13,7 @@ const staticRoutes = [
   '/why-savoryops',
   '/pricing',
   '/upcoming-features',
+  '/about-us',
   '/faq',
   '/contact-us',
   '/privacy-policy',

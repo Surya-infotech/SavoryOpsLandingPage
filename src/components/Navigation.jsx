@@ -3,6 +3,7 @@ import {
   ExpandLess as ExpandLessIcon,
   ExpandMore as ExpandMoreIcon,
   HelpOutline as HelpOutlineIcon,
+  InfoOutlined as InfoOutlinedIcon,
   KeyboardArrowDown as KeyboardArrowDownIcon,
   Menu as MenuIcon,
   SupportAgent as SupportAgentIcon
@@ -65,6 +66,7 @@ const Navigation = () => {
   ];
 
   const moreMenuItems = [
+    { text: 'About Us', path: '/about-us', icon: <InfoOutlinedIcon fontSize="small" /> },
     { text: 'FAQ', path: '/faq', icon: <HelpOutlineIcon fontSize="small" /> },
     { text: 'Contact Us', path: '/contact-us', icon: <SupportAgentIcon fontSize="small" /> }
   ];
@@ -72,7 +74,8 @@ const Navigation = () => {
   const isMoreActive = moreMenuItems.some(
     (item) =>
       location.pathname === item.path ||
-      (item.path === '/faq' && location.pathname === '/faqs')
+      (item.path === '/faq' && location.pathname === '/faqs') ||
+      (item.path === '/about-us' && location.pathname === '/about')
   );
 
   return (
