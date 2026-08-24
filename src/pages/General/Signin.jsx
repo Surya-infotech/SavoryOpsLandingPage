@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import Flag from 'react-world-flags';
 import PhoneInput, { isValidPhoneNumber, parsePhoneNumber } from "react-phone-number-input";
 import 'react-phone-number-input/style.css';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import BadgeIcon from '@mui/icons-material/Badge';
 import { useLanguage } from '../../context/LanguageContext';
 import { getLanguageOptions } from '../../constants/languages';
 import { useAppSettings } from '../../context/AppSettingsContext.jsx';
@@ -12,6 +14,7 @@ import AlertMessage from '../Custom/AlertMessage';
 import WarningModal from '../Custom/WarningModal';
 
 const OwnerLogin = () => {
+    const [loginType, setLoginType] = useState('owner'); // 'owner' or 'manager'
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const BackendPath = import.meta.env.VITE_BACKEND_URL;
@@ -90,8 +93,8 @@ const OwnerLogin = () => {
     useEffect(() => {
         if (typeof window !== 'undefined' && navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
-                () => {},
-                () => {},
+                () => { },
+                () => { },
                 { enableHighAccuracy: true, timeout: 5000, maximumAge: 300000 }
             );
         }
@@ -105,7 +108,11 @@ const OwnerLogin = () => {
             const { browserdetails, device } = getBrowserAndDeviceDetails();
             const { ipaddress, location } = await getIpAndLocation();
 
-            const response = await fetch(`${BackendPath}/General/owner/Signin`, {
+            const endpoint = loginType === 'manager'
+                ? `${BackendPath}/General/manager/Signin`
+                : `${BackendPath}/General/owner/Signin`;
+
+            const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', "x-user": "admin" },
                 body: JSON.stringify({
@@ -120,13 +127,26 @@ const OwnerLogin = () => {
 
             const data = await response.json();
             if (response.ok) {
-                const { Token, id, subdomain } = data.owner;
-                const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${Token}&id=${id}&success=${translations.signinsucessful}`;
-                window.location.href = subdomainUrl;
+                if (loginType === 'manager') {
+                    const token = data.Token || data.token;
+                    const ownerId = data.owner?.id;
+                    const subdomain = data.owner?.subdomain;
+                    const employeeId = data.employee?._id || data.employee?.id;
+                    const successText = translations.signinsucessful || 'Sign in successful';
+                    const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${token}&id=${ownerId}&employeeId=${employeeId}&userType=Manager&success=${encodeURIComponent(successText)}`;
+                    window.location.href = subdomainUrl;
+                } else {
+                    const { Token, id, subdomain } = data.owner;
+                    const successText = translations.signinsucessful || 'Sign in successful';
+                    const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${Token}&id=${id}&userType=Owner&success=${encodeURIComponent(successText)}`;
+                    window.location.href = subdomainUrl;
+                }
             }
             else {
                 const errorMessages = {
                     "Owner not found": translations.ownernotfound,
+                    "Manager account not found for that email address": translations.manageraccountnotfound || "Manager account not found for that email address",
+                    "Access restricted. Only active Managers can sign in through this portal.": translations.manageraccessrestricted || "Access restricted. Only active Managers can sign in through this portal.",
                     "All fields are required": translations.allfieldrequired,
                     "Invalid email or password": translations.invailidemailorpassword,
                     "Server error": translations.servererror
@@ -242,7 +262,11 @@ const OwnerLogin = () => {
 
         setIsSendingForgotOtp(true);
         try {
-            const response = await fetch(`${BackendPath}/General/owner/ForgotPasswordSendOTP`, {
+            const endpoint = loginType === 'manager'
+                ? `${BackendPath}/General/manager/ForgotPasswordSendOTP`
+                : `${BackendPath}/General/owner/ForgotPasswordSendOTP`;
+
+            const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'x-user': 'admin' },
                 body: JSON.stringify({ phone: forgotPhone }),
@@ -316,7 +340,11 @@ const OwnerLogin = () => {
         }
 
         try {
-            const response = await fetch(`${BackendPath}/General/owner/ForgotPasswordVerifyOTP`, {
+            const endpoint = loginType === 'manager'
+                ? `${BackendPath}/General/manager/ForgotPasswordVerifyOTP`
+                : `${BackendPath}/General/owner/ForgotPasswordVerifyOTP`;
+
+            const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'x-user': 'admin' },
                 body: JSON.stringify({ phone: forgotPhone, otp: otpValue }),
@@ -356,7 +384,11 @@ const OwnerLogin = () => {
         setForgotOtpError('');
         setForgotModalError('');
         try {
-            const response = await fetch(`${BackendPath}/General/owner/ForgotPasswordResendOTP`, {
+            const endpoint = loginType === 'manager'
+                ? `${BackendPath}/General/manager/ForgotPasswordResendOTP`
+                : `${BackendPath}/General/owner/ForgotPasswordResendOTP`;
+
+            const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'x-user': 'admin' },
                 body: JSON.stringify({ phone: forgotPhone }),
@@ -396,7 +428,11 @@ const OwnerLogin = () => {
 
         setIsResettingPassword(true);
         try {
-            const response = await fetch(`${BackendPath}/General/owner/ForgotPasswordResetPassword`, {
+            const endpoint = loginType === 'manager'
+                ? `${BackendPath}/General/manager/ForgotPasswordResetPassword`
+                : `${BackendPath}/General/owner/ForgotPasswordResetPassword`;
+
+            const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'x-user': 'admin' },
                 body: JSON.stringify({ phone: forgotPhone, password: newPassword }),
@@ -725,6 +761,26 @@ const OwnerLogin = () => {
                         <h2>{softwareName}</h2>
                     </a>
                 </div>
+
+                <div className="login-type-toggle">
+                    <button
+                        type="button"
+                        className={`login-type-btn ${loginType === 'owner' ? 'active' : ''}`}
+                        onClick={() => { setLoginType('owner'); setFormError(''); }}
+                    >
+                        <StorefrontIcon className="type-icon" />
+                        <span>{translations.signinAsOwner || 'Sign in as Owner'}</span>
+                    </button>
+                    <button
+                        type="button"
+                        className={`login-type-btn ${loginType === 'manager' ? 'active' : ''}`}
+                        onClick={() => { setLoginType('manager'); setFormError(''); }}
+                    >
+                        <BadgeIcon className="type-icon" />
+                        <span>{translations.signinAsManager || 'Sign in as Manager'}</span>
+                    </button>
+                </div>
+
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label>{translations.email}</label>
