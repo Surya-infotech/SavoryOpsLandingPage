@@ -20,27 +20,11 @@ function setMetaThemeColor(hex) {
 }
 
 /**
- * Applies cached primary/secondary colors on first paint to avoid a flash of wrong branding before settings load.
- * Modified to always use static brand colors: #028802 and #69e869.
- * @returns {{ primary: string, secondary: string }}
+ * Applies default primary/secondary colors on first paint.
+ * Uses static brand colors: #028802 and #69e869.
  */
 export function applyCachedThemeColorsFromStorage() {
   applyCssThemeColors('#028802', '#69e869');
   setMetaThemeColor('#028802');
-  return { primary: '#028802', secondary: '#69e869' };
-}
-
-export function pickThemeColors(themeSetting) {
-  const ts = themeSetting || {};
-  const primary = ts.primarycolor || ts.primary_color || '';
-  const secondary = ts.secondarycolor || ts.secondary_color || '';
-  return { primary, secondary };
-}
-
-export function applyThemeFaviconFromUrl() {
-  // Static assets used
-}
-
-export function applyBrandingFromThemeSetting() {
   return { primary: '#028802', secondary: '#69e869' };
 }

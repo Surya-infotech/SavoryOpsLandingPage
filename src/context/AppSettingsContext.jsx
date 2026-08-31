@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { applyBrandingFromThemeSetting } from '../utils/themeBranding.js';
 
 const AppSettingsContext = createContext(null);
 
@@ -42,9 +41,6 @@ export const AppSettingsProvider = ({ children }) => {
         const cleanGs = { ...gs, softwarename: 'SavoryOps' };
         setGeneralSetting({ ...emptyGeneralSetting, ...cleanGs });
         setSocialMedia(Array.isArray(data?.socialMedia) ? data.socialMedia : []);
-
-        const ts = data?.themeSetting || {};
-        applyBrandingFromThemeSetting(ts);
       } catch {
         /* keep defaults when API fails */
       }
