@@ -7,6 +7,8 @@ const LANGUAGE_OPTIONS = [
     { name: 'Dutch', code: 'NL' },
     { name: 'Italian', code: 'IT' },
     { name: 'Russian', code: 'RU' },
+    { name: 'Portuguese', code: 'PT' },
+    { name: 'Polish', code: 'PL' },
 ];
 export const getLanguageOptions = () => [...LANGUAGE_OPTIONS].sort((a, b) => a.name.localeCompare(b.name));
 
