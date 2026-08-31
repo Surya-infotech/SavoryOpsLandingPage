@@ -48,7 +48,7 @@ const Home = () => {
       <Box id="cta" className="home-cta">
         <CTA
           title="Ready to Transform Your Restaurant?"
-          description={`Join thousands of restaurants already using ${softwareName} to streamline their operations`}
+          description={`Empower your business with ${softwareName} — the modern cloud operating system built for effortless operations`}
         />
       </Box>
     </Box>

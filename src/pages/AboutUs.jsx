@@ -32,7 +32,7 @@ const AboutUs = () => {
   const name = softwareName || 'SavoryOps';
 
   const stats = [
-    { value: '500+', label: 'Active Restaurant Outlets' },
+    { value: '100%', label: 'Hardware-Agnostic & BYOD Ready' },
     { value: '35%', label: 'Average Food Waste Reduction' },
     { value: '99.99%', label: 'Cloud System Uptime' },
     { value: '< 2 min', label: 'Average Live Support Response' }

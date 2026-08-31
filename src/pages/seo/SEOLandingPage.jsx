@@ -131,7 +131,7 @@ const SEOLandingPage = ({ clusterId }) => {
         {/* 6. High-Converting Bottom Banner */}
         <section className="bottom-cta-banner">
           <h2>Ready to Transform Your Restaurant Operations?</h2>
-          <p>Join thousands of modern restaurant owners running faster, more profitable venues with SavoryOps.</p>
+          <p>Equip your venue with a faster, smarter, and more profitable cloud restaurant operating system.</p>
           <Button
             variant="contained"
             className="btn-cta"

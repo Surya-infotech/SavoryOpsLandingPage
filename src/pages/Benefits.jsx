@@ -77,7 +77,7 @@ const Benefits = () => {
               fontWeight: 500
             }}
           >
-            Join thousands of restaurants that have transformed their operations with our comprehensive platform
+            Transform your dining and kitchen operations with our all-in-one cloud platform
           </Typography>
         </Box>
 
