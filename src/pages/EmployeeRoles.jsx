@@ -5,6 +5,7 @@ import {
   RestaurantMenu as ChefIcon,
   RoomService as WaiterIcon,
   SoupKitchen as HeadChefIcon,
+  SupervisorAccount as ManagerIcon,
   TwoWheeler as DeliveryDriverIcon,
 } from '@mui/icons-material';
 import { Box, Card, CardContent, Chip, Container, Typography } from '@mui/material';
@@ -13,6 +14,13 @@ import '../styles/pages/employee-roles.scss';
 const FEATURE_COLOR = 'var(--primary-color)';
 
 const EMPLOYEE_ROLES = [
+  {
+    id: 'manager',
+    icon: <ManagerIcon />,
+    title: 'Manager',
+    description:
+      'Supervise daily branch floor operations, approve discounts & voids, manage staff shifts, and monitor live service and sales.',
+  },
   {
     id: 'waiter',
     icon: <WaiterIcon />,
@@ -69,7 +77,7 @@ const EmployeeRoles = () => {
             Role-Based Employee Access
           </Typography>
           <Typography variant="h5" className="employee-roles-subtitle">
-            Assign the right permissions in the employee app — from front-of-house to kitchen and delivery
+            Assign the right permissions in the employee app — from branch managers and front-of-house to kitchen and delivery
           </Typography>
         </Box>
 

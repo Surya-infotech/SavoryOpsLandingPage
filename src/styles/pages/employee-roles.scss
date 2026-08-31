@@ -31,12 +31,10 @@
       font-size: clamp(2rem, 4.2vw, 3.4rem);
       color: #1a1a1a;
       margin-bottom: 1rem;
-      background: linear-gradient(
-        135deg,
-        color-mix(in srgb, var(--primary-color) 70%, #000),
-        var(--primary-color),
-        var(--secondary-color)
-      );
+      background: linear-gradient(135deg,
+          color-mix(in srgb, var(--primary-color) 70%, #000),
+          var(--primary-color),
+          var(--secondary-color));
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -67,6 +65,10 @@
 
     @media (min-width: 960px) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
 

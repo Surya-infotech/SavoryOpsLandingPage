@@ -218,6 +218,7 @@ export const COMPARISON_ORDER_TYPES = [
 ];
 
 export const COMPARISON_EMPLOYEE_ROLES = [
+  { key: 'manager', name: 'Manager Role' },
   { key: 'waiter', name: 'Waiter Role' },
   { key: 'cashier', name: 'Cashier Role' },
   { key: 'chef', name: 'Chef Role' },

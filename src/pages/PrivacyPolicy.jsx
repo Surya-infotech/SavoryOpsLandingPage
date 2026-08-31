@@ -247,7 +247,7 @@ const PrivacyPolicy = () => {
               </Typography>
               <Typography variant="body1" className="section-content">
                 • Restaurant owners: Full access to their business data<br />
-                • Employees: Role-specific access (waiter, chef, head chef, cashier)<br />
+                • Employees: Role-specific access (manager, cashier, waiter, chef, head chef, host, delivery driver)<br />
                 • Customers: Access only to their own orders and profile<br />
                 • All access is logged and monitored for security
               </Typography>
