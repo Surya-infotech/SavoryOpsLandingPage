@@ -117,10 +117,10 @@ const PrivacyPolicy = () => {
               This comprehensive Privacy Policy governs the collection, processing, storage, and protection of data across all components of the SavoryOps ecosystem:
             </Typography>
 
-            <Box className="feature-cards-grid">
+            <Box className="feature-cards-grid cards-4">
               <Box className="feature-card">
                 <Box className="card-top">
-                  <span className="card-badge">Portal</span>
+                  <span className="card-badge badge-portal">Portal</span>
                   <span className="card-title">OwnerWeb Portal</span>
                 </Box>
                 <Typography variant="body2" className="card-body">
@@ -130,7 +130,7 @@ const PrivacyPolicy = () => {
 
               <Box className="feature-card">
                 <Box className="card-top">
-                  <span className="card-badge">Mobile & Web</span>
+                  <span className="card-badge badge-mobile">Mobile &amp; Web</span>
                   <span className="card-title">UserApp (Diners)</span>
                 </Box>
                 <Typography variant="body2" className="card-body">
@@ -140,8 +140,8 @@ const PrivacyPolicy = () => {
 
               <Box className="feature-card">
                 <Box className="card-top">
-                  <span className="card-badge">Operations</span>
-                  <span className="card-title">EmployeeApp & KDS</span>
+                  <span className="card-badge badge-ops">Operations</span>
+                  <span className="card-title">EmployeeApp &amp; KDS</span>
                 </Box>
                 <Typography variant="body2" className="card-body">
                   Handheld tableside ordering for waitstaff, PIN clock-in shifts, and real-time digital Kitchen Order Ticket (KOT) routing to station-specific Kitchen Display Systems (KDS).
@@ -150,7 +150,7 @@ const PrivacyPolicy = () => {
 
               <Box className="feature-card">
                 <Box className="card-top">
-                  <span className="card-badge">Infrastructure</span>
+                  <span className="card-badge badge-infra">Infrastructure</span>
                   <span className="card-title">Cloud Core Engine</span>
                 </Box>
                 <Typography variant="body2" className="card-body">
@@ -439,7 +439,7 @@ const PrivacyPolicy = () => {
               We never sell, rent, monetize, or trade your personal or business data. We partner exclusively with world-class cloud infrastructure providers bound by rigorous Data Processing Agreements (DPA):
             </Typography>
 
-            <Box className="feature-cards-grid">
+            <Box className="feature-cards-grid cards-3">
               <Box className="feature-card">
                 <Box className="card-top">
                   <span className="card-badge">Cloud Host</span>
@@ -550,7 +550,7 @@ const PrivacyPolicy = () => {
               Depending on your physical location and applicable legal jurisdiction (including UAE PDPL, Saudi Arabia PDPL, EU GDPR, and California CCPA/CPRA), you possess the following rights regarding your personal information:
             </Typography>
 
-            <Box className="feature-cards-grid">
+            <Box className="feature-cards-grid cards-4">
               <Box className="feature-card">
                 <Box className="card-top">
                   <span className="card-badge">Access</span>

@@ -133,7 +133,7 @@ const DataDeletionPolicy = () => {
               The SavoryOps ecosystem serves multiple user personas. Deletion workflows are available across each distinct role:
             </Typography>
 
-            <Box className="feature-cards-grid">
+            <Box className="feature-cards-grid cards-3">
               <Box className="feature-card">
                 <Box className="card-top">
                   <span className="card-badge">Customer</span>

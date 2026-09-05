@@ -223,43 +223,96 @@
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 1.25rem;
         margin: 1.5rem 0;
+
+        &.cards-4 {
+          grid-template-columns: repeat(2, 1fr);
+
+          @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        &.cards-3 {
+          grid-template-columns: repeat(3, 1fr);
+
+          @media (max-width: 960px) {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          }
+
+          @media (max-width: 600px) {
+            grid-template-columns: 1fr;
+          }
+        }
       }
 
       .feature-card {
         background: #f8fafc;
         border: 1px solid #e2e8f0;
-        border-radius: 0.75rem;
+        border-radius: 0.85rem;
         padding: 1.5rem;
-        transition: all 0.2s ease;
+        transition: all 0.25s ease;
+        display: flex;
+        flex-direction: column;
 
         &:hover {
           background: #ffffff;
           border-color: #a7f3d0;
-          box-shadow: 0 8px 24px -4px rgba(16, 185, 129, 0.08);
+          box-shadow: 0 10px 25px -4px rgba(16, 185, 129, 0.08);
           transform: translateY(-2px);
         }
 
         .card-top {
           display: flex;
           align-items: center;
-          gap: 0.6rem;
-          margin-bottom: 0.75rem;
+          gap: 0.75rem;
+          margin-bottom: 0.85rem;
+          flex-wrap: wrap;
 
           .card-badge {
-            font-size: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.725rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.05em;
             background: #e0f2fe;
             color: #0369a1;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            line-height: 1.2;
+
+            &.badge-portal {
+              background: #eff6ff;
+              color: #1d4ed8;
+              border: 1px solid #bfdbfe;
+            }
+
+            &.badge-mobile {
+              background: #ecfdf5;
+              color: #047857;
+              border: 1px solid #a7f3d0;
+            }
+
+            &.badge-ops {
+              background: #fffbeb;
+              color: #b45309;
+              border: 1px solid #fde68a;
+            }
+
+            &.badge-infra {
+              background: #f5f3ff;
+              color: #6d28d9;
+              border: 1px solid #ddd6fe;
+            }
           }
 
           .card-title {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: #0f172a;
+            line-height: 1.3;
           }
         }
 
