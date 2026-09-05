@@ -1,6 +1,5 @@
 import {
   AddCircleOutline as AddCircleOutlineIcon,
-  AttachMoney as AttachMoneyIcon,
   CheckCircle as CheckCircleIcon,
   CheckCircleOutline as CheckCircleOutlineIcon,
   Close as CloseIcon,
@@ -9,7 +8,7 @@ import {
   Star as StarIcon,
   StarRounded as StarRoundedIcon,
 } from '@mui/icons-material';
-import { Box, Chip, Container, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CTA from '../components/CTA';

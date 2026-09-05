@@ -1,4 +1,4 @@
-import { Box, Container, Divider, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import SecurityIcon from '@mui/icons-material/Security';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';

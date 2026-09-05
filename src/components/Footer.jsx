@@ -19,7 +19,6 @@ import {
   MenuBook as MenuBookIcon,
   People as PeopleIcon,
   Pinterest as PinterestIcon,
-  RateReview as RateReviewIcon,
   Receipt as ReceiptIcon,
   Restaurant as RestaurantIcon,
   Rocket as RocketIcon,
@@ -27,10 +26,9 @@ import {
   SupportAgent as SupportAgentIcon,
   Twitter as TwitterIcon,
   WhatsApp as WhatsAppIcon,
-  YouTube as YouTubeIcon,
-  CheckCircle as StatusIcon
+  YouTube as YouTubeIcon
 } from '@mui/icons-material';
-import { Box, Container, Divider, Grid, IconButton, Link, Typography } from '@mui/material';
+import { Box, Container, Divider, IconButton, Link, Typography } from '@mui/material';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/layout/footer.scss';
 

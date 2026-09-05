@@ -2,7 +2,6 @@ import {
   AccountTree as AccountTreeIcon,
   ArrowForward as ArrowForwardIcon,
   Assessment as AssessmentIcon,
-  Bolt as BoltIcon,
   Business as BusinessIcon,
   CalendarMonth as CalendarMonthIcon,
   Cloud as CloudIcon,
@@ -22,14 +21,11 @@ import {
   ReceiptLong as ReceiptLongIcon,
   Restaurant as RestaurantIcon,
   RestaurantMenu as RestaurantMenuIcon,
-  Rocket as RocketIcon,
-  Security as SecurityIcon,
   Share as ReferralIcon,
   Star as StarIcon,
-  Timeline as TimelineIcon,
-  TrendingUp as TrendingUpIcon
+  Timeline as TimelineIcon
 } from '@mui/icons-material';
-import { Box, Button, Card, CardContent, Chip, Container, Grid, Typography } from '@mui/material';
+import { Box, Button, Card, CardContent, Container, Grid, Typography } from '@mui/material';
 import { useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import SEOHead from '../components/SEO/SEOHead';

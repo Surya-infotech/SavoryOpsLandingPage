@@ -62,9 +62,10 @@
   "resettingpassword": "Reimpostazione password...",
   "newpassworddesc": "Inserisci la tua nuova password qui sotto.",
   "cancel": "Annulla",
-  "close": "Chiudi",
   "manageraccountnotfound": "Nessun account gestore trovato per questo indirizzo email",
   "manageraccessrestricted": "Accesso limitato. Solo i gestori attivi possono accedere tramite questo portale.",
   "signinAsOwner": "Accedi come Proprietario",
-  "signinAsManager": "Accedi come Gestore"
+  "signinAsManager": "Accedi come Gestore",
+  "warning": "Avvertimento",
+  "okgotit": "Ho capito"
 }

@@ -62,9 +62,10 @@
   "resettingpassword": "Сброс пароля...",
   "newpassworddesc": "Введите новый пароль ниже.",
   "cancel": "Отмена",
-  "close": "Закрыть",
   "manageraccountnotfound": "Учетная запись менеджера не найдена для этого адреса электронной почты",
   "manageraccessrestricted": "Доступ ограничен. Только активные менеджеры могут входить через этот портал.",
   "signinAsOwner": "Войти как Владелец",
-  "signinAsManager": "Войти как Менеджер"
+  "signinAsManager": "Войти как Менеджер",
+  "warning": "Предупреждение",
+  "okgotit": "Понятно"
 }

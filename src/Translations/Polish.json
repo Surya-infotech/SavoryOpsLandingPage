@@ -62,9 +62,10 @@
   "resettingpassword": "Resetowanie hasła...",
   "newpassworddesc": "Wprowadź nowe hasło poniżej.",
   "cancel": "Anuluj",
-  "close": "Zamknij",
   "manageraccountnotfound": "Nie znaleziono konta menedżera dla tego adresu e-mail",
   "manageraccessrestricted": "Dostęp ograniczony. Tylko aktywni menedżerowie mogą logować się przez ten portal.",
   "signinAsOwner": "Zaloguj się jako Właściciel",
-  "signinAsManager": "Zaloguj się jako Menedżer"
+  "signinAsManager": "Zaloguj się jako Menedżer",
+  "warning": "Ostrzeżenie",
+  "okgotit": "Rozumiem"
 }

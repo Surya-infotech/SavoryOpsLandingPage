@@ -1,15 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
-  ContactMail as ContactMailIcon,
   Email as EmailIcon,
   LocationOn as LocationIcon,
   Phone as PhoneIcon,
   Send as SendIcon,
-  Star as StarIcon,
   SupportAgent as SupportAgentIcon
 } from '@mui/icons-material';
-import { Box, Button, Chip, Container, TextField, Typography } from '@mui/material';
+import { Box, Button, Container, TextField, Typography } from '@mui/material';
 import SEOHead from '../components/SEO/SEOHead';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import '../styles/pages/contact-us.scss';

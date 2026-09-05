@@ -62,9 +62,10 @@
   "resettingpassword": "Wachtwoord opnieuw instellen...",
   "newpassworddesc": "Voer hieronder uw nieuwe wachtwoord in.",
   "cancel": "Annuleren",
-  "close": "Sluiten",
   "manageraccountnotfound": "Geen manager-account gevonden voor dit e-mailadres",
   "manageraccessrestricted": "Toegang beperkt. Alleen actieve managers kunnen inloggen via dit portaal.",
   "signinAsOwner": "Inloggen als Eigenaar",
-  "signinAsManager": "Inloggen als Manager"
+  "signinAsManager": "Inloggen als Manager",
+  "warning": "Waarschuwing",
+  "okgotit": "Begrepen"
 }

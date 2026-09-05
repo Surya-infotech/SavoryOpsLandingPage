@@ -62,9 +62,10 @@
   "resettingpassword": "Redefinindo senha...",
   "newpassworddesc": "Digite sua nova senha abaixo.",
   "cancel": "Cancelar",
-  "close": "Fechar",
   "manageraccountnotfound": "Conta de gerente não encontrada para este endereço de e-mail",
   "manageraccessrestricted": "Acesso restrito. Apenas gerentes ativos podem fazer login por este portal.",
   "signinAsOwner": "Entrar como Proprietário",
-  "signinAsManager": "Entrar como Gerente"
+  "signinAsManager": "Entrar como Gerente",
+  "warning": "Aviso",
+  "okgotit": "Entendi"
 }

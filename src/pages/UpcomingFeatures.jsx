@@ -9,7 +9,6 @@ import {
   MenuBook as MenuBookIcon,
   Payment as PaymentIcon,
   Rocket as RocketIcon,
-  Star as StarIcon,
   TipsAndUpdates as TipsAndUpdatesIcon,
   VpnKey as VpnKeyIcon,
 } from '@mui/icons-material';

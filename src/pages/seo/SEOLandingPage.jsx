@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Box, Button, Chip, Container, Typography } from '@mui/material';
+import { Box, Button, Container, Typography } from '@mui/material';
 import SEOHead from '../../components/SEO/SEOHead';
 import keywordsData from '../../data/keywords.json';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';

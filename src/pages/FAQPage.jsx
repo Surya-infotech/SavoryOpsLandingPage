@@ -6,7 +6,6 @@ import {
   AccordionSummary,
   Box,
   Button,
-  Chip,
   Container,
   InputAdornment,
   TextField,
@@ -17,8 +16,7 @@ import {
   HelpOutline as HelpOutlineIcon,
   Search as SearchIcon,
   SupportAgent as SupportAgentIcon,
-  RocketLaunch as RocketLaunchIcon,
-  Star as StarIcon
+  RocketLaunch as RocketLaunchIcon
 } from '@mui/icons-material';
 import SEOHead from '../components/SEO/SEOHead';
 import { faqsData, faqCategories } from '../data/faqsData';
