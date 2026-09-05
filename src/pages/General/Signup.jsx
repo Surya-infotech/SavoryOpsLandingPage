@@ -10,6 +10,7 @@ import { getBrowserAndDeviceDetails, getIpAndLocation } from '../../utils/device
 import '../../styles/General/signin.scss';
 import '../../styles/General/signup.scss';
 import WarningModal from '../Custom/WarningModal';
+import SEOHead from '../../components/SEO/SEOHead';
 
 const OwnerSignUp = () => {
     const [firstName, setFirstName] = useState('');
@@ -454,6 +455,13 @@ const OwnerSignUp = () => {
     };
 
     return (<>
+        <SEOHead
+            title={`Sign Up | Create Your ${softwareName || 'SavoryOps'} Account`}
+            description={`Start your free trial with ${softwareName || 'SavoryOps'}. Register your restaurant and get access to cloud POS, KDS, inventory tracking, and tableside ordering.`}
+            canonicalUrl="https://savoryops.com/signup"
+            keywords={["SavoryOps signup", "register restaurant POS", "free POS trial", "cloud restaurant OS"]}
+            primaryKeyword="Sign Up"
+        />
         {showWarning && <WarningModal message={warningMessage} onClose={() => setShowWarning(false)} />}
         <div className="full-page">
             <div className="language-container">

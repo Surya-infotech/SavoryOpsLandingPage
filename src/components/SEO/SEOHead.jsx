@@ -19,7 +19,7 @@ const SEOHead = ({
 }) => {
   const location = useLocation();
   const { language } = useLanguage();
-  const currentUrl = canonicalUrl || `https://savoryops.com${location.pathname}`;
+  const currentUrl = canonicalUrl || `https://savoryops.com${location.pathname.toLowerCase()}`;
 
   useEffect(() => {
     // Determine active language data

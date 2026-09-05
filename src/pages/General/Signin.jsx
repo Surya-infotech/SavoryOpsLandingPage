@@ -12,6 +12,7 @@ import { getBrowserAndDeviceDetails, getIpAndLocation } from '../../utils/device
 import '../../styles/General/signin.scss';
 import AlertMessage from '../Custom/AlertMessage';
 import WarningModal from '../Custom/WarningModal';
+import SEOHead from '../../components/SEO/SEOHead';
 
 const OwnerLogin = () => {
     const [loginType, setLoginType] = useState('owner'); // 'owner' or 'manager'
@@ -460,6 +461,19 @@ const OwnerLogin = () => {
     };
 
     return (<>
+        <SEOHead
+            title={`Sign In | ${softwareName || 'SavoryOps'} Cloud POS & Restaurant OS`}
+            description={`Sign in to ${softwareName || 'SavoryOps'} Cloud Management Portal. Access your restaurant POS billing, kitchen orders, inventory, staff shifts, and branch analytics.`}
+            canonicalUrl="https://savoryops.com/signin"
+            keywords={[
+                "SavoryOps signin",
+                "restaurant POS login",
+                "cloud POS sign in",
+                "SavoryOps owner login",
+                "restaurant management system login"
+            ]}
+            primaryKeyword="Sign In"
+        />
         {showWarning && <WarningModal message={warningMessage} onClose={() => setShowWarning(false)} />}
         {alertMessage && <AlertMessage message={alertMessage} onClose={() => setAlertMessage("")} />}
 
