@@ -23,11 +23,10 @@ const DataDeletionPolicy = () => {
     { label: '2. Eligible User Roles', href: '#roles' },
     { label: '3. Data Purge Matrix', href: '#data-scope' },
     { label: '4. In-App OTP Deletion Flow', href: '#in-app-process' },
-    { label: '5. Web & Manual Request Method', href: '#manual-process' },
-    { label: '6. Technical Execution & Timelines', href: '#timelines' },
-    { label: '7. Tax & Fiscal Exceptions', href: '#legal-exceptions' },
-    { label: '8. App Store Compliance', href: '#compliance' },
-    { label: '9. Contact & Support', href: '#contact' }
+    { label: '5. Technical Execution & Timelines', href: '#timelines' },
+    { label: '6. Tax & Fiscal Exceptions', href: '#legal-exceptions' },
+    { label: '7. App Store Compliance', href: '#compliance' },
+    { label: '8. Contact & Support', href: '#contact' }
   ];
 
   return (
@@ -293,61 +292,14 @@ const DataDeletionPolicy = () => {
             </Box>
           </Box>
 
-          {/* Section 5: Manual / Web Process */}
-          <Box id="manual-process" className="privacy-section">
-            <Box className="section-header-wrap">
-              <Box className="section-icon-badge">
-                <EmailIcon />
-              </Box>
-              <Typography variant="h2" className="section-title">
-                5. Web &amp; Manual Deletion Request Process
-              </Typography>
-            </Box>
-            <Typography variant="body1" className="section-content">
-              If you have uninstalled the application, lost access to your mobile device, or are a web user who placed an order via our browser QR menu, you may submit a manual data deletion request through our Privacy Team:
-            </Typography>
-
-            <Box className="steps-flow">
-              <Box className="step-item">
-                <Box className="step-number">A</Box>
-                <Box className="step-details">
-                  <Box className="step-title">Submit Deletion Email</Box>
-                  <Box className="step-desc">
-                    Send an email to <strong>privacy@savoryops.com</strong> with the subject line <code>&ldquo;Data Deletion Request - [Your Phone Number]&rdquo;</code>.
-                  </Box>
-                </Box>
-              </Box>
-
-              <Box className="step-item">
-                <Box className="step-number">B</Box>
-                <Box className="step-details">
-                  <Box className="step-title">Identity Confirmation</Box>
-                  <Box className="step-desc">
-                    To prevent fraudulent account deletions, our compliance officer will verify account ownership by dispatching a verification SMS challenge to your registered mobile phone number.
-                  </Box>
-                </Box>
-              </Box>
-
-              <Box className="step-item">
-                <Box className="step-number">C</Box>
-                <Box className="step-details">
-                  <Box className="step-title">Execution &amp; Written Confirmation</Box>
-                  <Box className="step-desc">
-                    Once ownership is verified, all personal records, S3 assets, and linked accounts are permanently purged. You will receive a written confirmation of destruction within <strong>30 calendar days</strong> (typically processed within 48 hours).
-                  </Box>
-                </Box>
-              </Box>
-            </Box>
-          </Box>
-
-          {/* Section 6: Timelines */}
+          {/* Section 5: Timelines */}
           <Box id="timelines" className="privacy-section">
             <Box className="section-header-wrap">
               <Box className="section-icon-badge">
                 <CheckCircleOutlineIcon />
               </Box>
               <Typography variant="h2" className="section-title">
-                6. Technical Execution Timelines &amp; Backup Lifecycle
+                5. Technical Execution Timelines &amp; Backup Lifecycle
               </Typography>
             </Box>
             <Typography variant="body1" className="section-content">
@@ -362,14 +314,14 @@ const DataDeletionPolicy = () => {
             </ul>
           </Box>
 
-          {/* Section 7: Legal Exceptions */}
+          {/* Section 6: Legal Exceptions */}
           <Box id="legal-exceptions" className="privacy-section">
             <Box className="section-header-wrap">
               <Box className="section-icon-badge">
                 <SecurityIcon />
               </Box>
               <Typography variant="h2" className="section-title">
-                7. Statutory Fiscal Exceptions (UAE FTA &amp; Tax Regulations)
+                6. Statutory Fiscal Exceptions (UAE FTA &amp; Tax Regulations)
               </Typography>
             </Box>
             <Typography variant="body1" className="section-content">
@@ -385,14 +337,14 @@ const DataDeletionPolicy = () => {
             </Box>
           </Box>
 
-          {/* Section 8: Store Compliance */}
+          {/* Section 7: Store Compliance */}
           <Box id="compliance" className="privacy-section">
             <Box className="section-header-wrap">
               <Box className="section-icon-badge">
                 <VerifiedUserIcon />
               </Box>
               <Typography variant="h2" className="section-title">
-                8. Google Play Store &amp; Apple App Store Compliance Statement
+                7. Google Play Store &amp; Apple App Store Compliance Statement
               </Typography>
             </Box>
             <Typography variant="body1" className="section-content">
@@ -405,29 +357,21 @@ const DataDeletionPolicy = () => {
             </ul>
           </Box>
 
-          {/* Section 9: Contact */}
+          {/* Section 8: Contact */}
           <Box id="contact" className="privacy-section">
             <Box className="section-header-wrap">
               <Box className="section-icon-badge">
                 <EmailIcon />
               </Box>
               <Typography variant="h2" className="section-title">
-                9. Data Protection Officer &amp; Deletion Support
+                8. Data Protection Officer &amp; Deletion Support
               </Typography>
             </Box>
             <Typography variant="body1" className="section-content">
-              For any questions regarding this Data Deletion Policy, manual deletion requests, or verification of data destruction, please contact our compliance desk:
+              For any questions regarding this Data Deletion Policy, account security, or verification of data destruction, please contact our compliance desk:
             </Typography>
 
             <Box className="contact-card-grid">
-              <Box className="contact-box">
-                <EmailIcon className="contact-icon" />
-                <Box className="contact-label">Deletion Requests</Box>
-                <Box className="contact-value">
-                  <a href="mailto:privacy@savoryops.com">privacy@savoryops.com</a>
-                </Box>
-                <Box className="contact-desc">Official email channel for right-to-erasure requests</Box>
-              </Box>
 
               <Box className="contact-box">
                 <SecurityIcon className="contact-icon" />

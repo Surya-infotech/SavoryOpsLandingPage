@@ -608,14 +608,6 @@ const PrivacyPolicy = () => {
             </Typography>
 
             <Box className="contact-card-grid">
-              <Box className="contact-box">
-                <EmailIcon className="contact-icon" />
-                <Box className="contact-label">Privacy & Compliance</Box>
-                <Box className="contact-value">
-                  <a href="mailto:privacy@savoryops.com">privacy@savoryops.com</a>
-                </Box>
-                <Box className="contact-desc">Legal and regulatory privacy inquiries</Box>
-              </Box>
 
               <Box className="contact-box">
                 <SecurityIcon className="contact-icon" />
