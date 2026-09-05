@@ -61,6 +61,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://savoryops.com/signin</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://savoryops.com/solutions/restaurant-pos-system</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>

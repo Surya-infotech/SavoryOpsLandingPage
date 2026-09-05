@@ -17,7 +17,8 @@ const staticRoutes = [
   '/faq',
   '/contact-us',
   '/privacy-policy',
-  '/data-deletion-policy'
+  '/data-deletion-policy',
+  '/signin'
 ];
 
 async function generateSitemap() {
@@ -37,17 +38,17 @@ async function generateSitemap() {
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allRoutes
-  .map(route => {
-    const priority = route === '/' ? '1.0' : route.startsWith('/solutions') || route.startsWith('/alternatives') ? '0.9' : '0.8';
-    const changefreq = route === '/' ? 'daily' : 'weekly';
-    return `  <url>
+      .map(route => {
+        const priority = route === '/' ? '1.0' : route.startsWith('/solutions') || route.startsWith('/alternatives') ? '0.9' : '0.8';
+        const changefreq = route === '/' ? 'daily' : 'weekly';
+        return `  <url>
     <loc>${BASE_URL}${route}</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;
-  })
-  .join('\n')}
+      })
+      .join('\n')}
 </urlset>`;
 
   const sitemapPath = path.join(__dirname, '../public/sitemap.xml');

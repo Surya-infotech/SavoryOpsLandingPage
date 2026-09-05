@@ -139,6 +139,7 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<FeaturesPage />} />
+        <Route path="/features/*" element={<Navigate to="/features" replace />} />
         <Route path="/why-savoryops" element={<WhySavoryOps />} />
         <Route path="/why-us" element={<WhySavoryOps />} />
         <Route path="/pricing" element={<Pricing />} />

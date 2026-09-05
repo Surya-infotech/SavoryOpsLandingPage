@@ -271,6 +271,7 @@ const FeaturesPage = () => {
       <SEOHead
         title="Restaurant Software Features & POS Modules | SavoryOps"
         description="Explore the complete feature suite of SavoryOps: Point of Sale (POS), Kitchen Order Tickets (KOT), Real-time Inventory, Multi-branch Management, and Analytics."
+        canonicalUrl="https://savoryops.com/features"
         keywords={[
           "restaurant POS features",
           "kitchen order ticket software",
