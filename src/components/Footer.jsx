@@ -1,11 +1,13 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import {
   Assessment as AssessmentIcon,
   AttachMoney as AttachMoneyIcon,
   BarChart as BarChartIcon,
   AccountTree as BranchIcon,
   Business as BusinessIcon,
+  CheckCircleOutline as CheckCircleOutlineIcon,
   ContactMail as ContactMailIcon,
+  ErrorOutline as ErrorOutlineIcon,
   Facebook as FacebookIcon,
   HelpOutline as HelpOutlineIcon,
   InfoOutlined as InfoOutlinedIcon,
@@ -13,6 +15,7 @@ import {
   Instagram as InstagramIcon,
   Language as LanguageIcon,
   LinkedIn as LinkedInIcon,
+  MailOutline as MailOutlineIcon,
   MenuBook as MenuBookIcon,
   People as PeopleIcon,
   Pinterest as PinterestIcon,
@@ -33,6 +36,58 @@ import '../styles/layout/footer.scss';
 
 const Footer = () => {
   const { logoUrl, softwareName, setLogoUrl, generalSetting, socialMedia } = useAppSettings();
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const [newsletterMessage, setNewsletterMessage] = useState('');
+  const [newsletterStatus, setNewsletterStatus] = useState(null); // 'success' | 'error'
+  const backendPath = import.meta.env.VITE_BACKEND_URL;
+
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    if (!newsletterEmail || !newsletterEmail.trim()) {
+      setNewsletterStatus('error');
+      setNewsletterMessage('Please enter your email address.');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(newsletterEmail.trim())) {
+      setNewsletterStatus('error');
+      setNewsletterMessage('Please enter a valid email address.');
+      return;
+    }
+
+    setIsSubscribing(true);
+    setNewsletterStatus(null);
+    setNewsletterMessage('');
+
+    try {
+      const response = await fetch(`${backendPath}/System/SubscribeNewsletter`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-user': 'admin'
+        },
+        body: JSON.stringify({ email: newsletterEmail.trim() })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setNewsletterStatus('success');
+        setNewsletterMessage(data.message || 'Thank you for subscribing!');
+        setNewsletterEmail('');
+      } else {
+        setNewsletterStatus('error');
+        setNewsletterMessage(data.message || 'Subscription failed. Please try again.');
+      }
+    } catch {
+      setNewsletterStatus('error');
+      setNewsletterMessage('Unable to connect. Please try again later.');
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
 
   const footerData = useMemo(
     () => ({
@@ -187,6 +242,53 @@ const Footer = () => {
                   {social.icon}
                 </IconButton>
               ))}
+            </Box>
+
+            {/* Stay in Touch Newsletter */}
+            <Box className="footer-newsletter">
+              <Typography variant="subtitle1" className="newsletter-title">
+                STAY IN TOUCH
+              </Typography>
+              <Typography variant="body2" className="newsletter-subtitle">
+                Receive Industry Insights &amp; Expert Tips Straight to Your Inbox.
+              </Typography>
+              <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
+                <div className="newsletter-input-group">
+                  <div className="newsletter-input-wrapper">
+                    <MailOutlineIcon className="newsletter-input-icon" />
+                    <input
+                      type="email"
+                      value={newsletterEmail}
+                      onChange={(e) => {
+                        setNewsletterEmail(e.target.value);
+                        if (newsletterStatus) setNewsletterStatus(null);
+                      }}
+                      placeholder="Enter your email address"
+                      className="newsletter-input"
+                      disabled={isSubscribing}
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="newsletter-submit-btn"
+                    disabled={isSubscribing}
+                  >
+                    {isSubscribing ? (
+                      <span className="newsletter-spinner"></span>
+                    ) : (
+                      'Subscribe'
+                    )}
+                  </button>
+                </div>
+                {newsletterMessage && (
+                  <div className={`newsletter-feedback ${newsletterStatus}`}>
+                    {newsletterStatus === 'success' && <CheckCircleOutlineIcon sx={{ fontSize: 16 }} />}
+                    {newsletterStatus === 'error' && <ErrorOutlineIcon sx={{ fontSize: 16 }} />}
+                    <span>{newsletterMessage}</span>
+                  </div>
+                )}
+              </form>
             </Box>
           </Grid>
 
