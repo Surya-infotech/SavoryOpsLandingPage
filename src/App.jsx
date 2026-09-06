@@ -18,6 +18,8 @@ import Pricing from './pages/Pricing';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import UpcomingFeatures from './pages/UpcomingFeatures';
 import WhySavoryOps from './pages/WhySavoryOps';
+import BlogPage from './pages/BlogPage';
+import BlogDetailPage from './pages/BlogDetailPage';
 import SEOLandingPage from './pages/seo/SEOLandingPage';
 import './styles/main.scss';
 
@@ -81,7 +83,8 @@ const AppContent = () => {
       path.startsWith('/solutions/') ||
       path.startsWith('/alternatives/') ||
       path.startsWith('/resources/') ||
-      path.startsWith('/features/')
+      path.startsWith('/features/') ||
+      path.startsWith('/blog')
     ) {
       return;
     }
@@ -166,6 +169,11 @@ const AppContent = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
+
+        {/* Blog Routes */}
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blogs" element={<Navigate to="/blog" replace />} />
+        <Route path="/blog/:slug" element={<BlogDetailPage />} />
 
         {/* Programmatic SEO Routes */}
         <Route path="/solutions/restaurant-pos-system" element={<SEOLandingPage clusterId="restaurant-pos-system" />} />

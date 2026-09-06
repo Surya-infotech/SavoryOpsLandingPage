@@ -95,7 +95,8 @@ const Navigation = () => {
     { text: 'Features', path: '/features' },
     { text: `Why ${softwareName || 'SavoryOps'}`, path: '/why-savoryops' },
     { text: 'Pricing', path: '/pricing' },
-    { text: 'Upcoming Features', path: '/upcoming-features' }
+    { text: 'Upcoming Features', path: '/upcoming-features' },
+    { text: 'Blog', path: '/blog' }
   ];
 
   const moreMenuItems = [
@@ -271,18 +272,23 @@ const Navigation = () => {
             </Menu>
 
             {/* Other Standard Menu Items */}
-            {menuItems.slice(1).map((item) => (
-              <Button
-                key={item.text}
-                color="inherit"
-                component={Link}
-                to={item.path}
-                className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
-                sx={{ textTransform: 'none' }}
-              >
-                {item.text}
-              </Button>
-            ))}
+            {menuItems.slice(1).map((item) => {
+              const isItemActive =
+                location.pathname === item.path ||
+                (item.path === '/blog' && location.pathname.startsWith('/blog'));
+              return (
+                <Button
+                  key={item.text}
+                  color="inherit"
+                  component={Link}
+                  to={item.path}
+                  className={`nav-link ${isItemActive ? 'active' : ''}`}
+                  sx={{ textTransform: 'none' }}
+                >
+                  {item.text}
+                </Button>
+              );
+            })}
 
             {/* More Dropdown Button */}
             <Button
@@ -571,33 +577,36 @@ const Navigation = () => {
                 </Box>
               </Collapse>
 
-              {menuItems.slice(1).map((item) => (
-                <Link
-                  key={item.text}
-                  to={item.path}
-                  onClick={handleDrawerToggle}
-                  style={{ textDecoration: 'none' }}
-                >
-                  <Box
-                    sx={{
-                      padding: '14px 20px',
-                      color: location.pathname === item.path ? 'var(--primary-color)' : '#333',
-                      backgroundColor:
-                        location.pathname === item.path
+              {menuItems.slice(1).map((item) => {
+                const isItemActive =
+                  location.pathname === item.path ||
+                  (item.path === '/blog' && location.pathname.startsWith('/blog'));
+                return (
+                  <Link
+                    key={item.text}
+                    to={item.path}
+                    onClick={handleDrawerToggle}
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <Box
+                      sx={{
+                        padding: '14px 20px',
+                        color: isItemActive ? 'var(--primary-color)' : '#333',
+                        backgroundColor: isItemActive
                           ? 'color-mix(in srgb, var(--primary-color) 10%, transparent)'
                           : 'transparent',
-                      borderLeft:
-                        location.pathname === item.path
+                        borderLeft: isItemActive
                           ? '3px solid var(--primary-color)'
                           : '3px solid transparent',
-                      fontWeight: location.pathname === item.path ? 'bold' : 'normal',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    <Typography variant="body1">{item.text}</Typography>
-                  </Box>
-                </Link>
-              ))}
+                        fontWeight: isItemActive ? 'bold' : 'normal',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <Typography variant="body1">{item.text}</Typography>
+                    </Box>
+                  </Link>
+                );
+              })}
 
               {/* Collapsible More Section on Mobile */}
               <Box

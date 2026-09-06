@@ -18,6 +18,7 @@ const staticRoutes = [
   '/contact-us',
   '/privacy-policy',
   '/data-deletion-policy',
+  '/blog',
   '/signin'
 ];
 
@@ -43,7 +44,17 @@ async function generateSitemap() {
     featureRoutes = Array.from(new Set(featureRoutes));
   }
 
-  const allRoutes = Array.from(new Set([...staticRoutes, ...seoRoutes, ...featureRoutes]));
+  // 3. Load all blog post routes from blogsData.js
+  const blogsFilePath = path.join(__dirname, '../src/data/blogsData.js');
+  let blogRoutes = [];
+  if (fs.existsSync(blogsFilePath)) {
+    const blogContent = fs.readFileSync(blogsFilePath, 'utf8');
+    const slugMatches = [...blogContent.matchAll(/slug:\s*['"]([a-z0-9-]+)['"]/g)];
+    blogRoutes = slugMatches.map((m) => `/blog/${m[1]}`);
+    blogRoutes = Array.from(new Set(blogRoutes));
+  }
+
+  const allRoutes = Array.from(new Set([...staticRoutes, ...seoRoutes, ...featureRoutes, ...blogRoutes]));
   const currentDate = new Date().toISOString().split('T')[0];
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
