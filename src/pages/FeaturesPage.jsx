@@ -323,10 +323,20 @@ const FeaturesPage = () => {
           {detailedFeatures.map((feature, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={feature.id}>
               <Card
+                component={Link}
+                to={`/features/${feature.id}`}
                 className="feature-card"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%',
+                  cursor: 'pointer'
+                }}
               >
-                <CardContent className="card-content">
+                <CardContent className="card-content" sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
                   <Box
                     className="feature-icon"
                     style={{
@@ -355,9 +365,15 @@ const FeaturesPage = () => {
                   <Typography
                     variant="body2"
                     className="feature-description"
+                    sx={{ mb: 2, flexGrow: 1 }}
                   >
                     {feature.description}
                   </Typography>
+
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, color: 'var(--primary-color, #10b981)', fontSize: '0.85rem', fontWeight: 700, mt: 'auto' }}>
+                    <span>Learn More</span>
+                    <ArrowForwardIcon sx={{ fontSize: 14 }} />
+                  </Box>
                 </CardContent>
               </Card>
             </Grid>

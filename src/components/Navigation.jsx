@@ -11,7 +11,8 @@ import {
   Kitchen as KitchenIcon,
   Inventory as InventoryIcon,
   Calculate as CalculateIcon,
-  CompareArrows as CompareIcon
+  CompareArrows as CompareIcon,
+  MenuBook as MenuBookIcon
 } from '@mui/icons-material';
 import {
   AppBar,
@@ -82,6 +83,7 @@ const Navigation = () => {
 
   const solutionsMenuItems = [
     { text: 'Restaurant POS System', path: '/solutions/restaurant-pos-system', icon: <PosIcon fontSize="small" /> },
+    { text: 'Kitchen Order Ticket (KOT)', path: '/solutions/kitchen-order-ticket-system', icon: <KitchenIcon fontSize="small" /> },
     { text: 'Kitchen Display System (KDS)', path: '/solutions/kitchen-display-system', icon: <KitchenIcon fontSize="small" /> },
     { text: 'Inventory Management', path: '/solutions/restaurant-inventory-management', icon: <InventoryIcon fontSize="small" /> },
     { text: 'Food Cost Calculator & Guide', path: '/resources/food-cost-percentage-guide', icon: <CalculateIcon fontSize="small" /> },
@@ -94,11 +96,13 @@ const Navigation = () => {
     { text: 'Features', path: '/features' },
     { text: `Why ${softwareName || 'SavoryOps'}`, path: '/why-savoryops' },
     { text: 'Pricing', path: '/pricing' },
+    { text: 'Blog', path: '/blog' },
     { text: 'Upcoming Features', path: '/upcoming-features' }
   ];
 
   const moreMenuItems = [
     { text: 'About Us', path: '/about-us', icon: <InfoOutlinedIcon fontSize="small" /> },
+    { text: 'Blog & Playbooks', path: '/blog', icon: <MenuBookIcon fontSize="small" /> },
     { text: 'FAQ', path: '/faq', icon: <HelpOutlineIcon fontSize="small" /> },
     { text: 'Contact Us', path: '/contact-us', icon: <SupportAgentIcon fontSize="small" /> }
   ];

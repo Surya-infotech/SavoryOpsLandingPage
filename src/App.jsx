@@ -10,6 +10,9 @@ import ContactUs from './pages/ContactUs';
 import DataDeletionPolicy from './pages/DataDeletionPolicy';
 import FAQPage from './pages/FAQPage';
 import FeaturesPage from './pages/FeaturesPage';
+import FeatureDetailPage from './pages/FeatureDetailPage';
+import BlogHub from './pages/Blog/BlogHub';
+import BlogPost from './pages/Blog/BlogPost';
 import OwnerLogin from './pages/General/Signin.jsx';
 import OwnerSignUp from './pages/General/Signup.jsx';
 import Home from './pages/Home';
@@ -73,9 +76,20 @@ const AppContent = () => {
 
   useEffect(() => {
     const baseTitle = softwareName || 'SavoryOps';
-    let pageTitle = '';
-
     const path = location.pathname.toLowerCase();
+
+    // Prevent overwriting rich SEO head titles dynamically set by SEOHead
+    if (
+      path.startsWith('/solutions/') ||
+      path.startsWith('/alternatives/') ||
+      path.startsWith('/resources/') ||
+      path.startsWith('/features/') ||
+      path.startsWith('/blog')
+    ) {
+      return;
+    }
+
+    let pageTitle = '';
     switch (path) {
       case '/':
         pageTitle = '';
@@ -88,10 +102,10 @@ const AppContent = () => {
         pageTitle = `Why ${baseTitle} - Benefits & Comparison`;
         break;
       case '/pricing':
-        pageTitle = 'Pricing';
+        pageTitle = 'Pricing & Plans';
         break;
       case '/upcoming-features':
-        pageTitle = 'Upcoming Features';
+        pageTitle = 'Upcoming Features & Roadmap';
         break;
       case '/about-us':
       case '/about':
@@ -117,7 +131,7 @@ const AppContent = () => {
         pageTitle = 'Sign Up';
         break;
       default:
-        pageTitle = 'Page Not Found';
+        pageTitle = '';
         break;
     }
 
@@ -128,7 +142,11 @@ const AppContent = () => {
     }
   }, [location.pathname, softwareName]);
 
-  const isAuthPage = location.pathname === '/Signin' || location.pathname === '/Signup' || location.pathname === '/signin' || location.pathname === '/signup';
+  const isAuthPage =
+    location.pathname === '/Signin' ||
+    location.pathname === '/Signup' ||
+    location.pathname === '/signin' ||
+    location.pathname === '/signup';
 
   return (
     <div className="App">
@@ -139,7 +157,7 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<FeaturesPage />} />
-        <Route path="/features/*" element={<Navigate to="/features" replace />} />
+        <Route path="/features/:featureId" element={<FeatureDetailPage />} />
         <Route path="/why-savoryops" element={<WhySavoryOps />} />
         <Route path="/why-us" element={<WhySavoryOps />} />
         <Route path="/pricing" element={<Pricing />} />
@@ -152,9 +170,14 @@ const AppContent = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
 
+        {/* Blog & Operational Guides (Captures Top Page Ranking in GSC) */}
+        <Route path="/blog" element={<BlogHub />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+
         {/* Programmatic SEO Routes */}
         <Route path="/solutions/restaurant-pos-system" element={<SEOLandingPage clusterId="restaurant-pos-system" />} />
         <Route path="/solutions/kitchen-display-system" element={<SEOLandingPage clusterId="kitchen-display-system" />} />
+        <Route path="/solutions/kitchen-order-ticket-system" element={<SEOLandingPage clusterId="kitchen-order-ticket-system" />} />
         <Route path="/solutions/restaurant-inventory-management" element={<SEOLandingPage clusterId="restaurant-inventory-management" />} />
         <Route path="/alternatives/toast-pos-alternative" element={<SEOLandingPage clusterId="toast-pos-alternative" />} />
         <Route path="/alternatives/square-pos-alternative" element={<SEOLandingPage clusterId="square-pos-alternative" />} />

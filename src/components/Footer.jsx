@@ -127,6 +127,7 @@ const Footer = () => {
   const companyLinks = [
     { name: `Why ${softwareName || 'SavoryOps'}`, icon: <StarIcon />, href: '/why-savoryops' },
     { name: 'About Us', icon: <InfoOutlinedIcon />, href: '/about-us' },
+    { name: 'Blog & Playbooks', icon: <MenuBookIcon />, href: '/blog' },
     { name: 'Subscription Plans', icon: <AttachMoneyIcon />, href: '/pricing' },
     { name: 'Upcoming Features', icon: <RocketIcon />, href: '/upcoming-features' },
     { name: 'Frequently Asked Questions', icon: <HelpOutlineIcon />, href: '/faq' },
@@ -135,6 +136,7 @@ const Footer = () => {
 
   const solutionsAndGuides = [
     { name: 'Restaurant POS System', href: '/solutions/restaurant-pos-system' },
+    { name: 'Kitchen Order Ticket (KOT)', href: '/solutions/kitchen-order-ticket-system' },
     { name: 'Kitchen Display System', href: '/solutions/kitchen-display-system' },
     { name: 'Inventory Management', href: '/solutions/restaurant-inventory-management' },
     { name: 'Toast POS Alternative', href: '/alternatives/toast-pos-alternative' },
