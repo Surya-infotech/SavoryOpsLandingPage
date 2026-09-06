@@ -30,7 +30,7 @@ import {
 import { Box, Button, Card, CardContent, Chip, Container, Typography } from '@mui/material';
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/pages/features.scss';
+import '../../styles/pages/features.scss';
 
 const FEATURE_COLOR = 'var(--primary-color)';
 

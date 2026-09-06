@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from '@mui/material';
 import { CheckCircle as CheckCircleIcon, Star as StarIcon, Verified as VerifiedIcon } from '@mui/icons-material';
-import GetStartedButton from '../components/GetStartedButton';
+import GetStartedButton from '../GetStartedButton';
 
 const Hero = () => {
   return (

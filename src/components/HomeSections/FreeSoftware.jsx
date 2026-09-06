@@ -10,9 +10,9 @@ import {
 import { Box, Button, Chip, Container, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { formatDuration, getEnabledModules, getPlanLimits } from '../utils/planUtils';
-import { useAppSettings } from '../context/AppSettingsContext.jsx';
-import '../styles/pages/free-software.scss';
+import { formatDuration, getEnabledModules, getPlanLimits } from '../../utils/planUtils';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
+import '../../styles/pages/free-software.scss';
 
 const FreeSoftware = ({ hideHeader = false }) => {
   const [plans, setPlans] = useState([]);

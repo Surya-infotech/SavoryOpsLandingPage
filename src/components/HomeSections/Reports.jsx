@@ -9,7 +9,7 @@ import {
   TrendingUp as RevenueIcon,
 } from '@mui/icons-material';
 import { Box, Card, CardContent, Chip, Container, Typography } from '@mui/material';
-import '../styles/pages/reports.scss';
+import '../../styles/pages/reports.scss';
 
 const FEATURE_COLOR = 'var(--primary-color)';
 

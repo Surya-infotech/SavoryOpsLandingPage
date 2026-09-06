@@ -14,7 +14,7 @@ import {
   HelpOutline as HelpOutlineIcon,
   ArrowForward as ArrowForwardIcon
 } from '@mui/icons-material';
-import { faqsData } from '../data/faqsData';
+import { faqsData } from '../../data/faqsData';
 
 const HomeFAQ = () => {
   const [expanded, setExpanded] = useState('what-is-savoryops');

@@ -1,19 +1,19 @@
 import { Box } from '@mui/material';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 import SEOHead from '../components/SEO/SEOHead';
-import Benefits from './Benefits';
+import Benefits from '../components/HomeSections/Benefits';
 import CTA from '../components/CTA';
 import ContactUs from './ContactUs';
-import Features from './Features';
-import Hero from './Hero';
-import OrderTypes from './OrderTypes';
-import Reports from './Reports';
-import EmployeeRoles from './EmployeeRoles';
-import AppDownloads from './AppDownloads';
-import Languages from './Languages';
-import FreeSoftware from './FreeSoftware';
-import HomeFAQ from './HomeFAQ';
-import Reviews from './Reviews';
+import Features from '../components/HomeSections/Features';
+import Hero from '../components/HomeSections/Hero';
+import OrderTypes from '../components/HomeSections/OrderTypes';
+import Reports from '../components/HomeSections/Reports';
+import EmployeeRoles from '../components/HomeSections/EmployeeRoles';
+import AppDownloads from '../components/HomeSections/AppDownloads';
+import Languages from '../components/HomeSections/Languages';
+import FreeSoftware from '../components/HomeSections/FreeSoftware';
+import HomeFAQ from '../components/HomeSections/HomeFAQ';
+import Reviews from '../components/HomeSections/Reviews';
 
 const Home = () => {
   const { softwareName } = useAppSettings();

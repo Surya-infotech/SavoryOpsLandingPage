@@ -9,7 +9,7 @@ import {
   TwoWheeler as DeliveryDriverIcon,
 } from '@mui/icons-material';
 import { Box, Card, CardContent, Chip, Container, Typography } from '@mui/material';
-import '../styles/pages/employee-roles.scss';
+import '../../styles/pages/employee-roles.scss';
 
 const FEATURE_COLOR = 'var(--primary-color)';
 

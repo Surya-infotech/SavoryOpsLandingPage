@@ -1,7 +1,7 @@
 import { CheckCircle as CheckCircleIcon, Star as StarIcon } from '@mui/icons-material';
 import { Box, Chip, Container, Typography } from '@mui/material';
-import GetStartedButton from '../components/GetStartedButton';
-import { useAppSettings } from '../context/AppSettingsContext.jsx';
+import GetStartedButton from '../GetStartedButton';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 
 const Benefits = () => {
   const { softwareName } = useAppSettings();

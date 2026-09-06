@@ -25,7 +25,7 @@ import {
   getLimitDisplay,
   getPlanLimits,
 } from '../utils/planUtils';
-import FreeSoftware from './FreeSoftware';
+import FreeSoftware from '../components/HomeSections/FreeSoftware';
 import '../styles/pages/pricing.scss';
 
 const getPlanPricing = (plan) => {
@@ -451,8 +451,8 @@ const Pricing = () => {
                   const activeModules =
                     !isLimitAddon && addon.modules
                       ? COMPARISON_MODULE_DEFS.filter((mod) =>
-                          Boolean(addon.modules[mod.key]),
-                        )
+                        Boolean(addon.modules[mod.key]),
+                      )
                       : [];
 
                   return (

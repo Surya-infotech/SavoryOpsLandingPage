@@ -7,8 +7,8 @@ import {
   SecurityRounded as SecurityIcon
 } from '@mui/icons-material';
 import { Box, Button, Chip, Container, Typography } from '@mui/material';
-import { useAppSettings } from '../context/AppSettingsContext.jsx';
-import '../styles/pages/reviews.scss';
+import { useAppSettings } from '../../context/AppSettingsContext.jsx';
+import '../../styles/pages/reviews.scss';
 
 // SVG Brand Icons for high visual accuracy
 const CapterraIcon = () => (
