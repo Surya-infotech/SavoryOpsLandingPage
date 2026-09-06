@@ -6,7 +6,7 @@
  */
 export const formatDuration = (plan) => {
   if (plan.plantype === 'free') {
-    if (!plan.duration || !plan.durationvalue) return 'Free Trial';
+    if (!plan.duration || !plan.durationvalue) return '14 Days';
     return `${plan.durationvalue} ${getDurationWord(plan.duration, plan.durationvalue)}`;
   }
 

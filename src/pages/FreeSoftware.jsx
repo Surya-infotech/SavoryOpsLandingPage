@@ -113,7 +113,7 @@ const FreeSoftware = ({ hideHeader = false }) => {
                   const durationText =
                     plan.duration && plan.durationvalue
                       ? formatDuration(plan)
-                      : '4 Weeks';
+                      : '14 Days';
 
                   return (
                     <article

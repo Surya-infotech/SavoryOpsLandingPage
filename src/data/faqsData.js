@@ -66,8 +66,8 @@ export const faqsData = [
     id: 'free-trial',
     category: 'Pricing & Trial',
     question: 'Does SavoryOps offer a free trial?',
-    shortAnswer: 'Yes, SavoryOps offers a free trial with instant setup, full access to POS billing, KDS screens, and analytics with no credit card required.',
-    answer: 'Yes, SavoryOps offers a free trial with instant setup and full access to POS billing, menu configuration, KDS kitchen screens, and analytics with no credit card required.'
+    shortAnswer: 'Yes, SavoryOps offers a 14-day free trial with instant setup, full access to POS billing, KDS screens, and analytics with no credit card required.',
+    answer: 'Yes, SavoryOps offers a 14-day free trial with instant setup and full access to POS billing, menu configuration, KDS kitchen screens, and analytics with no credit card required.'
   }
 ];
 
