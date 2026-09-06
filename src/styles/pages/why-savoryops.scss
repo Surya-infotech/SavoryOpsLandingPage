@@ -467,8 +467,12 @@
 
     .service-pillars-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
 
       .service-pillar-card {
         background: #ffffff;
