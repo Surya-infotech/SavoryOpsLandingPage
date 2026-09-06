@@ -10,10 +10,9 @@ import {
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import StarIcon from '@mui/icons-material/Star';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import ClearIcon from '@mui/icons-material/Clear';
 import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
@@ -24,6 +23,7 @@ import { useAppSettings } from '../context/AppSettingsContext.jsx';
 
 const BlogPage = () => {
   const { softwareName } = useAppSettings();
+  const name = softwareName || 'SavoryOps';
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -49,7 +49,7 @@ const BlogPage = () => {
   return (
     <div className="blog-page-container">
       <SEOHead
-        title={`Restaurant Operations & Management Blog - ${softwareName || 'SavoryOps'}`}
+        title={`Restaurant Operations & Management Blog - ${name}`}
         description="Expert insights, best practices, and operational playbooks for modern restaurant owners, chefs, and multi-unit operators. Learn food cost reduction, KDS workflows, cloud POS, and customer retention."
         keywords={[
           'restaurant management blog',
@@ -62,23 +62,23 @@ const BlogPage = () => {
         schemaType="Blog"
       />
 
-      {/* Hero Section */}
-      <section className="blog-hero">
+      {/* Hero Section - Matching WhySavoryOps, FeaturesPage, and AboutUs style */}
+      <Box className="why-hero-section">
         <Container maxWidth="lg">
-          <div className="hero-badge">
-            <AutoAwesomeIcon sx={{ fontSize: 18 }} />
+          <Box className="why-hero-badge">
+            <StarIcon sx={{ fontSize: 16, mr: 0.8 }} />
             <span>OPERATIONAL PLAYBOOKS & INDUSTRY INSIGHTS</span>
-          </div>
+          </Box>
 
-          <Typography variant="h1" className="hero-title">
-            The Modern Restaurant <span className="highlight">Playbook</span>
+          <Typography variant="h1" className="why-hero-title">
+            The Modern Restaurant <span className="highlight-text">Playbook</span>
           </Typography>
 
-          <Typography className="hero-subtitle">
+          <Typography variant="body1" className="why-hero-subtitle">
             Actionable strategies, deep-dive technology guides, and operational insights to help your restaurant streamline operations, slash food waste, and drive higher margins.
           </Typography>
 
-          {/* Search Input */}
+          {/* Search Input Box */}
           <div className="search-filter-wrapper">
             <TextField
               fullWidth
@@ -89,7 +89,7 @@ const BlogPage = () => {
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <SearchIcon sx={{ color: '#10b981', ml: 1 }} />
+                    <SearchIcon sx={{ color: 'var(--primary-color, #10b981)', ml: 1 }} />
                   </InputAdornment>
                 ),
                 endAdornment: searchQuery ? (
@@ -97,7 +97,7 @@ const BlogPage = () => {
                     <Button
                       size="small"
                       onClick={() => setSearchQuery('')}
-                      sx={{ minWidth: 'auto', p: 0.5, color: '#9ca3af' }}
+                      sx={{ minWidth: 'auto', p: 0.5, color: '#94a3b8' }}
                     >
                       <ClearIcon fontSize="small" />
                     </Button>
@@ -106,28 +106,26 @@ const BlogPage = () => {
               }}
             />
           </div>
-        </Container>
-      </section>
 
-      {/* Category Pills Bar */}
-      <div className="category-bar-wrapper">
-        <Container maxWidth="lg">
-          <div className="category-pills">
-            {BLOG_CATEGORIES.map((category) => (
-              <button
-                key={category}
-                type="button"
-                className={`category-pill ${selectedCategory === category ? 'active' : ''}`}
-                onClick={() => setSelectedCategory(category)}
-              >
-                {category}
-              </button>
-            ))}
+          {/* Category Filter Pills */}
+          <div className="category-bar-wrapper">
+            <div className="category-pills">
+              {BLOG_CATEGORIES.map((category) => (
+                <button
+                  key={category}
+                  type="button"
+                  className={`category-pill ${selectedCategory === category ? 'active' : ''}`}
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
           </div>
         </Container>
-      </div>
+      </Box>
 
-      <Container maxWidth="lg" sx={{ py: 4 }}>
+      <Container maxWidth="lg" sx={{ py: 2 }}>
         {/* Featured Post Spotlight (shown when not actively searching and on 'All') */}
         {selectedCategory === 'All' && !searchQuery && featuredPost && (
           <div className="featured-post-card">
@@ -170,14 +168,9 @@ const BlogPage = () => {
 
                 <div className="author-meta-bar">
                   <div className="author-info">
-                    <img
-                      src={featuredPost.author.avatar}
-                      alt={featuredPost.author.name}
-                      className="author-avatar"
-                    />
                     <div>
                       <div className="author-name">{featuredPost.author.name}</div>
-                      <div className="post-date">{featuredPost.publishedDate}</div>
+                      <div className="post-date">{featuredPost.author.role} • {featuredPost.publishedDate}</div>
                     </div>
                   </div>
 
@@ -193,11 +186,11 @@ const BlogPage = () => {
 
         {/* Section Heading */}
         <Box sx={{ mb: 3, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Typography variant="h5" sx={{ fontWeight: 800, color: '#111827' }}>
+          <Typography variant="h5" sx={{ fontWeight: 800, color: '#0f172a' }}>
             {selectedCategory === 'All'
               ? searchQuery
                 ? `Search Results (${filteredPosts.length})`
-                : 'Latest Articles'
+                : 'Latest Operational Guides'
               : `${selectedCategory} (${filteredPosts.length})`}
           </Typography>
 
@@ -208,7 +201,7 @@ const BlogPage = () => {
                 setSelectedCategory('All');
                 setSearchQuery('');
               }}
-              sx={{ color: '#059669', fontWeight: 600, textTransform: 'none' }}
+              sx={{ color: 'var(--primary-color, #059669)', fontWeight: 600, textTransform: 'none' }}
             >
               Reset Filters
             </Button>
@@ -251,14 +244,9 @@ const BlogPage = () => {
 
                   <div className="card-footer">
                     <div className="author-meta">
-                      <img
-                        src={post.author.avatar}
-                        alt={post.author.name}
-                        className="avatar-mini"
-                      />
                       <div className="name-date">
                         <div className="name">{post.author.name}</div>
-                        <div className="date">{post.publishedDate}</div>
+                        <div className="date">{post.author.role}</div>
                       </div>
                     </div>
 
@@ -286,10 +274,10 @@ const BlogPage = () => {
                 setSearchQuery('');
               }}
               sx={{
-                bgcolor: '#059669',
-                '&:hover': { bgcolor: '#047857' },
+                bgcolor: 'var(--primary-color, #059669)',
+                '&:hover': { bgcolor: 'color-mix(in srgb, var(--primary-color, #059669) 85%, #000)' },
                 textTransform: 'none',
-                borderRadius: '8px',
+                borderRadius: '50px',
                 px: 3
               }}
             >
@@ -301,15 +289,15 @@ const BlogPage = () => {
         {/* CTA Conversion Banner */}
         <div className="blog-cta-banner">
           <Box sx={{ maxWidth: '650px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.2)', padding: '4px 12px', borderRadius: '9999px', fontSize: '14px', fontWeight: '600', marginBottom: '16px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.2)', padding: '4px 14px', borderRadius: '50px', fontSize: '14px', fontWeight: '600', marginBottom: '16px' }}>
               <RocketLaunchIcon sx={{ fontSize: 18 }} />
-              <span>TRANSFORM YOUR OPERATIONS</span>
+              <span>TRANSFORM YOUR RESTAURANT OPERATIONS</span>
             </div>
             <Typography variant="h3" className="cta-heading">
-              Ready to streamline your restaurant operations?
+              Ready to streamline your kitchen and boost profit margins?
             </Typography>
             <Typography className="cta-description">
-              Experience the all-in-one POS, KDS, automated inventory depletion, and multi-branch management software designed for profitable food businesses.
+              Experience the all-in-one POS, KDS, automated inventory depletion, and multi-branch management software designed for modern food and beverage businesses.
             </Typography>
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
               <Button
@@ -321,12 +309,12 @@ const BlogPage = () => {
                   color: '#065f46',
                   fontWeight: 700,
                   px: 3.5,
-                  py: 1.2,
-                  borderRadius: '10px',
+                  py: 1.3,
+                  borderRadius: '50px',
                   textTransform: 'none',
                   fontSize: '1rem',
                   boxShadow: '0 4px 14px rgba(0,0,0,0.1)',
-                  '&:hover': { bgcolor: '#f3f4f6' }
+                  '&:hover': { bgcolor: '#f8fafc' }
                 }}
                 endIcon={<ArrowForwardIcon />}
               >
@@ -338,11 +326,11 @@ const BlogPage = () => {
                 variant="outlined"
                 sx={{
                   color: '#ffffff',
-                  borderColor: 'rgba(255, 255, 255, 0.6)',
+                  borderColor: 'rgba(255, 255, 255, 0.7)',
                   fontWeight: 600,
-                  px: 3,
-                  py: 1.2,
-                  borderRadius: '10px',
+                  px: 3.5,
+                  py: 1.3,
+                  borderRadius: '50px',
                   textTransform: 'none',
                   fontSize: '1rem',
                   '&:hover': { borderColor: '#ffffff', bgcolor: 'rgba(255, 255, 255, 0.1)' }

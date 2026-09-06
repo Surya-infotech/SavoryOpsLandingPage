@@ -12,7 +12,6 @@ import {
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import ShareIcon from '@mui/icons-material/Share';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -24,7 +23,7 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 import SEOHead from '../components/SEO/SEOHead';
-import { getBlogPostBySlug, getRelatedBlogPosts, BLOG_POSTS } from '../data/blogsData';
+import { getBlogPostBySlug, getRelatedBlogPosts } from '../data/blogsData';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 
 const BlogDetailPage = () => {
@@ -93,10 +92,10 @@ const BlogDetailPage = () => {
       <div className="blog-detail-container" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
         <Container maxWidth="md" sx={{ textAlign: 'center', py: 8 }}>
           <ErrorOutlineIcon sx={{ fontSize: 64, color: '#ef4444', mb: 2 }} />
-          <Typography variant="h3" sx={{ fontWeight: 800, mb: 2 }}>
+          <Typography variant="h3" sx={{ fontWeight: 800, mb: 2, color: '#0f172a' }}>
             Article Not Found
           </Typography>
-          <Typography sx={{ color: '#6b7280', mb: 4, maxWidth: '500px', mx: 'auto' }}>
+          <Typography sx={{ color: '#64748b', mb: 4, maxWidth: '500px', mx: 'auto' }}>
             We could not find the blog article you are looking for. It may have been moved or updated.
           </Typography>
           <Button
@@ -104,7 +103,14 @@ const BlogDetailPage = () => {
             to="/blog"
             variant="contained"
             startIcon={<ArrowBackIcon />}
-            sx={{ bgcolor: '#059669', '&:hover': { bgcolor: '#047857' }, textTransform: 'none', px: 3, py: 1 }}
+            sx={{
+              bgcolor: 'var(--primary-color, #059669)',
+              '&:hover': { bgcolor: 'color-mix(in srgb, var(--primary-color, #059669) 85%, #000)' },
+              textTransform: 'none',
+              borderRadius: '50px',
+              px: 3,
+              py: 1
+            }}
           >
             Back to Blog
           </Button>
@@ -124,21 +130,6 @@ const BlogDetailPage = () => {
         schemaType="Article"
       />
 
-      {/* Breadcrumbs Navigation Bar */}
-      <div className="blog-breadcrumbs-bar">
-        <Container maxWidth="lg">
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap' }}>
-            <Link to="/" className="breadcrumb-link">Home</Link>
-            <span style={{ color: '#9ca3af' }}>/</span>
-            <Link to="/blog" className="breadcrumb-link">Blog</Link>
-            <span style={{ color: '#9ca3af' }}>/</span>
-            <span className="breadcrumb-active" style={{ maxWidth: '400px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-              {post.title}
-            </span>
-          </Box>
-        </Container>
-      </div>
-
       <Container maxWidth="lg">
         {/* Article Header */}
         <header className="article-header">
@@ -157,11 +148,6 @@ const BlogDetailPage = () => {
           <p className="article-subtitle">{post.subtitle}</p>
 
           <div className="article-author-row">
-            <img
-              src={post.author.avatar}
-              alt={post.author.name}
-              className="author-avatar-large"
-            />
             <div className="author-details-box">
               <div className="name">{post.author.name}</div>
               <div className="role-date">
@@ -203,7 +189,7 @@ const BlogDetailPage = () => {
             {post.tableOfContents && post.tableOfContents.length > 0 && (
               <div className="sidebar-widget">
                 <div className="widget-title">
-                  <FormatListBulletedIcon sx={{ fontSize: 18, color: '#059669' }} />
+                  <FormatListBulletedIcon sx={{ fontSize: 18, color: 'var(--primary-color, #059669)' }} />
                   Table of Contents
                 </div>
                 <ul className="toc-list">
@@ -233,7 +219,7 @@ const BlogDetailPage = () => {
             {/* Social Sharing */}
             <div className="sidebar-widget">
               <div className="widget-title">
-                <ShareIcon sx={{ fontSize: 18, color: '#059669' }} />
+                <ShareIcon sx={{ fontSize: 18, color: 'var(--primary-color, #059669)' }} />
                 Share Article
               </div>
               <div className="share-buttons-row">
@@ -274,10 +260,10 @@ const BlogDetailPage = () => {
 
             {/* In-sidebar Product Promotion */}
             <div className="sidebar-widget sidebar-cta">
-              <RocketLaunchIcon sx={{ fontSize: 28, color: '#059669', mb: 1 }} />
-              <h4>Modernize Your Kitchen</h4>
+              <RocketLaunchIcon sx={{ fontSize: 28, color: 'var(--primary-color, #059669)', mb: 1 }} />
+              <h4>Modernize Your Restaurant</h4>
               <p>
-                Eliminate order chaos, track ingredient costs in real-time, and run multi-branch operations seamlessly.
+                Eliminate order chaos, track ingredient costs in real-time, and run multi-branch operations seamlessly with {softwareName || 'SavoryOps'}.
               </p>
               <Button
                 component={Link}
@@ -285,15 +271,15 @@ const BlogDetailPage = () => {
                 variant="contained"
                 fullWidth
                 sx={{
-                  bgcolor: '#059669',
-                  '&:hover': { bgcolor: '#047857' },
+                  bgcolor: 'var(--primary-color, #059669)',
+                  '&:hover': { bgcolor: 'color-mix(in srgb, var(--primary-color, #059669) 85%, #000)' },
                   textTransform: 'none',
                   fontWeight: 700,
-                  borderRadius: '8px',
-                  py: 1
+                  borderRadius: '50px',
+                  py: 1.1
                 }}
               >
-                Start Free Trial
+                Start Free 14-Day Trial
               </Button>
             </div>
           </aside>
@@ -304,7 +290,7 @@ const BlogDetailPage = () => {
             {post.keyTakeaways && post.keyTakeaways.length > 0 && (
               <div className="key-takeaways-card">
                 <div className="takeaways-heading">
-                  <CheckCircleIcon sx={{ fontSize: 20, color: '#059669' }} />
+                  <CheckCircleIcon sx={{ fontSize: 20, color: 'var(--primary-color, #059669)' }} />
                   Executive Summary & Key Takeaways
                 </div>
                 <ul>
@@ -359,17 +345,30 @@ const BlogDetailPage = () => {
 
             {/* Author Biography */}
             <div className="author-bio-card">
-              <img
-                src={post.author.avatar}
-                alt={post.author.name}
-                className="bio-avatar"
-              />
               <div className="bio-content">
                 <h4>About {post.author.name}</h4>
                 <div className="bio-role">{post.author.role}</div>
                 <p>
-                  Specializing in commercial restaurant operations, culinary technology integration, and inventory optimization. Dedicated to helping independent operators and multi-unit brands achieve sustainable margin growth.
+                  {post.author.bio || 'Founder and architect of SavoryOps. Dedicated to empowering restaurateurs and multi-branch operators with modern cloud technology, automated inventory controls, and intelligent kitchen workflows.'}
                 </p>
+                <Box sx={{ mt: 1.5 }}>
+                  <a
+                    href="https://www.linkedin.com/in/surajdholakiya"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      color: 'var(--primary-color, #059669)',
+                      fontWeight: 600,
+                      fontSize: '0.875rem',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    <LinkedInIcon sx={{ fontSize: 18 }} /> Connect on LinkedIn
+                  </a>
+                </Box>
               </div>
             </div>
           </main>
@@ -417,14 +416,9 @@ const BlogDetailPage = () => {
 
                     <div className="card-footer">
                       <div className="author-meta">
-                        <img
-                          src={related.author.avatar}
-                          alt={related.author.name}
-                          className="avatar-mini"
-                        />
                         <div className="name-date">
                           <div className="name">{related.author.name}</div>
-                          <div className="date">{related.publishedDate}</div>
+                          <div className="date">{related.author.role}</div>
                         </div>
                       </div>
 

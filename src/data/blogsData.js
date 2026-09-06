@@ -7,6 +7,13 @@ export const BLOG_CATEGORIES = [
   'Customer Experience'
 ];
 
+export const FOUNDER_AUTHOR = {
+  name: 'Suraj Dholakiya',
+  role: 'Founder at SavoryOps',
+  avatar: '/blogs/suraj-dholakiya.jpg',
+  bio: 'Founder and architect of SavoryOps. Dedicated to empowering restaurateurs and multi-branch operators with modern cloud technology, automated inventory controls, and intelligent kitchen workflows.'
+};
+
 export const BLOG_POSTS = [
   {
     id: 'reducing-restaurant-food-waste-cost',
@@ -19,11 +26,7 @@ export const BLOG_POSTS = [
     categoryColor: '#10B981',
     readTime: '7 min read',
     publishedDate: 'September 4, 2025',
-    author: {
-      name: 'Chef Marcus Vance',
-      role: 'Culinary Operations Director & Hospitality Consultant',
-      avatar: 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=200&h=200&q=80'
-    },
+    author: FOUNDER_AUTHOR,
     featured: true,
     tags: ['Food Cost', 'Inventory Control', 'Recipe Costing', 'Waste Management', 'Profit Margins'],
     stats: [
@@ -54,7 +57,7 @@ export const BLOG_POSTS = [
         ],
         quote: {
           text: "If you cannot measure every gram of beef and every carton of heavy cream entering your walk-in cooler, you are quietly giving away your net profits at the back door.",
-          author: "Marcus Vance, Hospitality Operations Specialist"
+          author: "Suraj Dholakiya, Founder at SavoryOps"
         }
       },
       {
@@ -108,11 +111,7 @@ export const BLOG_POSTS = [
     categoryColor: '#3B82F6',
     readTime: '6 min read',
     publishedDate: 'August 28, 2025',
-    author: {
-      name: 'Elena Rostova',
-      role: 'Restaurant Tech Architect & Former Executive Chef',
-      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&h=200&q=80'
-    },
+    author: FOUNDER_AUTHOR,
     featured: false,
     tags: ['KDS', 'Kitchen Workflow', 'Ticket Times', 'Table Turnover', 'Kitchen Ops'],
     stats: [
@@ -143,7 +142,7 @@ export const BLOG_POSTS = [
         ],
         quote: {
           text: "A paper ticket can tell a cook what to make, but it cannot tell a kitchen team how to orchestrate service.",
-          author: "Elena Rostova"
+          author: "Suraj Dholakiya, Founder at SavoryOps"
         }
       },
       {
@@ -191,11 +190,7 @@ export const BLOG_POSTS = [
     categoryColor: '#8B5CF6',
     readTime: '8 min read',
     publishedDate: 'August 19, 2025',
-    author: {
-      name: 'David Sterling',
-      role: 'Hospitality Technology Analyst & Founder',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80'
-    },
+    author: FOUNDER_AUTHOR,
     featured: false,
     tags: ['Cloud POS', 'Restaurant Tech', 'SaaS', 'Hardware Comparison', 'Payment Processing'],
     stats: [
@@ -226,7 +221,7 @@ export const BLOG_POSTS = [
         ],
         quote: {
           text: "Relying on a local server in 2025 is like navigating cross-country with a paper road atlas when everyone else has live GPS with real-time traffic updates.",
-          author: "David Sterling"
+          author: "Suraj Dholakiya, Founder at SavoryOps"
         }
       },
       {
@@ -274,11 +269,7 @@ export const BLOG_POSTS = [
     categoryColor: '#F59E0B',
     readTime: '9 min read',
     publishedDate: 'August 10, 2025',
-    author: {
-      name: 'Sophia Chen',
-      role: 'Enterprise Operations VP & Multi-Unit Strategist',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80'
-    },
+    author: FOUNDER_AUTHOR,
     featured: false,
     tags: ['Multi-Location', 'Franchise', 'Centralized Menu', 'Consolidated Reporting', 'Operations'],
     stats: [
@@ -309,7 +300,7 @@ export const BLOG_POSTS = [
         ],
         quote: {
           text: "Systems and visibility must replace personal physical oversight if you intend to scale past a single location.",
-          author: "Sophia Chen"
+          author: "Suraj Dholakiya, Founder at SavoryOps"
         }
       },
       {
@@ -357,11 +348,7 @@ export const BLOG_POSTS = [
     categoryColor: '#EC4899',
     readTime: '6 min read',
     publishedDate: 'July 29, 2025',
-    author: {
-      name: 'Liam Gallagher',
-      role: 'Guest Experience Director & Beverage Consultant',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80'
-    },
+    author: FOUNDER_AUTHOR,
     featured: false,
     tags: ['QR Menus', 'Contactless Ordering', 'Upselling', 'Check Average', 'Guest Experience'],
     stats: [
@@ -392,7 +379,7 @@ export const BLOG_POSTS = [
         ],
         quote: {
           text: "When a guest sees an artisanal cocktail garnished with fresh rosemary in crisp high definition, their desire to order increases exponentially compared to black ink on paper.",
-          author: "Liam Gallagher"
+          author: "Suraj Dholakiya, Founder at SavoryOps"
         }
       },
       {
@@ -437,10 +424,15 @@ export const getFeaturedBlogPost = () => {
 
 export const getBlogPostBySlug = (slug) => {
   if (!slug) return null;
-  const normalizedSlug = slug.toLowerCase().trim();
+  const decoded = decodeURIComponent(slug).toLowerCase().trim();
+  const normalized = decoded.replace(/\s+/g, '-');
   return (
     BLOG_POSTS.find(
-      (p) => p.slug.toLowerCase() === normalizedSlug || p.id.toLowerCase() === normalizedSlug
+      (p) =>
+        p.slug.toLowerCase() === normalized ||
+        p.id.toLowerCase() === normalized ||
+        p.slug.toLowerCase() === decoded ||
+        p.id.toLowerCase() === decoded
     ) || null
   );
 };
