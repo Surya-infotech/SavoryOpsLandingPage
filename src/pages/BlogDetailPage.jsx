@@ -12,6 +12,8 @@ import {
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import VerifiedIcon from '@mui/icons-material/Verified';
 import ShareIcon from '@mui/icons-material/Share';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -147,16 +149,26 @@ const BlogDetailPage = () => {
           <h1 className="article-title">{post.title}</h1>
           <p className="article-subtitle">{post.subtitle}</p>
 
-          <div className="article-author-row">
-            <div className="author-details-box">
-              <div className="name">{post.author.name}</div>
-              <div className="role-date">
-                <span>{post.author.role}</span>
-                <span>•</span>
-                <span>{post.publishedDate}</span>
-                <span>•</span>
-                <span><AccessTimeIcon sx={{ fontSize: 14, verticalAlign: 'middle', mr: 0.3 }} />{post.readTime}</span>
-              </div>
+          <div className="article-meta-pill">
+            <div className="author-monogram">SD</div>
+            <div className="meta-author-group">
+              <span className="meta-author-name">{post.author.name}</span>
+              <span className="meta-founder-tag">
+                <VerifiedIcon sx={{ fontSize: 13, mr: 0.3 }} />
+                Founder
+              </span>
+            </div>
+            <span className="meta-divider" />
+            <div className="meta-data-group">
+              <span className="meta-data-item">
+                <CalendarTodayIcon sx={{ fontSize: 14 }} />
+                {post.publishedDate}
+              </span>
+              <span className="meta-bullet">•</span>
+              <span className="meta-data-item">
+                <AccessTimeIcon sx={{ fontSize: 14 }} />
+                {post.readTime}
+              </span>
             </div>
           </div>
         </header>
@@ -345,9 +357,17 @@ const BlogDetailPage = () => {
 
             {/* Author Biography */}
             <div className="author-bio-card">
+              <div className="bio-monogram-badge">
+                <span>SD</span>
+              </div>
               <div className="bio-content">
-                <h4>About {post.author.name}</h4>
-                <div className="bio-role">{post.author.role}</div>
+                <div className="bio-header-line">
+                  <h4>About {post.author.name}</h4>
+                  <span className="bio-founder-tag">
+                    <VerifiedIcon sx={{ fontSize: 14, mr: 0.4 }} />
+                    Founder at SavoryOps
+                  </span>
+                </div>
                 <p>
                   {post.author.bio || 'Founder and architect of SavoryOps. Dedicated to empowering restaurateurs and multi-branch operators with modern cloud technology, automated inventory controls, and intelligent kitchen workflows.'}
                 </p>
