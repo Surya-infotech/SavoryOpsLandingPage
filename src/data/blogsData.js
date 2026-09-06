@@ -10,7 +10,6 @@ export const BLOG_CATEGORIES = [
 export const FOUNDER_AUTHOR = {
   name: 'Suraj Dholakiya',
   role: 'Founder at SavoryOps',
-  avatar: '/blogs/suraj-dholakiya.jpg',
   bio: 'Founder and architect of SavoryOps. Dedicated to empowering restaurateurs and multi-branch operators with modern cloud technology, automated inventory controls, and intelligent kitchen workflows.'
 };
 
