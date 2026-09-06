@@ -232,7 +232,7 @@ const ContactUs = () => {
       id="contact"
       className={`contact-us-section ${isStandalonePage ? 'contact-page-standalone' : ''}`}
       sx={{
-        padding: isStandalonePage ? { xs: '60px 0 80px', md: '80px 0 100px' } : { xs: '60px 0', md: '80px 0' },
+        padding: isStandalonePage ? { xs: '0 0 80px', md: '0 0 100px' } : { xs: '60px 0', md: '80px 0' },
         position: 'relative',
         overflow: 'hidden'
       }}
@@ -251,7 +251,7 @@ const ContactUs = () => {
         />
       )}
       {/* Hero Header */}
-      <Box className="why-hero-section" sx={{ pb: { xs: 4, md: 5 } }}>
+      <Box className="why-hero-section">
         <Container maxWidth="lg">
           <Box className="why-hero-badge">
             <SupportAgentIcon sx={{ fontSize: 16, mr: 0.8 }} />
@@ -263,7 +263,7 @@ const ContactUs = () => {
             <span className="highlight-text">{softwareName || 'SavoryOps'}</span>
           </Typography>
 
-          <Typography variant="body1" className="why-hero-subtitle" sx={{ mb: 2 }}>
+          <Typography variant="body1" className="why-hero-subtitle">
             Have questions about our cloud POS, hardware setups, or custom enterprise deployments? Our frontline support team is here to help.
           </Typography>
         </Container>
