@@ -10,19 +10,19 @@ const appLinks = [
     id: 'user',
     name: 'SavoryOps: Dine & Food Order',
     description:
-      'Guests scan a table QR code, browse the live menu, build their cart, place orders, and track status in real time—all without waiting for staff.',
+      'Empower diners to browse interactive visual menus, customize dishes with modifiers, place instant tableside orders, and track live culinary prep status from seat to plate.',
     href: 'https://play.google.com/store/apps/details?id=com.savoryops',
     logo: '/logo.png',
-    highlights: ['QR menu access', 'Instant ordering', 'Live order tracking']
+    highlights: ['Smart QR Ordering', 'Live Kitchen Tracking', 'Custom Dish Modifiers', 'Digital Bill & Pay']
   },
   {
     id: 'employee',
     name: 'SavoryOps Crew: POS & Staff',
     description:
-      'Staff capture customer orders on the spot, send them to KOT, coordinate preparation updates, and close tickets once payment is complete.',
+      'Turn any tablet or phone into a high-speed mobile POS. Waitstaff take tableside orders, fire instant KOT tickets to kitchen stations, manage floor tables, and settle split checks effortlessly.',
     href: 'https://play.google.com/store/apps/details?id=com.savoryops.employeeapp',
     logo: '/Employee_Logo.png',
-    highlights: ['Table-side ordering', 'KOT workflow', 'Order closure']
+    highlights: ['Handheld Mobile POS', 'Instant KOT Dispatch', 'Table & Floor Control', 'Fast Split Checkout']
   }
 ];
 
