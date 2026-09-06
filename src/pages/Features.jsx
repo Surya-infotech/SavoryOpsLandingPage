@@ -255,7 +255,19 @@ const Features = ({ showHeading = true }) => {
           <Box className="features-cards-grid">
             {features.map((feature) => (
               <Box key={feature.id} className="feature-grid-item">
-                <Card className="feature-card">
+                <Card
+                  component={Link}
+                  to={`/features/${feature.id}`}
+                  className="feature-card"
+                  sx={{
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: '100%',
+                    cursor: 'pointer'
+                  }}
+                >
                   <CardContent className="card-content">
                     <Box
                       className="feature-icon"
