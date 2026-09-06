@@ -78,54 +78,40 @@ const BlogPage = () => {
             Actionable strategies, deep-dive technology guides, and operational insights to help your restaurant streamline operations, slash food waste, and drive higher margins.
           </Typography>
 
-          {/* Search Input Box */}
-          <div className="search-filter-wrapper">
+          {/* Search Input - Same as FAQ page */}
+          <Box className="faq-search-wrapper" sx={{ maxWidth: 650, mx: 'auto', mt: 1 }}>
             <TextField
               fullWidth
-              placeholder="Search articles, food cost, KDS, POS, multi-location..."
+              placeholder="Search articles (e.g. food cost, KDS, POS, inventory, multi-location)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="blog-search-input"
+              className="faq-search-input"
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <SearchIcon sx={{ color: 'var(--primary-color, #10b981)', ml: 1 }} />
+                    <SearchIcon sx={{ color: 'var(--primary-color)' }} />
                   </InputAdornment>
                 ),
-                endAdornment: searchQuery ? (
-                  <InputAdornment position="end">
-                    <Button
-                      size="small"
-                      onClick={() => setSearchQuery('')}
-                      sx={{ minWidth: 'auto', p: 0.5, color: '#94a3b8' }}
-                    >
-                      <ClearIcon fontSize="small" />
-                    </Button>
-                  </InputAdornment>
-                ) : null
               }}
             />
-          </div>
-
-          {/* Category Filter Pills */}
-          <div className="category-bar-wrapper">
-            <div className="category-pills">
-              {BLOG_CATEGORIES.map((category) => (
-                <button
-                  key={category}
-                  type="button"
-                  className={`category-pill ${selectedCategory === category ? 'active' : ''}`}
-                  onClick={() => setSelectedCategory(category)}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
+          </Box>
         </Container>
       </Box>
 
-      <Container maxWidth="lg" sx={{ py: 2 }}>
+      <Container maxWidth="lg">
+        {/* Category Filter Chips - Same as FAQ page */}
+        <Box className="faq-categories-bar">
+          {BLOG_CATEGORIES.map((category) => (
+            <Button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`category-chip-btn ${selectedCategory === category ? 'active' : ''}`}
+            >
+              {category}
+            </Button>
+          ))}
+        </Box>
+
         {/* Featured Post Spotlight (shown when not actively searching and on 'All') */}
         {selectedCategory === 'All' && !searchQuery && featuredPost && (
           <div className="featured-post-card">
@@ -286,62 +272,41 @@ const BlogPage = () => {
           </div>
         )}
 
-        {/* CTA Conversion Banner */}
-        <div className="blog-cta-banner">
-          <Box sx={{ maxWidth: '650px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.2)', padding: '4px 14px', borderRadius: '50px', fontSize: '14px', fontWeight: '600', marginBottom: '16px' }}>
-              <RocketLaunchIcon sx={{ fontSize: 18 }} />
-              <span>TRANSFORM YOUR RESTAURANT OPERATIONS</span>
-            </div>
-            <Typography variant="h3" className="cta-heading">
-              Ready to streamline your kitchen and boost profit margins?
+      </Container>
+
+      {/* High-Converting Final Call to Action - Same as other pages */}
+      <Box className="why-final-cta">
+        <Container maxWidth="lg">
+          <Box className="cta-card-box">
+            <Typography variant="h2" className="cta-title">
+              Ready to Upgrade Your Restaurant Operations?
             </Typography>
-            <Typography className="cta-description">
-              Experience the all-in-one POS, KDS, automated inventory depletion, and multi-branch management software designed for modern food and beverage businesses.
+            <Typography variant="body1" className="cta-subtitle">
+              Join hundreds of high-performing kitchens, cafes, and multi-branch brands that rely on{' '}
+              {name} daily. Get started in minutes with zero risk.
             </Typography>
-            <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+            <Box className="cta-actions">
               <Button
                 component={Link}
                 to="/signup"
                 variant="contained"
-                sx={{
-                  bgcolor: '#ffffff',
-                  color: '#065f46',
-                  fontWeight: 700,
-                  px: 3.5,
-                  py: 1.3,
-                  borderRadius: '50px',
-                  textTransform: 'none',
-                  fontSize: '1rem',
-                  boxShadow: '0 4px 14px rgba(0,0,0,0.1)',
-                  '&:hover': { bgcolor: '#f8fafc' }
-                }}
+                className="btn-white-action"
                 endIcon={<ArrowForwardIcon />}
               >
-                Start Free 14-Day Trial
+                Start Free Trial Today
               </Button>
               <Button
                 component={Link}
                 to="/contact-us"
                 variant="outlined"
-                sx={{
-                  color: '#ffffff',
-                  borderColor: 'rgba(255, 255, 255, 0.7)',
-                  fontWeight: 600,
-                  px: 3.5,
-                  py: 1.3,
-                  borderRadius: '50px',
-                  textTransform: 'none',
-                  fontSize: '1rem',
-                  '&:hover': { borderColor: '#ffffff', bgcolor: 'rgba(255, 255, 255, 0.1)' }
-                }}
+                className="btn-outline-white"
               >
-                Schedule Live Demo
+                Schedule Live Product Demo
               </Button>
             </Box>
           </Box>
-        </div>
-      </Container>
+        </Container>
+      </Box>
     </div>
   );
 };

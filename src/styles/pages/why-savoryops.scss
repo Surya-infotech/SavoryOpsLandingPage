@@ -650,79 +650,79 @@
       }
     }
   }
+}
 
-  // Final Call to Action
-  .why-final-cta {
-    padding: 60px 0 20px 0;
+// Final Call to Action (Shared across WhySavoryOps, AboutUs, Blog, etc.)
+.why-final-cta {
+  padding: 60px 0 20px 0;
 
-    .cta-card-box {
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      border-radius: 28px;
-      padding: 60px 40px;
-      text-align: center;
-      color: #ffffff;
-      box-shadow: 0 20px 50px color-mix(in srgb, var(--primary-color) 35%, transparent);
+  .cta-card-box {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 28px;
+    padding: 60px 40px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 20px 50px color-mix(in srgb, var(--primary-color) 35%, transparent);
+
+    @media (max-width: 600px) {
+      padding: 40px 20px;
+    }
+
+    .cta-title {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
 
       @media (max-width: 600px) {
-        padding: 40px 20px;
+        font-size: 1.85rem;
       }
+    }
 
-      .cta-title {
-        font-size: 2.6rem;
+    .cta-subtitle {
+      font-size: 1.15rem;
+      max-width: 660px;
+      margin: 0 auto 32px auto;
+      opacity: 0.92;
+      line-height: 1.6;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+
+      .btn-white-action {
+        background: #ffffff;
+        color: #0f172a;
         font-weight: 800;
-        margin-bottom: 16px;
-        letter-spacing: -0.02em;
+        font-size: 1.05rem;
+        padding: 14px 36px;
+        border-radius: 50px;
+        text-transform: none;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 
-        @media (max-width: 600px) {
-          font-size: 1.85rem;
+        &:hover {
+          background: #f8fafc;
+          transform: translateY(-2px);
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
         }
       }
 
-      .cta-subtitle {
-        font-size: 1.15rem;
-        max-width: 660px;
-        margin: 0 auto 32px auto;
-        opacity: 0.92;
-        line-height: 1.6;
-      }
+      .btn-outline-white {
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.05rem;
+        padding: 12px 32px;
+        border-radius: 50px;
+        text-transform: none;
 
-      .cta-actions {
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-        flex-wrap: wrap;
-
-        .btn-white-action {
-          background: #ffffff;
-          color: #0f172a;
-          font-weight: 800;
-          font-size: 1.05rem;
-          padding: 14px 36px;
-          border-radius: 50px;
-          text-transform: none;
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-
-          &:hover {
-            background: #f8fafc;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-          }
-        }
-
-        .btn-outline-white {
-          border: 2px solid rgba(255, 255, 255, 0.8);
-          color: #ffffff;
-          font-weight: 700;
-          font-size: 1.05rem;
-          padding: 12px 32px;
-          border-radius: 50px;
-          text-transform: none;
-
-          &:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: #ffffff;
-            transform: translateY(-2px);
-          }
+        &:hover {
+          background: rgba(255, 255, 255, 0.15);
+          border-color: #ffffff;
+          transform: translateY(-2px);
         }
       }
     }

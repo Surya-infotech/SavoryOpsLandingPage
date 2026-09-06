@@ -11,81 +11,80 @@
   padding-bottom: 60px;
   overflow-x: hidden;
 
-  // Search filter wrapper inside hero
-  .search-filter-wrapper {
-    max-width: 620px;
+  // Search filter wrapper inside hero - Same as FAQ page
+  .faq-search-wrapper {
+    max-width: 650px;
     margin: 0 auto;
     position: relative;
 
-    .blog-search-input {
+    .faq-search-input {
+      width: 100%;
       background: #ffffff;
-      border-radius: 50px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      transition: all 0.25s ease;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.07), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
 
-      &:hover, &.Mui-focused {
-        border-color: var(--primary-color, #10b981);
-        box-shadow: 0 12px 30px -5px color-mix(in srgb, var(--primary-color, #10b981) 20%, transparent);
-      }
+      .MuiOutlinedInput-root {
+        border-radius: 14px;
 
-      input {
-        padding: 0.95rem 1.25rem;
-        font-size: 1rem;
+        fieldset {
+          border-color: rgba(138, 177, 125, 0.3);
+          transition: border-color 0.2s ease;
+        }
+
+        &:hover fieldset {
+          border-color: #8ab17d;
+        }
+
+        &.Mui-focused fieldset {
+          border-color: #558b4b;
+          border-width: 2px;
+        }
+
+        input {
+          padding: 14px 16px;
+          font-size: 0.95rem;
+          color: #1e293b;
+
+          &::placeholder {
+            color: #94a3b8;
+            opacity: 1;
+          }
+        }
       }
     }
   }
 
-  // Categories Bar
-  .category-bar-wrapper {
-    margin-top: 1rem;
-    margin-bottom: 2.5rem;
-    padding: 0.5rem 0;
+  // Categories Bar - Same as FAQ page
+  .faq-categories-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding: 0 16px;
 
-    .category-pills {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.65rem;
-      flex-wrap: wrap;
+    .category-chip-btn {
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-transform: none;
+      transition: all 0.25s ease;
+      border: 1px solid rgba(203, 213, 225, 0.8);
+      background: #ffffff;
+      color: #475569;
 
-      @media (max-width: 768px) {
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 8px;
-        flex-wrap: nowrap;
-        scrollbar-width: none;
-        &::-webkit-scrollbar {
-          display: none;
-        }
+      &:hover {
+        background: rgba(138, 177, 125, 0.12);
+        border-color: #8ab17d;
+        color: #2e5924;
       }
 
-      .category-pill {
-        white-space: nowrap;
-        border-radius: 50px;
-        padding: 0.55rem 1.3rem;
-        font-size: 0.875rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 1px solid #e2e8f0;
-        background: #ffffff;
-        color: #475569;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
-
-        &:hover {
-          color: var(--primary-color, #059669);
-          border-color: var(--primary-color, #10b981);
-          background: #f0fdf4;
-          transform: translateY(-1px);
-        }
-
-        &.active {
-          background: linear-gradient(135deg, var(--primary-color, #059669), var(--secondary-color, #10b981));
-          color: #ffffff;
-          border-color: transparent;
-          box-shadow: 0 4px 14px color-mix(in srgb, var(--primary-color, #059669) 35%, transparent);
-        }
+      &.active {
+        background: #558b4b;
+        color: #ffffff;
+        border-color: #558b4b;
+        box-shadow: 0 4px 14px rgba(85, 139, 75, 0.35);
       }
     }
   }
@@ -245,44 +244,6 @@
     p {
       color: #64748b;
       margin-bottom: 1.5rem;
-    }
-  }
-
-  // Newsletter / CTA Banner
-  .blog-cta-banner {
-    background: linear-gradient(135deg, color-mix(in srgb, var(--primary-color, #059669) 85%, #000) 0%, var(--primary-color, #059669) 50%, var(--secondary-color, #10b981) 100%);
-    border-radius: 24px;
-    padding: 3.5rem 2.5rem;
-    color: #ffffff;
-    box-shadow: 0 20px 40px -10px color-mix(in srgb, var(--primary-color, #059669) 35%, transparent);
-    margin-bottom: 5rem;
-    position: relative;
-    overflow: hidden;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: -100px;
-      right: -100px;
-      width: 350px;
-      height: 350px;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
-      pointer-events: none;
-    }
-
-    .cta-heading {
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 1rem;
-    }
-
-    .cta-description {
-      font-size: 1.1rem;
-      color: #e2e8f0;
-      max-width: 600px;
-      line-height: 1.6;
-      margin-bottom: 2rem;
     }
   }
 }
