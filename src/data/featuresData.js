@@ -95,8 +95,11 @@ export const FEATURES_DATA = {
       'Centralized catalog translation for food items, modifiers, and allergy warnings'
     ],
     faqs: [
-      { question: 'Which languages does SavoryOps support?', answer: 'SavoryOps supports major global languages including English, French, German, Spanish, Greek, Italian, Dutch, Russian, and is continuously expanding regional language packs.' },
-      { question: 'Can guests switch languages on QR menus?', answer: 'Yes, guests scanning your QR code can switch languages with a single tap, viewing item names, descriptions, and dietary labels in their preferred tongue.' }
+      { question: 'Which languages does SavoryOps support?', answer: 'SavoryOps supports major global languages including English, French, German, Spanish, Greek, Italian, Dutch, Russian, Arabic, Hindi, and is continuously expanding regional language packs.' },
+      { question: 'Can guests switch languages on QR menus?', answer: 'Yes, guests scanning your QR code can switch languages with a single tap, viewing item names, descriptions, and dietary labels in their preferred tongue.' },
+      { question: 'Does SavoryOps support Right-to-Left (RTL) languages like Arabic or Hebrew?', answer: 'Yes. SavoryOps features native RTL rendering for Arabic, Hebrew, and Persian layouts across both administrative dashboards and customer-facing QR digital menus.' },
+      { question: 'Can the kitchen print KOTs in a different language than the customer menu?', answer: 'Yes. SavoryOps allows bilingual catalog mapping. For example, guests can order in English or French while your thermal printer or KDS displays items in Spanish or Chinese for kitchen staff.' },
+      { question: 'Can I customize translations for unique local dish names and dietary disclaimers?', answer: 'Absolutely. While SavoryOps provides automated localized translations, operators have full manual editing control over every dish title, description, modifier, and allergen warning.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -126,7 +129,10 @@ export const FEATURES_DATA = {
     ],
     faqs: [
       { question: 'Can I set different menu prices per branch?', answer: 'Yes. SavoryOps lets you maintain a master menu catalog while applying custom price adjustments or branch-exclusive items where needed.' },
-      { question: 'How many branches can I manage in SavoryOps?', answer: 'SavoryOps is built to scale from independent 2-location venues to multi-unit franchise networks with dozens of outlets.' }
+      { question: 'How many branches can I manage in SavoryOps?', answer: 'SavoryOps is built to scale from independent 2-location venues to multi-unit franchise networks with dozens of outlets.' },
+      { question: 'How do inter-branch inventory transfers work in SavoryOps?', answer: 'You can initiate stock transfers between central commissary kitchens and satellite outlets. The system creates dispatch notes, logs transit times, and automatically adjusts raw inventory counts once the receiving branch accepts the shipment.' },
+      { question: 'Can branch managers see financial reports for other locations?', answer: 'No. SavoryOps uses granular role-based permissions. Store managers can be restricted to only view their own store\'s sales and labor metrics, while corporate executives retain consolidated group-wide oversight.' },
+      { question: 'Can we run centralized loyalty programs across all chain locations?', answer: 'Yes. Customer profiles, earned points, and gift card balances sync in real time across all branch locations, allowing guests to earn and redeem rewards seamlessly anywhere in your brand network.' }
     ],
     ctaText: 'Explore Multi-Branch Features',
     ctaLink: '/pricing'
@@ -156,7 +162,10 @@ export const FEATURES_DATA = {
     ],
     faqs: [
       { question: 'What happens if my restaurant internet goes down?', answer: 'SavoryOps features offline-first architecture. Your cashiers can continue taking orders, generating KOTs, and printing bills locally. All data automatically synchronizes with the cloud once the connection is restored.' },
-      { question: 'Is my restaurant financial data secure?', answer: 'Yes. All data in SavoryOps is encrypted in transit and at rest using modern enterprise cloud standards with daily automated backups.' }
+      { question: 'Is my restaurant financial data secure?', answer: 'Yes. All data in SavoryOps is encrypted in transit and at rest using modern enterprise cloud standards with daily automated backups.' },
+      { question: 'Do I need to purchase specialized proprietary hardware to run SavoryOps?', answer: 'No. SavoryOps runs on standard iPads, Android tablets, Windows touch screens, and Mac/PC browsers, eliminating expensive proprietary hardware lock-ins and upfront capital expenditures.' },
+      { question: 'How frequently does SavoryOps release updates, and do they cause downtime?', answer: 'Feature updates and security patches deploy automatically over the cloud with zero operational downtime. Your POS and KDS stay continuously up to date without manual technician visits.' },
+      { question: 'Can I monitor live sales and labor costs remotely from my phone?', answer: 'Yes. Restaurant owners and managers can access live operational metrics, open orders, and labor cost ratios in real time from any smartphone browser worldwide.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -186,7 +195,10 @@ export const FEATURES_DATA = {
     ],
     faqs: [
       { question: 'Can I use SavoryOps on my existing iPads and Android tablets?', answer: 'Yes. SavoryOps is completely hardware-agnostic and runs on iPads, Android tablets, Windows touch terminals, and Mac browsers.' },
-      { question: 'Does SavoryOps charge transaction processing penalties?', answer: 'No. SavoryOps gives you 100% freedom to choose your payment processor without penalty markups.' }
+      { question: 'Does SavoryOps charge transaction processing penalties?', answer: 'No. SavoryOps gives you 100% freedom to choose your payment processor without penalty markups.' },
+      { question: 'How easy is it to split bills for large dining parties?', answer: 'SavoryOps makes bill splitting instantaneous. Servers can split tickets by seat, divide specific shared appetizers across multiple checks, or split total dollar amounts evenly with 1 tap.' },
+      { question: 'Does SavoryOps support bar tab pre-authorizations?', answer: 'Yes. Bartenders can swipe or tap a guest\'s card to open a tab with pre-authorized credit limits, allowing fast drink reorders during peak nightlife rushes without holding physical cards.' },
+      { question: 'Which thermal receipt printers and cash drawers work with SavoryOps?', answer: 'SavoryOps supports all standard ESC/POS thermal printers (Epson, Star Micronics, Rongta, Munbyn) connected via USB, Ethernet LAN, Bluetooth, or Wi-Fi, as well as RJ11 automated cash drawers.' }
     ],
     ctaText: 'Explore Restaurant POS Solutions',
     ctaLink: '/solutions/restaurant-pos-system'
@@ -216,7 +228,10 @@ export const FEATURES_DATA = {
     ],
     faqs: [
       { question: 'Can I view past order summaries from previous dates?', answer: 'Yes. SavoryOps archives complete historical order summaries with itemized receipts, timestamps, server IDs, and payment methods for tax and auditing purposes.' },
-      { question: 'Does the order summary reflect QR mobile orders?', answer: 'Yes. Orders placed via table QR codes flow immediately into the live summary feed with real-time status updates.' }
+      { question: 'Does the order summary reflect QR mobile orders?', answer: 'Yes. Orders placed via table QR codes flow immediately into the live summary feed with real-time status updates.' },
+      { question: 'How does the Order Summary help kitchen expeditors during rush hours?', answer: 'Expeditors can view the live status of every table, course-firing times, bump progress, and delivery handoff tickets from a single high-contrast screen, preventing bottle-necks between prep stations and waitstaff.' },
+      { question: 'Can staff reprint past receipts or resend digital invoices from the Order Summary?', answer: 'Yes. With two clicks, servers or managers can reprint customer receipts, duplicate kitchen tickets, or resend digital invoices via SMS/Email directly from the ticket timeline.' },
+      { question: 'Does the order summary log cashier edits, item voids, and discounts?', answer: 'Yes. Every ticket retains a complete chronological audit trail logging the exact server PIN, timestamp, item additions, cancellations, and discount justifications for loss prevention.' }
     ],
     ctaText: 'Discover Smart Dashboard',
     ctaLink: '/features'
@@ -246,7 +261,10 @@ export const FEATURES_DATA = {
     ],
     faqs: [
       { question: 'What is multi-tenant architecture in restaurant software?', answer: 'Multi-tenant architecture allows a single software platform to serve multiple separate restaurant brands securely, ensuring individual data isolation, custom configurations, and automated updates.' },
-      { question: 'Can I have my own custom subdomain?', answer: 'Yes. Every SavoryOps account comes with a personalized subdomain for seamless staff and management access.' }
+      { question: 'Can I have my own custom subdomain?', answer: 'Yes. Every SavoryOps account comes with a personalized subdomain for seamless staff and management access.' },
+      { question: 'Does multi-tenant architecture prevent \'noisy neighbor\' slowdowns during peak hours?', answer: 'Yes. SavoryOps isolates computing and database query resources per tenant. A high-volume restaurant experiencing a Saturday night surge will never impact the processing speed of neighboring businesses.' },
+      { question: 'How does multi-tenant security protect our proprietary recipes and customer lists?', answer: 'Each restaurant account is protected by isolated cryptographic tenant keys and strict database boundary checks, guaranteeing that no unauthorized users or third parties can access your proprietary business data.' },
+      { question: 'Can we easily scale from 1 store to 20 locations without technical re-architecture?', answer: 'Yes. The cloud multi-tenant framework allows you to spin up new branches, commissary hubs, and staff accounts in seconds without provisioning new local servers or paying IT setup fees.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -276,7 +294,10 @@ export const FEATURES_DATA = {
     ],
     faqs: [
       { question: 'How quickly do menu updates appear on QR menus?', answer: 'Menu changes sync instantly. As soon as you save an item or price update in your manager dashboard, guests scanning the QR code see the new information immediately.' },
-      { question: 'Can I temporarily disable (86) an item if ingredients run out?', answer: 'Yes. A single toggle 86s an item across POS and QR menus, preventing orders for dishes that the kitchen cannot fulfill.' }
+      { question: 'Can I temporarily disable (86) an item if ingredients run out?', answer: 'Yes. A single toggle 86s an item across POS and QR menus, preventing orders for dishes that the kitchen cannot fulfill.' },
+      { question: 'Can I configure nested modifiers and mandatory cooking choices?', answer: 'Yes. You can build nested modifier sets with mandatory selections (such as meat temperature or bread choice) and optional paid add-ons (extra cheese, bacon, avocado) with minimum/maximum pick limits.' },
+      { question: 'Does SavoryOps support scheduled daypart menus like Breakfast, Lunch, and Happy Hour?', answer: 'Yes. Menus can be scheduled to activate and deactivate automatically by time and day of week, seamlessly transitioning between breakfast, lunch, happy hour, and dinner offerings without manual intervention.' },
+      { question: 'Can I customize combo meals with bundled pricing rules?', answer: 'Absolutely. You can bundle mains, sides, and beverages into combo meals with fixed package pricing or dynamic upgrade surcharges to increase average order values.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -306,7 +327,10 @@ export const FEATURES_DATA = {
     ],
     faqs: [
       { question: 'Do customers need to download an app to scan the QR code?', answer: 'No. The SavoryOps QR menu runs as a progressive web experience that opens instantly in any mobile browser.' },
-      { question: 'Can table QR orders go directly to the kitchen KDS?', answer: 'Yes. Depending on your preference, QR orders can route directly to the kitchen or require quick server approval before firing.' }
+      { question: 'Can table QR orders go directly to the kitchen KDS?', answer: 'Yes. Depending on your preference, QR orders can route directly to the kitchen or require quick server approval before firing.' },
+      { question: 'Can guests pay their bill directly through the QR code menu?', answer: 'Yes. Guests can view their real-time live tab, select tip amounts, and settle payment directly from their mobile screen using Apple Pay, Google Pay, or credit/debit cards.' },
+      { question: 'How do QR digital menus increase average spend per customer?', answer: 'High-resolution dish imagery, mouth-watering descriptions, and automated pairing prompts (like suggesting wine or dessert) typically boost average customer check sizes by 15% to 22%.' },
+      { question: 'Are table QR codes secure against fraudulent off-premise ordering?', answer: 'Yes. SavoryOps utilizes dynamic session security and optional geofencing/Wi-Fi verification so that only diners physically seated at the table can place orders.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -336,7 +360,10 @@ export const FEATURES_DATA = {
     ],
     faqs: [
       { question: 'Can I export reports for my accountant?', answer: 'Yes. All SavoryOps financial, sales, and tax reports export cleanly to Excel, CSV, and formatted PDF summaries.' },
-      { question: 'Does SavoryOps calculate food cost percentage automatically?', answer: 'Yes. By pairing POS sales data with recipe ingredient depletion, SavoryOps calculates your theoretical and actual food cost percentages in real time.' }
+      { question: 'Does SavoryOps calculate food cost percentage automatically?', answer: 'Yes. By pairing POS sales data with recipe ingredient depletion, SavoryOps calculates your theoretical and actual food cost percentages in real time.' },
+      { question: 'What types of sales and operational reports can I generate?', answer: 'SavoryOps provides daily Z-reports, hourly sales heatmaps, category-wise revenue distribution, server sales productivity, payment tender reconciliations, tax summaries, and void/cancellation logs.' },
+      { question: 'Can I receive automated daily financial summaries via email?', answer: 'Yes. SavoryOps can automatically send end-of-day executive email digests to owners and regional directors as soon as the closing register reconciliation is finalized.' },
+      { question: 'How does SavoryOps help detect staff theft and billing discrepancies?', answer: 'SavoryOps tracks cash drawer openings without sales, voids, bill re-prints, and manager discount overrides with full server PIN logging and variance audits.' }
     ],
     ctaText: 'View Food Cost Guide',
     ctaLink: '/resources/food-cost-percentage-guide'
@@ -365,7 +392,11 @@ export const FEATURES_DATA = {
       'Multi-branch consolidated financial benchmarking'
     ],
     faqs: [
-      { question: 'What is the difference between reporting and business analytics?', answer: 'Reporting tells you what happened (e.g. $5,000 in sales yesterday). Business analytics tells you why it happened and what to do next (e.g. promoting high-margin appetizers during 6-8 PM dinner rush).' }
+      { question: 'What is the difference between reporting and business analytics?', answer: 'Reporting tells you what happened (e.g. $5,000 in sales yesterday). Business analytics tells you why it happened and what to do next (e.g. promoting high-margin appetizers during 6-8 PM dinner rush).' },
+      { question: 'How does the BCG menu engineering matrix work in SavoryOps?', answer: 'The menu engineering matrix classifies your dishes into four quadrants: Stars (high profit, high popularity), Plowhorses (low profit, high popularity), Puzzles (high profit, low popularity), and Dogs (low profit, low popularity) to guide pricing and menu redesign.' },
+      { question: 'Can SavoryOps forecast upcoming customer demand and inventory needs?', answer: 'Yes. By analyzing historical sales velocity, day-of-week trends, and seasonality, SavoryOps generates predictive demand curves to assist in smarter food prep and staff scheduling.' },
+      { question: 'Can I measure customer visit frequency and dining retention rates?', answer: 'Yes. SavoryOps tracks repeat guest dining habits, average spend per party, and customer lifetime value (LTV) when paired with digital loyalty or customer phone receipts.' },
+      { question: 'Does the analytics platform benchmark performance across different branch outlets?', answer: 'Yes. Multi-location operators can compare store-by-store sales velocity, prime cost ratios, and average table turn times side-by-side to identify top operational benchmarks.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -394,7 +425,11 @@ export const FEATURES_DATA = {
       'Role-based staff authentication'
     ],
     faqs: [
-      { question: 'Can I choose my own subdomain name?', answer: 'Yes! When creating your SavoryOps account, you can select any available business handle.' }
+      { question: 'Can I choose my own subdomain name?', answer: 'Yes! When creating your SavoryOps account, you can select any available business handle.' },
+      { question: 'Is SSL encryption included on my custom restaurant subdomain?', answer: 'Yes. Every custom subdomain automatically comes provisioned with free, dedicated SSL/TLS encryption ensuring bank-grade protection for customer transactions and staff logins.' },
+      { question: 'Can I display my restaurant brand logo and color scheme on the portal?', answer: 'Yes. Your custom subdomain features full white-label branding, displaying your logo, corporate colors, and welcome messaging across staff login screens and customer portals.' },
+      { question: 'Can we map our own custom root domain (e.g. pos.yourbrand.com)?', answer: 'Yes. Enterprise accounts can easily map their own custom domain or subdomain via standard CNAME DNS configuration with automated SSL certificate provisioning.' },
+      { question: 'How does a dedicated subdomain enhance security for restaurant groups?', answer: 'By isolating your restaurant\'s administrative routing and authentication endpoints, a dedicated subdomain mitigates cross-site scripting risks and shields your operations against brute-force attacks.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -423,7 +458,11 @@ export const FEATURES_DATA = {
       'Audit log of cashier register opens, cash drops, and shift end reconciliations'
     ],
     faqs: [
-      { question: 'Can managers approve discounts while restricting cashiers?', answer: 'Yes. SavoryOps features granular permission toggles for discounts, refunds, void KOTs, and register reconciliations.' }
+      { question: 'Can managers approve discounts while restricting cashiers?', answer: 'Yes. SavoryOps features granular permission toggles for discounts, refunds, void KOTs, and register reconciliations.' },
+      { question: 'How does PIN-based terminal switching work during fast rushes?', answer: 'Servers and bartenders can quickly log in and out using 4-digit security PINs or magnetic swipe cards in under 1 second, ensuring order entries are accurately tied to individual staff members.' },
+      { question: 'Does SavoryOps calculate overtime and shift attendance hours?', answer: 'Yes. The digital time-clock records exact employee clock-in and clock-out timestamps, tracks break times, and flags overtime hours for seamless payroll export.' },
+      { question: 'How does automated tip pooling work across front and back-of-house teams?', answer: 'SavoryOps automates tip pooling calculations based on hours worked, custom point systems, or sales percentages, eliminating end-of-night manual math and tip disputes.' },
+      { question: 'Can staff members work across multiple branch locations with one profile?', answer: 'Yes. Multi-unit operators can grant cross-branch roaming privileges to floating managers or experienced servers while keeping shift hours and labor costs allocated to the correct store.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -452,7 +491,11 @@ export const FEATURES_DATA = {
       'Responsive design accessible on tablets, desktop monitors, and phones'
     ],
     faqs: [
-      { question: 'Does the dashboard update in real time?', answer: 'Yes. As cashiers punch orders or line cooks bump tickets, the smart dashboard updates instantaneously.' }
+      { question: 'Does the dashboard update in real time?', answer: 'Yes. As cashiers punch orders or line cooks bump tickets, the smart dashboard updates instantaneously.' },
+      { question: 'Can I customize the dashboard widgets to prioritize metrics I care about?', answer: 'Yes. Managers can rearrange, pin, or collapse metric widgets such as live sales counters, table occupancy percentages, kitchen prep timers, and low-stock ingredient alerts.' },
+      { question: 'Does the dashboard trigger alerts when kitchen orders take too long?', answer: 'Yes. The dashboard features customizable color-coded visual alerts that flag tables and tickets when kitchen prep exceeds your target service thresholds (e.g. 15 or 20 minutes).' },
+      { question: 'Can I monitor multiple store locations from the dashboard simultaneously?', answer: 'Yes. Multi-branch operators can toggle between individual branch views or view a real-time aggregate feed of all active restaurant outlets.' },
+      { question: 'Is the smart dashboard accessible on mobile smartphones?', answer: 'Yes. The dashboard is fully responsive and optimized for touchscreens, desktop monitors, tablets, and smartphones, letting you supervise service from anywhere.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -481,7 +524,11 @@ export const FEATURES_DATA = {
       'Historical receipt search by invoice number, table, or guest phone'
     ],
     faqs: [
-      { question: 'Can guests download digital invoices via QR code?', answer: 'Yes. When settling payments via mobile QR, guests can immediately view and download their digital PDF invoice.' }
+      { question: 'Can guests download digital invoices via QR code?', answer: 'Yes. When settling payments via mobile QR, guests can immediately view and download their digital PDF invoice.' },
+      { question: 'Are SavoryOps digital invoices legally compliant for business expense tax deductions?', answer: 'Yes. SavoryOps digital invoices contain full legal entity details, registered VAT/GST/Tax IDs, itemized order breakdowns, timestamped transaction IDs, and payment tender summaries accepted by corporate accounting departments.' },
+      { question: 'Can cashiers email or SMS digital receipts directly from the POS terminal?', answer: 'Yes. Cashiers can enter the customer\'s phone number or email address with 1 tap to send an instant, paperless receipt via SMS or Email without needing to print thermal paper.' },
+      { question: 'How long are historical customer invoices stored in the cloud?', answer: 'SavoryOps stores your digital invoices permanently with continuous encrypted cloud backups, allowing you or your accountant to search and retrieve receipts from any past date or fiscal year.' },
+      { question: 'Can we customize the branding, logo, and footer messages on digital invoices?', answer: 'Yes. You can upload your restaurant logo, customize thank-you notes, print Wi-Fi credentials, and link your social media profiles or feedback survey on every digital receipt.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -510,7 +557,11 @@ export const FEATURES_DATA = {
       'Consolidated P&L reporting in primary corporate currency'
     ],
     faqs: [
-      { question: 'Can I accept USD, EUR, and local currency simultaneously?', answer: 'Yes. SavoryOps lets cashiers tender payments in secondary currencies while tracking change in your primary currency.' }
+      { question: 'Can I accept USD, EUR, and local currency simultaneously?', answer: 'Yes. SavoryOps lets cashiers tender payments in secondary currencies while tracking change in your primary currency.' },
+      { question: 'How are currency exchange rates updated in SavoryOps?', answer: 'You can configure automated live currency exchange rate feeds or define manual fixed exchange rates with custom buffer percentages to protect against daily currency volatility.' },
+      { question: 'Can receipts show both the foreign payment amount and local base currency?', answer: 'Yes. Dual-currency receipt layouts display the transaction total in both the guest\'s tender currency and the restaurant\'s local base currency alongside the exact exchange rate applied.' },
+      { question: 'How are multi-currency transactions consolidated for corporate accounting?', answer: 'All transactions, regardless of tendered foreign currency, are automatically converted and recorded into your primary base reporting currency in the general ledger and financial reports.' },
+      { question: 'Is multi-currency POS billing suitable for hotel dining and airport concessions?', answer: 'SavoryOps is ideally architected for international hotels, airport terminals, border towns, and resort destinations catering to international travelers.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -539,7 +590,11 @@ export const FEATURES_DATA = {
       'Custom user permissions across different business entities'
     ],
     faqs: [
-      { question: 'Can I run a ghost kitchen with multiple virtual brands in SavoryOps?', answer: 'Yes! SavoryOps is ideal for ghost kitchens. You can run multiple virtual brands from one physical prep line with distinct menus and branding.' }
+      { question: 'Can I run a ghost kitchen with multiple virtual brands in SavoryOps?', answer: 'Yes! SavoryOps is ideal for ghost kitchens. You can run multiple virtual brands from one physical prep line with distinct menus and branding.' },
+      { question: 'Can I switch between different restaurant business entities without logging out?', answer: 'Yes. The top navigation bar includes an instant entity switcher allowing group owners and area managers to toggle between concepts (e.g. Italian Bistro, Burger Bar, Cloud Bakery) in 1 click.' },
+      { question: 'Are financial books, tax accounts, and bank payouts kept completely separate?', answer: 'Yes. Each business entity operates with its own isolated tax registration, banking details, accounting ledger, and employee permissions, preventing co-mingling of corporate assets.' },
+      { question: 'Can sister businesses share the same ingredient catalog and vendor suppliers?', answer: 'Yes. You can establish master commissary ingredient lists and recipe templates that can be linked across multiple brands while tracking store-specific ingredient consumption.' },
+      { question: 'Can enterprise executives view a consolidated group P&L report?', answer: 'Yes. Corporate leaders can view an executive rollup summarizing total group revenue, overall labor percentages, and consolidated profit margins across all distinct business entities.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -568,7 +623,11 @@ export const FEATURES_DATA = {
       'Historical recipe cost and vendor purchase price archives'
     ],
     faqs: [
-      { question: 'Can I set a custom fiscal year start date?', answer: 'Yes. SavoryOps supports custom fiscal year start months (e.g. April to March or January to December) matching your regional tax requirements.' }
+      { question: 'Can I set a custom fiscal year start date?', answer: 'Yes. SavoryOps supports custom fiscal year start months (e.g. April to March or January to December) matching your regional tax requirements.' },
+      { question: 'How do fiscal year records help during tax audits?', answer: 'SavoryOps locks and archives historical fiscal year records, producing audit-ready transaction logs, daily Z-reports, tax collected breakdowns, and void summaries that can be handed directly to tax authorities or CPAs.' },
+      { question: 'Can I compare year-over-year financial performance across fiscal periods?', answer: 'Yes. Built-in comparative analytics let you benchmark gross revenue, food cost percentage drift, labor margins, and average spend per guest across consecutive fiscal years.' },
+      { question: 'Can past fiscal year records be accidentally altered or deleted by staff?', answer: 'No. Closed fiscal periods are archived under read-only security locks with tamper-evident audit logs to ensure strict compliance with international accounting standards.' },
+      { question: 'What formats are available for exporting year-end financial packages?', answer: 'You can export full fiscal year data packages in formatted Excel spreadsheets, comma-separated CSV files, and multi-page printable PDF accounting ledgers.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -597,7 +656,11 @@ export const FEATURES_DATA = {
       'Branch margin variance comparison reports'
     ],
     faqs: [
-      { question: 'Can I change prices for just one branch without affecting others?', answer: 'Yes! SavoryOps branch pricing allows individual price overrides while keeping your master menu synchronized.' }
+      { question: 'Can I change prices for just one branch without affecting others?', answer: 'Yes! SavoryOps branch pricing allows individual price overrides while keeping your master menu synchronized.' },
+      { question: 'Can I apply bulk percentage price increases or decreases to a specific branch?', answer: 'Yes. You can adjust prices across an entire category or menu by a fixed percentage (e.g. +10% for airport outlets or premium downtown locations) in seconds.' },
+      { question: 'Does branch pricing also apply to modifiers and add-ons?', answer: 'Yes. You can set location-specific prices for dish modifications (e.g. extra cheese or premium sides) to reflect regional supplier and transport costs.' },
+      { question: 'Do branch price overrides affect dishes on QR digital menus and online ordering?', answer: 'Yes. Branch pricing applies uniformly across in-store POS terminals, handheld waiter tablets, and table QR digital menus for that specific location.' },
+      { question: 'Can I run location-specific promotions or happy hour pricing in test markets?', answer: 'Yes. You can launch localized discount rules, happy hour schedules, or promotional bundles in select test branches without impacting your broader chain.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -626,7 +689,11 @@ export const FEATURES_DATA = {
       'Direct links driving happy diners to Google Business Profiles and review sites'
     ],
     faqs: [
-      { question: 'Can guests leave reviews without downloading an app?', answer: 'Yes. The feedback form displays directly on the guest’s mobile screen upon viewing their digital bill or scanning the table QR.' }
+      { question: 'Can guests leave reviews without downloading an app?', answer: 'Yes. The feedback form displays directly on the guest’s mobile screen upon viewing their digital bill or scanning the table QR.' },
+      { question: 'How does tableside recovery prevent negative reviews on Google and Yelp?', answer: 'When a diner submits a low rating (e.g. 1 or 2 stars) on their mobile bill, manager smartphones and dashboard alerts ping immediately, enabling managers to visit the table and resolve complaints before the guest leaves.' },
+      { question: 'Can SavoryOps route happy diners directly to our Google Business Profile?', answer: 'Yes. Guests submitting 4 or 5-star ratings are automatically presented with a 1-tap shortcut to copy their praise and post directly onto your Google, TripAdvisor, or Yelp page.' },
+      { question: 'Can we collect feedback on specific menu items?', answer: 'Yes. Diners can give thumbs-up/down or star ratings on specific ordered dishes, helping executive chefs identify recipes that need refinement or portion adjustments.' },
+      { question: 'Can management track customer satisfaction ratings by server?', answer: 'Yes. Because each review is linked to the table ticket and server PIN, operators can track guest satisfaction scores by employee to identify top performers and coaching opportunities.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
