@@ -240,7 +240,7 @@ const Features = ({ showHeading = true }) => {
         {showHeading && (
           <Box className="features-header">
             <Box className="features-badge">
-              <Chip icon={<StarIcon />} label="Premium Features" className="features-badge-chip" />
+              <Chip icon={<StarIcon />} label="Features" className="features-badge-chip" />
             </Box>
             <Typography variant="h2" component="h2" className="features-title">
               Powerful Features
@@ -248,41 +248,6 @@ const Features = ({ showHeading = true }) => {
             <Typography variant="h5" className="features-subtitle">
               Everything you need to streamline your restaurant operations and boost profitability
             </Typography>
-            <Typography className="features-meta">
-              {features.length} core capabilities built for fast-moving restaurant teams
-            </Typography>
-            <Box className="features-badges">
-              <Chip
-                icon={<BoltIcon />}
-                label="Real-time Analytics"
-                variant="outlined"
-                className="feature-badge-chip"
-              />
-              <Chip
-                icon={<TrendingUpIcon />}
-                label="Smart Automation"
-                variant="outlined"
-                className="feature-badge-chip"
-              />
-              <Chip
-                icon={<PaymentIcon />}
-                label="Multi-Payment"
-                variant="outlined"
-                className="feature-badge-chip"
-              />
-              <Chip
-                icon={<CurrencyIcon />}
-                label="Multiple Currency"
-                variant="outlined"
-                className="feature-badge-chip"
-              />
-              <Chip
-                icon={<LanguageIcon />}
-                label="Multiple Languages"
-                variant="outlined"
-                className="feature-badge-chip"
-              />
-            </Box>
           </Box>
         )}
 

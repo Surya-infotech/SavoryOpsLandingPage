@@ -102,17 +102,12 @@
     }
 
     .features-subtitle {
-      color: #5f6b7a;
-      font-size: 1.12rem;
-      max-width: 760px;
+      color: #666666;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      max-width: 720px;
       margin: 0 auto;
       line-height: 1.6;
       font-weight: 500;
-      margin-bottom: 0.7rem;
-
-      @media (max-width: 768px) {
-        font-size: 1.1rem;
-      }
     }
 
     .features-meta {

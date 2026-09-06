@@ -317,31 +317,6 @@ const FeaturesPage = () => {
         </Container>
       </Box>
       <Container maxWidth="lg" sx={{ pt: 4 }}>
-        <Box sx={{ textAlign: 'center', mb: 4 }}>
-          <Typography
-            variant="h2"
-            sx={{
-              fontSize: { xs: '1.8rem', sm: '2.3rem' },
-              fontWeight: 800,
-              color: '#0f172a',
-              letterSpacing: '-0.02em',
-              mb: 1.2
-            }}
-          >
-            All-in-One Restaurant Feature Suite
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              color: '#64748b',
-              fontSize: '1.05rem',
-              maxWidth: 680,
-              mx: 'auto'
-            }}
-          >
-            Explore all {detailedFeatures.length} core capabilities. Click any module to view operational advantages and deep workflows.
-          </Typography>
-        </Box>
         <Grid container spacing={{ xs: 2, sm: 2, md: 2 }} className="features-grid">
           {detailedFeatures.map((feature, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={feature.id}>
