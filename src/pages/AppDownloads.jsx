@@ -8,7 +8,7 @@ const googlePlayBadgeUrl =
 const appLinks = [
   {
     id: 'user',
-    name: 'SavoryOps User App',
+    name: 'SavoryOps: Dine & Food Order',
     description:
       'Guests scan a table QR code, browse the live menu, build their cart, place orders, and track status in real time—all without waiting for staff.',
     href: 'https://play.google.com/store/apps/details?id=com.savoryops',
@@ -17,7 +17,7 @@ const appLinks = [
   },
   {
     id: 'employee',
-    name: 'SavoryOps Employee App',
+    name: 'SavoryOps Crew: POS & Staff',
     description:
       'Staff capture customer orders on the spot, send them to KOT, coordinate preparation updates, and close tickets once payment is complete.',
     href: 'https://play.google.com/store/apps/details?id=com.savoryops.employeeapp',
@@ -30,8 +30,9 @@ const AppDownloads = () => {
   const { softwareName } = useAppSettings();
 
   const resolvedAppLinks = appLinks.map((app) => {
-    if (app.id === 'user') return { ...app, name: `${softwareName} User App` };
-    if (app.id === 'employee') return { ...app, name: `${softwareName} Employee App` };
+    const brand = softwareName || 'SavoryOps';
+    if (app.id === 'user') return { ...app, name: `${brand}: Dine & Food Order` };
+    if (app.id === 'employee') return { ...app, name: `${brand} Crew: POS & Staff` };
     return app;
   });
 
