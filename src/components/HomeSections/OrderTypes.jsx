@@ -7,7 +7,6 @@ import {
   TableBar as OrderTypesIcon,
 } from '@mui/icons-material';
 import { Box, Card, CardContent, Chip, Container, Typography } from '@mui/material';
-import '../../styles/pages/order-types.scss';
 
 const FEATURE_COLOR = 'var(--primary-color)';
 

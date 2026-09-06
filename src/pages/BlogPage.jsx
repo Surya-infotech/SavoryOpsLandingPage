@@ -13,9 +13,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import StarIcon from '@mui/icons-material/Star';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import ClearIcon from '@mui/icons-material/Clear';
 import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 import SEOHead from '../components/SEO/SEOHead';
 import { BLOG_POSTS, BLOG_CATEGORIES, getFeaturedBlogPost } from '../data/blogsData';

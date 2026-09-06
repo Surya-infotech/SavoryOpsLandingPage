@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import {
   Box,
   Button,
@@ -21,7 +21,6 @@ import { useAppSettings } from '../context/AppSettingsContext.jsx';
 
 const FeatureDetailPage = () => {
   const { featureId } = useParams();
-  const navigate = useNavigate();
   const { softwareName } = useAppSettings();
   const [expandedFaq, setExpandedFaq] = useState(0);
 

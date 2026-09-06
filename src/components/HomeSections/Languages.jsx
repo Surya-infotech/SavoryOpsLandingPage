@@ -2,7 +2,6 @@ import { Language as LanguageIcon } from '@mui/icons-material';
 import { Box, Chip, Container, Typography } from '@mui/material';
 import Flag from 'react-world-flags';
 import { getLanguageOptions } from '../../constants/languages';
-import '../../styles/pages/languages.scss';
 
 const Languages = () => {
   const languages = getLanguageOptions();

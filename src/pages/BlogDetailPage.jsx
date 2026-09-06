@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import {
   Container,
   Box,
@@ -30,7 +30,6 @@ import { useAppSettings } from '../context/AppSettingsContext.jsx';
 
 const BlogDetailPage = () => {
   const { slug } = useParams();
-  const navigate = useNavigate();
   const { softwareName } = useAppSettings();
 
   const [copiedToastOpen, setCopiedToastOpen] = useState(false);

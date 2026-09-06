@@ -2,7 +2,6 @@ import {
   AccountTree as AccountTreeIcon,
   ArrowForward as ArrowForwardIcon,
   Assessment as AssessmentIcon,
-  Bolt as BoltIcon,
   Business as BusinessIcon,
   CalendarMonth as CalendarMonthIcon,
   Cloud as CloudIcon,
@@ -25,12 +24,10 @@ import {
   Share as ReferralIcon,
   Star as StarIcon,
   Timeline as TimelineIcon,
-  TrendingUp as TrendingUpIcon,
 } from '@mui/icons-material';
 import { Box, Button, Card, CardContent, Chip, Container, Typography } from '@mui/material';
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/pages/features.scss';
 
 const FEATURE_COLOR = 'var(--primary-color)';
 
