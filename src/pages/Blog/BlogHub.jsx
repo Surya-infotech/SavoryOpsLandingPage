@@ -21,7 +21,6 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import SEOHead from '../../components/SEO/SEOHead';
 import { BLOG_POSTS } from '../../data/blogData';
 import { useAppSettings } from '../../context/AppSettingsContext.jsx';
-import '../../styles/pages/featurespage.scss';
 
 const BlogHub = () => {
   const { softwareName } = useAppSettings();
@@ -50,7 +49,7 @@ const BlogHub = () => {
   }, [selectedCategory, searchQuery]);
 
   return (
-    <Box sx={{ bgcolor: 'var(--bg-primary, #0f172a)', color: '#fff', py: 4, minHeight: '80vh' }}>
+    <div className="seo-landing-page">
       <SEOHead
         title="Restaurant Management Blog, POS Guides & Playbooks | SavoryOps"
         description="Expert operational insights for restaurant operators: Kitchen Order Ticket (KOT) systems, Toast POS alternatives, food cost percentage formulas, and inventory control."
@@ -66,81 +65,58 @@ const BlogHub = () => {
         primaryKeyword="Restaurant Management Blog"
       />
 
-      <Container maxWidth="lg">
-        {/* Breadcrumb Navigation */}
-        <Box sx={{ mb: 3 }}>
-          <Breadcrumbs
-            separator={<NavigateNextIcon fontSize="small" sx={{ color: 'rgba(255,255,255,0.4)' }} />}
-            aria-label="breadcrumb"
-          >
-            <Link to="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', fontSize: '0.9rem' }}>
-              Home
-            </Link>
-            <Typography sx={{ color: 'var(--primary-color, #10b981)', fontSize: '0.9rem', fontWeight: 600 }}>
-              Blog & Industry Guides
-            </Typography>
-          </Breadcrumbs>
-        </Box>
+      {/* Hero Section */}
+      <Box className="hero-section">
+        <Container maxWidth="lg" className="hero-content-wrapper">
+          {/* Breadcrumb Navigation */}
+          <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+            <Breadcrumbs
+              separator={<NavigateNextIcon fontSize="small" sx={{ color: '#94a3b8' }} />}
+              aria-label="breadcrumb"
+            >
+              <Link to="/" style={{ color: '#64748b', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500 }}>
+                Home
+              </Link>
+              <Typography sx={{ color: 'var(--primary-color, #10b981)', fontSize: '0.9rem', fontWeight: 700 }}>
+                Blog & Industry Guides
+              </Typography>
+            </Breadcrumbs>
+          </Box>
 
-        {/* Hero Header */}
-        <Box sx={{ textAlign: 'center', py: { xs: 3, md: 5 }, maxWidth: 840, mx: 'auto' }}>
-          <Chip
-            icon={<MenuBookIcon sx={{ fontSize: '15px !important', color: 'var(--primary-color, #10b981)' }} />}
-            label="OPERATIONAL PLAYBOOKS & INSIGHTS"
-            size="small"
-            sx={{
-              bgcolor: 'rgba(16, 185, 129, 0.12)',
-              color: 'var(--primary-color, #10b981)',
-              border: '1px solid rgba(16, 185, 129, 0.3)',
-              mb: 2,
-              fontWeight: 600
-            }}
-          />
+          <Box className="hero-badge-wrap">
+            <span className="hero-pill-chip">
+              <MenuBookIcon sx={{ fontSize: 16, mr: 0.8, verticalAlign: 'middle' }} />
+              OPERATIONAL PLAYBOOKS & INSIGHTS
+            </span>
+          </Box>
 
-          <Typography
-            variant="h1"
-            component="h1"
-            sx={{
-              fontSize: { xs: '2.2rem', sm: '2.8rem', md: '3.4rem' },
-              fontWeight: 800,
-              lineHeight: 1.2,
-              mb: 2
-            }}
-          >
-            Mastering Modern <span style={{ color: 'var(--primary-color, #10b981)' }}>Restaurant Operations</span>
+          <Typography variant="h1" component="h1" className="main-heading">
+            Mastering Modern Restaurant Operations
           </Typography>
 
-          <Typography
-            variant="body1"
-            sx={{
-              fontSize: { xs: '1.05rem', md: '1.2rem' },
-              color: 'rgba(255,255,255,0.8)',
-              lineHeight: 1.6,
-              mb: 4
-            }}
-          >
+          <Typography variant="body1" className="hero-subheading">
             In-depth guides, financial formulas, and technical comparisons engineered to help independent and multi-branch restaurants operate faster and more profitably.
           </Typography>
 
           {/* Search & Category Filter */}
-          <Box sx={{ maxWidth: 500, mx: 'auto', mb: 3 }}>
+          <Box sx={{ maxWidth: 520, mx: 'auto', mb: 3 }}>
             <TextField
               fullWidth
               size="small"
-              placeholder="Search articles, guides, formulas..."
+              placeholder="Search guides, formulas, KOT workflows..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <SearchIcon sx={{ color: 'rgba(255,255,255,0.5)' }} />
+                    <SearchIcon sx={{ color: '#94a3b8' }} />
                   </InputAdornment>
                 ),
                 sx: {
-                  bgcolor: 'rgba(30, 41, 59, 0.7)',
-                  color: '#fff',
-                  borderRadius: 2,
-                  '& fieldset': { borderColor: 'rgba(255,255,255,0.15)' },
+                  bgcolor: '#ffffff',
+                  borderRadius: '50px',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
+                  '& fieldset': { borderColor: '#e2e8f0', borderRadius: '50px' },
                   '&:hover fieldset': { borderColor: 'var(--primary-color, #10b981)' },
                   '&.Mui-focused fieldset': { borderColor: 'var(--primary-color, #10b981)' }
                 }
@@ -156,18 +132,24 @@ const BlogHub = () => {
                 clickable
                 onClick={() => setSelectedCategory(cat)}
                 sx={{
-                  bgcolor: selectedCategory === cat ? 'var(--primary-color, #10b981)' : 'rgba(30, 41, 59, 0.7)',
-                  color: selectedCategory === cat ? '#fff' : 'rgba(255,255,255,0.8)',
+                  bgcolor: selectedCategory === cat ? 'var(--primary-color, #10b981)' : '#ffffff',
+                  color: selectedCategory === cat ? '#ffffff' : '#475569',
                   fontWeight: 600,
                   border: '1px solid',
-                  borderColor: selectedCategory === cat ? 'var(--primary-color, #10b981)' : 'rgba(255,255,255,0.1)',
-                  '&:hover': { bgcolor: selectedCategory === cat ? 'var(--primary-dark, #059669)' : 'rgba(255,255,255,0.1)' }
+                  borderColor: selectedCategory === cat ? 'var(--primary-color, #10b981)' : '#e2e8f0',
+                  boxShadow: '0 2px 6px rgba(0,0,0,0.02)',
+                  '&:hover': {
+                    bgcolor: selectedCategory === cat ? 'var(--primary-dark, #059669)' : '#f8fafc'
+                  }
                 }}
               />
             ))}
           </Box>
-        </Box>
+        </Container>
+      </Box>
 
+      {/* Content Container */}
+      <div className="content-container">
         {/* Article Cards Grid */}
         <Grid container spacing={3} sx={{ mb: 8 }}>
           {filteredPosts.map((post) => (
@@ -179,17 +161,18 @@ const BlogHub = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   height: '100%',
-                  bgcolor: 'rgba(30, 41, 59, 0.6)',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  borderRadius: 3,
+                  bgcolor: '#ffffff',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: 4,
                   textDecoration: 'none',
                   color: 'inherit',
                   overflow: 'hidden',
-                  transition: 'all 0.3s ease',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.03)',
+                  transition: 'all 0.25s ease',
                   '&:hover': {
                     transform: 'translateY(-4px)',
                     borderColor: 'var(--primary-color, #10b981)',
-                    boxShadow: '0 16px 32px -10px rgba(16, 185, 129, 0.25)'
+                    boxShadow: '0 12px 28px rgba(0, 0, 0, 0.08)'
                   }
                 }}
               >
@@ -199,14 +182,14 @@ const BlogHub = () => {
                       label={post.category}
                       size="small"
                       sx={{
-                        bgcolor: 'rgba(16, 185, 129, 0.15)',
+                        bgcolor: 'rgba(16, 185, 129, 0.12)',
                         color: 'var(--primary-color, #10b981)',
-                        fontWeight: 600,
+                        fontWeight: 700,
                         fontSize: '0.75rem'
                       }}
                     />
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, color: 'rgba(255,255,255,0.5)', fontSize: '0.8rem' }}>
-                      <AccessTimeIcon sx={{ fontSize: 14 }} />
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.6, color: '#64748b', fontSize: '0.85rem' }}>
+                      <AccessTimeIcon sx={{ fontSize: 15 }} />
                       <span>{post.readTime}</span>
                     </Box>
                   </Box>
@@ -215,10 +198,10 @@ const BlogHub = () => {
                     variant="h5"
                     component="h2"
                     sx={{
-                      fontWeight: 700,
-                      color: '#fff',
+                      fontWeight: 800,
+                      color: '#0f172a',
                       mb: 1.5,
-                      lineHeight: 1.3,
+                      lineHeight: 1.35,
                       fontSize: { xs: '1.25rem', md: '1.45rem' }
                     }}
                   >
@@ -228,20 +211,38 @@ const BlogHub = () => {
                   <Typography
                     variant="body2"
                     sx={{
-                      color: 'rgba(255,255,255,0.7)',
-                      lineHeight: 1.6,
+                      color: '#64748b',
+                      lineHeight: 1.65,
                       mb: 3,
+                      fontSize: '0.95rem',
                       flexGrow: 1
                     }}
                   >
                     {post.excerpt}
                   </Typography>
 
-                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', pt: 2, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-                    <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.5)' }}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      pt: 2.5,
+                      borderTop: '1px solid #f1f5f9'
+                    }}
+                  >
+                    <Typography variant="caption" sx={{ color: '#94a3b8', fontWeight: 500 }}>
                       By {post.author} • {post.date}
                     </Typography>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, color: 'var(--primary-color, #10b981)', fontWeight: 700, fontSize: '0.9rem' }}>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 0.5,
+                        color: 'var(--primary-color, #10b981)',
+                        fontWeight: 700,
+                        fontSize: '0.9rem'
+                      }}
+                    >
                       <span>Read Guide</span>
                       <ArrowForwardIcon sx={{ fontSize: 15 }} />
                     </Box>
@@ -252,64 +253,33 @@ const BlogHub = () => {
           ))}
         </Grid>
 
-        {/* High-Converting Bottom Banner */}
-        <Card
-          sx={{
-            background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 78, 59, 0.4))',
-            border: '1px solid rgba(16, 185, 129, 0.3)',
-            borderRadius: 4,
-            p: { xs: 4, md: 6 },
-            textAlign: 'center'
-          }}
-        >
-          <Typography variant="h4" component="h2" sx={{ fontWeight: 800, color: '#fff', mb: 1.5 }}>
-            Put These Operational Insights Into Action
-          </Typography>
-          <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.85)', maxWidth: 650, mx: 'auto', mb: 3.5 }}>
+        {/* Bottom CTA Banner */}
+        <section className="bottom-cta-banner">
+          <h2>Put These Operational Insights Into Action</h2>
+          <p>
             Ready to test our cloud POS, digital KOT system, and real-time inventory controls in your restaurant?
-          </Typography>
-          <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
+          </p>
+          <div className="bottom-cta-buttons">
             <Button
               variant="contained"
+              className="btn-primary"
               component={Link}
               to="/signup"
-              size="large"
-              endIcon={<ArrowForwardIcon />}
-              sx={{
-                bgcolor: 'var(--primary-color, #10b981)',
-                color: '#fff',
-                px: 4,
-                py: 1.5,
-                fontWeight: 700,
-                borderRadius: 2,
-                textTransform: 'none',
-                '&:hover': { bgcolor: 'var(--primary-dark, #059669)' }
-              }}
             >
               Start Free 14-Day Trial
             </Button>
             <Button
-              variant="outlined"
               component={Link}
               to="/solutions/restaurant-pos-system"
-              size="large"
-              sx={{
-                borderColor: 'rgba(255,255,255,0.4)',
-                color: '#fff',
-                px: 3.5,
-                py: 1.5,
-                fontWeight: 600,
-                borderRadius: 2,
-                textTransform: 'none',
-                '&:hover': { borderColor: '#fff' }
-              }}
+              variant="outlined"
+              className="btn-secondary"
             >
-              Explore Solutions
+              Explore POS Solutions
             </Button>
-          </Box>
-        </Card>
-      </Container>
-    </Box>
+          </div>
+        </section>
+      </div>
+    </div>
   );
 };
 
