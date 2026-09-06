@@ -96,7 +96,6 @@ const Navigation = () => {
     { text: 'Features', path: '/features' },
     { text: `Why ${softwareName || 'SavoryOps'}`, path: '/why-savoryops' },
     { text: 'Pricing', path: '/pricing' },
-    { text: 'Blog', path: '/blog' },
     { text: 'Upcoming Features', path: '/upcoming-features' }
   ];
 
@@ -114,6 +113,7 @@ const Navigation = () => {
   const isMoreActive = moreMenuItems.some(
     (item) =>
       location.pathname === item.path ||
+      (item.path === '/blog' && location.pathname.startsWith('/blog')) ||
       (item.path === '/faq' && location.pathname === '/faqs') ||
       (item.path === '/about-us' && location.pathname === '/about')
   );
