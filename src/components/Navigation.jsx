@@ -11,8 +11,7 @@ import {
   Kitchen as KitchenIcon,
   Inventory as InventoryIcon,
   Calculate as CalculateIcon,
-  CompareArrows as CompareIcon,
-  MenuBook as MenuBookIcon
+  CompareArrows as CompareIcon
 } from '@mui/icons-material';
 import {
   AppBar,
@@ -101,7 +100,6 @@ const Navigation = () => {
 
   const moreMenuItems = [
     { text: 'About Us', path: '/about-us', icon: <InfoOutlinedIcon fontSize="small" /> },
-    { text: 'Blog & Playbooks', path: '/blog', icon: <MenuBookIcon fontSize="small" /> },
     { text: 'FAQ', path: '/faq', icon: <HelpOutlineIcon fontSize="small" /> },
     { text: 'Contact Us', path: '/contact-us', icon: <SupportAgentIcon fontSize="small" /> }
   ];
@@ -113,7 +111,6 @@ const Navigation = () => {
   const isMoreActive = moreMenuItems.some(
     (item) =>
       location.pathname === item.path ||
-      (item.path === '/blog' && location.pathname.startsWith('/blog')) ||
       (item.path === '/faq' && location.pathname === '/faqs') ||
       (item.path === '/about-us' && location.pathname === '/about')
   );

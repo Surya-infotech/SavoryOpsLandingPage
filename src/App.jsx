@@ -11,8 +11,6 @@ import DataDeletionPolicy from './pages/DataDeletionPolicy';
 import FAQPage from './pages/FAQPage';
 import FeaturesPage from './pages/FeaturesPage';
 import FeatureDetailPage from './pages/FeatureDetailPage';
-import BlogHub from './pages/Blog/BlogHub';
-import BlogPost from './pages/Blog/BlogPost';
 import OwnerLogin from './pages/General/Signin.jsx';
 import OwnerSignUp from './pages/General/Signup.jsx';
 import Home from './pages/Home';
@@ -83,8 +81,7 @@ const AppContent = () => {
       path.startsWith('/solutions/') ||
       path.startsWith('/alternatives/') ||
       path.startsWith('/resources/') ||
-      path.startsWith('/features/') ||
-      path.startsWith('/blog')
+      path.startsWith('/features/')
     ) {
       return;
     }
@@ -169,10 +166,6 @@ const AppContent = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
-
-        {/* Blog & Operational Guides (Captures Top Page Ranking in GSC) */}
-        <Route path="/blog" element={<BlogHub />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
 
         {/* Programmatic SEO Routes */}
         <Route path="/solutions/restaurant-pos-system" element={<SEOLandingPage clusterId="restaurant-pos-system" />} />

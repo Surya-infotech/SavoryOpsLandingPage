@@ -18,8 +18,7 @@ const staticRoutes = [
   '/contact-us',
   '/privacy-policy',
   '/data-deletion-policy',
-  '/signin',
-  '/blog'
+  '/signin'
 ];
 
 async function generateSitemap() {
@@ -44,17 +43,7 @@ async function generateSitemap() {
     featureRoutes = Array.from(new Set(featureRoutes));
   }
 
-  // 3. Load all blog post routes from blogData.js
-  const blogFilePath = path.join(__dirname, '../src/data/blogData.js');
-  let blogRoutes = [];
-  if (fs.existsSync(blogFilePath)) {
-    const blogContent = fs.readFileSync(blogFilePath, 'utf8');
-    const matches = [...blogContent.matchAll(/slug:\s*'([a-z0-9-]+)'/g)];
-    blogRoutes = matches.map((m) => `/blog/${m[1]}`);
-    blogRoutes = Array.from(new Set(blogRoutes));
-  }
-
-  const allRoutes = Array.from(new Set([...staticRoutes, ...seoRoutes, ...featureRoutes, ...blogRoutes]));
+  const allRoutes = Array.from(new Set([...staticRoutes, ...seoRoutes, ...featureRoutes]));
   const currentDate = new Date().toISOString().split('T')[0];
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -73,9 +62,6 @@ ${allRoutes
       route === '/features/kot-system'
     ) {
       priority = '0.9';
-      changefreq = 'weekly';
-    } else if (route === '/blog' || route.startsWith('/blog/')) {
-      priority = '0.85';
       changefreq = 'weekly';
     }
 

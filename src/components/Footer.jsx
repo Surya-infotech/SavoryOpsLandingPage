@@ -127,7 +127,6 @@ const Footer = () => {
   const companyLinks = [
     { name: `Why ${softwareName || 'SavoryOps'}`, icon: <StarIcon />, href: '/why-savoryops' },
     { name: 'About Us', icon: <InfoOutlinedIcon />, href: '/about-us' },
-    { name: 'Blog & Playbooks', icon: <MenuBookIcon />, href: '/blog' },
     { name: 'Subscription Plans', icon: <AttachMoneyIcon />, href: '/pricing' },
     { name: 'Upcoming Features', icon: <RocketIcon />, href: '/upcoming-features' },
     { name: 'Frequently Asked Questions', icon: <HelpOutlineIcon />, href: '/faq' },
