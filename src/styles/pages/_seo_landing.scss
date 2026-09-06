@@ -147,31 +147,53 @@
   .section-header-pill {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(138, 177, 125, 0.14);
-    color: #2e5922;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.8rem;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+    color: #ffffff !important;
+    padding: 7px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.5px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--primary-color) 30%, transparent);
+
+    svg {
+      color: #ffffff !important;
+      font-size: 1rem;
+    }
+
+    span {
+      color: #ffffff !important;
+    }
   }
 
   .section-title {
-    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-    font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 12px;
-    line-height: 1.25;
+    font-size: clamp(2.1rem, 4vw, 3rem) !important;
+    font-weight: 800 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 14px !important;
+    line-height: 1.25 !important;
+    background: linear-gradient(135deg,
+        color-mix(in srgb, var(--primary-color) 70%, #000),
+        var(--primary-color),
+        var(--secondary-color)) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    letter-spacing: -0.02em;
+    text-align: center;
   }
 
   .section-subtitle {
-    font-size: 1.1rem;
-    color: #64748b;
-    max-width: 750px;
-    margin-bottom: 36px;
-    line-height: 1.6;
+    font-size: 1.15rem !important;
+    color: #475569 !important;
+    font-weight: 500 !important;
+    max-width: 780px !important;
+    margin: 0 auto 36px auto !important;
+    line-height: 1.65 !important;
+    text-align: center;
   }
 
   // Value Props Grid
@@ -230,10 +252,14 @@
 
     .deepdive-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
       text-align: left;
-      margin-top: 30px;
+      margin-top: 32px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
     }
 
     .deepdive-card {
@@ -503,9 +529,13 @@
 
     .related-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
       text-align: left;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
     }
 
     .related-card {
@@ -557,12 +587,10 @@
   // Bottom CTA Banner (Matches Home & WhySavoryOps signature green brand gradient)
   .bottom-cta-banner {
     text-align: center;
-    background: linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--primary-color) 70%, #000) 0%,
-      var(--primary-color) 50%,
-      var(--secondary-color) 100%
-    );
+    background: linear-gradient(135deg,
+        color-mix(in srgb, var(--primary-color) 70%, #000) 0%,
+        var(--primary-color) 50%,
+        var(--secondary-color) 100%);
     color: #ffffff;
     padding: 60px 32px;
     border-radius: 28px;
