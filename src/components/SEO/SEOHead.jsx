@@ -210,6 +210,51 @@ const SEOHead = ({
       });
     }
 
+    if (location.pathname.includes('food-cost-percentage-guide')) {
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        'name': 'How to Calculate Restaurant Food Cost Percentage',
+        'description': 'A step-by-step mathematical guide to calculating food cost percentage and Cost of Goods Sold (COGS) for restaurants.',
+        'totalTime': 'PT5M',
+        'step': [
+          {
+            '@type': 'HowToStep',
+            'name': 'Determine Your Accounting Timeframe',
+            'text': 'Choose a consistent weekly or monthly audit period and perform counts at closing time.'
+          },
+          {
+            '@type': 'HowToStep',
+            'name': 'Calculate Cost of Goods Sold (COGS)',
+            'text': 'Add Beginning Inventory value to new ingredient Purchases, then subtract Ending Inventory value: COGS = Beginning Inventory + Purchases - Ending Inventory.'
+          },
+          {
+            '@type': 'HowToStep',
+            'name': 'Divide COGS by Total Food Sales',
+            'text': 'Divide your calculated COGS by gross food sales for that period and multiply by 100: Food Cost % = (COGS / Total Food Sales) × 100.'
+          },
+          {
+            '@type': 'HowToStep',
+            'name': 'Benchmark and Adjust',
+            'text': 'Compare your food cost percentage against industry targets (typically 28% to 32% for casual dining) to optimize portions and eliminate waste.'
+          }
+        ]
+      });
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        'name': 'Restaurant Food Cost Percentage & Margin Calculator',
+        'applicationCategory': 'BusinessApplication',
+        'operatingSystem': 'All',
+        'offers': {
+          '@type': 'Offer',
+          'price': '0',
+          'priceCurrency': 'USD'
+        },
+        'description': 'Free online calculator to calculate restaurant food cost percentage, Cost of Goods Sold (COGS), and plate-level recipe margins.'
+      });
+    }
+
     scriptTag.textContent = JSON.stringify(schemas, null, 2);
 
     return () => {

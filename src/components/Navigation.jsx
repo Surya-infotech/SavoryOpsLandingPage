@@ -6,7 +6,12 @@ import {
   InfoOutlined as InfoOutlinedIcon,
   KeyboardArrowDown as KeyboardArrowDownIcon,
   Menu as MenuIcon,
-  SupportAgent as SupportAgentIcon
+  SupportAgent as SupportAgentIcon,
+  PointOfSale as PosIcon,
+  Kitchen as KitchenIcon,
+  Inventory as InventoryIcon,
+  Calculate as CalculateIcon,
+  CompareArrows as CompareIcon
 } from '@mui/icons-material';
 import {
   AppBar,
@@ -28,16 +33,20 @@ import { useAppSettings } from '../context/AppSettingsContext.jsx';
 const Navigation = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [moreAnchorEl, setMoreAnchorEl] = useState(null);
+  const [solutionsAnchorEl, setSolutionsAnchorEl] = useState(null);
   const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
   const { logoUrl, softwareName, setLogoUrl } = useAppSettings();
 
   const isMoreMenuOpen = Boolean(moreAnchorEl);
+  const isSolutionsMenuOpen = Boolean(solutionsAnchorEl);
 
   useEffect(() => {
     setMoreAnchorEl(null);
+    setSolutionsAnchorEl(null);
     setMobileOpen(false);
   }, [location.pathname]);
 
@@ -49,8 +58,17 @@ const Navigation = () => {
     setMoreAnchorEl(null);
   };
 
-  const handleMoreItemClick = (path) => {
+  const handleSolutionsClick = (event) => {
+    setSolutionsAnchorEl((prev) => (prev ? null : event.currentTarget));
+  };
+
+  const handleSolutionsClose = () => {
+    setSolutionsAnchorEl(null);
+  };
+
+  const handleItemClick = (path) => {
     handleMoreClose();
+    handleSolutionsClose();
     navigate(path);
   };
 
@@ -61,6 +79,15 @@ const Navigation = () => {
   const handleGetStartedClick = () => {
     navigate('/Signin');
   };
+
+  const solutionsMenuItems = [
+    { text: 'Restaurant POS System', path: '/solutions/restaurant-pos-system', icon: <PosIcon fontSize="small" /> },
+    { text: 'Kitchen Display System (KDS)', path: '/solutions/kitchen-display-system', icon: <KitchenIcon fontSize="small" /> },
+    { text: 'Inventory Management', path: '/solutions/restaurant-inventory-management', icon: <InventoryIcon fontSize="small" /> },
+    { text: 'Food Cost Calculator & Guide', path: '/resources/food-cost-percentage-guide', icon: <CalculateIcon fontSize="small" /> },
+    { text: 'Toast POS Alternative', path: '/alternatives/toast-pos-alternative', icon: <CompareIcon fontSize="small" /> },
+    { text: 'Square POS Alternative', path: '/alternatives/square-pos-alternative', icon: <CompareIcon fontSize="small" /> }
+  ];
 
   const menuItems = [
     { text: 'Home', path: '/' },
@@ -75,6 +102,10 @@ const Navigation = () => {
     { text: 'FAQ', path: '/faq', icon: <HelpOutlineIcon fontSize="small" /> },
     { text: 'Contact Us', path: '/contact-us', icon: <SupportAgentIcon fontSize="small" /> }
   ];
+
+  const isSolutionsActive = solutionsMenuItems.some(
+    (item) => location.pathname === item.path
+  );
 
   const isMoreActive = moreMenuItems.some(
     (item) =>
@@ -125,7 +156,121 @@ const Navigation = () => {
           </Box>
 
           <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1 }}>
-            {menuItems.map((item) => (
+            {/* Home Link */}
+            <Button
+              color="inherit"
+              component={Link}
+              to="/"
+              className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+              sx={{ textTransform: 'none' }}
+            >
+              Home
+            </Button>
+
+            {/* Solutions Dropdown Button */}
+            <Button
+              id="nav-solutions-button"
+              aria-controls={isSolutionsMenuOpen ? 'nav-solutions-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={isSolutionsMenuOpen ? 'true' : undefined}
+              onClick={handleSolutionsClick}
+              color="inherit"
+              className={`nav-link ${isSolutionsActive ? 'active' : ''}`}
+              endIcon={
+                <KeyboardArrowDownIcon
+                  sx={{
+                    transition: 'transform 0.2s ease',
+                    transform: isSolutionsMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                    fontSize: '1.2rem !important'
+                  }}
+                />
+              }
+              sx={{
+                textTransform: 'none',
+                fontWeight: isSolutionsActive ? 700 : 500
+              }}
+            >
+              Solutions
+            </Button>
+
+            {/* Solutions Dropdown Menu */}
+            <Menu
+              id="nav-solutions-menu"
+              anchorEl={solutionsAnchorEl}
+              open={isSolutionsMenuOpen}
+              onClose={handleSolutionsClose}
+              disableRestoreFocus
+              MenuListProps={{
+                'aria-labelledby': 'nav-solutions-button'
+              }}
+              elevation={4}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left'
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left'
+              }}
+              slotProps={{
+                paper: {
+                  sx: {
+                    mt: 1.5,
+                    minWidth: 260,
+                    borderRadius: '14px',
+                    boxShadow: '0 12px 36px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.05)',
+                    border: '1px solid color-mix(in srgb, var(--primary-color) 18%, #eaeaea)',
+                    overflow: 'hidden',
+                    p: 0.8
+                  }
+                }
+              }}
+            >
+              {solutionsMenuItems.map((item) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <MenuItem
+                    key={item.text}
+                    onClick={() => handleItemClick(item.path)}
+                    sx={{
+                      borderRadius: '10px',
+                      py: 1.2,
+                      px: 2,
+                      my: 0.3,
+                      transition: 'all 0.2s ease',
+                      fontWeight: isActive ? 700 : 500,
+                      color: isActive ? 'var(--primary-color)' : '#2d3748',
+                      backgroundColor: isActive
+                        ? 'color-mix(in srgb, var(--primary-color) 12%, transparent)'
+                        : 'transparent',
+                      '&:hover': {
+                        backgroundColor: 'color-mix(in srgb, var(--primary-color) 10%, transparent)',
+                        color: 'var(--primary-color)'
+                      }
+                    }}
+                  >
+                    <ListItemIcon
+                      sx={{
+                        color: isActive ? 'var(--primary-color)' : '#718096',
+                        minWidth: 32
+                      }}
+                    >
+                      {item.icon}
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={item.text}
+                      primaryTypographyProps={{
+                        fontSize: '0.92rem',
+                        fontWeight: isActive ? 700 : 500
+                      }}
+                    />
+                  </MenuItem>
+                );
+              })}
+            </Menu>
+
+            {/* Other Standard Menu Items */}
+            {menuItems.slice(1).map((item) => (
               <Button
                 key={item.text}
                 color="inherit"
@@ -164,7 +309,7 @@ const Navigation = () => {
               More
             </Button>
 
-            {/* Dropdown Menu */}
+            {/* More Dropdown Menu */}
             <Menu
               id="nav-more-menu"
               anchorEl={moreAnchorEl}
@@ -204,7 +349,7 @@ const Navigation = () => {
                 return (
                   <MenuItem
                     key={item.text}
-                    onClick={() => handleMoreItemClick(item.path)}
+                    onClick={() => handleItemClick(item.path)}
                     sx={{
                       borderRadius: '10px',
                       py: 1.2,
@@ -218,15 +363,14 @@ const Navigation = () => {
                         : 'transparent',
                       '&:hover': {
                         backgroundColor: 'color-mix(in srgb, var(--primary-color) 10%, transparent)',
-                        color: 'var(--primary-color)',
-                        transform: 'translateX(4px)'
+                        color: 'var(--primary-color)'
                       }
                     }}
                   >
                     <ListItemIcon
                       sx={{
-                        minWidth: 32,
-                        color: isActive ? 'var(--primary-color)' : '#718096'
+                        color: isActive ? 'var(--primary-color)' : '#718096',
+                        minWidth: 32
                       }}
                     >
                       {item.icon}
@@ -234,8 +378,8 @@ const Navigation = () => {
                     <ListItemText
                       primary={item.text}
                       primaryTypographyProps={{
-                        fontSize: '0.95rem',
-                        fontWeight: isActive ? 600 : 500
+                        fontSize: '0.92rem',
+                        fontWeight: isActive ? 700 : 500
                       }}
                     />
                   </MenuItem>
@@ -246,8 +390,15 @@ const Navigation = () => {
             <Button
               variant="contained"
               onClick={handleGetStartedClick}
-              className="cta-button"
-              sx={{ ml: 1, textTransform: 'none' }}
+              className="get-started-btn"
+              sx={{
+                borderRadius: '50px',
+                px: 3,
+                py: 1,
+                textTransform: 'none',
+                fontWeight: 700,
+                boxShadow: '0 4px 14px color-mix(in srgb, var(--primary-color) 35%, transparent)'
+              }}
             >
               Get Started
             </Button>
@@ -258,14 +409,7 @@ const Navigation = () => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{
-              display: { md: 'none' },
-              zIndex: 9999,
-              position: 'relative',
-              '&:hover': {
-                backgroundColor: 'color-mix(in srgb, var(--primary-color) 10%, transparent)'
-              }
-            }}
+            sx={{ display: { md: 'none' }, color: 'var(--primary-color)' }}
           >
             <MenuIcon />
           </IconButton>
@@ -275,70 +419,158 @@ const Navigation = () => {
       {/* Mobile Navigation Drawer */}
       {mobileOpen && (
         <>
-          {/* Backdrop */}
           <Box
+            onClick={handleDrawerToggle}
             sx={{
               position: 'fixed',
               top: 0,
               left: 0,
               right: 0,
               bottom: 0,
-              backgroundColor: 'rgba(0,0,0,0.5)',
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
               zIndex: 9998,
-              animation: 'fadeIn 0.3s ease-in-out'
+              transition: 'opacity 0.3s ease'
             }}
-            onClick={handleDrawerToggle}
           />
 
-          {/* Mobile Menu */}
           <Box
             sx={{
               position: 'fixed',
               top: 0,
-              left: 0,
-              width: '280px',
-              height: '100vh',
-              backgroundColor: 'white',
+              right: 0,
+              width: '80%',
+              maxWidth: '360px',
+              height: '100%',
+              backgroundColor: '#fff',
               zIndex: 9999,
-              boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
-              animation: 'slideIn 0.3s ease-in-out',
-              overflow: 'auto'
+              boxShadow: '-4px 0 20px rgba(0, 0, 0, 0.15)',
+              display: 'flex',
+              flexDirection: 'column',
+              overflowY: 'auto'
             }}
           >
-            {/* Header */}
+            {/* Drawer Header */}
             <Box
               sx={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                padding: '20px',
-                borderBottom: '1px solid #e0e0e0',
-                backgroundColor: '#f8f9fa'
+                padding: '16px 20px',
+                borderBottom: '1px solid #e0e0e0'
               }}
             >
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <img
                   src={logoUrl || undefined}
                   alt={`${softwareName} Logo`}
                   style={{
                     height: '32px',
                     width: 'auto',
-                    marginRight: '12px'
+                    objectFit: 'contain'
                   }}
                   onError={() => setLogoUrl(null)}
                 />
-                <Typography variant="h6" sx={{ color: 'var(--primary-color)', fontWeight: 'bold' }}>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#1a1a1a' }}>
                   {softwareName}
                 </Typography>
               </Box>
-              <IconButton onClick={handleDrawerToggle} sx={{ color: '#666' }}>
+              <IconButton onClick={handleDrawerToggle} edge="end">
                 <CloseIcon />
               </IconButton>
             </Box>
 
-            {/* Menu Items */}
-            <Box sx={{ padding: '16px 0' }}>
-              {menuItems.map((item) => (
+            {/* Mobile Nav Links */}
+            <Box sx={{ py: 1 }}>
+              <Link to="/" onClick={handleDrawerToggle} style={{ textDecoration: 'none' }}>
+                <Box
+                  sx={{
+                    padding: '14px 20px',
+                    color: location.pathname === '/' ? 'var(--primary-color)' : '#333',
+                    backgroundColor:
+                      location.pathname === '/'
+                        ? 'color-mix(in srgb, var(--primary-color) 10%, transparent)'
+                        : 'transparent',
+                    borderLeft:
+                      location.pathname === '/'
+                        ? '3px solid var(--primary-color)'
+                        : '3px solid transparent',
+                    fontWeight: location.pathname === '/' ? 'bold' : 'normal',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <Typography variant="body1">Home</Typography>
+                </Box>
+              </Link>
+
+              {/* Collapsible Solutions Section on Mobile */}
+              <Box
+                onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '14px 20px',
+                  color: isSolutionsActive ? 'var(--primary-color)' : '#333',
+                  backgroundColor: isSolutionsActive
+                    ? 'color-mix(in srgb, var(--primary-color) 10%, transparent)'
+                    : 'transparent',
+                  borderLeft: isSolutionsActive
+                    ? '3px solid var(--primary-color)'
+                    : '3px solid transparent',
+                  cursor: 'pointer'
+                }}
+              >
+                <Typography variant="body1" sx={{ fontWeight: isSolutionsActive ? 'bold' : 'normal' }}>
+                  Solutions
+                </Typography>
+                {mobileSolutionsOpen || isSolutionsActive ? (
+                  <ExpandLessIcon sx={{ color: isSolutionsActive ? 'var(--primary-color)' : '#666' }} />
+                ) : (
+                  <ExpandMoreIcon sx={{ color: isSolutionsActive ? 'var(--primary-color)' : '#666' }} />
+                )}
+              </Box>
+
+              <Collapse in={mobileSolutionsOpen || isSolutionsActive} timeout="auto" unmountOnExit>
+                <Box sx={{ pl: 2, backgroundColor: 'rgba(0,0,0,0.02)' }}>
+                  {solutionsMenuItems.map((item) => {
+                    const isActive = location.pathname === item.path;
+                    return (
+                      <Link
+                        key={item.text}
+                        to={item.path}
+                        onClick={handleDrawerToggle}
+                        style={{ textDecoration: 'none' }}
+                      >
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 1.5,
+                            padding: '12px 20px',
+                            color: isActive ? 'var(--primary-color)' : '#555',
+                            backgroundColor: isActive
+                              ? 'color-mix(in srgb, var(--primary-color) 12%, transparent)'
+                              : 'transparent',
+                            borderLeft: isActive
+                              ? '3px solid var(--primary-color)'
+                              : '3px solid transparent',
+                            fontWeight: isActive ? 'bold' : 'normal'
+                          }}
+                        >
+                          <Box sx={{ color: isActive ? 'var(--primary-color)' : '#888', display: 'flex' }}>
+                            {item.icon}
+                          </Box>
+                          <Typography variant="body2" sx={{ fontWeight: isActive ? 600 : 400 }}>
+                            {item.text}
+                          </Typography>
+                        </Box>
+                      </Link>
+                    );
+                  })}
+                </Box>
+              </Collapse>
+
+              {menuItems.slice(1).map((item) => (
                 <Link
                   key={item.text}
                   to={item.path}
@@ -358,12 +590,7 @@ const Navigation = () => {
                           ? '3px solid var(--primary-color)'
                           : '3px solid transparent',
                       fontWeight: location.pathname === item.path ? 'bold' : 'normal',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s ease',
-                      '&:hover': {
-                        backgroundColor: 'color-mix(in srgb, var(--primary-color) 5%, transparent)',
-                        color: 'var(--primary-color)'
-                      }
+                      cursor: 'pointer'
                     }}
                   >
                     <Typography variant="body1">{item.text}</Typography>
@@ -386,12 +613,7 @@ const Navigation = () => {
                   borderLeft: isMoreActive
                     ? '3px solid var(--primary-color)'
                     : '3px solid transparent',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  '&:hover': {
-                    backgroundColor: 'color-mix(in srgb, var(--primary-color) 5%, transparent)',
-                    color: 'var(--primary-color)'
-                  }
+                  cursor: 'pointer'
                 }}
               >
                 <Typography variant="body1" sx={{ fontWeight: isMoreActive ? 'bold' : 'normal' }}>
@@ -430,14 +652,7 @@ const Navigation = () => {
                             borderLeft: isActive
                               ? '3px solid var(--primary-color)'
                               : '3px solid transparent',
-                            fontWeight: isActive ? 'bold' : 'normal',
-                            cursor: 'pointer',
-                            transition: 'all 0.2s ease',
-                            '&:hover': {
-                              backgroundColor:
-                                'color-mix(in srgb, var(--primary-color) 6%, transparent)',
-                              color: 'var(--primary-color)'
-                            }
+                            fontWeight: isActive ? 'bold' : 'normal'
                           }}
                         >
                           <Box sx={{ color: isActive ? 'var(--primary-color)' : '#888', display: 'flex' }}>
@@ -477,10 +692,7 @@ const Navigation = () => {
                     width: '100%',
                     textTransform: 'none',
                     borderRadius: '10px',
-                    py: 1.2,
-                    '&:hover': {
-                      backgroundColor: 'color-mix(in srgb, var(--primary-color) 70%, #000)'
-                    }
+                    py: 1.2
                   }}
                 >
                   Get Started
