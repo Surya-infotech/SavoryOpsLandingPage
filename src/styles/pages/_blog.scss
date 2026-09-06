@@ -798,6 +798,20 @@
           color: #334155;
           line-height: 1.8;
           margin-bottom: 1.5rem;
+
+          a {
+            color: var(--primary-color, #059669);
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-color: rgba(5, 150, 105, 0.4);
+            text-underline-offset: 3px;
+            transition: all 0.2s ease;
+
+            &:hover {
+              color: color-mix(in srgb, var(--primary-color, #059669) 80%, #000);
+              text-decoration-color: var(--primary-color, #059669);
+            }
+          }
         }
 
         ul {
@@ -808,6 +822,18 @@
             color: #334155;
             line-height: 1.75;
             margin-bottom: 0.75rem;
+
+            a {
+              color: var(--primary-color, #059669);
+              font-weight: 600;
+              text-decoration: underline;
+              text-decoration-color: rgba(5, 150, 105, 0.4);
+              text-underline-offset: 3px;
+
+              &:hover {
+                color: color-mix(in srgb, var(--primary-color, #059669) 80%, #000);
+              }
+            }
           }
         }
 

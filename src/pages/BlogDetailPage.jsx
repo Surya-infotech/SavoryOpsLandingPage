@@ -307,7 +307,7 @@ const BlogDetailPage = () => {
                 </div>
                 <ul>
                   {post.keyTakeaways.map((takeaway, idx) => (
-                    <li key={idx}>{takeaway}</li>
+                    <li key={idx} dangerouslySetInnerHTML={{ __html: takeaway }} />
                   ))}
                 </ul>
               </div>
@@ -323,7 +323,7 @@ const BlogDetailPage = () => {
                 <h2>{section.heading}</h2>
 
                 {section.paragraphs.map((p, idx) => (
-                  <p key={idx}>{p}</p>
+                  <p key={idx} dangerouslySetInnerHTML={{ __html: p }} />
                 ))}
 
                 {section.quote && (
@@ -336,7 +336,7 @@ const BlogDetailPage = () => {
                 {section.bulletPoints && section.bulletPoints.length > 0 && (
                   <ul>
                     {section.bulletPoints.map((bp, bpIdx) => (
-                      <li key={bpIdx}>{bp}</li>
+                      <li key={bpIdx} dangerouslySetInnerHTML={{ __html: bp }} />
                     ))}
                   </ul>
                 )}

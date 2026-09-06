@@ -28,10 +28,23 @@ export const FEATURES_DATA = {
     id: 'kot-system',
     badge: 'Kitchen Velocity',
     title: 'Smart Kitchen Order Ticket (KOT) System',
-    metaTitle: 'Kitchen Order Ticket (KOT) System & Management Software | SavoryOps',
-    metaDescription: 'Eliminate order mistakes and kitchen delays with SavoryOps smart KOT system. Millisecond digital routing to kitchen stations, table tracking, and void KOT auditing.',
+    metaTitle: 'Smart KOT System for Restaurants: Kitchen Order Ticket Software | SavoryOps',
+    metaDescription: 'Eliminate kitchen chaos with SavoryOps smart KOT system. Fast digital order routing to chef stations, digital KOT & BOT tracking, and manager void audits.',
     primaryKeyword: 'Kitchen Order Ticket System',
-    secondaryKeywords: ['kot system', 'what is kot', 'smart kot', 'kot management', 'void kot', 'kot in restaurant'],
+    secondaryKeywords: [
+      'kot system',
+      'what is kot',
+      'smart kot',
+      'kot management',
+      'void kot',
+      'kot in restaurant',
+      'kitchen order ticket',
+      'kitchen order ticket system',
+      'kot and bot in hotel',
+      'kot table',
+      'kot kitchen',
+      'system kot'
+    ],
     h1: 'High-Speed Kitchen Order Ticket (KOT) Management System',
     subtitle: 'Route orders instantly from counter, tablet, or table QR codes directly to chef preparation stations with zero lost tickets or misread handwriting.',
     overview: 'In high-volume restaurant dining, communication breakdowns between waitstaff and kitchen line cooks cause food delays, wrong orders, and costly food waste. The SavoryOps KOT system digitizes your entire kitchen workflow, assigning automated ticket numbers, color-coded elapsed timers, and station-specific routing (Grill, Fryer, Pantry, and Bar).',
@@ -50,11 +63,13 @@ export const FEATURES_DATA = {
     ],
     faqs: [
       { question: 'What is a KOT system in a restaurant?', answer: 'A Kitchen Order Ticket (KOT) system is software that records food orders placed by waitstaff or guests and transmits them in real time to the kitchen. It specifies table numbers, ordered items, quantities, and cooking instructions.' },
-      { question: 'How does SavoryOps handle Void KOTs?', answer: 'When an item or order is cancelled, SavoryOps requires a manager PIN and logs the exact cancellation reason, helping operators audit culinary waste and prevent revenue theft.' },
+      { question: 'What is the difference between KOT and BOT in hotel and restaurant management?', answer: 'A Kitchen Order Ticket (KOT) routes food items to chef culinary stations, whereas a Bar Order Ticket (BOT) routes drink, wine, and cocktail orders directly to the bartender terminal, keeping beverage prep synchronized and fast.' },
+      { question: 'How does SavoryOps handle Void KOTs and cancellations?', answer: 'When an item or order is cancelled, SavoryOps requires a manager PIN and logs the exact cancellation reason, helping operators audit culinary waste and prevent revenue theft.' },
+      { question: 'How does a smart KOT system speed up table turnover?', answer: 'Orders placed on handheld waiter tablets or table QR codes reach the kitchen line in milliseconds, eliminating manual walking trips to stationary cash counters and shortening table dining cycles by 15-20 minutes.' },
       { question: 'Can I connect thermal kitchen printers?', answer: 'Yes. SavoryOps works with standard ESC/POS USB, Bluetooth, and Ethernet network thermal printers from Epson, Star Micronics, Rongta, and more.' }
     ],
     ctaText: 'Explore Full KOT & KDS Solution',
-    ctaLink: '/solutions/kitchen-order-ticket-system'
+    ctaLink: '/solutions/kitchen-display-system'
   },
   'multiple-languages': {
     id: 'multiple-languages',

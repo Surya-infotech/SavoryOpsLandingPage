@@ -196,15 +196,35 @@ const Pricing = () => {
   return (
     <Box className="pricing-page">
       <SEOHead
-        title="SavoryOps Pricing & Subscription Plans | Predictable Restaurant POS Cost"
-        description="Affordable and transparent subscription plans for SavoryOps Restaurant Management System. Zero mandatory processing fees, zero locked-in contracts."
+        title="SavoryOps Pricing: Transparent Restaurant POS Plans | $0 Setup"
+        description="Compare simple, transparent SavoryOps restaurant POS pricing. $0 setup fee, no hidden processing markups, and zero locked-in contracts. Start your free trial today!"
         keywords={[
           'restaurant POS pricing',
           'restaurant software subscription',
           'affordable restaurant management SaaS',
           'cloud POS cost',
+          'restaurant billing software pricing',
+          'pos system cost for small restaurant'
         ]}
         primaryKeyword="Restaurant POS Pricing"
+        faqs={[
+          {
+            question: 'How much does SavoryOps restaurant POS cost?',
+            answer: 'SavoryOps offers flexible subscription plans starting with $0 setup fees and zero locked-in contracts. You can choose monthly billing or save with discounted annual plans.'
+          },
+          {
+            question: 'Does SavoryOps charge hidden credit card processing surcharges?',
+            answer: 'No. SavoryOps is 100% processor-agnostic. Connect your preferred payment merchant gateway with zero penalty fees or mandatory processing lock-in.'
+          },
+          {
+            question: 'Do I need to buy expensive proprietary hardware?',
+            answer: 'No. SavoryOps runs on standard iPads, Android tablets, Windows touch PCs, and smartphones, saving thousands in upfront hardware costs.'
+          },
+          {
+            question: 'Can I cancel or switch my subscription plan at any time?',
+            answer: 'Yes. You can upgrade, downgrade, or cancel your subscription at any time directly from your billing dashboard with zero cancellation penalties.'
+          }
+        ]}
       />
       {/* Hero Header */}
       <Box className="why-hero-section">
