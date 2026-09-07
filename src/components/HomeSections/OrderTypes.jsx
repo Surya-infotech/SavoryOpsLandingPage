@@ -15,6 +15,8 @@ const ORDER_TYPES = [
     id: 'dine-in',
     icon: <DineInIcon />,
     title: 'Dine-in',
+    badge: 'Table Service',
+    image: '/images/order-types/dine-in.jpg',
     description:
       'Manage table orders, course timing, and in-house dining with smooth kitchen and floor coordination.',
   },
@@ -22,6 +24,8 @@ const ORDER_TYPES = [
     id: 'delivery',
     icon: <DeliveryIcon />,
     title: 'Delivery',
+    badge: 'Direct Dispatch',
+    image: '/images/order-types/delivery.jpg',
     description:
       'Handle delivery orders with address details, status updates, and streamlined dispatch workflows.',
   },
@@ -29,6 +33,8 @@ const ORDER_TYPES = [
     id: 'pickup',
     icon: <PickupIcon />,
     title: 'Pickup',
+    badge: 'Ready Alerts',
+    image: '/images/order-types/pickup.jpg',
     description:
       'Let customers order ahead for pickup with ready notifications and counter handoff tracking.',
   },
@@ -36,6 +42,8 @@ const ORDER_TYPES = [
     id: 'takeaway',
     icon: <TakeawayIcon />,
     title: 'Takeaway',
+    badge: 'Fast Packaging',
+    image: '/images/order-types/takeaway.jpg',
     description:
       'Process takeaway orders quickly with packaging notes, payment collection, and order readiness alerts.',
   },
@@ -43,6 +51,8 @@ const ORDER_TYPES = [
     id: 'quick-order',
     icon: <QuickOrderIcon />,
     title: 'Quick Order',
+    badge: 'Rush Hour Speed',
+    image: '/images/order-types/quick-order.jpg',
     description:
       'Capture fast counter orders with minimal steps for high-speed billing during peak rush hours.',
   },
@@ -68,7 +78,14 @@ const OrderTypes = () => {
           {ORDER_TYPES.map((orderType) => (
             <Box key={orderType.id} className="order-type-grid-item">
               <Card className="order-type-card">
-                <CardContent className="card-content">
+                <Box className="order-type-media-wrapper">
+                  <img
+                    src={orderType.image}
+                    alt={`${orderType.title} service model`}
+                    className="order-type-image"
+                    loading="lazy"
+                  />
+                  <span className="order-type-badge-pill">{orderType.badge}</span>
                   <Box
                     className="order-type-icon"
                     sx={{
@@ -78,6 +95,8 @@ const OrderTypes = () => {
                   >
                     {orderType.icon}
                   </Box>
+                </Box>
+                <CardContent className="card-content">
                   <Typography variant="h6" component="h3" className="order-type-title">
                     {orderType.title}
                   </Typography>

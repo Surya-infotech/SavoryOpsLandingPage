@@ -242,13 +242,74 @@ const AboutUs = () => {
             </Typography>
           </Box>
 
+          {/* Story Visual Feature Banner */}
+          <Box
+            sx={{
+              position: 'relative',
+              borderRadius: '24px',
+              overflow: 'hidden',
+              boxShadow: '0 24px 60px rgba(15, 23, 42, 0.12)',
+              mb: 6,
+              maxHeight: { xs: 300, sm: 420, md: 500 },
+              border: '1px solid rgba(15, 23, 42, 0.08)'
+            }}
+          >
+            <Box
+              component="img"
+              src="/images/about/restaurant-story.jpg"
+              alt="Authentic restaurant service preparation at SavoryOps"
+              sx={{
+                width: '100%',
+                height: { xs: 300, sm: 420, md: 500 },
+                objectFit: 'cover',
+                display: 'block'
+              }}
+              loading="lazy"
+            />
+            <Box
+              sx={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.2) 60%, transparent 100%)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-end',
+                p: { xs: 2.5, md: 4 }
+              }}
+            >
+              <Typography
+                variant="h4"
+                sx={{
+                  color: '#ffffff',
+                  fontWeight: 800,
+                  fontSize: { xs: '1.3rem', md: '1.9rem' },
+                  letterSpacing: '-0.02em',
+                  mb: 1
+                }}
+              >
+                Built in the Heat of the Kitchen Pass
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  color: 'rgba(255, 255, 255, 0.85)',
+                  maxWidth: 720,
+                  fontSize: { xs: '0.9rem', md: '1.05rem' },
+                  lineHeight: 1.6
+                }}
+              >
+                Tested across thousands of dinner rushes, split checks, and stock deliveries to guarantee speed when every second counts.
+              </Typography>
+            </Box>
+          </Box>
+
           {/* Keypoints Grid */}
           <Box
             sx={{
               display: 'grid',
               gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' },
               gap: 3,
-              mt: 5
+              mt: 2
             }}
           >
             {storyKeypoints.map((point, index) => (
@@ -552,6 +613,68 @@ const AboutUs = () => {
           >
             Built with modern web technologies, military-grade encryption, and real-world hospitality insight.
           </Typography>
+        </Box>
+
+        {/* Team Leadership Card */}
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', md: '1fr 1.2fr' },
+            gap: { xs: 0, md: 4 },
+            alignItems: 'center',
+            bgcolor: '#ffffff',
+            borderRadius: '24px',
+            border: '1px solid #e2e8f0',
+            overflow: 'hidden',
+            boxShadow: '0 16px 40px rgba(15, 23, 42, 0.06)',
+            mb: 5
+          }}
+        >
+          <Box
+            component="img"
+            src="/images/about/culinary-team.jpg"
+            alt="The SavoryOps operations and culinary support team"
+            sx={{
+              width: '100%',
+              height: { xs: 260, md: '100%' },
+              minHeight: { md: 340 },
+              objectFit: 'cover',
+              display: 'block'
+            }}
+            loading="lazy"
+          />
+          <Box sx={{ p: { xs: 3, md: 4.5 } }}>
+            <Chip
+              label="Human-Centric Support"
+              size="small"
+              sx={{
+                bgcolor: 'color-mix(in srgb, var(--primary-color) 12%, transparent)',
+                color: 'var(--primary-color)',
+                fontWeight: 700,
+                mb: 2
+              }}
+            />
+            <Typography variant="h3" sx={{ fontWeight: 800, fontSize: { xs: '1.4rem', md: '1.8rem' }, color: '#0f172a', mb: 1.5 }}>
+              Backed by Hospitality Specialists
+            </Typography>
+            <Typography variant="body1" sx={{ color: '#64748b', lineHeight: 1.7, mb: 2.5 }}>
+              We don't outsource support to call centers who have never stepped foot on a dining floor. When you reach out to {name}, you speak directly with specialists who understand line checks, 86'd items, split tabs, and high-volume Friday rushes.
+            </Typography>
+            <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap' }}>
+              <Box>
+                <Typography sx={{ fontWeight: 800, color: '#0f172a', fontSize: '1.2rem' }}>&lt; 2 min</Typography>
+                <Typography variant="caption" sx={{ color: '#64748b' }}>Live chat response</Typography>
+              </Box>
+              <Box>
+                <Typography sx={{ fontWeight: 800, color: '#0f172a', fontSize: '1.2rem' }}>24/7/365</Typography>
+                <Typography variant="caption" sx={{ color: '#64748b' }}>Rush-hour coverage</Typography>
+              </Box>
+              <Box>
+                <Typography sx={{ fontWeight: 800, color: '#0f172a', fontSize: '1.2rem' }}>100%</Typography>
+                <Typography variant="caption" sx={{ color: '#64748b' }}>Restaurant-first DNA</Typography>
+              </Box>
+            </Box>
+          </Box>
         </Box>
 
         <Box

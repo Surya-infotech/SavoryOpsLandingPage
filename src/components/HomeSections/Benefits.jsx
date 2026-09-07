@@ -174,20 +174,52 @@ const Benefits = () => {
             }}
           >
             <Box
-              component="img"
-              src="/POS&KOT.png"
-              alt="POS and KOT System Interface"
               sx={{
+                position: 'relative',
+                borderRadius: '20px',
+                overflow: 'hidden',
+                boxShadow: '0 20px 50px rgba(15, 23, 42, 0.18)',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
                 width: '100%',
                 maxWidth: { xs: 520, md: 560, lg: 620 },
-                height: 'auto',
-                borderRadius: '16px',
-                boxShadow: '0 16px 48px rgba(0,0,0,0.15)',
-                border: '1px solid color-mix(in srgb, var(--secondary-color) 10%, transparent)',
-                marginLeft: { md: 'auto' },
-                display: 'block'
+                marginLeft: { md: 'auto' }
               }}
-            />
+            >
+              <Box
+                component="img"
+                src="/images/features/kitchen-display-system.jpg"
+                alt="High-Speed Kitchen Display and KOT System in Action"
+                sx={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  transition: 'transform 0.5s ease',
+                  '&:hover': {
+                    transform: 'scale(1.03)'
+                  }
+                }}
+              />
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: 16,
+                  left: 16,
+                  bgcolor: 'rgba(15, 23, 42, 0.78)',
+                  backdropFilter: 'blur(8px)',
+                  color: '#ffffff',
+                  fontSize: '0.78rem',
+                  fontWeight: 700,
+                  px: 1.5,
+                  py: 0.6,
+                  borderRadius: '50px',
+                  border: '1px solid rgba(255, 255, 255, 0.25)',
+                  letterSpacing: '0.02em',
+                  textTransform: 'uppercase'
+                }}
+              >
+                Live Kitchen & POS Sync
+              </Box>
+            </Box>
           </Box>
         </Box>
       </Container>

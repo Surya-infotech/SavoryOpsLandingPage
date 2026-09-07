@@ -19,6 +19,78 @@ import SEOHead from '../components/SEO/SEOHead';
 import { FEATURES_DATA } from '../data/featuresData';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
 
+const FEATURE_IMAGE_MAP = {
+  // Kitchen & Order Management
+  'kot-system': '/images/features/kitchen-display-system.jpg',
+  'qsr': '/images/order-types/quick-order.jpg',
+  'order-summary': '/images/order-types/pickup.jpg',
+  'order_summary': '/images/order-types/pickup.jpg',
+
+  // POS & Billing
+  'pos': '/images/features/pos-system.jpg',
+  'pos-system': '/images/features/pos-system.jpg',
+  'pos_system': '/images/features/pos-system.jpg',
+  'smart-dashboard': '/images/hero-platform.jpg',
+  'smart_dashboard': '/images/hero-platform.jpg',
+  'branch-pricing': '/images/hero-platform.jpg',
+  'branch_pricing': '/images/hero-platform.jpg',
+
+  // Menus & QR Ordering
+  'menu-management': '/images/features/qr-ordering.jpg',
+  'menu_management': '/images/features/qr-ordering.jpg',
+  'qr-based-menu': '/images/features/qr-ordering.jpg',
+  'qr_based_menu': '/images/features/qr-ordering.jpg',
+  'qr-code-scanning': '/images/features/qr-ordering.jpg',
+  'qr_code_scanning': '/images/features/qr-ordering.jpg',
+
+  // Table Dining & Combo
+  'table-reservation': '/images/order-types/dine-in.jpg',
+  'table_reservation': '/images/order-types/dine-in.jpg',
+  'combo-unlimited-meal': '/images/order-types/takeaway.jpg',
+  'combo_unlimited_meal': '/images/order-types/takeaway.jpg',
+
+  // Multi-Branch, Cloud & Franchise
+  'multiple-business': '/images/about/multi-branch.jpg',
+  'multiple_business': '/images/about/multi-branch.jpg',
+  'multiple-branches': '/images/about/multi-branch.jpg',
+  'multiple_branches': '/images/about/multi-branch.jpg',
+  'multi-tenant-architecture': '/images/about/multi-branch.jpg',
+  'multi_tenant_architecture': '/images/about/multi-branch.jpg',
+  'cloud-based-system': '/images/hero-platform.jpg',
+  'cloud_based_system': '/images/hero-platform.jpg',
+  'custom-subdomain': '/images/about/multi-branch.jpg',
+  'custom_subdomain': '/images/about/multi-branch.jpg',
+  'multiple-currency': '/images/about/multi-branch.jpg',
+  'multiple_currency': '/images/about/multi-branch.jpg',
+
+  // Staff & Support
+  'branch-staff-management': '/images/about/culinary-team.jpg',
+  'branch_staff_management': '/images/about/culinary-team.jpg',
+  'referral-system': '/images/about/culinary-team.jpg',
+  'referral_system': '/images/about/culinary-team.jpg',
+  'customer-reviews': '/images/order-types/dine-in.jpg',
+  'customer_reviews': '/images/order-types/dine-in.jpg',
+  'help-center': '/images/about/culinary-team.jpg',
+  'help_center': '/images/about/culinary-team.jpg',
+  'multiple-languages': '/images/order-types/dine-in.jpg',
+  'multiple_languages': '/images/order-types/dine-in.jpg',
+
+  // Reports, Invoices & Financials
+  'advanced-reports': '/images/features/inventory-management.jpg',
+  'advanced_reports': '/images/features/inventory-management.jpg',
+  'business-analytics': '/images/features/inventory-management.jpg',
+  'business_analytics': '/images/features/inventory-management.jpg',
+  'tax-report': '/images/features/inventory-management.jpg',
+  'tax_report': '/images/features/inventory-management.jpg',
+  'branch-tax-management': '/images/about/multi-branch.jpg',
+  'branch_tax_management': '/images/about/multi-branch.jpg',
+  'fiscal-year-records': '/images/features/inventory-management.jpg',
+  'fiscal_year_records': '/images/features/inventory-management.jpg',
+  'digital-invoice-download': '/images/order-types/pickup.jpg',
+  'digital_invoice_download': '/images/order-types/pickup.jpg',
+  'coupon': '/images/order-types/quick-order.jpg',
+};
+
 const FeatureDetailPage = () => {
   const { featureId } = useParams();
   const { softwareName } = useAppSettings();
@@ -30,6 +102,11 @@ const FeatureDetailPage = () => {
 
   const normalizedId = featureId ? featureId.replace(/_/g, '-') : '';
   const feature = FEATURES_DATA[featureId] || FEATURES_DATA[normalizedId] || FEATURES_DATA['kot-system'];
+  const featureImage =
+    FEATURE_IMAGE_MAP[featureId] ||
+    FEATURE_IMAGE_MAP[normalizedId] ||
+    FEATURE_IMAGE_MAP[feature.id] ||
+    '/images/features/pos-system.jpg';
 
   // Other related features for internal cross-linking
   const otherFeatureKeys = Object.keys(FEATURES_DATA)
@@ -94,12 +171,22 @@ const FeatureDetailPage = () => {
       <div className="content-container">
         {/* Overview Box */}
         <div className="feature-overview-box">
-          <div className="section-header-pill">
-            <AutoAwesomeIcon sx={{ fontSize: 16 }} />
-            <span>OPERATIONAL CONTEXT</span>
+          <div className="overview-text-col">
+            <div className="section-header-pill">
+              <AutoAwesomeIcon sx={{ fontSize: 16 }} />
+              <span>OPERATIONAL CONTEXT</span>
+            </div>
+            <h2>How {feature.title} Works in Your Restaurant</h2>
+            <p>{feature.overview}</p>
           </div>
-          <h2>How {feature.title} Works in Your Restaurant</h2>
-          <p>{feature.overview}</p>
+          <div className="overview-image-col">
+            <img
+              src={featureImage}
+              alt={`${feature.title} in restaurant operations`}
+              className="overview-feature-img"
+              loading="lazy"
+            />
+          </div>
         </div>
 
         {/* 4-Column Key Operational Advantages Grid */}

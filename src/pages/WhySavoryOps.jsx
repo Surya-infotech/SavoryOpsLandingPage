@@ -53,6 +53,7 @@ const WhySavoryOps = () => {
     {
       icon: <InventoryIcon sx={{ fontSize: 32 }} />,
       title: 'Precision Ingredient-Level BOM Inventory',
+      image: '/images/features/inventory-management.jpg',
       description:
         'Every menu item and recipe modification is connected directly to raw ingredient gram weights. Eliminate unaccounted shrinkage and protect razor-thin profit margins.',
       highlights: [
@@ -64,6 +65,7 @@ const WhySavoryOps = () => {
     {
       icon: <CloudIcon sx={{ fontSize: 32 }} />,
       title: 'Zero-Lag Cloud Sync & Offline Continuity',
+      image: '/images/features/pos-system.jpg',
       description:
         'Never halt restaurant operations when internet connections drop. Your kitchen tickets still print locally and register sales seamlessly sync the moment Wi-Fi reconnects.',
       highlights: [
@@ -75,6 +77,7 @@ const WhySavoryOps = () => {
     {
       icon: <SpeedIcon sx={{ fontSize: 32 }} />,
       title: 'Intelligent Multi-Station Kitchen Display (KDS)',
+      image: '/images/features/kitchen-display-system.jpg',
       description:
         'Eliminate chaotic paper tickets and waitstaff miscommunications. Orders route instantly to dedicated stations (Grill, Cold, Fryer, Bar) with dynamic color-coded urgency timers.',
       highlights: [
@@ -86,6 +89,7 @@ const WhySavoryOps = () => {
     {
       icon: <MultiBranchIcon sx={{ fontSize: 32 }} />,
       title: 'Centralized Multi-Branch Headquarters',
+      image: '/images/about/multi-branch.jpg',
       description:
         'Effortlessly manage 1 location or scale to 50+ branches from a single unified master dashboard without switching logins or losing centralized financial oversight.',
       highlights: [
@@ -97,6 +101,7 @@ const WhySavoryOps = () => {
     {
       icon: <QrCodeIcon sx={{ fontSize: 32 }} />,
       title: 'Contactless QR Table Ordering & Payments',
+      image: '/images/features/qr-ordering.jpg',
       description:
         'Empower guests to view high-definition digital menus, order directly from their smartphones, customize toppings, and settle checks with zero app downloads.',
       highlights: [
@@ -108,6 +113,7 @@ const WhySavoryOps = () => {
     {
       icon: <SecurityIcon sx={{ fontSize: 32 }} />,
       title: 'Granular Staff Permissions & Cash Audit Trails',
+      image: '/images/about/culinary-team.jpg',
       description:
         'Keep total control over financial operations. Enforce strict role-based access for Cashiers, Waiters, Floor Managers, and Kitchen Line Cooks with tamper-proof audit logs.',
       highlights: [
@@ -333,20 +339,32 @@ const WhySavoryOps = () => {
           <Box className="benefits-grid">
             {coreBenefits.map((benefit, idx) => (
               <Box key={idx} className="benefit-box">
-                <Box className="benefit-icon-wrapper">{benefit.icon}</Box>
-                <Typography variant="h3" className="benefit-title">
-                  {benefit.title}
-                </Typography>
-                <Typography variant="body2" className="benefit-description">
-                  {benefit.description}
-                </Typography>
-                <Box className="benefit-highlight-list">
-                  {benefit.highlights.map((h, hIdx) => (
-                    <div key={hIdx} className="benefit-bullet">
-                      <CheckCircleIcon />
-                      <span>{h}</span>
-                    </div>
-                  ))}
+                {benefit.image && (
+                  <Box className="benefit-media-wrapper">
+                    <img
+                      src={benefit.image}
+                      alt={benefit.title}
+                      className="benefit-card-image"
+                      loading="lazy"
+                    />
+                    <Box className="benefit-icon-wrapper">{benefit.icon}</Box>
+                  </Box>
+                )}
+                <Box className="benefit-content-body">
+                  <Typography variant="h3" className="benefit-title">
+                    {benefit.title}
+                  </Typography>
+                  <Typography variant="body2" className="benefit-description">
+                    {benefit.description}
+                  </Typography>
+                  <Box className="benefit-highlight-list">
+                    {benefit.highlights.map((h, hIdx) => (
+                      <div key={hIdx} className="benefit-bullet">
+                        <CheckCircleIcon />
+                        <span>{h}</span>
+                      </div>
+                    ))}
+                  </Box>
                 </Box>
               </Box>
             ))}

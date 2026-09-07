@@ -178,13 +178,13 @@ const Hero = () => {
                 }}
               >
                 <img
-                  src="/design.png"
-                  alt="SavoryOps Restaurant Management Platform"
+                  src="/images/hero-platform.jpg"
+                  alt="SavoryOps Cloud Restaurant Management Operating System"
                   style={{
                     width: '100%',
                     maxWidth: '100%',
                     height: 'auto',
-                    borderRadius: '8px',
+                    borderRadius: '12px',
                     display: 'block'
                   }}
                 />
