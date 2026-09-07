@@ -20,9 +20,6 @@ dist-ssr
 .env.test
 *.env
 
-# Keep .env.example for reference
-!.env.example
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
