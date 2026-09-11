@@ -215,31 +215,68 @@ const SEOHead = ({
         '@context': 'https://schema.org',
         '@type': 'HowTo',
         'name': 'How to Calculate Restaurant Food Cost Percentage',
-        'description': 'A step-by-step mathematical guide to calculating food cost percentage and Cost of Goods Sold (COGS) for restaurants.',
+        'description': 'A step-by-step mathematical guide to calculating food cost percentage and Cost of Goods Sold (COGS) for restaurants and commercial kitchens.',
         'totalTime': 'PT5M',
+        'tool': [
+          {
+            '@type': 'HowToTool',
+            'name': 'SavoryOps Interactive Food Cost Calculator'
+          }
+        ],
         'step': [
           {
             '@type': 'HowToStep',
-            'name': 'Determine Your Accounting Timeframe',
-            'text': 'Choose a consistent weekly or monthly audit period and perform counts at closing time.'
+            'name': 'Determine Your Accounting Timeframe and Count Beginning Inventory',
+            'text': 'Choose a consistent weekly or monthly audit period (e.g. Sunday after close) and calculate total beginning inventory dollar value.'
           },
           {
             '@type': 'HowToStep',
-            'name': 'Calculate Cost of Goods Sold (COGS)',
-            'text': 'Add Beginning Inventory value to new ingredient Purchases, then subtract Ending Inventory value: COGS = Beginning Inventory + Purchases - Ending Inventory.'
+            'name': 'Track Total Food Purchases and Vendor Invoices',
+            'text': 'Sum all food & beverage invoices received from purveyors during the period: Total Purchases = Vendor Invoices.'
           },
           {
             '@type': 'HowToStep',
-            'name': 'Divide COGS by Total Food Sales',
-            'text': 'Divide your calculated COGS by gross food sales for that period and multiply by 100: Food Cost % = (COGS / Total Food Sales) × 100.'
+            'name': 'Perform Physical Ending Inventory and Calculate COGS',
+            'text': 'Count closing shelf stock to determine ending inventory value. Calculate Cost of Goods Sold: COGS = Beginning Inventory + Purchases - Ending Inventory.'
           },
           {
             '@type': 'HowToStep',
-            'name': 'Benchmark and Adjust',
-            'text': 'Compare your food cost percentage against industry targets (typically 28% to 32% for casual dining) to optimize portions and eliminate waste.'
+            'name': 'Divide COGS by Total Food Sales and Multiply by 100',
+            'text': 'Divide calculated COGS by gross food sales for the period: Food Cost % = (COGS / Total Food Sales) × 100.'
+          },
+          {
+            '@type': 'HowToStep',
+            'name': 'Benchmark Against Industry Standards and Optimize',
+            'text': 'Compare your percentage against industry benchmarks (25%-28% for QSR, 28%-32% for casual dining). Use recipe portion control and waste logging to lower food cost.'
           }
         ]
       });
+
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        'headline': 'How to Calculate Food Cost Percentage: Formula, Equation & Benchmarks',
+        'description': 'Complete operational guide to restaurant food cost percentage calculation, period COGS equations, plate costing, and QSR benchmarks.',
+        'author': {
+          '@type': 'Person',
+          'name': 'Suraj Dholakiya',
+          'jobTitle': 'Founder & Software Engineer',
+          'url': 'https://www.linkedin.com/in/surajdholakiya'
+        },
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'SavoryOps',
+          'url': 'https://savoryops.com',
+          'logo': {
+            '@type': 'ImageObject',
+            'url': 'https://savoryops.com/logo.png'
+          }
+        },
+        'datePublished': '2025-08-15T00:00:00Z',
+        'dateModified': '2026-09-11T00:00:00Z',
+        'mainEntityOfPage': 'https://savoryops.com/resources/food-cost-percentage-guide'
+      });
+
       schemas.push({
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
@@ -251,7 +288,7 @@ const SEOHead = ({
           'price': '0',
           'priceCurrency': 'USD'
         },
-        'description': 'Free online calculator to calculate restaurant food cost percentage, Cost of Goods Sold (COGS), and plate-level recipe margins.'
+        'description': 'Free online calculator to calculate restaurant food cost percentage, Cost of Goods Sold (COGS), and plate-level recipe margins with QSR and casual dining presets.'
       });
     }
 

@@ -115,10 +115,51 @@ const SEOLandingPage = ({ clusterId }) => {
           ))}
         </div>
 
+        {/* Featured Snippet Definition Box (for Position 1 & Direct Answer queries) */}
+        {cluster.featuredSnippet && (
+          <div className="featured-snippet-box">
+            <div className="snippet-badge">
+              <AutoAwesomeIcon sx={{ fontSize: 16 }} />
+              <span>KEY DEFINITION &amp; CORE RATIO</span>
+            </div>
+            <Typography variant="h2" component="h2" className="snippet-title">
+              {cluster.featuredSnippet.title}
+            </Typography>
+            <p className="snippet-text">{cluster.featuredSnippet.definition}</p>
+          </div>
+        )}
+
         {/* 4. Interactive Live Utility (Rendered on Food Cost Guide) */}
         {cluster.hasCalculator && (
           <section className="calculator-wrapper-section">
             <FoodCostCalculator />
+          </section>
+        )}
+
+        {/* Mathematical Formulas & Equations Section */}
+        {cluster.formulaCheatSheet && cluster.formulaCheatSheet.length > 0 && (
+          <section className="formula-cheatsheet-section">
+            <div className="section-header-pill">
+              <AutoAwesomeIcon sx={{ fontSize: 16 }} />
+              <span>MATHEMATICAL EQUATIONS</span>
+            </div>
+            <Typography variant="h2" className="section-title">
+              Standard Restaurant Food Cost Formulas &amp; Equations
+            </Typography>
+            <Typography variant="body1" className="section-subtitle">
+              The exact formulas utilized by restaurant general managers, CFOs, and culinary directors to monitor food cost percentages.
+            </Typography>
+            <div className="formula-cards-grid">
+              {cluster.formulaCheatSheet.map((f, fIdx) => (
+                <div className="formula-card" key={fIdx}>
+                  <h3>{f.name}</h3>
+                  <div className="formula-code-box">
+                    <code>{f.equation}</code>
+                  </div>
+                  <p>{f.purpose}</p>
+                </div>
+              ))}
+            </div>
           </section>
         )}
 
@@ -212,6 +253,42 @@ const SEOLandingPage = ({ clusterId }) => {
                       <td><strong>{item.feature}</strong></td>
                       <td className="highlight-col">{item.savoryOps}</td>
                       <td>{item.legacy}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
+
+        {/* Restaurant Cost Analysis & Operating Cost Breakdown */}
+        {cluster.operatingCostBreakdown && cluster.operatingCostBreakdown.length > 0 && (
+          <section className="operating-cost-section">
+            <div className="section-header-pill">
+              <CompareArrowsIcon sx={{ fontSize: 16 }} />
+              <span>RESTAURANT COST ANALYSIS</span>
+            </div>
+            <Typography variant="h2" className="section-title">
+              Restaurant Operating Costs as a Percentage of Sales
+            </Typography>
+            <p className="table-subtitle">
+              Standard financial benchmark percentages: where every revenue dollar goes in a healthy, high-margin restaurant.
+            </p>
+            <div className="table-wrapper">
+              <table className="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Cost Category</th>
+                    <th className="highlight-col">Target % of Gross Sales</th>
+                    <th>Financial Scope &amp; Operational Benchmark</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {cluster.operatingCostBreakdown.map((item, idx) => (
+                    <tr key={idx}>
+                      <td><strong>{item.category}</strong></td>
+                      <td className="highlight-col"><strong>{item.percentage}</strong></td>
+                      <td>{item.description}</td>
                     </tr>
                   ))}
                 </tbody>
