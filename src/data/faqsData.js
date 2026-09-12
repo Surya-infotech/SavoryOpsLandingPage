@@ -28,11 +28,11 @@ export const faqsData = [
     answer: 'Yes, SavoryOps provides enterprise-grade multi-branch and franchise management. Brand owners can centrally control menus, recipes, pricing, and view consolidated sales reports across all branches while delegating branch-specific access to managers and franchise partners.'
   },
   {
-    id: 'offline-mode',
+    id: 'cloud-connectivity',
     category: 'Hardware & Reliability',
-    question: 'Can SavoryOps operate offline during internet outages?',
-    shortAnswer: 'Yes, cashiers can continue taking orders, generating KOTs, and printing bills locally with automatic cloud synchronization when online.',
-    answer: 'Yes, SavoryOps includes offline billing resilience. In the event of an internet disconnection, your cashiers can continue taking orders, creating KOTs, and printing bills locally, and all data automatically synchronizes with the cloud once the connection is restored.'
+    question: 'What kind of internet connectivity is required to run SavoryOps?',
+    shortAnswer: 'SavoryOps is a cloud-based system that works reliably on standard Wi-Fi, broadband, or mobile 4G/5G connections.',
+    answer: 'SavoryOps is a 100% cloud-native platform designed to run smoothly on standard broadband, Wi-Fi, or mobile 4G/5G hotspot connections. Because all data is synchronized in real time, an active internet connection ensures seamless communication across cashier counters, kitchen display screens, and owner reporting dashboards.'
   },
   {
     id: 'kds-kot-workflow',

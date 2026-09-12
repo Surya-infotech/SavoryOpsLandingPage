@@ -142,26 +142,26 @@ export const FEATURES_DATA = {
     badge: '100% Cloud Resilience',
     title: 'Cloud-Based Restaurant POS & Management System',
     metaTitle: 'Cloud-Based Restaurant POS & Operations Software | SavoryOps',
-    metaDescription: 'Run your restaurant from anywhere with SavoryOps secure cloud management platform. Offline order taking, automated backups, and 99.9% uptime.',
-    primaryKeyword: 'Cloud-Based Restaurant Management Software',
-    secondaryKeywords: ['cloud based restaurant software', 'cloud restaurant pos', 'restaurant data backups'],
-    h1: 'Modern Cloud Restaurant Operating System with Offline Power',
-    subtitle: 'Access real-time sales, kitchen orders, inventory, and staff rosters from any phone, laptop, or tablet worldwide.',
-    overview: 'Legacy on-premise servers crash, require costly IT maintenance, and trap your data on local hard drives. SavoryOps is a 100% cloud-native restaurant management platform with automatic data synchronization, continuous backups, and bulletproof offline resilience.',
+    metaDescription: 'Run your restaurant from anywhere with SavoryOps secure cloud management platform. Real-time data sync, automated backups, and 99.9% uptime.',
+    primaryKeyword: 'Cloud-Based Restaurant POS',
+    secondaryKeywords: ['cloud restaurant management pos', 'saas restaurant platform', 'web based restaurant pos system'],
+    h1: 'Modern Cloud Restaurant Operating System for Fast-Paced Dining',
+    subtitle: 'Access your restaurant operations, live sales, inventory, and labor reports from any device, anywhere in the world.',
+    overview: 'Legacy on-premise servers crash, require costly IT maintenance, and trap your data on local hard drives. SavoryOps is a 100% cloud-native restaurant management platform with automatic data synchronization, continuous backups, and 99.99% high-availability cloud architecture.',
     benefits: [
-      { title: 'Access Anywhere', desc: 'Check live restaurant revenue and kitchen velocity from your smartphone anywhere in the world.' },
-      { title: 'Offline Resilience', desc: 'Never stop serving during internet outages; orders save locally and sync automatically when reconnected.' },
-      { title: 'Zero Server Hardware Cost', desc: 'Runs on standard consumer tablets, browsers, and mobile devices with no expensive on-premise servers.' },
-      { title: 'Automated Cloud Backups', desc: 'Your financial data, recipes, and sales history are backed up securely in real time.' }
+      { title: 'Access Anywhere', desc: 'Monitor live restaurant sales and void reports from your phone, laptop, or home office.' },
+      { title: 'Zero Server Hardware', desc: 'Eliminate expensive back-office servers and costly on-site IT maintenance contracts.' },
+      { title: 'Instant Cloud Sync', desc: 'Real-time synchronization across terminals, kitchen stations, and manager dashboards.' },
+      { title: 'Automatic Updates', desc: 'Enjoy weekly feature enhancements and security patches without manual software downloads.' }
     ],
     features: [
-      'Real-time cloud database synchronization across all terminals',
-      'Offline-first cashier resilience with local receipt and KOT printing',
-      'Bank-grade SSL encryption and secure isolated tenant data storage',
-      'Instant over-the-air feature updates with zero restaurant downtime'
+      'Universal browser and responsive tablet accessibility',
+      'Real-time data synchronization across all active terminals',
+      'Continuous cloud data backup with 256-bit encryption',
+      'High-speed real-time cloud data synchronization and receipt printing'
     ],
     faqs: [
-      { question: 'What happens if my restaurant internet goes down?', answer: 'SavoryOps features offline-first architecture. Your cashiers can continue taking orders, generating KOTs, and printing bills locally. All data automatically synchronizes with the cloud once the connection is restored.' },
+      { question: 'What internet connection is required to run SavoryOps?', answer: 'SavoryOps is a cloud-native platform that runs efficiently on standard Wi-Fi, broadband, or mobile 4G/5G connections. Because it requires an active connection, all transactions and kitchen orders sync across devices in real time with zero delay.' },
       { question: 'Is my restaurant financial data secure?', answer: 'Yes. All data in SavoryOps is encrypted in transit and at rest using modern enterprise cloud standards with daily automated backups.' },
       { question: 'Do I need to purchase specialized proprietary hardware to run SavoryOps?', answer: 'No. SavoryOps runs on standard iPads, Android tablets, Windows touch screens, and Mac/PC browsers, eliminating expensive proprietary hardware lock-ins and upfront capital expenditures.' },
       { question: 'How frequently does SavoryOps release updates, and do they cause downtime?', answer: 'Feature updates and security patches deploy automatically over the cloud with zero operational downtime. Your POS and KDS stay continuously up to date without manual technician visits.' },
@@ -403,7 +403,7 @@ export const FEATURES_DATA = {
   },
   'custom-subdomain': {
     id: 'custom-subdomain',
-    badge: 'White-Label Branding',
+    badge: 'Custom Branding',
     title: 'Custom Branded Subdomains for Restaurants',
     metaTitle: 'Custom Subdomain & Branded Portals | SavoryOps',
     metaDescription: 'Provide staff and managers with a secure, branded restaurant login portal on your custom subdomain with SavoryOps.',
@@ -427,7 +427,7 @@ export const FEATURES_DATA = {
     faqs: [
       { question: 'Can I choose my own subdomain name?', answer: 'Yes! When creating your SavoryOps account, you can select any available business handle.' },
       { question: 'Is SSL encryption included on my custom restaurant subdomain?', answer: 'Yes. Every custom subdomain automatically comes provisioned with free, dedicated SSL/TLS encryption ensuring bank-grade protection for customer transactions and staff logins.' },
-      { question: 'Can I display my restaurant brand logo and color scheme on the portal?', answer: 'Yes. Your custom subdomain features full white-label branding, displaying your logo, corporate colors, and welcome messaging across staff login screens and customer portals.' },
+      { question: 'Can I display my restaurant brand logo and color scheme on the portal?', answer: 'Yes. Your custom subdomain features custom branding, displaying your logo, corporate colors, and welcome messaging across staff login screens and customer portals.' },
       { question: 'Can we map our own custom root domain (e.g. pos.yourbrand.com)?', answer: 'Yes. Enterprise accounts can easily map their own custom domain or subdomain via standard CNAME DNS configuration with automated SSL certificate provisioning.' },
       { question: 'How does a dedicated subdomain enhance security for restaurant groups?', answer: 'By isolating your restaurant\'s administrative routing and authentication endpoints, a dedicated subdomain mitigates cross-site scripting risks and shields your operations against brute-force attacks.' }
     ],

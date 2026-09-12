@@ -256,7 +256,7 @@ const PrivacyPolicy = () => {
               </Typography>
               <ul>
                 <li><strong>Network & Device Telemetry:</strong> Anonymized IP addresses, browser specifications, mobile OS version, hardware device models, and network latency metrics (&lt;200ms WebSocket heartbeats).</li>
-                <li><strong>Local Offline Fallback Cache:</strong> Temporary local device storage (IndexedDB/AsyncStorage) ensuring uninterrupted billing during transient internet disconnects, synchronized automatically upon cloud reconnect.</li>
+                <li><strong>Session & State Storage:</strong> Temporary browser and device session storage to maintain authentication tokens, active branch scoping, and user UI preferences during active sessions.</li>
               </ul>
             </Box>
           </Box>

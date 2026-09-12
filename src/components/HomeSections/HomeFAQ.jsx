@@ -38,7 +38,7 @@ const HomeFAQ = () => {
             Frequently Asked <span>Questions</span>
           </Typography>
           <Typography variant="body1" className="home-faq-subtitle">
-            Find quick answers to common questions about SavoryOps restaurant POS, kitchen display, offline billing, and multi-branch management.
+            Find quick answers to common questions about SavoryOps restaurant POS, kitchen display, real-time cloud sync, and multi-branch management.
           </Typography>
         </Box>
 

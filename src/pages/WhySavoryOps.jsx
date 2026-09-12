@@ -45,7 +45,7 @@ const WhySavoryOps = () => {
   const metrics = [
     { value: '35%', label: 'Average Food Waste & Stock Variance Reduction' },
     { value: '40%', label: 'Faster Order-to-Kitchen Turnaround Times' },
-    { value: '99.99%', label: 'Cloud Uptime with Offline-First Resilience' },
+    { value: '99.99%', label: 'Cloud Uptime with Instant Real-Time Sync' },
     { value: '< 2 min', label: 'Average Live Support Response Time' }
   ];
 
@@ -64,12 +64,12 @@ const WhySavoryOps = () => {
     },
     {
       icon: <CloudIcon sx={{ fontSize: 32 }} />,
-      title: 'Zero-Lag Cloud Sync & Offline Continuity',
+      title: 'Zero-Lag Cloud Sync & High-Speed Performance',
       image: '/images/features/pos-system.jpg',
       description:
-        'Never halt restaurant operations when internet connections drop. Your kitchen tickets still print locally and register sales seamlessly sync the moment Wi-Fi reconnects.',
+        'Power your restaurant operations with lightning-fast cloud response times. All terminals, kitchen screens, and mobile registers stay synchronized in real time.',
       highlights: [
-        'Uninterrupted local KOT printing and register billing',
+        'Instant kitchen ticket routing and register billing',
         'Instant multi-terminal synchronization across dining floor & bar',
         'Bank-grade encrypted cloud backups with zero data loss'
       ]
@@ -142,11 +142,11 @@ const WhySavoryOps = () => {
       legacy: 'Complex 3rd-party ERP integration needed'
     },
     {
-      feature: 'True Offline Resilience',
-      hint: 'Print KOTs and take table orders when internet drops',
-      savoryops: 'Full Local Offline Mode + Auto Sync',
-      toast: 'Limited Offline (Card swipe risks)',
-      square: 'Offline Payments Only',
+      feature: 'Pure Cloud Architecture',
+      hint: 'Real-time synchronization across all counters and devices',
+      savoryops: 'Ultra-Fast Real-Time Cloud Engine',
+      toast: 'Heavy proprietary terminal hardware',
+      square: 'Cloud-only with frequent rate limits',
       legacy: 'Local server dependent (crashes often)'
     },
     {
@@ -232,9 +232,9 @@ const WhySavoryOps = () => {
     },
     {
       id: 'faq-3',
-      question: 'What happens if our internet connection goes down during dinner rush?',
+      question: 'What kind of internet connectivity does SavoryOps require?',
       answer:
-        'SavoryOps is engineered with an offline-first architecture. If your Wi-Fi drops, your cashier terminals and handheld waiter tablets continue punching orders, generating bills, and firing tickets to local kitchen printers without skipping a beat. All transactions automatically sync to the cloud the instant connectivity is restored.'
+        'SavoryOps is a modern cloud-native system engineered to operate smoothly on standard Wi-Fi, broadband, or 4G/5G mobile hotspot connections. Because data is streamlined and lightweight, orders punch fast and sync instantly across dining floor tablets and kitchen display systems.'
     },
     {
       id: 'faq-4',
@@ -261,7 +261,7 @@ const WhySavoryOps = () => {
           'SavoryOps vs Toast',
           'SavoryOps vs Square',
           'restaurant management software benefits',
-          'cloud POS with offline mode',
+          'real-time cloud restaurant POS',
           'ingredient level inventory tracking',
           'multi-branch restaurant software'
         ]}
@@ -559,7 +559,7 @@ const WhySavoryOps = () => {
               Common Questions About Switching to {name}
             </Typography>
             <Typography variant="body1" className="main-section-subtitle">
-              Have questions about data migration, printer setups, or offline reliability? We have you covered.
+              Have questions about data migration, printer setups, or cloud performance? We have you covered.
             </Typography>
           </Box>
 

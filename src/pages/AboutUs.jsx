@@ -49,7 +49,7 @@ const AboutUs = () => {
     },
     {
       title: 'Automated Cloud Sync',
-      description: 'Continuous zero-downtime updates with instant offline continuity during network drops.'
+      description: 'Continuous zero-downtime updates with high-speed real-time cloud data synchronization.'
     },
     {
       title: 'Transparent Pricing',
@@ -68,7 +68,7 @@ const AboutUs = () => {
       icon: <TrustIcon sx={{ fontSize: 32, color: 'var(--primary-color)' }} />,
       title: 'Rock-Solid Reliability',
       description:
-        'Restaurant rushes never stop, and neither do we. Our architecture ensures zero downtime with seamless offline continuity during busy dining hours.'
+        'Restaurant rushes never stop, and neither do we. Our high-availability cloud architecture ensures 99.99% uptime during busy dining hours.'
     },
     {
       icon: <HandshakeIcon sx={{ fontSize: 32, color: 'var(--primary-color)' }} />,

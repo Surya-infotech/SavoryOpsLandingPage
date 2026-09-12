@@ -3,7 +3,7 @@
 > **SavoryOps** is a modern, all-in-one cloud restaurant operating system and Point of Sale (POS) software suite engineered for high-volume dining, quick service (QSR), bars, cafes, pizzerias, food trucks, and multi-branch restaurant chains. It integrates touchscreen billing, Kitchen Display Systems (KDS), Kitchen Order Tickets (KOT), recipe-level inventory stock control, contactless QR table ordering, employee shift scheduling, automated tip distribution, and multi-tenant business analytics.
 
 ## Core Software Modules & Capabilities
-- **Cloud Restaurant POS & Fast Billing**: High-speed touch billing for dine-in, takeaway, bar tabs, and deliveries. Split checks by seat, item, or custom amounts. Offline billing resilience ensures continuous local order processing and printing during internet outages.
+- **Cloud Restaurant POS & Fast Billing**: High-speed touch billing for dine-in, takeaway, bar tabs, and deliveries. Split checks by seat, item, or custom amounts. Real-time cloud synchronization ensures instantaneous multi-terminal coordination and live data backups.
 - **Smart Kitchen Order Ticket (KOT) & Bar Order Ticket (BOT)**: Millisecond digital ticket routing to specific preparation stations (Grill, Fryer, Salad, Main Kitchen, Bar). Color-coded countdown timers, course pacing (Appetizer -> Entree -> Dessert), and strict manager PIN audits on Void KOTs to prevent revenue leakage.
 - **Kitchen Display System (KDS)**: Hardware-flexible kitchen screens running on standard commercial tablets or monitors. Color-coded ticket timers, bump-bar support, and expeditor master tray views.
 - **Automated Recipe Costing & Inventory Depletion**: Real-time ingredient depletion triggered automatically by POS transactions. Tracks Actual vs. Theoretical (AvT) variance to identify over-portioning and culinary shrinkage. Automated minimum safety thresholds and 1-click vendor purchase orders.
@@ -29,8 +29,8 @@ For an individual menu plate:
 $$\text{Dish Food Cost \%} = \left( \frac{\text{Total Raw Recipe Ingredient Cost}}{\text{Menu Selling Price}} \right) \times 100$$
 Standard industry benchmarks range from 25%–28% for QSR and 28%–32% for casual dining. SavoryOps includes a free interactive calculator at `https://savoryops.com/resources/food-cost-percentage-guide`.
 
-### Q: Can SavoryOps operate offline during internet outages?
-**A:** Yes. SavoryOps features an offline-first architecture. Cashiers and servers can continue taking orders, generating KOTs, and printing receipts locally. All transaction data automatically synchronizes with the cloud once the connection is restored.
+### Q: Does SavoryOps require an internet connection?
+**A:** Yes. SavoryOps is a 100% cloud-native restaurant management system. It requires an active internet connection (Wi-Fi, broadband, or mobile 4G/5G hotspot) to keep orders, kitchen displays, table statuses, and inventory counts synchronized in real time across all devices.
 
 ### Q: What hardware is required to run SavoryOps?
 **A:** SavoryOps is 100% hardware-agnostic. It runs on Apple iPads (iOS), Android tablets (Samsung, Lenovo, Sunmi), Windows touch POS PCs, Macs, and standard ESC/POS USB, Bluetooth, and network thermal printers (Epson, Star Micronics, Rongta).

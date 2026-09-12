@@ -47,13 +47,13 @@ const FAQPage = () => {
     <div className="faq-page-container">
       <SEOHead
         title="Frequently Asked Questions (FAQ) | SavoryOps Restaurant POS"
-        description="Have questions about SavoryOps? Read answers on restaurant POS billing, KDS kitchen screens, offline support, QR menus, inventory costing, and pricing."
+        description="Have questions about SavoryOps? Read answers on restaurant POS billing, KDS kitchen screens, real-time cloud sync, QR menus, inventory costing, and pricing."
         keywords={[
           "SavoryOps FAQ",
           "restaurant POS questions",
           "how SavoryOps POS works",
           "kitchen display system FAQ",
-          "offline restaurant billing FAQ",
+          "cloud restaurant billing FAQ",
           "restaurant inventory software FAQ"
         ]}
         primaryKeyword="SavoryOps FAQ"
@@ -81,7 +81,7 @@ const FAQPage = () => {
           <Box className="faq-search-wrapper" sx={{ maxWidth: 650, mx: 'auto', mt: 1 }}>
             <TextField
               fullWidth
-              placeholder="Search questions (e.g. offline, KDS, inventory, hardware, pricing)..."
+              placeholder="Search questions (e.g. cloud sync, KDS, inventory, hardware, pricing)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="faq-search-input"
