@@ -33,6 +33,7 @@ import { Link } from 'react-router-dom';
 const FEATURE_COLOR = 'var(--primary-color)';
 
 const FEATURES = [
+  // Tier 1: Core Kitchen & Billing Operations
   {
     id: 'pos',
     priority: 1,
@@ -42,59 +43,53 @@ const FEATURES = [
       'Fast, reliable point-of-sale billing with payments, discounts, and order sync across counters.',
   },
   {
-    id: 'smart-dashboard',
+    id: 'kot-system',
     priority: 2,
+    icon: <RestaurantIcon />,
+    title: 'KOT System',
+    description:
+      'Streamlined kitchen order management with real-time ticket generation, routing, and tracking.',
+  },
+  {
+    id: 'inventory-management',
+    priority: 3,
+    icon: <InventoryIcon />,
+    title: 'Inventory & Recipe BOM',
+    description:
+      'Real-time raw ingredient tracking, recipe-level stock depletion on POS orders, supplier POs, and inter-branch transfers.',
+  },
+
+  // Tier 2: Ordering & Customer Experience
+  {
+    id: 'menu-management',
+    priority: 4,
+    icon: <MenuIcon />,
+    title: 'Menu Management',
+    description: 'Update menus instantly, manage categories, items, add-ons, modifiers, and pricing in real time.',
+  },
+  {
+    id: 'qr-based-menu',
+    priority: 5,
+    icon: <QrCode2Icon />,
+    title: 'QR-Based Menu',
+    description:
+      'Enable contactless ordering with dynamic QR menus, live updates, and faster table turnover.',
+  },
+  {
+    id: 'smart-dashboard',
+    priority: 6,
     icon: <DashboardIcon />,
     title: 'Dashboard',
     description:
       'Real-time overview of your restaurant operations with intuitive analytics and performance insights.',
   },
   {
-    id: 'qsr',
-    priority: 3,
-    icon: <FastfoodIcon />,
-    title: 'QSR',
-    description:
-      'Quick-service workflows built for high-volume outlets with faster order and kitchen handoff.',
-  },
-  {
-    id: 'kot-system',
-    priority: 4,
-    icon: <RestaurantIcon />,
-    title: 'KOT System',
-    description:
-      'Streamlined kitchen order management with real-time ticket generation and tracking.',
-  },
-  {
-    id: 'inventory-management',
-    priority: 5,
-    icon: <InventoryIcon />,
-    title: 'Inventory & Recipe BOM',
-    description:
-      'Real-time raw ingredient tracking, recipe-level stock depletion on POS orders, supplier POs, and inter-branch transfers.',
-  },
-  {
     id: 'order-summary',
-    priority: 5,
+    priority: 7,
     icon: <TimelineIcon />,
     title: 'Order Management',
     description:
       'Track order details with complete status history, timeline, and end-to-end visibility.',
-  },
-  {
-    id: 'menu-management',
-    priority: 6,
-    icon: <MenuIcon />,
-    title: 'Menu Management',
-    description: 'Update menus instantly, manage categories, items, add-ons, and pricing in real time.',
-  },
-  {
-    id: 'qr-based-menu',
-    priority: 7,
-    icon: <QrCode2Icon />,
-    title: 'QR-Based Menu',
-    description:
-      'Enable contactless ordering with dynamic QR menus, live updates, and faster table turnover.',
   },
   {
     id: 'table-reservation',
@@ -105,67 +100,49 @@ const FEATURES = [
       'Allow customers to reserve tables online with slot-based scheduling and instant confirmation.',
   },
   {
-    id: 'combo-unlimited-meal',
+    id: 'qsr',
     priority: 9,
-    icon: <RestaurantMenuIcon />,
-    title: 'Combo & Unlimited Meal',
+    icon: <FastfoodIcon />,
+    title: 'QSR',
     description:
-      'Create profitable combo offers with smart bundling and pricing, plus unlimited buffet-style plans with timing controls and eligibility tracking.',
+      'Quick-service workflows built for high-volume outlets with faster order and kitchen handoff.',
   },
-  {
-    id: 'multiple-business',
-    priority: 10,
-    icon: <BusinessIcon />,
-    title: 'Multiple Business',
-    description: 'Create and manage multiple restaurant businesses from a single platform.',
-  },
+
+  // Tier 3: Multi-Location & Staff Management
   {
     id: 'multiple-branches',
-    priority: 11,
+    priority: 10,
     icon: <AccountTreeIcon />,
     title: 'Multiple Branches',
     description: 'Manage multiple branches with centralized control, reporting, and operations.',
   },
   {
-    id: 'branch-pricing',
-    priority: 12,
-    icon: <PaymentIcon />,
-    title: 'Branch-wise Pricing',
-    description: 'Set different item prices for each branch with flexible pricing control.',
-  },
-  {
     id: 'branch-staff-management',
-    priority: 13,
+    priority: 11,
     icon: <PeopleIcon />,
     title: 'Staff Management',
     description:
       'Add branch-wise employees, assign roles, schedule shifts, and manage workforce access.',
   },
   {
-    id: 'coupon',
-    priority: 14,
-    icon: <CouponIcon />,
-    title: 'Coupon',
-    description: 'Create and manage discount coupons with flexible rules, validity, and usage limits.',
+    id: 'multiple-business',
+    priority: 12,
+    icon: <BusinessIcon />,
+    title: 'Multiple Business',
+    description: 'Create and manage multiple restaurant businesses from a single platform.',
   },
   {
-    id: 'referral-system',
-    priority: 15,
-    icon: <ReferralIcon />,
-    title: 'Referral System',
-    description:
-      'Grow your customer base with referral codes, rewards, and trackable referral performance.',
+    id: 'branch-pricing',
+    priority: 13,
+    icon: <PaymentIcon />,
+    title: 'Branch-wise Pricing',
+    description: 'Set different item prices for each branch with flexible pricing control.',
   },
-  {
-    id: 'customer-reviews',
-    priority: 16,
-    icon: <RateReviewIcon />,
-    title: 'Customer Reviews',
-    description: 'Collect and review customer feedback and ratings to improve service quality.',
-  },
+
+  // Tier 4: Analytics, Finance & Compliance
   {
     id: 'advanced-reports',
-    priority: 17,
+    priority: 14,
     icon: <AssessmentIcon />,
     title: 'Advanced Reports',
     description:
@@ -173,35 +150,69 @@ const FEATURES = [
   },
   {
     id: 'tax-report',
-    priority: 18,
+    priority: 15,
     icon: <TaxReportIcon />,
     title: 'Tax Report',
     description: 'Branch-wise tax summaries and compliance-ready reports for accurate filing and audits.',
   },
   {
     id: 'branch-tax-management',
-    priority: 19,
+    priority: 16,
     icon: <TaxReportIcon />,
     title: 'Branch-wise Tax Management',
     description: 'Manage different tax rates and regulations for each branch location.',
   },
   {
     id: 'fiscal-year-records',
-    priority: 20,
+    priority: 17,
     icon: <CalendarMonthIcon />,
     title: 'Fiscal Year Records',
     description: 'Keep organized records fiscal year wise for better financial management and compliance.',
   },
   {
     id: 'digital-invoice-download',
-    priority: 21,
+    priority: 18,
     icon: <DownloadIcon />,
     title: 'Digital Invoice Download',
     description: 'Download digital invoices for record keeping and future business requirements.',
   },
+
+  // Tier 5: Revenue Growth & Customer Loyalty
+  {
+    id: 'combo-unlimited-meal',
+    priority: 19,
+    icon: <RestaurantMenuIcon />,
+    title: 'Combo & Unlimited Meal',
+    description:
+      'Create profitable combo offers with smart bundling and pricing, plus unlimited buffet-style plans with timing controls and eligibility tracking.',
+  },
+  {
+    id: 'coupon',
+    priority: 20,
+    icon: <CouponIcon />,
+    title: 'Coupon',
+    description: 'Create and manage discount coupons with flexible rules, validity, and usage limits.',
+  },
+  {
+    id: 'referral-system',
+    priority: 21,
+    icon: <ReferralIcon />,
+    title: 'Referral System',
+    description:
+      'Grow your customer base with referral codes, rewards, and trackable referral performance.',
+  },
+  {
+    id: 'customer-reviews',
+    priority: 22,
+    icon: <RateReviewIcon />,
+    title: 'Customer Reviews',
+    description: 'Collect and review customer feedback and ratings to improve service quality.',
+  },
+
+  // Tier 6: Enterprise Platform & Support
   {
     id: 'cloud-based-system',
-    priority: 22,
+    priority: 23,
     icon: <CloudIcon />,
     title: 'Cloud-Based System',
     description:
@@ -209,21 +220,21 @@ const FEATURES = [
   },
   {
     id: 'multiple-languages',
-    priority: 25,
+    priority: 24,
     icon: <LanguageIcon />,
     title: 'Multiple Languages',
     description: 'Support for multiple languages to serve diverse customer bases worldwide.',
   },
   {
     id: 'multiple-currency',
-    priority: 26,
+    priority: 25,
     icon: <CurrencyIcon />,
     title: 'Multiple Currency',
     description: 'Accept payments in multiple currencies for global business operations.',
   },
   {
     id: 'help-center',
-    priority: 27,
+    priority: 26,
     icon: <HelpCenterIcon />,
     title: 'Help Center',
     description:

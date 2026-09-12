@@ -37,6 +37,7 @@ const ICON_SIZE = { fontSize: 24 };
 const FEATURE_COLOR = 'var(--primary-color)';
 
 const DETAILED_FEATURES = [
+  // Tier 1: Core Kitchen & Billing Operations
   {
     id: 'pos',
     priority: 1,
@@ -47,62 +48,60 @@ const DETAILED_FEATURES = [
       'Fast, reliable point-of-sale billing with payments, discounts, and order sync across counters.',
   },
   {
-    id: 'smart-dashboard',
-    priority: 2,
-    icon: <DashboardIcon sx={ICON_SIZE} />,
-    title: 'Smart Dashboard',
-    subtitle: 'Real-time Business Intelligence',
-    description: 'Get instant insights into your restaurant performance with our intelligent dashboard.',
-  },
-  {
-    id: 'qsr',
-    priority: 3,
-    icon: <QsrIcon sx={ICON_SIZE} />,
-    title: 'QSR',
-    subtitle: 'Quick Service Restaurant',
-    description:
-      'Quick-service workflows built for high-volume outlets with faster order and kitchen handoff.',
-  },
-  {
     id: 'kot-system',
-    priority: 4,
+    priority: 2,
     icon: <RestaurantIcon sx={ICON_SIZE} />,
     title: 'KOT System',
     subtitle: 'Kitchen Order Tickets',
-    description: 'Streamlined kitchen order management with real-time ticket generation and tracking.',
+    description:
+      'Streamlined kitchen order management with real-time ticket generation, routing, and tracking.',
   },
   {
     id: 'inventory-management',
-    priority: 5,
+    priority: 3,
     icon: <InventoryIcon sx={ICON_SIZE} />,
     title: 'Inventory Management',
     subtitle: 'Raw Stock & BOM Recipes',
     description:
       'Real-time raw ingredient tracking, recipe BOM auto-depletion on POS/KOT orders, supplier POs, and multi-branch transfers.',
   },
-  {
-    id: 'order-summary',
-    priority: 5,
-    icon: <TimelineIcon sx={ICON_SIZE} />,
-    title: 'Order Summary & Timeline',
-    subtitle: 'Detailed Order Tracking',
-    description: 'Complete order details with status tracking and timeline for better order management.',
-  },
+
+  // Tier 2: Ordering & Customer Experience
   {
     id: 'menu-management',
-    priority: 6,
+    priority: 4,
     icon: <MenuIcon sx={ICON_SIZE} />,
     title: 'Menu Management',
     subtitle: 'Dynamic Menu Control',
-    description: 'Update menus instantly, manage categories, items, add-ons, and pricing in real time.',
+    description:
+      'Update menus instantly, manage categories, items, add-ons, modifiers, and pricing in real time.',
   },
   {
     id: 'qr-based-menu',
-    priority: 7,
+    priority: 5,
     icon: <QrCodeIcon sx={ICON_SIZE} />,
     title: 'QR-Based Menu',
     subtitle: 'Contactless Menu Experience',
-    description: 'Enable contactless ordering with dynamic QR menus, live updates, and faster table turnover.',
+    description:
+      'Enable contactless ordering with dynamic QR menus, live updates, and faster table turnover.',
+  },
+  {
+    id: 'smart-dashboard',
+    priority: 6,
+    icon: <DashboardIcon sx={ICON_SIZE} />,
+    title: 'Smart Dashboard',
+    subtitle: 'Real-time Business Intelligence',
+    description:
+      'Get instant insights into your restaurant performance with our intelligent real-time dashboard.',
+  },
+  {
+    id: 'order-summary',
+    priority: 7,
+    icon: <TimelineIcon sx={ICON_SIZE} />,
+    title: 'Order Summary & Timeline',
+    subtitle: 'Detailed Order Tracking',
+    description:
+      'Complete order details with status tracking, lifecycle timeline, and end-to-end visibility.',
   },
   {
     id: 'table-reservation',
@@ -110,78 +109,61 @@ const DETAILED_FEATURES = [
     icon: <CalendarMonthIcon sx={ICON_SIZE} />,
     title: 'Table Reservation',
     subtitle: 'Online Booking Management',
-    description: 'Allow customers to reserve tables with real-time slot availability and instant confirmations.',
-  },
-  {
-    id: 'combo-unlimited-meal',
-    priority: 9,
-    icon: <RestaurantMenuIcon sx={ICON_SIZE} />,
-    title: 'Combo & Unlimited Meal',
-    subtitle: 'Meal Package System',
     description:
-      'Create profitable combo offers with smart bundling and pricing, plus unlimited buffet-style plans with timing controls and eligibility tracking.',
+      'Allow customers to reserve tables with real-time slot availability, floor plans, and instant confirmations.',
   },
   {
-    id: 'multiple-business',
-    priority: 10,
-    icon: <BusinessIcon sx={ICON_SIZE} />,
-    title: 'Multiple Business',
-    subtitle: 'Multi-Entity Management',
-    description: 'Manage multiple business entities from a single platform with centralized control.',
+    id: 'qsr',
+    priority: 9,
+    icon: <QsrIcon sx={ICON_SIZE} />,
+    title: 'QSR',
+    subtitle: 'Quick Service Restaurant',
+    description:
+      'Quick-service workflows built for high-volume outlets with faster order and kitchen handoff.',
   },
+
+  // Tier 3: Multi-Location & Staff Management
   {
     id: 'multiple-branches',
-    priority: 11,
+    priority: 10,
     icon: <AccountTreeIcon sx={ICON_SIZE} />,
     title: 'Multiple Branches',
     subtitle: 'Branch Network Management',
-    description: 'Efficiently manage multiple branches with unified operations and reporting.',
-  },
-  {
-    id: 'branch-pricing',
-    priority: 12,
-    icon: <PriceChangeIcon sx={ICON_SIZE} />,
-    title: 'Branch-wise Pricing',
-    subtitle: 'Flexible Price Management',
-    description: 'Set different item prices for each branch based on local market conditions.',
+    description:
+      'Efficiently manage multiple branches with unified operations, central catalogs, and reporting.',
   },
   {
     id: 'branch-staff-management',
-    priority: 13,
+    priority: 11,
     icon: <GroupsIcon sx={ICON_SIZE} />,
     title: 'Branch-wise Staff Management',
     subtitle: 'Local Workforce Control',
-    description: 'Manage staff separately for each branch with localized permissions and scheduling.',
-  },
-  {
-    id: 'coupon',
-    priority: 14,
-    icon: <CouponIcon sx={ICON_SIZE} />,
-    title: 'Coupon',
-    subtitle: 'Promotions & Discounts',
     description:
-      'Create and manage discount coupons with flexible rules, validity periods, and usage limits.',
+      'Manage staff separately for each branch with localized permissions, shift attendance, and scheduling.',
   },
   {
-    id: 'referral-system',
-    priority: 15,
-    icon: <ReferralIcon sx={ICON_SIZE} />,
-    title: 'Referral System',
-    subtitle: 'Customer Growth',
+    id: 'multiple-business',
+    priority: 12,
+    icon: <BusinessIcon sx={ICON_SIZE} />,
+    title: 'Multiple Business',
+    subtitle: 'Multi-Entity Management',
     description:
-      'Grow your customer base with referral codes, rewards, and trackable referral performance.',
+      'Manage multiple restaurant business entities from a single platform with centralized executive control.',
   },
   {
-    id: 'customer-reviews',
-    priority: 16,
-    icon: <RateReviewIcon sx={ICON_SIZE} />,
-    title: 'Customer Reviews',
-    subtitle: 'Feedback Management',
-    description: 'Review pages to see customer feedback and ratings for continuous improvement.',
+    id: 'branch-pricing',
+    priority: 13,
+    icon: <PriceChangeIcon sx={ICON_SIZE} />,
+    title: 'Branch-wise Pricing',
+    subtitle: 'Flexible Price Management',
+    description:
+      'Set tailored item prices for each branch based on local market dynamics and operating costs.',
   },
+
+  // Tier 4: Analytics, Finance & Compliance
   {
     id: 'advanced-reports',
-    priority: 17,
+    priority: 14,
     icon: <AssessmentIcon sx={ICON_SIZE} />,
     title: 'Advanced Reports',
     subtitle: 'Growth Intelligence',
@@ -190,7 +172,7 @@ const DETAILED_FEATURES = [
   },
   {
     id: 'tax-report',
-    priority: 18,
+    priority: 15,
     icon: <ReceiptLongIcon sx={ICON_SIZE} />,
     title: 'Tax Report',
     subtitle: 'Compliance & Filing',
@@ -199,31 +181,74 @@ const DETAILED_FEATURES = [
   },
   {
     id: 'branch-tax-management',
-    priority: 19,
+    priority: 16,
     icon: <ReceiptLongIcon sx={ICON_SIZE} />,
     title: 'Branch-wise Tax Management',
     subtitle: 'Local Tax Compliance',
-    description: 'Manage different tax rates and regulations for each branch location.',
+    description:
+      'Manage different tax rates and local fiscal regulations for each restaurant branch location.',
   },
   {
     id: 'fiscal-year-records',
-    priority: 20,
+    priority: 17,
     icon: <CalendarMonthIcon sx={ICON_SIZE} />,
     title: 'Fiscal Year Records',
     subtitle: 'Organized Financial Data',
-    description: 'Keep organized records fiscal year wise for better financial management and compliance.',
+    description:
+      'Keep organized records fiscal year wise for seamless accounting, audits, and compliance.',
   },
   {
     id: 'digital-invoice-download',
-    priority: 21,
+    priority: 18,
     icon: <DownloadIcon sx={ICON_SIZE} />,
     title: 'Digital Invoice Download',
-    subtitle: 'Future Requirements',
-    description: 'Users can download digital invoices for future requirements and record keeping.',
+    subtitle: 'Record Keeping & PDF Export',
+    description:
+      'Users and managers can download digital invoices in PDF format for bookkeeping and records.',
+  },
+
+  // Tier 5: Revenue Growth & Customer Loyalty
+  {
+    id: 'combo-unlimited-meal',
+    priority: 19,
+    icon: <RestaurantMenuIcon sx={ICON_SIZE} />,
+    title: 'Combo & Unlimited Meal',
+    subtitle: 'Meal Package System',
+    description:
+      'Create profitable combo offers with smart bundling and pricing, plus unlimited buffet-style plans.',
   },
   {
-    id: 'cloud-based-system',
+    id: 'coupon',
+    priority: 20,
+    icon: <CouponIcon sx={ICON_SIZE} />,
+    title: 'Coupon',
+    subtitle: 'Promotions & Discounts',
+    description:
+      'Create and manage discount coupons with flexible rules, validity periods, and usage limits.',
+  },
+  {
+    id: 'referral-system',
+    priority: 21,
+    icon: <ReferralIcon sx={ICON_SIZE} />,
+    title: 'Referral System',
+    subtitle: 'Customer Growth',
+    description:
+      'Grow your customer base with referral codes, rewards, and trackable referral performance.',
+  },
+  {
+    id: 'customer-reviews',
     priority: 22,
+    icon: <RateReviewIcon sx={ICON_SIZE} />,
+    title: 'Customer Reviews',
+    subtitle: 'Feedback Management',
+    description:
+      'Review pages to monitor guest ratings and qualitative feedback for continuous operational improvement.',
+  },
+
+  // Tier 6: Enterprise Platform & Support
+  {
+    id: 'cloud-based-system',
+    priority: 23,
     icon: <CloudIcon sx={ICON_SIZE} />,
     title: 'Cloud-Based System',
     subtitle: 'Access Anywhere, Anytime',
@@ -232,23 +257,25 @@ const DETAILED_FEATURES = [
   },
   {
     id: 'multiple-languages',
-    priority: 25,
+    priority: 24,
     icon: <LanguageIcon sx={ICON_SIZE} />,
     title: 'Multiple Languages',
     subtitle: 'Global Communication',
-    description: 'Support for multiple languages to serve diverse customer bases worldwide.',
+    description:
+      'Support for multiple languages across front-of-house staff, back-of-house, and QR menus.',
   },
   {
     id: 'multiple-currency',
-    priority: 26,
+    priority: 25,
     icon: <CurrencyExchangeIcon sx={ICON_SIZE} />,
     title: 'Multiple Currency',
     subtitle: 'International Transactions',
-    description: 'Accept payments in multiple currencies for global business operations.',
+    description:
+      'Accept payments in multiple regional currencies for cross-border and international operations.',
   },
   {
     id: 'help-center',
-    priority: 27,
+    priority: 26,
     icon: <HelpCenterIcon sx={ICON_SIZE} />,
     title: 'Help Center',
     subtitle: 'Support & Resources',
