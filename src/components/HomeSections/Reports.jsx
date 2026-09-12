@@ -2,11 +2,15 @@ import {
   Assessment as ReportsSectionIcon,
   AccountTree as BranchWiseIcon,
   CalendarMonth as DateWiseIcon,
-  CardMembership as SubscriptionIcon,
-  Inventory2 as ItemWiseIcon,
+  Category as CategoryWiseIcon,
+  AccessTime as HourlyIcon,
+  TakeoutDining as OrderTypeIcon,
+  Payments as PaymentModeIcon,
+  RestaurantMenu as ItemWiseIcon,
   ReceiptLong as TaxReportIcon,
-  Share as ReferralReportIcon,
+  RateReview as ReviewReportIcon,
   TrendingUp as RevenueIcon,
+  Inventory2 as InventoryReportIcon,
 } from '@mui/icons-material';
 import { Box, Card, CardContent, Chip, Container, Typography } from '@mui/material';
 
@@ -14,53 +18,81 @@ const FEATURE_COLOR = 'var(--primary-color)';
 
 const REPORTS = [
   {
+    id: 'revenue-report',
+    icon: <RevenueIcon />,
+    title: 'Revenue Report',
+    description:
+      'Track total gross and net revenue, customer discounts, refund audits, and growth metrics across branches.',
+  },
+  {
     id: 'item-wise-report',
     icon: <ItemWiseIcon />,
     title: 'Item Wise Report',
     description:
-      'Analyze sales performance by menu item with quantities, revenue, and trends across periods.',
+      'Analyze sales volume and revenue by individual menu item to identify top-performing dishes and low-margin items.',
   },
   {
-    id: 'tax-report',
-    icon: <TaxReportIcon />,
-    title: 'Tax Report',
+    id: 'category-wise-report',
+    icon: <CategoryWiseIcon />,
+    title: 'Category Wise Report',
     description:
-      'View branch-wise tax summaries and compliance-ready breakdowns for accurate filing and audits.',
+      'Break down sales performance across food categories, beverages, appetizers, mains, and dessert menus.',
+  },
+  {
+    id: 'hourly-report',
+    icon: <HourlyIcon />,
+    title: 'Hourly Sales & Rush Report',
+    description:
+      'Identify peak dining rush hours and sales velocity by hour to optimize kitchen staffing and prep schedules.',
+  },
+  {
+    id: 'order-type-report',
+    icon: <OrderTypeIcon />,
+    title: 'Order Type Wise Report',
+    description:
+      'Compare revenue and ticket distribution across Dine-In, Takeaway, Delivery, and Tableside QR orders.',
+  },
+  {
+    id: 'payment-mode-report',
+    icon: <PaymentModeIcon />,
+    title: 'Payment Mode Report',
+    description:
+      'Reconcile daily tenders across Cash, Credit/Debit Cards, UPI, and Digital Wallets for transparent cash flow.',
   },
   {
     id: 'branch-wise-report',
     icon: <BranchWiseIcon />,
     title: 'Branch Wise Report',
     description:
-      'Compare performance across branches with orders, revenue, and operational metrics in one view.',
+      'Compare multi-location sales, order volumes, and operating performance side-by-side in one centralized view.',
   },
   {
     id: 'date-wise-report',
     icon: <DateWiseIcon />,
     title: 'Date Wise Report',
     description:
-      'Track daily, weekly, and custom date-range results to spot patterns and busy periods quickly.',
+      'Track daily, weekly, monthly, and custom calendar date ranges to identify seasonal dining patterns.',
   },
   {
-    id: 'subscription-report',
-    icon: <SubscriptionIcon />,
-    title: 'Subscription Report',
+    id: 'tax-report',
+    icon: <TaxReportIcon />,
+    title: 'Tax Wise Report',
     description:
-      'Monitor subscription plans, renewals, and billing status for transparent recurring revenue tracking.',
+      'Generate compliance-ready GST, VAT, and sales tax breakdowns with taxable and exempt sums for audit filing.',
   },
   {
-    id: 'referral-report',
-    icon: <ReferralReportIcon />,
-    title: 'Referral Report',
+    id: 'review-report',
+    icon: <ReviewReportIcon />,
+    title: 'Review & Feedback Report',
     description:
-      'Measure referral code usage, rewards, and customer growth driven by your referral programs.',
+      'Monitor guest satisfaction scores, customer reviews, ratings, and service feedback for continuous quality control.',
   },
   {
-    id: 'revenue-report',
-    icon: <RevenueIcon />,
-    title: 'Revenue Report',
+    id: 'inventory-report',
+    icon: <InventoryReportIcon />,
+    title: 'Inventory & COGS Report',
     description:
-      'Get a clear picture of total revenue with business and branch-level breakdowns and growth insights.',
+      'Monitor raw ingredient consumption, culinary wastage logs, food cost percentages, and stock valuation summaries.',
   },
 ];
 
@@ -76,7 +108,7 @@ const Reports = () => {
             Powerful Business Reports
           </Typography>
           <Typography variant="h5" className="reports-subtitle">
-            Make smarter decisions with detailed reports for items, taxes, branches, dates, subscriptions, referrals, and revenue
+            Make smarter decisions with real-time Owner Panel analytics for revenue, items, categories, hourly rush, order types, payment modes, branches, taxes, reviews, and inventory COGS.
           </Typography>
         </Box>
 

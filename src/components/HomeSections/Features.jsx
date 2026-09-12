@@ -146,7 +146,7 @@ const FEATURES = [
     icon: <AssessmentIcon />,
     title: 'Advanced Reports',
     description:
-      'Business and branch-wise revenue, growth intelligence, and fiscal year tracking.',
+      'Full Owner Panel reporting suite: Revenue, Item, Category, Hourly Rush, Order Type, Payment Mode, Branch, and Tax analytics.',
   },
   {
     id: 'tax-report',

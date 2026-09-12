@@ -451,22 +451,31 @@ export const FEATURES_DATA = {
     subtitle: 'Transform raw dining room transactions into actionable profit strategies with automated sales, inventory, tax, and labor reports.',
     overview: 'Restaurant profitability hinges on mastering your prime costs: food, beverage, and labor. SavoryOps provides deep operational reports that illuminate peak revenue hours, identify high-margin culinary stars, highlight ingredient shrinkage, and simplify tax filing.',
     benefits: [
-      { title: 'Sales & Revenue Audits', desc: 'View gross vs net revenue, payment breakdown, discount logs, and refund audits.' },
-      { title: 'Hourly Rush Heatmaps', desc: 'Pinpoint your busiest lunch and dinner hours to optimize kitchen and floor staffing.' },
-      { title: 'Menu Item Profitability', desc: 'Analyze sales velocity alongside raw food cost to identify menu stars and dogs.' },
-      { title: 'Tax & Compliance Ready', desc: 'Generate compliance-ready VAT, GST, and sales tax summaries for hassle-free filing.' }
+      { title: '10-Point Owner Panel Analytics', desc: 'Centralized suite covering Revenue, Items, Categories, Hourly Rush, Order Types, Payments, Branches, Taxes, Reviews, and Inventory.' },
+      { title: 'Hourly Rush Heatmaps', desc: 'Pinpoint your busiest lunch and dinner hours to optimize kitchen line staffing and floor prep schedules.' },
+      { title: 'Item & Category Profitability', desc: 'Analyze dish sales velocity and category margins to identify profitable culinary stars and eliminate slow movers.' },
+      { title: 'Audit & Compliance Ready', desc: 'Generate compliance-ready GST, VAT, and sales tax breakdowns with taxable and exempt sums for hassle-free filing.' }
     ],
     features: [
-      'Automated daily executive email summaries delivered after closing',
-      'Export reports to CSV, Excel, or PDF with one click',
-      'Branch-by-branch financial performance comparisons',
-      'Staff productivity metrics tracking sales per labor hour'
+      'Revenue Report: Track gross and net sales, discounts, refunds, payment distributions, and branch margins.',
+      'Item-Wise Sales Report: Dish-level quantity sold, revenue generation, and popularity trends across any timeframe.',
+      'Category-Wise Report: Sales volume and revenue contribution across Food, Beverages, Appetizers, Mains, and Desserts.',
+      'Hourly Sales & Rush Heatmap: Granular hourly sales velocity to identify peak dining windows and optimize labor rosters.',
+      'Order Type-Wise Report: Multi-channel sales distributed across Dine-In, Takeaway, Delivery, and Tableside QR orders.',
+      'Payment Mode Report: Tender reconciliation across Cash, Credit/Debit Cards, UPI, and Digital Wallets for transparent cash flow.',
+      'Branch-Wise Report: Side-by-side performance comparisons across all restaurant branches and commissary locations.',
+      'Date-Wise Report: Daily, weekly, monthly, and custom calendar date range analytics with comparative growth metrics.',
+      'Tax-Wise Compliance Report: Audit-ready GST, VAT, and sales tax breakdowns with clear taxable, tax, and exempt totals.',
+      'Customer Review & Feedback Report: Monitor guest ratings, sentiment trends, and waitstaff service quality.',
+      'Inventory Consumption & COGS Report: Real-time ingredient consumption curves, wastage audits, and stock valuation summaries.',
+      'One-Click Export: Instantly export any Owner Panel report to CSV, Excel, or formatted PDF summaries.'
     ],
     faqs: [
-      { question: 'Can I export reports for my accountant?', answer: 'Yes. All SavoryOps financial, sales, and tax reports export cleanly to Excel, CSV, and formatted PDF summaries.' },
+      { question: 'What reports are included in the SavoryOps Owner Panel?', answer: 'The Owner Panel features 10 dedicated report modules: Revenue Report, Item-Wise Report, Category-Wise Report, Hourly Rush Report, Order Type-Wise Report, Payment Mode Report, Branch-Wise Report, Date-Wise Report, Tax-Wise Report, and Customer Review Report, plus real-time Inventory COGS reporting.' },
+      { question: 'Can I export reports for my accountant or tax auditor?', answer: 'Yes. All SavoryOps financial, sales, tax, and inventory reports export cleanly to Excel, CSV, and formatted PDF summaries with one click.' },
       { question: 'Does SavoryOps calculate food cost percentage automatically?', answer: 'Yes. By pairing POS sales data with recipe ingredient depletion, SavoryOps calculates your theoretical and actual food cost percentages in real time.' },
-      { question: 'What types of sales and operational reports can I generate?', answer: 'SavoryOps provides daily Z-reports, hourly sales heatmaps, category-wise revenue distribution, server sales productivity, payment tender reconciliations, tax summaries, and void/cancellation logs.' },
-      { question: 'Can I receive automated daily financial summaries via email?', answer: 'Yes. SavoryOps can automatically send end-of-day executive email digests to owners and regional directors as soon as the closing register reconciliation is finalized.' },
+      { question: 'Can I compare sales performance between multiple restaurant branches?', answer: 'Yes. The Branch-Wise Report gives multi-location owners side-by-side comparisons of gross revenue, average check sizes, order counts, and item velocity across all stores.' },
+      { question: 'How does the Hourly Rush Report help restaurant managers?', answer: 'The Hourly Report visualizes peak ordering hours throughout the day, allowing managers to schedule cooks and servers accurately, reduce overtime costs, and prepare prepped ingredients before peak rushes.' },
       { question: 'How does SavoryOps help detect staff theft and billing discrepancies?', answer: 'SavoryOps tracks cash drawer openings without sales, voids, bill re-prints, and manager discount overrides with full server PIN logging and variance audits.' }
     ],
     ctaText: 'View Food Cost Guide',

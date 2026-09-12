@@ -166,9 +166,9 @@ const DETAILED_FEATURES = [
     priority: 14,
     icon: <AssessmentIcon sx={ICON_SIZE} />,
     title: 'Advanced Reports',
-    subtitle: 'Growth Intelligence',
+    subtitle: 'Owner Panel Analytics',
     description:
-      'Business and branch-wise revenue, growth intelligence, and comprehensive analytics for better decisions.',
+      'Full Owner Panel reporting suite: Revenue, Item-Wise, Category, Hourly Rush, Order Type, Payment Mode, Branch, Tax, and Review analytics.',
   },
   {
     id: 'tax-report',
