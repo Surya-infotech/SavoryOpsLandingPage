@@ -83,7 +83,8 @@ const AppContent = () => {
       path.startsWith('/solutions/') ||
       path.startsWith('/alternatives/') ||
       path.startsWith('/resources/') ||
-      path.startsWith('/features/') ||
+      path.startsWith('/features') ||
+      path.startsWith('/upcoming-features') ||
       path.startsWith('/blog')
     ) {
       return;

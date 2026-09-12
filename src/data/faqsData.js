@@ -51,9 +51,9 @@ export const faqsData = [
   {
     id: 'inventory-recipe-costing',
     category: 'Kitchen & Operations',
-    question: 'How does recipe costing and ingredient-level inventory tracking work in SavoryOps?',
-    shortAnswer: 'Every POS sale automatically deducts exact ingredient quantities, calculates food cost percentages, and triggers low-stock PO alerts.',
-    answer: 'SavoryOps links menu items directly to their raw ingredients. Every POS sale automatically deducts exact quantities (e.g., grams of cheese, milliliters of syrup), calculates real-time food cost percentages, and triggers low-stock threshold purchase order alerts.'
+    question: 'How does recipe costing, BOM, and ingredient-level inventory tracking work in SavoryOps?',
+    shortAnswer: 'Every POS sale automatically deducts exact ingredient quantities via recipe BOMs, tracks supplier purchase orders, manages commissary transfers, and calculates live food cost percentages.',
+    answer: 'SavoryOps features a complete 10-point inventory system: raw ingredient catalogs, Bill of Materials (BOM) recipes with modifier addons, automated real-time stock deduction upon POS/KOT orders, supplier purchase orders with inward delivery receiving, inter-branch commissary stock transfers, categorized wastage & shrinkage adjustments, multi-unit conversions (UOM), ingredient categories, live stock valuation dashboards, and comprehensive Cost of Goods Sold (COGS) reporting.'
   },
   {
     id: 'hardware-compatibility',

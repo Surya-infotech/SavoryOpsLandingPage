@@ -126,6 +126,8 @@ const FeatureDetailPage = () => {
         keywords={[feature.primaryKeyword, ...(feature.secondaryKeywords || [])]}
         primaryKeyword={feature.primaryKeyword}
         faqs={feature.faqs}
+        canonicalUrl={`https://savoryops.com/features/${feature.id}`}
+        ogImage={featureImage}
       />
 
       {/* Hero Section */}

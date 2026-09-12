@@ -130,7 +130,20 @@ const SEOHead = ({
         'applicationCategory': 'RestaurantManagementApplication',
         'operatingSystem': 'Web, Cloud, iOS, Android',
         'url': 'https://savoryops.com',
+        'image': ogImage ? (ogImage.startsWith('http') ? ogImage : `https://savoryops.com${ogImage}`) : 'https://savoryops.com/Web_Logo.png',
         'description': description || 'Complete Restaurant Management System, Cloud POS, and Kitchen Display System SaaS platform.',
+        'featureList': [
+          'Point of Sale (POS) Billing & High-Speed Touchscreen Ordering',
+          'Kitchen Order Ticket (KOT) Routing & Kitchen Display System (KDS)',
+          'Real-time Ingredient-level BOM Inventory Management',
+          'Automated Recipe Stock Depletion on POS and KOT Orders',
+          'Supplier Directory, Vendor Purchase Orders & Inward Delivery Receiving',
+          'Inter-Branch & Central Commissary Stock Transfers',
+          'Physical Stock Adjustments, Spoilage & Wastage Loss Audits',
+          'Dynamic Contactless QR Digital Menus & Tableside Ordering',
+          'Online Table Reservation & Floor Plan Management',
+          'Enterprise Multi-Branch Consolidated Analytics & COGS Reports'
+        ],
         'sameAs': [
           'https://reviews.capterra.com/products/new/cd4941f7-7adc-4ad9-8652-6766cd4e284d/',
           'https://www.trustpilot.com/review/savoryops.com',
