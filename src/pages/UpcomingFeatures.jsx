@@ -70,9 +70,9 @@ const UpcomingFeatures = () => {
       color: 'var(--primary-color)'
     },
     {
-      title: 'Inventory Tracking',
-      subtitle: 'Stock & Supply Control',
-      description: 'Real-time ingredient tracking, low-stock automated alerts, purchase order management, and wastage reduction.',
+      title: 'AI Predictive Inventory Forecasting',
+      subtitle: 'Smart Demand Prediction',
+      description: 'AI-driven ingredient demand forecasting using machine learning based on historical sales velocity, holiday reservations, and weather patterns.',
       icon: <Inventory2Icon sx={{ fontSize: 24 }} />,
       color: 'var(--primary-color)'
     },

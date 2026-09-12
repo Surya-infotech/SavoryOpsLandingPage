@@ -26,6 +26,11 @@ const FEATURE_IMAGE_MAP = {
   'order-summary': '/images/order-types/pickup.jpg',
   'order_summary': '/images/order-types/pickup.jpg',
 
+  // Inventory & Stock Control
+  'inventory': '/images/features/inventory-management.jpg',
+  'inventory-management': '/images/features/inventory-management.jpg',
+  'inventory_management': '/images/features/inventory-management.jpg',
+
   // POS & Billing
   'pos': '/images/features/pos-system.jpg',
   'pos-system': '/images/features/pos-system.jpg',

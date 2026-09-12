@@ -24,6 +24,110 @@
  */
 
 export const FEATURES_DATA = {
+  'inventory-management': {
+    id: 'inventory-management',
+    badge: 'Ingredient-Level Control & COGS',
+    title: 'Smart Restaurant Inventory & BOM Recipe Management',
+    metaTitle: 'Restaurant Inventory Management Software & Recipe BOM | SavoryOps',
+    metaDescription: 'Take full control of restaurant food costs with SavoryOps. Recipe BOM ingredient depletion, automated low-stock alerts, vendor POs, and multi-branch transfers.',
+    primaryKeyword: 'Restaurant Inventory Management Software',
+    secondaryKeywords: [
+      'restaurant inventory management',
+      'recipe costing software',
+      'ingredient level inventory',
+      'restaurant bill of materials bom',
+      'kitchen stock management',
+      'inter-branch stock transfers',
+      'restaurant wastage tracking',
+      'food cost cogs software',
+      'restaurant supplier purchase orders'
+    ],
+    h1: 'Comprehensive Restaurant Inventory & Recipe Costing Management System',
+    subtitle: 'Track raw ingredients, automate recipe BOM depletion on POS/KOT sales, manage vendor purchases, streamline inter-branch transfers, and eliminate culinary waste.',
+    overview: 'Food cost variance, unrecorded shrinkage, and manual stock counts can drain 5% to 8% of your gross margins. The SavoryOps Inventory Management module provides end-to-end stock control built specifically for modern commercial kitchens and multi-branch operators. From precise Bill of Materials (BOM) dish recipes down to grams and milliliters, to automated supplier purchase orders and commissary stock dispatches, SavoryOps keeps your back-of-house operations running with surgical precision.',
+    benefits: [
+      { title: 'Zero-Surprise Stockouts', desc: 'Real-time low stock warnings and automated reorder alerts ensure your kitchen never runs out of key ingredients during peak service.' },
+      { title: 'Ingredient-Level BOM Precision', desc: 'Map every menu dish and addon to raw ingredients; stock automatically depletes in real time with every POS and KOT order.' },
+      { title: 'Accurate Plate Margins & COGS', desc: 'Live Cost of Goods Sold calculations and plate-level margin insights help you identify high-margin dishes and eliminate unprofitable menu items.' },
+      { title: 'Streamlined Vendor Procurement', desc: 'Centralize supplier directories, create structured purchase orders, and record received deliveries with automatic stock replenishment.' },
+      { title: 'Inter-Branch Commissary Transfers', desc: 'Move inventory seamlessly between central prep kitchens and retail outlets with dispatch notes, transit logs, and receiving acceptance.' },
+      { title: 'Shrinkage & Wastage Accountability', desc: 'Track physical inventory adjustments with categorized reason codes (spoilage, burning, expiration, theft) to enforce kitchen discipline.' }
+    ],
+    features: [
+      'Raw Material Catalog: Manage ingredient SKUs, assign categories, units of measure, cost prices, and min-max reorder thresholds.',
+      'Recipe & Bill of Materials (BOM): Link dishes and modifiers/addons to exact raw ingredients with portion weights for real-time automatic depletion upon POS/KOT ordering.',
+      'Purchase Orders & Inward Receiving: Generate supplier purchase orders, track order fulfillment, log delivery invoices, and update stock counts with weighted average costs.',
+      'Supplier & Vendor Management: Maintain vendor profiles, contact details, payment terms, tax/GST registrations, and purchase history.',
+      'Inter-Branch & Commissary Stock Transfers: Dispatch ingredients from central commissary kitchens to satellite outlets with transfer status tracking and receiving verification.',
+      'Stock Adjustments & Wastage Audits: Log physical stock count variances, prep burns, expiration losses, and kitchen waste with dedicated reason codes.',
+      'Units of Measurement (UOM) & Conversions: Configure base measurement units (kg, g, L, ml, pcs, dozens, packs) with automated conversion ratios.',
+      'Ingredient Categorization: Organize raw materials into clear categories like Produce, Meats, Dairy, Spices, Bakery, Dry Stores, and Packaging.',
+      'Real-Time Inventory Dashboard: Live overview of total stock valuation, low-stock alerts, consumption velocity, and fast-depleting ingredients.',
+      'Comprehensive Inventory & COGS Reports: Track actual vs. theoretical consumption, wastage patterns, supplier expense breakdowns, and stock valuation summaries.'
+    ],
+    faqs: [
+      { question: 'How does automatic recipe stock depletion work in SavoryOps?', answer: 'When you create a recipe in SavoryOps, you define the exact raw ingredients required for each dish (e.g. 150g beef patty, 1 brioche bun, 30g cheese, 15ml sauce) as well as addon modifiers. Whenever a cashier or guest places an order via POS or QR menu, SavoryOps immediately deducts those exact quantities from your raw inventory in real time.' },
+      { question: 'Can I track inventory for menu add-ons and modifiers?', answer: 'Yes. SavoryOps supports addon-level recipe configurations. For example, if a guest orders an extra cheese slice or double bacon, the system automatically pulls the additional ingredients from your pantry stock.' },
+      { question: 'How do inter-branch stock transfers work between commissary kitchens and outlets?', answer: 'You can initiate a stock transfer from your central kitchen or warehouse to any satellite restaurant branch. The system logs the dispatched items, marks the transfer as in-transit, and automatically credits the receiving branch\'s inventory once the store manager accepts and confirms the received quantities.' },
+      { question: 'How does SavoryOps handle units of measure (e.g., purchasing in kilograms but using in grams)?', answer: 'SavoryOps features built-in Unit of Measurement (UOM) conversion. You can purchase bulk ingredients in kilograms, liters, or boxes, and link recipes in grams, milliliters, or single pieces. The system automatically converts units and calculates accurate fractional costs.' },
+      { question: 'What types of stock adjustments and wastage can I record?', answer: 'You can record physical stock reconciliations and log culinary wastage with customizable reason codes such as Spoilage, Kitchen Burn, Damaged in Transit, Expired, or Tasting. This provides complete visibility into culinary shrink and staff accountability.' },
+      { question: 'Can I generate supplier purchase orders directly from the system?', answer: 'Yes. When an ingredient hits its minimum threshold, SavoryOps flags a low-stock alert. You can generate purchase orders grouped by vendor, record incoming invoices, and automatically replenish stock levels upon delivery confirmation.' }
+    ],
+    ctaText: 'Explore Inventory Management',
+    ctaLink: '/solutions/restaurant-inventory-management'
+  },
+  'inventory': {
+    id: 'inventory',
+    badge: 'Ingredient-Level Control & COGS',
+    title: 'Smart Restaurant Inventory & BOM Recipe Management',
+    metaTitle: 'Restaurant Inventory Management Software & Recipe BOM | SavoryOps',
+    metaDescription: 'Take full control of restaurant food costs with SavoryOps. Recipe BOM ingredient depletion, automated low-stock alerts, vendor POs, and multi-branch transfers.',
+    primaryKeyword: 'Restaurant Inventory Management Software',
+    secondaryKeywords: [
+      'restaurant inventory management',
+      'recipe costing software',
+      'ingredient level inventory',
+      'restaurant bill of materials bom',
+      'kitchen stock management',
+      'inter-branch stock transfers',
+      'restaurant wastage tracking',
+      'food cost cogs software',
+      'restaurant supplier purchase orders'
+    ],
+    h1: 'Comprehensive Restaurant Inventory & Recipe Costing Management System',
+    subtitle: 'Track raw ingredients, automate recipe BOM depletion on POS/KOT sales, manage vendor purchases, streamline inter-branch transfers, and eliminate culinary waste.',
+    overview: 'Food cost variance, unrecorded shrinkage, and manual stock counts can drain 5% to 8% of your gross margins. The SavoryOps Inventory Management module provides end-to-end stock control built specifically for modern commercial kitchens and multi-branch operators. From precise Bill of Materials (BOM) dish recipes down to grams and milliliters, to automated supplier purchase orders and commissary stock dispatches, SavoryOps keeps your back-of-house operations running with surgical precision.',
+    benefits: [
+      { title: 'Zero-Surprise Stockouts', desc: 'Real-time low stock warnings and automated reorder alerts ensure your kitchen never runs out of key ingredients during peak service.' },
+      { title: 'Ingredient-Level BOM Precision', desc: 'Map every menu dish and addon to raw ingredients; stock automatically depletes in real time with every POS and KOT order.' },
+      { title: 'Accurate Plate Margins & COGS', desc: 'Live Cost of Goods Sold calculations and plate-level margin insights help you identify high-margin dishes and eliminate unprofitable menu items.' },
+      { title: 'Streamlined Vendor Procurement', desc: 'Centralize supplier directories, create structured purchase orders, and record received deliveries with automatic stock replenishment.' },
+      { title: 'Inter-Branch Commissary Transfers', desc: 'Move inventory seamlessly between central prep kitchens and retail outlets with dispatch notes, transit logs, and receiving acceptance.' },
+      { title: 'Shrinkage & Wastage Accountability', desc: 'Track physical inventory adjustments with categorized reason codes (spoilage, burning, expiration, theft) to enforce kitchen discipline.' }
+    ],
+    features: [
+      'Raw Material Catalog: Manage ingredient SKUs, assign categories, units of measure, cost prices, and min-max reorder thresholds.',
+      'Recipe & Bill of Materials (BOM): Link dishes and modifiers/addons to exact raw ingredients with portion weights for real-time automatic depletion upon POS/KOT ordering.',
+      'Purchase Orders & Inward Receiving: Generate supplier purchase orders, track order fulfillment, log delivery invoices, and update stock counts with weighted average costs.',
+      'Supplier & Vendor Management: Maintain vendor profiles, contact details, payment terms, tax/GST registrations, and purchase history.',
+      'Inter-Branch & Commissary Stock Transfers: Dispatch ingredients from central commissary kitchens to satellite outlets with transfer status tracking and receiving verification.',
+      'Stock Adjustments & Wastage Audits: Log physical stock count variances, prep burns, expiration losses, and kitchen waste with dedicated reason codes.',
+      'Units of Measurement (UOM) & Conversions: Configure base measurement units (kg, g, L, ml, pcs, dozens, packs) with automated conversion ratios.',
+      'Ingredient Categorization: Organize raw materials into clear categories like Produce, Meats, Dairy, Spices, Bakery, Dry Stores, and Packaging.',
+      'Real-Time Inventory Dashboard: Live overview of total stock valuation, low-stock alerts, consumption velocity, and fast-depleting ingredients.',
+      'Comprehensive Inventory & COGS Reports: Track actual vs. theoretical consumption, wastage patterns, supplier expense breakdowns, and stock valuation summaries.'
+    ],
+    faqs: [
+      { question: 'How does automatic recipe stock depletion work in SavoryOps?', answer: 'When you create a recipe in SavoryOps, you define the exact raw ingredients required for each dish (e.g. 150g beef patty, 1 brioche bun, 30g cheese, 15ml sauce) as well as addon modifiers. Whenever a cashier or guest places an order via POS or QR menu, SavoryOps immediately deducts those exact quantities from your raw inventory in real time.' },
+      { question: 'Can I track inventory for menu add-ons and modifiers?', answer: 'Yes. SavoryOps supports addon-level recipe configurations. For example, if a guest orders an extra cheese slice or double bacon, the system automatically pulls the additional ingredients from your pantry stock.' },
+      { question: 'How do inter-branch stock transfers work between commissary kitchens and outlets?', answer: 'You can initiate a stock transfer from your central kitchen or warehouse to any satellite restaurant branch. The system logs the dispatched items, marks the transfer as in-transit, and automatically credits the receiving branch\'s inventory once the store manager accepts and confirms the received quantities.' },
+      { question: 'How does SavoryOps handle units of measure (e.g., purchasing in kilograms but using in grams)?', answer: 'SavoryOps features built-in Unit of Measurement (UOM) conversion. You can purchase bulk ingredients in kilograms, liters, or boxes, and link recipes in grams, milliliters, or single pieces. The system automatically converts units and calculates accurate fractional costs.' },
+      { question: 'What types of stock adjustments and wastage can I record?', answer: 'You can record physical stock reconciliations and log culinary wastage with customizable reason codes such as Spoilage, Kitchen Burn, Damaged in Transit, Expired, or Tasting. This provides complete visibility into culinary shrink and staff accountability.' },
+      { question: 'Can I generate supplier purchase orders directly from the system?', answer: 'Yes. When an ingredient hits its minimum threshold, SavoryOps flags a low-stock alert. You can generate purchase orders grouped by vendor, record incoming invoices, and automatically replenish stock levels upon delivery confirmation.' }
+    ],
+    ctaText: 'Explore Inventory Management',
+    ctaLink: '/solutions/restaurant-inventory-management'
+  },
   'kot-system': {
     id: 'kot-system',
     badge: 'Kitchen Velocity',

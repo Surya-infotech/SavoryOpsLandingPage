@@ -11,6 +11,7 @@ import {
   Dashboard as DashboardIcon,
   Download as DownloadIcon,
   Fastfood as FastfoodIcon,
+  Inventory as InventoryIcon,
   Language as LanguageIcon,
   Menu as MenuIcon,
   Payment as PaymentIcon,
@@ -63,6 +64,14 @@ const FEATURES = [
     title: 'KOT System',
     description:
       'Streamlined kitchen order management with real-time ticket generation and tracking.',
+  },
+  {
+    id: 'inventory-management',
+    priority: 5,
+    icon: <InventoryIcon />,
+    title: 'Inventory & Recipe BOM',
+    description:
+      'Real-time raw ingredient tracking, recipe-level stock depletion on POS orders, supplier POs, and inter-branch transfers.',
   },
   {
     id: 'order-summary',
