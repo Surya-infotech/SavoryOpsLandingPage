@@ -78,68 +78,12 @@ const AppContent = () => {
     const baseTitle = softwareName || 'SavoryOps';
     const path = location.pathname.toLowerCase();
 
-    // Prevent overwriting rich SEO head titles dynamically set by SEOHead
-    if (
-      path.startsWith('/solutions/') ||
-      path.startsWith('/alternatives/') ||
-      path.startsWith('/resources/') ||
-      path.startsWith('/features') ||
-      path.startsWith('/upcoming-features') ||
-      path.startsWith('/blog')
-    ) {
-      return;
-    }
-
-    let pageTitle = '';
-    switch (path) {
-      case '/':
-        pageTitle = '';
-        break;
-      case '/features':
-        pageTitle = 'Features';
-        break;
-      case '/why-savoryops':
-      case '/why-us':
-        pageTitle = `Why ${baseTitle} - Benefits & Comparison`;
-        break;
-      case '/pricing':
-        pageTitle = 'Pricing & Plans';
-        break;
-      case '/upcoming-features':
-        pageTitle = 'Upcoming Features & Roadmap';
-        break;
-      case '/about-us':
-      case '/about':
-        pageTitle = 'About Us';
-        break;
-      case '/contact-us':
-        pageTitle = 'Contact Us';
-        break;
-      case '/faq':
-      case '/faqs':
-        pageTitle = 'Frequently Asked Questions (FAQ)';
-        break;
-      case '/privacy-policy':
-        pageTitle = 'Privacy Policy';
-        break;
-      case '/data-deletion-policy':
-        pageTitle = 'Data Deletion Policy';
-        break;
-      case '/signin':
-        pageTitle = 'Sign In';
-        break;
-      case '/signup':
-        pageTitle = 'Sign Up';
-        break;
-      default:
-        pageTitle = '';
-        break;
-    }
-
-    if (pageTitle) {
-      document.title = `${pageTitle} - ${baseTitle}`;
-    } else {
-      document.title = `${baseTitle} - Complete Restaurant Management System | Streamline Your Operations`;
+    // Pages that manage their own rich SEO titles via SEOHead are preserved
+    // Only auth pages without explicit titles need fallback handling
+    if (path === '/signin') {
+      document.title = `Sign In - ${baseTitle}`;
+    } else if (path === '/signup') {
+      document.title = `Sign Up - ${baseTitle}`;
     }
   }, [location.pathname, softwareName]);
 
@@ -183,6 +127,8 @@ const AppContent = () => {
         <Route path="/solutions/restaurant-inventory-management" element={<SEOLandingPage clusterId="restaurant-inventory-management" />} />
         <Route path="/alternatives/toast-pos-alternative" element={<SEOLandingPage clusterId="toast-pos-alternative" />} />
         <Route path="/alternatives/square-pos-alternative" element={<SEOLandingPage clusterId="square-pos-alternative" />} />
+        <Route path="/alternatives/touchbistro-alternative" element={<SEOLandingPage clusterId="touchbistro-alternative" />} />
+        <Route path="/solutions/cloud-kitchen-pos-system" element={<SEOLandingPage clusterId="cloud-kitchen-pos-system" />} />
         <Route path="/resources/food-cost-percentage-guide" element={<SEOLandingPage clusterId="food-cost-percentage-guide" />} />
 
         <Route path="/Signin" element={<OwnerLogin />} />

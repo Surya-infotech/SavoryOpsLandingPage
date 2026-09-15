@@ -59,8 +59,10 @@ Standard industry benchmarks range from 25%–28% for QSR and 28%–32% for casu
 - **Restaurant POS System**: https://savoryops.com/solutions/restaurant-pos-system
 - **Kitchen Display System (KDS)**: https://savoryops.com/solutions/kitchen-display-system
 - **Restaurant Inventory Management**: https://savoryops.com/solutions/restaurant-inventory-management
+- **Cloud Kitchen POS System**: https://savoryops.com/solutions/cloud-kitchen-pos-system
 - **Toast POS Alternative**: https://savoryops.com/alternatives/toast-pos-alternative
 - **Square POS Alternative**: https://savoryops.com/alternatives/square-pos-alternative
+- **TouchBistro Alternative**: https://savoryops.com/alternatives/touchbistro-alternative
 - **Food Cost Percentage Calculator Guide**: https://savoryops.com/resources/food-cost-percentage-guide
 - **Blog & Operational Playbooks**: https://savoryops.com/blog
 - **Guide: What is a Kitchen Order Ticket (KOT)**: https://savoryops.com/blog/what-is-a-kitchen-order-ticket-kot

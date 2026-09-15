@@ -15,11 +15,19 @@ const SEOHead = ({
   faqs = [],
   canonicalUrl,
   ogImage = '/Web_Logo.png',
-  schemaType = 'SoftwareApplication'
+  schemaType = 'SoftwareApplication',
+  authorName = 'Suraj Dholakiya',
+  datePublished,
+  dateModified
 }) => {
   const location = useLocation();
   const { language } = useLanguage();
   const currentUrl = canonicalUrl || `https://savoryops.com${location.pathname.toLowerCase()}`;
+  const resolvedOgImage = ogImage
+    ? ogImage.startsWith('http')
+      ? ogImage
+      : `https://savoryops.com${ogImage.startsWith('/') ? '' : '/'}${ogImage}`
+    : 'https://savoryops.com/Web_Logo.png';
 
   useEffect(() => {
     // Determine active language data
@@ -67,16 +75,16 @@ const SEOHead = ({
 
     // 3. Open Graph Tags
     setMetaTag('meta[property="og:title"]', 'property', 'og:title', title || document.title);
-    setMetaTag('meta[property="og:description"]', 'property', 'og:description', description || '');
+    setMetaTag('meta[property="og:description"]', 'property', 'og:description', resolvedDescription);
     setMetaTag('meta[property="og:url"]', 'property', 'og:url', currentUrl);
-    setMetaTag('meta[property="og:image"]', 'property', 'og:image', ogImage);
-    setMetaTag('meta[property="og:type"]', 'property', 'og:type', 'website');
+    setMetaTag('meta[property="og:image"]', 'property', 'og:image', resolvedOgImage);
+    setMetaTag('meta[property="og:type"]', 'property', 'og:type', schemaType === 'Article' ? 'article' : 'website');
 
     // 4. Twitter Card Tags
     setMetaTag('meta[name="twitter:card"]', 'name', 'twitter:card', 'summary_large_image');
     setMetaTag('meta[name="twitter:title"]', 'name', 'twitter:title', title || document.title);
-    setMetaTag('meta[name="twitter:description"]', 'name', 'twitter:description', description || '');
-    setMetaTag('meta[name="twitter:image"]', 'name', 'twitter:image', ogImage);
+    setMetaTag('meta[name="twitter:description"]', 'name', 'twitter:description', resolvedDescription);
+    setMetaTag('meta[name="twitter:image"]', 'name', 'twitter:image', resolvedOgImage);
 
     // 5. Canonical Link
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -121,8 +129,46 @@ const SEOHead = ({
       document.head.appendChild(scriptTag);
     }
 
-    const schemas = [
-      {
+    const schemas = [];
+
+    if (schemaType === 'Article' || schemaType === 'BlogPosting') {
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        'headline': title || document.title,
+        'description': resolvedDescription,
+        'image': resolvedOgImage,
+        'author': {
+          '@type': 'Person',
+          'name': authorName || 'Suraj Dholakiya',
+          'jobTitle': 'Founder & Software Engineer',
+          'url': 'https://www.linkedin.com/in/surajdholakiya',
+          'sameAs': [
+            'https://www.linkedin.com/in/surajdholakiya',
+            'https://savoryops.com/about-us'
+          ]
+        },
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'SavoryOps',
+          'url': 'https://savoryops.com',
+          'logo': {
+            '@type': 'ImageObject',
+            'url': 'https://savoryops.com/logo.png',
+            'width': '512',
+            'height': '512'
+          }
+        },
+        'datePublished': datePublished ? new Date(datePublished).toISOString() : '2025-08-15T00:00:00Z',
+        'dateModified': dateModified ? new Date(dateModified).toISOString() : new Date().toISOString().split('T')[0] + 'T00:00:00Z',
+        'mainEntityOfPage': {
+          '@type': 'WebPage',
+          '@id': currentUrl
+        },
+        'keywords': mergedKeywords.join(', ')
+      });
+    } else {
+      schemas.push({
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
         'name': 'SavoryOps',
@@ -130,8 +176,8 @@ const SEOHead = ({
         'applicationCategory': 'RestaurantManagementApplication',
         'operatingSystem': 'Web, Cloud, iOS, Android',
         'url': 'https://savoryops.com',
-        'image': ogImage ? (ogImage.startsWith('http') ? ogImage : `https://savoryops.com${ogImage}`) : 'https://savoryops.com/Web_Logo.png',
-        'description': description || 'Complete Restaurant Management System, Cloud POS, and Kitchen Display System SaaS platform.',
+        'image': resolvedOgImage,
+        'description': resolvedDescription || 'Complete Restaurant Management System, Cloud POS, and Kitchen Display System SaaS platform.',
         'featureList': [
           'Point of Sale (POS) Billing & High-Speed Touchscreen Ordering',
           'Kitchen Order Ticket (KOT) Routing & Kitchen Display System (KDS)',
@@ -161,10 +207,12 @@ const SEOHead = ({
           'ratingValue': '4.9',
           'ratingCount': '128'
         }
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
+      });
+    }
+
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
         'itemListElement': (() => {
           const pathSegments = location.pathname.split('/').filter(Boolean);
           if (pathSegments.length <= 1) {
@@ -205,8 +253,7 @@ const SEOHead = ({
             }
           ];
         })()
-      }
-    ];
+      });
 
     if (faqs && faqs.length > 0) {
       schemas.push({
@@ -313,7 +360,7 @@ const SEOHead = ({
         scriptTag.parentNode.removeChild(scriptTag);
       }
     };
-  }, [title, description, keywords, primaryKeyword, faqs, currentUrl, ogImage, schemaType]);
+  }, [title, description, keywords, primaryKeyword, faqs, currentUrl, resolvedOgImage, schemaType, authorName, datePublished, dateModified]);
 
   return null;
 };

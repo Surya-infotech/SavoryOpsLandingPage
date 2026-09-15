@@ -139,8 +139,10 @@ const Footer = () => {
     { name: 'Kitchen Order Ticket (KOT)', href: '/solutions/kitchen-order-ticket-system' },
     { name: 'Kitchen Display System', href: '/solutions/kitchen-display-system' },
     { name: 'Inventory Management', href: '/solutions/restaurant-inventory-management' },
+    { name: 'Cloud Kitchen POS', href: '/solutions/cloud-kitchen-pos-system' },
     { name: 'Toast POS Alternative', href: '/alternatives/toast-pos-alternative' },
     { name: 'Square POS Alternative', href: '/alternatives/square-pos-alternative' },
+    { name: 'TouchBistro Alternative', href: '/alternatives/touchbistro-alternative' },
     { name: 'Food Cost Calculator Guide', href: '/resources/food-cost-percentage-guide' }
   ];
 

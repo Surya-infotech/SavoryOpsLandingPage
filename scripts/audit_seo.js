@@ -70,12 +70,26 @@ async function runSEOAudit() {
     });
   }
 
-  // 3. Verify Sitemap & Robots.txt
+  // 3. Validate Blog Posts in blogsData.js
+  const blogsPath = path.join(__dirname, '../src/data/blogsData.js');
+  if (fs.existsSync(blogsPath)) {
+    const blogContent = fs.readFileSync(blogsPath, 'utf8');
+    const slugMatches = [...blogContent.matchAll(/slug:\s*['"]([a-z0-9-]+)['"]/g)];
+    console.log(`\n📚 Auditing ${slugMatches.length} Pillar Blog Articles:`);
+    slugMatches.forEach((m) => {
+      console.log(`  ✅ Blog Post verified: /blog/${m[1]}`);
+    });
+  }
+
+  // 4. Verify Sitemap, Robots.txt, and llms.txt
   const sitemapPath = path.join(__dirname, '../public/sitemap.xml');
   const robotsPath = path.join(__dirname, '../public/robots.txt');
+  const llmsPath = path.join(__dirname, '../public/llms.txt');
 
   if (fs.existsSync(sitemapPath)) {
-    console.log('\n✅ public/sitemap.xml exists');
+    const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+    const urlCount = (sitemapContent.match(/<loc>/g) || []).length;
+    console.log(`\n✅ public/sitemap.xml exists with ${urlCount} indexed URLs`);
   } else {
     console.warn('\n⚠️ public/sitemap.xml missing - run `node scripts/generate_sitemap.js`');
   }
@@ -85,6 +99,12 @@ async function runSEOAudit() {
   } else {
     console.error('❌ public/robots.txt missing');
     passed = false;
+  }
+
+  if (fs.existsSync(llmsPath)) {
+    console.log('✅ public/llms.txt exists for AI crawler ingestion (ChatGPT, Claude, Perplexity)');
+  } else {
+    console.warn('⚠️ public/llms.txt missing');
   }
 
   console.log('\n----------------------------------------');

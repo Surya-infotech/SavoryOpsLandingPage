@@ -129,6 +129,8 @@ const BlogDetailPage = () => {
         ogImage={post.coverImage}
         canonicalUrl={`https://savoryops.com/blog/${post.slug}`}
         schemaType="Article"
+        authorName={post.author?.name}
+        datePublished={post.publishedDate}
       />
 
       <Container maxWidth="lg">
