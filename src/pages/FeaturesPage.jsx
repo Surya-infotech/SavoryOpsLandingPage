@@ -1,5 +1,6 @@
 import {
   AccountTree as AccountTreeIcon,
+  AccountBalanceWallet as FinanceIcon,
   ArrowForward as ArrowForwardIcon,
   Assessment as AssessmentIcon,
   Business as BusinessIcon,
@@ -162,17 +163,26 @@ const DETAILED_FEATURES = [
 
   // Tier 4: Analytics, Finance & Compliance
   {
-    id: 'advanced-reports',
+    id: 'finance-management',
     priority: 14,
-    icon: <AssessmentIcon sx={ICON_SIZE} />,
-    title: 'Advanced Reports',
-    subtitle: 'Owner Panel Analytics',
+    icon: <FinanceIcon sx={ICON_SIZE} />,
+    title: 'Finance & Expense Management',
+    subtitle: 'Income, Expenses & P&L',
     description:
-      'Full Owner Panel reporting suite: Revenue, Item-Wise, Category, Hourly Rush, Order Type, Payment Mode, Branch, Tax, and Review analytics.',
+      'Categorized operational income and expenses, cash flow management, supplier payables, and real-time Profit & Loss statements.',
+  },
+  {
+    id: 'advanced-reports',
+    priority: 15,
+    icon: <AssessmentIcon sx={ICON_SIZE} />,
+    title: 'Advanced Reports (20+)',
+    subtitle: 'Owner Panel Analytics Suite',
+    description:
+      'Comprehensive reporting suite: Sales, Profit & Loss, Menu Engineering Matrix, Kitchen Speed, Stock Balance & Movement, Table Utilization, and Staff Performance.',
   },
   {
     id: 'tax-report',
-    priority: 15,
+    priority: 16,
     icon: <ReceiptLongIcon sx={ICON_SIZE} />,
     title: 'Tax Report',
     subtitle: 'Compliance & Filing',
@@ -181,7 +191,7 @@ const DETAILED_FEATURES = [
   },
   {
     id: 'branch-tax-management',
-    priority: 16,
+    priority: 17,
     icon: <ReceiptLongIcon sx={ICON_SIZE} />,
     title: 'Branch-wise Tax Management',
     subtitle: 'Local Tax Compliance',
@@ -190,7 +200,7 @@ const DETAILED_FEATURES = [
   },
   {
     id: 'fiscal-year-records',
-    priority: 17,
+    priority: 18,
     icon: <CalendarMonthIcon sx={ICON_SIZE} />,
     title: 'Fiscal Year Records',
     subtitle: 'Organized Financial Data',
@@ -199,7 +209,7 @@ const DETAILED_FEATURES = [
   },
   {
     id: 'digital-invoice-download',
-    priority: 18,
+    priority: 19,
     icon: <DownloadIcon sx={ICON_SIZE} />,
     title: 'Digital Invoice Download',
     subtitle: 'Record Keeping & PDF Export',
@@ -210,7 +220,7 @@ const DETAILED_FEATURES = [
   // Tier 5: Revenue Growth & Customer Loyalty
   {
     id: 'combo-unlimited-meal',
-    priority: 19,
+    priority: 20,
     icon: <RestaurantMenuIcon sx={ICON_SIZE} />,
     title: 'Combo & Unlimited Meal',
     subtitle: 'Meal Package System',
@@ -219,7 +229,7 @@ const DETAILED_FEATURES = [
   },
   {
     id: 'coupon',
-    priority: 20,
+    priority: 21,
     icon: <CouponIcon sx={ICON_SIZE} />,
     title: 'Coupon',
     subtitle: 'Promotions & Discounts',
@@ -228,7 +238,7 @@ const DETAILED_FEATURES = [
   },
   {
     id: 'referral-system',
-    priority: 21,
+    priority: 22,
     icon: <ReferralIcon sx={ICON_SIZE} />,
     title: 'Referral System',
     subtitle: 'Customer Growth',
@@ -237,7 +247,7 @@ const DETAILED_FEATURES = [
   },
   {
     id: 'customer-reviews',
-    priority: 22,
+    priority: 23,
     icon: <RateReviewIcon sx={ICON_SIZE} />,
     title: 'Customer Reviews',
     subtitle: 'Feedback Management',
@@ -248,7 +258,7 @@ const DETAILED_FEATURES = [
   // Tier 6: Enterprise Platform & Support
   {
     id: 'cloud-based-system',
-    priority: 23,
+    priority: 24,
     icon: <CloudIcon sx={ICON_SIZE} />,
     title: 'Cloud-Based System',
     subtitle: 'Access Anywhere, Anytime',
@@ -257,16 +267,16 @@ const DETAILED_FEATURES = [
   },
   {
     id: 'multiple-languages',
-    priority: 24,
+    priority: 25,
     icon: <LanguageIcon sx={ICON_SIZE} />,
-    title: 'Multiple Languages',
-    subtitle: 'Global Communication',
+    title: '11 Global Languages (Arabic RTL)',
+    subtitle: 'Multilingual & Right-to-Left',
     description:
-      'Support for multiple languages across front-of-house staff, back-of-house, and QR menus.',
+      'Support for 11 global languages including native Arabic with Right-to-Left (RTL) across POS, KOT, and QR menus.',
   },
   {
     id: 'multiple-currency',
-    priority: 25,
+    priority: 26,
     icon: <CurrencyExchangeIcon sx={ICON_SIZE} />,
     title: 'Multiple Currency',
     subtitle: 'International Transactions',
@@ -275,7 +285,7 @@ const DETAILED_FEATURES = [
   },
   {
     id: 'help-center',
-    priority: 26,
+    priority: 27,
     icon: <HelpCenterIcon sx={ICON_SIZE} />,
     title: 'Help Center',
     subtitle: 'Support & Resources',

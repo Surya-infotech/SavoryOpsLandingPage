@@ -106,22 +106,22 @@ const Footer = () => {
   );
 
   const productFeatures = [
-    { name: 'Menu & Category Management', icon: <MenuBookIcon />, href: '/features' },
-    { name: 'Item & Add-ons Management', icon: <InventoryIcon />, href: '/features' },
-    { name: 'Table & QR Area Management', icon: <BranchIcon />, href: '/features' },
-    { name: 'Deals & Bundles', icon: <RestaurantIcon />, href: '/features' },
-    { name: 'Multiple Business & Branches', icon: <BusinessIcon />, href: '/features' },
-    { name: 'Staff & Role Management', icon: <PeopleIcon />, href: '/features' },
-    { name: 'Customer Management', icon: <PeopleIcon />, href: '/features' },
-    { name: 'Subdomain & Multi-tenant', icon: <LanguageIcon />, href: '/features' }
+    { name: 'POS & KOT System', icon: <ReceiptIcon />, href: '/features/pos-system' },
+    { name: 'Inventory & BOM Recipes', icon: <InventoryIcon />, href: '/features/inventory-management' },
+    { name: 'Finance & Expense Control', icon: <AttachMoneyIcon />, href: '/features/finance-management' },
+    { name: 'Menu & Add-ons Control', icon: <MenuBookIcon />, href: '/features/menu-management' },
+    { name: 'Table & QR Ordering', icon: <BranchIcon />, href: '/features/qr-code-scanning' },
+    { name: 'Multiple Business & Branches', icon: <BusinessIcon />, href: '/features/multiple-branches' },
+    { name: 'Staff & Role Management', icon: <PeopleIcon />, href: '/features/branch-staff-management' },
+    { name: '11 Languages (Arabic RTL)', icon: <LanguageIcon />, href: '/features/multiple-languages' }
   ];
 
   const reportList = [
-    { name: 'Date Wise Report', icon: <AssessmentIcon />, href: '/features' },
-    { name: 'Branch Wise Report', icon: <BarChartIcon />, href: '/features' },
-    { name: 'Item Wise Report', icon: <ReceiptIcon />, href: '/features' },
-    { name: 'Revenue & Tax Report', icon: <AttachMoneyIcon />, href: '/features' },
-    { name: 'Reviews & Feedback', icon: <AssessmentIcon />, href: '/features' }
+    { name: 'Profit & Loss (P&L) Report', icon: <AttachMoneyIcon />, href: '/features/advanced-reports' },
+    { name: 'Menu Engineering Matrix', icon: <BarChartIcon />, href: '/features/advanced-reports' },
+    { name: 'Stock Balance & Movement', icon: <InventoryIcon />, href: '/features/advanced-reports' },
+    { name: 'Kitchen Speed & Prep Time', icon: <AssessmentIcon />, href: '/features/advanced-reports' },
+    { name: 'Revenue & Tax Compliance', icon: <ReceiptIcon />, href: '/features/advanced-reports' }
   ];
 
   const companyLinks = [

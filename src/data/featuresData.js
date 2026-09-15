@@ -128,6 +128,100 @@ export const FEATURES_DATA = {
     ctaText: 'Explore Inventory Management',
     ctaLink: '/solutions/restaurant-inventory-management'
   },
+  'finance-management': {
+    id: 'finance-management',
+    badge: 'P&L & Cash Flow Control',
+    title: 'Restaurant Finance, Expense & Income Management',
+    metaTitle: 'Restaurant Finance & Expense Management Software | SavoryOps',
+    metaDescription: 'Take command of restaurant profitability with SavoryOps Finance module. Categorized income and expenses, cash flow management, and instant Profit & Loss reports.',
+    primaryKeyword: 'Restaurant Finance Management Software',
+    secondaryKeywords: [
+      'restaurant expense management',
+      'restaurant income tracker',
+      'restaurant profit and loss report',
+      'restaurant cash flow management',
+      'restaurant bookkeeping software',
+      'food business expense categories',
+      'multi-branch restaurant accounting'
+    ],
+    h1: 'Complete Restaurant Finance, Income & Expense Management Software',
+    subtitle: 'Track operational overhead, categorize income streams and expenses, reconcile daily register cash, and generate real-time Profit & Loss statements.',
+    overview: 'Managing restaurant margins requires more than just counting register receipts. From food procurement and kitchen equipment leases to staff payroll, utilities, and marketing, operating costs can quickly erode profits without centralized bookkeeping. The SavoryOps Finance Management module provides executive-level financial clarity tailored specifically for single restaurants and multi-branch hospitality groups. Easily record income and expenses, assign custom financial categories, manage payment modes, and monitor bottom-line profitability in real time.',
+    benefits: [
+      { title: 'Real-Time Profit & Loss (P&L)', desc: 'Generate instant P&L statements combining live POS sales revenue with recorded operational expenses and ingredient COGS.' },
+      { title: 'Custom Expense & Income Categorization', desc: 'Create hierarchical categories for Rent, Utilities, Payroll, Repairs, Vendor Invoices, Delivery Commissions, and Marketing.' },
+      { title: 'Multi-Branch Fiscal Transparency', desc: 'Track expenditures and revenue branch-by-branch to identify top-performing locations and optimize overhead costs.' },
+      { title: 'Cash Flow & Register Accountability', desc: 'Monitor daily cash, card, and digital payment inflows against outgoing payouts to eliminate register discrepancies.' },
+      { title: 'Vendor & Supplier Expense Tracking', desc: 'Link raw ingredient purchase orders directly to vendor expense ledgers for complete accounts payable visibility.' },
+      { title: 'Tax & Compliance Audit Readiness', desc: 'Organize fiscal year records with categorized receipts, taxable expense breakdowns, and 1-click accounting exports.' }
+    ],
+    features: [
+      'Income & Expense Ledger: Log every restaurant revenue credit and operating expense debit with timestamps, references, and amounts.',
+      'Custom Category Hierarchy: Organize finances with flexible categories such as Kitchen Consumables, Utilities, Facility Maintenance, Staff Wages, and Packaging.',
+      'Payment Mode Reconciliation: Reconcile financial entries across Cash, Bank Transfers, Credit Cards, UPI, and Cheques.',
+      'Branch-Wise Financial Allocation: Assign expenses directly to specific branches or split centralized overhead costs across your chain.',
+      'Integrated COGS & Purchasing: Directly connect supplier purchase orders with operational expense ledgers for automated procurement costing.',
+      'Automated Profit & Loss Statement: Live executive P&L statements calculating Gross Revenue, Cost of Goods Sold (COGS), Operating Expenses, and Net Profit.',
+      'Fiscal Year Financial Records: Store and audit multi-year financial archives organized by fiscal years for seamless accounting and tax filings.',
+      'Comprehensive Expense Reports: Visualize expense trends over time with dynamic breakdown charts, category distribution, and monthly comparisons.'
+    ],
+    faqs: [
+      { question: 'How does the SavoryOps Finance module track restaurant expenses?', answer: 'You can record expenses as they happen or schedule recurring overhead costs (such as rent, electricity, vendor payments, or maintenance). Each transaction is tagged with a custom category, payment method, branch location, and optional receipt reference.' },
+      { question: 'Can I generate a Profit & Loss (P&L) statement automatically?', answer: 'Yes. SavoryOps automatically aggregates your POS gross sales, deducts food cost of goods sold (COGS) from inventory depletion, and subtracts recorded operational expenses to deliver a real-time Profit & Loss statement.' },
+      { question: 'Can I track finances separately for each restaurant branch?', answer: 'Yes. Every income and expense entry is tied to a specific branch. You can review branch-level financial performance individually or view a consolidated corporate report across all your outlets.' },
+      { question: 'Does the finance module integrate with inventory purchases?', answer: 'Yes. When you receive an ingredient delivery from a supplier and approve the purchase order, SavoryOps can automatically record the invoice into your finance expense ledger under supplier payables.' },
+      { question: 'Can I export financial reports for my accountant or tax software?', answer: 'Absolutely. All financial data, including income & expense ledgers, category summaries, and P&L statements, can be exported with one click to Excel, CSV, or formatted PDF documents.' }
+    ],
+    ctaText: 'Explore Finance Management',
+    ctaLink: '/pricing'
+  },
+  'finance': {
+    id: 'finance',
+    badge: 'P&L & Cash Flow Control',
+    title: 'Restaurant Finance, Expense & Income Management',
+    metaTitle: 'Restaurant Finance & Expense Management Software | SavoryOps',
+    metaDescription: 'Take command of restaurant profitability with SavoryOps Finance module. Categorized income and expenses, cash flow management, and instant Profit & Loss reports.',
+    primaryKeyword: 'Restaurant Finance Management Software',
+    secondaryKeywords: [
+      'restaurant expense management',
+      'restaurant income tracker',
+      'restaurant profit and loss report',
+      'restaurant cash flow management',
+      'restaurant bookkeeping software',
+      'food business expense categories',
+      'multi-branch restaurant accounting'
+    ],
+    h1: 'Complete Restaurant Finance, Income & Expense Management Software',
+    subtitle: 'Track operational overhead, categorize income streams and expenses, reconcile daily register cash, and generate real-time Profit & Loss statements.',
+    overview: 'Managing restaurant margins requires more than just counting register receipts. From food procurement and kitchen equipment leases to staff payroll, utilities, and marketing, operating costs can quickly erode profits without centralized bookkeeping. The SavoryOps Finance Management module provides executive-level financial clarity tailored specifically for single restaurants and multi-branch hospitality groups. Easily record income and expenses, assign custom financial categories, manage payment modes, and monitor bottom-line profitability in real time.',
+    benefits: [
+      { title: 'Real-Time Profit & Loss (P&L)', desc: 'Generate instant P&L statements combining live POS sales revenue with recorded operational expenses and ingredient COGS.' },
+      { title: 'Custom Expense & Income Categorization', desc: 'Create hierarchical categories for Rent, Utilities, Payroll, Repairs, Vendor Invoices, Delivery Commissions, and Marketing.' },
+      { title: 'Multi-Branch Fiscal Transparency', desc: 'Track expenditures and revenue branch-by-branch to identify top-performing locations and optimize overhead costs.' },
+      { title: 'Cash Flow & Register Accountability', desc: 'Monitor daily cash, card, and digital payment inflows against outgoing payouts to eliminate register discrepancies.' },
+      { title: 'Vendor & Supplier Expense Tracking', desc: 'Link raw ingredient purchase orders directly to vendor expense ledgers for complete accounts payable visibility.' },
+      { title: 'Tax & Compliance Audit Readiness', desc: 'Organize fiscal year records with categorized receipts, taxable expense breakdowns, and 1-click accounting exports.' }
+    ],
+    features: [
+      'Income & Expense Ledger: Log every restaurant revenue credit and operating expense debit with timestamps, references, and amounts.',
+      'Custom Category Hierarchy: Organize finances with flexible categories such as Kitchen Consumables, Utilities, Facility Maintenance, Staff Wages, and Packaging.',
+      'Payment Mode Reconciliation: Reconcile financial entries across Cash, Bank Transfers, Credit Cards, UPI, and Cheques.',
+      'Branch-Wise Financial Allocation: Assign expenses directly to specific branches or split centralized overhead costs across your chain.',
+      'Integrated COGS & Purchasing: Directly connect supplier purchase orders with operational expense ledgers for automated procurement costing.',
+      'Automated Profit & Loss Statement: Live executive P&L statements calculating Gross Revenue, Cost of Goods Sold (COGS), Operating Expenses, and Net Profit.',
+      'Fiscal Year Financial Records: Store and audit multi-year financial archives organized by fiscal years for seamless accounting and tax filings.',
+      'Comprehensive Expense Reports: Visualize expense trends over time with dynamic breakdown charts, category distribution, and monthly comparisons.'
+    ],
+    faqs: [
+      { question: 'How does the SavoryOps Finance module track restaurant expenses?', answer: 'You can record expenses as they happen or schedule recurring overhead costs (such as rent, electricity, vendor payments, or maintenance). Each transaction is tagged with a custom category, payment method, branch location, and optional receipt reference.' },
+      { question: 'Can I generate a Profit & Loss (P&L) statement automatically?', answer: 'Yes. SavoryOps automatically aggregates your POS gross sales, deducts food cost of goods sold (COGS) from inventory depletion, and subtracts recorded operational expenses to deliver a real-time Profit & Loss statement.' },
+      { question: 'Can I track finances separately for each restaurant branch?', answer: 'Yes. Every income and expense entry is tied to a specific branch. You can review branch-level financial performance individually or view a consolidated corporate report across all your outlets.' },
+      { question: 'Does the finance module integrate with inventory purchases?', answer: 'Yes. When you receive an ingredient delivery from a supplier and approve the purchase order, SavoryOps can automatically record the invoice into your finance expense ledger under supplier payables.' },
+      { question: 'Can I export financial reports for my accountant or tax software?', answer: 'Absolutely. All financial data, including income & expense ledgers, category summaries, and P&L statements, can be exported with one click to Excel, CSV, or formatted PDF documents.' }
+    ],
+    ctaText: 'Explore Finance Management',
+    ctaLink: '/pricing'
+  },
   'kot-system': {
     id: 'kot-system',
     badge: 'Kitchen Velocity',
@@ -187,22 +281,23 @@ export const FEATURES_DATA = {
     subtitle: 'Break down language barriers in front-of-house service, back-of-house kitchen prep, and dynamic customer QR digital menus.',
     overview: 'SavoryOps supports international dining venues, tourist hotspots, and diverse restaurant teams with multi-language interfaces. Waitstaff and kitchen cooks can work in their native languages, while QR code menus automatically adapt to the guest’s preferred browser language.',
     benefits: [
-      { title: 'Global Guest Experience', desc: 'QR menus display in English, French, Spanish, German, Greek, Italian, Dutch, and more.' },
+      { title: '11 Global Languages Supported', desc: 'Full native interface support for Arabic, English, Spanish, French, German, Greek, Dutch, Italian, Russian, Portuguese, and Polish.' },
+      { title: 'Native Arabic & Right-to-Left (RTL)', desc: 'Seamless bidirectional RTL interface for Middle Eastern hospitality operators and Arabic-speaking staff.' },
       { title: 'Fewer Kitchen Misunderstandings', desc: 'Cooks can read prep notes in their preferred language, reducing cooking mistakes.' },
-      { title: 'Seamless Staff Onboarding', desc: 'Staff learn the system in minutes without language barriers.' },
-      { title: 'International Franchise Ready', desc: 'Deploy across multiple countries with unified corporate analytics.' }
+      { title: 'International Franchise Ready', desc: 'Deploy across multiple countries with localized menus and unified corporate analytics.' }
     ],
     features: [
-      'Multi-language staff interfaces (English, French, German, Spanish, Greek, Italian, Dutch, Russian)',
+      '11 built-in language packs: Arabic (SA), English (GB), Spanish (ES), French (FR), German (DE), Greek (GR), Dutch (NL), Italian (IT), Russian (RU), Portuguese (PT), and Polish (PL)',
+      'Native Right-to-Left (RTL) directional layout rendering for Arabic and Middle Eastern markets',
       'Localized guest QR menus with automatic smartphone language detection',
       'Multilingual receipts and thermal invoice printing',
       'Centralized catalog translation for food items, modifiers, and allergy warnings'
     ],
     faqs: [
-      { question: 'Which languages does SavoryOps support?', answer: 'SavoryOps supports major global languages including English, French, German, Spanish, Greek, Italian, Dutch, Russian, Arabic, Hindi, and is continuously expanding regional language packs.' },
+      { question: 'Which languages does SavoryOps support?', answer: 'SavoryOps supports 11 major global languages: Arabic, English, Spanish, French, German, Greek, Dutch, Italian, Russian, Portuguese, and Polish, with continuous regional expansions.' },
+      { question: 'Does SavoryOps support Right-to-Left (RTL) languages like Arabic?', answer: 'Yes! SavoryOps features native RTL layout rendering for Arabic across administrative dashboards, POS counters, and customer-facing QR digital menus.' },
       { question: 'Can guests switch languages on QR menus?', answer: 'Yes, guests scanning your QR code can switch languages with a single tap, viewing item names, descriptions, and dietary labels in their preferred tongue.' },
-      { question: 'Does SavoryOps support Right-to-Left (RTL) languages like Arabic or Hebrew?', answer: 'Yes. SavoryOps features native RTL rendering for Arabic, Hebrew, and Persian layouts across both administrative dashboards and customer-facing QR digital menus.' },
-      { question: 'Can the kitchen print KOTs in a different language than the customer menu?', answer: 'Yes. SavoryOps allows bilingual catalog mapping. For example, guests can order in English or French while your thermal printer or KDS displays items in Spanish or Chinese for kitchen staff.' },
+      { question: 'Can the kitchen print KOTs in a different language than the customer menu?', answer: 'Yes. SavoryOps allows bilingual catalog mapping. For example, guests can order in Arabic or English while your thermal printer or KDS displays items in another preferred tongue for kitchen staff.' },
       { question: 'Can I customize translations for unique local dish names and dietary disclaimers?', answer: 'Absolutely. While SavoryOps provides automated localized translations, operators have full manual editing control over every dish title, description, modifier, and allergen warning.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
@@ -451,35 +546,31 @@ export const FEATURES_DATA = {
     subtitle: 'Transform raw dining room transactions into actionable profit strategies with automated sales, inventory, tax, and labor reports.',
     overview: 'Restaurant profitability hinges on mastering your prime costs: food, beverage, and labor. SavoryOps provides deep operational reports that illuminate peak revenue hours, identify high-margin culinary stars, highlight ingredient shrinkage, and simplify tax filing.',
     benefits: [
-      { title: '10-Point Owner Panel Analytics', desc: 'Centralized suite covering Revenue, Items, Categories, Hourly Rush, Order Types, Payments, Branches, Taxes, Reviews, and Inventory.' },
-      { title: 'Hourly Rush Heatmaps', desc: 'Pinpoint your busiest lunch and dinner hours to optimize kitchen line staffing and floor prep schedules.' },
-      { title: 'Item & Category Profitability', desc: 'Analyze dish sales velocity and category margins to identify profitable culinary stars and eliminate slow movers.' },
+      { title: '20+ Full Operational Reports', desc: 'Centralized Report Hub organized into 4 strategic categories: Sales & Financial, Menu & Operations, Dining & Guests, and Inventory & Stock.' },
+      { title: 'Executive Profit & Loss (P&L)', desc: 'Instant P&L calculations comparing gross dining sales with ingredient COGS and operational overhead expenses.' },
+      { title: 'Menu Engineering Matrix', desc: 'BCG-style matrix segmenting items into Stars, Plowhorses, Puzzles, and Dogs for data-driven recipe pricing and menu optimization.' },
+      { title: 'Kitchen Speed & Bottleneck Analysis', desc: 'Track prep durations, station throughput, and ticket delay alerts to speed up service and table turnover.' },
+      { title: 'Stock Balance & Movement Ledgers', desc: 'Complete audit trail of inventory batch arrivals, consumption depletion, branch transfers, and shrinkage adjustments.' },
       { title: 'Audit & Compliance Ready', desc: 'Generate compliance-ready GST, VAT, and sales tax breakdowns with taxable and exempt sums for hassle-free filing.' }
     ],
     features: [
-      'Revenue Report: Track gross and net sales, discounts, refunds, payment distributions, and branch margins.',
-      'Item-Wise Sales Report: Dish-level quantity sold, revenue generation, and popularity trends across any timeframe.',
-      'Category-Wise Report: Sales volume and revenue contribution across Food, Beverages, Appetizers, Mains, and Desserts.',
-      'Hourly Sales & Rush Heatmap: Granular hourly sales velocity to identify peak dining windows and optimize labor rosters.',
-      'Order Type-Wise Report: Multi-channel sales distributed across Dine-In, Takeaway, Delivery, and Tableside QR orders.',
-      'Payment Mode Report: Tender reconciliation across Cash, Credit/Debit Cards, UPI, and Digital Wallets for transparent cash flow.',
-      'Branch-Wise Report: Side-by-side performance comparisons across all restaurant branches and commissary locations.',
-      'Date-Wise Report: Daily, weekly, monthly, and custom calendar date range analytics with comparative growth metrics.',
-      'Tax-Wise Compliance Report: Audit-ready GST, VAT, and sales tax breakdowns with clear taxable, tax, and exempt totals.',
-      'Customer Review & Feedback Report: Monitor guest ratings, sentiment trends, and waitstaff service quality.',
-      'Inventory Consumption & COGS Report: Real-time ingredient consumption curves, wastage audits, and stock valuation summaries.',
-      'One-Click Export: Instantly export any Owner Panel report to CSV, Excel, or formatted PDF summaries.'
+      'Sales & Financial Reports: Gross & Net Revenue, Day Close reconciliation, Branch-wise comparative sales, Date-wise trends, Tax compliance, Payment Mode tender split, Additional Charges breakdown, Profit & Loss (P&L), and Expense & Income.',
+      'Menu & Operations Reports: Item-Wise sales velocity, Category contribution analysis, Menu Engineering Matrix (Stars, Plowhorses, Puzzles, Dogs), Wastage & Loss tracking, Hourly Sales & Rush heatmaps, and Kitchen Speed prep times.',
+      'Dining & Guests Reports: Table Utilization & turnover speed, Customer Visit Frequency, Order Type distribution (Dine-In, Takeaway, Delivery, QR), Staff Sales & Tip Performance, and Guest Reviews & Feedback.',
+      'Inventory & Stock Reports: Stock Balance valuation, Stock Ledger movement history, ingredient consumption variance, and culinary shrinkage audits.',
+      'Custom Date Filters: Analyze performance by Day, Week, Month, Quarter, Fiscal Year, or custom date ranges with side-by-side growth comparisons.',
+      'Multi-Format Exports: 1-click export of any report to Excel, CSV, or formatted presentation-ready PDF summaries.'
     ],
     faqs: [
-      { question: 'What reports are included in the SavoryOps Owner Panel?', answer: 'The Owner Panel features 10 dedicated report modules: Revenue Report, Item-Wise Report, Category-Wise Report, Hourly Rush Report, Order Type-Wise Report, Payment Mode Report, Branch-Wise Report, Date-Wise Report, Tax-Wise Report, and Customer Review Report, plus real-time Inventory COGS reporting.' },
+      { question: 'What reports are included in the SavoryOps Report Hub?', answer: 'The SavoryOps Report Hub provides over 20 specialized reports across 4 distinct categories: Sales & Financial (Revenue, Day Close, Branch-wise, Date-wise, Tax-wise, Payment Mode, Additional Charges, Profit & Loss, Expense & Income); Menu & Operations (Item-wise, Category-wise, Menu Engineering, Wastage Loss, Hourly Rush, Kitchen Speed); Dining & Guests (Table Utilization, Customer Frequency, Order Type, Staff Performance, Reviews); and Inventory & Stock (Stock Balance, Stock Ledger Movement).' },
+      { question: 'What is the Menu Engineering Report and how does it help restaurants?', answer: 'The Menu Engineering Report classifies every dish into four strategic quadrants based on sales popularity and profit margins: Stars (high profit, high popularity), Plowhorses (low profit, high popularity), Puzzles (high profit, low popularity), and Dogs (low profit, low popularity). This allows operators to reprice, promote, or replace dishes to maximize gross profit.' },
+      { question: 'Can I track Kitchen Speed and prep bottleneck times?', answer: 'Yes. The Kitchen Speed Report tracks average preparation and fulfillment times by menu category, station, and time of day, pinpointing delayed tickets and culinary bottlenecks.' },
       { question: 'Can I export reports for my accountant or tax auditor?', answer: 'Yes. All SavoryOps financial, sales, tax, and inventory reports export cleanly to Excel, CSV, and formatted PDF summaries with one click.' },
-      { question: 'Does SavoryOps calculate food cost percentage automatically?', answer: 'Yes. By pairing POS sales data with recipe ingredient depletion, SavoryOps calculates your theoretical and actual food cost percentages in real time.' },
-      { question: 'Can I compare sales performance between multiple restaurant branches?', answer: 'Yes. The Branch-Wise Report gives multi-location owners side-by-side comparisons of gross revenue, average check sizes, order counts, and item velocity across all stores.' },
-      { question: 'How does the Hourly Rush Report help restaurant managers?', answer: 'The Hourly Report visualizes peak ordering hours throughout the day, allowing managers to schedule cooks and servers accurately, reduce overtime costs, and prepare prepped ingredients before peak rushes.' },
-      { question: 'How does SavoryOps help detect staff theft and billing discrepancies?', answer: 'SavoryOps tracks cash drawer openings without sales, voids, bill re-prints, and manager discount overrides with full server PIN logging and variance audits.' }
+      { question: 'Does SavoryOps calculate Profit & Loss (P&L) automatically?', answer: 'Yes. By pairing POS sales data with recipe ingredient depletion (COGS) and categorized operational expenses, SavoryOps calculates your gross profit and net margin in real time.' },
+      { question: 'Can I compare sales performance between multiple restaurant branches?', answer: 'Yes. The Branch-Wise Report gives multi-location owners side-by-side comparisons of gross revenue, average check sizes, order counts, and item velocity across all stores.' }
     ],
-    ctaText: 'View Food Cost Guide',
-    ctaLink: '/resources/food-cost-percentage-guide'
+    ctaText: 'Explore All Reports',
+    ctaLink: '/features'
   },
   'business-analytics': {
     id: 'business-analytics',

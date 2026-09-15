@@ -157,8 +157,8 @@ const Languages = () => {
               fontWeight: 400
             }}
           >
-            Our platform is available in <strong style={{ color: 'var(--primary-color)' }}>{languages.length} languages</strong>, so
-            restaurant owners and staff can run day-to-day operations in the language that fits their team and market.
+            Our platform is available in <strong style={{ color: 'var(--primary-color)' }}>{languages.length} global languages</strong>, including full native <strong style={{ color: 'var(--primary-color)' }}>Arabic with Right-to-Left (RTL) layout support</strong>, so
+            restaurant owners and staff can run day-to-day operations in the language that fits their team and market anywhere in the world.
           </Typography>
         </Box>
       </Container>

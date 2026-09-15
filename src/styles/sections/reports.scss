@@ -54,6 +54,104 @@
       line-height: 1.6;
       font-weight: 500;
     }
+
+    .reports-category-filter {
+      margin-top: 2.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+
+      @media (max-width: 600px) {
+        gap: 8px;
+      }
+
+      .report-filter-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 18px;
+        border-radius: 9999px;
+        font-size: 0.925rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(15, 23, 42, 0.1);
+        background: #ffffff;
+        color: #334155;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        outline: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+
+        .filter-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          color: #64748b;
+          transition: color 0.2s ease;
+
+          .MuiSvgIcon-root {
+            font-size: 1.1rem;
+          }
+        }
+
+        .filter-label {
+          line-height: 1.2;
+          white-space: nowrap;
+        }
+
+        .filter-count {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 2px 8px;
+          border-radius: 9999px;
+          font-size: 0.775rem;
+          font-weight: 700;
+          background: #f1f5f9;
+          color: #64748b;
+          min-width: 22px;
+          line-height: 1.3;
+          transition: all 0.2s ease;
+        }
+
+        &:hover:not(.active) {
+          background: #f8fafc;
+          color: #0f172a;
+          border-color: color-mix(in srgb, var(--primary-color) 45%, #cbd5e1);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+
+          .filter-icon {
+            color: var(--primary-color);
+          }
+
+          .filter-count {
+            background: color-mix(in srgb, var(--primary-color) 12%, #f1f5f9);
+            color: var(--primary-color);
+          }
+        }
+
+        &.active {
+          background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+          color: #ffffff;
+          border-color: transparent;
+          box-shadow: 0 8px 20px color-mix(in srgb, var(--primary-color) 35%, transparent);
+          transform: translateY(-2px);
+
+          .filter-icon {
+            color: #ffffff;
+          }
+
+          .filter-count {
+            background: rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+          }
+        }
+      }
+    }
   }
 
   .reports-grid {

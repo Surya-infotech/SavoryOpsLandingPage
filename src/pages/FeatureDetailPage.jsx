@@ -31,6 +31,11 @@ const FEATURE_IMAGE_MAP = {
   'inventory-management': '/images/features/inventory-management.jpg',
   'inventory_management': '/images/features/inventory-management.jpg',
 
+  // Finance & Expense Control
+  'finance': '/images/features/finance-management.jpg',
+  'finance-management': '/images/features/finance-management.jpg',
+  'finance_management': '/images/features/finance-management.jpg',
+
   // POS & Billing
   'pos': '/images/features/pos-system.jpg',
   'pos-system': '/images/features/pos-system.jpg',

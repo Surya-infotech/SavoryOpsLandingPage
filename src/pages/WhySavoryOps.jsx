@@ -27,7 +27,10 @@ import {
   Sync as SyncIcon,
   Savings as SavingsIcon,
   ArrowForward as ArrowForwardIcon,
-  Check as CheckIcon
+  Check as CheckIcon,
+  AccountBalanceWallet as FinanceIcon,
+  Assessment as ReportsIcon,
+  Language as LanguageIcon
 } from '@mui/icons-material';
 import SEOHead from '../components/SEO/SEOHead';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
@@ -121,6 +124,30 @@ const WhySavoryOps = () => {
         'Mandatory manager approval for dish voids, refunds, and bill discounts',
         'Detailed employee clock-in, sales attribution, and tip distribution'
       ]
+    },
+    {
+      icon: <FinanceIcon sx={{ fontSize: 32 }} />,
+      title: 'End-to-End Finance, Expense & Live P&L Control',
+      image: '/images/features/finance-management.jpg',
+      description:
+        'Track operating overhead, categorize custom expense streams, manage vendor accounts payable, and generate real-time Profit & Loss statements.',
+      highlights: [
+        'Automated live Profit & Loss (P&L) statements with POS sales & COGS integration',
+        'Custom expense hierarchies for Rent, Utilities, Wages, Repairs, and Packaging',
+        'Direct procurement integration between supplier POs and expense ledgers'
+      ]
+    },
+    {
+      icon: <ReportsIcon sx={{ fontSize: 32 }} />,
+      title: '20+ Deep-Dive Executive & Back-of-House Reports',
+      image: '/images/features/inventory-management.jpg',
+      description:
+        'Make data-backed decisions with over 20 interactive reports across Sales & Financials, Menu Engineering (Stars, Plowhorses, Puzzles, Dogs), Kitchen Speed, and Stock Movement.',
+      highlights: [
+        'Menu Engineering Matrix for dish popularity and margin optimization',
+        'Live Stock Balance & Stock Ledger movement audit trails',
+        'Kitchen Speed metrics to eliminate culinary fulfillment bottlenecks'
+      ]
     }
   ];
 
@@ -180,6 +207,30 @@ const WhySavoryOps = () => {
       toast: '$500+ Implementation Fee',
       square: 'Self-serve setup only',
       legacy: 'Weeks of manual configuration'
+    },
+    {
+      feature: 'Expense, Finance & Live P&L',
+      hint: 'Categorized overhead tracking and automated Profit & Loss calculation',
+      savoryops: 'Included Standard (Live P&L & Expenses)',
+      toast: 'Requires 3rd-party QuickBooks/xtraCHEF ($$$)',
+      square: 'Basic external integration only',
+      legacy: 'Separate desktop accounting software needed'
+    },
+    {
+      feature: '20+ Business Intelligence Reports',
+      hint: 'Sales, Menu Engineering, Kitchen Speed, and Stock Movement',
+      savoryops: '20+ Reports Organized in Central Hub',
+      toast: 'Standard sales reporting only',
+      square: 'Basic summary charts',
+      legacy: 'Static daily close printouts'
+    },
+    {
+      feature: 'Arabic & Multi-Language RTL',
+      hint: '11 global languages with native Right-to-Left (RTL) alignment',
+      savoryops: '11 Languages (Native Arabic RTL)',
+      toast: 'No Arabic / RTL support',
+      square: 'English & Spanish only',
+      legacy: 'English single-language only'
     },
     {
       feature: 'Continuous Cloud Updates',

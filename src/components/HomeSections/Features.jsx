@@ -1,5 +1,6 @@
 import {
   AccountTree as AccountTreeIcon,
+  AccountBalanceWallet as FinanceIcon,
   ArrowForward as ArrowForwardIcon,
   Assessment as AssessmentIcon,
   Business as BusinessIcon,
@@ -141,37 +142,45 @@ const FEATURES = [
 
   // Tier 4: Analytics, Finance & Compliance
   {
-    id: 'advanced-reports',
+    id: 'finance-management',
     priority: 14,
-    icon: <AssessmentIcon />,
-    title: 'Advanced Reports',
+    icon: <FinanceIcon />,
+    title: 'Finance & Expense Management',
     description:
-      'Full Owner Panel reporting suite: Revenue, Item, Category, Hourly Rush, Order Type, Payment Mode, Branch, and Tax analytics.',
+      'Track operational income and expenses, manage cash flows, review vendor payables, and generate live Profit & Loss statements.',
+  },
+  {
+    id: 'advanced-reports',
+    priority: 15,
+    icon: <AssessmentIcon />,
+    title: '20+ Advanced Reports',
+    description:
+      'Complete Owner Panel suite: Sales, Profit & Loss, Menu Engineering Matrix, Kitchen Speed, Stock Balance & Movement, and Staff Performance.',
   },
   {
     id: 'tax-report',
-    priority: 15,
+    priority: 16,
     icon: <TaxReportIcon />,
     title: 'Tax Report',
     description: 'Branch-wise tax summaries and compliance-ready reports for accurate filing and audits.',
   },
   {
     id: 'branch-tax-management',
-    priority: 16,
+    priority: 17,
     icon: <TaxReportIcon />,
     title: 'Branch-wise Tax Management',
     description: 'Manage different tax rates and regulations for each branch location.',
   },
   {
     id: 'fiscal-year-records',
-    priority: 17,
+    priority: 18,
     icon: <CalendarMonthIcon />,
     title: 'Fiscal Year Records',
     description: 'Keep organized records fiscal year wise for better financial management and compliance.',
   },
   {
     id: 'digital-invoice-download',
-    priority: 18,
+    priority: 19,
     icon: <DownloadIcon />,
     title: 'Digital Invoice Download',
     description: 'Download digital invoices for record keeping and future business requirements.',
@@ -180,7 +189,7 @@ const FEATURES = [
   // Tier 5: Revenue Growth & Customer Loyalty
   {
     id: 'combo-unlimited-meal',
-    priority: 19,
+    priority: 20,
     icon: <RestaurantMenuIcon />,
     title: 'Combo & Unlimited Meal',
     description:
@@ -188,14 +197,14 @@ const FEATURES = [
   },
   {
     id: 'coupon',
-    priority: 20,
+    priority: 21,
     icon: <CouponIcon />,
     title: 'Coupon',
     description: 'Create and manage discount coupons with flexible rules, validity, and usage limits.',
   },
   {
     id: 'referral-system',
-    priority: 21,
+    priority: 22,
     icon: <ReferralIcon />,
     title: 'Referral System',
     description:
@@ -203,7 +212,7 @@ const FEATURES = [
   },
   {
     id: 'customer-reviews',
-    priority: 22,
+    priority: 23,
     icon: <RateReviewIcon />,
     title: 'Customer Reviews',
     description: 'Collect and review customer feedback and ratings to improve service quality.',
@@ -212,7 +221,7 @@ const FEATURES = [
   // Tier 6: Enterprise Platform & Support
   {
     id: 'cloud-based-system',
-    priority: 23,
+    priority: 24,
     icon: <CloudIcon />,
     title: 'Cloud-Based System',
     description:
@@ -220,21 +229,21 @@ const FEATURES = [
   },
   {
     id: 'multiple-languages',
-    priority: 24,
+    priority: 25,
     icon: <LanguageIcon />,
-    title: 'Multiple Languages',
-    description: 'Support for multiple languages to serve diverse customer bases worldwide.',
+    title: '11 Languages (Arabic RTL)',
+    description: 'Support for 11 global languages including native Arabic with Right-to-Left (RTL) support.',
   },
   {
     id: 'multiple-currency',
-    priority: 25,
+    priority: 26,
     icon: <CurrencyIcon />,
     title: 'Multiple Currency',
     description: 'Accept payments in multiple currencies for global business operations.',
   },
   {
     id: 'help-center',
-    priority: 26,
+    priority: 27,
     icon: <HelpCenterIcon />,
     title: 'Help Center',
     description:

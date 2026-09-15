@@ -674,3 +674,22 @@ h3 {
 // UI Components
 @import './components/buttons';
 @import './components/cards';
+
+// ============================================================================
+// RTL (RIGHT-TO-LEFT) ARABIC LANGUAGE SUPPORT
+// ============================================================================
+
+[dir="rtl"], body.rtl-mode {
+  direction: rtl;
+  text-align: right;
+
+  .MuiButton-startIcon {
+    margin-left: 8px;
+    margin-right: -4px;
+  }
+
+  .MuiButton-endIcon {
+    margin-left: -4px;
+    margin-right: 8px;
+  }
+}

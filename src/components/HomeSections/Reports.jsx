@@ -1,119 +1,272 @@
+import { useState, useMemo } from 'react';
 import {
   Assessment as ReportsSectionIcon,
+  TrendingUp as RevenueIcon,
+  Assessment as DayCloseIcon,
   AccountTree as BranchWiseIcon,
   CalendarMonth as DateWiseIcon,
-  Category as CategoryWiseIcon,
-  AccessTime as HourlyIcon,
-  TakeoutDining as OrderTypeIcon,
-  Payments as PaymentModeIcon,
-  RestaurantMenu as ItemWiseIcon,
   ReceiptLong as TaxReportIcon,
+  Payments as PaymentModeIcon,
+  LocalAtm as AdditionalChargesIcon,
+  MonetizationOn as ProfitLossIcon,
+  AccountBalanceWallet as ExpenseIncomeIcon,
+  RestaurantMenu as ItemWiseIcon,
+  Category as CategoryWiseIcon,
+  AutoGraph as MenuEngineeringIcon,
+  DeleteSweep as WastageIcon,
+  AccessTime as HourlyIcon,
+  Speed as KitchenSpeedIcon,
+  TableRestaurant as TableIcon,
+  PeopleAlt as CustomerFrequencyIcon,
+  TakeoutDining as OrderTypeIcon,
+  Badge as StaffPerformanceIcon,
   RateReview as ReviewReportIcon,
-  TrendingUp as RevenueIcon,
-  Inventory2 as InventoryReportIcon,
+  Inventory2 as StockBalanceIcon,
+  HistoryEdu as StockLedgerIcon,
 } from '@mui/icons-material';
-import { Box, Card, CardContent, Chip, Container, Typography } from '@mui/material';
+import { Box, Card, CardContent, Chip, Container, Tab, Tabs, Typography } from '@mui/material';
 
 const FEATURE_COLOR = 'var(--primary-color)';
 
+const REPORT_CATEGORIES = [
+  { key: 'all', label: 'All Reports', icon: <ReportsSectionIcon sx={{ fontSize: 18 }} /> },
+  { key: 'sales', label: 'Sales & Financial', icon: <RevenueIcon sx={{ fontSize: 18 }} /> },
+  { key: 'menu', label: 'Menu & Operations', icon: <ItemWiseIcon sx={{ fontSize: 18 }} /> },
+  { key: 'dining', label: 'Dining & Guests', icon: <TableIcon sx={{ fontSize: 18 }} /> },
+  { key: 'inventory', label: 'Inventory & Stock', icon: <StockBalanceIcon sx={{ fontSize: 18 }} /> },
+];
+
 const REPORTS = [
+  // Group 1: Sales & Financial
   {
     id: 'revenue-report',
+    category: 'sales',
     icon: <RevenueIcon />,
     title: 'Revenue Report',
     description:
-      'Track total gross and net revenue, customer discounts, refund audits, and growth metrics across branches.',
+      'Track gross and net revenue, customer discounts, refund audits, and growth metrics across all branches.',
   },
   {
-    id: 'item-wise-report',
-    icon: <ItemWiseIcon />,
-    title: 'Item Wise Report',
+    id: 'day-close-report',
+    category: 'sales',
+    icon: <DayCloseIcon />,
+    title: 'Day Close & Register Reconciliation',
     description:
-      'Analyze sales volume and revenue by individual menu item to identify top-performing dishes and low-margin items.',
+      'Daily end-of-day register closeout, cash drawer counts, card settlements, and shift variance auditing.',
   },
   {
-    id: 'category-wise-report',
-    icon: <CategoryWiseIcon />,
-    title: 'Category Wise Report',
+    id: 'profit-loss-report',
+    category: 'sales',
+    icon: <ProfitLossIcon />,
+    title: 'Profit & Loss (P&L) Report',
     description:
-      'Break down sales performance across food categories, beverages, appetizers, mains, and dessert menus.',
+      'Live executive P&L statements combining POS sales revenue, ingredient COGS, and operational overhead.',
   },
   {
-    id: 'hourly-report',
-    icon: <HourlyIcon />,
-    title: 'Hourly Sales & Rush Report',
+    id: 'expense-income-report',
+    category: 'sales',
+    icon: <ExpenseIncomeIcon />,
+    title: 'Expense & Income Report',
     description:
-      'Identify peak dining rush hours and sales velocity by hour to optimize kitchen staffing and prep schedules.',
-  },
-  {
-    id: 'order-type-report',
-    icon: <OrderTypeIcon />,
-    title: 'Order Type Wise Report',
-    description:
-      'Compare revenue and ticket distribution across Dine-In, Takeaway, Delivery, and Tableside QR orders.',
+      'Categorize operational overhead (rent, utilities, wages, repairs) and track net profit margins across branches.',
   },
   {
     id: 'payment-mode-report',
+    category: 'sales',
     icon: <PaymentModeIcon />,
     title: 'Payment Mode Report',
     description:
       'Reconcile daily tenders across Cash, Credit/Debit Cards, UPI, and Digital Wallets for transparent cash flow.',
   },
   {
+    id: 'tax-report',
+    category: 'sales',
+    icon: <TaxReportIcon />,
+    title: 'Tax Compliance (GST/VAT)',
+    description:
+      'Generate audit-ready GST, VAT, and sales tax breakdowns with taxable and exempt sums for filing.',
+  },
+  {
     id: 'branch-wise-report',
+    category: 'sales',
     icon: <BranchWiseIcon />,
     title: 'Branch Wise Report',
     description:
-      'Compare multi-location sales, order volumes, and operating performance side-by-side in one centralized view.',
+      'Compare multi-location sales, order volume, and operating margins side-by-side in one centralized view.',
   },
   {
     id: 'date-wise-report',
+    category: 'sales',
     icon: <DateWiseIcon />,
-    title: 'Date Wise Report',
+    title: 'Date Wise Trends Report',
     description:
-      'Track daily, weekly, monthly, and custom calendar date ranges to identify seasonal dining patterns.',
+      'Track daily, weekly, monthly, and custom date range sales velocity to forecast seasonal dining patterns.',
   },
   {
-    id: 'tax-report',
-    icon: <TaxReportIcon />,
-    title: 'Tax Wise Report',
+    id: 'additional-charges-report',
+    category: 'sales',
+    icon: <AdditionalChargesIcon />,
+    title: 'Additional Charges Report',
     description:
-      'Generate compliance-ready GST, VAT, and sales tax breakdowns with taxable and exempt sums for audit filing.',
+      'Analyze ancillary revenue from delivery fees, packaging charges, service surcharges, and tip disbursements.',
+  },
+
+  // Group 2: Menu & Operations
+  {
+    id: 'item-wise-report',
+    category: 'menu',
+    icon: <ItemWiseIcon />,
+    title: 'Item Wise Sales Report',
+    description:
+      'Analyze sales volume, price velocity, and profitability by individual menu dish and addon modifiers.',
+  },
+  {
+    id: 'category-wise-report',
+    category: 'menu',
+    icon: <CategoryWiseIcon />,
+    title: 'Category Contribution Report',
+    description:
+      'Break down sales performance across food categories, beverages, appetizers, mains, and desserts.',
+  },
+  {
+    id: 'menu-engineering-report',
+    category: 'menu',
+    icon: <MenuEngineeringIcon />,
+    title: 'Menu Engineering Matrix',
+    description:
+      'BCG-style analysis categorizing dishes into Stars, Plowhorses, Puzzles, and Dogs for margin optimization.',
+  },
+  {
+    id: 'wastage-loss-report',
+    category: 'menu',
+    icon: <WastageIcon />,
+    title: 'Wastage & Shrinkage Report',
+    description:
+      'Track kitchen culinary spoilage, prep burn losses, expiration drops, and inventory shrinkage with reason codes.',
+  },
+  {
+    id: 'hourly-report',
+    category: 'menu',
+    icon: <HourlyIcon />,
+    title: 'Hourly Sales & Rush Heatmap',
+    description:
+      'Identify peak dining rush hours and sales velocity by hour to optimize kitchen prep and staff scheduling.',
+  },
+  {
+    id: 'kitchen-speed-report',
+    category: 'menu',
+    icon: <KitchenSpeedIcon />,
+    title: 'Kitchen Speed & Prep Time',
+    description:
+      'Monitor ticket fulfillment durations, station cook velocities, and delay bottlenecks to speed up service.',
+  },
+
+  // Group 3: Dining & Guests
+  {
+    id: 'table-utilization-report',
+    category: 'dining',
+    icon: <TableIcon />,
+    title: 'Table Utilization & Turnover',
+    description:
+      'Measure dining table occupancy, seating duration, turnover speed, and revenue generated per seat hour.',
+  },
+  {
+    id: 'customer-frequency-report',
+    category: 'dining',
+    icon: <CustomerFrequencyIcon />,
+    title: 'Customer Frequency & Loyalty',
+    description:
+      'Track repeat guest dining frequency, visit cadence, lifetime spend, and loyalty program retention.',
+  },
+  {
+    id: 'order-type-report',
+    category: 'dining',
+    icon: <OrderTypeIcon />,
+    title: 'Order Type Wise Report',
+    description:
+      'Compare revenue and ticket distribution across Dine-In, Takeaway, Delivery, and Tableside QR orders.',
+  },
+  {
+    id: 'staff-performance-report',
+    category: 'dining',
+    icon: <StaffPerformanceIcon />,
+    title: 'Staff & Server Performance',
+    description:
+      'Evaluate individual waiter and cashier sales volume, bill totals, table turn speed, and gratuity distributions.',
   },
   {
     id: 'review-report',
+    category: 'dining',
     icon: <ReviewReportIcon />,
     title: 'Review & Feedback Report',
     description:
-      'Monitor guest satisfaction scores, customer reviews, ratings, and service feedback for continuous quality control.',
+      'Monitor guest satisfaction scores, customer reviews, ratings, and service feedback for quality control.',
+  },
+
+  // Group 4: Inventory & Stock
+  {
+    id: 'stock-balance-report',
+    category: 'inventory',
+    icon: <StockBalanceIcon />,
+    title: 'Stock Balance & Valuation',
+    description:
+      'Live overview of current raw ingredient stock on hand, reorder threshold alerts, and total stock valuation.',
   },
   {
-    id: 'inventory-report',
-    icon: <InventoryReportIcon />,
-    title: 'Inventory & COGS Report',
+    id: 'stock-ledger-report',
+    category: 'inventory',
+    icon: <StockLedgerIcon />,
+    title: 'Stock Ledger & Movement Audit',
     description:
-      'Monitor raw ingredient consumption, culinary wastage logs, food cost percentages, and stock valuation summaries.',
+      'Complete historical audit trail of stock inward receiving, POS recipe depletion, transfers, and adjustments.',
   },
 ];
 
 const Reports = () => {
+  const [activeTab, setActiveTab] = useState('all');
+
+  const filteredReports = useMemo(() => {
+    if (activeTab === 'all') return REPORTS;
+    return REPORTS.filter((r) => r.category === activeTab);
+  }, [activeTab]);
+
   return (
     <Box id="reports" className="reports-section">
       <Container maxWidth="lg">
         <Box className="reports-header">
           <Box className="reports-badge">
-            <Chip icon={<ReportsSectionIcon />} label="Reports" className="reports-badge-chip" />
+            <Chip icon={<ReportsSectionIcon />} label="20+ Executive Reports" className="reports-badge-chip" />
           </Box>
           <Typography variant="h2" component="h2" className="reports-title">
-            Powerful Business Reports
+            Enterprise Reporting &amp; Business Intelligence
           </Typography>
           <Typography variant="h5" className="reports-subtitle">
-            Make smarter decisions with real-time Owner Panel analytics for revenue, items, categories, hourly rush, order types, payment modes, branches, taxes, reviews, and inventory COGS.
+            Transform dining room tickets and kitchen operations into actionable insights. Access 20+ real-time reports across Sales &amp; Financials, Menu Engineering, Dining Experience, and Stock Movement.
           </Typography>
+
+          {/* Category Filter Tabs */}
+          <Box className="reports-category-filter">
+            {REPORT_CATEGORIES.map((cat) => {
+              const count = cat.key === 'all' ? REPORTS.length : REPORTS.filter((r) => r.category === cat.key).length;
+              const isSelected = activeTab === cat.key;
+              return (
+                <button
+                  key={cat.key}
+                  type="button"
+                  className={`report-filter-btn ${isSelected ? 'active' : ''}`}
+                  onClick={() => setActiveTab(cat.key)}
+                >
+                  <span className="filter-icon">{cat.icon}</span>
+                  <span className="filter-label">{cat.label}</span>
+                  <span className="filter-count">{count}</span>
+                </button>
+              );
+            })}
+          </Box>
         </Box>
 
         <Box className="reports-grid">
-          {REPORTS.map((report) => (
+          {filteredReports.map((report) => (
             <Box key={report.id} className="report-grid-item">
               <Card className="report-card">
                 <CardContent className="card-content">

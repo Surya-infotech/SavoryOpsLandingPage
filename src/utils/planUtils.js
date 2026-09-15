@@ -89,6 +89,7 @@ export const getPlanLimits = (plan) => {
  */
 export const MODULE_DISPLAY_NAMES = {
   inventory: 'Inventory Management',
+  finance: 'Finance & Expense Management',
   hrms: 'HRMS (Staff Management)',
   assetmanagement: 'Asset Management',
   coupon: 'Coupons & Discounts',
@@ -237,6 +238,7 @@ export const COMPARISON_CORE_FEATURES = [
 
 export const COMPARISON_MODULE_DEFS = [
   { key: 'inventory', name: 'Inventory Management' },
+  { key: 'finance', name: 'Finance & Expense Management' },
   { key: 'hrms', name: 'HRMS (Staff Management)' },
   { key: 'assetmanagement', name: 'Asset Management' },
   { key: 'coupon', name: 'Coupons & Discounts' },
