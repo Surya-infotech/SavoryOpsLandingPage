@@ -37,7 +37,7 @@ const FEATURE_COLOR = 'var(--primary-color)';
 const FEATURES = [
   // Tier 1: Core Kitchen & Billing Operations
   {
-    id: 'pos',
+    id: 'pos-system',
     priority: 1,
     icon: <PosIcon />,
     title: 'POS',
@@ -70,7 +70,7 @@ const FEATURES = [
     description: 'Update menus instantly, manage categories, items, add-ons, modifiers, and pricing in real time.',
   },
   {
-    id: 'qr-based-menu',
+    id: 'qr-code-scanning',
     priority: 5,
     icon: <QrCode2Icon />,
     title: 'QR-Based Menu',

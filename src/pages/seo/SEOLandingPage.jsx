@@ -44,7 +44,7 @@ const SEOLandingPage = ({ clusterId }) => {
 
   const handleCtaClick = (e) => {
     e.preventDefault();
-    navigate('/Signin');
+    navigate('/signin');
   };
 
   // Find related clusters for the internal linking topic cluster

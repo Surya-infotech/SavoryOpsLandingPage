@@ -450,7 +450,7 @@ const OwnerSignUp = () => {
             const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${token}&id=${id}&success=${translations.signupsuccessful}`;
             window.location.href = subdomainUrl;
         } else {
-            window.location.href = '/Signin';
+            window.location.href = '/signin';
         }
     };
 
@@ -716,7 +716,7 @@ const OwnerSignUp = () => {
                         <span className="divider-line"></span>
                         <div className="divider-content">
                             <span className="divider-text">{translations.alreadyhaveanaccount}</span>
-                            <NavLink to="/Signin" className="signin-link">
+                            <NavLink to="/signin" className="signin-link">
                                 {translations.signin}
                             </NavLink>
                         </div>

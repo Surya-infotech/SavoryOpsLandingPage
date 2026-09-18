@@ -87,6 +87,11 @@ const AppContent = () => {
     }
   }, [location.pathname, softwareName]);
 
+  // Normalize trailing slashes: e.g. /features/ -> /features
+  if (location.pathname.length > 1 && location.pathname.endsWith('/')) {
+    return <Navigate to={location.pathname.replace(/\/+$/, '')} replace />;
+  }
+
   const isAuthPage =
     location.pathname === '/Signin' ||
     location.pathname === '/Signup' ||
@@ -131,9 +136,10 @@ const AppContent = () => {
         <Route path="/solutions/cloud-kitchen-pos-system" element={<SEOLandingPage clusterId="cloud-kitchen-pos-system" />} />
         <Route path="/resources/food-cost-percentage-guide" element={<SEOLandingPage clusterId="food-cost-percentage-guide" />} />
 
-        <Route path="/Signin" element={<OwnerLogin />} />
+        {/* Uppercase Redirects to Lowercase Canonicals */}
+        <Route path="/Signin" element={<Navigate to="/signin" replace />} />
         <Route path="/signin" element={<OwnerLogin />} />
-        <Route path="/Signup" element={<OwnerSignUp />} />
+        <Route path="/Signup" element={<Navigate to="/signup" replace />} />
         <Route path="/signup" element={<OwnerSignUp />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

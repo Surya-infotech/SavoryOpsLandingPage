@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import {
   Box,
   Button,
@@ -18,6 +18,21 @@ import LayersIcon from '@mui/icons-material/Layers';
 import SEOHead from '../components/SEO/SEOHead';
 import { FEATURES_DATA } from '../data/featuresData';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
+
+const ALIAS_MAP = {
+  pos: 'pos-system',
+  pos_system: 'pos-system',
+  inventory: 'inventory-management',
+  inventory_management: 'inventory-management',
+  finance: 'finance-management',
+  finance_management: 'finance-management',
+  asset: 'asset-management',
+  assets: 'asset-management',
+  asset_management: 'asset-management',
+  'qr-based-menu': 'qr-code-scanning',
+  qr_based_menu: 'qr-code-scanning',
+  'qr-menu': 'qr-code-scanning'
+};
 
 const FEATURE_IMAGE_MAP = {
   // Kitchen & Order Management
@@ -116,8 +131,24 @@ const FeatureDetailPage = () => {
     window.scrollTo(0, 0);
   }, [featureId]);
 
-  const normalizedId = featureId ? featureId.replace(/_/g, '-') : '';
-  const feature = FEATURES_DATA[featureId] || FEATURES_DATA[normalizedId] || FEATURES_DATA['kot-system'];
+  const rawId = featureId || '';
+  const normalizedId = rawId.replace(/_/g, '-');
+
+  // If visiting an alias, cleanly redirect to canonical URL
+  if (ALIAS_MAP[rawId]) {
+    return <Navigate to={`/features/${ALIAS_MAP[rawId]}`} replace />;
+  }
+  if (ALIAS_MAP[normalizedId]) {
+    return <Navigate to={`/features/${ALIAS_MAP[normalizedId]}`} replace />;
+  }
+
+  const feature = FEATURES_DATA[rawId] || FEATURES_DATA[normalizedId];
+
+  // If feature does not exist, redirect to /features instead of serving wrong content/canonical
+  if (!feature) {
+    return <Navigate to="/features" replace />;
+  }
+
   const featureImage =
     FEATURE_IMAGE_MAP[featureId] ||
     FEATURE_IMAGE_MAP[normalizedId] ||
@@ -126,7 +157,7 @@ const FeatureDetailPage = () => {
 
   // Other related features for internal cross-linking
   const otherFeatureKeys = Object.keys(FEATURES_DATA)
-    .filter((k) => k !== feature.id && !['pos', 'qr-based-menu'].includes(k))
+    .filter((k) => k !== feature.id && !ALIAS_MAP[k])
     .slice(0, 4);
 
   return (

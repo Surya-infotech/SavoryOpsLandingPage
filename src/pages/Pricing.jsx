@@ -148,7 +148,7 @@ const Pricing = () => {
   };
 
   const handlePlanButtonClick = () => {
-    navigate('/Signin');
+    navigate('/signin');
   };
 
   const filteredPlans = getFilteredPlans();

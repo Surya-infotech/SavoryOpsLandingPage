@@ -19,7 +19,8 @@ const staticRoutes = [
   '/privacy-policy',
   '/data-deletion-policy',
   '/blog',
-  '/signin'
+  '/signin',
+  '/signup'
 ];
 
 async function generateSitemap() {
@@ -33,13 +34,16 @@ async function generateSitemap() {
     seoRoutes = keywordsData.clusters.map((c) => `/${c.slug}`);
   }
 
-  // 2. Load all feature subpages from featuresData.js
+  // 2. Load all canonical feature subpages from featuresData.js
   const featuresFilePath = path.join(__dirname, '../src/data/featuresData.js');
   let featureRoutes = [];
   if (fs.existsSync(featuresFilePath)) {
     const featureContent = fs.readFileSync(featuresFilePath, 'utf8');
     const matches = [...featureContent.matchAll(/'([a-z0-9-]+)':\s*\{/g)];
-    featureRoutes = matches.map((m) => `/features/${m[1]}`);
+    const aliases = ['pos', 'inventory', 'finance', 'assets', 'qr-based-menu'];
+    featureRoutes = matches
+      .map((m) => `/features/${m[1]}`)
+      .filter((route) => !aliases.some((a) => route === `/features/${a}`));
     // Deduplicate
     featureRoutes = Array.from(new Set(featureRoutes));
   }
@@ -70,7 +74,12 @@ ${allRoutes
     } else if (
       route.startsWith('/solutions') ||
       route.startsWith('/alternatives') ||
-      route === '/features/kot-system'
+      route === '/features/pos-system' ||
+      route === '/features/kot-system' ||
+      route === '/features/inventory-management' ||
+      route === '/features/customer-reviews' ||
+      route === '/features/help-center' ||
+      route === '/features/digital-invoice-download'
     ) {
       priority = '0.9';
       changefreq = 'weekly';

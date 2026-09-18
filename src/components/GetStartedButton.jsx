@@ -38,7 +38,7 @@ const GetStartedButton = ({ className = '', sx = {}, fullWidth = false, children
       className={`get-started-button ${className}`.trim()}
       fullWidth={fullWidth}
       sx={{ ...baseStyles, ...sx }}
-      onClick={() => navigate('/Signin')}
+      onClick={() => navigate('/signin')}
     >
       {children || 'Get Started'}
     </Button>

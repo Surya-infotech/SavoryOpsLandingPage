@@ -193,7 +193,7 @@ const FAQPage = () => {
             </Button>
             <Button
               component={Link}
-              to="/Signin"
+              to="/signin"
               variant="contained"
               startIcon={<RocketLaunchIcon />}
               sx={{

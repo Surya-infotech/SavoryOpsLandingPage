@@ -41,7 +41,7 @@ const FEATURE_COLOR = 'var(--primary-color)';
 const DETAILED_FEATURES = [
   // Tier 1: Core Kitchen & Billing Operations
   {
-    id: 'pos',
+    id: 'pos-system',
     priority: 1,
     icon: <PosIcon sx={ICON_SIZE} />,
     title: 'POS',
@@ -79,11 +79,11 @@ const DETAILED_FEATURES = [
       'Update menus instantly, manage categories, items, add-ons, modifiers, and pricing in real time.',
   },
   {
-    id: 'qr-based-menu',
+    id: 'qr-code-scanning',
     priority: 5,
     icon: <QrCodeIcon sx={ICON_SIZE} />,
     title: 'QR-Based Menu',
-    subtitle: 'Contactless Menu Experience',
+    subtitle: 'Contactless Digital Menus',
     description:
       'Enable contactless ordering with dynamic QR menus, live updates, and faster table turnover.',
   },

@@ -23,4 +23,3 @@ Allow: /
 
 # Directives
 Sitemap: https://savoryops.com/sitemap.xml
-Sitemap: https://savoryops.com/rss.xml

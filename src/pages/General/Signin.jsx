@@ -837,7 +837,7 @@ const OwnerLogin = () => {
                         <span className="divider-line"></span>
                         <div className="divider-content">
                             <span className="divider-text">{translations.donothaveanaccount}</span>
-                            <NavLink to="/Signup" className="signin-link">
+                            <NavLink to="/signup" className="signin-link">
                                 {translations.signup}
                             </NavLink>
                         </div>

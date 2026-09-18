@@ -76,107 +76,8 @@ export const FEATURES_DATA = {
     ctaText: 'Explore Inventory Management',
     ctaLink: '/solutions/restaurant-inventory-management'
   },
-  'inventory': {
-    id: 'inventory',
-    badge: 'Ingredient-Level Control & COGS',
-    title: 'Smart Restaurant Inventory & BOM Recipe Management',
-    metaTitle: 'Restaurant Inventory Management Software & Recipe BOM | SavoryOps',
-    metaDescription: 'Take full control of restaurant food costs with SavoryOps. Recipe BOM ingredient depletion, automated low-stock alerts, vendor POs, and multi-branch transfers.',
-    primaryKeyword: 'Restaurant Inventory Management Software',
-    secondaryKeywords: [
-      'restaurant inventory management',
-      'recipe costing software',
-      'ingredient level inventory',
-      'restaurant bill of materials bom',
-      'kitchen stock management',
-      'inter-branch stock transfers',
-      'restaurant wastage tracking',
-      'food cost cogs software',
-      'restaurant supplier purchase orders'
-    ],
-    h1: 'Comprehensive Restaurant Inventory & Recipe Costing Management System',
-    subtitle: 'Track raw ingredients, automate recipe BOM depletion on POS/KOT sales, manage vendor purchases, streamline inter-branch transfers, and eliminate culinary waste.',
-    overview: 'Food cost variance, unrecorded shrinkage, and manual stock counts can drain 5% to 8% of your gross margins. The SavoryOps Inventory Management module provides end-to-end stock control built specifically for modern commercial kitchens and multi-branch operators. From precise Bill of Materials (BOM) dish recipes down to grams and milliliters, to automated supplier purchase orders and commissary stock dispatches, SavoryOps keeps your back-of-house operations running with surgical precision.',
-    benefits: [
-      { title: 'Zero-Surprise Stockouts', desc: 'Real-time low stock warnings and automated reorder alerts ensure your kitchen never runs out of key ingredients during peak service.' },
-      { title: 'Ingredient-Level BOM Precision', desc: 'Map every menu dish and addon to raw ingredients; stock automatically depletes in real time with every POS and KOT order.' },
-      { title: 'Accurate Plate Margins & COGS', desc: 'Live Cost of Goods Sold calculations and plate-level margin insights help you identify high-margin dishes and eliminate unprofitable menu items.' },
-      { title: 'Streamlined Vendor Procurement', desc: 'Centralize supplier directories, create structured purchase orders, and record received deliveries with automatic stock replenishment.' },
-      { title: 'Inter-Branch Commissary Transfers', desc: 'Move inventory seamlessly between central prep kitchens and retail outlets with dispatch notes, transit logs, and receiving acceptance.' },
-      { title: 'Shrinkage & Wastage Accountability', desc: 'Track physical inventory adjustments with categorized reason codes (spoilage, burning, expiration, theft) to enforce kitchen discipline.' }
-    ],
-    features: [
-      'Raw Material Catalog: Manage ingredient SKUs, assign categories, units of measure, cost prices, and min-max reorder thresholds.',
-      'Recipe & Bill of Materials (BOM): Link dishes and modifiers/addons to exact raw ingredients with portion weights for real-time automatic depletion upon POS/KOT ordering.',
-      'Purchase Orders & Inward Receiving: Generate supplier purchase orders, track order fulfillment, log delivery invoices, and update stock counts with weighted average costs.',
-      'Supplier & Vendor Management: Maintain vendor profiles, contact details, payment terms, tax/GST registrations, and purchase history.',
-      'Inter-Branch & Commissary Stock Transfers: Dispatch ingredients from central commissary kitchens to satellite outlets with transfer status tracking and receiving verification.',
-      'Stock Adjustments & Wastage Audits: Log physical stock count variances, prep burns, expiration losses, and kitchen waste with dedicated reason codes.',
-      'Units of Measurement (UOM) & Conversions: Configure base measurement units (kg, g, L, ml, pcs, dozens, packs) with automated conversion ratios.',
-      'Ingredient Categorization: Organize raw materials into clear categories like Produce, Meats, Dairy, Spices, Bakery, Dry Stores, and Packaging.',
-      'Real-Time Inventory Dashboard: Live overview of total stock valuation, low-stock alerts, consumption velocity, and fast-depleting ingredients.',
-      'Comprehensive Inventory & COGS Reports: Track actual vs. theoretical consumption, wastage patterns, supplier expense breakdowns, and stock valuation summaries.'
-    ],
-    faqs: [
-      { question: 'How does automatic recipe stock depletion work in SavoryOps?', answer: 'When you create a recipe in SavoryOps, you define the exact raw ingredients required for each dish (e.g. 150g beef patty, 1 brioche bun, 30g cheese, 15ml sauce) as well as addon modifiers. Whenever a cashier or guest places an order via POS or QR menu, SavoryOps immediately deducts those exact quantities from your raw inventory in real time.' },
-      { question: 'Can I track inventory for menu add-ons and modifiers?', answer: 'Yes. SavoryOps supports addon-level recipe configurations. For example, if a guest orders an extra cheese slice or double bacon, the system automatically pulls the additional ingredients from your pantry stock.' },
-      { question: 'How do inter-branch stock transfers work between commissary kitchens and outlets?', answer: 'You can initiate a stock transfer from your central kitchen or warehouse to any satellite restaurant branch. The system logs the dispatched items, marks the transfer as in-transit, and automatically credits the receiving branch\'s inventory once the store manager accepts and confirms the received quantities.' },
-      { question: 'How does SavoryOps handle units of measure (e.g., purchasing in kilograms but using in grams)?', answer: 'SavoryOps features built-in Unit of Measurement (UOM) conversion. You can purchase bulk ingredients in kilograms, liters, or boxes, and link recipes in grams, milliliters, or single pieces. The system automatically converts units and calculates accurate fractional costs.' },
-      { question: 'What types of stock adjustments and wastage can I record?', answer: 'You can record physical stock reconciliations and log culinary wastage with customizable reason codes such as Spoilage, Kitchen Burn, Damaged in Transit, Expired, or Tasting. This provides complete visibility into culinary shrink and staff accountability.' },
-      { question: 'Can I generate supplier purchase orders directly from the system?', answer: 'Yes. When an ingredient hits its minimum threshold, SavoryOps flags a low-stock alert. You can generate purchase orders grouped by vendor, record incoming invoices, and automatically replenish stock levels upon delivery confirmation.' }
-    ],
-    ctaText: 'Explore Inventory Management',
-    ctaLink: '/solutions/restaurant-inventory-management'
-  },
   'finance-management': {
     id: 'finance-management',
-    badge: 'P&L & Cash Flow Control',
-    title: 'Restaurant Finance, Expense & Income Management',
-    metaTitle: 'Restaurant Finance & Expense Management Software | SavoryOps',
-    metaDescription: 'Take command of restaurant profitability with SavoryOps Finance module. Categorized income and expenses, cash flow management, and instant Profit & Loss reports.',
-    primaryKeyword: 'Restaurant Finance Management Software',
-    secondaryKeywords: [
-      'restaurant expense management',
-      'restaurant income tracker',
-      'restaurant profit and loss report',
-      'restaurant cash flow management',
-      'restaurant bookkeeping software',
-      'food business expense categories',
-      'multi-branch restaurant accounting'
-    ],
-    h1: 'Complete Restaurant Finance, Income & Expense Management Software',
-    subtitle: 'Track operational overhead, categorize income streams and expenses, reconcile daily register cash, and generate real-time Profit & Loss statements.',
-    overview: 'Managing restaurant margins requires more than just counting register receipts. From food procurement and kitchen equipment leases to staff payroll, utilities, and marketing, operating costs can quickly erode profits without centralized bookkeeping. The SavoryOps Finance Management module provides executive-level financial clarity tailored specifically for single restaurants and multi-branch hospitality groups. Easily record income and expenses, assign custom financial categories, manage payment modes, and monitor bottom-line profitability in real time.',
-    benefits: [
-      { title: 'Real-Time Profit & Loss (P&L)', desc: 'Generate instant P&L statements combining live POS sales revenue with recorded operational expenses and ingredient COGS.' },
-      { title: 'Custom Expense & Income Categorization', desc: 'Create hierarchical categories for Rent, Utilities, Payroll, Repairs, Vendor Invoices, Delivery Commissions, and Marketing.' },
-      { title: 'Multi-Branch Fiscal Transparency', desc: 'Track expenditures and revenue branch-by-branch to identify top-performing locations and optimize overhead costs.' },
-      { title: 'Cash Flow & Register Accountability', desc: 'Monitor daily cash, card, and digital payment inflows against outgoing payouts to eliminate register discrepancies.' },
-      { title: 'Vendor & Supplier Expense Tracking', desc: 'Link raw ingredient purchase orders directly to vendor expense ledgers for complete accounts payable visibility.' },
-      { title: 'Tax & Compliance Audit Readiness', desc: 'Organize fiscal year records with categorized receipts, taxable expense breakdowns, and 1-click accounting exports.' }
-    ],
-    features: [
-      'Income & Expense Ledger: Log every restaurant revenue credit and operating expense debit with timestamps, references, and amounts.',
-      'Custom Category Hierarchy: Organize finances with flexible categories such as Kitchen Consumables, Utilities, Facility Maintenance, Staff Wages, and Packaging.',
-      'Payment Mode Reconciliation: Reconcile financial entries across Cash, Bank Transfers, Credit Cards, UPI, and Cheques.',
-      'Branch-Wise Financial Allocation: Assign expenses directly to specific branches or split centralized overhead costs across your chain.',
-      'Integrated COGS & Purchasing: Directly connect supplier purchase orders with operational expense ledgers for automated procurement costing.',
-      'Automated Profit & Loss Statement: Live executive P&L statements calculating Gross Revenue, Cost of Goods Sold (COGS), Operating Expenses, and Net Profit.',
-      'Fiscal Year Financial Records: Store and audit multi-year financial archives organized by fiscal years for seamless accounting and tax filings.',
-      'Comprehensive Expense Reports: Visualize expense trends over time with dynamic breakdown charts, category distribution, and monthly comparisons.'
-    ],
-    faqs: [
-      { question: 'How does the SavoryOps Finance module track restaurant expenses?', answer: 'You can record expenses as they happen or schedule recurring overhead costs (such as rent, electricity, vendor payments, or maintenance). Each transaction is tagged with a custom category, payment method, branch location, and optional receipt reference.' },
-      { question: 'Can I generate a Profit & Loss (P&L) statement automatically?', answer: 'Yes. SavoryOps automatically aggregates your POS gross sales, deducts food cost of goods sold (COGS) from inventory depletion, and subtracts recorded operational expenses to deliver a real-time Profit & Loss statement.' },
-      { question: 'Can I track finances separately for each restaurant branch?', answer: 'Yes. Every income and expense entry is tied to a specific branch. You can review branch-level financial performance individually or view a consolidated corporate report across all your outlets.' },
-      { question: 'Does the finance module integrate with inventory purchases?', answer: 'Yes. When you receive an ingredient delivery from a supplier and approve the purchase order, SavoryOps can automatically record the invoice into your finance expense ledger under supplier payables.' },
-      { question: 'Can I export financial reports for my accountant or tax software?', answer: 'Absolutely. All financial data, including income & expense ledgers, category summaries, and P&L statements, can be exported with one click to Excel, CSV, or formatted PDF documents.' }
-    ],
-    ctaText: 'Explore Finance Management',
-    ctaLink: '/pricing'
-  },
-  'finance': {
-    id: 'finance',
     badge: 'P&L & Cash Flow Control',
     title: 'Restaurant Finance, Expense & Income Management',
     metaTitle: 'Restaurant Finance & Expense Management Software | SavoryOps',
@@ -715,33 +616,45 @@ export const FEATURES_DATA = {
   },
   'digital-invoice-download': {
     id: 'digital-invoice-download',
-    badge: 'Paperless Billing',
-    title: 'Digital Invoice Download & Customer Receipts',
-    metaTitle: 'Digital Invoice Storage & Receipt Download | SavoryOps',
-    metaDescription: 'Offer digital PDF invoices and SMS/Email receipts with SavoryOps digital invoice management. Compliant record keeping and paperless storage.',
+    badge: 'Paperless Billing & Archiving',
+    title: 'Digital Invoice Download, SMS Receipts & Cloud Tax Archives',
+    metaTitle: 'Digital Invoice Storage & Receipt Download Software | SavoryOps',
+    metaDescription: 'Generate digital PDF invoices, SMS receipts, and paperless tax archives with SavoryOps. Reduce thermal paper costs and streamline audit compliance.',
     primaryKeyword: 'Digital Invoice Storage Restaurant',
-    secondaryKeywords: ['digital invoice storage', 'digital invoice download', 'restaurant receipt generator'],
-    h1: 'Paperless Digital Invoice Storage & Customer Receipts',
-    subtitle: 'Save paper costs, accelerate guest checkout, and store compliance-ready tax invoices in secure digital archives.',
-    overview: 'Paper thermal receipts fade, create clutter, and cost restaurants hundreds of dollars every year. SavoryOps generates clean, professional digital invoices that guests can view on their smartphones or download as PDFs, while maintaining a permanent cloud audit archive for your bookkeeper.',
+    secondaryKeywords: [
+      'digital invoice storage',
+      'digital invoice download',
+      'restaurant receipt generator',
+      'paperless restaurant billing',
+      'sms digital receipt restaurant',
+      'restaurant tax invoice download'
+    ],
+    h1: 'Paperless Digital Invoice Storage & Customer Receipts System',
+    subtitle: 'Save paper costs, accelerate guest checkout, and store compliance-ready tax invoices in secure, searchable digital archives.',
+    overview: 'Paper thermal receipts fade over time, create clutter, and cost busy restaurants hundreds of dollars in paper rolls every year. SavoryOps generates crisp, professional digital invoices that guests can view directly on their smartphones or download as itemized PDFs, while maintaining a permanent cloud audit archive organized fiscal year-wise for your bookkeeper.',
     benefits: [
-      { title: 'Eco-Friendly Cost Savings', desc: 'Cut thermal receipt paper spend while providing modern digital conveniences.' },
-      { title: 'Instant PDF Downloads', desc: 'Guests and corporate diners can download itemized tax invoices with one tap.' },
-      { title: 'Audit Compliance', desc: 'Maintain complete digital records organized fiscal year-wise for tax audits.' },
-      { title: 'Custom Bill Branding', desc: 'Include your restaurant logo, Wi-Fi credentials, and social links on every invoice.' }
+      { title: 'Substantial Paper Cost Savings', desc: 'Eliminate expensive thermal paper roll reorders while offering modern digital conveniences.' },
+      { title: 'Instant Mobile PDF Downloads', desc: 'Guests and corporate diners can download itemized tax invoices with one tap from their smartphones.' },
+      { title: 'Permanent Cloud Tax Archives', desc: 'Never lose a receipt; maintain a searchable, permanent digital record of every customer invoice.' },
+      { title: 'Custom Restaurant Bill Branding', desc: 'Feature your restaurant logo, Wi-Fi details, tax registration numbers, and social links on every invoice.' },
+      { title: 'Instant SMS & Email Receipts', desc: 'Cashiers can dispatch receipts with one tap directly from the POS to the customer phone or email.' },
+      { title: 'Corporate Expense Compliance', desc: 'Provide itemized tax breakdowns, payment tender details, and VAT/GST numbers for corporate reimbursements.' }
     ],
     features: [
-      'One-click PDF invoice generation and thermal receipt layout options',
-      'SMS and Email digital receipt dispatch directly from the POS',
-      'Tax breakdown itemization (GST, VAT, Sales Tax, Service Charges)',
-      'Historical receipt search by invoice number, table, or guest phone'
+      'One-click PDF invoice generation with professional corporate layout options',
+      'Instant SMS and Email digital receipt dispatch directly from the POS terminal',
+      'Compliant tax breakdown itemization (GST, VAT, Sales Tax, Service Charges, and Gratuity)',
+      'Historical receipt search by invoice number, table number, server PIN, or guest phone',
+      'Dynamic QR code on guest receipts enabling one-tap invoice downloads and reorders',
+      'Full compliance with global electronic invoice archiving standards for restaurant audits'
     ],
     faqs: [
-      { question: 'Can guests download digital invoices via QR code?', answer: 'Yes. When settling payments via mobile QR, guests can immediately view and download their digital PDF invoice.' },
+      { question: 'Can guests download digital invoices via QR code?', answer: 'Yes. When settling payments via mobile QR, guests can immediately view and download their itemized digital PDF invoice.' },
       { question: 'Are SavoryOps digital invoices legally compliant for business expense tax deductions?', answer: 'Yes. SavoryOps digital invoices contain full legal entity details, registered VAT/GST/Tax IDs, itemized order breakdowns, timestamped transaction IDs, and payment tender summaries accepted by corporate accounting departments.' },
-      { question: 'Can cashiers email or SMS digital receipts directly from the POS terminal?', answer: 'Yes. Cashiers can enter the customer\'s phone number or email address with 1 tap to send an instant, paperless receipt via SMS or Email without needing to print thermal paper.' },
+      { question: 'Can cashiers email or SMS digital receipts directly from the POS terminal?', answer: 'Yes. Cashiers can enter the customer phone number or email address with 1 tap to send an instant, paperless receipt via SMS or Email without needing to print thermal paper.' },
       { question: 'How long are historical customer invoices stored in the cloud?', answer: 'SavoryOps stores your digital invoices permanently with continuous encrypted cloud backups, allowing you or your accountant to search and retrieve receipts from any past date or fiscal year.' },
-      { question: 'Can we customize the branding, logo, and footer messages on digital invoices?', answer: 'Yes. You can upload your restaurant logo, customize thank-you notes, print Wi-Fi credentials, and link your social media profiles or feedback survey on every digital receipt.' }
+      { question: 'Can we customize the branding, logo, and footer messages on digital invoices?', answer: 'Yes. You can upload your restaurant logo, customize thank-you notes, print Wi-Fi credentials, and link your social media profiles or feedback survey on every digital receipt.' },
+      { question: 'Does digital invoicing help our restaurant go green?', answer: 'Absolutely. Transitioning to digital receipts cuts down hundreds of meters of non-recyclable, BPA-coated thermal receipt paper every month, reducing your carbon footprint.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -961,54 +874,340 @@ export const FEATURES_DATA = {
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
   },
-  'assets': {
-    id: 'assets',
-    badge: 'Equipment Lifecycle & Capital Control',
-    title: 'Restaurant Asset Management & Equipment Maintenance Software',
-    metaTitle: 'Restaurant Asset Management & Equipment Maintenance Software | SavoryOps',
-    metaDescription: 'Track kitchen machinery, POS hardware, and restaurant furniture across branches. Preventative maintenance schedules, inter-branch transfers, and asset valuation reports.',
-    primaryKeyword: 'Restaurant Asset Management Software',
+  'help-center': {
+    id: 'help-center',
+    badge: '24/7 Hospitality Support',
+    title: 'Restaurant Help Center, Knowledge Base & 24/7 Technical Support',
+    metaTitle: 'Restaurant Help Center & 24/7 Technical POS Support | SavoryOps',
+    metaDescription: 'Get 24/7 technical support, operational setup guides, POS troubleshooting, video tutorials, and dedicated restaurant onboarding assistance with SavoryOps.',
+    primaryKeyword: 'Restaurant POS Support and Help Center',
     secondaryKeywords: [
-      'restaurant asset management software',
-      'commercial kitchen equipment maintenance',
-      'restaurant equipment tracking',
-      'inter-branch asset transfers',
-      'restaurant asset valuation report',
-      'kitchen equipment repair log',
-      'pos hardware inventory software'
+      'restaurant pos help center',
+      'restaurant technical support',
+      'savoryops support',
+      'restaurant pos troubleshooting',
+      'restaurant software onboarding',
+      '24/7 restaurant pos customer service'
     ],
-    h1: 'Comprehensive Restaurant Asset Management & Equipment Maintenance System',
-    subtitle: 'Track high-value commercial kitchen machinery, POS terminals, and dining furniture across all branches. Schedule preventative maintenance, log repair costs, manage multi-branch equipment transfers, and monitor real-time asset valuation.',
-    overview: 'Unexpected commercial kitchen equipment breakdowns, unmonitored warranty expirations, and missing POS hardware can cripple dining room service and drain profitability. The SavoryOps Asset Management module provides complete physical capital oversight built specifically for restaurants and multi-location operators. From master asset registration and QR/barcode tracking to preventative maintenance scheduling, technician service logs, and inter-branch equipment relocation audits, SavoryOps keeps your back-of-house physical operations running smoothly.',
+    h1: 'Comprehensive Restaurant Help Center & 24/7 Technical Support',
+    subtitle: 'Step-by-step guides, live chat assistance, hardware setup instructions, and round-the-clock priority support to keep your restaurant operating smoothly.',
+    overview: 'In high-volume restaurant operations, downtime during a busy dinner service is simply not an option. The SavoryOps Help Center and technical support ecosystem provides operators, store managers, and culinary staff with instant troubleshooting assistance, detailed step-by-step knowledge base articles, hardware configuration guides (for thermal receipt printers, cash drawers, and KDS bump bars), and 24/7 live priority technical assistance.',
     benefits: [
-      { title: 'Zero Surprise Kitchen Downtime', desc: 'Schedule preventative maintenance servicing and receive automated advance alerts before ovens, fryers, or refrigeration units fail during dinner rush.' },
-      { title: 'Centralized Master Asset Registry', desc: 'Catalog every piece of kitchen machinery, POS hardware, dining furniture, and HVAC unit with brand, model, serial number, purchase cost, and warranty dates.' },
-      { title: 'Warranty & Service History Protection', desc: 'Log technician repair details, invoices, and service notes under a 360° asset profile so you never pay out-of-pocket for equipment still under vendor warranty.' },
-      { title: 'Seamless Inter-Branch Transfers', desc: 'Relocate machinery, backup POS terminals, or patio furniture between branches or central commissaries with transit status tracking and delivery acceptance.' },
-      { title: 'Live Asset Valuation & Depreciation', desc: 'Track total physical capital book value, accumulated depreciation, and active vs. under-maintenance equipment valuation across every store location.' },
-      { title: 'Full 360° Audit Accountability', desc: 'Maintain complete chronological audit trails of equipment acquisitions, service repairs, condition checks, and inter-store movements.' }
+      { title: '24/7 Priority Emergency Support', desc: 'Reach experienced restaurant support specialists via live chat and phone when you need help during weekend rushes.' },
+      { title: 'Step-by-Step Hardware Setup Guides', desc: 'Plug-and-play guides for ESC/POS thermal receipt printers, kitchen display systems, network routers, and cash drawers.' },
+      { title: 'Staff Onboarding & Training Materials', desc: 'Accelerate cashier, server, and kitchen staff onboarding with short interactive video walkthroughs and checklists.' },
+      { title: 'Zero Service Interruptions', desc: 'Proactive system status tracking, automatic cloud updates, and offline failover guides to protect your service continuity.' }
     ],
     features: [
-      'Master Asset Registry: Record asset name, unique code/ID, category, brand, model, serial number, purchase date, cost price, vendor, and warranty expiration dates.',
-      'Equipment Categorization: Organize physical assets into structured categories: Kitchen Cooking Equipment, Cold Storage & Refrigeration, POS & Billing Hardware, Dining Furniture, Cutlery & Tableware, and HVAC Utilities.',
-      'Preventative & Corrective Maintenance: Schedule routine servicing, log emergency repair work, track technician labor costs, attach service bills, and set automated upcoming maintenance alert triggers.',
-      'Inter-Branch Asset Transfers: Dispatch equipment between satellite branches and central commissary warehouses with transfer reason logs, condition verification, transit tracking, and receiver confirmation.',
-      '360° Asset Lifecycle Overview: Dedicated overview page for each asset displaying complete maintenance logs, relocation transfer history, warranty status, and audit records.',
-      'Condition & Status Tracking: Real-time operational status flags: In Use, Under Maintenance, Disposed, or Transferred across individual restaurant branches.',
-      'Asset Valuation Reports: Instant financial summaries of total asset capital value, category-wise book valuation, and active vs. maintenance-split asset values.',
-      'Maintenance & Repair Reports: Track service frequency, recurring equipment breakdown patterns, vendor service performance, and cumulative maintenance expenditures.',
-      'Transfer Audit Reports: Complete audit log of inter-branch equipment movements, dispatch and receiving timestamps, and equipment condition checks.',
-      'Multi-Branch Consolidated Control: Oversee equipment across single or multi-outlet restaurant networks with localized branch filters and centralized executive visibility.'
+      'Searchable Knowledge Base with 100+ operational guides covering POS billing, KOT routing, BOM inventory, and analytics',
+      '24/7 live chat and priority ticketing with industry-leading first-response resolution times',
+      'Hardware integration library with step-by-step pairing for Epson, Star, Sunmi, and Windows/Mac POS hardware',
+      'Interactive video tutorials and employee training cheat sheets for new waitstaff and kitchen line cooks',
+      'Dedicated migration assistance: seamless menu and inventory data imports from legacy POS systems',
+      'Real-time system health and uptime monitor with transparent maintenance announcements'
     ],
     faqs: [
-      { question: 'What types of restaurant equipment can I track in SavoryOps Asset Management?', answer: 'You can track all physical assets across your restaurant, including heavy kitchen cooking equipment (combi ovens, fryers, ranges, grills), refrigeration units (walk-in coolers, freezers, prep tables), POS & IT hardware (terminals, receipt printers, KDS screens, barcode scanners), dining room furniture (tables, chairs, booths), bar equipment (espresso machines, draft dispensers), and facility infrastructure (HVAC, exhaust hoods, generators).' },
-      { question: 'How does preventative maintenance scheduling prevent kitchen downtime?', answer: 'SavoryOps allows you to set recurring maintenance intervals (e.g. quarterly hood cleaning, bi-monthly refrigeration coil service, annual combi oven descaling). The system alerts managers well before service is due, enabling timely technician visits and preventing disastrous breakdowns during peak service hours.' },
-      { question: 'How do inter-branch equipment transfers work?', answer: 'When you need to move equipment (like a spare POS terminal or backup fryer) to another branch, you initiate an Asset Transfer in the Owner Panel. The system records the origin branch, destination, dispatch date, transfer reason, and equipment condition. The receiving branch manager inspects and confirms the delivery, automatically updating the asset\'s location in the master catalog.' },
-      { question: 'Can I track equipment warranties and vendor contacts?', answer: 'Yes. Every asset profile stores supplier details, purchase invoices, warranty start and expiration dates, and vendor support contacts. When logging a maintenance request, staff can immediately verify whether the repair is covered under warranty.' },
-      { question: 'What asset reports are available in the Report Hub?', answer: 'SavoryOps provides three dedicated Asset Management reports: (1) Asset Valuation Report (book value, purchase price, category-wise valuation, and maintenance condition splits), (2) Asset Maintenance Report (repair history, servicing costs, technician logs, and breakdown frequency), and (3) Asset Transfer Report (audit trail of inter-branch equipment dispatches and arrivals).' },
-      { question: 'Is Asset Management included across multi-branch and multi-business setups?', answer: 'Yes. You can manage assets across multiple branches or separate restaurant entities from a single unified Owner Panel with localized branch filters and consolidated executive reporting.' }
+      { question: 'What support channels are available for SavoryOps users?', answer: 'SavoryOps provides 24/7 live in-app chat support, ticket-based email support, phone assistance for urgent service emergencies, and an extensive online knowledge base accessible from both mobile and desktop.' },
+      { question: 'How quickly does the SavoryOps technical team respond to support inquiries?', answer: 'Our emergency service desk maintains an average response time of under 2 minutes for urgent live chat requests during active restaurant service hours.' },
+      { question: 'Does SavoryOps assist with onboarding and menu data migration?', answer: 'Yes! Our onboarding team offers complimentary menu setup and ingredient database migration from legacy POS systems (such as Toast, Square, Lightspeed, and TouchBistro).' },
+      { question: 'Where can I find hardware setup guides for thermal printers and cash drawers?', answer: 'Our Help Center includes illustrated setup guides covering network LAN, USB, Bluetooth, and Wi-Fi configurations for all major commercial printer brands including Epson, Star Micronics, Rongta, and Munbyn.' },
+      { question: 'Is there training documentation for servers and kitchen staff?', answer: 'Yes. We provide quick-start 1-page visual cheat sheets and 3-minute video guides designed specifically for rapid cashier training, table ordering, and kitchen KDS bump-bar operations.' }
+    ],
+    ctaText: 'Contact Support or Book Demo',
+    ctaLink: '/contact-us'
+  },
+  'table-reservation': {
+    id: 'table-reservation',
+    badge: 'Dining Room Optimization',
+    title: 'Restaurant Table Reservation & Floor Plan Management Software',
+    metaTitle: 'Restaurant Table Reservation Software & Floor Plan | SavoryOps',
+    metaDescription: 'Maximize dining capacity, eliminate overbooking, manage real-time table turnover, and delight guests with SavoryOps Table Reservation system.',
+    primaryKeyword: 'Restaurant Table Reservation Software',
+    secondaryKeywords: [
+      'table reservation software',
+      'restaurant floor plan software',
+      'dining room management system',
+      'restaurant waitlist app',
+      'online table booking software',
+      'restaurant seat management'
+    ],
+    h1: 'Intelligent Table Reservation & Dining Floor Plan Management',
+    subtitle: 'Maximize dining room seating capacity, streamline guest arrivals, track table turnover in real time, and eliminate overbooking with zero cover fees.',
+    overview: 'Managing dining room turns and reservation books manually or paying exorbitant third-party per-cover commissions cuts deeply into your restaurant profits. The SavoryOps Table Reservation and Floor Plan module allows operators to design interactive visual floor maps, accept direct online table bookings with zero per-cover fees, track waitlists, and optimize seat turnover seamlessly.',
+    benefits: [
+      { title: 'Zero Per-Cover Commission Fees', desc: 'Accept direct reservations through your website and social channels without paying third-party booking fees.' },
+      { title: 'Visual Interactive Floor Plans', desc: 'Drag-and-drop tables, combine seating for large parties, and monitor live table occupancy status at a glance.' },
+      { title: 'Faster Table Turnover', desc: 'Real-time dining duration timers alert servers when tables are ready for check presentation and busing.' },
+      { title: 'Automated Guest SMS Confirmations', desc: 'Send automated booking reminders and confirmation texts to reduce costly no-shows.' }
+    ],
+    features: [
+      'Interactive visual floor map designer matching your physical dining rooms, patio, and bar sections',
+      'Direct online table reservation widget embeddable on your website, Google Business Profile, and Instagram',
+      'Real-time table status tracking: Reserved, Seated, Order Placed, Billed, and Cleaning',
+      'Digital guest waitlist with automated SMS alerts when tables are ready',
+      'Guest dining preference history, VIP tags, dietary restrictions, and anniversary notes',
+      'Automated party size pacing to prevent overwhelming kitchen line cooks at the top of the hour'
+    ],
+    faqs: [
+      { question: 'Does SavoryOps charge per-cover fees for online table reservations?', answer: 'No! Unlike OpenTable or Resy that charge $1.00 to $1.50 per guest cover, SavoryOps includes direct table reservations with zero commission fees.' },
+      { question: 'Can we customize our restaurant floor plan layout?', answer: 'Yes. You can build multi-room floor plans (Main Dining, Patio, Bar, Private Dining) with custom table shapes, sizes, seat counts, and physical landmarks like pillars or kitchen entrances.' },
+      { question: 'Can guests reserve tables directly online?', answer: 'Yes. SavoryOps provides a lightweight, mobile-responsive booking widget that integrates into your website, Google Reserve, and social media pages.' },
+      { question: 'How does the system prevent table overbooking?', answer: 'You can configure seating duration windows (e.g. 90 minutes for 2-top, 120 minutes for large parties), maximum capacity thresholds, and kitchen pacing caps per 15-minute intervals.' },
+      { question: 'How does the digital waitlist work for walk-in guests?', answer: 'Hosts can enter walk-in names and mobile numbers. When their table is ready, 1 tap sends an automated SMS alert inviting them to the host stand.' }
+    ],
+    ctaText: 'Start Free 14-Day Trial',
+    ctaLink: '/signup'
+  },
+  'qsr': {
+    id: 'qsr',
+    badge: 'Express Counter Velocity',
+    title: 'Quick Service Restaurant (QSR) & Fast Food POS Software',
+    metaTitle: 'QSR POS Software: Fast Food & Counter Service Billing | SavoryOps',
+    metaDescription: 'Speed up rush-hour counter ordering with SavoryOps QSR POS. Sub-second billing, combo menu shortcuts, token number displays, and drive-thru routing.',
+    primaryKeyword: 'QSR POS System',
+    secondaryKeywords: [
+      'quick service restaurant pos',
+      'fast food billing software',
+      'counter service pos',
+      'qsr ordering system',
+      'token number display system',
+      'fast food cash register'
+    ],
+    h1: 'High-Speed POS Software for Quick Service Restaurants (QSR)',
+    subtitle: 'Engineered for sub-second counter transactions, token number calling, combo meal shortcuts, and high-velocity rushes in fast food, cafes, and food trucks.',
+    overview: 'In fast food and quick service venues, every second waiting in line directly costs sales and frustrates hungry patrons. SavoryOps QSR POS is stripped of unnecessary clicks, engineered for rapid touchscreen keying, instant barcode scanning, integrated cashless payment taps, and automated order token number routing to overhead pickup screens.',
+    benefits: [
+      { title: 'Sub-Second Counter Billing', desc: 'Complete high-volume orders in just 2 to 3 screen touches with optimized category grids and quick keys.' },
+      { title: 'Customer Order Token Calling', desc: 'Automate sequential order token numbers displayed on overhead kitchen and customer pickup screens.' },
+      { title: 'Rapid Combo & Modifier Workflows', desc: 'Seamlessly prompt cashiers for size upgrades, drink choices, and side selections without interrupting speed.' },
+      { title: 'Integrated Contactless Payments', desc: 'Accept taps, cards, mobile wallets, and QR payments in under 3 seconds per customer.' }
+    ],
+    features: [
+      'High-speed touch grid layout optimized for cafes, burger joints, pizza counters, and QSR chains',
+      'Automated customer token numbering and integration with overhead kitchen readiness displays',
+      'Fast modifier popups for quick size selections, meal upgrades, and dipping sauce add-ons',
+      'Dual-screen customer display (CFD) support showing live itemization, promotions, and totals',
+      'Barcode and QR code scanner integration for fast merchandise and packaged snack ringing',
+      'Offline-capable cashier mode so lines never stop moving even if the internet drops'
+    ],
+    faqs: [
+      { question: 'What makes SavoryOps ideal for quick service restaurants (QSR)?', answer: 'SavoryOps QSR mode is engineered specifically for fast-paced counter environments with large touch targets, minimal screen transitions, instant token number printing, and high-speed card processing.' },
+      { question: 'Does SavoryOps support customer token number displays (Queue Management)?', answer: 'Yes. SavoryOps automatically prints order token numbers on receipts and syncs with TV/monitor displays showing Preparing and Ready for Pickup status.' },
+      { question: 'Can cashiers customize combo meals and upgrades quickly?', answer: 'Yes. One tap on a combo meal opens an intuitive popup guiding the cashier through drink, side, and size selections with automated price adjustments.' },
+      { question: 'Does the QSR POS work during internet outages?', answer: 'Yes. SavoryOps includes intelligent local offline caching, allowing cashiers to continue punching tickets and printing kitchen orders seamlessly during broadband dropouts.' },
+      { question: 'Can we connect customer-facing displays (CFD)?', answer: 'Yes. Connect a secondary monitor or tablet facing the customer to display live order items, order total, tax breakdown, and promotional banner graphics.' }
+    ],
+    ctaText: 'Explore QSR Solutions',
+    ctaLink: '/solutions/restaurant-pos-system'
+  },
+  'tax-report': {
+    id: 'tax-report',
+    badge: 'Fiscal Compliance',
+    title: 'Restaurant Tax Reports, GST & VAT Compliance Software',
+    metaTitle: 'Restaurant Tax Reports, GST & VAT Compliance Software | SavoryOps',
+    metaDescription: 'Simplify restaurant tax accounting with SavoryOps tax reporting. Automated GST, VAT, and sales tax calculations, taxable vs exempt splits, and 1-click audit exports.',
+    primaryKeyword: 'Restaurant Tax Reporting Software',
+    secondaryKeywords: [
+      'restaurant tax reports',
+      'restaurant gst filing software',
+      'vat tax report restaurant',
+      'sales tax calculation restaurant',
+      'restaurant tax compliance software',
+      'restaurant fiscal reports'
+    ],
+    h1: 'Automated Restaurant Tax Reporting & Regulatory Compliance',
+    subtitle: 'Eliminate end-of-month accounting stress with automatic GST, VAT, and sales tax summaries, tax category splits, and one-click accountant exports.',
+    overview: 'Restaurant tax regulations are notoriously complex, with differing rates for dine-in, alcohol, packaged retail items, and delivery sales. The SavoryOps Tax Report module automates tax tracking across every transaction, itemizing applicable sales tax, GST/HST, VAT, and municipal hospitality surcharges so your bookkeeper has 100% audit-ready numbers.',
+    benefits: [
+      { title: '100% Audit-Ready Financials', desc: 'Maintain complete digital tax archives with transaction-level breakdowns for frictionless tax filing.' },
+      { title: 'Itemized Tax Category Splitting', desc: 'Automatically separate food tax rates, liquor taxes, service charges, and tax-exempt transactions.' },
+      { title: '1-Click Accounting Exports', desc: 'Export standardized Excel, CSV, and PDF summaries formatted for your accountant or ERP software.' },
+      { title: 'Zero Manual Math Errors', desc: 'Eliminate register math mistakes with automated tax calculations applied at the POS point of sale.' }
+    ],
+    features: [
+      'Comprehensive tax liability dashboard displaying gross sales, net taxable sales, and collected taxes',
+      'Multi-tax tier support: split standard sales tax, alcohol excise levies, luxury food taxes, and service fees',
+      'Detailed transaction tax ledger listing invoice numbers, timestamps, tax brackets, and totals',
+      'Tax exemption tagging for registered diplomatic, military, or resale wholesale clients',
+      'Monthly, quarterly, and annual fiscal tax comparison reports for multi-branch organizations',
+      'Automated integration with general expense ledgers for input tax credit (ITC) reconciliation'
+    ],
+    faqs: [
+      { question: 'How does SavoryOps handle multiple tax rates (e.g. food vs. alcohol)?', answer: 'SavoryOps allows you to assign specific tax groups to menu categories or individual items. For example, food items can be taxed at 5% while beer and wine are taxed at 12%, with each calculated automatically on the guest check.' },
+      { question: 'Can I export tax summaries directly for my accountant?', answer: 'Yes! All tax reports can be exported in one click to Excel (XLSX), CSV, or formatted PDF documents ready for tax filing.' },
+      { question: 'Does the system support GST / VAT input tax credit (ITC) calculations?', answer: 'Yes. By recording vendor procurement invoices in the Inventory and Finance modules alongside POS sales, SavoryOps helps you calculate net tax liability (Output Tax collected minus Input Tax paid).' },
+      { question: 'Are tax details printed clearly on customer receipts?', answer: 'Yes. Receipts print compliant tax breakdowns showing itemized tax names, percentages, and amounts along with your registered business tax ID numbers.' },
+      { question: 'Can we configure tax-inclusive vs. tax-exclusive menu pricing?', answer: 'Yes. You can choose whether prices displayed on menus include tax or whether taxes are computed and added at checkout.' }
+    ],
+    ctaText: 'Start Free 14-Day Trial',
+    ctaLink: '/signup'
+  },
+  'branch-tax-management': {
+    id: 'branch-tax-management',
+    badge: 'Multi-Jurisdiction Tax',
+    title: 'Multi-Branch & Regional Restaurant Tax Management',
+    metaTitle: 'Multi-Location Restaurant Tax Management Software | SavoryOps',
+    metaDescription: 'Configure municipal, state, and regional tax brackets across multi-unit restaurant chains. Manage branch-specific GST, VAT, and local levies from one portal.',
+    primaryKeyword: 'Multi Branch Restaurant Tax Management',
+    secondaryKeywords: [
+      'multi branch tax management',
+      'regional tax pos restaurant',
+      'restaurant tax configuration',
+      'multi-location restaurant tax rates',
+      'chain restaurant tax software'
+    ],
+    h1: 'Centralized Multi-Branch & Regional Restaurant Tax Management',
+    subtitle: 'Manage differing city, state, provincial, and national tax rules across multiple restaurant branches from a single unified owner portal.',
+    overview: 'Multi-unit restaurant operators often face differing tax jurisdictions across cities, counties, and states. SavoryOps Branch Tax Management centralizes all regional tax rules into a single dashboard, allowing brand executives to configure localized tax rates, municipal hospitality surcharges, and branch legal IDs without manual store-level updates.',
+    benefits: [
+      { title: 'Centralized Headquarters Control', desc: 'Configure regional tax brackets from the main corporate portal and push them instantly to local branches.' },
+      { title: 'Multi-Jurisdiction Compliance', desc: 'Comply with varying municipal, county, state, and national restaurant tax mandates effortlessly.' },
+      { title: 'Separate Legal Tax IDs', desc: 'Assign unique GSTIN, VAT, or State EIN identifiers to individual franchise branches or corporate entities.' },
+      { title: 'Branch-Wise Tax Reconciliation', desc: 'Compare collected taxes branch-by-branch with consolidated corporate executive overviews.' }
+    ],
+    features: [
+      'Location-specific tax rule assignment across unlimited restaurant branches and franchises',
+      'Support for composite taxes, state surcharges, municipal tourism levies, and green eco-taxes',
+      'Dynamic tax override scheduling for regional tax holidays or temporary statutory rate changes',
+      'Independent legal entity profile setup per branch with distinct tax registration certificates',
+      'Consolidated multi-branch tax liability reports and branch-by-branch compliance audits',
+      'Granular manager permissions preventing unauthorized local modification of statutory tax percentages'
+    ],
+    faqs: [
+      { question: 'Can different branches have different sales tax rates in SavoryOps?', answer: 'Yes. Each branch can be assigned its own localized tax profile to match municipal and regional tax codes.' },
+      { question: 'What happens when statutory tax rates change in a specific region?', answer: 'Corporate administrators can update the tax rate for that specific branch in the central Owner Panel, and all POS terminals at that branch will update immediately.' },
+      { question: 'Can franchise partners maintain separate tax registration numbers?', answer: 'Yes. Each branch profile maintains independent legal business names, registered tax IDs (GST, VAT, EIN), and invoice numbering prefixes.' },
+      { question: 'Can corporate leadership view a consolidated tax report across all branches?', answer: 'Yes. The Owner Dashboard aggregates collected taxes across all outlets while providing 1-click branch filtering for local filings.' },
+      { question: 'Does branch tax management prevent store managers from tampering with tax rates?', answer: 'Yes. Role-based access controls strictly restrict tax rate edits to authorized corporate administrators.' }
+    ],
+    ctaText: 'Explore Multi-Branch POS',
+    ctaLink: '/features/multiple-branches'
+  },
+  'combo-unlimited-meal': {
+    id: 'combo-unlimited-meal',
+    badge: 'Menu Engineering & Bundles',
+    title: 'Combo Meals, Value Packs & Unlimited Dining Management',
+    metaTitle: 'Restaurant Combo Meals & Buffet Management Software | SavoryOps',
+    metaDescription: 'Create dynamic fixed-price combo deals, meal bundles, and all-you-can-eat unlimited dining tickets with automated recipe depletion in SavoryOps.',
+    primaryKeyword: 'Restaurant Combo Meal Management POS',
+    secondaryKeywords: [
+      'restaurant combo meals',
+      'buffet management software',
+      'unlimited meal pos',
+      'fixed price menu pos',
+      'value meal packages restaurant',
+      'all you can eat pos system'
+    ],
+    h1: 'Flexible Combo Meals, Bundles & Unlimited Dining Management',
+    subtitle: 'Boost check sizes and delight hungry diners with customizable combo meals, beverage pairings, and unlimited buffet dining configurations.',
+    overview: 'Combo deals and unlimited all-you-can-eat dining promotions are proven revenue drivers, but tracking food costs and ordering rules manually can lead to kitchen chaos. SavoryOps provides robust combo meal engineering: bundle main courses with sides and beverages, enforce upgrade pricing, and manage unlimited dining rounds with automated ingredient stock depletion.',
+    benefits: [
+      { title: 'Higher Check Sizes', desc: 'Incentivize guests to upgrade to higher-margin meal bundles and beverage pairings.' },
+      { title: 'Controlled Unlimited Dining', desc: 'Track table-wise reorder rounds and pacing for buffets and all-you-can-eat packages.' },
+      { title: 'Precise Recipe BOM Depletion', desc: 'Automatically deplete the exact raw ingredients for each selected combo component.' },
+      { title: 'Frictionless Cashier Ordering', desc: 'Guided ordering workflows prompt servers through required combo selections in seconds.' }
+    ],
+    features: [
+      'Intuitive combo bundle creator with step-by-step selection groups (e.g. Choose 1 Burger, Choose 1 Side, Choose 1 Drink)',
+      'Custom modifier upgrade surcharges (e.g. +$1.50 for waffle fries or premium shake upgrade)',
+      'Unlimited dining mode with per-head cover pricing and round-by-round reorder tracking',
+      'Automatic ingredient depletion across all selected combo components upon POS/KOT dispatch',
+      'Time-restricted combo availability (e.g. Lunch Specials, Weekend Buffets, Late-Night Bundles)',
+      'Combo performance analytics: identify most popular pairing choices and margin contributions'
+    ],
+    faqs: [
+      { question: 'How do combo meals work on the POS touchscreen?', answer: 'When a server taps a combo item, an intuitive step-by-step popup guides them through customer selections (e.g. Step 1: Entree, Step 2: Side, Step 3: Drink) with clear upgrade pricing buttons.' },
+      { question: 'Does SavoryOps support all-you-can-eat (AYCE) or buffet dining?', answer: 'Yes! You can charge a flat per-cover price for unlimited dining and allow servers to punch subsequent reorder rounds without charging additional base ticket fees.' },
+      { question: 'How does inventory depletion work for combo meals?', answer: 'SavoryOps automatically breaks down the combo into its individual recipe ingredients and depletes raw stock accurately based on the guest exact chosen items and size options.' },
+      { question: 'Can we schedule combos for specific lunch hours or days?', answer: 'Yes. You can configure day-of-week and time-of-day availability rules so lunch combos automatically deactivate during dinner hours.' },
+      { question: 'Can guests order combo meals via table QR code menus?', answer: 'Yes. Guests scanning table QR codes get the same guided step-by-step combo selection flow directly on their smartphone screens.' }
+    ],
+    ctaText: 'Start Free 14-Day Trial',
+    ctaLink: '/signup'
+  },
+  'coupon': {
+    id: 'coupon',
+    badge: 'Promotions & Discounts',
+    title: 'Restaurant Coupon, Discount & Voucher Management Software',
+    metaTitle: 'Restaurant Coupon & Promotion Management Software | SavoryOps',
+    metaDescription: 'Launch percentage and flat discounts, promotional coupon codes, happy hour pricing rules, and single-use promo vouchers with SavoryOps.',
+    primaryKeyword: 'Restaurant Coupon and Discount Management',
+    secondaryKeywords: [
+      'restaurant coupon management',
+      'restaurant promotional discounts',
+      'pos coupon codes',
+      'happy hour discount rules',
+      'restaurant voucher software',
+      'restaurant discount controls'
+    ],
+    h1: 'Dynamic Restaurant Promotion & Coupon Code Management',
+    subtitle: 'Drive guest acquisition and repeat dining visits with targeted discount codes, happy hour schedules, minimum spend rules, and manager PIN authorizations.',
+    overview: 'Promotions attract new guests and fill empty tables during slow dining hours, but uncontrolled discounts can bleed restaurant margins and open doors to employee theft. The SavoryOps Coupon and Promotion Management module gives operators strict, granular control over marketing discounts, single-use voucher codes, automated happy hours, and manager approval workflows.',
+    benefits: [
+      { title: 'Prevent Discount Fraud', desc: 'Enforce manager PIN authorizations and strict discount usage limits to stop unauthorized employee giveaways.' },
+      { title: 'Automated Happy Hour Pricing', desc: 'Schedule time-activated promotional pricing that automatically starts and ends without manual cashier intervention.' },
+      { title: 'Targeted Marketing Campaigns', desc: 'Issue trackable coupon codes for social media campaigns, influencer partnerships, and corporate perks.' },
+      { title: 'Detailed Discount Audit Trails', desc: 'Track every discount dollar applied, who authorized it, and which promotional campaign it belongs to.' }
+    ],
+    features: [
+      'Percentage, flat dollar amount, or item-specific discount rules',
+      'Single-use and multi-use coupon code generators with expiration date parameters',
+      'Minimum order value and qualifying menu category criteria (e.g. $10 off orders over $50)',
+      'Automated happy hour schedules with day-of-week and time-window triggers',
+      'Mandatory manager PIN verification toggle for manual cashier bill discounts',
+      'Promotion ROI report hub: track total revenue generated vs discount dollars conceded'
+    ],
+    faqs: [
+      { question: 'How can we prevent cashiers from abusing manual discounts?', answer: 'SavoryOps allows you to disable arbitrary manual discounts for cashiers. Any manual discount requires a manager PIN, and all discounts are logged with manager timestamps in the daily audit report.' },
+      { question: 'Can we create coupon codes for social media or flyers?', answer: 'Yes. You can generate alphanumeric coupon codes (e.g. SAVORY20) with predefined usage limits, start and end dates, and minimum spend requirements.' },
+      { question: 'How does automated Happy Hour discounting work?', answer: 'You can set automated rules (such as 25% off appetizers and craft beer from 4 PM to 7 PM, Monday through Thursday). The POS automatically applies the discounted pricing during those hours without manual cashier input.' },
+      { question: 'Can coupons be redeemed through table QR ordering?', answer: 'Yes. Diners ordering or paying through table QR codes can enter valid promo codes at checkout to apply discounts.' },
+      { question: 'Can we restrict discounts from applying to alcohol or specific items?', answer: 'Yes. You can configure discounts to exclude specific menu categories (like alcoholic beverages, tobacco, or specialty retail items) to comply with local laws and protect margins.' }
+    ],
+    ctaText: 'Start Free 14-Day Trial',
+    ctaLink: '/signup'
+  },
+  'referral-system': {
+    id: 'referral-system',
+    badge: 'Organic Growth Engine',
+    title: 'Restaurant Customer Referral Program & Loyalty Marketing Software',
+    metaTitle: 'Restaurant Referral Program & Loyalty Marketing Software | SavoryOps',
+    metaDescription: 'Turn loyal diners into brand ambassadors with automated customer referral links, dining reward credits, and tracked viral restaurant marketing.',
+    primaryKeyword: 'Restaurant Customer Referral Program',
+    secondaryKeywords: [
+      'restaurant referral software',
+      'diner referral program',
+      'word of mouth restaurant marketing',
+      'restaurant customer rewards',
+      'restaurant loyalty referrals',
+      'restaurant guest acquisition'
+    ],
+    h1: 'Automated Restaurant Customer Referral & Advocate System',
+    subtitle: 'Reward your most enthusiastic diners for recommending your restaurant to friends and colleagues with frictionless digital referral links and dining credits.',
+    overview: 'Word of mouth is the most credible and cost-effective marketing channel in the restaurant industry. The SavoryOps Referral System enables your guests to share personalized referral links directly via SMS, WhatsApp, and social media from their digital invoices. When a referred friend dines with you, both the advocate and the new guest earn automatic dining credits.',
+    benefits: [
+      { title: 'Lower Customer Acquisition Costs', desc: 'Acquire high-value new diners at a fraction of the cost of social media ads or delivery platform commissions.' },
+      { title: 'Frictionless Mobile Sharing', desc: '1-tap WhatsApp, SMS, and link sharing embedded directly into digital receipts and guest accounts.' },
+      { title: 'Automatic Reward Crediting', desc: 'Dining reward credits apply automatically to future POS tickets or QR orders upon successful referral.' },
+      { title: 'Track Top Brand Advocates', desc: 'Identify your most influential customers and reward them with VIP perks and invitations.' }
+    ],
+    features: [
+      'Unique customer referral link and QR code generation linked to guest phone numbers',
+      'Two-sided reward incentives: reward the referring diner and offer welcome discounts to their friends',
+      'Automated SMS notifications when a friend completes their first dining visit',
+      'Instant POS reward ledger integration: cashiers can apply accumulated referral credits at checkout',
+      'Fraud prevention safeguards preventing self-referrals and duplicate telephone registrations',
+      'Referral analytics dashboard tracking viral coefficient, new guest spend, and advocacy ROI'
+    ],
+    faqs: [
+      { question: 'How do customers share their referral link?', answer: 'When guests receive their digital invoice via SMS/Email or scan their table QR, they see a personalized referral invite they can share with 1 tap to WhatsApp, iMessage, or social apps.' },
+      { question: 'What rewards can we offer for successful customer referrals?', answer: 'You have complete flexibility: offer fixed dollar credits (e.g. $10 dining voucher), percentage discounts (e.g. 15% off next visit), or complimentary menu items (like a free dessert).' },
+      { question: 'How are referral credits redeemed at the restaurant?', answer: 'When the diner provides their registered mobile number at the cashier counter or via table QR checkout, their available referral credits appear automatically and can be applied with 1 tap.' },
+      { question: 'How does SavoryOps prevent referral abuse?', answer: 'The system validates new guest phone numbers, cross-checks transaction history, and enforces minimum spend thresholds before releasing referral credits.' },
+      { question: 'Can multi-branch restaurants use the referral system across all locations?', answer: 'Yes. Customers can earn and redeem referral credits across any of your brand participating locations.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
   }
+
 };

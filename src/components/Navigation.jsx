@@ -80,7 +80,7 @@ const Navigation = () => {
   };
 
   const handleGetStartedClick = () => {
-    navigate('/Signin');
+    navigate('/signin');
   };
 
   const solutionsMenuItems = [
