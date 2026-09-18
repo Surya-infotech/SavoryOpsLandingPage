@@ -10,6 +10,7 @@ import {
   PointOfSale as PosIcon,
   Kitchen as KitchenIcon,
   Inventory as InventoryIcon,
+  Apartment as AssetIcon,
   AccountBalanceWallet as FinanceIcon,
   Assessment as ReportsIcon,
   Calculate as CalculateIcon,
@@ -87,8 +88,9 @@ const Navigation = () => {
     { text: 'Kitchen Order Ticket (KOT)', path: '/solutions/kitchen-order-ticket-system', icon: <KitchenIcon fontSize="small" /> },
     { text: 'Kitchen Display System (KDS)', path: '/solutions/kitchen-display-system', icon: <KitchenIcon fontSize="small" /> },
     { text: 'Inventory & Recipe BOM', path: '/solutions/restaurant-inventory-management', icon: <InventoryIcon fontSize="small" /> },
+    { text: 'Asset & Equipment Control', path: '/features/asset-management', icon: <AssetIcon fontSize="small" /> },
     { text: 'Finance & Expense Control', path: '/features/finance-management', icon: <FinanceIcon fontSize="small" /> },
-    { text: '20+ Advanced Reports', path: '/features/advanced-reports', icon: <ReportsIcon fontSize="small" /> },
+    { text: '27+ Advanced Reports', path: '/features/advanced-reports', icon: <ReportsIcon fontSize="small" /> },
     { text: 'Food Cost Calculator & Guide', path: '/resources/food-cost-percentage-guide', icon: <CalculateIcon fontSize="small" /> },
     { text: 'Toast POS Alternative', path: '/alternatives/toast-pos-alternative', icon: <CompareIcon fontSize="small" /> },
     { text: 'Square POS Alternative', path: '/alternatives/square-pos-alternative', icon: <CompareIcon fontSize="small" /> }

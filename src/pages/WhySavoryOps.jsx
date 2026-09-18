@@ -29,6 +29,7 @@ import {
   ArrowForward as ArrowForwardIcon,
   Check as CheckIcon,
   AccountBalanceWallet as FinanceIcon,
+  Apartment as ApartmentIcon,
   Assessment as ReportsIcon,
   Language as LanguageIcon
 } from '@mui/icons-material';
@@ -138,15 +139,27 @@ const WhySavoryOps = () => {
       ]
     },
     {
-      icon: <ReportsIcon sx={{ fontSize: 32 }} />,
-      title: '20+ Deep-Dive Executive & Back-of-House Reports',
+      icon: <ApartmentIcon sx={{ fontSize: 32 }} />,
+      title: 'Restaurant Asset & Equipment Lifecycle Control',
       image: '/images/features/inventory-management.jpg',
       description:
-        'Make data-backed decisions with over 20 interactive reports across Sales & Financials, Menu Engineering (Stars, Plowhorses, Puzzles, Dogs), Kitchen Speed, and Stock Movement.',
+        'Protect your highest capital investments. Track commercial kitchen machinery, POS hardware, and furniture with preventative maintenance schedules and inter-branch transfers.',
       highlights: [
-        'Menu Engineering Matrix for dish popularity and margin optimization',
-        'Live Stock Balance & Stock Ledger movement audit trails',
-        'Kitchen Speed metrics to eliminate culinary fulfillment bottlenecks'
+        'Centralized equipment register with brand, model, serial numbers & warranty dates',
+        'Preventative maintenance logs to avert unexpected kitchen downtime during rushes',
+        'Inter-branch equipment dispatch notes, transit tracking, and condition acceptance'
+      ]
+    },
+    {
+      icon: <ReportsIcon sx={{ fontSize: 32 }} />,
+      title: '27+ Deep-Dive Executive & Back-of-House Reports',
+      image: '/images/features/inventory-management.jpg',
+      description:
+        'Make data-backed decisions with over 27 interactive reports across Sales & Financials, Menu Engineering (Stars, Plowhorses, Puzzles, Dogs), Kitchen Speed, Stock Movement, and Asset Valuation.',
+      highlights: [
+        'Menu Engineering Matrix & Food Cost Variance for plate margin optimization',
+        'Live Stock Balance, Stock Movement, and Low-Stock Reorder threshold alerts',
+        'Accounts Payable (AP) Aging and Capital Asset Valuation across all branches'
       ]
     }
   ];

@@ -23,6 +23,13 @@ import {
   RateReview as ReviewReportIcon,
   Inventory2 as StockBalanceIcon,
   HistoryEdu as StockLedgerIcon,
+  HourglassBottom as APAgingIcon,
+  AccountBalance as SupplierSpendIcon,
+  Calculate as FoodCostVarianceIcon,
+  WarningAmber as LowStockIcon,
+  Apartment as AssetValuationIcon,
+  Build as AssetMaintenanceIcon,
+  SwapHoriz as AssetTransferIcon,
 } from '@mui/icons-material';
 import { Box, Card, CardContent, Chip, Container, Tab, Tabs, Typography } from '@mui/material';
 
@@ -34,6 +41,7 @@ const REPORT_CATEGORIES = [
   { key: 'menu', label: 'Menu & Operations', icon: <ItemWiseIcon sx={{ fontSize: 18 }} /> },
   { key: 'dining', label: 'Dining & Guests', icon: <TableIcon sx={{ fontSize: 18 }} /> },
   { key: 'inventory', label: 'Inventory & Stock', icon: <StockBalanceIcon sx={{ fontSize: 18 }} /> },
+  { key: 'assets', label: 'Asset Management', icon: <AssetValuationIcon sx={{ fontSize: 18 }} /> },
 ];
 
 const REPORTS = [
@@ -110,6 +118,22 @@ const REPORTS = [
     description:
       'Analyze ancillary revenue from delivery fees, packaging charges, service surcharges, and tip disbursements.',
   },
+  {
+    id: 'ap-aging-report',
+    category: 'sales',
+    icon: <APAgingIcon />,
+    title: 'AP Aging (Accounts Payable) Report',
+    description:
+      'Monitor pending vendor bills grouped into 0-30, 31-60, 61-90, and 90+ day aging buckets to manage supplier debt.',
+  },
+  {
+    id: 'supplier-spend-report',
+    category: 'sales',
+    icon: <SupplierSpendIcon />,
+    title: 'Supplier Spend & Vendor Analysis',
+    description:
+      'Track procurement volume per supplier, historical invoice payments, ingredient cost fluctuations, and account balances.',
+  },
 
   // Group 2: Menu & Operations
   {
@@ -135,6 +159,14 @@ const REPORTS = [
     title: 'Menu Engineering Matrix',
     description:
       'BCG-style analysis categorizing dishes into Stars, Plowhorses, Puzzles, and Dogs for margin optimization.',
+  },
+  {
+    id: 'food-cost-variance-report',
+    category: 'menu',
+    icon: <FoodCostVarianceIcon />,
+    title: 'Food Cost Variance & Leakage',
+    description:
+      'Compare theoretical recipe BOM ingredient usage against actual physical inventory depletion to pinpoint kitchen waste.',
   },
   {
     id: 'wastage-loss-report',
@@ -220,6 +252,40 @@ const REPORTS = [
     description:
       'Complete historical audit trail of stock inward receiving, POS recipe depletion, transfers, and adjustments.',
   },
+  {
+    id: 'low-stock-report',
+    category: 'inventory',
+    icon: <LowStockIcon />,
+    title: 'Low Stock & Reorder Alerts',
+    description:
+      'Real-time automated warnings for raw materials and ingredients that fall below minimum safety thresholds.',
+  },
+
+  // Group 5: Asset Management
+  {
+    id: 'asset-valuation-report',
+    category: 'assets',
+    icon: <AssetValuationIcon />,
+    title: 'Asset Valuation & Book Value',
+    description:
+      'Comprehensive audit of physical equipment across all branches, purchase costs, depreciation, and in-use capital value.',
+  },
+  {
+    id: 'asset-maintenance-report',
+    category: 'assets',
+    icon: <AssetMaintenanceIcon />,
+    title: 'Asset Maintenance & Repair Logs',
+    description:
+      'Track servicing histories, machinery repair expenses, technician labor logs, and upcoming preventative maintenance schedules.',
+  },
+  {
+    id: 'asset-transfer-report',
+    category: 'assets',
+    icon: <AssetTransferIcon />,
+    title: 'Inter-Branch Asset Transfers',
+    description:
+      'Chronological movement audit of equipment dispatched across branches, transit status, inspection notes, and delivery sign-offs.',
+  },
 ];
 
 const Reports = () => {
@@ -235,13 +301,13 @@ const Reports = () => {
       <Container maxWidth="lg">
         <Box className="reports-header">
           <Box className="reports-badge">
-            <Chip icon={<ReportsSectionIcon />} label="20+ Executive Reports" className="reports-badge-chip" />
+            <Chip icon={<ReportsSectionIcon />} label="27+ Executive Reports" className="reports-badge-chip" />
           </Box>
           <Typography variant="h2" component="h2" className="reports-title">
             Enterprise Reporting &amp; Business Intelligence
           </Typography>
           <Typography variant="h5" className="reports-subtitle">
-            Transform dining room tickets and kitchen operations into actionable insights. Access 20+ real-time reports across Sales &amp; Financials, Menu Engineering, Dining Experience, and Stock Movement.
+            Transform dining room tickets, kitchen operations, inventory levels, and physical capital into actionable insights. Access 27+ real-time reports across Sales &amp; Financials, Menu Engineering, Dining Experience, Stock Movement, and Asset Management.
           </Typography>
 
           {/* Category Filter Tabs */}

@@ -537,39 +537,48 @@ export const FEATURES_DATA = {
   'advanced-reports': {
     id: 'advanced-reports',
     badge: 'Actionable Intelligence',
-    title: 'Advanced Restaurant Reports & Financial Analytics',
-    metaTitle: 'Restaurant Analytics & POS Reports Software | SavoryOps',
-    metaDescription: 'Make data-driven decisions with SavoryOps restaurant reports. Track daily sales, hourly heatmaps, food cost variance, and staff labor margins.',
+    title: 'Advanced Restaurant Reports & Financial Analytics (27+ Reports)',
+    metaTitle: 'Restaurant Analytics & POS Reports Software (27+ Reports) | SavoryOps',
+    metaDescription: 'Make data-driven decisions with 27+ SavoryOps restaurant reports. Track daily sales, AP aging, food cost variance, supplier spend, stock alerts, and asset valuation.',
     primaryKeyword: 'Restaurant POS Reports',
-    secondaryKeywords: ['restaurant pos reports', 'restaurant analytics software', 'advanced reporting system', 'restaurant operations report'],
-    h1: 'Advanced Restaurant Reporting & Financial Analytics',
-    subtitle: 'Transform raw dining room transactions into actionable profit strategies with automated sales, inventory, tax, and labor reports.',
-    overview: 'Restaurant profitability hinges on mastering your prime costs: food, beverage, and labor. SavoryOps provides deep operational reports that illuminate peak revenue hours, identify high-margin culinary stars, highlight ingredient shrinkage, and simplify tax filing.',
+    secondaryKeywords: [
+      'restaurant pos reports',
+      'restaurant analytics software',
+      'advanced reporting system',
+      'restaurant operations report',
+      'food cost variance report',
+      'accounts payable aging report',
+      'restaurant asset valuation report'
+    ],
+    h1: 'Advanced Restaurant Reporting & Business Intelligence (27+ Reports)',
+    subtitle: 'Transform dining room transactions, kitchen operations, inventory consumption, and capital assets into actionable profit strategies across 5 comprehensive report categories.',
+    overview: 'Restaurant profitability hinges on mastering your prime costs: food, beverage, labor, and capital equipment. SavoryOps provides 27+ deep operational and financial reports organized into 5 strategic categories in the Owner Panel Report Hub. From real-time sales and live Profit & Loss to Accounts Payable aging, theoretical food cost variance, low stock alerts, and capital asset valuation, SavoryOps gives you total back-of-house and front-of-house clarity.',
     benefits: [
-      { title: '20+ Full Operational Reports', desc: 'Centralized Report Hub organized into 4 strategic categories: Sales & Financial, Menu & Operations, Dining & Guests, and Inventory & Stock.' },
-      { title: 'Executive Profit & Loss (P&L)', desc: 'Instant P&L calculations comparing gross dining sales with ingredient COGS and operational overhead expenses.' },
-      { title: 'Menu Engineering Matrix', desc: 'BCG-style matrix segmenting items into Stars, Plowhorses, Puzzles, and Dogs for data-driven recipe pricing and menu optimization.' },
-      { title: 'Kitchen Speed & Bottleneck Analysis', desc: 'Track prep durations, station throughput, and ticket delay alerts to speed up service and table turnover.' },
-      { title: 'Stock Balance & Movement Ledgers', desc: 'Complete audit trail of inventory batch arrivals, consumption depletion, branch transfers, and shrinkage adjustments.' },
-      { title: 'Audit & Compliance Ready', desc: 'Generate compliance-ready GST, VAT, and sales tax breakdowns with taxable and exempt sums for hassle-free filing.' }
+      { title: '27+ Enterprise Operational Reports', desc: 'Centralized Report Hub organized into 5 strategic categories: Sales & Financial, Menu & Operations, Dining & Guests, Inventory & Stock, and Asset Management.' },
+      { title: 'Executive Profit & Loss & AP Aging', desc: 'Instant P&L calculations comparing gross dining sales with COGS and overhead, plus aging breakdowns of accounts payable (0-30, 31-60, 61-90, 90+ days).' },
+      { title: 'Food Cost Variance & Menu Engineering', desc: 'Identify recipe leakage by comparing theoretical vs. actual ingredient consumption, alongside BCG-matrix item classification (Stars, Plowhorses, Puzzles, Dogs).' },
+      { title: 'Supplier Spend & Procurement Audits', desc: 'Deep analytics into vendor purchase orders, price fluctuation tracking, and complete supplier statements of account.' },
+      { title: 'Stock Balance, Movement & Low Stock Alerts', desc: 'Real-time stock valuation, stock ledger movement history, and automated low-stock reorder thresholds to prevent stockouts.' },
+      { title: 'Asset Valuation & Maintenance Audit', desc: 'Track physical equipment net book value, preventative maintenance repair expenses, and inter-branch equipment transfer logs.' }
     ],
     features: [
-      'Sales & Financial Reports: Gross & Net Revenue, Day Close reconciliation, Branch-wise comparative sales, Date-wise trends, Tax compliance, Payment Mode tender split, Additional Charges breakdown, Profit & Loss (P&L), and Expense & Income.',
-      'Menu & Operations Reports: Item-Wise sales velocity, Category contribution analysis, Menu Engineering Matrix (Stars, Plowhorses, Puzzles, Dogs), Wastage & Loss tracking, Hourly Sales & Rush heatmaps, and Kitchen Speed prep times.',
+      'Sales & Financial Reports: Gross & Net Revenue, Day Close reconciliation, Branch-wise comparative sales, Date-wise trends, Tax compliance, Payment Mode tender split, Additional Charges breakdown, Profit & Loss (P&L), Expense & Income, Accounts Payable (AP) Aging Report, and Supplier Spend Analysis.',
+      'Menu & Operations Reports: Item-Wise sales velocity, Category contribution analysis, Menu Engineering Matrix (Stars, Plowhorses, Puzzles, Dogs), Food Cost Variance Analysis (Ideal vs Actual), Wastage & Loss tracking, Hourly Sales Rush heatmaps, and Kitchen Speed prep times.',
       'Dining & Guests Reports: Table Utilization & turnover speed, Customer Visit Frequency, Order Type distribution (Dine-In, Takeaway, Delivery, QR), Staff Sales & Tip Performance, and Guest Reviews & Feedback.',
-      'Inventory & Stock Reports: Stock Balance valuation, Stock Ledger movement history, ingredient consumption variance, and culinary shrinkage audits.',
-      'Custom Date Filters: Analyze performance by Day, Week, Month, Quarter, Fiscal Year, or custom date ranges with side-by-side growth comparisons.',
+      'Inventory & Stock Reports: Stock Balance valuation, Stock Ledger movement audit trails, Low Stock & Reorder Alert reports, ingredient consumption variance, and culinary shrinkage audits.',
+      'Asset Management Reports: Asset Valuation & Depreciation report, Asset Maintenance & Service Logs report, and Inter-Branch Asset Transfer audit report.',
+      'Custom Multi-Branch & Fiscal Year Filters: Filter by Branch, Fiscal Year, Day, Week, Month, Quarter, or custom date ranges with side-by-side comparative growth metrics.',
       'Multi-Format Exports: 1-click export of any report to Excel, CSV, or formatted presentation-ready PDF summaries.'
     ],
     faqs: [
-      { question: 'What reports are included in the SavoryOps Report Hub?', answer: 'The SavoryOps Report Hub provides over 20 specialized reports across 4 distinct categories: Sales & Financial (Revenue, Day Close, Branch-wise, Date-wise, Tax-wise, Payment Mode, Additional Charges, Profit & Loss, Expense & Income); Menu & Operations (Item-wise, Category-wise, Menu Engineering, Wastage Loss, Hourly Rush, Kitchen Speed); Dining & Guests (Table Utilization, Customer Frequency, Order Type, Staff Performance, Reviews); and Inventory & Stock (Stock Balance, Stock Ledger Movement).' },
-      { question: 'What is the Menu Engineering Report and how does it help restaurants?', answer: 'The Menu Engineering Report classifies every dish into four strategic quadrants based on sales popularity and profit margins: Stars (high profit, high popularity), Plowhorses (low profit, high popularity), Puzzles (high profit, low popularity), and Dogs (low profit, low popularity). This allows operators to reprice, promote, or replace dishes to maximize gross profit.' },
-      { question: 'Can I track Kitchen Speed and prep bottleneck times?', answer: 'Yes. The Kitchen Speed Report tracks average preparation and fulfillment times by menu category, station, and time of day, pinpointing delayed tickets and culinary bottlenecks.' },
-      { question: 'Can I export reports for my accountant or tax auditor?', answer: 'Yes. All SavoryOps financial, sales, tax, and inventory reports export cleanly to Excel, CSV, and formatted PDF summaries with one click.' },
-      { question: 'Does SavoryOps calculate Profit & Loss (P&L) automatically?', answer: 'Yes. By pairing POS sales data with recipe ingredient depletion (COGS) and categorized operational expenses, SavoryOps calculates your gross profit and net margin in real time.' },
-      { question: 'Can I compare sales performance between multiple restaurant branches?', answer: 'Yes. The Branch-Wise Report gives multi-location owners side-by-side comparisons of gross revenue, average check sizes, order counts, and item velocity across all stores.' }
+      { question: 'What reports are included in the SavoryOps Report Hub?', answer: 'The SavoryOps Report Hub provides 27+ specialized reports across 5 distinct categories: (1) Sales & Financial (Revenue, Day Close, Branch-wise, Date-wise, Tax-wise, Payment Mode, Additional Charges, Profit & Loss, Expense & Income, AP Aging, Supplier Spend); (2) Menu & Operations (Item-wise, Category-wise, Menu Engineering Matrix, Food Cost Variance, Wastage Loss, Hourly Rush, Kitchen Speed); (3) Dining & Guests (Table Utilization, Customer Frequency, Order Type, Staff Performance, Reviews); (4) Inventory & Stock (Stock Balance, Stock Ledger Movement, Low Stock & Reorder Alerts); and (5) Asset Management (Asset Valuation, Asset Maintenance, Asset Transfer).' },
+      { question: 'What is the Food Cost Variance Report and how does it prevent kitchen leakage?', answer: 'The Food Cost Variance Report compares the theoretical cost of ingredients that should have been used based on POS recipe Bill of Materials (BOM) against the actual physical inventory consumed. Discrepancies immediately highlight over-portioning, unrecorded culinary burns, staff snacking, or theft.' },
+      { question: 'How does the Accounts Payable (AP) Aging Report help manage cash flow?', answer: 'The AP Aging Report categorizes outstanding vendor invoices into aging buckets (Current, 1-30 days, 31-60 days, 61-90 days, 90+ days). This allows restaurant operators to forecast supplier obligations, prioritize critical vendor payments, and avoid late payment penalties.' },
+      { question: 'What insights does the Asset Valuation Report provide?', answer: 'The Asset Valuation Report summarizes total physical capital equipment across all restaurant branches, calculating initial purchase costs, accumulated depreciation, current net book value, and an active vs. under-maintenance equipment valuation breakdown.' },
+      { question: 'Can I export reports for my accountant or tax auditor?', answer: 'Yes. All SavoryOps financial, sales, tax, inventory, and asset reports export cleanly to Excel, CSV, and formatted PDF summaries with one click.' },
+      { question: 'Can I compare sales and inventory performance between multiple restaurant branches?', answer: 'Yes. The Branch-Wise and consolidated reports give multi-location operators side-by-side comparisons of gross revenue, average check sizes, order counts, stock valuation, and equipment assets across all outlets.' }
     ],
-    ctaText: 'Explore All Reports',
+    ctaText: 'Explore All 27+ Reports',
     ctaLink: '/features'
   },
   'business-analytics': {
@@ -898,6 +907,106 @@ export const FEATURES_DATA = {
       { question: 'Can SavoryOps route happy diners directly to our Google Business Profile?', answer: 'Yes. Guests submitting 4 or 5-star ratings are automatically presented with a 1-tap shortcut to copy their praise and post directly onto your Google, TripAdvisor, or Yelp page.' },
       { question: 'Can we collect feedback on specific menu items?', answer: 'Yes. Diners can give thumbs-up/down or star ratings on specific ordered dishes, helping executive chefs identify recipes that need refinement or portion adjustments.' },
       { question: 'Can management track customer satisfaction ratings by server?', answer: 'Yes. Because each review is linked to the table ticket and server PIN, operators can track guest satisfaction scores by employee to identify top performers and coaching opportunities.' }
+    ],
+    ctaText: 'Start Free 14-Day Trial',
+    ctaLink: '/signup'
+  },
+  'asset-management': {
+    id: 'asset-management',
+    badge: 'Equipment Lifecycle & Capital Control',
+    title: 'Restaurant Asset Management & Equipment Maintenance Software',
+    metaTitle: 'Restaurant Asset Management & Equipment Maintenance Software | SavoryOps',
+    metaDescription: 'Track kitchen machinery, POS hardware, and restaurant furniture across branches. Preventative maintenance schedules, inter-branch transfers, and asset valuation reports.',
+    primaryKeyword: 'Restaurant Asset Management Software',
+    secondaryKeywords: [
+      'restaurant asset management software',
+      'commercial kitchen equipment maintenance',
+      'restaurant equipment tracking',
+      'inter-branch asset transfers',
+      'restaurant asset valuation report',
+      'kitchen equipment repair log',
+      'pos hardware inventory software'
+    ],
+    h1: 'Comprehensive Restaurant Asset Management & Equipment Maintenance System',
+    subtitle: 'Track high-value commercial kitchen machinery, POS terminals, and dining furniture across all branches. Schedule preventative maintenance, log repair costs, manage multi-branch equipment transfers, and monitor real-time asset valuation.',
+    overview: 'Unexpected commercial kitchen equipment breakdowns, unmonitored warranty expirations, and missing POS hardware can cripple dining room service and drain profitability. The SavoryOps Asset Management module provides complete physical capital oversight built specifically for restaurants and multi-location operators. From master asset registration and QR/barcode tracking to preventative maintenance scheduling, technician service logs, and inter-branch equipment relocation audits, SavoryOps keeps your back-of-house physical operations running smoothly.',
+    benefits: [
+      { title: 'Zero Surprise Kitchen Downtime', desc: 'Schedule preventative maintenance servicing and receive automated advance alerts before ovens, fryers, or refrigeration units fail during dinner rush.' },
+      { title: 'Centralized Master Asset Registry', desc: 'Catalog every piece of kitchen machinery, POS hardware, dining furniture, and HVAC unit with brand, model, serial number, purchase cost, and warranty dates.' },
+      { title: 'Warranty & Service History Protection', desc: 'Log technician repair details, invoices, and service notes under a 360° asset profile so you never pay out-of-pocket for equipment still under vendor warranty.' },
+      { title: 'Seamless Inter-Branch Transfers', desc: 'Relocate machinery, backup POS terminals, or patio furniture between branches or central commissaries with transit status tracking and delivery acceptance.' },
+      { title: 'Live Asset Valuation & Depreciation', desc: 'Track total physical capital book value, accumulated depreciation, and active vs. under-maintenance equipment valuation across every store location.' },
+      { title: 'Full 360° Audit Accountability', desc: 'Maintain complete chronological audit trails of equipment acquisitions, service repairs, condition checks, and inter-store movements.' }
+    ],
+    features: [
+      'Master Asset Registry: Record asset name, unique code/ID, category, brand, model, serial number, purchase date, cost price, vendor, and warranty expiration dates.',
+      'Equipment Categorization: Organize physical assets into structured categories: Kitchen Cooking Equipment, Cold Storage & Refrigeration, POS & Billing Hardware, Dining Furniture, Cutlery & Tableware, and HVAC Utilities.',
+      'Preventative & Corrective Maintenance: Schedule routine servicing, log emergency repair work, track technician labor costs, attach service bills, and set automated upcoming maintenance alert triggers.',
+      'Inter-Branch Asset Transfers: Dispatch equipment between satellite branches and central commissary warehouses with transfer reason logs, condition verification, transit tracking, and receiver confirmation.',
+      '360° Asset Lifecycle Overview: Dedicated overview page for each asset displaying complete maintenance logs, relocation transfer history, warranty status, and audit records.',
+      'Condition & Status Tracking: Real-time operational status flags: In Use, Under Maintenance, Disposed, or Transferred across individual restaurant branches.',
+      'Asset Valuation Reports: Instant financial summaries of total asset capital value, category-wise book valuation, and active vs. maintenance-split asset values.',
+      'Maintenance & Repair Reports: Track service frequency, recurring equipment breakdown patterns, vendor service performance, and cumulative maintenance expenditures.',
+      'Transfer Audit Reports: Complete audit log of inter-branch equipment movements, dispatch and receiving timestamps, and equipment condition checks.',
+      'Multi-Branch Consolidated Control: Oversee equipment across single or multi-outlet restaurant networks with localized branch filters and centralized executive visibility.'
+    ],
+    faqs: [
+      { question: 'What types of restaurant equipment can I track in SavoryOps Asset Management?', answer: 'You can track all physical assets across your restaurant, including heavy kitchen cooking equipment (combi ovens, fryers, ranges, grills), refrigeration units (walk-in coolers, freezers, prep tables), POS & IT hardware (terminals, receipt printers, KDS screens, barcode scanners), dining room furniture (tables, chairs, booths), bar equipment (espresso machines, draft dispensers), and facility infrastructure (HVAC, exhaust hoods, generators).' },
+      { question: 'How does preventative maintenance scheduling prevent kitchen downtime?', answer: 'SavoryOps allows you to set recurring maintenance intervals (e.g. quarterly hood cleaning, bi-monthly refrigeration coil service, annual combi oven descaling). The system alerts managers well before service is due, enabling timely technician visits and preventing disastrous breakdowns during peak service hours.' },
+      { question: 'How do inter-branch equipment transfers work?', answer: 'When you need to move equipment (like a spare POS terminal or backup fryer) to another branch, you initiate an Asset Transfer in the Owner Panel. The system records the origin branch, destination, dispatch date, transfer reason, and equipment condition. The receiving branch manager inspects and confirms the delivery, automatically updating the asset\'s location in the master catalog.' },
+      { question: 'Can I track equipment warranties and vendor contacts?', answer: 'Yes. Every asset profile stores supplier details, purchase invoices, warranty start and expiration dates, and vendor support contacts. When logging a maintenance request, staff can immediately verify whether the repair is covered under warranty.' },
+      { question: 'What asset reports are available in the Report Hub?', answer: 'SavoryOps provides three dedicated Asset Management reports: (1) Asset Valuation Report (book value, purchase price, category-wise valuation, and maintenance condition splits), (2) Asset Maintenance Report (repair history, servicing costs, technician logs, and breakdown frequency), and (3) Asset Transfer Report (audit trail of inter-branch equipment dispatches and arrivals).' },
+      { question: 'Is Asset Management included across multi-branch and multi-business setups?', answer: 'Yes. You can manage assets across multiple branches or separate restaurant entities from a single unified Owner Panel with localized branch filters and consolidated executive reporting.' }
+    ],
+    ctaText: 'Start Free 14-Day Trial',
+    ctaLink: '/signup'
+  },
+  'assets': {
+    id: 'assets',
+    badge: 'Equipment Lifecycle & Capital Control',
+    title: 'Restaurant Asset Management & Equipment Maintenance Software',
+    metaTitle: 'Restaurant Asset Management & Equipment Maintenance Software | SavoryOps',
+    metaDescription: 'Track kitchen machinery, POS hardware, and restaurant furniture across branches. Preventative maintenance schedules, inter-branch transfers, and asset valuation reports.',
+    primaryKeyword: 'Restaurant Asset Management Software',
+    secondaryKeywords: [
+      'restaurant asset management software',
+      'commercial kitchen equipment maintenance',
+      'restaurant equipment tracking',
+      'inter-branch asset transfers',
+      'restaurant asset valuation report',
+      'kitchen equipment repair log',
+      'pos hardware inventory software'
+    ],
+    h1: 'Comprehensive Restaurant Asset Management & Equipment Maintenance System',
+    subtitle: 'Track high-value commercial kitchen machinery, POS terminals, and dining furniture across all branches. Schedule preventative maintenance, log repair costs, manage multi-branch equipment transfers, and monitor real-time asset valuation.',
+    overview: 'Unexpected commercial kitchen equipment breakdowns, unmonitored warranty expirations, and missing POS hardware can cripple dining room service and drain profitability. The SavoryOps Asset Management module provides complete physical capital oversight built specifically for restaurants and multi-location operators. From master asset registration and QR/barcode tracking to preventative maintenance scheduling, technician service logs, and inter-branch equipment relocation audits, SavoryOps keeps your back-of-house physical operations running smoothly.',
+    benefits: [
+      { title: 'Zero Surprise Kitchen Downtime', desc: 'Schedule preventative maintenance servicing and receive automated advance alerts before ovens, fryers, or refrigeration units fail during dinner rush.' },
+      { title: 'Centralized Master Asset Registry', desc: 'Catalog every piece of kitchen machinery, POS hardware, dining furniture, and HVAC unit with brand, model, serial number, purchase cost, and warranty dates.' },
+      { title: 'Warranty & Service History Protection', desc: 'Log technician repair details, invoices, and service notes under a 360° asset profile so you never pay out-of-pocket for equipment still under vendor warranty.' },
+      { title: 'Seamless Inter-Branch Transfers', desc: 'Relocate machinery, backup POS terminals, or patio furniture between branches or central commissaries with transit status tracking and delivery acceptance.' },
+      { title: 'Live Asset Valuation & Depreciation', desc: 'Track total physical capital book value, accumulated depreciation, and active vs. under-maintenance equipment valuation across every store location.' },
+      { title: 'Full 360° Audit Accountability', desc: 'Maintain complete chronological audit trails of equipment acquisitions, service repairs, condition checks, and inter-store movements.' }
+    ],
+    features: [
+      'Master Asset Registry: Record asset name, unique code/ID, category, brand, model, serial number, purchase date, cost price, vendor, and warranty expiration dates.',
+      'Equipment Categorization: Organize physical assets into structured categories: Kitchen Cooking Equipment, Cold Storage & Refrigeration, POS & Billing Hardware, Dining Furniture, Cutlery & Tableware, and HVAC Utilities.',
+      'Preventative & Corrective Maintenance: Schedule routine servicing, log emergency repair work, track technician labor costs, attach service bills, and set automated upcoming maintenance alert triggers.',
+      'Inter-Branch Asset Transfers: Dispatch equipment between satellite branches and central commissary warehouses with transfer reason logs, condition verification, transit tracking, and receiver confirmation.',
+      '360° Asset Lifecycle Overview: Dedicated overview page for each asset displaying complete maintenance logs, relocation transfer history, warranty status, and audit records.',
+      'Condition & Status Tracking: Real-time operational status flags: In Use, Under Maintenance, Disposed, or Transferred across individual restaurant branches.',
+      'Asset Valuation Reports: Instant financial summaries of total asset capital value, category-wise book valuation, and active vs. maintenance-split asset values.',
+      'Maintenance & Repair Reports: Track service frequency, recurring equipment breakdown patterns, vendor service performance, and cumulative maintenance expenditures.',
+      'Transfer Audit Reports: Complete audit log of inter-branch equipment movements, dispatch and receiving timestamps, and equipment condition checks.',
+      'Multi-Branch Consolidated Control: Oversee equipment across single or multi-outlet restaurant networks with localized branch filters and centralized executive visibility.'
+    ],
+    faqs: [
+      { question: 'What types of restaurant equipment can I track in SavoryOps Asset Management?', answer: 'You can track all physical assets across your restaurant, including heavy kitchen cooking equipment (combi ovens, fryers, ranges, grills), refrigeration units (walk-in coolers, freezers, prep tables), POS & IT hardware (terminals, receipt printers, KDS screens, barcode scanners), dining room furniture (tables, chairs, booths), bar equipment (espresso machines, draft dispensers), and facility infrastructure (HVAC, exhaust hoods, generators).' },
+      { question: 'How does preventative maintenance scheduling prevent kitchen downtime?', answer: 'SavoryOps allows you to set recurring maintenance intervals (e.g. quarterly hood cleaning, bi-monthly refrigeration coil service, annual combi oven descaling). The system alerts managers well before service is due, enabling timely technician visits and preventing disastrous breakdowns during peak service hours.' },
+      { question: 'How do inter-branch equipment transfers work?', answer: 'When you need to move equipment (like a spare POS terminal or backup fryer) to another branch, you initiate an Asset Transfer in the Owner Panel. The system records the origin branch, destination, dispatch date, transfer reason, and equipment condition. The receiving branch manager inspects and confirms the delivery, automatically updating the asset\'s location in the master catalog.' },
+      { question: 'Can I track equipment warranties and vendor contacts?', answer: 'Yes. Every asset profile stores supplier details, purchase invoices, warranty start and expiration dates, and vendor support contacts. When logging a maintenance request, staff can immediately verify whether the repair is covered under warranty.' },
+      { question: 'What asset reports are available in the Report Hub?', answer: 'SavoryOps provides three dedicated Asset Management reports: (1) Asset Valuation Report (book value, purchase price, category-wise valuation, and maintenance condition splits), (2) Asset Maintenance Report (repair history, servicing costs, technician logs, and breakdown frequency), and (3) Asset Transfer Report (audit trail of inter-branch equipment dispatches and arrivals).' },
+      { question: 'Is Asset Management included across multi-branch and multi-business setups?', answer: 'Yes. You can manage assets across multiple branches or separate restaurant entities from a single unified Owner Panel with localized branch filters and consolidated executive reporting.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'

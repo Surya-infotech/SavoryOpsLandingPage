@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import {
+  Apartment as ApartmentIcon,
   Assessment as AssessmentIcon,
   AttachMoney as AttachMoneyIcon,
   BarChart as BarChartIcon,
@@ -108,6 +109,7 @@ const Footer = () => {
   const productFeatures = [
     { name: 'POS & KOT System', icon: <ReceiptIcon />, href: '/features/pos-system' },
     { name: 'Inventory & BOM Recipes', icon: <InventoryIcon />, href: '/features/inventory-management' },
+    { name: 'Asset & Equipment Control', icon: <ApartmentIcon />, href: '/features/asset-management' },
     { name: 'Finance & Expense Control', icon: <AttachMoneyIcon />, href: '/features/finance-management' },
     { name: 'Menu & Add-ons Control', icon: <MenuBookIcon />, href: '/features/menu-management' },
     { name: 'Table & QR Ordering', icon: <BranchIcon />, href: '/features/qr-code-scanning' },
@@ -118,8 +120,10 @@ const Footer = () => {
 
   const reportList = [
     { name: 'Profit & Loss (P&L) Report', icon: <AttachMoneyIcon />, href: '/features/advanced-reports' },
+    { name: 'Food Cost Variance & Leakage', icon: <AssessmentIcon />, href: '/features/advanced-reports' },
     { name: 'Menu Engineering Matrix', icon: <BarChartIcon />, href: '/features/advanced-reports' },
     { name: 'Stock Balance & Movement', icon: <InventoryIcon />, href: '/features/advanced-reports' },
+    { name: 'Asset Valuation & Maintenance', icon: <ApartmentIcon />, href: '/features/advanced-reports' },
     { name: 'Kitchen Speed & Prep Time', icon: <AssessmentIcon />, href: '/features/advanced-reports' },
     { name: 'Revenue & Tax Compliance', icon: <ReceiptIcon />, href: '/features/advanced-reports' }
   ];

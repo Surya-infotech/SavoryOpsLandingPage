@@ -1,6 +1,7 @@
 import {
   AccountTree as AccountTreeIcon,
   AccountBalanceWallet as FinanceIcon,
+  Apartment as ApartmentIcon,
   ArrowForward as ArrowForwardIcon,
   Assessment as AssessmentIcon,
   Business as BusinessIcon,
@@ -142,8 +143,16 @@ const FEATURES = [
 
   // Tier 4: Analytics, Finance & Compliance
   {
-    id: 'finance-management',
+    id: 'asset-management',
     priority: 14,
+    icon: <ApartmentIcon />,
+    title: 'Asset & Equipment Management',
+    description:
+      'Track commercial kitchen equipment, manage preventative maintenance schedules, and monitor inter-branch asset transfers.',
+  },
+  {
+    id: 'finance-management',
+    priority: 15,
     icon: <FinanceIcon />,
     title: 'Finance & Expense Management',
     description:
@@ -151,11 +160,11 @@ const FEATURES = [
   },
   {
     id: 'advanced-reports',
-    priority: 15,
+    priority: 16,
     icon: <AssessmentIcon />,
-    title: '20+ Advanced Reports',
+    title: '27+ Advanced Reports',
     description:
-      'Complete Owner Panel suite: Sales, Profit & Loss, Menu Engineering Matrix, Kitchen Speed, Stock Balance & Movement, and Staff Performance.',
+      'Complete Owner Panel suite across 5 categories: Sales, P&L, Food Cost Variance, Low Stock, AP Aging, and Asset Valuation.',
   },
   {
     id: 'tax-report',

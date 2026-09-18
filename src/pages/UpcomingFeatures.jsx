@@ -91,9 +91,9 @@ const UpcomingFeatures = () => {
       color: 'color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color))'
     },
     {
-      title: 'Asset Management',
-      subtitle: 'Equipment & Asset Control',
-      description: 'Track restaurant kitchen hardware, POS terminals, maintenance schedules, and equipment depreciation.',
+      title: 'IoT Kitchen Sensors & Monitoring',
+      subtitle: 'Smart Cold Storage & Temperature Telemetry',
+      description: 'Automate HACCP compliance with wireless IoT temperature sensors in walk-in coolers and freezers with real-time spoilage threshold alerts.',
       icon: <DevicesOtherIcon sx={{ fontSize: 24 }} />,
       color: 'var(--primary-color)'
     },
