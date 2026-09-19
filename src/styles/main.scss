@@ -116,12 +116,7 @@ body {
 .languages-section,
 .app-downloads-section,
 .free-software-section,
-.contact-us-section,
-.cta-section,
-.pricing-details-section,
-.pricing-plans-section,
-.features-header,
-.upcoming-features-header {
+.contact-us-section {
   position: relative;
   z-index: 1;
 }
@@ -146,7 +141,6 @@ body {
 
 .section-title,
 .main-heading,
-.pricing-main-title,
 .features-title,
 .app-downloads-title {
   letter-spacing: -0.02em;

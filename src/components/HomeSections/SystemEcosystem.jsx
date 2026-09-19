@@ -6,7 +6,6 @@ import {
   Tabs,
   Tab,
   Card,
-  CardContent,
   Grid,
   Chip,
   Button,
@@ -261,7 +260,7 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
               }
             }}
           >
-            {SYSTEM_MODULES.map((module, index) => (
+            {SYSTEM_MODULES.map((module) => (
               <Tab
                 key={module.id}
                 icon={module.icon}

@@ -21,7 +21,6 @@ import {
   People as PeopleIcon,
   Pinterest as PinterestIcon,
   Receipt as ReceiptIcon,
-  Restaurant as RestaurantIcon,
   Rocket as RocketIcon,
   Star as StarIcon,
   SupportAgent as SupportAgentIcon,

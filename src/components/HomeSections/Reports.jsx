@@ -31,7 +31,7 @@ import {
   Build as AssetMaintenanceIcon,
   SwapHoriz as AssetTransferIcon,
 } from '@mui/icons-material';
-import { Box, Card, CardContent, Chip, Container, Tab, Tabs, Typography } from '@mui/material';
+import { Box, Card, CardContent, Chip, Container, Typography } from '@mui/material';
 
 const FEATURE_COLOR = 'var(--primary-color)';
 

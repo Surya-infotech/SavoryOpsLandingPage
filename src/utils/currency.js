@@ -47,17 +47,3 @@ export const formatCurrency = (price, currencyInfo, showCode = false) => {
   return result;
 };
 
-/**
- * Gets currency display configuration
- * @param {object} currencyInfo - Currency configuration object
- * @returns {object} Currency display settings
- */
-export const getCurrencyConfig = (currencyInfo) => {
-  return {
-    symbol: currencyInfo?.currencysymbol || '£',
-    position: currencyInfo?.currencyposition || 'left',
-    thousandSeparator: currencyInfo?.thousandseparator || ',',
-    decimalSeparator: currencyInfo?.decimalseparator || '.',
-    decimals: currencyInfo?.decimal || 2
-  };
-};

@@ -30,8 +30,7 @@ import {
   Check as CheckIcon,
   AccountBalanceWallet as FinanceIcon,
   Apartment as ApartmentIcon,
-  Assessment as ReportsIcon,
-  Language as LanguageIcon
+  Assessment as ReportsIcon
 } from '@mui/icons-material';
 import SEOHead from '../components/SEO/SEOHead';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';

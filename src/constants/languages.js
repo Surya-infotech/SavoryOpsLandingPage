@@ -18,6 +18,4 @@ export const isRtlLanguage = (lang) => {
     return lower === 'arabic' || lower === 'ar' || lower === 'sa';
 };
 
-export const getLanguageOptions = () => [...LANGUAGE_OPTIONS].sort((a, b) => a.name.localeCompare(b.name));
-
-export default LANGUAGE_OPTIONS;
+export const getLanguageOptions = () => [...LANGUAGE_OPTIONS].sort((a, b) => a.name.localeCompare(b.name));

@@ -1,5 +1,4 @@
 import { Button } from '@mui/material';
-import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
 const baseStyles = {
@@ -43,13 +42,6 @@ const GetStartedButton = ({ className = '', sx = {}, fullWidth = false, children
       {children || 'Get Started'}
     </Button>
   );
-};
-
-GetStartedButton.propTypes = {
-  className: PropTypes.string,
-  sx: PropTypes.object,
-  fullWidth: PropTypes.bool,
-  children: PropTypes.node
 };
 
 export default GetStartedButton;

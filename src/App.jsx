@@ -102,11 +102,8 @@ const AppContent = () => {
     return <Navigate to="/signup" replace />;
   }
 
-  const isAuthPage =
-    location.pathname === '/Signin' ||
-    location.pathname === '/Signup' ||
-    location.pathname === '/signin' ||
-    location.pathname === '/signup';
+  const currentPath = location.pathname.toLowerCase();
+  const isAuthPage = currentPath === '/signin' || currentPath === '/signup';
 
   return (
     <div className="App">
