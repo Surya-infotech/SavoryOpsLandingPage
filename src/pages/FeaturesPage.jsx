@@ -620,7 +620,7 @@ const FeaturesPage = () => {
         {/* Feature Cards Grid */}
         <Grid container spacing={{ xs: 2, sm: 2.5, md: 3 }} className="features-grid">
           {filteredFeatures.map((feature, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={feature.id}>
+            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={feature.id}>
               <Card
                 component={Link}
                 to={`/features/${feature.id}`}

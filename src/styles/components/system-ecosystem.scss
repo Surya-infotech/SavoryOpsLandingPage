@@ -16,15 +16,11 @@
 
   .ecosystem-tabs {
     max-width: 100%;
-    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
     &::-webkit-scrollbar {
-      height: 4px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: rgba(16, 185, 129, 0.2);
-      border-radius: 4px;
+      display: none;
     }
   }
 

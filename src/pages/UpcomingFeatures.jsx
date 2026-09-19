@@ -146,7 +146,7 @@ const UpcomingFeatures = () => {
         {/* Features Grid */}
         <Grid container spacing={{ xs: 2, sm: 2, md: 2 }} className="upcoming-features-grid">
           {upcomingFeatures.map((feature, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={index}>
               <Card
                 className="upcoming-feature-card"
                 style={{ animationDelay: `${index * 0.1}s` }}

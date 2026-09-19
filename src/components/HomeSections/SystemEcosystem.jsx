@@ -8,11 +8,7 @@ import {
   Card,
   Grid,
   Chip,
-  Button,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText
+  Button
 } from '@mui/material';
 import {
   Storefront as StorefrontIcon,
@@ -34,6 +30,7 @@ export const SYSTEM_MODULES = [
   {
     id: 'owner-web',
     name: 'Owner Web Portal',
+    tabLabel: 'Owner Portal',
     badge: 'Core Command Center',
     icon: <StorefrontIcon />,
     targetRoles: ['Restaurant Owners', 'General Managers', 'Accountants', 'Store Managers'],
@@ -58,6 +55,7 @@ export const SYSTEM_MODULES = [
   {
     id: 'employee-app',
     name: '6-in-1 Employee App',
+    tabLabel: 'Employee App',
     badge: 'Zero Learning Curve',
     icon: <PhoneIphoneIcon />,
     targetRoles: ['Waiters', 'Cashiers', 'Line Chefs', 'Head Chefs', 'Hosts', 'Delivery Drivers'],
@@ -81,6 +79,7 @@ export const SYSTEM_MODULES = [
   {
     id: 'customer-app',
     name: 'Customer Mobile App',
+    tabLabel: 'Customer App',
     badge: 'Diner Experience',
     icon: <QrCodeScannerIcon />,
     targetRoles: ['In-House Diners', 'Takeout Guests', 'Delivery Customers'],
@@ -105,6 +104,7 @@ export const SYSTEM_MODULES = [
   {
     id: 'backend-api',
     name: 'Core Cloud Engine',
+    tabLabel: 'Cloud Engine',
     badge: 'Enterprise Scalability',
     icon: <CloudQueueIcon />,
     targetRoles: ['Restaurant Owners', 'Multi-Branch Operators', 'General Managers'],
@@ -128,6 +128,7 @@ export const SYSTEM_MODULES = [
   {
     id: 'marketing-platform',
     name: 'Global Multi-Lingual Platform',
+    tabLabel: 'Global Platform',
     badge: 'International Ready',
     icon: <LanguageIcon />,
     targetRoles: ['Global Restaurant Chains', 'Franchise Operators', 'Multi-Regional Brands'],
@@ -185,7 +186,7 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
           >
             {title || (
               <>
-                6 Interconnected Modules.{' '}
+                5 Interconnected Modules.{' '}
                 <span style={{ color: 'var(--primary-color, #10b981)' }}>One Unified SaaS Platform.</span>
               </>
             )}
@@ -202,28 +203,43 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
             }}
           >
             {subtitle ||
-              `${softwareName || 'SavoryOps'} delivers an all-inclusive ecosystem: 2 web portals, 2 native mobile apps, an automated cloud backend API, and global multi-lingual conversion infrastructure.`}
+              `${softwareName || 'SavoryOps'} delivers an all-inclusive ecosystem: Owner Web Portal, 2 native mobile apps, automated cloud core engine, and global multi-lingual infrastructure.`}
           </Typography>
         </Box>
 
         {/* Tab Navigation */}
-        <Box sx={{ display: 'flex', justifyContent: 'center', mb: { xs: 3, md: 5 } }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: { xs: 3, md: 5 }, px: { xs: 1, sm: 2 } }}>
           <Tabs
             value={activeTab}
             onChange={handleTabChange}
             variant="scrollable"
-            scrollButtons="auto"
-            allowScrollButtonsMobile
+            scrollButtons={false}
             aria-label="SavoryOps System Modules"
             className="ecosystem-tabs"
             sx={{
-              background: 'rgba(255, 255, 255, 0.85)',
-              backdropFilter: 'blur(12px)',
+              background: 'rgba(255, 255, 255, 0.9)',
+              backdropFilter: 'blur(16px)',
               borderRadius: '50px',
-              p: 0.8,
+              p: 0.6,
               boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
               border: '1px solid rgba(0, 0, 0, 0.08)',
+              maxWidth: '100%',
+              minHeight: 46,
               '& .MuiTabs-indicator': {
+                display: 'none'
+              },
+              '& .MuiTabs-flexContainer': {
+                justifyContent: { xs: 'flex-start', md: 'center' },
+                gap: { xs: 0.5, sm: 0.8 }
+              },
+              '& .MuiTabs-scroller': {
+                overflowX: 'auto !important',
+                scrollbarWidth: 'none',
+                '&::-webkit-scrollbar': {
+                  display: 'none'
+                }
+              },
+              '& .MuiTabScrollButton-root': {
                 display: 'none'
               }
             }}
@@ -233,21 +249,27 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
                 key={module.id}
                 icon={module.icon}
                 iconPosition="start"
-                label={module.name}
+                label={module.tabLabel || module.name}
                 sx={{
                   borderRadius: '40px',
-                  minHeight: 46,
-                  px: 2.5,
-                  py: 1,
-                  fontSize: '0.92rem',
-                  fontWeight: 700,
+                  minHeight: 42,
+                  px: { xs: 1.8, sm: 2.2, md: 2.5 },
+                  py: 0.8,
+                  fontSize: { xs: '0.82rem', sm: '0.88rem' },
+                  fontWeight: 600,
                   textTransform: 'none',
+                  whiteSpace: 'nowrap',
                   color: 'var(--text-secondary, #64748b)',
                   transition: 'all 0.25s ease',
                   '&.Mui-selected': {
                     color: '#ffffff !important',
+                    fontWeight: 700,
                     background: 'linear-gradient(135deg, var(--primary-color, #10b981), #059669)',
                     boxShadow: '0 4px 14px rgba(16, 185, 129, 0.35)'
+                  },
+                  '&:hover:not(.Mui-selected)': {
+                    background: 'rgba(16, 185, 129, 0.08)',
+                    color: 'var(--primary-color, #10b981)'
                   }
                 }}
               />
@@ -266,10 +288,10 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
             background: 'var(--card-bg, #ffffff)'
           }}
         >
-          <Grid container>
+          <Grid container sx={{ alignItems: 'stretch' }}>
             {/* Left Column: Module Description & Capabilities */}
-            <Grid item xs={12} md={7} sx={{ p: { xs: 3, sm: 4, md: 5 } }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2, flexWrap: 'wrap' }}>
+            <Grid size={{ xs: 12, md: 7 }} sx={{ p: { xs: 3, sm: 3.5, md: 4 }, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1.5, flexWrap: 'wrap' }}>
                 <Chip
                   label={currentModule.badge}
                   size="small"
@@ -287,8 +309,9 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
                 sx={{
                   fontWeight: 800,
                   color: 'var(--text-primary, #0f172a)',
-                  mb: 1.5,
-                  fontSize: { xs: '1.4rem', sm: '1.8rem' }
+                  mb: 1.2,
+                  fontSize: { xs: '1.3rem', sm: '1.6rem' },
+                  lineHeight: 1.25
                 }}
               >
                 {currentModule.headline}
@@ -298,73 +321,61 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
                 variant="body1"
                 sx={{
                   color: 'var(--text-secondary, #475569)',
-                  lineHeight: 1.7,
-                  mb: 3,
-                  fontSize: '0.98rem'
+                  lineHeight: 1.6,
+                  mb: 2,
+                  fontSize: '0.92rem'
                 }}
               >
                 {currentModule.description}
               </Typography>
 
-              {/* Target Roles Box */}
-              <Box
-                sx={{
-                  mb: 3,
-                  p: 2,
-                  borderRadius: 2,
-                  background: 'rgba(241, 245, 249, 0.65)',
-                  border: '1px solid rgba(226, 232, 240, 0.8)'
-                }}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
-                  <BadgeIcon sx={{ fontSize: 18, color: 'var(--primary-color, #10b981)' }} />
-                  <Typography variant="subtitle2" sx={{ fontWeight: 700, color: 'var(--text-primary, #0f172a)' }}>
-                    Target Roles & Users:
-                  </Typography>
-                </Box>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.8 }}>
-                  {currentModule.targetRoles.map((role) => (
-                    <Chip
-                      key={role}
-                      label={role}
-                      size="small"
-                      sx={{
-                        background: '#ffffff',
-                        border: '1px solid rgba(203, 213, 225, 0.8)',
-                        fontWeight: 600,
-                        fontSize: '0.8rem'
-                      }}
-                    />
-                  ))}
-                </Box>
+              {/* Target Roles Strip */}
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8, mb: 2.2, flexWrap: 'wrap' }}>
+                <BadgeIcon sx={{ fontSize: 16, color: 'var(--primary-color, #10b981)' }} />
+                <Typography variant="caption" sx={{ fontWeight: 700, color: 'var(--text-secondary, #64748b)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                  Built For:
+                </Typography>
+                {currentModule.targetRoles.map((role) => (
+                  <Chip
+                    key={role}
+                    label={role}
+                    size="small"
+                    sx={{
+                      background: 'rgba(241, 245, 249, 0.85)',
+                      border: '1px solid rgba(203, 213, 225, 0.6)',
+                      fontWeight: 600,
+                      fontSize: '0.76rem',
+                      height: 22
+                    }}
+                  />
+                ))}
               </Box>
 
-              {/* Key Capabilities List */}
-              <Typography variant="subtitle2" sx={{ fontWeight: 800, mb: 1.5, color: 'var(--text-primary, #0f172a)' }}>
-                Core Capabilities & Architectural Modules:
-              </Typography>
-
-              <List disablePadding sx={{ mb: 4 }}>
-                {currentModule.keyCapabilities.map((capability, idx) => (
-                  <ListItem key={idx} disableGutters sx={{ py: 0.6, alignItems: 'flex-start' }}>
-                    <ListItemIcon sx={{ minWidth: 28, mt: 0.3 }}>
-                      <CheckCircleIcon sx={{ fontSize: 18, color: 'var(--primary-color, #10b981)' }} />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={capability}
-                      primaryTypographyProps={{
-                        fontSize: '0.9rem',
-                        fontWeight: 500,
-                        color: 'var(--text-primary, #1e293b)',
-                        lineHeight: 1.5
-                      }}
-                    />
-                  </ListItem>
+              {/* Core Capabilities in a Compact 2x2 Grid */}
+              <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 1.2, mb: 3 }}>
+                {currentModule.keyCapabilities.slice(0, 4).map((capability, idx) => (
+                  <Box
+                    key={idx}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: 1,
+                      p: 1.2,
+                      borderRadius: 2,
+                      background: 'rgba(248, 250, 252, 0.85)',
+                      border: '1px solid rgba(226, 232, 240, 0.8)'
+                    }}
+                  >
+                    <CheckCircleIcon sx={{ fontSize: 16, color: 'var(--primary-color, #10b981)', mt: 0.25, flexShrink: 0 }} />
+                    <Typography variant="body2" sx={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-primary, #1e293b)', lineHeight: 1.35 }}>
+                      {capability}
+                    </Typography>
+                  </Box>
                 ))}
-              </List>
+              </Box>
 
               {/* Action Buttons */}
-              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+              <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap' }}>
                 <Button
                   component={Link}
                   to={currentModule.primaryLink}
@@ -374,8 +385,9 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
                     background: 'linear-gradient(135deg, var(--primary-color, #10b981), #059669)',
                     fontWeight: 700,
                     textTransform: 'none',
-                    px: 3,
-                    py: 1.2,
+                    px: 2.8,
+                    py: 1,
+                    fontSize: '0.9rem',
                     borderRadius: 2,
                     boxShadow: '0 4px 14px rgba(16, 185, 129, 0.3)'
                   }}
@@ -392,8 +404,9 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
                       color: 'var(--text-primary, #0f172a)',
                       fontWeight: 600,
                       textTransform: 'none',
-                      px: 3,
-                      py: 1.2,
+                      px: 2.5,
+                      py: 1,
+                      fontSize: '0.9rem',
                       borderRadius: 2,
                       '&:hover': {
                         borderColor: 'var(--primary-color, #10b981)',
@@ -409,13 +422,11 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
 
             {/* Right Column: Visual Showcase Graphic / Illustration */}
             <Grid
-              item
-              xs={12}
-              md={5}
+              size={{ xs: 12, md: 5 }}
               sx={{
                 background: 'linear-gradient(145deg, #0f172a 0%, #1e293b 100%)',
                 color: '#ffffff',
-                p: { xs: 3, sm: 4 },
+                p: { xs: 3, sm: 3.5, md: 4 },
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
@@ -426,15 +437,15 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
               <Box
                 sx={{
                   position: 'relative',
-                  zIndex: 2,
-                  textAlign: 'center'
+                  zIndex: 2
                 }}
               >
                 <Box
                   sx={{
+                    position: 'relative',
                     borderRadius: 3,
                     overflow: 'hidden',
-                    mb: 3,
+                    mb: 2,
                     boxShadow: '0 16px 32px rgba(0,0,0,0.4)',
                     border: '1px solid rgba(255, 255, 255, 0.15)'
                   }}
@@ -444,16 +455,37 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
                     alt={currentModule.name}
                     style={{
                       width: '100%',
-                      height: '260px',
+                      height: '240px',
                       objectFit: 'cover',
                       display: 'block'
                     }}
                   />
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      top: 12,
+                      right: 12,
+                      px: 1.2,
+                      py: 0.4,
+                      borderRadius: '20px',
+                      background: 'rgba(15, 23, 42, 0.75)',
+                      backdropFilter: 'blur(8px)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 0.6
+                    }}
+                  >
+                    <Box sx={{ width: 6, height: 6, borderRadius: '50%', background: '#34d399' }} />
+                    <Typography variant="caption" sx={{ color: '#ffffff', fontWeight: 700, fontSize: '0.72rem' }}>
+                      Active Module
+                    </Typography>
+                  </Box>
                 </Box>
 
                 <Box
                   sx={{
-                    p: 2.5,
+                    p: 2,
                     borderRadius: 2,
                     background: 'rgba(255, 255, 255, 0.07)',
                     backdropFilter: 'blur(8px)',
@@ -461,13 +493,13 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
                     textAlign: 'left'
                   }}
                 >
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
-                    <SpeedIcon sx={{ fontSize: 20, color: '#34d399' }} />
-                    <Typography variant="subtitle2" sx={{ fontWeight: 700, color: '#34d399' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8, mb: 0.8 }}>
+                    <SpeedIcon sx={{ fontSize: 18, color: '#34d399' }} />
+                    <Typography variant="subtitle2" sx={{ fontWeight: 700, color: '#34d399', fontSize: '0.85rem' }}>
                       Enterprise Advantage
                     </Typography>
                   </Box>
-                  <Typography variant="body2" sx={{ color: '#cbd5e1', lineHeight: 1.6, fontSize: '0.86rem' }}>
+                  <Typography variant="body2" sx={{ color: '#cbd5e1', lineHeight: 1.5, fontSize: '0.82rem' }}>
                     Seamless synchronization across all operational applications. Orders submitted on the Employee App or Customer QR immediately sync to the Owner Web POS, kitchen KOT stations, and update ingredient inventory BOM in real time.
                   </Typography>
                 </Box>
