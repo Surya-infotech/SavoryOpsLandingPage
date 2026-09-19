@@ -159,13 +159,57 @@
     }
   }
 
+  // Compliance & Razorpay Highlight Banner
+  .compliance-banner {
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+    border: 1px solid #a7f3d0;
+    border-left: 5px solid #10b981;
+    border-radius: 1rem;
+    padding: 1.75rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.08);
+
+    .compliance-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+
+      .compliance-icon {
+        color: #059669;
+        font-size: 2.25rem;
+        margin-top: 0.15rem;
+        flex-shrink: 0;
+      }
+
+      .compliance-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #064e3b;
+        margin-bottom: 0.4rem;
+      }
+
+      .compliance-desc {
+        color: #065f46;
+        font-size: 0.95rem;
+        line-height: 1.65;
+
+        strong {
+          color: #022c22;
+        }
+      }
+    }
+  }
+
   // Policy Content Sections
-  .privacy-policy-content {
+  .privacy-policy-content,
+  .privacy-sections-wrapper,
+  .policy-content {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 
-    .privacy-section {
+    .privacy-section,
+    .policy-section {
       background-color: #ffffff;
       padding: 2.5rem;
       border-radius: 1rem;
@@ -214,6 +258,91 @@
 
         &:last-child {
           margin-bottom: 0;
+        }
+
+        strong {
+          color: #0f172a;
+        }
+      }
+
+      .sub-title {
+        color: #0f172a;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin: 1.75rem 0 0.75rem;
+      }
+
+      ul, ol {
+        margin: 1rem 0 1.5rem;
+        padding-left: 1.5rem;
+
+        li {
+          margin-bottom: 0.65rem;
+          color: #475569;
+          font-size: 1rem;
+          line-height: 1.7;
+
+          &::marker {
+            color: #10b981;
+            font-weight: bold;
+          }
+
+          strong {
+            color: #0f172a;
+          }
+
+          a {
+            color: #059669;
+            text-decoration: none;
+            font-weight: 500;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .policy-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+        margin: 1.5rem 0;
+
+        .policy-list-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+          background: #f8fafc;
+          border: 1px solid #e2e8f0;
+          border-radius: 0.75rem;
+          padding: 1rem 1.25rem;
+
+          .list-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.15);
+            color: #047857;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+          }
+
+          p {
+            margin: 0;
+            color: #475569;
+            line-height: 1.6;
+            font-size: 0.95rem;
+
+            strong {
+              color: #0f172a;
+            }
+          }
         }
       }
 

@@ -172,7 +172,9 @@ const Footer = () => {
   ];
 
   const legalLinks = [
+    { name: 'Terms & Conditions', href: '/terms-and-conditions' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Refund & Cancellation Policy', href: '/refund-and-cancellation-policy' },
     { name: 'Data Deletion Policy', href: '/data-deletion-policy' },
   ];
 

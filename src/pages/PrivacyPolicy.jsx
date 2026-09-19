@@ -40,13 +40,13 @@ const PrivacyPolicy = () => {
     <Box className="privacy-policy-page">
       <SEOHead
         title="Privacy Policy | SavoryOps Cloud POS & Restaurant OS"
-        description="SavoryOps Privacy Policy. Learn how we safeguard merchant data, diner orders, employee shifts, and hardware-agnostic POS operations under UAE PDPL, GDPR, and AWS Cloud security standards."
+        description="SavoryOps Privacy Policy. Learn how we safeguard merchant data, diner orders, employee shifts, and secure payment processing with Razorpay under global data protection and AWS cloud security standards."
         keywords={[
           "SavoryOps privacy policy",
           "restaurant POS data protection",
-          "UAE PDPL compliance",
           "cloud POS privacy",
           "restaurant SaaS data security",
+          "Razorpay payment security",
           "GDPR restaurant system"
         ]}
         primaryKeyword="Privacy Policy"
@@ -63,7 +63,7 @@ const PrivacyPolicy = () => {
             Privacy <span className="highlight">Policy</span>
           </Typography>
           <Typography variant="body1" className="header-subtitle">
-            SavoryOps is committed to uncompromising transparency, robust multi-tenant data isolation, and adherence to international and regional privacy regulations across our Cloud POS and Restaurant OS platform.
+            SavoryOps is committed to uncompromising transparency, robust multi-tenant data isolation, secure payment gateway processing, and adherence to modern privacy regulations across our Cloud POS and Restaurant OS platform.
           </Typography>
 
           <Box className="header-meta-row">
@@ -74,7 +74,7 @@ const PrivacyPolicy = () => {
               <strong>Version:</strong> 2.4.0 (Enterprise)
             </Box>
             <Box className="meta-pill">
-              <strong>Jurisdictions:</strong> UAE PDPL, KSA PDPL, GDPR, CCPA/CPRA
+              <strong>Jurisdictions:</strong> Global DPDP, GDPR, CCPA/CPRA Compliant
             </Box>
             <Box className="meta-pill">
               <strong>Hosting:</strong> Amazon Web Services (AWS)
@@ -171,7 +171,7 @@ const PrivacyPolicy = () => {
               </Typography>
             </Box>
             <Typography variant="body1" className="section-content">
-              To guarantee complete compliance under the <strong>UAE Federal Decree-Law No. 45 of 2021 on Personal Data Protection (UAE PDPL)</strong>, the <strong>Saudi Arabia Personal Data Protection Law (KSA PDPL)</strong>, the <strong>European Union General Data Protection Regulation (GDPR)</strong>, and the <strong>California Consumer Privacy Act (CCPA/CPRA)</strong>, our data obligations are bifurcated as follows:
+              To guarantee complete compliance under modern statutory data protection frameworks—including the <strong>Digital Personal Data Protection Act (DPDP)</strong>, the <strong>European Union General Data Protection Regulation (GDPR)</strong>, and the <strong>California Consumer Privacy Act (CCPA/CPRA)</strong>—our data obligations are bifurcated as follows:
             </Typography>
 
             <Box className="subsection">
@@ -220,7 +220,7 @@ const PrivacyPolicy = () => {
               </Typography>
               <ul>
                 <li><strong>Corporate Details:</strong> Legal entity name, trade license name, restaurant brand name, outlet physical addresses, branch locations, and corporate email addresses.</li>
-                <li><strong>Tax & Fiscal Records:</strong> Tax Registration Number (TRN) for UAE Federal Tax Authority (FTA) 5% VAT compliance, ZATCA e-invoicing identifiers, and dual English/Arabic invoice printing headers.</li>
+                <li><strong>Tax & Fiscal Records:</strong> Tax Registration Number (GSTIN/Tax ID), tax category configurations (GST/VAT/Sales Tax), and official invoice printing headers.</li>
                 <li><strong>Catalog & Operational Config:</strong> Dish names, categories, price structures, ingredient recipes, table layout geometry, and hardware terminal assignments (ESC/POS thermal printers, KDS screens).</li>
                 <li><strong>Financial & Subscription Data:</strong> Subscription tier selections (Starter, Pro, Enterprise), payment settlement records, and transaction ledgers.</li>
               </ul>
@@ -367,12 +367,12 @@ const PrivacyPolicy = () => {
               </Typography>
             </Box>
             <Typography variant="body1" className="section-content">
-              We process personal and operational data only under legitimate legal bases recognized under international and MENA data protection frameworks:
+              We process personal and operational data only under legitimate legal bases recognized under modern international and national data protection frameworks:
             </Typography>
 
             <ul>
-              <li><strong>Contractual Performance:</strong> Processing diner orders, displaying real-time KDS tickets, managing table occupancy, routing waiter bump calls, and printing bills.</li>
-              <li><strong>Legal & Fiscal Obligation:</strong> Generating FTA-compliant 5% VAT invoices in the UAE, archiving tax audit trails for statutory periods, and ensuring anti-fraud compliance.</li>
+              <li><strong>Contractual Performance:</strong> Processing diner orders, displaying real-time KDS tickets, managing table occupancy, routing waiter bump calls, processing subscription billing, and printing customer receipts.</li>
+              <li><strong>Legal & Fiscal Obligation:</strong> Generating compliant tax invoices, archiving statutory financial audit trails, and ensuring anti-fraud and accounting compliance.</li>
               <li><strong>Legitimate Business Interests:</strong> Delivering real-time revenue velocity metrics, inventory ingredient burn tracking, and safeguarding multi-tenant cloud isolation.</li>
               <li><strong>Explicit Consent:</strong> Sending digital receipts via WhatsApp or SMS, and processing optional profile pictures.</li>
             </ul>
@@ -405,23 +405,23 @@ const PrivacyPolicy = () => {
                 <ReceiptLongIcon />
               </Box>
               <Typography variant="h2" className="section-title">
-                8. Regional Fiscal & Tax Invoicing Compliance (UAE FTA & ZATCA)
+                8. Commercial Fiscal & Tax Invoicing Compliance
               </Typography>
             </Box>
             <Typography variant="body1" className="section-content">
-              SavoryOps is built to meet strict regional tax regulations across the United Arab Emirates, Kingdom of Saudi Arabia, and greater MENA territories:
+              SavoryOps is built to meet strict statutory commercial accounting and tax regulations across all operational jurisdictions:
             </Typography>
 
             <Box className="policy-alert alert-info">
               <InfoOutlinedIcon className="alert-icon" />
               <Box className="alert-content">
-                <strong>UAE FTA 5% VAT & MENA Compliance</strong>
-                Our POS engine generates official tax invoices containing the merchant’s registered Tax Registration Number (TRN), itemized VAT calculations, dual-language English &amp; Arabic item headers, and compliant QR verification codes.
+                <strong>Compliant Tax Invoicing & Fiscal Records</strong>
+                Our POS billing engine generates official tax invoices containing the merchant’s registered Tax Identification Number (e.g. GSTIN/VAT ID), itemized tax rate calculations (inclusive or exclusive), and compliant digital verification receipts.
               </Box>
             </Box>
 
             <Typography variant="body1" className="section-content">
-              <strong>Statutory Record Retention:</strong> Under UAE Federal Tax Authority rules and relevant regional financial laws, businesses are legally required to retain financial tax invoices and transaction records for a mandatory statutory period (typically 5 to 7 years). While personal data (customer names, avatars) can be permanently deleted upon request, raw transaction ledgers and fiscal invoice copies must be preserved in anonymized form to fulfill tax audit obligations.
+              <strong>Statutory Record Retention:</strong> Under applicable tax laws and commercial accounting statutes, businesses are legally required to retain financial tax invoices and transaction records for a mandatory statutory period (typically 5 to 7 years). While personal data (customer names, avatars) can be permanently deleted upon request, raw transaction ledgers and fiscal invoice copies must be preserved in anonymized form to fulfill official tax audit obligations.
             </Typography>
           </Box>
 
@@ -439,7 +439,7 @@ const PrivacyPolicy = () => {
               We never sell, rent, monetize, or trade your personal or business data. We partner exclusively with world-class cloud infrastructure providers bound by rigorous Data Processing Agreements (DPA):
             </Typography>
 
-            <Box className="feature-cards-grid cards-3">
+            <Box className="feature-cards-grid cards-4">
               <Box className="feature-card">
                 <Box className="card-top">
                   <span className="card-badge">Cloud Host</span>
@@ -452,11 +452,21 @@ const PrivacyPolicy = () => {
 
               <Box className="feature-card">
                 <Box className="card-top">
+                  <span className="card-badge">Payment Gateway</span>
+                  <span className="card-title">Razorpay Software Pvt. Ltd.</span>
+                </Box>
+                <Typography variant="body2" className="card-body">
+                  Our trusted PCI-DSS Level 1 compliant payment processing partner. Handles secure subscription billing, renewals, and refunds via UPI, Cards, and Netbanking. SavoryOps never stores raw payment card credentials on its servers.
+                </Typography>
+              </Box>
+
+              <Box className="feature-card">
+                <Box className="card-top">
                   <span className="card-badge">SMS Delivery</span>
                   <span className="card-title">AWS Simple Notification Service (SNS)</span>
                 </Box>
                 <Typography variant="body2" className="card-body">
-                  Dispatches transactional 6-digit SMS verification OTPs worldwide with end-to-end delivery monitoring and zero third-party marketing sharing.
+                  Dispatches transactional 6-digit SMS verification OTPs with end-to-end delivery monitoring and zero third-party marketing sharing.
                 </Typography>
               </Box>
 
@@ -531,7 +541,7 @@ const PrivacyPolicy = () => {
             <ul>
               <li><strong>Active User &amp; Staff Accounts:</strong> Maintained for the duration of the merchant&apos;s subscription or active diner registration.</li>
               <li><strong>Account Deletion:</strong> Live records and AWS S3 profile photos are purged immediately upon OTP verification. Archived rolling database backups purge records completely within 90 days.</li>
-              <li><strong>Transactional &amp; Tax Ledgers:</strong> Invoices, tax totals, and financial audit logs are retained for statutory legal compliance (5 years under UAE FTA regulations) with all direct customer PII permanently removed.</li>
+              <li><strong>Transactional &amp; Tax Ledgers:</strong> Invoices, tax totals, and financial audit logs are retained for statutory legal compliance (typically 5 to 7 years under applicable corporate tax regulations) with all direct customer PII permanently removed.</li>
               <li><strong>Temporary WebSockets &amp; Telemetry:</strong> In-flight WebSocket queues are flushed immediately upon delivery, and performance logs are rotated every 30 days.</li>
             </ul>
           </Box>
@@ -547,7 +557,7 @@ const PrivacyPolicy = () => {
               </Typography>
             </Box>
             <Typography variant="body1" className="section-content">
-              Depending on your physical location and applicable legal jurisdiction (including UAE PDPL, Saudi Arabia PDPL, EU GDPR, and California CCPA/CPRA), you possess the following rights regarding your personal information:
+              Depending on your physical location and applicable legal jurisdiction (including DPDP, EU GDPR, and California CCPA/CPRA), you possess the following rights regarding your personal information:
             </Typography>
 
             <Box className="feature-cards-grid cards-4">
@@ -613,7 +623,7 @@ const PrivacyPolicy = () => {
                 <SecurityIcon className="contact-icon" />
                 <Box className="contact-label">Technical Support</Box>
                 <Box className="contact-value">
-                  <a href="mailto:support@savoryops.com">support@savoryops.com</a>
+                  <a href="mailto:info@savoryops.com">info@savoryops.com</a>
                 </Box>
                 <Box className="contact-desc">Account assistance and operational queries</Box>
               </Box>
@@ -622,7 +632,7 @@ const PrivacyPolicy = () => {
                 <LocationOnIcon className="contact-icon" />
                 <Box className="contact-label">Headquarters</Box>
                 <Box className="contact-value">SavoryOps Technologies</Box>
-                <Box className="contact-desc">Dubai, United Arab Emirates</Box>
+                <Box className="contact-desc">Surat, Gujarat, India</Box>
               </Box>
             </Box>
           </Box>

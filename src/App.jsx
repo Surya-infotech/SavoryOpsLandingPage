@@ -16,6 +16,8 @@ import OwnerSignUp from './pages/General/Signup.jsx';
 import Home from './pages/Home';
 import Pricing from './pages/Pricing';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndConditions from './pages/TermsAndConditions';
+import RefundPolicy from './pages/RefundPolicy';
 import UpcomingFeatures from './pages/UpcomingFeatures';
 import WhySavoryOps from './pages/WhySavoryOps';
 import BlogPage from './pages/BlogPage';
@@ -125,7 +127,14 @@ const AppContent = () => {
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/faqs" element={<FAQPage />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/terms" element={<Navigate to="/terms-and-conditions" replace />} />
+        <Route path="/terms-of-service" element={<Navigate to="/terms-and-conditions" replace />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
+        <Route path="/refund-and-cancellation-policy" element={<RefundPolicy />} />
+        <Route path="/refund-policy" element={<Navigate to="/refund-and-cancellation-policy" replace />} />
+        <Route path="/cancellation-policy" element={<Navigate to="/refund-and-cancellation-policy" replace />} />
         <Route path="/data-deletion-policy" element={<DataDeletionPolicy />} />
 
         {/* Blog Routes */}

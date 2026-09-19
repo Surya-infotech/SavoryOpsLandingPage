@@ -103,7 +103,7 @@ const DataDeletionPolicy = () => {
               </Typography>
             </Box>
             <Typography variant="body1" className="section-content">
-              At SavoryOps, we believe that you must maintain complete control over your personal data. Under global and regional privacy statutes—including the <strong>UAE Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)</strong>, the <strong>Saudi Arabia PDPL</strong>, the <strong>European Union GDPR (Article 17)</strong>, and the <strong>California Consumer Privacy Act (CCPA/CPRA)</strong>—all individuals have the legal right to demand the permanent erasure of their personal information.
+              At SavoryOps, we believe that you must maintain complete control over your personal data. Under modern global and national privacy statutes—including the <strong>Digital Personal Data Protection Act (DPDP)</strong>, the <strong>European Union GDPR (Article 17)</strong>, and the <strong>California Consumer Privacy Act (CCPA/CPRA)</strong>—all individuals have the legal right to demand the permanent erasure of their personal information.
             </Typography>
             <Typography variant="body1" className="section-content">
               We provide an automated, transparent, and cryptographically verified deletion mechanism built directly into our mobile and web applications, ensuring that your records are permanently purged without unnecessary delays or bureaucratic hurdles.
@@ -217,7 +217,7 @@ const DataDeletionPolicy = () => {
                   <tr>
                     <td><strong>Historical Order Transactions</strong></td>
                     <td><span style={{ color: '#0284c7', fontWeight: 600 }}>Anonymized / Stripped</span></td>
-                    <td>Customer personal identifiers (name, phone, avatar) are purged. Transaction amounts and item quantities are retained in anonymized format for UAE FTA / VAT legal audit compliance.</td>
+                    <td>Customer personal identifiers (name, phone, avatar) are purged. Transaction amounts and item quantities are retained in anonymized format for statutory tax and accounting legal audit compliance.</td>
                     <td>Cannot re-identify</td>
                   </tr>
                 </tbody>
@@ -321,7 +321,7 @@ const DataDeletionPolicy = () => {
                 <SecurityIcon />
               </Box>
               <Typography variant="h2" className="section-title">
-                6. Statutory Fiscal Exceptions (UAE FTA &amp; Tax Regulations)
+                6. Statutory Fiscal Exceptions (Commercial Accounting &amp; Tax Regulations)
               </Typography>
             </Box>
             <Typography variant="body1" className="section-content">
@@ -331,8 +331,8 @@ const DataDeletionPolicy = () => {
             <Box className="policy-alert alert-info">
               <InfoOutlinedIcon className="alert-icon" />
               <Box className="alert-content">
-                <strong>UAE Federal Tax Authority (FTA) Compliance</strong>
-                Under UAE tax laws, financial tax invoices and VAT transaction ledgers must be retained for a mandatory statutory period of 5 years. In complying with data deletion requests, SavoryOps <strong>strips all direct personal identifiers</strong> (names, personal phone numbers, profile photos) from the invoice record, maintaining solely anonymized financial totals and TRN audit entries for official tax authority inspection.
+                <strong>Statutory Tax Invoicing &amp; Fiscal Compliance</strong>
+                Under applicable tax and commercial bookkeeping laws, financial invoices and transaction ledgers must be retained for a mandatory statutory period (typically 5 to 7 years). In complying with data deletion requests, SavoryOps <strong>strips all direct personal identifiers</strong> (names, personal phone numbers, profile photos) from the invoice record, maintaining solely anonymized financial totals, invoice timestamps, and tax audit entries for official regulatory inspection.
               </Box>
             </Box>
           </Box>
@@ -377,7 +377,7 @@ const DataDeletionPolicy = () => {
                 <SecurityIcon className="contact-icon" />
                 <Box className="contact-label">Security &amp; Support</Box>
                 <Box className="contact-value">
-                  <a href="mailto:support@savoryops.com">support@savoryops.com</a>
+                  <a href="mailto:info@savoryops.com">info@savoryops.com</a>
                 </Box>
                 <Box className="contact-desc">Helpdesk and account troubleshooting</Box>
               </Box>
@@ -386,7 +386,7 @@ const DataDeletionPolicy = () => {
                 <LocationOnIcon className="contact-icon" />
                 <Box className="contact-label">Headquarters</Box>
                 <Box className="contact-value">SavoryOps Technologies</Box>
-                <Box className="contact-desc">Dubai, United Arab Emirates</Box>
+                <Box className="contact-desc">Surat, Gujarat, India</Box>
               </Box>
             </Box>
           </Box>
