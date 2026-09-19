@@ -1,0 +1,47 @@
+// System Ecosystem Component Styles
+
+.system-ecosystem-section {
+  padding: 80px 0;
+  position: relative;
+  background: transparent;
+
+  .ecosystem-header {
+    .ecosystem-badge {
+      padding: 6px 14px;
+      border-radius: 50px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+  }
+
+  .ecosystem-tabs {
+    max-width: 100%;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(16, 185, 129, 0.2);
+      border-radius: 4px;
+    }
+  }
+
+  .ecosystem-display-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 50px 0;
+
+    .ecosystem-tabs {
+      border-radius: 24px !important;
+      padding: 4px !important;
+    }
+  }
+}

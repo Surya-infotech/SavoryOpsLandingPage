@@ -1208,6 +1208,344 @@ export const FEATURES_DATA = {
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
+  },
+  'floor-plan-management': {
+    id: 'floor-plan-management',
+    badge: 'Visual Floor & Dining Rooms',
+    title: 'Interactive Floor Plan & Visual Table Management System',
+    metaTitle: 'Restaurant Table Floor Plan & Seating Management Software | SavoryOps',
+    metaDescription: 'Design custom dining zones, track live table statuses in real-time color codes, merge tables for large parties, and accelerate table turnover with SavoryOps.',
+    primaryKeyword: 'Restaurant Floor Plan Management Software',
+    secondaryKeywords: [
+      'restaurant table management',
+      'visual dining floor plan',
+      'table status color codes',
+      'table turnover software',
+      'restaurant seating management',
+      'table merging and shifting'
+    ],
+    h1: 'Dynamic Visual Floor Plan & Real-Time Restaurant Seating Management',
+    subtitle: 'Build visual dining layouts across indoor, patio, bar, and private dining areas. Monitor table occupancy, merge tickets, and eliminate guest waiting bottlenecks.',
+    overview: 'Managing dining room flow during peak rush hours requires instant visual clarity. SavoryOps Floor Plan Management replaces confusing clipboards and rigid table lists with an interactive 2D floor designer. Create custom dining zones (e.g. Main Dining Room, Rooftop Lounge, Outdoor Patio, VIP Suites, Bar Counter) and track live table occupancy in real time. Color-coded indicators update instantly when guests are seated, ordering, dining, or waiting for their bill.',
+    benefits: [
+      { title: 'Faster Table Turnover', desc: 'Identify unoccupied and dirty tables immediately to seat incoming guests up to 25% faster.' },
+      { title: 'Custom Zone Layouts', desc: 'Design custom floor layouts matching your physical architecture across indoor, outdoor, bar, and private dining rooms.' },
+      { title: 'Live 5-Color Statuses', desc: 'Instantly recognize table states: Green (Available), Blue (Occupied), Orange (Reserved), Purple (Billed), and Gray (Dirty).' },
+      { title: 'Effortless Merging & Shifting', desc: 'Shift guests to another table or combine multiple tables for large parties without losing active order tickets.' },
+      { title: 'Real-Time Waitstaff Sync', desc: 'Updates made on mobile waiter tablets reflect instantly across cashier POS terminals and the host stand.' },
+      { title: 'Occupancy & Turn Time Metrics', desc: 'Track average dining duration per zone and optimize server section assignments for peak efficiency.' }
+    ],
+    features: [
+      'Drag-and-Drop Floor Plan Builder: Customize square, round, and counter seating with precise table numbers and chair capacities.',
+      'Multi-Zone Dining Rooms: Seamlessly toggle between Indoor, Outdoor Patio, Rooftop Terrace, Bar, and Private Dining Rooms.',
+      'Live Table Status Color Indicators: Instantly monitor Available (Green), Dining in Progress (Blue), Reserved (Orange), Billed (Purple), and Dirty (Gray).',
+      'Table Merging & Order Consolidation: Join tables for banquets or split seats with 1-tap ticket transferring.',
+      'Server Section Allocation: Assign specific waiter teams to designated floor sections for balanced service distribution.',
+      'Elapsed Dining Time Tracking: View minutes elapsed since seating to prevent neglected tables and anticipate bill requests.',
+      'Seamless POS & KOT Integration: Tapping any table directly opens active KOT tickets, customer notes, and payment checkout.'
+    ],
+    faqs: [
+      { question: 'Can I design different floor plans for multiple dining areas?', answer: 'Yes. SavoryOps supports unlimited dining zones such as Indoor Dining, Rooftop, Patio, Garden, and Bar. You can switch between zones with a single click.' },
+      { question: 'How do the live color-coded table statuses work?', answer: 'Tables dynamically change colors based on real-time order lifecycle: Green indicates an open table ready for seating, Blue shows active dining, Orange flags an upcoming reservation, Purple means the bill has been printed and is awaiting payment, and Gray flags a table needing bussing.' },
+      { question: 'What happens when a large party requires multiple tables to be combined?', answer: 'You can select multiple tables and merge them into a single order. The POS combines the checks while preserving individual item histories, and returns tables to their individual states once the check is paid.' },
+      { question: 'Can waitstaff view the floor plan on mobile devices?', answer: 'Yes. The SavoryOps Employee Mobile App includes the interactive visual floor plan, allowing servers to tap tables to place orders table-side.' },
+      { question: 'Does table management sync with online reservations?', answer: 'Yes. When an online table booking arrives via the Customer App or website, the reserved table automatically highlights in orange during the booked time slot.' }
+    ],
+    ctaText: 'Explore Table Management',
+    ctaLink: '/features/table-reservation'
+  },
+  'kitchen-display-system': {
+    id: 'kitchen-display-system',
+    badge: 'Paperless Kitchen Flow',
+    title: 'Smart Kitchen Display System (KDS) & Urgency Routing',
+    metaTitle: 'Restaurant Kitchen Display System (KDS) Software | SavoryOps',
+    metaDescription: 'Eliminate lost paper tickets and speed up order turnaround with SavoryOps Kitchen Display System. Station routing, color urgency timers, and 1-tap order bumping.',
+    primaryKeyword: 'Kitchen Display System Software',
+    secondaryKeywords: [
+      'restaurant KDS software',
+      'kitchen order display screen',
+      'paperless kitchen management',
+      'kitchen ticket routing',
+      'cooking urgency timer',
+      'station based kitchen routing'
+    ],
+    h1: 'Paperless Kitchen Display System (KDS) & Real-Time Order Routing',
+    subtitle: 'Streamline back-of-house culinary operations, route orders to dedicated prep stations, track cooking countdown timers, and eliminate kitchen chaos.',
+    overview: 'In a bustling restaurant kitchen, lost paper tickets, illegible handwriting, and miscommunicated order modifications lead to wasted food and dissatisfied diners. The SavoryOps Kitchen Display System (KDS) replaces messy thermal paper tickets with crisp digital screens. Orders placed at the counter POS, waiter mobile app, or customer table QR route instantly to the appropriate kitchen prep station with real-time cooking countdown timers.',
+    benefits: [
+      { title: '40% Faster Order-to-Kitchen Prep', desc: 'Orders appear instantly on kitchen screens the microsecond they are placed at the POS or table.' },
+      { title: 'Zero Lost or Illegible Tickets', desc: 'Digital tickets display clear modification badges (e.g., "Extra Spicy", "Gluten Free", "No Onions").' },
+      { title: 'Color Urgency Countdown Timers', desc: 'Tickets visually transition from Green to Amber to Red as elapsed cooking times approach service thresholds.' },
+      { title: 'Multi-Station Order Routing', desc: 'Automatically split orders: grill dishes go to Grill KDS, drinks to Bar KDS, and desserts to Pastry station.' },
+      { title: '1-Tap Ticket Bumping', desc: 'Line chefs easily bump dishes from Cooking to Ready using touchscreens or bump bars.' },
+      { title: 'Instant Waiter Pickup Notifications', desc: 'When a dish is marked Ready, the assigned server receives a mobile vibration alert for immediate food pickup.' }
+    ],
+    features: [
+      'Real-Time Kitchen Ticket Dispatching: Instant order sync from POS terminals, mobile waiter apps, and QR menus.',
+      'Station-Based Routing: Route specific dish categories to dedicated kitchen display screens (Grill, Fry, Salad, Bar, Pastry).',
+      'Visual Urgency Timers: Automatic color shift (Green → Amber → Red) based on elapsed preparation duration.',
+      'Multi-Stage Order Lifecycle: Update ticket states from Pending to Cooking, Ready, and Dispatched.',
+      'Preparation Notes & Modifier Badges: Bold visual highlights for allergy warnings, dietary flags, and customer cooking preferences.',
+      'Expo Screen & Master Pass View: Head chefs can monitor aggregate kitchen queue health and identify station bottlenecks.',
+      'Kitchen Performance Analytics: Track average cook times per station, ticket turnaround velocity, and peak rush intervals.'
+    ],
+    faqs: [
+      { question: 'Can the KDS route different items on the same order to different kitchen stations?', answer: 'Yes. If a guest orders a steak, a cocktail, and an ice cream sundae, the steak routes to the Grill KDS, the cocktail to the Bar KDS, and the sundae to the Pastry station.' },
+      { question: 'What hardware is required to run SavoryOps KDS?', answer: 'SavoryOps KDS runs on any standard web browser, Android tablet, iPad, or commercial commercial touchscreen KDS monitor.' },
+      { question: 'How do line chefs mark dishes as ready?', answer: 'Chefs simply tap the item or ticket on the touchscreen or use a hardware bump bar. The status updates across the entire restaurant instantly.' },
+      { question: 'How does the KDS alert waitstaff when food is ready?', answer: 'The moment a ticket or dish is bumped to "Ready", a push notification and vibration alert are dispatched to the assigned server’s mobile app.' },
+      { question: 'Does the system track kitchen preparation speeds?', answer: 'Yes. The SavoryOps reporting suite records the exact duration from order placement to bumping, giving you deep insights into prep speed by station, item, and shift.' }
+    ],
+    ctaText: 'Explore KDS Solutions',
+    ctaLink: '/solutions/kitchen-display-system'
+  },
+  'employee-mobile-app': {
+    id: 'employee-mobile-app',
+    badge: 'Universal Mobile App',
+    title: '6-in-1 Role-Adaptive Employee Mobile App',
+    metaTitle: '6-in-1 Restaurant Employee Mobile App | SavoryOps',
+    metaDescription: 'One single cross-platform mobile app that dynamically morphs into 6 distinct staff roles: Waiter, Cashier, Head Chef, Line Chef, Host, and Delivery Driver.',
+    primaryKeyword: 'Restaurant Employee Mobile App',
+    secondaryKeywords: [
+      'waiter ordering app',
+      'mobile POS billing app',
+      'kitchen mobile KDS',
+      'restaurant delivery driver app',
+      'host reservation app',
+      'restaurant staff scheduling app'
+    ],
+    h1: 'Universal 6-in-1 Role-Adaptive Mobile Application for Restaurant Staff',
+    subtitle: 'One single mobile app that dynamically transforms its entire interface and capabilities based on the authenticated employee’s job role.',
+    overview: 'Deploying separate applications for waitstaff, kitchen chefs, delivery couriers, and cashiers creates operational chaos, version mismatches, and expensive staff training. The SavoryOps Employee Mobile App solves this with a revolutionary role-adaptive architecture: one unified mobile app that dynamically switches its complete UI and workflow based on the logged-in staff member’s role.',
+    benefits: [
+      { title: 'Zero Learning Curve', desc: 'Intuitive, purpose-built interfaces for each job role ensure staff become productive in under 15 minutes.' },
+      { title: '6 Roles in 1 Single App', desc: 'Waiter, Cashier, Head Chef, Line Chef, Host, and Delivery Driver all use the same lightweight mobile application.' },
+      { title: 'Cross-Trained Staff Flexibility', desc: 'Employees who work as hosts on weekdays and waiters on weekends simply log in—no multiple app installations needed.' },
+      { title: 'Table-Side Ordering Speed', desc: 'Waiters capture orders at table-side with instant modifier options, reducing order entry time by 50%.' },
+      { title: 'Mobile Checkout & Payments', desc: 'Collect cash, credit cards, or UPI QR payments directly from guests without walking back and forth to a central terminal.' },
+      { title: 'Real-Time Delivery & GPS', desc: 'Couriers receive assigned delivery addresses with 1-tap customer phone calling and Google Maps turn-by-turn routing.' }
+    ],
+    features: [
+      'Role-Adaptive UI Morphing: Dynamic interface rendering based on JWT authenticated staff role permissions.',
+      'Waiter Mode: Visual floor plan table selector, digital catalog ordering, addon notes, and dish ready alerts.',
+      'Cashier Mode: Portable billing terminal for fast mobile invoice generation, payment settlement, and thermal printer sync.',
+      'Head Chef Mode: Kitchen queue supervisor dashboard with preparation timing alerts and station bottleneck tracking.',
+      'Line Chef Mode: High-contrast order ticket cards with 1-tap item bumping to "Ready" status.',
+      'Host / Greeter Mode: Front-of-house waiting list management, reservation confirmation, and table allocation.',
+      'Delivery Driver Mode: Assigned dispatch queue, turn-by-turn GPS navigation, in-app customer calling, and doorstep payment confirmation.'
+    ],
+    faqs: [
+      { question: 'Does each employee need to download a different app from the app store?', answer: 'No. Every staff member downloads the same "SavoryOps Employee App". Once they sign in with their credentials, the app detects their assigned role and displays only the features relevant to their job.' },
+      { question: 'What platforms is the Employee App available on?', answer: 'The SavoryOps Employee App is built with React Native (Expo) and runs smoothly on both iOS (iPhones/iPads) and Android phones/tablets.' },
+      { question: 'Can an employee with multiple roles switch modes?', answer: 'Yes. If a staff member is assigned multiple roles (for instance, Manager and Cashier), they can toggle between authorized roles directly within the app profile settings.' },
+      { question: 'Does the mobile app support offline order taking if Wi-Fi drops?', answer: 'The app features local offline caching so servers can continue taking orders table-side during temporary network blips, automatically syncing once connection is restored.' }
+    ],
+    ctaText: 'Start Free 14-Day Trial',
+    ctaLink: '/signup'
+  },
+  'customer-mobile-app': {
+    id: 'customer-mobile-app',
+    badge: 'Diner Loyalty & QR',
+    title: 'Customer Mobile App & Live Order Tracking System',
+    metaTitle: 'Restaurant Customer Mobile App & Online Ordering | SavoryOps',
+    metaDescription: 'Delight diners with branded digital menu browsing, QR table ordering, curbside pickup, home delivery with live 5-stage progress tracking, and 1-click reorders.',
+    primaryKeyword: 'Restaurant Customer Mobile App',
+    secondaryKeywords: [
+      'contactless QR ordering app',
+      'restaurant online delivery app',
+      'live food order tracker',
+      'restaurant table reservation app',
+      'restaurant customer loyalty app',
+      'restaurant 1-click reorder'
+    ],
+    h1: 'Branded Customer Mobile Ordering & Real-Time Order Tracking App',
+    subtitle: 'Engage diners with digital menu browsing, contactless QR ordering, takeout, home delivery, 5-stage live order tracking, and table reservations.',
+    overview: 'Third-party delivery platforms charge exorbitant 25% to 35% commission fees while keeping your valuable customer relationship data. The SavoryOps Customer Mobile App gives you direct, commission-free digital ordering for Dine-In, Takeaway, and Home Delivery. Diners enjoy visual food menus with dietary filters, real-time step-by-step order tracking, advance table reservations, and 1-tap reordering of their favorite dishes.',
+    benefits: [
+      { title: 'Zero Third-Party Commissions', desc: 'Retain 100% of your delivery and takeout revenue without paying 30% aggregator platform fees.' },
+      { title: 'Seamless QR Table Ordering', desc: 'Diners scan table QR codes to browse the menu, customize items, and place orders directly from their personal phones.' },
+      { title: 'Live 5-Stage Order Tracking', desc: 'Guests follow real-time progress: Placed → Cooking → Ready → Out for Delivery → Delivered.' },
+      { title: 'Instant Advance Table Booking', desc: 'Guests select dining dates, time slots, guest counts, and special dietary or celebration notes.' },
+      { title: 'Loyalty & 1-Click Reorders', desc: 'Saved past orders, favorite items, and stored delivery addresses make re-ordering fast and effortless.' },
+      { title: 'Direct Customer Reviews & Feedback', desc: 'Collect verified star ratings and photo feedback directly to safeguard your online reputation.' }
+    ],
+    features: [
+      'Multi-Channel Ordering: Unified support for Dine-In QR ordering, Curbside Takeaway, and Scheduled Home Delivery.',
+      'Visual Digital Catalog: Rich food photography, allergen badges (Vegan, Gluten-Free, Halal), and ingredient descriptions.',
+      'Live Step-by-Step Order Tracker: Real-time visual progress timeline keeping diners informed at every preparation stage.',
+      'Digital Table Reservation Engine: Diners book tables with instant status notifications upon host confirmation.',
+      'Multiple Saved Delivery Addresses: Store Home, Work, and Custom address pins with landmark notes.',
+      'Integrated Payment Gateways: Supports Credit Cards, UPI, Digital Wallets, and Cash on Delivery.',
+      'Direct Ratings & Dish Reviews: Diners rate individual menu dishes with comments and photos.'
+    ],
+    faqs: [
+      { question: 'Can customers order food while sitting at their table without downloading the app?', answer: 'Yes. Scanning the table QR opens the responsive web version instantly without requiring an app download, while regular diners can use the native mobile app for saved preferences.' },
+      { question: 'How does live order tracking work for delivery orders?', answer: 'As the kitchen updates order status and dispatches the delivery driver, the customer’s app timeline updates in real time showing preparation, pickup, and delivery.' },
+      { question: 'Can guests make special cooking requests on their orders?', answer: 'Yes. Diners can add custom preparation instructions to any dish (such as "No cilantro" or "Extra crispy") before adding to cart.' }
+    ],
+    ctaText: 'Explore QR Ordering',
+    ctaLink: '/features/qr-code-scanning'
+  },
+  'saas-admin-billing': {
+    id: 'saas-admin-billing',
+    badge: 'Multi-Tenant SaaS Engine',
+    title: 'SaaS Super Admin & Subscription Billing Management',
+    metaTitle: 'Restaurant SaaS Super Admin & Subscription Billing Engine | SavoryOps',
+    metaDescription: 'Scale your SaaS restaurant software business. Multi-tenant database isolation, tiered subscription billing, license quotas, coupon codes, and affiliate referrals.',
+    primaryKeyword: 'Restaurant SaaS Super Admin Software',
+    secondaryKeywords: [
+      'multi tenant restaurant SaaS',
+      'restaurant subscription billing',
+      'saas license quota management',
+      'tenant database isolation',
+      'saas coupon engine',
+      'saas affiliate referral tracking'
+    ],
+    h1: 'Multi-Tenant SaaS Super Admin & Automated Subscription Billing Engine',
+    subtitle: 'Manage unlimited restaurant tenants, provision isolated databases, sell tiered subscription packages, and scale recurring SaaS revenue.',
+    overview: 'SavoryOps is not merely a single restaurant point of sale; it is an enterprise-grade multi-tenant SaaS business-in-a-box. The SaaS Super Admin Web Portal provides platform operators with total control over tenant onboarding, subscription lifecycle management, feature tier gating, automated custom domain routing, and platform financial reporting.',
+    benefits: [
+      { title: 'Turnkey SaaS Business Model', desc: 'Onboard unlimited restaurant operators and collect automated monthly or annual subscription revenues.' },
+      { title: 'Logical Database Isolation', desc: 'Each tenant gets isolated database storage, guaranteeing enterprise-grade security and zero cross-tenant data leaks.' },
+      { title: 'Tiered Pricing & Plan Gating', desc: 'Define Free, Starter, Professional, and Enterprise subscription packages with automated feature limits.' },
+      { title: 'Modular Feature Add-Ons', desc: 'Sell standalone add-on licenses (e.g. extra branch locations, extra staff seats, custom domains) for incremental MRR.' },
+      { title: 'Automated Custom Domain Routing', desc: 'AWS Route 53 integration automatically provisions custom tenant domains and SSL certificates.' },
+      { title: 'Live SaaS Recurring Revenue Metrics', desc: 'Monitor Monthly Recurring Revenue (MRR), ARR, subscriber growth rates, and churn metrics at a glance.' }
+    ],
+    features: [
+      'Multi-Tenant Restaurant Directory: Manage active, trial, suspended, and canceled restaurant tenant accounts.',
+      'Tiered Subscription Plans: Configure plan name, pricing, billing cycle, branch limits, staff limits, and table quotas.',
+      'Modular Add-On Store: Enable restaurant owners to purchase extra staff seats or commissary modules directly.',
+      'Promotional Coupon Engine: Generate discount coupon codes with expiration dates, usage counters, and percentage/flat discounts.',
+      'Affiliate & Referral Tracking: Reward partners and influencers for referring new restaurant subscribers with commission tracking.',
+      'AWS Route 53 Tenant Automation: Programmatic DNS record creation for tenant subdomains and custom white-label domains.',
+      'Platform Financial Reports: Detailed breakdown of subscription collections, platform tax compliance, and revenue churn.'
+    ],
+    faqs: [
+      { question: 'Is tenant data completely isolated between different restaurant businesses?', answer: 'Yes. SavoryOps utilizes dynamic database switching (dbManager.js). Every restaurant tenant operates with its own isolated database instance, preventing any possibility of data cross-contamination.' },
+      { question: 'Can platform owners create custom subscription plans?', answer: 'Yes. Super admins can configure custom subscription packages, set recurring billing intervals (monthly/yearly), and restrict features such as maximum branches or staff accounts.' },
+      { question: 'How does automated domain routing work?', answer: 'When a new tenant selects their subdomain or points a custom domain, SavoryOps uses AWS Route 53 APIs to automatically provision DNS routing records without manual server configuration.' }
+    ],
+    ctaText: 'Explore Multi-Tenant System',
+    ctaLink: '/features/multi-tenant-architecture'
+  },
+  'automated-dns-routing': {
+    id: 'automated-dns-routing',
+    badge: 'AWS Route 53 DNS',
+    title: 'Automated Tenant Subdomain & Custom DNS Routing',
+    metaTitle: 'Automated Tenant Custom Domain & Route 53 DNS Routing | SavoryOps',
+    metaDescription: 'Instant programmatic custom domain and subdomain provisioning using AWS Route 53. White-label restaurant SaaS branding with automated SSL routing.',
+    primaryKeyword: 'Automated SaaS Domain Routing',
+    secondaryKeywords: [
+      'AWS Route 53 SaaS routing',
+      'tenant custom domain management',
+      'white label restaurant POS domain',
+      'automated subdomain provisioning',
+      'multi-tenant DNS management'
+    ],
+    h1: 'Automated Tenant Subdomain & Custom Domain DNS Routing Engine',
+    subtitle: 'Provision custom branded subdomains and custom white-label restaurant domains instantly with programmatic AWS Route 53 cloud routing.',
+    overview: 'In enterprise SaaS platforms, restaurant chains and premium operators demand their own customized web address (e.g., `pos.myrestaurant.com` or `branch1.savoryops.com`). SavoryOps includes integrated AWS Route 53 DNS automation (`route53TenantDns.js`) that programmatically registers and routes tenant hostnames the instant an account is created or upgraded.',
+    benefits: [
+      { title: 'Zero Manual DNS Configuration', desc: 'No manual DNS record adding or server restarts needed when new restaurant tenants register.' },
+      { title: 'Branded Tenant Subdomains', desc: 'Tenants instantly receive a dedicated, secure subdomain (e.g. `pizzapalace.savoryops.com`).' },
+      { title: 'White-Label Custom Domains', desc: 'Enterprise restaurant groups can connect their own branded root or subdomains.' },
+      { title: 'AWS Route 53 Cloud Scalability', desc: 'Built on Amazon Web Services Route 53 for 100% DNS availability and global latency routing.' },
+      { title: 'Automated SSL & Security', desc: 'Enforces HTTPS encryption across all tenant endpoints to safeguard billing and payment transactions.' }
+    ],
+    features: [
+      'AWS Route 53 SDK Integration: Automated API calls for creating, updating, and deleting Hosted Zone Resource Record Sets.',
+      'Instant Subdomain Provisioning: Newly signed-up restaurant accounts instantly resolve to their assigned tenant workspace.',
+      'Custom Domain Verification: Automated CNAME and TXT validation checks for verifying third-party domain ownership.',
+      'Dynamic Tenant Routing Middleware: Backend middleware inspects incoming HTTP request host headers to route traffic to the correct tenant database.',
+      'Wildcard SSL Certificate Support: Universal HTTPS encryption covering all tenant subdomains.'
+    ],
+    faqs: [
+      { question: 'How quickly does a new tenant subdomain become active?', answer: 'Thanks to AWS Route 53 automated record creation, tenant subdomains are provisioned and active within seconds of account creation.' },
+      { question: 'Can restaurant owners use their own domain name?', answer: 'Yes. On supported subscription tiers, restaurant owners can point their custom domain (e.g. `order.myrestaurant.com`) via a simple CNAME record.' }
+    ],
+    ctaText: 'Explore Cloud Platform',
+    ctaLink: '/features/cloud-based-system'
+  },
+  'menu-engineering': {
+    id: 'menu-engineering',
+    badge: 'BCG Profitability Matrix',
+    title: 'Menu Engineering Matrix & Dish Profitability Intelligence',
+    metaTitle: 'Restaurant Menu Engineering Matrix Software (BCG Matrix) | SavoryOps',
+    metaDescription: 'Maximize restaurant gross margins. Automatically categorize menu dishes into Stars, Plowhorses, Puzzles, and Dogs using live POS sales and recipe BOM food costs.',
+    primaryKeyword: 'Restaurant Menu Engineering Software',
+    secondaryKeywords: [
+      'menu engineering matrix',
+      'BCG restaurant menu matrix',
+      'dish profitability analysis',
+      'menu item contribution margin',
+      'menu optimization software',
+      'food cost margin matrix'
+    ],
+    h1: 'Automated Menu Engineering Matrix & Dish Profitability Intelligence',
+    subtitle: 'Harness the power of the BCG Menu Matrix. Uncover which dishes generate true profit versus high-volume low-margin items, and optimize your menu for maximum revenue.',
+    overview: 'Most restaurateurs make menu decisions based on gut feeling or simple sales volume, without realizing that their best-selling dish might actually have the lowest profit margin. The SavoryOps Menu Engineering Matrix combines live POS transaction data with ingredient-level Recipe BOM costs to automatically plot every dish onto the classic BCG 4-quadrant matrix: Stars, Plowhorses, Puzzles, and Dogs.',
+    benefits: [
+      { title: 'Identify "Stars" (High Profit, High Popularity)', desc: 'Highlight and promote dishes that diners love and that deliver maximum gross profit margin.' },
+      { title: 'Re-engineer "Plowhorses" (Low Profit, High Popularity)', desc: 'Adjust portion sizes or modestly raise prices on top-selling items with slim margins to boost bottom-line revenue.' },
+      { title: 'Market "Puzzles" (High Profit, Low Popularity)', desc: 'Improve menu placement, train servers to upsell, or redesign descriptions for high-margin hidden gems.' },
+      { title: 'Eliminate "Dogs" (Low Profit, Low Popularity)', desc: 'Remove sluggish, unprofitable dishes that tie up ingredient capital and clutter kitchen prep lines.' },
+      { title: 'Automated Margin Calculations', desc: 'No complex spreadsheet formulas—dish contribution margins calculate continuously in real time.' }
+    ],
+    features: [
+      'Automated 4-Quadrant BCG Matrix Plotting: Visual scatter chart classifying dishes into Stars, Plowhorses, Puzzles, and Dogs.',
+      'Live Contribution Margin Tracking: Real-time calculation: Selling Price minus Recipe BOM Ingredient Cost.',
+      'Popularity Index Benchmarking: Compares individual dish sales volume against category average sales velocity.',
+      'Price Elasticity Simulation: Test hypothetical price adjustments and review projected impact on category profitability.',
+      'Category-Wise Menu Auditing: Filter the matrix by Appetizers, Entrees, Cocktails, and Desserts for focused optimization.',
+      'Actionable Server Recommendation Prompts: Suggest top high-margin dishes for waitstaff to recommend table-side.'
+    ],
+    faqs: [
+      { question: 'What is the BCG Menu Engineering Matrix?', answer: 'The BCG Menu Engineering Matrix is a proven hospitality framework that evaluates menu items based on two key metrics: Profitability (Contribution Margin) and Popularity (Sales Volume). It groups dishes into Stars (High Profit, High Sales), Plowhorses (Low Profit, High Sales), Puzzles (High Profit, Low Sales), and Dogs (Low Profit, Low Sales).' },
+      { question: 'How does SavoryOps calculate dish profitability?', answer: 'SavoryOps pulls the exact ingredient consumption costs from the recipe Bill of Materials (BOM) and subtracts it from the POS selling price to calculate the true contribution margin of every dish.' },
+      { question: 'What actions should I take for Plowhorse dishes?', answer: 'Plowhorses sell very well but have thin margins. Successful tactics include slightly increasing the menu price, renegotiating bulk ingredient costs with suppliers, or subtly altering recipe portions.' }
+    ],
+    ctaText: 'Explore Advanced Reports',
+    ctaLink: '/features/advanced-reports'
+  },
+  'food-cost-variance': {
+    id: 'food-cost-variance',
+    badge: 'Food Waste Reduction',
+    title: 'Food Cost Variance & Kitchen Wastage Reduction Engine',
+    metaTitle: 'Restaurant Food Cost Variance & Wastage Reduction Software | SavoryOps',
+    metaDescription: 'Cut restaurant food waste by up to 35%. Compare theoretical ingredient consumption with physical kitchen counts to identify shrinkage, over-portioning, and waste.',
+    primaryKeyword: 'Food Cost Variance Software',
+    secondaryKeywords: [
+      'kitchen waste reduction software',
+      'theoretical vs actual food cost',
+      'restaurant culinary shrinkage',
+      'food cost percentage tracker',
+      'restaurant waste logging',
+      'over-portioning prevention'
+    ],
+    h1: 'Food Cost Variance & Kitchen Wastage Reduction Engine',
+    subtitle: 'Eliminate unrecorded kitchen shrinkage, control over-portioning, and recover up to 35% in culinary food waste with precision variance auditing.',
+    overview: 'Culinary waste, employee theft, and over-portioning quietly steal 4% to 10% of restaurant food expenditure. The SavoryOps Food Cost Variance Engine compares theoretical ingredient consumption (calculated from recipe BOM orders) with physical pantry stock counts. Any discrepancy is flagged immediately with monetary valuations and categorized reason codes.',
+    benefits: [
+      { title: 'Save Up to 35% on Food Waste', desc: 'Identify kitchen prep waste, over-portioning, and pilferage before they destroy monthly profit margins.' },
+      { title: 'Theoretical vs. Actual Variance', desc: 'Compare exact ingredient amounts that should have been used against actual physical pantry audits.' },
+      { title: 'Categorized Reason Codes', desc: 'Track why inventory was lost: Spoilage, Kitchen Burns, Expired Dates, Spillage, Tasting, or Unaccounted Shrink.' },
+      { title: 'Staff Portion Discipline', desc: 'Spot patterns of line cook over-portioning or unchecked kitchen staff snacking.' },
+      { title: 'Monetary Valuation of Waste', desc: 'View the exact dollar amount of discarded raw ingredients per shift, day, and month.' }
+    ],
+    features: [
+      'Theoretical vs. Actual Consumption Comparison: Automated variance audits comparing recipe sales with physical stock counts.',
+      'Waste & Spoilage Log Book: Digital logging of spoiled produce, burned steaks, spilled sauces, and expired items.',
+      'Daily Variance Discrepancy Alerts: Immediate notifications when ingredient variance exceeds safe percentage thresholds.',
+      'Staff Accountability Tracking: Logs the kitchen shift and employee who recorded or caused the waste incident.',
+      'Supplier Quality Returns: Record and credit deliveries that arrived spoiled or substandard from vendors.',
+      'Food Cost Percentage KPI Tracking: Continuous monitoring of your target food cost percentage (e.g. 28% to 32%).'
+    ],
+    faqs: [
+      { question: 'What is theoretical vs. actual food cost variance?', answer: 'Theoretical food cost is the ideal cost of ingredients that should have been consumed based on your POS sales and recipe BOMs. Actual food cost is the real quantity of ingredients depleted from your storage rooms. The difference between the two is your variance—caused by waste, over-portioning, spillage, or theft.' },
+      { question: 'How does SavoryOps help reduce food waste by up to 35%?', answer: 'By making every gram and milliliter accountable. When cooks know that ingredient usage is tracked against dish sales, over-portioning stops, prep waste is reported and minimized, and shrinkage is virtually eliminated.' }
+    ],
+    ctaText: 'Explore Food Cost Guide',
+    ctaLink: '/resources/food-cost-percentage-guide'
   }
-
 };

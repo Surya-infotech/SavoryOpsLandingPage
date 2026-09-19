@@ -31,12 +31,26 @@ const ALIAS_MAP = {
   asset_management: 'asset-management',
   'qr-based-menu': 'qr-code-scanning',
   qr_based_menu: 'qr-code-scanning',
-  'qr-menu': 'qr-code-scanning'
+  'qr-menu': 'qr-code-scanning',
+  'floor-plan': 'floor-plan-management',
+  floor_plan: 'floor-plan-management',
+  'table-management': 'floor-plan-management',
+  kds: 'kitchen-display-system',
+  'kitchen-display': 'kitchen-display-system',
+  employee_app: 'employee-mobile-app',
+  customer_app: 'customer-mobile-app',
+  'saas-admin': 'saas-admin-billing',
+  'subscription-billing': 'saas-admin-billing',
+  'automated-dns': 'automated-dns-routing',
+  'bcg-matrix': 'menu-engineering',
+  'wastage-tracking': 'food-cost-variance',
+  'food-waste': 'food-cost-variance'
 };
 
 const FEATURE_IMAGE_MAP = {
   // Kitchen & Order Management
   'kot-system': '/images/features/kitchen-display-system.jpg',
+  'kitchen-display-system': '/images/features/kitchen-display-system.jpg',
   'qsr': '/images/order-types/quick-order.jpg',
   'order-summary': '/images/order-types/pickup.jpg',
   'order_summary': '/images/order-types/pickup.jpg',
@@ -45,6 +59,7 @@ const FEATURE_IMAGE_MAP = {
   'inventory': '/images/features/inventory-management.jpg',
   'inventory-management': '/images/features/inventory-management.jpg',
   'inventory_management': '/images/features/inventory-management.jpg',
+  'food-cost-variance': '/images/features/inventory-management.jpg',
 
   // Finance & Expense Control
   'finance': '/images/features/finance-management.jpg',
@@ -69,16 +84,22 @@ const FEATURE_IMAGE_MAP = {
   // Menus & QR Ordering
   'menu-management': '/images/features/qr-ordering.jpg',
   'menu_management': '/images/features/qr-ordering.jpg',
+  'menu-engineering': '/images/features/qr-ordering.jpg',
   'qr-based-menu': '/images/features/qr-ordering.jpg',
   'qr_based_menu': '/images/features/qr-ordering.jpg',
   'qr-code-scanning': '/images/features/qr-ordering.jpg',
   'qr_code_scanning': '/images/features/qr-ordering.jpg',
 
-  // Table Dining & Combo
+  // Table Dining, Floor Plan & Combo
+  'floor-plan-management': '/images/order-types/dine-in.jpg',
   'table-reservation': '/images/order-types/dine-in.jpg',
   'table_reservation': '/images/order-types/dine-in.jpg',
   'combo-unlimited-meal': '/images/order-types/takeaway.jpg',
   'combo_unlimited_meal': '/images/order-types/takeaway.jpg',
+
+  // Mobile Apps (Employee & Customer)
+  'employee-mobile-app': '/images/about/culinary-team.jpg',
+  'customer-mobile-app': '/images/features/qr-ordering.jpg',
 
   // Multi-Branch, Cloud & Franchise
   'multiple-business': '/images/about/multi-branch.jpg',
@@ -87,6 +108,8 @@ const FEATURE_IMAGE_MAP = {
   'multiple_branches': '/images/about/multi-branch.jpg',
   'multi-tenant-architecture': '/images/about/multi-branch.jpg',
   'multi_tenant_architecture': '/images/about/multi-branch.jpg',
+  'saas-admin-billing': '/images/hero-platform.jpg',
+  'automated-dns-routing': '/images/about/multi-branch.jpg',
   'cloud-based-system': '/images/hero-platform.jpg',
   'cloud_based_system': '/images/hero-platform.jpg',
   'custom-subdomain': '/images/about/multi-branch.jpg',

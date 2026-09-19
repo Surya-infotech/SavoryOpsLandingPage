@@ -5,6 +5,7 @@ import Benefits from '../components/HomeSections/Benefits';
 import CTA from '../components/CTA';
 import ContactUs from './ContactUs';
 import Features from '../components/HomeSections/Features';
+import SystemEcosystem from '../components/HomeSections/SystemEcosystem';
 import Hero from '../components/HomeSections/Hero';
 import OrderTypes from '../components/HomeSections/OrderTypes';
 import Reports from '../components/HomeSections/Reports';
@@ -34,6 +35,7 @@ const Home = () => {
         primaryKeyword="Restaurant Management System"
       />
       <Hero />
+      <SystemEcosystem />
       <Features />
       <OrderTypes />
       <Reports />

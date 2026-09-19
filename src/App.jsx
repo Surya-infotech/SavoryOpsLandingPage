@@ -92,6 +92,14 @@ const AppContent = () => {
     return <Navigate to={location.pathname.replace(/\/+$/, '')} replace />;
   }
 
+  // Normalize uppercase auth paths to canonical lowercase without Route conflict
+  if (location.pathname === '/Signin') {
+    return <Navigate to="/signin" replace />;
+  }
+  if (location.pathname === '/Signup') {
+    return <Navigate to="/signup" replace />;
+  }
+
   const isAuthPage =
     location.pathname === '/Signin' ||
     location.pathname === '/Signup' ||
@@ -136,10 +144,8 @@ const AppContent = () => {
         <Route path="/solutions/cloud-kitchen-pos-system" element={<SEOLandingPage clusterId="cloud-kitchen-pos-system" />} />
         <Route path="/resources/food-cost-percentage-guide" element={<SEOLandingPage clusterId="food-cost-percentage-guide" />} />
 
-        {/* Uppercase Redirects to Lowercase Canonicals */}
-        <Route path="/Signin" element={<Navigate to="/signin" replace />} />
+        {/* Auth Routes */}
         <Route path="/signin" element={<OwnerLogin />} />
-        <Route path="/Signup" element={<Navigate to="/signup" replace />} />
         <Route path="/signup" element={<OwnerSignUp />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

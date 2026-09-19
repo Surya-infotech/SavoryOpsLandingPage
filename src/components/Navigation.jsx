@@ -14,7 +14,11 @@ import {
   AccountBalanceWallet as FinanceIcon,
   Assessment as ReportsIcon,
   Calculate as CalculateIcon,
-  CompareArrows as CompareIcon
+  CompareArrows as CompareIcon,
+  TableBar as TableBarIcon,
+  PhoneIphone as PhoneIcon,
+  MobileFriendly as MobileFriendlyIcon,
+  AdminPanelSettings as AdminIcon
 } from '@mui/icons-material';
 import {
   AppBar,
@@ -87,7 +91,11 @@ const Navigation = () => {
     { text: 'Restaurant POS System', path: '/solutions/restaurant-pos-system', icon: <PosIcon fontSize="small" /> },
     { text: 'Kitchen Order Ticket (KOT)', path: '/solutions/kitchen-order-ticket-system', icon: <KitchenIcon fontSize="small" /> },
     { text: 'Kitchen Display System (KDS)', path: '/solutions/kitchen-display-system', icon: <KitchenIcon fontSize="small" /> },
+    { text: 'Floor Plan & Table Seating', path: '/features/floor-plan-management', icon: <TableBarIcon fontSize="small" /> },
     { text: 'Inventory & Recipe BOM', path: '/solutions/restaurant-inventory-management', icon: <InventoryIcon fontSize="small" /> },
+    { text: '6-in-1 Employee Mobile App', path: '/features/employee-mobile-app', icon: <PhoneIcon fontSize="small" /> },
+    { text: 'Customer Mobile App & QR', path: '/features/customer-mobile-app', icon: <MobileFriendlyIcon fontSize="small" /> },
+    { text: 'SaaS Multi-Tenant Admin', path: '/features/saas-admin-billing', icon: <AdminIcon fontSize="small" /> },
     { text: 'Asset & Equipment Control', path: '/features/asset-management', icon: <AssetIcon fontSize="small" /> },
     { text: 'Finance & Expense Control', path: '/features/finance-management', icon: <FinanceIcon fontSize="small" /> },
     { text: '27+ Advanced Reports', path: '/features/advanced-reports', icon: <ReportsIcon fontSize="small" /> },
