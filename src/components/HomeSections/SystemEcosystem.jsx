@@ -16,16 +16,14 @@ import {
 } from '@mui/material';
 import {
   Storefront as StorefrontIcon,
-  AdminPanelSettings as AdminIcon,
   PhoneIphone as PhoneIphoneIcon,
   QrCodeScanner as QrCodeScannerIcon,
   CloudQueue as CloudQueueIcon,
   Language as LanguageIcon,
   CheckCircle as CheckCircleIcon,
   ArrowForward as ArrowForwardIcon,
-  Apps as AppsIcon,
   Badge as BadgeIcon,
-  Memory as TechIcon,
+  Apps as AppsIcon,
   Speed as SpeedIcon
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
@@ -39,7 +37,6 @@ export const SYSTEM_MODULES = [
     badge: 'Core Command Center',
     icon: <StorefrontIcon />,
     targetRoles: ['Restaurant Owners', 'General Managers', 'Accountants', 'Store Managers'],
-    techStack: ['React 19', 'Material-UI', 'Vite', 'SCSS', 'Recharts'],
     headline: 'Centralized Restaurant POS, Inventory BOM & Floor Management',
     description:
       'The primary command center for daily restaurant operations and multi-branch governance. Manage multi-channel POS billing, live KOT dispatch, visual dining floor plans, ingredient-level inventory, 27+ business intelligence reports, and real-time Profit & Loss accounting.',
@@ -59,37 +56,11 @@ export const SYSTEM_MODULES = [
     image: '/images/features/pos-system.jpg'
   },
   {
-    id: 'admin-portal',
-    name: 'SaaS Super Admin',
-    badge: 'Multi-Tenant Platform',
-    icon: <AdminIcon />,
-    targetRoles: ['SaaS Platform Owners', 'Super Administrators', 'Franchise Operators'],
-    techStack: ['React 19', 'Material-UI', 'Vite', 'SCSS', 'AWS Route 53 API'],
-    headline: 'Multi-Tenant SaaS Management & Subscription Billing Engine',
-    description:
-      'Turnkey multi-tenant SaaS business-in-a-box. Provision logically isolated tenant databases, configure tiered subscription packages, sell modular feature add-ons, run coupon promotions, track affiliate referral commissions, and monitor platform recurring revenue (MRR/ARR).',
-    keyCapabilities: [
-      'Multi-Tenant Logical Database Isolation ensuring 100% tenant data privacy',
-      'Flexible Subscription Tiers (Free, Starter, Professional, Enterprise)',
-      'Modular Add-On Feature Marketplace (extra branch licenses, staff seats, custom domains)',
-      'Automated AWS Route 53 Subdomain & Custom Tenant Domain Provisioning',
-      'Coupon Engine with usage caps, percentage/flat discounts, and validity periods',
-      'Affiliate & Referral Tracking with automated tenant acquisition commissions',
-      'Platform SaaS Metrics: Live MRR, ARR, active tenant quotas, and churn analytics'
-    ],
-    primaryLink: '/features/saas-admin-billing',
-    primaryLinkText: 'Explore SaaS Admin',
-    secondaryLink: '/features/multi-tenant-architecture',
-    secondaryLinkText: 'Multi-Tenant Architecture',
-    image: '/images/hero-platform.jpg'
-  },
-  {
     id: 'employee-app',
     name: '6-in-1 Employee App',
     badge: 'Zero Learning Curve',
     icon: <PhoneIphoneIcon />,
     targetRoles: ['Waiters', 'Cashiers', 'Line Chefs', 'Head Chefs', 'Hosts', 'Delivery Drivers'],
-    techStack: ['React Native', 'Expo', 'Cross-Platform iOS & Android', 'REST WebSocket'],
     headline: 'Single Adaptive Mobile App with 6 Dynamically Morphing Roles',
     description:
       'Eliminate software fragmentation and training headaches. One universal mobile app dynamically morphs its entire UI and toolset based on the authenticated staff member’s job role.',
@@ -113,7 +84,6 @@ export const SYSTEM_MODULES = [
     badge: 'Diner Experience',
     icon: <QrCodeScannerIcon />,
     targetRoles: ['In-House Diners', 'Takeout Guests', 'Delivery Customers'],
-    techStack: ['React Native', 'Expo', 'Cross-Platform iOS & Android', 'Push Notifications'],
     headline: 'Digital Menu Browsing, QR Table Ordering & Live Order Tracking',
     description:
       'Empower diners with contactless ordering, multi-channel pickup and delivery, advance table booking, and real-time step-by-step order progress tracking right from their smartphones.',
@@ -134,19 +104,18 @@ export const SYSTEM_MODULES = [
   },
   {
     id: 'backend-api',
-    name: 'Core Backend Engine',
+    name: 'Core Cloud Engine',
     badge: 'Enterprise Scalability',
     icon: <CloudQueueIcon />,
-    targetRoles: ['Core Engine powering all 5 Client Applications'],
-    techStack: ['Node.js', 'Express.js', 'MongoDB Multi-Tenant Pool', 'AWS S3', 'AWS Route 53'],
-    headline: 'Multi-Tenant Dynamic DB Switching & High-Performance REST API',
+    targetRoles: ['Restaurant Owners', 'Multi-Branch Operators', 'General Managers'],
+    headline: 'Enterprise Multi-Tenant Cloud Architecture & Real-Time Sync',
     description:
-      'The high-performance technological foundation of SavoryOps. Employs dynamic database connection pooling per tenant, granular JWT and role-based access control (RBAC), and automated cloud pipelines.',
+      'The enterprise cloud infrastructure powering SavoryOps across all operations. Employs dedicated database isolation per tenant, bank-grade encryption, automated cloud backups, and microsecond data synchronization across all your branches.',
     keyCapabilities: [
-      'Dynamic Database Switching (dbManager.js): Separate MongoDB database per tenant',
-      'Role-Based Access Control (RBAC): Strict security isolating Owner, Admin, Employee, and Customer APIs',
-      'AWS S3 Asset Pipeline: High-speed food photo and invoice storage with CDN delivery',
-      'AWS Route 53 Automation (route53TenantDns.js): Instant tenant subdomain & custom domain routing',
+      'Dedicated Database Isolation: Separate, secure database storage per restaurant brand',
+      'Role-Based Access Control (RBAC): Strict security isolating Owner, Manager, Employee, and Customer APIs',
+      'High-Speed Cloud Media Storage: Fast-loading visual menus and digital invoices with CDN delivery',
+      'Automated Domain Routing: Instant custom domain and branch subdomain provisioning with automated SSL',
       'Multi-Tax Framework: Dynamic configuration for GST, VAT, Service Charges & regional taxes',
       'High-Throughput Order Pipeline: Microsecond ticket dispatching between POS, KOT, and Mobile Apps'
     ],
@@ -158,11 +127,10 @@ export const SYSTEM_MODULES = [
   },
   {
     id: 'marketing-platform',
-    name: 'Global SaaS Marketing',
+    name: 'Global Multi-Lingual Platform',
     badge: 'International Ready',
     icon: <LanguageIcon />,
-    targetRoles: ['Global Restaurant Chains', 'Franchise Operators', 'Prospective Buyers'],
-    techStack: ['React 19', 'Vite', '11 Languages', 'Full Arabic RTL', 'Programmatic SEO'],
+    targetRoles: ['Global Restaurant Chains', 'Franchise Operators', 'Multi-Regional Brands'],
     headline: 'Global Multi-Lingual Architecture with Native Arabic RTL Support',
     description:
       'Engineered for worldwide hospitality operators. Full localization into 11 languages with flawless Right-to-Left (RTL) Arabic layout, multi-currency support, and programmatic search engine optimization.',
@@ -312,12 +280,6 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
                     border: '1px solid rgba(16, 185, 129, 0.25)'
                   }}
                 />
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                  <TechIcon sx={{ fontSize: 16, color: 'var(--text-secondary, #64748b)' }} />
-                  <Typography variant="caption" sx={{ color: 'var(--text-secondary, #64748b)', fontWeight: 600 }}>
-                    Tech Stack: {currentModule.techStack.join(' • ')}
-                  </Typography>
-                </Box>
               </Box>
 
               <Typography
@@ -506,7 +468,7 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
                     </Typography>
                   </Box>
                   <Typography variant="body2" sx={{ color: '#cbd5e1', lineHeight: 1.6, fontSize: '0.86rem' }}>
-                    Seamless synchronization across all 6 applications. Orders submitted on the Employee App or Customer QR immediately sync to the Owner Web POS, kitchen KOT stations, and update ingredient inventory BOM in real time.
+                    Seamless synchronization across all operational applications. Orders submitted on the Employee App or Customer QR immediately sync to the Owner Web POS, kitchen KOT stations, and update ingredient inventory BOM in real time.
                   </Typography>
                 </Box>
               </Box>

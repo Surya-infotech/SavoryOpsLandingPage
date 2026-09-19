@@ -109,7 +109,7 @@ const TermsAndConditions = () => {
               </Typography>
             </Box>
             <Typography variant="body1" className="section-content">
-              By accessing, registering an account on, or utilizing the <strong>{softwareName || 'SavoryOps'}</strong> platform (including our Owner Web Portal, Admin Portal, Employee Mobile App, Customer Mobile App, and associated APIs), you (&ldquo;User&rdquo;, &ldquo;Merchant&rdquo;, &ldquo;Subscriber&rdquo;, or &ldquo;You&rdquo;) agree to be legally bound by these Terms and Conditions (&ldquo;Terms&rdquo;).
+              By accessing, registering an account on, or utilizing the <strong>{softwareName || 'SavoryOps'}</strong> platform (including our Owner Web Portal, Employee Mobile App, Customer Mobile App, and associated APIs), you (&ldquo;User&rdquo;, &ldquo;Merchant&rdquo;, &ldquo;Subscriber&rdquo;, or &ldquo;You&rdquo;) agree to be legally bound by these Terms and Conditions (&ldquo;Terms&rdquo;).
             </Typography>
             <Typography variant="body1" className="section-content">
               If you are accepting these Terms on behalf of a restaurant company, franchise group, partnership, or other legal business entity, you represent and warrant that you possess full legal authority to bind such entity to these Terms. If you do not agree with any part of these Terms, you must immediately refrain from accessing or utilizing our software services.

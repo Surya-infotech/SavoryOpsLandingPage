@@ -199,7 +199,7 @@ const DataDeletionPolicy = () => {
                   <tr>
                     <td><strong>Account Authentication Records</strong></td>
                     <td><span style={{ color: '#dc2626', fontWeight: 600 }}>Permanently Deleted</span></td>
-                    <td>User document deleted from MongoDB primary collections (<code>findByIdAndDelete</code>).</td>
+                    <td>User records permanently purged and deleted from primary production database records.</td>
                     <td>None (Permanent)</td>
                   </tr>
                   <tr>
@@ -307,8 +307,8 @@ const DataDeletionPolicy = () => {
             </Typography>
 
             <ul>
-              <li><strong>Live Production Database:</strong> Instantaneous (&lt; 2 seconds). The customer/employee document is permanently deleted from primary MongoDB production clusters.</li>
-              <li><strong>AWS S3 Object Storage:</strong> Instantaneous (&lt; 5 seconds). Profile images and uploaded avatars are deleted directly using AWS S3 SDK deletion calls.</li>
+              <li><strong>Live Production Database:</strong> Instantaneous (&lt; 2 seconds). The customer/employee record is permanently purged from primary production database clusters.</li>
+              <li><strong>Cloud Object Storage:</strong> Instantaneous (&lt; 5 seconds). Profile images and uploaded avatars are permanently deleted from secure cloud storage.</li>
               <li><strong>Active Device Sessions:</strong> Instantaneous. Authentication tokens and local cache files on mobile devices are immediately invalidated.</li>
               <li><strong>Rolling Backup Purge:</strong> Encrypted automated database snapshots cycle out and are permanently overwritten within <strong>90 days</strong> in accordance with cloud disaster recovery protocols.</li>
             </ul>

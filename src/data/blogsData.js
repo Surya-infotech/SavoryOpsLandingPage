@@ -710,7 +710,7 @@ export const BLOG_POSTS = [
           'When corporate decides to introduce a new seasonal combo or adjust prices to counter inflation, marketing and culinary directors must log into ten separate POS backend terminals or manually email spreadsheet instructions to store managers. Discrepancies emerge: Branch A charges $14.50, Branch B charges $13.00, and online ordering shows outdated descriptions.'
         ],
         quote: {
-          text: "Scalability requires centralization. If opening your fifth branch requires five times more administrative headache, your tech stack is holding your brand back.",
+          text: "Scalability requires centralization. If opening your fifth branch requires five times more administrative headache, your operational software is holding your brand back.",
           author: "Suraj Dholakiya, Founder at SavoryOps"
         }
       },

@@ -1336,7 +1336,7 @@ export const FEATURES_DATA = {
     ],
     faqs: [
       { question: 'Does each employee need to download a different app from the app store?', answer: 'No. Every staff member downloads the same "SavoryOps Employee App". Once they sign in with their credentials, the app detects their assigned role and displays only the features relevant to their job.' },
-      { question: 'What platforms is the Employee App available on?', answer: 'The SavoryOps Employee App is built with React Native (Expo) and runs smoothly on both iOS (iPhones/iPads) and Android phones/tablets.' },
+      { question: 'What platforms is the Employee App available on?', answer: 'The SavoryOps Employee App runs smoothly on both iOS (iPhones/iPads) and Android phones/tablets.' },
       { question: 'Can an employee with multiple roles switch modes?', answer: 'Yes. If a staff member is assigned multiple roles (for instance, Manager and Cashier), they can toggle between authorized roles directly within the app profile settings.' },
       { question: 'Does the mobile app support offline order taking if Wi-Fi drops?', answer: 'The app features local offline caching so servers can continue taking orders table-side during temporary network blips, automatically syncing once connection is restored.' }
     ],
@@ -1386,83 +1386,40 @@ export const FEATURES_DATA = {
     ctaText: 'Explore QR Ordering',
     ctaLink: '/features/qr-code-scanning'
   },
-  'saas-admin-billing': {
-    id: 'saas-admin-billing',
-    badge: 'Multi-Tenant SaaS Engine',
-    title: 'SaaS Super Admin & Subscription Billing Management',
-    metaTitle: 'Restaurant SaaS Super Admin & Subscription Billing Engine | SavoryOps',
-    metaDescription: 'Scale your SaaS restaurant software business. Multi-tenant database isolation, tiered subscription billing, license quotas, coupon codes, and affiliate referrals.',
-    primaryKeyword: 'Restaurant SaaS Super Admin Software',
-    secondaryKeywords: [
-      'multi tenant restaurant SaaS',
-      'restaurant subscription billing',
-      'saas license quota management',
-      'tenant database isolation',
-      'saas coupon engine',
-      'saas affiliate referral tracking'
-    ],
-    h1: 'Multi-Tenant SaaS Super Admin & Automated Subscription Billing Engine',
-    subtitle: 'Manage unlimited restaurant tenants, provision isolated databases, sell tiered subscription packages, and scale recurring SaaS revenue.',
-    overview: 'SavoryOps is not merely a single restaurant point of sale; it is an enterprise-grade multi-tenant SaaS business-in-a-box. The SaaS Super Admin Web Portal provides platform operators with total control over tenant onboarding, subscription lifecycle management, feature tier gating, automated custom domain routing, and platform financial reporting.',
-    benefits: [
-      { title: 'Turnkey SaaS Business Model', desc: 'Onboard unlimited restaurant operators and collect automated monthly or annual subscription revenues.' },
-      { title: 'Logical Database Isolation', desc: 'Each tenant gets isolated database storage, guaranteeing enterprise-grade security and zero cross-tenant data leaks.' },
-      { title: 'Tiered Pricing & Plan Gating', desc: 'Define Free, Starter, Professional, and Enterprise subscription packages with automated feature limits.' },
-      { title: 'Modular Feature Add-Ons', desc: 'Sell standalone add-on licenses (e.g. extra branch locations, extra staff seats, custom domains) for incremental MRR.' },
-      { title: 'Automated Custom Domain Routing', desc: 'AWS Route 53 integration automatically provisions custom tenant domains and SSL certificates.' },
-      { title: 'Live SaaS Recurring Revenue Metrics', desc: 'Monitor Monthly Recurring Revenue (MRR), ARR, subscriber growth rates, and churn metrics at a glance.' }
-    ],
-    features: [
-      'Multi-Tenant Restaurant Directory: Manage active, trial, suspended, and canceled restaurant tenant accounts.',
-      'Tiered Subscription Plans: Configure plan name, pricing, billing cycle, branch limits, staff limits, and table quotas.',
-      'Modular Add-On Store: Enable restaurant owners to purchase extra staff seats or commissary modules directly.',
-      'Promotional Coupon Engine: Generate discount coupon codes with expiration dates, usage counters, and percentage/flat discounts.',
-      'Affiliate & Referral Tracking: Reward partners and influencers for referring new restaurant subscribers with commission tracking.',
-      'AWS Route 53 Tenant Automation: Programmatic DNS record creation for tenant subdomains and custom white-label domains.',
-      'Platform Financial Reports: Detailed breakdown of subscription collections, platform tax compliance, and revenue churn.'
-    ],
-    faqs: [
-      { question: 'Is tenant data completely isolated between different restaurant businesses?', answer: 'Yes. SavoryOps utilizes dynamic database switching (dbManager.js). Every restaurant tenant operates with its own isolated database instance, preventing any possibility of data cross-contamination.' },
-      { question: 'Can platform owners create custom subscription plans?', answer: 'Yes. Super admins can configure custom subscription packages, set recurring billing intervals (monthly/yearly), and restrict features such as maximum branches or staff accounts.' },
-      { question: 'How does automated domain routing work?', answer: 'When a new tenant selects their subdomain or points a custom domain, SavoryOps uses AWS Route 53 APIs to automatically provision DNS routing records without manual server configuration.' }
-    ],
-    ctaText: 'Explore Multi-Tenant System',
-    ctaLink: '/features/multi-tenant-architecture'
-  },
   'automated-dns-routing': {
     id: 'automated-dns-routing',
-    badge: 'AWS Route 53 DNS',
+    badge: 'Cloud DNS Engine',
     title: 'Automated Tenant Subdomain & Custom DNS Routing',
-    metaTitle: 'Automated Tenant Custom Domain & Route 53 DNS Routing | SavoryOps',
-    metaDescription: 'Instant programmatic custom domain and subdomain provisioning using AWS Route 53. White-label restaurant SaaS branding with automated SSL routing.',
+    metaTitle: 'Automated Tenant Custom Domain & Cloud DNS Routing | SavoryOps',
+    metaDescription: 'Instant programmatic custom domain and subdomain provisioning. White-label restaurant SaaS branding with automated SSL routing.',
     primaryKeyword: 'Automated SaaS Domain Routing',
     secondaryKeywords: [
-      'AWS Route 53 SaaS routing',
+      'cloud SaaS routing',
       'tenant custom domain management',
       'white label restaurant POS domain',
       'automated subdomain provisioning',
       'multi-tenant DNS management'
     ],
     h1: 'Automated Tenant Subdomain & Custom Domain DNS Routing Engine',
-    subtitle: 'Provision custom branded subdomains and custom white-label restaurant domains instantly with programmatic AWS Route 53 cloud routing.',
-    overview: 'In enterprise SaaS platforms, restaurant chains and premium operators demand their own customized web address (e.g., `pos.myrestaurant.com` or `branch1.savoryops.com`). SavoryOps includes integrated AWS Route 53 DNS automation (`route53TenantDns.js`) that programmatically registers and routes tenant hostnames the instant an account is created or upgraded.',
+    subtitle: 'Provision custom branded subdomains and custom white-label restaurant domains instantly with programmatic cloud routing.',
+    overview: 'In enterprise hospitality platforms, restaurant chains and premium operators demand their own customized web address (e.g., pos.myrestaurant.com or branch1.savoryops.com). SavoryOps includes integrated cloud DNS automation that programmatically registers and routes restaurant hostnames the instant an account is created or upgraded.',
     benefits: [
-      { title: 'Zero Manual DNS Configuration', desc: 'No manual DNS record adding or server restarts needed when new restaurant tenants register.' },
-      { title: 'Branded Tenant Subdomains', desc: 'Tenants instantly receive a dedicated, secure subdomain (e.g. `pizzapalace.savoryops.com`).' },
+      { title: 'Zero Manual DNS Configuration', desc: 'No manual DNS record adding or server restarts needed when new restaurant locations register.' },
+      { title: 'Branded Restaurant Subdomains', desc: 'Tenants instantly receive a dedicated, secure subdomain (e.g. pizzapalace.savoryops.com).' },
       { title: 'White-Label Custom Domains', desc: 'Enterprise restaurant groups can connect their own branded root or subdomains.' },
-      { title: 'AWS Route 53 Cloud Scalability', desc: 'Built on Amazon Web Services Route 53 for 100% DNS availability and global latency routing.' },
+      { title: 'High-Availability Cloud Scalability', desc: 'Built on redundant cloud infrastructure for 100% DNS availability and global low latency routing.' },
       { title: 'Automated SSL & Security', desc: 'Enforces HTTPS encryption across all tenant endpoints to safeguard billing and payment transactions.' }
     ],
     features: [
-      'AWS Route 53 SDK Integration: Automated API calls for creating, updating, and deleting Hosted Zone Resource Record Sets.',
-      'Instant Subdomain Provisioning: Newly signed-up restaurant accounts instantly resolve to their assigned tenant workspace.',
-      'Custom Domain Verification: Automated CNAME and TXT validation checks for verifying third-party domain ownership.',
-      'Dynamic Tenant Routing Middleware: Backend middleware inspects incoming HTTP request host headers to route traffic to the correct tenant database.',
-      'Wildcard SSL Certificate Support: Universal HTTPS encryption covering all tenant subdomains.'
+      'Automated Cloud DNS Engine: Automated management for creating, updating, and routing hosted domain records.',
+      'Instant Subdomain Provisioning: Newly signed-up restaurant accounts instantly resolve to their assigned workspace.',
+      'Custom Domain Verification: Automated validation checks for verifying third-party domain ownership.',
+      'Dynamic Tenant Routing: Smart cloud routing directs traffic to the correct restaurant database automatically.',
+      'Universal SSL Certificate Support: Automatic HTTPS encryption covering all subdomains and custom domains.'
     ],
     faqs: [
-      { question: 'How quickly does a new tenant subdomain become active?', answer: 'Thanks to AWS Route 53 automated record creation, tenant subdomains are provisioned and active within seconds of account creation.' },
-      { question: 'Can restaurant owners use their own domain name?', answer: 'Yes. On supported subscription tiers, restaurant owners can point their custom domain (e.g. `order.myrestaurant.com`) via a simple CNAME record.' }
+      { question: 'How quickly does a new tenant subdomain become active?', answer: 'Thanks to automated cloud record creation, restaurant subdomains are provisioned and active within seconds of account creation.' },
+      { question: 'Can restaurant owners use their own domain name?', answer: 'Yes. On supported subscription tiers, restaurant owners can point their custom domain (e.g. order.myrestaurant.com) via a simple CNAME record.' }
     ],
     ctaText: 'Explore Cloud Platform',
     ctaLink: '/features/cloud-based-system'

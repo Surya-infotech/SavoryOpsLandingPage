@@ -154,7 +154,7 @@ const PrivacyPolicy = () => {
                   <span className="card-title">Cloud Core Engine</span>
                 </Box>
                 <Typography variant="body2" className="card-body">
-                  Node.js/Express API cluster, real-time WebSockets synchronization (&lt;200ms latency), isolated MongoDB multi-tenant storage, and enterprise AWS Cloud infrastructure.
+                  High-performance cloud API cluster, real-time synchronization (&lt;200ms latency), isolated secure multi-tenant storage, and enterprise cloud infrastructure.
                 </Typography>
               </Box>
             </Box>
@@ -216,7 +216,7 @@ const PrivacyPolicy = () => {
 
             <Box className="subsection">
               <Typography variant="h3" className="subsection-title">
-                1. Restaurant Owner & Business Tenant Data (OwnerWeb / AdminPanel)
+                1. Restaurant Owner & Business Tenant Data (Owner Web Portal)
               </Typography>
               <ul>
                 <li><strong>Corporate Details:</strong> Legal entity name, trade license name, restaurant brand name, outlet physical addresses, branch locations, and corporate email addresses.</li>
@@ -473,7 +473,7 @@ const PrivacyPolicy = () => {
               <Box className="feature-card">
                 <Box className="card-top">
                   <span className="card-badge">Database</span>
-                  <span className="card-title">MongoDB Atlas Cloud</span>
+                  <span className="card-title">Encrypted Cloud Database</span>
                 </Box>
                 <Typography variant="body2" className="card-body">
                   High-performance document storage engine providing granular multi-tenant isolation, real-time replication, and continuous automated backup snapshots.

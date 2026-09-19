@@ -34,7 +34,6 @@ import {
   TableBar as TableBarIcon,
   Timeline as TimelineIcon,
   TrendingDown as WastageIcon,
-  AdminPanelSettings as AdminIcon,
   Hub as ArchitectureIcon
 } from '@mui/icons-material';
 import {
@@ -269,34 +268,24 @@ const DETAILED_FEATURES = [
 
   // --- Tier 5: SaaS Multi-Tenancy & Cloud Infrastructure ---
   {
-    id: 'saas-admin-billing',
-    priority: 20,
-    category: 'multi-tenant-saas',
-    icon: <AdminIcon sx={ICON_SIZE} />,
-    title: 'SaaS Super Admin & Billing',
-    subtitle: 'Turnkey Multi-Tenant Engine',
-    description:
-      'Provision tenant databases, configure tiered subscription packages (Free to Enterprise), sell modular add-ons, and track SaaS MRR.'
-  },
-  {
     id: 'multi-tenant-architecture',
-    priority: 21,
+    priority: 20,
     category: 'multi-tenant-saas',
     icon: <ArchitectureIcon sx={ICON_SIZE} />,
     title: 'Multi-Tenant DB Isolation',
     subtitle: 'Zero Data Cross-Contamination',
     description:
-      'Dynamic multi-tenant database connection manager (dbManager.js) provides total data isolation and security per restaurant tenant.'
+      'Automated multi-tenant database isolation provides total data privacy and enterprise-grade security for every restaurant brand.'
   },
   {
     id: 'automated-dns-routing',
-    priority: 22,
+    priority: 21,
     category: 'multi-tenant-saas',
     icon: <DnsIcon sx={ICON_SIZE} />,
-    title: 'Automated Route 53 DNS',
+    title: 'Automated Domain Routing',
     subtitle: 'Custom Domains & Subdomains',
     description:
-      'Programmatic AWS Route 53 DNS automation dynamically provisions custom white-label restaurant domains and subdomains with SSL.'
+      'Automated cloud DNS routing dynamically provisions custom white-label restaurant domains and subdomains with instant SSL.'
   },
 
   // --- Tier 6: Finance, Assets & Enterprise Analytics ---

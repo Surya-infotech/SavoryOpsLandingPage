@@ -28,14 +28,6 @@ A modern, responsive marketing website for SavoryOps restaurant management syste
 - **Weights**: 300, 400, 500, 700
 - **Responsive**: Scales appropriately across all screen sizes
 
-## 🛠️ Technology Stack
-
-- **React 19**: Latest React with hooks and modern patterns
-- **Material-UI**: Component library with custom theme
-- **SCSS**: Advanced styling with variables and mixins
-- **Vite**: Fast build tool and development server
-- **ESLint**: Code quality and consistency
-
 ## 📦 Installation
 
 1. **Clone the repository**
