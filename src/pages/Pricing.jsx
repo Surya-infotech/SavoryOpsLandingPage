@@ -284,7 +284,7 @@ const Pricing = () => {
                   {yearlyDiscount && Number(yearlyDiscount) > 0 && (
                     <span className="yearly-discount-badge">
                       {(yearlyDiscountType || '').toLowerCase() === 'month'
-                        ? `${yearlyDiscount} Month Free`
+                        ? `${yearlyDiscount} ${Number(yearlyDiscount) === 1 ? 'Month Free' : 'Months Free'}`
                         : `${yearlyDiscount}% Off`}
                     </span>
                   )}
