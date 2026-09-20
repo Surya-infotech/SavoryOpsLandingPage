@@ -70,6 +70,7 @@ const Pricing = () => {
   const [addons, setAddons] = useState([]);
   const [currency, setCurrency] = useState({});
   const [yearlyDiscount, setYearlyDiscount] = useState('');
+  const [yearlyDiscountType, setYearlyDiscountType] = useState('percentage');
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('month');
   const navigate = useNavigate();
@@ -94,6 +95,7 @@ const Pricing = () => {
           const plansData = data.plans || [];
           const currencyData = data.currency || {};
           const discountData = data.yearlydiscount || '';
+          const discountTypeData = data.yearlydiscounttype || 'percentage';
           const allAddons = data.addons || [];
 
           const activePlans = plansData
@@ -103,6 +105,7 @@ const Pricing = () => {
           setPlans(activePlans);
           setCurrency(currencyData);
           setYearlyDiscount(discountData);
+          setYearlyDiscountType(discountTypeData);
           if (allAddons.length > 0) {
             setAddons(allAddons);
           }
@@ -123,6 +126,8 @@ const Pricing = () => {
         setPlans([]);
         setAddons([]);
         setCurrency({});
+        setYearlyDiscount('');
+        setYearlyDiscountType('percentage');
       } finally {
         setLoading(false);
       }
@@ -278,7 +283,9 @@ const Pricing = () => {
                   Yearly
                   {yearlyDiscount && Number(yearlyDiscount) > 0 && (
                     <span className="yearly-discount-badge">
-                      {yearlyDiscount}% OFF
+                      {(yearlyDiscountType || '').toLowerCase() === 'month'
+                        ? `${yearlyDiscount} Month Free`
+                        : `${yearlyDiscount}% Off`}
                     </span>
                   )}
                 </button>
