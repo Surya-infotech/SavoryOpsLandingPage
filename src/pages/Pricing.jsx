@@ -193,8 +193,10 @@ const Pricing = () => {
   }, [filteredPlans]);
 
   const activeModuleDefs = useMemo(() => {
-    return COMPARISON_MODULE_DEFS.filter((mod) =>
-      filteredPlans.some((plan) => Boolean(plan.modules && plan.modules[mod.key])),
+    return COMPARISON_MODULE_DEFS.filter(
+      (mod) =>
+        mod.key === 'finance' ||
+        filteredPlans.some((plan) => Boolean(plan.modules && plan.modules[mod.key])),
     );
   }, [filteredPlans]);
 
@@ -800,7 +802,10 @@ const Pricing = () => {
                           <tr key={`mod-${mod.key}`} className="comparison-data-row">
                             <td className="comparison-feature-name">{mod.name}</td>
                             {filteredPlans.map((plan) => {
-                              const isIncluded = Boolean(plan.modules && plan.modules[mod.key]);
+                              const isIncluded =
+                                mod.key === 'finance'
+                                  ? true
+                                  : Boolean(plan.modules && plan.modules[mod.key]);
                               return (
                                 <td key={`mod-${mod.key}-${plan._id || plan.id}`} className="comparison-val-cell">
                                   {isIncluded ? (
