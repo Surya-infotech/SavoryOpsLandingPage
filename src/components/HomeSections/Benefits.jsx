@@ -187,8 +187,8 @@ const Benefits = () => {
             >
               <Box
                 component="img"
-                src="/images/features/kitchen-display-system.jpg"
-                alt="High-Speed Kitchen Display and KOT System in Action"
+                src="/images/features/restaurant-operations.jpg"
+                alt="Streamlined Restaurant Kitchen and Floor Operations in Action"
                 sx={{
                   width: '100%',
                   height: 'auto',

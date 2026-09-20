@@ -74,7 +74,7 @@ export const SYSTEM_MODULES = [
     primaryLinkText: 'Explore 6-in-1 App',
     secondaryLink: '/features/kot-system',
     secondaryLinkText: 'KOT & Kitchen Flow',
-    image: '/images/about/culinary-team.jpg'
+    image: '/images/features/waiter-mobile-pos.jpg'
   },
   {
     id: 'customer-app',

@@ -116,7 +116,7 @@ const WhySavoryOps = () => {
     {
       icon: <SecurityIcon sx={{ fontSize: 32 }} />,
       title: 'Granular Staff Permissions & Cash Audit Trails',
-      image: '/images/about/culinary-team.jpg',
+      image: '/images/features/staff-management.jpg',
       description:
         'Keep total control over financial operations. Enforce strict role-based access for Cashiers, Waiters, Floor Managers, and Kitchen Line Cooks with tamper-proof audit logs.',
       highlights: [
@@ -140,7 +140,7 @@ const WhySavoryOps = () => {
     {
       icon: <ApartmentIcon sx={{ fontSize: 32 }} />,
       title: 'Restaurant Asset & Equipment Lifecycle Control',
-      image: '/images/features/inventory-management.jpg',
+      image: '/images/features/asset-management.jpg',
       description:
         'Protect your highest capital investments. Track commercial kitchen machinery, POS hardware, and furniture with preventative maintenance schedules and inter-branch transfers.',
       highlights: [
@@ -152,7 +152,7 @@ const WhySavoryOps = () => {
     {
       icon: <ReportsIcon sx={{ fontSize: 32 }} />,
       title: '27+ Deep-Dive Executive & Back-of-House Reports',
-      image: '/images/features/inventory-management.jpg',
+      image: '/images/features/reports-analytics.jpg',
       description:
         'Make data-backed decisions with over 27 interactive reports across Sales & Financials, Menu Engineering (Stars, Plowhorses, Puzzles, Dogs), Kitchen Speed, Stock Movement, and Asset Valuation.',
       highlights: [

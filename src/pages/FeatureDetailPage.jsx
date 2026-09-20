@@ -68,10 +68,10 @@ const FEATURE_IMAGE_MAP = {
   'finance_management': '/images/features/finance-management.jpg',
 
   // Asset & Equipment Management
-  'asset': '/images/features/inventory-management.jpg',
-  'assets': '/images/features/inventory-management.jpg',
-  'asset-management': '/images/features/inventory-management.jpg',
-  'asset_management': '/images/features/inventory-management.jpg',
+  'asset': '/images/features/asset-management.jpg',
+  'assets': '/images/features/asset-management.jpg',
+  'asset-management': '/images/features/asset-management.jpg',
+  'asset_management': '/images/features/asset-management.jpg',
 
   // POS & Billing
   'pos': '/images/features/pos-system.jpg',
@@ -99,7 +99,7 @@ const FEATURE_IMAGE_MAP = {
   'combo_unlimited_meal': '/images/order-types/takeaway.jpg',
 
   // Mobile Apps (Employee & Customer)
-  'employee-mobile-app': '/images/about/culinary-team.jpg',
+  'employee-mobile-app': '/images/features/waiter-mobile-pos.jpg',
   'customer-mobile-app': '/images/features/qr-ordering.jpg',
 
   // Multi-Branch, Cloud & Franchise
@@ -118,8 +118,8 @@ const FEATURE_IMAGE_MAP = {
   'multiple_currency': '/images/about/multi-branch.jpg',
 
   // Staff & Support
-  'branch-staff-management': '/images/about/culinary-team.jpg',
-  'branch_staff_management': '/images/about/culinary-team.jpg',
+  'branch-staff-management': '/images/features/staff-management.jpg',
+  'branch_staff_management': '/images/features/staff-management.jpg',
   'referral-system': '/images/about/culinary-team.jpg',
   'referral_system': '/images/about/culinary-team.jpg',
   'customer-reviews': '/images/order-types/dine-in.jpg',
@@ -130,16 +130,16 @@ const FEATURE_IMAGE_MAP = {
   'multiple_languages': '/images/order-types/dine-in.jpg',
 
   // Reports, Invoices & Financials
-  'advanced-reports': '/images/features/inventory-management.jpg',
-  'advanced_reports': '/images/features/inventory-management.jpg',
-  'business-analytics': '/images/features/inventory-management.jpg',
-  'business_analytics': '/images/features/inventory-management.jpg',
-  'tax-report': '/images/features/inventory-management.jpg',
-  'tax_report': '/images/features/inventory-management.jpg',
+  'advanced-reports': '/images/features/reports-analytics.jpg',
+  'advanced_reports': '/images/features/reports-analytics.jpg',
+  'business-analytics': '/images/features/reports-analytics.jpg',
+  'business_analytics': '/images/features/reports-analytics.jpg',
+  'tax-report': '/images/features/reports-analytics.jpg',
+  'tax_report': '/images/features/reports-analytics.jpg',
   'branch-tax-management': '/images/about/multi-branch.jpg',
   'branch_tax_management': '/images/about/multi-branch.jpg',
-  'fiscal-year-records': '/images/features/inventory-management.jpg',
-  'fiscal_year_records': '/images/features/inventory-management.jpg',
+  'fiscal-year-records': '/images/features/reports-analytics.jpg',
+  'fiscal_year_records': '/images/features/reports-analytics.jpg',
   'digital-invoice-download': '/images/order-types/pickup.jpg',
   'digital_invoice_download': '/images/order-types/pickup.jpg',
   'coupon': '/images/order-types/quick-order.jpg',
