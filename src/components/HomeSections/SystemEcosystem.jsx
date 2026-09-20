@@ -26,7 +26,7 @@ import { Link } from 'react-router-dom';
 import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/components/system-ecosystem.scss';
 
-export const SYSTEM_MODULES = [
+const SYSTEM_MODULES = [
   {
     id: 'owner-web',
     name: 'Owner Web Portal',
