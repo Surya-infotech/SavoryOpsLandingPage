@@ -438,9 +438,9 @@ export const FEATURES_DATA = {
   'advanced-reports': {
     id: 'advanced-reports',
     badge: 'Actionable Intelligence',
-    title: 'Advanced Restaurant Reports & Financial Analytics (27+ Reports)',
-    metaTitle: 'Restaurant Analytics & POS Reports Software (27+ Reports) | SavoryOps',
-    metaDescription: 'Make data-driven decisions with 27+ SavoryOps restaurant reports. Track daily sales, AP aging, food cost variance, supplier spend, stock alerts, and asset valuation.',
+    title: 'Advanced Restaurant Reports & Financial Analytics (30+ Reports)',
+    metaTitle: 'Restaurant Analytics & POS Reports Software (30+ Reports) | SavoryOps',
+    metaDescription: 'Make data-driven decisions with 30+ SavoryOps restaurant reports. Track daily sales, order cancellations, delivery driver performance, table reservations, AP aging, food cost variance, and stock alerts.',
     primaryKeyword: 'Restaurant POS Reports',
     secondaryKeywords: [
       'restaurant pos reports',
@@ -451,36 +451,160 @@ export const FEATURES_DATA = {
       'accounts payable aging report',
       'restaurant asset valuation report'
     ],
-    h1: 'Advanced Restaurant Reporting & Business Intelligence (27+ Reports)',
+    h1: 'Advanced Restaurant Reporting & Business Intelligence (30+ Reports)',
     subtitle: 'Transform dining room transactions, kitchen operations, inventory consumption, and capital assets into actionable profit strategies across 5 comprehensive report categories.',
-    overview: 'Restaurant profitability hinges on mastering your prime costs: food, beverage, labor, and capital equipment. SavoryOps provides 27+ deep operational and financial reports organized into 5 strategic categories in the Owner Panel Report Hub. From real-time sales and live Profit & Loss to Accounts Payable aging, theoretical food cost variance, low stock alerts, and capital asset valuation, SavoryOps gives you total back-of-house and front-of-house clarity.',
+    overview: 'Restaurant profitability hinges on mastering your prime costs: food, beverage, labor, and capital equipment. SavoryOps provides 30+ deep operational and financial reports organized into 5 strategic categories in the Owner Panel Report Hub. From real-time sales, order cancellations, and live Profit & Loss to Accounts Payable aging, delivery driver fleet efficiency, reservation analytics, theoretical food cost variance, low stock alerts, and capital asset valuation, SavoryOps gives you total back-of-house and front-of-house clarity.',
     benefits: [
-      { title: '27+ Enterprise Operational Reports', desc: 'Centralized Report Hub organized into 5 strategic categories: Sales & Financial, Menu & Operations, Dining & Guests, Inventory & Stock, and Asset Management.' },
+      { title: '30+ Enterprise Operational Reports', desc: 'Centralized Report Hub organized into 5 strategic categories: Sales & Financial, Menu & Operations, Dining & Guests, Inventory & Stock, and Asset Management.' },
       { title: 'Executive Profit & Loss & AP Aging', desc: 'Instant P&L calculations comparing gross dining sales with COGS and overhead, plus aging breakdowns of accounts payable (0-30, 31-60, 61-90, 90+ days).' },
+      { title: 'Void & Order Cancellation Audits', desc: 'Eliminate internal leakage and cashier theft with itemized cancellation reasons, lost revenue calculations, and refund tracking.' },
+      { title: 'Delivery Fleet & Driver Analytics', desc: 'Monitor driver transit times from kitchen pass to doorstep, track on-time delivery rates, and optimize courier turnaround.' },
+      { title: 'Table Reservation & Seating Intelligence', desc: 'Track booking fulfillment, reduce costly no-shows, analyze party size averages, and optimize meal session table yield.' },
       { title: 'Food Cost Variance & Menu Engineering', desc: 'Identify recipe leakage by comparing theoretical vs. actual ingredient consumption, alongside BCG-matrix item classification (Stars, Plowhorses, Puzzles, Dogs).' },
       { title: 'Supplier Spend & Procurement Audits', desc: 'Deep analytics into vendor purchase orders, price fluctuation tracking, and complete supplier statements of account.' },
       { title: 'Stock Balance, Movement & Low Stock Alerts', desc: 'Real-time stock valuation, stock ledger movement history, and automated low-stock reorder thresholds to prevent stockouts.' },
       { title: 'Asset Valuation & Maintenance Audit', desc: 'Track physical equipment net book value, preventative maintenance repair expenses, and inter-branch equipment transfer logs.' }
     ],
     features: [
-      'Sales & Financial Reports: Gross & Net Revenue, Day Close reconciliation, Branch-wise comparative sales, Date-wise trends, Tax compliance, Payment Mode tender split, Additional Charges breakdown, Profit & Loss (P&L), Expense & Income, Accounts Payable (AP) Aging Report, and Supplier Spend Analysis.',
+      'Sales & Financial Reports: Gross & Net Revenue, Day Close reconciliation, Branch-wise comparative sales, Date-wise trends, Tax compliance, Payment Mode tender split, Additional Charges breakdown, Profit & Loss (P&L), Expense & Income, Accounts Payable (AP) Aging Report, Supplier Spend Analysis, and Order Cancellation & Void Report.',
       'Menu & Operations Reports: Item-Wise sales velocity, Category contribution analysis, Menu Engineering Matrix (Stars, Plowhorses, Puzzles, Dogs), Food Cost Variance Analysis (Ideal vs Actual), Wastage & Loss tracking, Hourly Sales Rush heatmaps, and Kitchen Speed prep times.',
-      'Dining & Guests Reports: Table Utilization & turnover speed, Customer Visit Frequency, Order Type distribution (Dine-In, Takeaway, Delivery, QR), Staff Sales & Tip Performance, and Guest Reviews & Feedback.',
+      'Dining & Guests Reports: Table Utilization & turnover speed, Customer Visit Frequency, Order Type distribution (Dine-In, Takeaway, Delivery, QR), Delivery Driver Performance Report, Table Reservation Analytics, Staff Sales & Tip Performance, and Guest Reviews & Feedback.',
       'Inventory & Stock Reports: Stock Balance valuation, Stock Ledger movement audit trails, Low Stock & Reorder Alert reports, ingredient consumption variance, and culinary shrinkage audits.',
       'Asset Management Reports: Asset Valuation & Depreciation report, Asset Maintenance & Service Logs report, and Inter-Branch Asset Transfer audit report.',
       'Custom Multi-Branch & Fiscal Year Filters: Filter by Branch, Fiscal Year, Day, Week, Month, Quarter, or custom date ranges with side-by-side comparative growth metrics.',
       'Multi-Format Exports: 1-click export of any report to Excel, CSV, or formatted presentation-ready PDF summaries.'
     ],
     faqs: [
-      { question: 'What reports are included in the SavoryOps Report Hub?', answer: 'The SavoryOps Report Hub provides 27+ specialized reports across 5 distinct categories: (1) Sales & Financial (Revenue, Day Close, Branch-wise, Date-wise, Tax-wise, Payment Mode, Additional Charges, Profit & Loss, Expense & Income, AP Aging, Supplier Spend); (2) Menu & Operations (Item-wise, Category-wise, Menu Engineering Matrix, Food Cost Variance, Wastage Loss, Hourly Rush, Kitchen Speed); (3) Dining & Guests (Table Utilization, Customer Frequency, Order Type, Staff Performance, Reviews); (4) Inventory & Stock (Stock Balance, Stock Ledger Movement, Low Stock & Reorder Alerts); and (5) Asset Management (Asset Valuation, Asset Maintenance, Asset Transfer).' },
+      { question: 'What reports are included in the SavoryOps Report Hub?', answer: 'The SavoryOps Report Hub provides 30+ specialized reports across 5 distinct categories: (1) Sales & Financial (Revenue, Day Close, Branch-wise, Date-wise, Tax-wise, Payment Mode, Additional Charges, Profit & Loss, Expense & Income, AP Aging, Supplier Spend, Order Cancellation & Voids); (2) Menu & Operations (Item-wise, Category-wise, Menu Engineering Matrix, Food Cost Variance, Wastage Loss, Hourly Rush, Kitchen Speed); (3) Dining & Guests (Table Utilization, Customer Frequency, Order Type, Driver Performance, Reservation Analytics, Staff Performance, Reviews); (4) Inventory & Stock (Stock Balance, Stock Ledger Movement, Low Stock & Reorder Alerts); and (5) Asset Management (Asset Valuation, Asset Maintenance, Asset Transfer).' },
+      { question: 'How does the Order Cancellation & Void Report prevent front-of-house revenue leakage?', answer: 'The Order Cancellation Report captures every cancelled order, voided bill, and customer refund alongside timestamped cashier authorization notes and specific reason codes (e.g. kitchen delay, item 86-ed, customer mind change), identifying suspicious patterns before they drain your revenue.' },
+      { question: 'What insights does the Delivery Driver Performance Report deliver?', answer: 'It benchmarks delivery fleet efficiency by tracking dispatch-to-door transit minutes, active couriers, completed deliveries, and on-time percentages per driver so you can optimize delivery radiuses and courier scheduling.' },
+      { question: 'How does Table Reservation Analytics help optimize dining room turnover?', answer: 'Reservation Analytics tracks booking fulfillment rates, no-show trends, cancellation percentages, average party sizes, and peak shift distribution across dining areas, helping operators set intelligent overbooking thresholds and eliminate empty tables.' },
       { question: 'What is the Food Cost Variance Report and how does it prevent kitchen leakage?', answer: 'The Food Cost Variance Report compares the theoretical cost of ingredients that should have been used based on POS recipe Bill of Materials (BOM) against the actual physical inventory consumed. Discrepancies immediately highlight over-portioning, unrecorded culinary burns, staff snacking, or theft.' },
       { question: 'How does the Accounts Payable (AP) Aging Report help manage cash flow?', answer: 'The AP Aging Report categorizes outstanding vendor invoices into aging buckets (Current, 1-30 days, 31-60 days, 61-90 days, 90+ days). This allows restaurant operators to forecast supplier obligations, prioritize critical vendor payments, and avoid late payment penalties.' },
       { question: 'What insights does the Asset Valuation Report provide?', answer: 'The Asset Valuation Report summarizes total physical capital equipment across all restaurant branches, calculating initial purchase costs, accumulated depreciation, current net book value, and an active vs. under-maintenance equipment valuation breakdown.' },
       { question: 'Can I export reports for my accountant or tax auditor?', answer: 'Yes. All SavoryOps financial, sales, tax, inventory, and asset reports export cleanly to Excel, CSV, and formatted PDF summaries with one click.' },
       { question: 'Can I compare sales and inventory performance between multiple restaurant branches?', answer: 'Yes. The Branch-Wise and consolidated reports give multi-location operators side-by-side comparisons of gross revenue, average check sizes, order counts, stock valuation, and equipment assets across all outlets.' }
     ],
-    ctaText: 'Explore All 27+ Reports',
+    ctaText: 'Explore All 30+ Reports',
     ctaLink: '/features'
+  },
+  'order-cancellation-report': {
+    id: 'order-cancellation-report',
+    badge: 'Revenue Protection & Void Audits',
+    title: 'Restaurant Order Cancellation & Void Audit Report',
+    metaTitle: 'Order Cancellation & Void Audit Report for Restaurants | SavoryOps',
+    metaDescription: 'Audit cancelled orders, voided receipts, and lost revenue with SavoryOps. Track cancellation reasons, monitor refund amounts, and prevent cashier fraud.',
+    primaryKeyword: 'Restaurant Order Cancellation Report',
+    secondaryKeywords: [
+      'restaurant order cancellation report',
+      'pos void report',
+      'restaurant lost revenue tracking',
+      'void audit report',
+      'cashier cancellation log',
+      'restaurant refund audit'
+    ],
+    h1: 'Restaurant Order Cancellation, Void & Refund Audit Intelligence',
+    subtitle: 'Identify revenue leakage, prevent front-of-house fraud, audit voided checks, and analyze cancellation reasons across cashiers and branches.',
+    overview: 'Uncontrolled order cancellations and undocumented cashier voids represent one of the most insidious sources of revenue leakage and internal theft in food service. The SavoryOps Order Cancellation Report gives restaurant owners complete transparency over every aborted transaction. Drill down into total lost revenue, voided tickets, refund amounts, specific cancellation reason codes (such as customer change of mind, delayed kitchen preparation, order entry mistake, or 86-ed inventory items), and the specific cashier or manager who authorized the action.',
+    benefits: [
+      { title: 'Zero Unaudited Voids', desc: 'Track every cancelled ticket with timestamped cashier signatures, void notes, and authorization levels.' },
+      { title: 'Quantify Lost Revenue', desc: 'Measure the precise financial impact of abandoned checks and kitchen cancellations on your bottom line.' },
+      { title: 'Root Cause Analytics', desc: 'Categorize cancellations by operational bottlenecks: kitchen delays, out-of-stock dishes, or ordering mistakes.' },
+      { title: 'Refund Audit Trail', desc: 'Reconcile refunded customer payments across credit cards, UPI, and cash to ensure clean drawer balances.' }
+    ],
+    features: [
+      'Real-Time Void & Cancellation KPIs: Live counters for Total Orders, Cancelled Count, Cancellation Rate %, Lost Revenue, Refunded Amount, and Voided Amount.',
+      'Itemized Cancellation Auditing: View order numbers, order types (Dine-In, Takeaway, Delivery), item lists, timestamps, and customer details.',
+      'Reason Code Attribution: Granular categorization of cancellation causes to distinguish guest mind-change from kitchen preparation bottlenecks or inventory outages.',
+      'Employee Accountability Logs: Pinpoint which staff member entered, modified, or authorized the cancellation or refund to prevent unauthorized drawer adjustments.',
+      'Multi-Branch & Fiscal Year Comparison: Compare cancellation rates and leakage percentages between branches to identify training or kitchen workflow deficiencies.',
+      'Exportable Audit Reports: Export full void logs to Excel, CSV, or PDF for weekly management reviews and loss prevention auditing.'
+    ],
+    faqs: [
+      { question: 'Why is tracking order cancellations critical for restaurant operations?', answer: 'Without strict cancellation tracking, dish voids can easily be used to conceal unauthorized cash transactions or waste caused by kitchen timing issues. Tracking cancellations pinpoints whether lost revenue stems from kitchen delays, 86-ed ingredients, or cashier input errors.' },
+      { question: 'Does the report differentiate between voids before prep and refunds after prep?', answer: 'Yes. SavoryOps records both item voids before kitchen preparation and post-prep order cancellations, tracking refunded customer sums and wasted ingredient costs separately.' },
+      { question: 'Can restaurant owners filter cancellations by branch and date range?', answer: 'Yes. You can isolate cancellations by branch, custom date ranges, meal shift, or specific fiscal year to benchmark cashier accountability.' }
+    ],
+    ctaText: 'Audit Your Order Voids',
+    ctaLink: '/signup'
+  },
+  'driver-performance-report': {
+    id: 'driver-performance-report',
+    badge: 'Delivery Fleet Efficiency',
+    title: 'Restaurant Delivery Driver Performance & Fleet Analytics',
+    metaTitle: 'Delivery Driver Performance Report & Fleet Analytics | SavoryOps',
+    metaDescription: 'Optimize restaurant food delivery with SavoryOps Driver Performance Report. Track dispatch-to-door transit times, on-time delivery rates, and driver completion stats.',
+    primaryKeyword: 'Restaurant Delivery Driver Performance Report',
+    secondaryKeywords: [
+      'restaurant delivery driver report',
+      'food delivery fleet analytics',
+      'delivery transit time report',
+      'driver on-time delivery rate',
+      'restaurant fleet tracking software'
+    ],
+    h1: 'Delivery Driver Performance & Doorstep Fleet Intelligence',
+    subtitle: 'Accelerate food delivery turnaround, benchmark driver transit speed, eliminate dispatch bottlenecks, and guarantee hot, on-time customer deliveries.',
+    overview: 'In off-premise dining and fast food delivery, speed and reliability define customer retention. The SavoryOps Delivery Driver Performance Report provides comprehensive visibility into your in-house delivery fleet and courier logistics. Monitor total dispatched deliveries, completed drop-offs, transit duration from kitchen handoff to customer doorstep, fleet average transit minutes, on-time delivery percentages, and individual driver productivity benchmarks.',
+    benefits: [
+      { title: 'Dispatch-to-Door Speed', desc: 'Measure exact transit minutes per driver to eliminate bottlenecks between kitchen pass and customer arrival.' },
+      { title: 'On-Time Fulfillment Benchmarks', desc: 'Track driver delivery completion rates and ensure orders arrive within promised delivery timeframes.' },
+      { title: 'Driver Volume & Productivity', desc: 'Identify your most productive delivery personnel based on completed trips, order values, and customer reviews.' },
+      { title: 'Fleet Accountability', desc: 'Maintain complete delivery histories with assigned driver names, phone contacts, vehicle details, and delivery statuses.' }
+    ],
+    features: [
+      'Fleet Executive KPIs: Live fleet metrics including Total Delivery Orders, Fulfilled Deliveries, Active Drivers Count, Fleet Avg Transit Minutes, and On-Time Delivery Rate %.',
+      'Dual Tab Drilldowns: Switch seamlessly between Driver Summary view (trips, transit speed, on-time rate) and Individual Orders view (order ID, address, dispatch time, delivery time).',
+      'Transit Time Auditing: Calculate real-world transit minutes from the moment food leaves the kitchen dispatch counter to the customer handoff.',
+      'Driver Contact & Vehicle Profiles: Quick reference for driver phone numbers, active status, and delivery vehicle types (bike, scooter, car).',
+      'Branch Delivery Comparison: Compare delivery performance and transit times across different restaurant branches and delivery radiuses.',
+      'Instant Data Exports: Download driver performance tables to CSV or Excel for payroll tip calculations and driver performance incentives.'
+    ],
+    faqs: [
+      { question: 'How does SavoryOps calculate driver transit time?', answer: 'Transit time is measured from the instant an order is marked as Dispatched / Out for Delivery until the driver marks the order as Delivered at the customer location.' },
+      { question: 'Can I track on-time delivery rates for individual drivers?', answer: 'Yes. SavoryOps calculates individual and fleet-wide on-time delivery percentages based on your restaurant\'s target delivery SLA.' },
+      { question: 'Does this report support in-house delivery staff and third-party couriers?', answer: 'Yes. You can manage internal delivery staff profiles as well as freelance or third-party delivery partners assigned through the SavoryOps POS terminal.' }
+    ],
+    ctaText: 'Optimize Delivery Fleet',
+    ctaLink: '/signup'
+  },
+  'reservation-analytics-report': {
+    id: 'reservation-analytics-report',
+    badge: 'Capacity & Seating Yield',
+    title: 'Restaurant Table Reservation Analytics & Guest Booking Intelligence',
+    metaTitle: 'Restaurant Reservation Analytics & Booking Intelligence | SavoryOps',
+    metaDescription: 'Maximize dining room seating capacity with SavoryOps Reservation Analytics. Track fulfillment rates, no-show trends, party sizes, and peak meal sessions.',
+    primaryKeyword: 'Restaurant Reservation Analytics Report',
+    secondaryKeywords: [
+      'restaurant reservation analytics report',
+      'table booking report',
+      'restaurant no-show rate tracking',
+      'dining room capacity analytics',
+      'restaurant seating utilization report'
+    ],
+    h1: 'Restaurant Table Reservation & Guest Booking Intelligence',
+    subtitle: 'Eliminate costly no-shows, optimize table turnover yield, forecast dining room capacity, and analyze guest party sizes across lunch and dinner shifts.',
+    overview: 'Empty reserved tables and unexpected guest no-shows directly eat into restaurant prime margins. The SavoryOps Table Reservation Analytics Report delivers data-backed intelligence on advance dining reservations, guest booking cadence, fulfillment ratios, no-show rates, party size averages, and dining area preferences. Equip your host stand and management team with the insights needed to implement optimal overbooking buffers, minimize waitlist churn, and maximize cover revenue during peak dinner services.',
+    benefits: [
+      { title: 'Drastically Reduce No-Shows', desc: 'Identify no-show patterns and cancellation trends to fine-tune booking confirmation reminders and deposit rules.' },
+      { title: 'Maximize Table Seating Yield', desc: 'Match customer party sizes with optimal 2-top, 4-top, and banquet tables to prevent seat spoilage.' },
+      { title: 'Shift & Meal Session Demand', desc: 'Analyze reservation concentration across lunch, dinner, and late-night seatings for balanced kitchen prep.' },
+      { title: 'Dining Area Preference Trends', desc: 'Understand guest demand for patio, main dining hall, private dining, or rooftop seating zones.' }
+    ],
+    features: [
+      'Reservation Performance KPIs: Live metrics for Total Reservations, Fulfilled Count, Fulfillment Rate %, No-Show Count & Rate %, and Cancellation Rate %.',
+      'Guest Headcount & Party Size Metrics: Track total guests booked, average party size per reservation, and high-cover VIP bookings.',
+      'Meal Session Breakdown: Visual distribution of bookings between Lunch and Dinner shifts to optimize front-of-house server scheduling.',
+      'Dining Area Utilization: Analyze reservation demand by dining room section (e.g. Indoor AC, Patio, Rooftop, Private Dining Room).',
+      'Chronological Booking Log: Comprehensive audit trail displaying reservation date, time, guest contact info, assigned table, and final status (Fulfilled, No-Show, Cancelled).',
+      'One-Click Reporting Exports: Export reservation histories and guest attendance logs to CSV, Excel, or PDF for guest CRM analysis.'
+    ],
+    faqs: [
+      { question: 'How does the Reservation Analytics Report help reduce dining room no-shows?', answer: 'By tracking your historical no-show percentage by day of week and meal session, you can determine when to introduce deposit requirements, phone confirmations, or SMS reminders to protect seating revenue.' },
+      { question: 'Can I see which dining areas and tables have the highest booking demand?', answer: 'Yes. The Area Breakdown section details reservation fulfillment and popularity across Indoor, Outdoor/Patio, Rooftop, and Private Banquet zones.' },
+      { question: 'Does this report integrate directly with the SavoryOps visual floor plan?', answer: 'Yes. When guests arrive and are seated via the SavoryOps visual table layout, the reservation status automatically updates to Fulfilled in real time.' }
+    ],
+    ctaText: 'Maximize Seating Capacity',
+    ctaLink: '/signup'
   },
   'business-analytics': {
     id: 'business-analytics',

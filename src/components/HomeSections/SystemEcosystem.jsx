@@ -36,13 +36,13 @@ const SYSTEM_MODULES = [
     targetRoles: ['Restaurant Owners', 'General Managers', 'Accountants', 'Store Managers'],
     headline: 'Centralized Restaurant POS, Inventory BOM & Floor Management',
     description:
-      'The primary command center for daily restaurant operations and multi-branch governance. Manage multi-channel POS billing, live KOT dispatch, visual dining floor plans, ingredient-level inventory, 27+ business intelligence reports, and real-time Profit & Loss accounting.',
+      'The primary command center for daily restaurant operations and multi-branch governance. Manage multi-channel POS billing, live KOT dispatch, visual dining floor plans, ingredient-level inventory, 30+ business intelligence reports, and real-time Profit & Loss accounting.',
     keyCapabilities: [
       'Multi-Channel POS Billing (Dine-in, Takeaway, Doorstep Delivery, QSR counter)',
       'Visual Floor Plan Builder with 5 live table status colors (Available, Occupied, Reserved, Billed, Dirty)',
       'Kitchen Order Ticket (KOT) station routing with preparation urgency timers',
       'Precision Bill of Materials (BOM) inventory with automatic recipe stock deduction',
-      '27+ Enterprise BI Reports across Sales, Financials, Staff, Stock, and Menu Matrix',
+      '30+ Enterprise BI Reports across Sales, Financials, Staff, Stock, and Menu Matrix',
       'Commercial Kitchen Asset Management & Preventative Servicing Logs',
       'Daily Register Day-Close (Z-Reports) & Real-time Profit & Loss (P&L)'
     ],

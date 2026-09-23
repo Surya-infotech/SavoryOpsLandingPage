@@ -135,7 +135,7 @@ const TermsAndConditions = () => {
               <li><strong>Interactive Table &amp; Floor Plan:</strong> Custom visual dining zones, table status color tracking, and table shifting/merging.</li>
               <li><strong>Ingredient Inventory &amp; Recipe BOM:</strong> Automatic recipe raw ingredient depletion on POS orders, supplier purchase orders, and inter-branch commissary transfers.</li>
               <li><strong>Role-Adaptive Mobile Apps:</strong> Dedicated 6-in-1 employee mobile app (Waiters, Cashiers, Chefs, Hosts, Delivery Drivers) and customer QR ordering interfaces.</li>
-              <li><strong>Business Intelligence Suite:</strong> 27+ comprehensive analytical reports, register day-close reconciliations (Z-Reports), and Profit &amp; Loss statements.</li>
+              <li><strong>Business Intelligence Suite:</strong> 30+ comprehensive analytical reports, register day-close reconciliations (Z-Reports), and Profit &amp; Loss statements.</li>
             </ul>
             <Typography variant="body1" className="section-content">
               Subject to your compliance with these Terms and timely payment of applicable subscription fees, SavoryOps grants you a non-exclusive, non-transferable, revocable, worldwide license to access and use the software for your internal restaurant business operations.

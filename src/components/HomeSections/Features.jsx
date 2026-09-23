@@ -162,9 +162,9 @@ const FEATURES = [
     id: 'advanced-reports',
     priority: 16,
     icon: <AssessmentIcon />,
-    title: '27+ Advanced Reports',
+    title: '30+ Advanced Reports',
     description:
-      'Complete Owner Panel suite across 5 categories: Sales, P&L, Food Cost Variance, Low Stock, AP Aging, and Asset Valuation.',
+      'Complete Owner Panel suite across 5 categories: Sales, P&L, Order Cancellations, Driver Fleet Performance, Reservation Analytics, and Asset Valuation.',
   },
   {
     id: 'tax-report',

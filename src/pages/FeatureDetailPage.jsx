@@ -45,7 +45,16 @@ const ALIAS_MAP = {
   'automated-dns': 'automated-dns-routing',
   'bcg-matrix': 'menu-engineering',
   'wastage-tracking': 'food-cost-variance',
-  'food-waste': 'food-cost-variance'
+  'food-waste': 'food-cost-variance',
+  'order-cancellation': 'order-cancellation-report',
+  'order_cancellation': 'order-cancellation-report',
+  'order_cancellation_report': 'order-cancellation-report',
+  'driver-performance': 'driver-performance-report',
+  'driver_performance': 'driver-performance-report',
+  'driver_performance_report': 'driver-performance-report',
+  'reservation-analytics': 'reservation-analytics-report',
+  'reservation_analytics': 'reservation-analytics-report',
+  'reservation_analytics_report': 'reservation-analytics-report'
 };
 
 const FEATURE_IMAGE_MAP = {
@@ -143,6 +152,12 @@ const FEATURE_IMAGE_MAP = {
   'digital-invoice-download': '/images/order-types/pickup.jpg',
   'digital_invoice_download': '/images/order-types/pickup.jpg',
   'coupon': '/images/order-types/quick-order.jpg',
+  'order-cancellation-report': '/images/features/reports-analytics.jpg',
+  'order_cancellation_report': '/images/features/reports-analytics.jpg',
+  'driver-performance-report': '/images/order-types/delivery.jpg',
+  'driver_performance_report': '/images/order-types/delivery.jpg',
+  'reservation-analytics-report': '/images/order-types/dine-in.jpg',
+  'reservation_analytics_report': '/images/order-types/dine-in.jpg',
 };
 
 const FeatureDetailPage = () => {

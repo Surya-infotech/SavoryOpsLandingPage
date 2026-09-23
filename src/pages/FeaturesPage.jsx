@@ -34,7 +34,10 @@ import {
   TableBar as TableBarIcon,
   Timeline as TimelineIcon,
   TrendingDown as WastageIcon,
-  Hub as ArchitectureIcon
+  Hub as ArchitectureIcon,
+  Cancel as CancelIcon,
+  TwoWheeler as TwoWheelerIcon,
+  EventAvailable as EventAvailableIcon
 } from '@mui/icons-material';
 import {
   Box,
@@ -223,6 +226,26 @@ const DETAILED_FEATURES = [
     description:
       'Rapid token generation, express counter billing, and lightning kitchen handoffs engineered for fast food & quick-serve cafes.'
   },
+  {
+    id: 'driver-performance-report',
+    priority: 15.2,
+    category: 'pos-kitchen',
+    icon: <TwoWheelerIcon sx={ICON_SIZE} />,
+    title: 'Delivery Driver Performance',
+    subtitle: 'Doorstep Fleet Analytics',
+    description:
+      'Evaluate delivery fleet efficiency, track dispatch-to-door transit times, monitor on-time delivery rates, and analyze individual driver completion statistics.'
+  },
+  {
+    id: 'reservation-analytics-report',
+    priority: 15.4,
+    category: 'pos-kitchen',
+    icon: <EventAvailableIcon sx={ICON_SIZE} />,
+    title: 'Table Reservation Analytics',
+    subtitle: 'Capacity & Seating Yield',
+    description:
+      'Analyze table booking trends, track guest fulfillment vs no-show rates, party size averages, and peak reservation sessions across dining areas.'
+  },
 
   // --- Tier 4: Multi-Branch & Chain Operations ---
   {
@@ -314,10 +337,20 @@ const DETAILED_FEATURES = [
     priority: 25,
     category: 'finance-reports',
     icon: <AssessmentIcon sx={ICON_SIZE} />,
-    title: '27+ Enterprise BI Reports',
+    title: '30+ Enterprise BI Reports',
     subtitle: '5-Category Analytical Suite',
     description:
-      'Comprehensive data suite: Sales, P&L, Food Cost Variance, KOT Turnaround Speed, Waiter Productivity, Stock Ledger, and Table Turns.'
+      'Comprehensive data suite: Sales, P&L, Order Cancellations, Driver Fleet Efficiency, Table Reservation Analytics, Food Cost Variance, Stock Ledger, and Table Turns.'
+  },
+  {
+    id: 'order-cancellation-report',
+    priority: 25.5,
+    category: 'finance-reports',
+    icon: <CancelIcon sx={ICON_SIZE} />,
+    title: 'Order Cancellation & Void Report',
+    subtitle: 'Revenue Protection & Void Audits',
+    description:
+      'Audit cancelled orders and voided bills, track total lost revenue, monitor refund disbursements, and identify primary cancellation reasons.'
   },
   {
     id: 'tax-report',

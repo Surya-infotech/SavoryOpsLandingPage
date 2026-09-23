@@ -10,6 +10,7 @@ import {
   LocalAtm as AdditionalChargesIcon,
   MonetizationOn as ProfitLossIcon,
   AccountBalanceWallet as ExpenseIncomeIcon,
+  Cancel as CancelIcon,
   RestaurantMenu as ItemWiseIcon,
   Category as CategoryWiseIcon,
   AutoGraph as MenuEngineeringIcon,
@@ -19,6 +20,8 @@ import {
   TableRestaurant as TableIcon,
   PeopleAlt as CustomerFrequencyIcon,
   TakeoutDining as OrderTypeIcon,
+  TwoWheeler as TwoWheelerIcon,
+  EventAvailable as EventAvailableIcon,
   Badge as StaffPerformanceIcon,
   RateReview as ReviewReportIcon,
   Inventory2 as StockBalanceIcon,
@@ -134,6 +137,14 @@ const REPORTS = [
     description:
       'Track procurement volume per supplier, historical invoice payments, ingredient cost fluctuations, and account balances.',
   },
+  {
+    id: 'order-cancellation-report',
+    category: 'sales',
+    icon: <CancelIcon />,
+    title: 'Order Cancellation & Void Report',
+    description:
+      'Audit cancelled orders and voided bills, track total lost revenue, monitor refund disbursements, and identify primary cancellation reasons.',
+  },
 
   // Group 2: Menu & Operations
   {
@@ -219,6 +230,22 @@ const REPORTS = [
       'Compare revenue and ticket distribution across Dine-In, Takeaway, Delivery, and Tableside QR orders.',
   },
   {
+    id: 'driver-performance-report',
+    category: 'dining',
+    icon: <TwoWheelerIcon />,
+    title: 'Delivery Driver Performance Report',
+    description:
+      'Evaluate delivery fleet efficiency, track dispatch-to-door transit times, monitor on-time delivery rates, and analyze individual driver completion statistics.',
+  },
+  {
+    id: 'reservation-analytics-report',
+    category: 'dining',
+    icon: <EventAvailableIcon />,
+    title: 'Table Reservation Analytics',
+    description:
+      'Analyze table booking trends, track guest fulfillment vs no-show rates, party size averages, and peak reservation sessions across dining areas.',
+  },
+  {
     id: 'staff-performance-report',
     category: 'dining',
     icon: <StaffPerformanceIcon />,
@@ -301,13 +328,13 @@ const Reports = () => {
       <Container maxWidth="lg">
         <Box className="reports-header">
           <Box className="reports-badge">
-            <Chip icon={<ReportsSectionIcon />} label="27+ Executive Reports" className="reports-badge-chip" />
+            <Chip icon={<ReportsSectionIcon />} label="30+ Executive Reports" className="reports-badge-chip" />
           </Box>
           <Typography variant="h2" component="h2" className="reports-title">
             Enterprise Reporting &amp; Business Intelligence
           </Typography>
           <Typography variant="h5" className="reports-subtitle">
-            Transform dining room tickets, kitchen operations, inventory levels, and physical capital into actionable insights. Access 27+ real-time reports across Sales &amp; Financials, Menu Engineering, Dining Experience, Stock Movement, and Asset Management.
+            Transform dining room tickets, kitchen operations, inventory levels, and physical capital into actionable insights. Access 30+ real-time reports across Sales &amp; Financials, Menu Engineering, Dining Experience, Stock Movement, and Asset Management.
           </Typography>
 
           {/* Category Filter Tabs */}

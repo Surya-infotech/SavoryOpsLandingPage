@@ -98,7 +98,7 @@ const Navigation = () => {
     { text: 'Multi-Tenant Architecture', path: '/features/multi-tenant-architecture', icon: <SecurityIcon fontSize="small" /> },
     { text: 'Asset & Equipment Control', path: '/features/asset-management', icon: <AssetIcon fontSize="small" /> },
     { text: 'Finance & Expense Control', path: '/features/finance-management', icon: <FinanceIcon fontSize="small" /> },
-    { text: '27+ Advanced Reports', path: '/features/advanced-reports', icon: <ReportsIcon fontSize="small" /> },
+    { text: '30+ Advanced Reports', path: '/features/advanced-reports', icon: <ReportsIcon fontSize="small" /> },
     { text: 'Food Cost Calculator & Guide', path: '/resources/food-cost-percentage-guide', icon: <CalculateIcon fontSize="small" /> },
     { text: 'Toast POS Alternative', path: '/alternatives/toast-pos-alternative', icon: <CompareIcon fontSize="small" /> },
     { text: 'Square POS Alternative', path: '/alternatives/square-pos-alternative', icon: <CompareIcon fontSize="small" /> }

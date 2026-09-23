@@ -151,11 +151,12 @@ const WhySavoryOps = () => {
     },
     {
       icon: <ReportsIcon sx={{ fontSize: 32 }} />,
-      title: '27+ Deep-Dive Executive & Back-of-House Reports',
+      title: '30+ Deep-Dive Executive & Back-of-House Reports',
       image: '/images/features/reports-analytics.jpg',
       description:
-        'Make data-backed decisions with over 27 interactive reports across Sales & Financials, Menu Engineering (Stars, Plowhorses, Puzzles, Dogs), Kitchen Speed, Stock Movement, and Asset Valuation.',
+        'Make data-backed decisions with over 30 interactive reports across Sales & Financials, Order Cancellations, Delivery Fleet Performance, Reservation Analytics, Menu Engineering, Kitchen Speed, Stock Movement, and Asset Valuation.',
       highlights: [
+        'Order Cancellation Audits, Driver Fleet Performance, and Reservation Analytics',
         'Menu Engineering Matrix & Food Cost Variance for plate margin optimization',
         'Live Stock Balance, Stock Movement, and Low-Stock Reorder threshold alerts',
         'Accounts Payable (AP) Aging and Capital Asset Valuation across all branches'
@@ -229,9 +230,9 @@ const WhySavoryOps = () => {
       legacy: 'Separate desktop accounting software needed'
     },
     {
-      feature: '20+ Business Intelligence Reports',
-      hint: 'Sales, Menu Engineering, Kitchen Speed, and Stock Movement',
-      savoryops: '20+ Reports Organized in Central Hub',
+      feature: '30+ Business Intelligence Reports',
+      hint: 'Sales, Cancellations, Driver Fleet, Reservations, Menu Matrix, and Stock Ledger',
+      savoryops: '30+ Reports Organized in Central Hub',
       toast: 'Standard sales reporting only',
       square: 'Basic summary charts',
       legacy: 'Static daily close printouts'
