@@ -1020,7 +1020,7 @@ export const FEATURES_DATA = {
       { title: '24/7 Priority Emergency Support', desc: 'Reach experienced restaurant support specialists via live chat and phone when you need help during weekend rushes.' },
       { title: 'Step-by-Step Hardware Setup Guides', desc: 'Plug-and-play guides for ESC/POS thermal receipt printers, kitchen display systems, network routers, and cash drawers.' },
       { title: 'Staff Onboarding & Training Materials', desc: 'Accelerate cashier, server, and kitchen staff onboarding with short interactive video walkthroughs and checklists.' },
-      { title: 'Zero Service Interruptions', desc: 'Proactive system status tracking, automatic cloud updates, and offline failover guides to protect your service continuity.' }
+      { title: 'Zero Service Interruptions', desc: 'Proactive system status tracking, automatic cloud updates, and redundant backup systems to protect your service continuity.' }
     ],
     features: [
       'Searchable Knowledge Base with 100+ operational guides covering POS billing, KOT routing, BOM inventory, and analytics',
@@ -1112,13 +1112,13 @@ export const FEATURES_DATA = {
       'Fast modifier popups for quick size selections, meal upgrades, and dipping sauce add-ons',
       'Dual-screen customer display (CFD) support showing live itemization, promotions, and totals',
       'Barcode and QR code scanner integration for fast merchandise and packaged snack ringing',
-      'Offline-capable cashier mode so lines never stop moving even if the internet drops'
+      'High-speed cashier mode with instant ticket punching so lines never stop moving'
     ],
     faqs: [
       { question: 'What makes SavoryOps ideal for quick service restaurants (QSR)?', answer: 'SavoryOps QSR mode is engineered specifically for fast-paced counter environments with large touch targets, minimal screen transitions, instant token number printing, and high-speed card processing.' },
       { question: 'Does SavoryOps support customer token number displays (Queue Management)?', answer: 'Yes. SavoryOps automatically prints order token numbers on receipts and syncs with TV/monitor displays showing Preparing and Ready for Pickup status.' },
       { question: 'Can cashiers customize combo meals and upgrades quickly?', answer: 'Yes. One tap on a combo meal opens an intuitive popup guiding the cashier through drink, side, and size selections with automated price adjustments.' },
-      { question: 'Does the QSR POS work during internet outages?', answer: 'Yes. SavoryOps includes intelligent local offline caching, allowing cashiers to continue punching tickets and printing kitchen orders seamlessly during broadband dropouts.' },
+      { question: 'How reliable is the cloud infrastructure for QSR counters?', answer: 'SavoryOps operates on a 99.99% high-availability cloud architecture with real-time replication to keep counter transactions fast and uninterrupted.' },
       { question: 'Can we connect customer-facing displays (CFD)?', answer: 'Yes. Connect a secondary monitor or tablet facing the customer to display live order items, order total, tax breakdown, and promotional banner graphics.' }
     ],
     ctaText: 'Explore QSR Solutions',
@@ -1462,7 +1462,7 @@ export const FEATURES_DATA = {
       { question: 'Does each employee need to download a different app from the app store?', answer: 'No. Every staff member downloads the same "SavoryOps Employee App". Once they sign in with their credentials, the app detects their assigned role and displays only the features relevant to their job.' },
       { question: 'What platforms is the Employee App available on?', answer: 'The SavoryOps Employee App runs smoothly on both iOS (iPhones/iPads) and Android phones/tablets.' },
       { question: 'Can an employee with multiple roles switch modes?', answer: 'Yes. If a staff member is assigned multiple roles (for instance, Manager and Cashier), they can toggle between authorized roles directly within the app profile settings.' },
-      { question: 'Does the mobile app support offline order taking if Wi-Fi drops?', answer: 'The app features local offline caching so servers can continue taking orders table-side during temporary network blips, automatically syncing once connection is restored.' }
+      { question: 'What network requirements are needed for the Employee App?', answer: 'The app is optimized for low-bandwidth environments, consuming minimal data while ensuring lightning-fast updates across waitstaff, kitchen display, and cashier stations.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'

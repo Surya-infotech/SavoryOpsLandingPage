@@ -96,7 +96,7 @@ const Navigation = () => {
       items: [
         {
           text: 'Restaurant POS System',
-          description: 'Cloud billing, dine-in tables, takeaway & offline sync',
+          description: 'Cloud billing, dine-in tables, takeaway & speed checkout',
           path: '/solutions/restaurant-pos-system',
           icon: <PosIcon fontSize="small" />,
           badge: 'Popular',
@@ -343,9 +343,11 @@ const Navigation = () => {
                     mt: 1.5,
                     width: { md: 940, lg: 1040 },
                     maxWidth: 'calc(100vw - 48px)',
+                    maxHeight: 'calc(100vh - 85px)',
                     borderRadius: '20px',
                     boxShadow: '0 24px 60px -12px rgba(15, 23, 42, 0.2), 0 0 0 1px rgba(15, 23, 42, 0.08)',
-                    overflow: 'hidden',
+                    overflowY: 'auto',
+                    overflowX: 'hidden',
                     p: 0,
                     background: '#ffffff'
                   }
@@ -357,8 +359,8 @@ const Navigation = () => {
                 sx={{
                   display: 'grid',
                   gridTemplateColumns: { md: 'repeat(3, 1fr)', xs: '1fr' },
-                  gap: { md: 2, lg: 2.5 },
-                  p: { md: 2.5, lg: 3 },
+                  gap: { md: 1.8, lg: 2.2 },
+                  p: { md: 2, lg: '18px 22px 14px 22px' },
                   backgroundColor: '#ffffff'
                 }}
               >
@@ -377,15 +379,15 @@ const Navigation = () => {
                         display: 'flex',
                         alignItems: 'center',
                         gap: 1,
-                        mb: 1.5,
-                        pb: 1,
+                        mb: 1.2,
+                        pb: 0.8,
                         borderBottom: '1px solid #f1f5f9'
                       }}
                     >
                       <Typography
                         variant="caption"
                         sx={{
-                          fontSize: '0.74rem',
+                          fontSize: '0.73rem',
                           fontWeight: 800,
                           letterSpacing: '0.08em',
                           textTransform: 'uppercase',
@@ -397,7 +399,7 @@ const Navigation = () => {
                     </Box>
 
                     {/* Items List */}
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.8 }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
                       {cat.items.map((item) => {
                         const isActive = location.pathname === item.path;
 
@@ -416,9 +418,9 @@ const Navigation = () => {
                             sx={{
                               display: 'flex',
                               alignItems: 'flex-start',
-                              gap: 1.5,
-                              p: '9px 12px',
-                              borderRadius: '12px',
+                              gap: 1.2,
+                              p: '7px 10px',
+                              borderRadius: '10px',
                               cursor: 'pointer',
                               transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                               backgroundColor: isActive
@@ -450,10 +452,10 @@ const Navigation = () => {
                             <Box
                               className="solution-item-icon"
                               sx={{
-                                width: 38,
-                                height: 38,
-                                minWidth: 38,
-                                borderRadius: '10px',
+                                width: 34,
+                                height: 34,
+                                minWidth: 34,
+                                borderRadius: '9px',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
@@ -462,7 +464,7 @@ const Navigation = () => {
                                   : 'color-mix(in srgb, var(--primary-color) 10%, #f8fafc)',
                                 color: isActive ? '#ffffff' : 'var(--primary-color)',
                                 transition: 'all 0.2s ease',
-                                mt: 0.2
+                                mt: 0.15
                               }}
                             >
                               {item.icon}
@@ -474,10 +476,10 @@ const Navigation = () => {
                                 <Typography
                                   className="solution-item-title"
                                   sx={{
-                                    fontSize: '0.88rem',
+                                    fontSize: '0.86rem',
                                     fontWeight: isActive ? 750 : 650,
                                     color: isActive ? 'var(--primary-color)' : '#0f172a',
-                                    lineHeight: 1.3,
+                                    lineHeight: 1.25,
                                     transition: 'color 0.2s ease'
                                   }}
                                 >
@@ -487,13 +489,13 @@ const Navigation = () => {
                                   <Box
                                     component="span"
                                     sx={{
-                                      fontSize: '0.62rem',
+                                      fontSize: '0.6rem',
                                       fontWeight: 700,
                                       color: item.badgeColor || 'var(--primary-color)',
                                       backgroundColor: `color-mix(in srgb, ${item.badgeColor || 'var(--primary-color)'} 14%, transparent)`,
-                                      px: 0.7,
-                                      py: 0.15,
-                                      borderRadius: '5px',
+                                      px: 0.6,
+                                      py: 0.1,
+                                      borderRadius: '4px',
                                       lineHeight: 1.2
                                     }}
                                   >
@@ -503,10 +505,10 @@ const Navigation = () => {
                               </Box>
                               <Typography
                                 sx={{
-                                  fontSize: '0.76rem',
+                                  fontSize: '0.74rem',
                                   color: '#64748b',
-                                  lineHeight: 1.35,
-                                  mt: 0.35,
+                                  lineHeight: 1.3,
+                                  mt: 0.2,
                                   whiteSpace: 'normal',
                                   wordBreak: 'normal',
                                   overflow: 'visible'
@@ -520,7 +522,7 @@ const Navigation = () => {
                             <ChevronRightIcon
                               className="solution-item-arrow"
                               sx={{
-                                fontSize: 16,
+                                fontSize: 15,
                                 color: 'var(--primary-color)',
                                 opacity: 0,
                                 transform: 'translateX(-4px)',
@@ -540,32 +542,41 @@ const Navigation = () => {
               {/* Bottom Quick-Action Bar */}
               <Box
                 sx={{
-                  px: 3,
-                  py: 1.5,
+                  px: 2.5,
+                  py: 1.2,
                   backgroundColor: '#f8fafc',
                   borderTop: '1px solid #e2e8f0',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  flexWrap: 'wrap',
-                  gap: 1.5
+                  gap: 2
                 }}
               >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.2 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, minWidth: 0, overflow: 'hidden' }}>
                   <Box
                     sx={{
-                      width: 8,
-                      height: 8,
+                      width: 7,
+                      height: 7,
                       borderRadius: '50%',
                       backgroundColor: 'var(--primary-color)',
-                      boxShadow: '0 0 0 3px color-mix(in srgb, var(--primary-color) 25%, transparent)'
+                      boxShadow: '0 0 0 3px color-mix(in srgb, var(--primary-color) 25%, transparent)',
+                      flexShrink: 0
                     }}
                   />
-                  <Typography sx={{ fontSize: '0.78rem', color: '#475569', fontWeight: 500 }}>
-                    <strong style={{ color: '#1e293b' }}>100% Offline-Resilient:</strong> Cloud sync, instant hardware pairing & zero card processing markups.
+                  <Typography
+                    sx={{
+                      fontSize: '0.75rem',
+                      color: '#475569',
+                      fontWeight: 500,
+                      whiteSpace: 'nowrap',
+                      textOverflow: 'ellipsis',
+                      overflow: 'hidden'
+                    }}
+                  >
+                    <strong style={{ color: '#0f172a' }}>All-In-One Cloud POS:</strong> Real-time sync & zero hidden fees.
                   </Typography>
                 </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2.5 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexShrink: 0 }}>
                   <Box
                     component="button"
                     onClick={() => handleItemClick('/signin')}
@@ -573,18 +584,19 @@ const Navigation = () => {
                       background: 'none',
                       border: 'none',
                       cursor: 'pointer',
-                      fontSize: '0.78rem',
+                      fontSize: '0.75rem',
                       fontWeight: 700,
                       color: 'var(--primary-color)',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: 0.4,
+                      gap: 0.3,
                       p: 0,
+                      whiteSpace: 'nowrap',
                       transition: 'opacity 0.2s',
                       '&:hover': { opacity: 0.8 }
                     }}
                   >
-                    Book Live Demo <ChevronRightIcon sx={{ fontSize: 16 }} />
+                    Book Demo <ChevronRightIcon sx={{ fontSize: 15 }} />
                   </Box>
                   <Box
                     component="button"
@@ -593,18 +605,19 @@ const Navigation = () => {
                       background: 'none',
                       border: 'none',
                       cursor: 'pointer',
-                      fontSize: '0.78rem',
+                      fontSize: '0.75rem',
                       fontWeight: 700,
                       color: '#475569',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: 0.4,
+                      gap: 0.3,
                       p: 0,
+                      whiteSpace: 'nowrap',
                       transition: 'color 0.2s',
                       '&:hover': { color: 'var(--primary-color)' }
                     }}
                   >
-                    All 15+ Modules <ChevronRightIcon sx={{ fontSize: 16 }} />
+                    All Modules <ChevronRightIcon sx={{ fontSize: 15 }} />
                   </Box>
                   <Box
                     component="button"
@@ -613,18 +626,19 @@ const Navigation = () => {
                       background: 'none',
                       border: 'none',
                       cursor: 'pointer',
-                      fontSize: '0.78rem',
+                      fontSize: '0.75rem',
                       fontWeight: 700,
                       color: '#475569',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: 0.4,
+                      gap: 0.3,
                       p: 0,
+                      whiteSpace: 'nowrap',
                       transition: 'color 0.2s',
                       '&:hover': { color: 'var(--primary-color)' }
                     }}
                   >
-                    Pricing Plans <ChevronRightIcon sx={{ fontSize: 16 }} />
+                    Pricing <ChevronRightIcon sx={{ fontSize: 15 }} />
                   </Box>
                 </Box>
               </Box>
