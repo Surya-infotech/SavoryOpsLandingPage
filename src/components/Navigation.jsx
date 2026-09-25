@@ -18,7 +18,10 @@ import {
   TableBar as TableBarIcon,
   PhoneIphone as PhoneIcon,
   MobileFriendly as MobileFriendlyIcon,
-  Security as SecurityIcon
+  Security as SecurityIcon,
+  ReceiptLong as ReceiptLongIcon,
+  Storefront as StorefrontIcon,
+  ChevronRight as ChevronRightIcon
 } from '@mui/icons-material';
 import {
   AppBar,
@@ -87,22 +90,125 @@ const Navigation = () => {
     navigate('/signin');
   };
 
-  const solutionsMenuItems = [
-    { text: 'Restaurant POS System', path: '/solutions/restaurant-pos-system', icon: <PosIcon fontSize="small" /> },
-    { text: 'Kitchen Order Ticket (KOT)', path: '/solutions/kitchen-order-ticket-system', icon: <KitchenIcon fontSize="small" /> },
-    { text: 'Kitchen Display System (KDS)', path: '/solutions/kitchen-display-system', icon: <KitchenIcon fontSize="small" /> },
-    { text: 'Floor Plan & Table Seating', path: '/features/floor-plan-management', icon: <TableBarIcon fontSize="small" /> },
-    { text: 'Inventory & Recipe BOM', path: '/solutions/restaurant-inventory-management', icon: <InventoryIcon fontSize="small" /> },
-    { text: '6-in-1 Employee Mobile App', path: '/features/employee-mobile-app', icon: <PhoneIcon fontSize="small" /> },
-    { text: 'Customer Mobile App & QR', path: '/features/customer-mobile-app', icon: <MobileFriendlyIcon fontSize="small" /> },
-    { text: 'Multi-Tenant Architecture', path: '/features/multi-tenant-architecture', icon: <SecurityIcon fontSize="small" /> },
-    { text: 'Asset & Equipment Control', path: '/features/asset-management', icon: <AssetIcon fontSize="small" /> },
-    { text: 'Finance & Expense Control', path: '/features/finance-management', icon: <FinanceIcon fontSize="small" /> },
-    { text: '30+ Advanced Reports', path: '/features/advanced-reports', icon: <ReportsIcon fontSize="small" /> },
-    { text: 'Food Cost Calculator & Guide', path: '/resources/food-cost-percentage-guide', icon: <CalculateIcon fontSize="small" /> },
-    { text: 'Toast POS Alternative', path: '/alternatives/toast-pos-alternative', icon: <CompareIcon fontSize="small" /> },
-    { text: 'Square POS Alternative', path: '/alternatives/square-pos-alternative', icon: <CompareIcon fontSize="small" /> }
+  const solutionsCategories = [
+    {
+      category: 'Point of Sale & Kitchen',
+      items: [
+        {
+          text: 'Restaurant POS System',
+          description: 'Cloud billing, dine-in tables, takeaway & offline sync',
+          path: '/solutions/restaurant-pos-system',
+          icon: <PosIcon fontSize="small" />,
+          badge: 'Popular',
+          badgeColor: '#028802'
+        },
+        {
+          text: 'Kitchen Display System (KDS)',
+          description: 'Paperless real-time kitchen screens with color cook timers',
+          path: '/solutions/kitchen-display-system',
+          icon: <KitchenIcon fontSize="small" />
+        },
+        {
+          text: 'Kitchen Order Ticket (KOT)',
+          description: 'Instant wireless printing & multi-station order routing',
+          path: '/solutions/kitchen-order-ticket-system',
+          icon: <ReceiptLongIcon fontSize="small" />
+        },
+        {
+          text: 'Floor Plan & Table Seating',
+          description: 'Interactive visual table layout, guest seating & waitlists',
+          path: '/features/floor-plan-management',
+          icon: <TableBarIcon fontSize="small" />
+        },
+        {
+          text: 'Cloud Kitchen POS System',
+          description: 'Multi-brand virtual kitchen aggregator & unified dispatch',
+          path: '/solutions/cloud-kitchen-pos-system',
+          icon: <StorefrontIcon fontSize="small" />
+        }
+      ]
+    },
+    {
+      category: 'Inventory & Operations',
+      items: [
+        {
+          text: 'Inventory & Recipe BOM',
+          description: 'Ingredient tracking, yield costing & auto stock deduction',
+          path: '/solutions/restaurant-inventory-management',
+          icon: <InventoryIcon fontSize="small" />,
+          badge: 'Smart BOM',
+          badgeColor: '#0d9488'
+        },
+        {
+          text: '30+ Advanced Reports',
+          description: 'In-depth sales analytics, tax audits & staff KPI metrics',
+          path: '/features/advanced-reports',
+          icon: <ReportsIcon fontSize="small" />
+        },
+        {
+          text: 'Finance & Expense Control',
+          description: 'Petty cash registers, vendor ledgers & real-time P&L',
+          path: '/features/finance-management',
+          icon: <FinanceIcon fontSize="small" />
+        },
+        {
+          text: 'Asset & Equipment Control',
+          description: 'Preventative servicing, AMC warranties & breakdown logs',
+          path: '/features/asset-management',
+          icon: <AssetIcon fontSize="small" />
+        },
+        {
+          text: 'Multi-Tenant Architecture',
+          description: 'Central multi-outlet control, franchise sync & permissions',
+          path: '/features/multi-tenant-architecture',
+          icon: <SecurityIcon fontSize="small" />
+        }
+      ]
+    },
+    {
+      category: 'Apps & Comparisons',
+      items: [
+        {
+          text: '6-in-1 Employee Mobile App',
+          description: 'Waiter, captain, kitchen, driver & manager suite in one',
+          path: '/features/employee-mobile-app',
+          icon: <PhoneIcon fontSize="small" />,
+          badge: '6-in-1',
+          badgeColor: '#2563eb'
+        },
+        {
+          text: 'Customer Mobile App & QR',
+          description: 'Contactless dynamic QR code ordering, payments & loyalty',
+          path: '/features/customer-mobile-app',
+          icon: <MobileFriendlyIcon fontSize="small" />
+        },
+        {
+          text: 'Toast POS Alternative',
+          description: 'Save 40% with zero processing locks and open hardware',
+          path: '/alternatives/toast-pos-alternative',
+          icon: <CompareIcon fontSize="small" />,
+          badge: 'Save 40%',
+          badgeColor: '#ea580c'
+        },
+        {
+          text: 'Square POS Alternative',
+          description: 'Built for restaurants with no expensive per-seat charges',
+          path: '/alternatives/square-pos-alternative',
+          icon: <CompareIcon fontSize="small" />
+        },
+        {
+          text: 'Food Cost Calculator & Guide',
+          description: 'Interactive food cost percentage calculator & recipe guide',
+          path: '/resources/food-cost-percentage-guide',
+          icon: <CalculateIcon fontSize="small" />,
+          badge: 'Free Tool',
+          badgeColor: '#7c3aed'
+        }
+      ]
+    }
   ];
+
+  const solutionsMenuItems = solutionsCategories.flatMap((cat) => cat.items);
 
   const menuItems = [
     { text: 'Home', path: '/' },
@@ -209,80 +315,319 @@ const Navigation = () => {
               Solutions
             </Button>
 
-            {/* Solutions Dropdown Menu */}
+            {/* Solutions Dropdown Mega Menu */}
             <Menu
               id="nav-solutions-menu"
               anchorEl={solutionsAnchorEl}
               open={isSolutionsMenuOpen}
               onClose={handleSolutionsClose}
               disableRestoreFocus
+              marginThreshold={24}
               MenuListProps={{
-                'aria-labelledby': 'nav-solutions-button'
+                component: 'div',
+                'aria-labelledby': 'nav-solutions-button',
+                sx: { p: 0, outline: 'none' }
               }}
-              elevation={4}
+              elevation={10}
               anchorOrigin={{
                 vertical: 'bottom',
-                horizontal: 'left'
+                horizontal: 'center'
               }}
               transformOrigin={{
                 vertical: 'top',
-                horizontal: 'left'
+                horizontal: 220
               }}
               slotProps={{
                 paper: {
                   sx: {
                     mt: 1.5,
-                    minWidth: 260,
-                    borderRadius: '14px',
-                    boxShadow: '0 12px 36px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.05)',
-                    border: '1px solid color-mix(in srgb, var(--primary-color) 18%, #eaeaea)',
+                    width: { md: 940, lg: 1040 },
+                    maxWidth: 'calc(100vw - 48px)',
+                    borderRadius: '20px',
+                    boxShadow: '0 24px 60px -12px rgba(15, 23, 42, 0.2), 0 0 0 1px rgba(15, 23, 42, 0.08)',
                     overflow: 'hidden',
-                    p: 0.8
+                    p: 0,
+                    background: '#ffffff'
                   }
                 }
               }}
             >
-              {solutionsMenuItems.map((item) => {
-                const isActive = location.pathname === item.path;
-                return (
-                  <MenuItem
-                    key={item.text}
-                    onClick={() => handleItemClick(item.path)}
+              {/* Mega Menu Grid: 3 Clean Columns */}
+              <Box
+                sx={{
+                  display: 'grid',
+                  gridTemplateColumns: { md: 'repeat(3, 1fr)', xs: '1fr' },
+                  gap: { md: 2, lg: 2.5 },
+                  p: { md: 2.5, lg: 3 },
+                  backgroundColor: '#ffffff'
+                }}
+              >
+                {solutionsCategories.map((cat) => (
+                  <Box
+                    key={cat.category}
                     sx={{
-                      borderRadius: '10px',
-                      py: 1.2,
-                      px: 2,
-                      my: 0.3,
-                      transition: 'all 0.2s ease',
-                      fontWeight: isActive ? 700 : 500,
-                      color: isActive ? 'var(--primary-color)' : '#2d3748',
-                      backgroundColor: isActive
-                        ? 'color-mix(in srgb, var(--primary-color) 12%, transparent)'
-                        : 'transparent',
-                      '&:hover': {
-                        backgroundColor: 'color-mix(in srgb, var(--primary-color) 10%, transparent)',
-                        color: 'var(--primary-color)'
-                      }
+                      display: 'flex',
+                      flexDirection: 'column',
+                      minWidth: 0
                     }}
                   >
-                    <ListItemIcon
+                    {/* Category Header */}
+                    <Box
                       sx={{
-                        color: isActive ? 'var(--primary-color)' : '#718096',
-                        minWidth: 32
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 1,
+                        mb: 1.5,
+                        pb: 1,
+                        borderBottom: '1px solid #f1f5f9'
                       }}
                     >
-                      {item.icon}
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={item.text}
-                      primaryTypographyProps={{
-                        fontSize: '0.92rem',
-                        fontWeight: isActive ? 700 : 500
-                      }}
-                    />
-                  </MenuItem>
-                );
-              })}
+                      <Typography
+                        variant="caption"
+                        sx={{
+                          fontSize: '0.74rem',
+                          fontWeight: 800,
+                          letterSpacing: '0.08em',
+                          textTransform: 'uppercase',
+                          color: '#334155'
+                        }}
+                      >
+                        {cat.category}
+                      </Typography>
+                    </Box>
+
+                    {/* Items List */}
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.8 }}>
+                      {cat.items.map((item) => {
+                        const isActive = location.pathname === item.path;
+
+                        return (
+                          <Box
+                            key={item.text}
+                            onClick={() => handleItemClick(item.path)}
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                handleItemClick(item.path);
+                              }
+                            }}
+                            sx={{
+                              display: 'flex',
+                              alignItems: 'flex-start',
+                              gap: 1.5,
+                              p: '9px 12px',
+                              borderRadius: '12px',
+                              cursor: 'pointer',
+                              transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                              backgroundColor: isActive
+                                ? 'color-mix(in srgb, var(--primary-color) 12%, transparent)'
+                                : 'transparent',
+                              border: isActive
+                                ? '1px solid color-mix(in srgb, var(--primary-color) 30%, transparent)'
+                                : '1px solid transparent',
+                              '&:hover': {
+                                backgroundColor: 'color-mix(in srgb, var(--primary-color) 7%, #f8fafc)',
+                                transform: 'translateX(3px)',
+                                borderColor: 'color-mix(in srgb, var(--primary-color) 20%, transparent)',
+                                '& .solution-item-icon': {
+                                  backgroundColor: 'var(--primary-color)',
+                                  color: '#ffffff',
+                                  transform: 'scale(1.06)'
+                                },
+                                '& .solution-item-title': {
+                                  color: 'var(--primary-color)'
+                                },
+                                '& .solution-item-arrow': {
+                                  opacity: 1,
+                                  transform: 'translateX(0px)'
+                                }
+                              }
+                            }}
+                          >
+                            {/* Icon Box */}
+                            <Box
+                              className="solution-item-icon"
+                              sx={{
+                                width: 38,
+                                height: 38,
+                                minWidth: 38,
+                                borderRadius: '10px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                backgroundColor: isActive
+                                  ? 'var(--primary-color)'
+                                  : 'color-mix(in srgb, var(--primary-color) 10%, #f8fafc)',
+                                color: isActive ? '#ffffff' : 'var(--primary-color)',
+                                transition: 'all 0.2s ease',
+                                mt: 0.2
+                              }}
+                            >
+                              {item.icon}
+                            </Box>
+
+                            {/* Title & Description */}
+                            <Box sx={{ flex: 1, minWidth: 0 }}>
+                              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8, flexWrap: 'wrap' }}>
+                                <Typography
+                                  className="solution-item-title"
+                                  sx={{
+                                    fontSize: '0.88rem',
+                                    fontWeight: isActive ? 750 : 650,
+                                    color: isActive ? 'var(--primary-color)' : '#0f172a',
+                                    lineHeight: 1.3,
+                                    transition: 'color 0.2s ease'
+                                  }}
+                                >
+                                  {item.text}
+                                </Typography>
+                                {item.badge && (
+                                  <Box
+                                    component="span"
+                                    sx={{
+                                      fontSize: '0.62rem',
+                                      fontWeight: 700,
+                                      color: item.badgeColor || 'var(--primary-color)',
+                                      backgroundColor: `color-mix(in srgb, ${item.badgeColor || 'var(--primary-color)'} 14%, transparent)`,
+                                      px: 0.7,
+                                      py: 0.15,
+                                      borderRadius: '5px',
+                                      lineHeight: 1.2
+                                    }}
+                                  >
+                                    {item.badge}
+                                  </Box>
+                                )}
+                              </Box>
+                              <Typography
+                                sx={{
+                                  fontSize: '0.76rem',
+                                  color: '#64748b',
+                                  lineHeight: 1.35,
+                                  mt: 0.35,
+                                  whiteSpace: 'normal',
+                                  wordBreak: 'normal',
+                                  overflow: 'visible'
+                                }}
+                              >
+                                {item.description}
+                              </Typography>
+                            </Box>
+
+                            {/* Hover arrow indicator */}
+                            <ChevronRightIcon
+                              className="solution-item-arrow"
+                              sx={{
+                                fontSize: 16,
+                                color: 'var(--primary-color)',
+                                opacity: 0,
+                                transform: 'translateX(-4px)',
+                                transition: 'all 0.2s ease',
+                                alignSelf: 'center',
+                                flexShrink: 0
+                              }}
+                            />
+                          </Box>
+                        );
+                      })}
+                    </Box>
+                  </Box>
+                ))}
+              </Box>
+
+              {/* Bottom Quick-Action Bar */}
+              <Box
+                sx={{
+                  px: 3,
+                  py: 1.5,
+                  backgroundColor: '#f8fafc',
+                  borderTop: '1px solid #e2e8f0',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  flexWrap: 'wrap',
+                  gap: 1.5
+                }}
+              >
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.2 }}>
+                  <Box
+                    sx={{
+                      width: 8,
+                      height: 8,
+                      borderRadius: '50%',
+                      backgroundColor: 'var(--primary-color)',
+                      boxShadow: '0 0 0 3px color-mix(in srgb, var(--primary-color) 25%, transparent)'
+                    }}
+                  />
+                  <Typography sx={{ fontSize: '0.78rem', color: '#475569', fontWeight: 500 }}>
+                    <strong style={{ color: '#1e293b' }}>100% Offline-Resilient:</strong> Cloud sync, instant hardware pairing & zero card processing markups.
+                  </Typography>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2.5 }}>
+                  <Box
+                    component="button"
+                    onClick={() => handleItemClick('/signin')}
+                    sx={{
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      fontSize: '0.78rem',
+                      fontWeight: 700,
+                      color: 'var(--primary-color)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 0.4,
+                      p: 0,
+                      transition: 'opacity 0.2s',
+                      '&:hover': { opacity: 0.8 }
+                    }}
+                  >
+                    Book Live Demo <ChevronRightIcon sx={{ fontSize: 16 }} />
+                  </Box>
+                  <Box
+                    component="button"
+                    onClick={() => handleItemClick('/features')}
+                    sx={{
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      fontSize: '0.78rem',
+                      fontWeight: 700,
+                      color: '#475569',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 0.4,
+                      p: 0,
+                      transition: 'color 0.2s',
+                      '&:hover': { color: 'var(--primary-color)' }
+                    }}
+                  >
+                    All 15+ Modules <ChevronRightIcon sx={{ fontSize: 16 }} />
+                  </Box>
+                  <Box
+                    component="button"
+                    onClick={() => handleItemClick('/pricing')}
+                    sx={{
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      fontSize: '0.78rem',
+                      fontWeight: 700,
+                      color: '#475569',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 0.4,
+                      p: 0,
+                      transition: 'color 0.2s',
+                      '&:hover': { color: 'var(--primary-color)' }
+                    }}
+                  >
+                    Pricing Plans <ChevronRightIcon sx={{ fontSize: 16 }} />
+                  </Box>
+                </Box>
+              </Box>
             </Menu>
 
             {/* Other Standard Menu Items */}
@@ -552,42 +897,113 @@ const Navigation = () => {
               </Box>
 
               <Collapse in={mobileSolutionsOpen || isSolutionsActive} timeout="auto" unmountOnExit>
-                <Box sx={{ pl: 2, backgroundColor: 'rgba(0,0,0,0.02)' }}>
-                  {solutionsMenuItems.map((item) => {
-                    const isActive = location.pathname === item.path;
-                    return (
-                      <Link
-                        key={item.text}
-                        to={item.path}
-                        onClick={handleDrawerToggle}
-                        style={{ textDecoration: 'none' }}
+                <Box sx={{ pl: 2, pr: 2, py: 1, backgroundColor: 'rgba(0,0,0,0.02)' }}>
+                  {solutionsCategories.map((cat) => (
+                    <Box key={cat.category} sx={{ mb: 2 }}>
+                      <Typography
+                        variant="caption"
+                        sx={{
+                          display: 'block',
+                          px: 1,
+                          py: 0.5,
+                          fontSize: '0.68rem',
+                          fontWeight: 800,
+                          letterSpacing: '0.08em',
+                          textTransform: 'uppercase',
+                          color: '#64748b'
+                        }}
                       >
-                        <Box
-                          sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: 1.5,
-                            padding: '12px 20px',
-                            color: isActive ? 'var(--primary-color)' : '#555',
-                            backgroundColor: isActive
-                              ? 'color-mix(in srgb, var(--primary-color) 12%, transparent)'
-                              : 'transparent',
-                            borderLeft: isActive
-                              ? '3px solid var(--primary-color)'
-                              : '3px solid transparent',
-                            fontWeight: isActive ? 'bold' : 'normal'
-                          }}
-                        >
-                          <Box sx={{ color: isActive ? 'var(--primary-color)' : '#888', display: 'flex' }}>
-                            {item.icon}
-                          </Box>
-                          <Typography variant="body2" sx={{ fontWeight: isActive ? 600 : 400 }}>
-                            {item.text}
-                          </Typography>
-                        </Box>
-                      </Link>
-                    );
-                  })}
+                        {cat.category}
+                      </Typography>
+                      {cat.items.map((item) => {
+                        const isActive = location.pathname === item.path;
+                        return (
+                          <Link
+                            key={item.text}
+                            to={item.path}
+                            onClick={handleDrawerToggle}
+                            style={{ textDecoration: 'none' }}
+                          >
+                            <Box
+                              sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 1.5,
+                                padding: '10px 12px',
+                                my: 0.4,
+                                borderRadius: '10px',
+                                color: isActive ? 'var(--primary-color)' : '#334155',
+                                backgroundColor: isActive
+                                  ? 'color-mix(in srgb, var(--primary-color) 12%, transparent)'
+                                  : 'transparent',
+                                borderLeft: isActive
+                                  ? '3px solid var(--primary-color)'
+                                  : '3px solid transparent',
+                                transition: 'all 0.2s ease'
+                              }}
+                            >
+                              <Box
+                                sx={{
+                                  color: isActive ? '#fff' : 'var(--primary-color)',
+                                  backgroundColor: isActive
+                                    ? 'var(--primary-color)'
+                                    : 'color-mix(in srgb, var(--primary-color) 10%, #f1f5f9)',
+                                  width: 32,
+                                  height: 32,
+                                  borderRadius: '8px',
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'center',
+                                  flexShrink: 0
+                                }}
+                              >
+                                {item.icon}
+                              </Box>
+                              <Box sx={{ flex: 1, minWidth: 0 }}>
+                                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8 }}>
+                                  <Typography
+                                    variant="body2"
+                                    sx={{ fontWeight: isActive ? 700 : 600, fontSize: '0.85rem' }}
+                                  >
+                                    {item.text}
+                                  </Typography>
+                                  {item.badge && (
+                                    <Box
+                                      component="span"
+                                      sx={{
+                                        fontSize: '0.6rem',
+                                        fontWeight: 700,
+                                        color: item.badgeColor || 'var(--primary-color)',
+                                        backgroundColor: `color-mix(in srgb, ${item.badgeColor || 'var(--primary-color)'} 12%, transparent)`,
+                                        px: 0.6,
+                                        py: 0.1,
+                                        borderRadius: '4px'
+                                      }}
+                                    >
+                                      {item.badge}
+                                    </Box>
+                                  )}
+                                </Box>
+                                <Typography
+                                  variant="caption"
+                                  sx={{
+                                    fontSize: '0.72rem',
+                                    color: '#64748b',
+                                    display: '-webkit-box',
+                                    WebkitLineClamp: 1,
+                                    WebkitBoxOrient: 'vertical',
+                                    overflow: 'hidden'
+                                  }}
+                                >
+                                  {item.description}
+                                </Typography>
+                              </Box>
+                            </Box>
+                          </Link>
+                        );
+                      })}
+                    </Box>
+                  ))}
                 </Box>
               </Collapse>
 
