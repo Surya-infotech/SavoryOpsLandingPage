@@ -25,6 +25,88 @@ const staticRoutes = [
   '/signup'
 ];
 
+function getRouteMetadata(route) {
+  // Tier 1: Homepage (1.0)
+  if (route === '/') {
+    return { priority: '1.0', changefreq: 'daily' };
+  }
+
+  // Tier 2: Primary High-Intent Commercial Pages & Solutions (0.9)
+  if (
+    route === '/features' ||
+    route === '/pricing' ||
+    route.startsWith('/solutions') ||
+    route.startsWith('/alternatives')
+  ) {
+    return { priority: '0.9', changefreq: 'weekly' };
+  }
+
+  // Tier 3: Core Platform Features & High-Intent Tools (0.8)
+  const coreFeatures = [
+    '/features/pos-system',
+    '/features/kot-system',
+    '/features/kitchen-display-system',
+    '/features/inventory-management',
+    '/features/employee-mobile-app',
+    '/features/customer-mobile-app',
+    '/features/floor-plan-management',
+    '/features/multi-tenant-architecture',
+    '/features/advanced-reports',
+    '/features/finance-management',
+    '/features/asset-management',
+    '/features/qr-code-scanning',
+    '/features/digital-invoice-download',
+    '/features/help-center',
+    '/features/customer-reviews',
+    '/why-savoryops',
+    '/upcoming-features',
+    '/resources/food-cost-percentage-guide'
+  ];
+  if (coreFeatures.includes(route)) {
+    return { priority: '0.8', changefreq: 'weekly' };
+  }
+
+  // Tier 4: Blog Hub & Secondary Feature Modules (0.7)
+  if (route === '/blog') {
+    return { priority: '0.7', changefreq: 'weekly' };
+  }
+  if (route.startsWith('/features/')) {
+    return { priority: '0.7', changefreq: 'monthly' };
+  }
+
+  // Tier 5: Individual In-Depth Blog Articles (0.6)
+  if (route.startsWith('/blog/')) {
+    return { priority: '0.6', changefreq: 'monthly' };
+  }
+
+  // Tier 6: Company & Support Pages (0.5)
+  if (
+    route === '/about-us' ||
+    route === '/faq' ||
+    route === '/contact-us'
+  ) {
+    return { priority: '0.5', changefreq: 'monthly' };
+  }
+
+  // Tier 7: Account & Onboarding Pages (0.4)
+  if (route === '/signin' || route === '/signup') {
+    return { priority: '0.4', changefreq: 'monthly' };
+  }
+
+  // Tier 8: Legal, Compliance & Privacy Pages (0.3)
+  if (
+    route === '/privacy-policy' ||
+    route === '/terms-and-conditions' ||
+    route === '/refund-and-cancellation-policy' ||
+    route === '/data-deletion-policy'
+  ) {
+    return { priority: '0.3', changefreq: 'yearly' };
+  }
+
+  // Default fallback
+  return { priority: '0.7', changefreq: 'monthly' };
+}
+
 async function generateSitemap() {
   console.log('🌐 Generating comprehensive sitemap.xml...');
 
@@ -67,25 +149,7 @@ async function generateSitemap() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allRoutes
   .map((route) => {
-    let priority = '0.8';
-    let changefreq = 'weekly';
-
-    if (route === '/') {
-      priority = '1.0';
-      changefreq = 'daily';
-    } else if (
-      route.startsWith('/solutions') ||
-      route.startsWith('/alternatives') ||
-      route === '/features/pos-system' ||
-      route === '/features/kot-system' ||
-      route === '/features/inventory-management' ||
-      route === '/features/customer-reviews' ||
-      route === '/features/help-center' ||
-      route === '/features/digital-invoice-download'
-    ) {
-      priority = '0.9';
-      changefreq = 'weekly';
-    }
+    const { priority, changefreq } = getRouteMetadata(route);
 
     return `  <url>
     <loc>${BASE_URL}${route}</loc>
