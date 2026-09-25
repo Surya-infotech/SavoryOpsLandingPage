@@ -529,11 +529,6 @@ $breakpoint-sm: 600px;
 // -------------------------------------------------------------
 // KEYFRAME ANIMATIONS
 // -------------------------------------------------------------
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 @keyframes statusPulse {
   0%, 100% {
