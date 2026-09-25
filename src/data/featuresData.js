@@ -1000,45 +1000,45 @@ export const FEATURES_DATA = {
   },
   'help-center': {
     id: 'help-center',
-    badge: '24/7 Hospitality Support',
-    title: 'Restaurant Help Center, Knowledge Base & 24/7 Technical Support',
-    metaTitle: 'Restaurant Help Center & 24/7 Technical POS Support | SavoryOps',
-    metaDescription: 'Get 24/7 technical support, operational setup guides, POS troubleshooting, video tutorials, and dedicated restaurant onboarding assistance with SavoryOps.',
-    primaryKeyword: 'Restaurant POS Support and Help Center',
+    badge: 'Self-Service Staff Hub',
+    title: 'In-App Restaurant Knowledge Base, SOP Guides & Staff Help Center',
+    metaTitle: 'Restaurant In-App Knowledge Base & Staff Help Center Module | SavoryOps',
+    metaDescription: 'Empower restaurant staff with built-in SOP guides, hardware setup checklists, interactive cashier training videos, and integrated support ticketing inside SavoryOps.',
+    primaryKeyword: 'Restaurant POS In-App Knowledge Base and Staff Guides',
     secondaryKeywords: [
-      'restaurant pos help center',
-      'restaurant technical support',
-      'savoryops support',
-      'restaurant pos troubleshooting',
-      'restaurant software onboarding',
-      '24/7 restaurant pos customer service'
+      'restaurant staff training software',
+      'pos knowledge base software',
+      'restaurant sop documentation system',
+      'restaurant hardware setup guides',
+      'pos staff onboarding tool',
+      'restaurant operational knowledge base'
     ],
-    h1: 'Comprehensive Restaurant Help Center & 24/7 Technical Support',
-    subtitle: 'Step-by-step guides, live chat assistance, hardware setup instructions, and round-the-clock priority support to keep your restaurant operating smoothly.',
-    overview: 'In high-volume restaurant operations, downtime during a busy dinner service is simply not an option. The SavoryOps Help Center and technical support ecosystem provides operators, store managers, and culinary staff with instant troubleshooting assistance, detailed step-by-step knowledge base articles, hardware configuration guides (for thermal receipt printers, cash drawers, and KDS bump bars), and 24/7 live priority technical assistance.',
+    h1: 'In-App Restaurant Knowledge Base & Staff Help Center Module',
+    subtitle: 'Embedded operational guides, hardware configuration manuals, interactive video cheat-sheets, and instant self-serve training right inside your POS.',
+    overview: 'In high-volume restaurant operations, employee turnover and new hire onboarding require instant, frictionless access to standard operating procedures (SOPs). The SavoryOps embedded Help Center module provides kitchen crews, cashiers, and floor managers with interactive training checklists, hardware wiring diagrams, and searchable guides directly on POS terminals and mobile apps without disrupting active shift workflows.',
     benefits: [
-      { title: '24/7 Priority Emergency Support', desc: 'Reach experienced restaurant support specialists via live chat and phone when you need help during weekend rushes.' },
+      { title: 'Embedded POS Training Manuals', desc: 'Allow new servers and cashiers to look up SOPs and discount rules directly from their terminal screen.' },
       { title: 'Step-by-Step Hardware Setup Guides', desc: 'Plug-and-play guides for ESC/POS thermal receipt printers, kitchen display systems, network routers, and cash drawers.' },
-      { title: 'Staff Onboarding & Training Materials', desc: 'Accelerate cashier, server, and kitchen staff onboarding with short interactive video walkthroughs and checklists.' },
+      { title: 'Interactive Video Walkthroughs', desc: 'Accelerate staff onboarding with 2-minute visual micro-lessons for KOT routing, refund approvals, and table transfers.' },
       { title: 'Zero Service Interruptions', desc: 'Proactive system status tracking, automatic cloud updates, and redundant backup systems to protect your service continuity.' }
     ],
     features: [
       'Searchable Knowledge Base with 100+ operational guides covering POS billing, KOT routing, BOM inventory, and analytics',
-      '24/7 live chat and priority ticketing with industry-leading first-response resolution times',
-      'Hardware integration library with step-by-step pairing for Epson, Star, Sunmi, and Windows/Mac POS hardware',
+      'Built-in staff troubleshooting library with visual diagrams for Epson, Star, and Sunmi thermal hardware',
+      'Step-by-step role-based onboarding checklists for waiters, cashiers, line chefs, and store managers',
       'Interactive video tutorials and employee training cheat sheets for new waitstaff and kitchen line cooks',
       'Dedicated migration assistance: seamless menu and inventory data imports from legacy POS systems',
       'Real-time system health and uptime monitor with transparent maintenance announcements'
     ],
     faqs: [
-      { question: 'What support channels are available for SavoryOps users?', answer: 'SavoryOps provides 24/7 live in-app chat support, ticket-based email support, phone assistance for urgent service emergencies, and an extensive online knowledge base accessible from both mobile and desktop.' },
-      { question: 'How quickly does the SavoryOps technical team respond to support inquiries?', answer: 'Our emergency service desk maintains an average response time of under 2 minutes for urgent live chat requests during active restaurant service hours.' },
+      { question: 'Is the Help Center accessible directly from the POS and mobile app?', answer: 'Yes. Staff can tap the Help icon on any POS terminal or mobile app to search operational SOPs and hardware guides without needing external devices.' },
+      { question: 'Can restaurant owners upload custom SOPs and training materials?', answer: 'Yes. Multi-location brands can upload custom recipe cards, opening/closing checklists, and employee policies accessible only by their staff.' },
       { question: 'Does SavoryOps assist with onboarding and menu data migration?', answer: 'Yes! Our onboarding team offers complimentary menu setup and ingredient database migration from legacy POS systems (such as Toast, Square, Lightspeed, and TouchBistro).' },
       { question: 'Where can I find hardware setup guides for thermal printers and cash drawers?', answer: 'Our Help Center includes illustrated setup guides covering network LAN, USB, Bluetooth, and Wi-Fi configurations for all major commercial printer brands including Epson, Star Micronics, Rongta, and Munbyn.' },
       { question: 'Is there training documentation for servers and kitchen staff?', answer: 'Yes. We provide quick-start 1-page visual cheat sheets and 3-minute video guides designed specifically for rapid cashier training, table ordering, and kitchen KDS bump-bar operations.' }
     ],
-    ctaText: 'Contact Support or Book Demo',
-    ctaLink: '/contact-us'
+    ctaText: 'Explore Platform Features',
+    ctaLink: '/features'
   },
   'table-reservation': {
     id: 'table-reservation',

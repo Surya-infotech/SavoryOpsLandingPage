@@ -1,6 +1,7 @@
 # Robots.txt for SavoryOps Landing Page
 User-agent: *
 Allow: /
+Disallow: /rss.xml
 
 # Explicit AI Search & LLM Crawlers Permissions (ChatGPT, Gemini, Perplexity, Claude)
 User-agent: GPTBot

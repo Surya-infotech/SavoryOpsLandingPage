@@ -1,1 +1,13 @@
+# Explicit canonical 301 redirects for uppercase / trailing slash variations
+/SignIn  /signin  301!
+/Signin  /signin  301!
+/SignUp  /signup  301!
+/Signup  /signup  301!
+/features/  /features  301!
+/pricing/  /pricing  301!
+/about/  /about-us  301!
+/faqs  /faq  301!
+/faqs/  /faq  301!
+
+# SPA Fallback for Netlify / Edge Routers
 /*  /index.html  200
