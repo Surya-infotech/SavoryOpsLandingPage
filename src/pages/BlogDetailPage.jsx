@@ -7,7 +7,10 @@ import {
   Button,
   IconButton,
   Snackbar,
-  Alert
+  Alert,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -23,6 +26,8 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 import SEOHead from '../components/SEO/SEOHead';
 import { getBlogPostBySlug, getRelatedBlogPosts } from '../data/blogsData';
@@ -48,16 +53,20 @@ const BlogDetailPage = () => {
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 140;
+      const allSectionIds = [
+        ...post.sections.map((s) => s.id),
+        ...(post.faqs?.length ? ['frequently-asked-questions'] : [])
+      ];
 
-      for (let i = post.sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(post.sections[i].id);
+      for (let i = allSectionIds.length - 1; i >= 0; i--) {
+        const section = document.getElementById(allSectionIds[i]);
         if (section && section.offsetTop <= scrollPosition) {
-          setActiveSectionId(post.sections[i].id);
+          setActiveSectionId(allSectionIds[i]);
           return;
         }
       }
-      if (post.sections[0]) {
-        setActiveSectionId(post.sections[0].id);
+      if (allSectionIds[0]) {
+        setActiveSectionId(allSectionIds[0]);
       }
     };
 
@@ -126,11 +135,14 @@ const BlogDetailPage = () => {
         title={`${post.title} | ${softwareName || 'SavoryOps'} Blog`}
         description={post.excerpt}
         keywords={post.tags}
+        primaryKeyword={post.primaryKeyword || post.title}
         ogImage={post.coverImage}
         canonicalUrl={`https://savoryops.com/blog/${post.slug}`}
         schemaType="Article"
         authorName={post.author?.name}
         datePublished={post.publishedDate}
+        dateModified={post.dateModified || '2026-09-26'}
+        faqs={post.faqs || []}
       />
 
       <Container maxWidth="lg">
@@ -323,7 +335,14 @@ const BlogDetailPage = () => {
               >
                 <h2>{section.heading}</h2>
 
-                {section.paragraphs.map((p, idx) => (
+                {section.callout && (
+                  <div className={`article-callout-box ${section.callout.type || 'info'}`}>
+                    {section.callout.title && <div className="callout-title">{section.callout.title}</div>}
+                    <p dangerouslySetInnerHTML={{ __html: section.callout.text }} />
+                  </div>
+                )}
+
+                {section.paragraphs && section.paragraphs.map((p, idx) => (
                   <p key={idx} dangerouslySetInnerHTML={{ __html: p }} />
                 ))}
 
@@ -341,8 +360,69 @@ const BlogDetailPage = () => {
                     ))}
                   </ul>
                 )}
+
+                {section.table && (
+                  <div className="article-table-wrapper">
+                    <table className="article-data-table">
+                      <thead>
+                        <tr>
+                          {section.table.headers.map((h, hIdx) => (
+                            <th key={hIdx}>{h}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {section.table.rows.map((row, rIdx) => (
+                          <tr key={rIdx}>
+                            {row.map((cell, cIdx) => (
+                              <td key={cIdx} dangerouslySetInnerHTML={{ __html: cell }} />
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+
+                {section.paragraphsAfterTable && section.paragraphsAfterTable.map((p, idx) => (
+                  <p key={idx} dangerouslySetInnerHTML={{ __html: p }} />
+                ))}
               </section>
             ))}
+
+            {/* Rich FAQ Accordion Section */}
+            {post.faqs && post.faqs.length > 0 && (
+              <section id="frequently-asked-questions" className="article-section blog-faq-section">
+                <h2>
+                  <HelpOutlineIcon sx={{ mr: 1, verticalAlign: 'middle', color: 'var(--primary-color, #059669)' }} />
+                  Frequently Asked Questions (KOT FAQ)
+                </h2>
+                <div className="blog-faq-accordion-wrap">
+                  {post.faqs.map((faq, idx) => (
+                    <Accordion
+                      key={idx}
+                      className="blog-faq-accordion"
+                      elevation={0}
+                      disableGutters
+                    >
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon sx={{ color: 'var(--primary-color, #059669)' }} />}
+                        className="blog-faq-summary"
+                      >
+                        <Typography component="h3" sx={{ fontWeight: 700, fontSize: '1.05rem', color: '#0f172a' }}>
+                          {faq.question}
+                        </Typography>
+                      </AccordionSummary>
+                      <AccordionDetails className="blog-faq-details">
+                        <Typography sx={{ color: '#334155', lineHeight: 1.7, fontSize: '0.98rem' }}>
+                          {faq.answer}
+                        </Typography>
+                      </AccordionDetails>
+                    </Accordion>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Tags */}
             {post.tags && post.tags.length > 0 && (

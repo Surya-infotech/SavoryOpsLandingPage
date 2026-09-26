@@ -750,84 +750,224 @@ export const BLOG_POSTS = [
   {
     id: 'what-is-a-kitchen-order-ticket-kot',
     slug: 'what-is-a-kitchen-order-ticket-kot',
-    title: 'What is a Kitchen Order Ticket (KOT)? Complete Workflow & Digital POS Guide (2026)',
-    subtitle: 'Master the lifecycle of orders from tableside punches to kitchen line displays, bar order tickets (BOT), void audits, and final guest checks.',
-    excerpt: 'A Kitchen Order Ticket (KOT) is the backbone of back-of-house communication. Learn how modern digital KOT systems prevent order errors, stop shrinkage, and streamline dining room service.',
+    title: 'What is a Kitchen Order Ticket (KOT) in Restaurants? Meaning, Workflow & System Guide (2026)',
+    subtitle: 'Master the complete KOT lifecycle: tableside ordering, paper vs digital KOT systems, KOT vs BOT (Bar Order Ticket) routing, void audits, and modern kitchen order ticket apps.',
+    excerpt: 'What is KOT in a restaurant? A Kitchen Order Ticket (KOT) is the backbone of food order routing. Learn KOT meaning, KOT vs BOT difference, digital KOT apps, and POS workflows.',
     coverImage: '/blogs/digital-kot-system.jpg',
     category: 'Kitchen Operations',
     categoryColor: '#3B82F6',
-    readTime: '8 min read',
+    readTime: '10 min read',
     publishedDate: 'January 14, 2026',
+    dateModified: 'September 26, 2026',
+    primaryKeyword: 'Kitchen Order Ticket (KOT)',
     author: FOUNDER_AUTHOR,
     featured: false,
-    tags: ['KOT System', 'Kitchen Order Ticket', 'BOT', 'KDS Software', 'Restaurant POS', 'Kitchen Routing'],
+    tags: [
+      'Kitchen Order Ticket',
+      'KOT System',
+      'KOT in Restaurant',
+      'KOT Meaning',
+      'KOT and BOT',
+      'Bar Order Ticket',
+      'Kitchen Order Ticket System',
+      'KOT Software',
+      'Kitchen Display System',
+      'Restaurant POS',
+      'KOT Manager',
+      'KOT App'
+    ],
     stats: [
       { number: '99.8%', label: 'Order accuracy with digital KOT routing' },
       { number: '4-6 min', label: 'Shaved off peak rush ticket times' },
-      { number: '100%', label: 'Traceability on voided kitchen items' }
+      { number: '100%', label: 'Audit traceability on voided kitchen items' }
     ],
     tableOfContents: [
-      { id: 'what-is-kot-definition', text: 'What is a Kitchen Order Ticket (KOT)?' },
-      { id: 'paper-vs-digital-kot', text: 'Paper KOT vs Digital KOT: Why Kitchens are Upgrading' },
-      { id: 'kot-vs-bot-routing', text: 'KOT vs BOT: Station-Specific Order Dispatch' },
-      { id: 'the-void-kot-problem', text: 'Eliminating Revenue Leakage: Managing Void KOTs' },
-      { id: 'savoryops-smart-kot', text: 'Streamlining Back-of-House with SavoryOps Smart KOT' }
+      { id: 'what-is-kot-definition', text: '1. What is a Kitchen Order Ticket (KOT)? Definition & Meaning' },
+      { id: 'components-of-a-kot', text: '2. Essential Components of a Kitchen Order Ticket' },
+      { id: 'kot-lifecycle-workflow', text: '3. Step-by-Step KOT Workflow: How KOT Systems Work' },
+      { id: 'types-of-kot', text: '4. Types of KOTs Used in Food Operations' },
+      { id: 'kot-vs-bot-routing', text: '5. KOT vs BOT: What is the Difference?' },
+      { id: 'paper-vs-digital-kot', text: '6. Paper KOT vs Digital KOT Systems (Apps & KDS)' },
+      { id: 'kot-roles-and-expediter', text: '7. KOT Roles & Responsibilities: Staff to KOT Manager' },
+      { id: 'the-void-kot-problem', text: '8. Managing Void KOTs: Stopping Revenue Leakage' },
+      { id: 'savoryops-smart-kot', text: '9. Streamlining Back-of-House with SavoryOps Smart KOT' },
+      { id: 'frequently-asked-questions', text: '10. Frequently Asked Questions (KOT FAQ)' }
     ],
     keyTakeaways: [
-      'A KOT serves as the legally binding operational document between front-of-house servers and culinary prep cooks.',
-      'Split routing sends kitchen dishes to prep monitors while routing drinks to a Bar Order Ticket (BOT) printer simultaneously.',
-      'Manager-authorized Void KOTs eliminate theft and accidental double-fires that cause unrecorded inventory loss.',
-      'Integrating KOT directly with recipe inventory ensures raw stock is depleted the moment an order is fired.'
+      '<strong>KOT Meaning:</strong> A Kitchen Order Ticket (KOT) is the official operational slip generated when waitstaff take a dining order, communicating exact dishes, cooking modifications, and table locations to kitchen chefs.',
+      '<strong>KOT vs BOT:</strong> Food items automatically route to culinary prep stations via KOT, while beverages route to the service dispense bar via BOT (Bar Order Ticket)—both sync seamlessly to one unified guest bill.',
+      '<strong>Paper vs Digital KOT:</strong> Modern cloud KOT software and interactive Kitchen Display Systems (KDS) eliminate lost tickets, kitchen grease smudges, and costly handwriting misinterpretations.',
+      '<strong>Void KOT Auditing:</strong> Mandating manager PIN authorization for Void KOTs stops internal theft, unrecorded food waste, and unauthorized table cancellations.',
+      '<strong>POS & Inventory Depletion:</strong> Integrating KOT directly with recipe-level inventory automatically deducts raw food stock the moment an order ticket is fired.'
     ],
     sections: [
       {
         id: 'what-is-kot-definition',
-        heading: 'What is a Kitchen Order Ticket (KOT)?',
+        heading: '1. What is a Kitchen Order Ticket (KOT)? Definition & Meaning in Restaurants',
         paragraphs: [
-          'In professional restaurant operations, a Kitchen Order Ticket (KOT) is a structured operational slip generated by a Point of Sale (POS) terminal or tableside tablet when waitstaff take a guest order. It contains essential prep parameters: table number, seat position, timestamp, server ID, dish names, exact portion quantities, and specialized modifier notes (such as "NO PEANUTS", "MEDIUM RARE", or "DRESSING ON THE SIDE").',
-          'Before modern hospitality technology, servers scribbled carbon-copy paper slips and hand-carried them into the kitchen. Today, smart <a href="/solutions/kitchen-order-ticket-system">Kitchen Order Ticket (KOT) systems</a> transmit these details digitally across localized networks in milliseconds, orchestrating complex multi-course meals without verbal shouting.'
+          'In professional restaurant operations, a <strong>Kitchen Order Ticket (KOT)</strong> is a standardized operational document generated by a <a href="/solutions/restaurant-pos-system">restaurant Point of Sale (POS) system</a> or hand-written by waitstaff when capturing a guest order. It serves as an authoritative culinary contract between front-of-house (FOH) servers and back-of-house (BOH) chefs, detailing exactly what dishes need to be cooked, for which table, in what sequence, and with what specific cooking modifications.',
+          'Before modern cloud restaurant technology, servers scribbled carbon-copy paper slips and physically ran them to the kitchen pass. In high-volume dining today, automated <a href="/solutions/kitchen-order-ticket-system">Kitchen Order Ticket systems</a> transmit order data wirelessly within milliseconds across local networks, dispatching items to kitchen monitors and thermal receipt printers without shouting or walking back and forth.',
+          '<em>Terminology Note:</em> In some restaurant operations, floor staff occasionally ask about <strong>"QOT"</strong> or "QOT meaning in restaurant"—in almost all hospitality contexts, "QOT" is simply a colloquial phonetic misspelling of KOT (Kitchen Order Ticket).'
         ],
+        callout: {
+          type: 'info',
+          title: 'Quick Definition: Kitchen Order Ticket (KOT)',
+          text: 'A <strong>Kitchen Order Ticket (KOT)</strong> is an internal slip generated by waitstaff or POS software instructing line cooks on dishes to prepare, portion quantities, table number, server identity, and dietary or preparation preferences (e.g., "NO ONION", "EXTRA CRISPY").'
+        },
         quote: {
-          text: "A well-designed KOT system is not just a receipt; it is the central nervous system coordinating culinary timing between cashier, pass expediter, and prep line.",
-          author: "Suraj Dholakiya, Founder at SavoryOps"
+          text: 'A well-designed KOT system is not just an order slip; it is the central nervous system coordinating culinary timing between cashier, pass expediter, and prep line.',
+          author: 'Suraj Dholakiya, Founder at SavoryOps'
         }
       },
       {
-        id: 'paper-vs-digital-kot',
-        heading: 'Paper KOT vs Digital KOT: Why Kitchens are Upgrading',
+        id: 'components-of-a-kot',
+        heading: '2. Essential Components of a Kitchen Order Ticket (What Details are Included?)',
         paragraphs: [
-          'While traditional thermal paper slips are still widely used, they present major operational pitfalls during peak dinner rushes: thermal paper fades under heat lamps, slips get soaked in grease or sauce, and paper tickets cannot signal prep timers back to front-of-house staff.',
-          'Digital KOTs displayed on <a href="/solutions/kitchen-display-system">touchscreen Kitchen Display Systems (KDS)</a> solve these vulnerabilities with visual urgency cues (green, yellow, red timers), multi-item grouping, and one-tap bump status updates. When Table 8 finishes appetizers, the expediter simply fires the entree course, signaling line cooks to drop the steaks.'
+          'For a kitchen line to operate smoothly during a heavy Friday dinner rush, every ticket must communicate critical information at a glance. Standardized Kitchen Order Tickets contain 6 distinct data layers:'
         ],
         bulletPoints: [
-          'Zero Lost Slips: Orders cannot fall behind fryers or vanish under prep cutting boards.',
-          'Paced Course Execution: Fire appetizers, mains, and desserts sequentially with precision timing.',
-          'Real-time Floor Visibility: Waiters and floor managers see prep progress from floor tablets without interrupting the head chef.'
+          '<strong>Table & Location Identifiers:</strong> Table number, dining zone/floor (e.g., Patio, Mezzanine, Main Dining), and PAX count (number of seated guests).',
+          '<strong>KOT Serial & Timestamp:</strong> A unique auto-incrementing KOT number and the exact time the order was punched (crucial for tracking ticket prep duration and kitchen speed-of-service).',
+          '<strong>Server / Waiter Identification:</strong> Name or staff ID of the server who punched the ticket, facilitating accountability for special requests or table inquiries.',
+          '<strong>Menu Items & Portions:</strong> Exact item names, portion sizes (e.g., Small / Large, Half / Full), and precise quantity counters.',
+          '<strong>Modifiers & Allergen Flags:</strong> Clear, bolded culinary instructions such as "DRESSING ON THE SIDE", "MEDIUM RARE", or critical safety flags like "GLUTEN ALLERGY - CLEAN GRILL".',
+          '<strong>Course Timing Tags:</strong> Course designations (Appetizer / Entrée / Dessert) indicating whether items should be fired immediately or held until the next course is called.'
+        ]
+      },
+      {
+        id: 'kot-lifecycle-workflow',
+        heading: '3. Step-by-Step KOT Workflow: How KOT Systems Work in a Restaurant',
+        paragraphs: [
+          'Understanding the operational lifecycle of an order ticket is vital for running an efficient kitchen. Here is how a modern digital <a href="/features/kot-system">smart KOT system</a> coordinates order fulfillment from dining room to dish handoff:'
+        ],
+        bulletPoints: [
+          '<strong>Step 1: Tableside Order Capture:</strong> The server takes the guest order using a handheld mobile POS tablet or terminal. Preferences, portion sizes, and allergies are recorded digitally.',
+          '<strong>Step 2: Instant Ticket Generation & Split Routing:</strong> Upon tapping "Fire", the POS software instantly bifurcates the ticket: food items route to kitchen preparation stations (KOT), while cocktails and wines route to the bar service printer (BOT).',
+          '<strong>Step 3: Line Preparation & Prep Timers:</strong> Station cooks receive the ticket on their <a href="/solutions/kitchen-display-system">touchscreen Kitchen Display System (KDS)</a>. Dynamic countdown timers display green, yellow, and red cues as prep time elapses.',
+          '<strong>Step 4: Expediter Pass & Order Bumping:</strong> As line cooks finish their respective components, the dishes arrive at the expediter pass. The expediter cross-references the KOT, verifies garnishes, and marks the ticket "Ready for Delivery".',
+          '<strong>Step 5: Runner Delivery & Cumulative Settlement:</strong> Food runners deliver dishes to Table 8. All cumulative KOTs generated during the meal automatically aggregate into the master bill, while raw recipe ingredients are immediately decremented in <a href="/solutions/restaurant-inventory-management">inventory stock management</a>.'
+        ]
+      },
+      {
+        id: 'types-of-kot',
+        heading: '4. Types of Kitchen Order Tickets (KOT) Used in Food Operations',
+        paragraphs: [
+          'Depending on dining concepts, course structures, and operational adjustments, restaurants utilize several variations of kitchen tickets:'
+        ],
+        bulletPoints: [
+          '<strong>1. Standard Food KOT:</strong> The default ticket fired for regular dining courses (starters, main dishes, accompaniments, and desserts).',
+          '<strong>2. Duplicate & Triplicate KOTs:</strong> In traditional paper workflows, a carbon-copy triplicate book produces three sheets: Copy 1 to the kitchen chef, Copy 2 to the billing cashier for sales reconciliation, and Copy 3 retained in the waiter book for reference.',
+          '<strong>3. Bar Order Ticket (BOT):</strong> A specialized ticket dedicated exclusively to beverage preparation at the service dispense bar or mixology station.',
+          '<strong>4. Void / Cancelled KOT:</strong> An audit-tracked ticket generated when a guest cancels an item or a mistake is corrected, requiring managerial PIN override.',
+          '<strong>5. Rush / Priority KOT:</strong> A flagged ticket given visual precedence on the line, typically used when an item was remade or a VIP guest requested express service.',
+          '<strong>6. Transfer / Table Shift KOT:</strong> Generated when seated guests move to a different table or merge checks, informing runners of the new delivery coordinates.'
         ]
       },
       {
         id: 'kot-vs-bot-routing',
-        heading: 'KOT vs BOT: Station-Specific Order Dispatch',
+        heading: '5. KOT vs BOT: What is the Difference Between Kitchen Order Tickets and Bar Order Tickets?',
         paragraphs: [
-          'In full-service dining, a single customer order frequently includes appetizers from the pantry, wood-fired pizzas, craft cocktails, and wine. Forcing one kitchen ticket through all stations creates massive confusion.',
-          'Intelligent KOT engines automatically decompose the ticket: food items route to the culinary KDS stations, while beverage selections route to the service bar as a Bar Order Ticket (BOT). Both systems retain identical table identifiers so that when the final bill is requested on the <a href="/solutions/restaurant-pos-system">restaurant POS system</a>, all items consolidate into a unified invoice.'
+          'One of the most frequent points of operational friction in full-service hospitality is coordinating food and drink timing. If a customer orders a ribeye steak and a signature dry martini, sending both items to a single kitchen printer slows bar service and clutters culinary prep rails.',
+          'This is why modern systems separate <strong>Kitchen Order Tickets (KOT)</strong> from <strong>Bar Order Tickets (BOT)</strong> at the software routing layer. Here is how they compare:'
+        ],
+        table: {
+          headers: ['Feature / Parameter', 'Kitchen Order Ticket (KOT)', 'Bar Order Ticket (BOT)'],
+          rows: [
+            ['<strong>Destination Station</strong>', 'Back-of-House (Hot Line, Pantry, Grill, Bakery)', 'Front/Back Service Dispense Bar or Lounge'],
+            ['<strong>Responsible Staff</strong>', 'Sous Chefs, Line Cooks, Kitchen Expediter', 'Bartenders, Baristas, Sommelier'],
+            ['<strong>Typical Items</strong>', 'Appetizers, entrées, pizzas, sides, desserts', 'Cocktails, draft beer, bottled wine, espresso, mocktails'],
+            ['<strong>Target Prep Time</strong>', '10 to 25 minutes depending on course', '2 to 5 minutes (drinks served first)'],
+            ['<strong>Hardware Used</strong>', 'Heat-resistant thermal printers or KDS touchscreens', 'Bar receipt printers or tablet bar display'],
+            ['<strong>Stock Depletion</strong>', 'Meat, dairy, produce, dry goods (raw recipe BOM)', 'Liquor ounces, wine bottles, syrups, beverage cans']
+          ]
+        },
+        paragraphsAfterTable: [
+          'With SavoryOps intelligent routing, a waiter punches food and cocktails simultaneously. The system executes split-second routing: the bar receives the drink BOT immediately so guests enjoy refreshments within minutes, while the kitchen receives the KOT paced for course firing.'
+        ]
+      },
+      {
+        id: 'paper-vs-digital-kot',
+        heading: '6. Paper KOT vs Digital KOT Systems (Apps & KDS): Why Kitchens are Upgrading',
+        paragraphs: [
+          'While traditional thermal paper rolls are familiar, physical tickets introduce severe bottlenecks during high-volume rushes. Paper tickets fall behind fryers, absorb cooking grease, fade under overhead heat lamps, and cannot communicate prep progress back to dining room servers.',
+          'Modern restaurants are rapidly adopting <strong>Digital KOT software</strong> and interactive <strong>Kitchen Display Systems (KDS)</strong> running on ruggedized commercial screens or affordable Android/iPad tablets.'
+        ],
+        bulletPoints: [
+          '<strong>Zero Lost or Smudged Slips:</strong> Digital tickets are stored securely on local and cloud servers—tickets can never be misplaced or soaked in sauce.',
+          '<strong>Dynamic Color-Coded Timers:</strong> Tickets transition from green to amber and flashing red as elapsed cooking time exceeds target preparation thresholds.',
+          '<strong>Item Consolidation / Summary View:</strong> Line cooks can see at a glance that 12 tables currently require "Crispy Calamari", enabling batch prep and eliminating line bottlenecks.',
+          '<strong>Hands-Free Bump Bars & One-Tap Updates:</strong> Cooks bump completed dishes with a single tap, notifying floor captains instantly that Table 14 is ready to run.',
+          '<strong>Paper Roll Cost Savings:</strong> Eliminating thousands of thermal paper rolls saves restaurants hundreds of dollars per station annually while supporting eco-friendly green initiatives.'
+        ]
+      },
+      {
+        id: 'kot-roles-and-expediter',
+        heading: '7. KOT Roles & Responsibilities: From Waitstaff to KOT Manager (Expediter)',
+        paragraphs: [
+          'Smooth ticket execution requires coordinated teamwork across front-of-house and back-of-house roles. Each position has distinct operational responsibilities in the KOT lifecycle:'
+        ],
+        bulletPoints: [
+          '<strong>Waitstaff / Floor Captain:</strong> Accurately captures guest preferences, inputs dietary modifiers, sequences courses, and fires tickets promptly without batch-punching.',
+          '<strong>KOT Manager / Expediter (Pass Master):</strong> The central air-traffic controller of the kitchen pass. The KOT manager monitors ticket pacing, coordinates line cook timing so all table items finish simultaneously, and inspects plate presentations before release.',
+          '<strong>Station Line Cooks:</strong> Focus on executing their dedicated station items (grill, sauté, cold larder) according to ticket notes and bumping items upon completion.',
+          '<strong>Restaurant Cashier / GM:</strong> Reconciles all cumulative KOT numbers against the final settled guest check, verifying that every dish leaving the pass was properly billed.'
         ]
       },
       {
         id: 'the-void-kot-problem',
-        heading: 'Eliminating Revenue Leakage: Managing Void KOTs',
+        heading: '8. Managing Void KOTs: Preventing Theft & Revenue Leakage in Restaurants',
         paragraphs: [
-          'One of the largest sources of restaurant shrinkage and internal theft is unmonitored ticket cancellations. In poorly configured systems, dishonest staff can punch an order, allow the kitchen to cook the food, serve the guest, collect cash, and subsequently delete or void the ticket to pocket the payment.',
-          'SavoryOps prevents this with strict PIN-authorized Void KOT protocols. If an order has already been fired to the kitchen, canceling an item requires manager override credentials and mandatory reason logging (e.g., "Guest changed mind", "Kitchen out of stock", "Accidental punch"). Every void generates an automatic audit event and updates <a href="/solutions/restaurant-inventory-management">ingredient-level inventory control</a> accordingly.'
+          'Unmonitored ticket cancellations represent one of the single largest sources of internal theft and shrinkage in restaurants. In traditional or poorly controlled setups, unscrupulous staff can punch an order, allow the kitchen to cook and serve the food, collect cash from the guest, and then delete or void the ticket to pocket the payment.',
+          'SavoryOps stops this revenue leakage with strict <strong>PIN-authorized Void KOT protocols</strong>. Once an order has been transmitted to kitchen printers or KDS screens, removing an item requires manager credentials and mandatory reason logging (e.g., "Guest changed mind", "Kitchen 86 stockout", "Accidental punch"). Every void generates a tamper-proof audit log and immediately recalibrates <a href="/solutions/restaurant-inventory-management">recipe ingredient stock balances</a>.'
         ]
       },
       {
         id: 'savoryops-smart-kot',
-        heading: 'Streamlining Back-of-House with SavoryOps Smart KOT',
+        heading: '9. Streamlining Back-of-House with SavoryOps Smart KOT & KDS Software',
         paragraphs: [
-          'SavoryOps was engineered with a native, enterprise-grade <a href="/features/kot-system">smart KOT system</a> that runs seamlessly on both thermal kitchen printers and modern interactive KDS screens. Enjoy instant course firing, table-wise cumulative billing, split-station routing, and automated stock deduction with <a href="/pricing">transparent $0 setup pricing</a>.',
-          'Discover how thousands of restaurants streamline ticket pacing and delight guests with SavoryOps today.'
+          'SavoryOps was built from the ground up to solve kitchen bottlenecks with an enterprise-grade <a href="/features/kot-system">smart KOT system</a> tailored for single-location eateries, busy bars, and multi-branch restaurant chains alike.',
+          'Enjoy seamless mobile tableside ordering, hybrid printing (simultaneous thermal tickets and interactive KDS screens), split-station KOT/BOT routing, and automated recipe inventory depletion—all backed by our <a href="/pricing">transparent $0 setup pricing</a>.'
+        ],
+        bulletPoints: [
+          'Runs on any hardware: Android tablets, iPad, Windows touchscreen POS, or Epson/Star thermal printers.',
+          'Sub-second network sync ensures tickets reach chefs instantly even during peak dinner volume.',
+          'Integrated course firing controls let servers hold entrées and release them with one tap.',
+          'Automatic recipe-level inventory deductions keep food costs accurate down to the gram.'
         ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'What does KOT stand for in a restaurant?',
+        answer: 'KOT stands for Kitchen Order Ticket. It is an operational slip generated by a restaurant Point of Sale (POS) system or written by waitstaff to instruct culinary chefs on what dishes to prepare for a specific dining table.'
+      },
+      {
+        question: 'What is the difference between KOT and BOT?',
+        answer: 'A Kitchen Order Ticket (KOT) is sent to kitchen prep stations for food preparation (grill, salad, hot line), whereas a Bar Order Ticket (BOT) is sent to the bar or beverage dispense counter for wine, beer, and cocktails. Both tickets sync under the same table number for unified billing.'
+      },
+      {
+        question: 'What is a digital KOT system in restaurant operations?',
+        answer: 'A digital KOT system replaces traditional paper slips with electronic order routing. Orders taken on handheld waiter apps or POS terminals transmit instantly to Kitchen Display Systems (KDS) touchscreens with color-coded timers, item consolidation, and one-tap order bumping.'
+      },
+      {
+        question: 'What is a Void KOT and why is manager authorization necessary?',
+        answer: 'A Void KOT is a record created when an item that was already fired to the kitchen is cancelled. Requiring manager PIN authorization prevents internal theft (e.g., staff serving food, collecting cash, and deleting the ticket) and keeps inventory stock counts accurate.'
+      },
+      {
+        question: 'What does QOT mean in a restaurant?',
+        answer: 'In restaurant operations, "QOT" is a common phonetic misspelling or shorthand used by floor staff for KOT (Kitchen Order Ticket). There is no official separate document named QOT in hospitality management.'
+      },
+      {
+        question: 'What key details are included on a Kitchen Order Ticket?',
+        answer: 'A standard KOT contains the table number, KOT serial number, date and timestamp, server name, guest count (PAX), dish names, portion quantities, course sequence (starter/main/dessert), and cooking modifiers (such as allergy alerts or spice levels).'
+      },
+      {
+        question: 'What is the role of a KOT manager or pass expediter?',
+        answer: 'A KOT manager or kitchen expediter (aboyeur) oversees the kitchen pass. They track ticket preparation times across stations, ensure all items for a table finish at the same time, inspect plate quality and garnishes, and coordinate food runners for fast delivery.'
+      },
+      {
+        question: 'Can SavoryOps KOT system work on mobile tablets and thermal printers?',
+        answer: 'Yes. SavoryOps supports hybrid workflows. You can route orders to interactive touchscreen Kitchen Display Systems (Android/iPad/Windows) and simultaneous thermal kitchen receipt printers (LAN, Wi-Fi, or Bluetooth) based on your kitchen layout.'
       }
     ]
   },
