@@ -12,6 +12,7 @@ const staticRoutes = [
   '/features',
   '/why-savoryops',
   '/pricing',
+  '/white-label',
   '/upcoming-features',
   '/about-us',
   '/faq',
@@ -35,6 +36,7 @@ function getRouteMetadata(route) {
   if (
     route === '/features' ||
     route === '/pricing' ||
+    route === '/white-label' ||
     route.startsWith('/solutions') ||
     route.startsWith('/alternatives')
   ) {

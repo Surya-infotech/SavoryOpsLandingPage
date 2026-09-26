@@ -129,6 +129,7 @@ const Footer = () => {
 
   const companyLinks = [
     { name: `Why ${softwareName || 'SavoryOps'}`, icon: <StarIcon />, href: '/why-savoryops' },
+    { name: 'White Label License', icon: <BusinessIcon />, href: '/white-label' },
     { name: 'About Us', icon: <InfoOutlinedIcon />, href: '/about-us' },
     { name: 'Blog & Articles', icon: <MenuBookIcon />, href: '/blog' },
     { name: 'Subscription Plans', icon: <AttachMoneyIcon />, href: '/pricing' },
@@ -139,6 +140,7 @@ const Footer = () => {
 
   const solutionsAndGuides = [
     { name: 'Restaurant POS System', href: '/solutions/restaurant-pos-system' },
+    { name: 'White Label License', href: '/white-label' },
     { name: 'Kitchen Order Ticket (KOT)', href: '/solutions/kitchen-order-ticket-system' },
     { name: 'Kitchen Display System', href: '/solutions/kitchen-display-system' },
     { name: 'Inventory Management', href: '/solutions/restaurant-inventory-management' },

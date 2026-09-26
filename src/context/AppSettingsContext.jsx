@@ -3,17 +3,17 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 const AppSettingsContext = createContext(null);
 
 const emptyGeneralSetting = {
-  description: '',
-  email: '',
-  phone: '',
-  version: '',
-  copyright: '',
-  maintainedby: '',
+  description: 'SavoryOps is an all-in-one, cloud-based system to streamline multi-location restaurant operations.',
+  email: 'info@savoryops.com',
+  phone: '+91 7621908664',
+  version: '3.1.0',
+  copyright: '@2026 All Rights reserved',
+  maintainedby: 'SavoryOps',
   address: '',
-  cityname: '',
-  statename: '',
-  countryname: '',
-  postalcode: '',
+  cityname: 'Surat',
+  statename: 'Gujarat',
+  countryname: 'India',
+  postalcode: '394107',
   softwarename: 'SavoryOps',
 };
 

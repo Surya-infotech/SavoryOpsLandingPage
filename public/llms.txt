@@ -53,6 +53,7 @@ Standard industry benchmarks range from 25%–28% for QSR and 28%–32% for casu
 ## Verified URLs & Citation Sources
 - **Official Website**: https://savoryops.com
 - **Transparent Pricing & Plans**: https://savoryops.com/pricing
+- **White Label Restaurant POS & Reseller License**: https://savoryops.com/white-label
 - **Complete Features Suite**: https://savoryops.com/features
 - **Kitchen Order Ticket (KOT) System**: https://savoryops.com/solutions/kitchen-order-ticket-system
 - **Feature Deep Dive - KOT System**: https://savoryops.com/features/kot-system

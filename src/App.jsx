@@ -23,6 +23,7 @@ import WhySavoryOps from './pages/WhySavoryOps';
 import BlogPage from './pages/BlogPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 import SEOLandingPage from './pages/seo/SEOLandingPage';
+import WhiteLabelLicense from './pages/WhiteLabelLicense';
 import './styles/main.scss';
 
 /** Short ease-out scroll on route change so the new page starts near the top without a long animation. */
@@ -118,6 +119,8 @@ const AppContent = () => {
         <Route path="/why-savoryops" element={<WhySavoryOps />} />
         <Route path="/why-us" element={<WhySavoryOps />} />
         <Route path="/pricing" element={<Pricing />} />
+        <Route path="/white-label" element={<WhiteLabelLicense />} />
+        <Route path="/white-label-license" element={<Navigate to="/white-label" replace />} />
         <Route path="/upcoming-features" element={<UpcomingFeatures />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/about" element={<AboutUs />} />

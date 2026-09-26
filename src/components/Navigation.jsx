@@ -203,6 +203,14 @@ const Navigation = () => {
           icon: <CalculateIcon fontSize="small" />,
           badge: 'Free Tool',
           badgeColor: '#7c3aed'
+        },
+        {
+          text: 'White Label License',
+          description: 'Rebrand POS with your logo, custom domain & keep 100% profit',
+          path: '/white-label',
+          icon: <SecurityIcon fontSize="small" />,
+          badge: 'Reseller',
+          badgeColor: '#8b5cf6'
         }
       ]
     }
@@ -220,6 +228,7 @@ const Navigation = () => {
   ];
 
   const moreMenuItems = [
+    { text: 'White Label License', path: '/white-label', icon: <SecurityIcon fontSize="small" /> },
     { text: 'About Us', path: '/about-us', icon: <InfoOutlinedIcon fontSize="small" /> },
     { text: 'FAQ', path: '/faq', icon: <HelpOutlineIcon fontSize="small" /> },
     { text: 'Contact Us', path: '/contact-us', icon: <SupportAgentIcon fontSize="small" /> }
