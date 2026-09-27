@@ -725,34 +725,65 @@ ${formState.message || 'Interested in white label licensing, demo access, and cu
             ))}
           </div>
 
-          {/* Bespoke Customization Callout Banner */}
-          <div className="editorial-highlight-banner wl-custom-highlight-banner">
-            <div className="banner-icon-box">
-              <AutoAwesomeIcon sx={{ fontSize: 28 }} />
-            </div>
-            <div className="banner-text-box">
-              <h4>Need Custom Flows or Specialized Features? We Customize It For You!</h4>
-              <p>
-                Every hospitality enterprise has unique workflows. Beyond delivering our battle-tested source code and turnkey cloud setup, our core engineering team is available on-demand to customize existing flows (POS billing, KOT routing, tableside ordering, floor plans), integrate regional payment &amp; SMS gateways, or engineer bespoke modules tailored precisely to your business requirements.
-              </p>
+          {/* Bespoke Customization Feature Showcase Card */}
+          <div className="wl-custom-showcase-card">
+            <div className="showcase-grid">
+              {/* Left Column: Context, Pitch & CTA */}
+              <div className="showcase-left">
+                <div className="showcase-badge">
+                  <AutoAwesomeIcon sx={{ fontSize: 16 }} />
+                  <span>BESPOKE CUSTOMIZATION &amp; FLOW ADJUSTMENTS</span>
+                </div>
 
-              <div className="custom-highlights-pills">
-                <span className="custom-pill"><CheckCircleIcon sx={{ fontSize: 15 }} /> Custom Order &amp; Billing Workflows</span>
-                <span className="custom-pill"><CheckCircleIcon sx={{ fontSize: 15 }} /> Regional Payment &amp; SMS Gateways</span>
-                <span className="custom-pill"><CheckCircleIcon sx={{ fontSize: 15 }} /> Tailored UI/UX Themes &amp; Branding</span>
-                <span className="custom-pill"><CheckCircleIcon sx={{ fontSize: 15 }} /> Third-Party API &amp; ERP Integrations</span>
-                <span className="custom-pill"><CheckCircleIcon sx={{ fontSize: 15 }} /> Specialized Multi-Branch BI Reporting</span>
+                <h3 className="showcase-title">
+                  Need Custom Flows or Specialized Features?{' '}
+                  <span className="highlight-text">We Customize It For You!</span>
+                </h3>
+
+                <p className="showcase-desc">
+                  Every hospitality enterprise has unique workflows. Beyond delivering our battle-tested source code and turnkey cloud setup, our core engineering team is available on-demand to customize existing flows (POS billing, KOT routing, tableside ordering, floor plans), integrate regional payment &amp; SMS gateways, or engineer bespoke modules tailored precisely to your business requirements.
+                </p>
+
+                <Button
+                  variant="contained"
+                  className="showcase-cta-btn"
+                  onClick={scrollToForm}
+                  endIcon={<ArrowForwardIcon />}
+                >
+                  Discuss Custom Requirements
+                </Button>
+              </div>
+
+              {/* Right Column: 5 Capabilities Showcase Matrix */}
+              <div className="showcase-right">
+                <div className="capabilities-header">
+                  <span className="capabilities-label">TAILORED CAPABILITIES INCLUDED:</span>
+                </div>
+
+                <div className="capabilities-list">
+                  <div className="capability-item">
+                    <CheckCircleIcon className="check-icon" />
+                    <span>Custom Order &amp; Billing Workflows</span>
+                  </div>
+                  <div className="capability-item">
+                    <CheckCircleIcon className="check-icon" />
+                    <span>Regional Payment &amp; SMS Gateways</span>
+                  </div>
+                  <div className="capability-item">
+                    <CheckCircleIcon className="check-icon" />
+                    <span>Tailored UI/UX Themes &amp; Branding</span>
+                  </div>
+                  <div className="capability-item">
+                    <CheckCircleIcon className="check-icon" />
+                    <span>Third-Party API &amp; ERP Integrations</span>
+                  </div>
+                  <div className="capability-item highlight-item">
+                    <CheckCircleIcon className="check-icon" />
+                    <span>Specialized Multi-Branch BI Reporting</span>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <Button
-              variant="contained"
-              className="banner-cta-btn"
-              onClick={scrollToForm}
-              endIcon={<ArrowForwardIcon />}
-            >
-              Discuss Custom Requirements
-            </Button>
           </div>
         </Container>
       </Box>
