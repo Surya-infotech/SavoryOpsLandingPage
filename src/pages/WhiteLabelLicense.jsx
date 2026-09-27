@@ -67,7 +67,7 @@ const WhiteLabelLicense = () => {
     email: '',
     phone: '',
     companyName: '',
-    licenseModel: 'Dedicated Cloud Instance',
+    licenseModel: 'Source Code + Complete Cloud Setup by Us',
     timeline: 'Within 30 Days',
     message: ''
   });
@@ -239,61 +239,46 @@ ${formState.message || 'Interested in white label licensing, demo access, and cu
   // License Tiers
   const licenseTiers = [
     {
-      name: 'Turnkey Cloud Partner',
+      name: 'Full Source Code License',
       badge: null,
       highlighted: false,
-      desc: 'Ideal for marketing agencies, merchant ISOs, and consultants seeking a fully managed SaaS platform without server maintenance.',
-      priceLabel: 'Turnkey SaaS Model',
-      priceVal: 'Managed Cloud',
-      priceSub: 'Zero DevOps, high-availability AWS hosting included',
+      desc: 'Acquire the complete uncompiled source code with perpetual white label licensing rights. Your engineering team is responsible for server setup, environment configuration, and cloud deployment.',
+      priceLabel: 'Perpetual White Label License',
+      priceVal: 'Source Code Only',
+      priceSub: 'Full source code delivered; you handle server setup & cloud deployment',
       features: [
-        'Complete White Label Rebranding (Logo & Colors)',
-        'Custom Domain & SSL (pos.yourbrand.com)',
-        'Multi-Tenant Reseller Super Admin Dashboard',
-        'Custom Client Subscription Pricing (Keep 100% MRR)',
-        'Automated Daily Backups & Cloud Maintenance',
-        'Ongoing Software Updates & Security Patches',
-        'Email & Helpdesk Technical Support'
+        'Complete Source Code for All 5 Platforms (Admin Panel, Owner Panel, Landing Page, User App, Employee App)',
+        'Complete Backend Node.js RESTful API & Microservices Codebase',
+        'Complete React Native (iOS & Android) Mobile App Repositories',
+        'Full Database Schemas (PostgreSQL & MongoDB) & Data Migration Scripts',
+        '100% White Label Rights (Rebrand under your corporate identity & logo)',
+        'Perpetual IP Ownership: Modify and resell without recurring royalties',
+        'Customer-Managed Cloud Setup: You deploy on your own servers (Docker/AWS/VPS)',
+        'Step-by-Step Architecture, Environment & Deployment Guides Provided',
+        'Bespoke Flow Customization: Available to customize existing flows to your requirements'
       ],
-      ctaText: 'Inquire About Turnkey Model'
+      ctaText: 'Inquire About Source Code License'
     },
     {
-      name: 'Dedicated Cloud Instance',
-      badge: 'Most Popular',
+      name: 'Source Code + Cloud Setup',
+      badge: 'Most Popular / Turnkey',
       highlighted: true,
-      desc: 'Deploy the entire multi-tenant stack onto your own cloud infrastructure (AWS, DigitalOcean, or GCP) with dedicated database isolation.',
-      priceLabel: 'Dedicated Infrastructure',
-      priceVal: 'Private Cluster',
-      priceSub: 'Full database isolation and custom server control',
+      desc: 'Acquire the complete white label source code with end-to-end setup handled by our senior engineering team directly on your cloud infrastructure (AWS, DigitalOcean, GCP, or VPS).',
+      priceLabel: 'Turnkey Deployment Package',
+      priceVal: 'Source Code + Setup',
+      priceSub: 'Full source code + we set up and launch everything on your cloud server',
       features: [
-        'Everything in Turnkey Cloud Partner',
-        'Deployed to Your Own AWS / Cloud Account',
-        'Complete Database Isolation & Direct DB Access',
-        'Custom Android & iOS App Compilation (Your Store)',
-        'Custom Domain for Every Tenant Restaurant',
-        'Custom Payment Gateway & SMS Provider Integrations',
-        'Priority Technical Support & DevOps Setup Assistance'
+        'Everything included in the Full Source Code License Plan',
+        'Complete End-to-End Server Setup on Your Cloud (AWS, GCP, DigitalOcean, or VPS)',
+        'Custom Domain DNS Configuration & Auto-Renewing SSL Certificates',
+        'Full Database Setup, Schema Migration & Automated Cloud Backup Configuration',
+        'Payment Gateway (Stripe, Razorpay, etc.) & Custom SMTP Email Setup',
+        'Custom iOS & Android Mobile App Compilation with your Package IDs & Icons',
+        'White-Labeled Reseller Super Admin Portal Ready for Immediate Onboarding',
+        'Architect-Level Code Walkthrough & 30 Days of Dedicated DevOps Support',
+        'Bespoke Flow Customization: Available to customize existing flows to your requirements'
       ],
-      ctaText: 'Request Dedicated Cloud Demo'
-    },
-    {
-      name: 'Enterprise Full Source Code',
-      badge: 'Complete IP Rights',
-      highlighted: false,
-      desc: 'Acquire complete, perpetual intellectual property and source code access to modify, re-architect, and build bespoke proprietary solutions.',
-      priceLabel: 'Perpetual IP License',
-      priceVal: 'Full Source Code',
-      priceSub: 'Frontend, Backend, and Mobile App Repositories',
-      features: [
-        'Complete React Web App & POS Source Code',
-        'Complete Backend API & Microservices Codebase',
-        'Complete React Native (Expo) Mobile App Repositories',
-        'Full Database Schemas & Migration Scripts',
-        'Perpetual Rights to Modify & Resell Without Royalties',
-        'Architect-Level Code Walkthrough & Onboarding',
-        'Zero Per-Tenant or Recurring Licensing Fees'
-      ],
-      ctaText: 'Inquire About Source Code IP'
+      ctaText: 'Request Source Code + Setup Plan'
     }
   ];
 
@@ -326,7 +311,7 @@ ${formState.message || 'Interested in white label licensing, demo access, and cu
     {
       step: '01',
       title: 'Select Your License Model',
-      description: 'Choose between Turnkey Managed Cloud, Dedicated Private Cloud, or Full Source Code IP license based on your business vision.'
+      description: 'Choose between Full Source Code (self-hosted setup) or Source Code + Complete Cloud Setup by our senior engineering team.'
     },
     {
       step: '02',
@@ -335,8 +320,8 @@ ${formState.message || 'Interested in white label licensing, demo access, and cu
     },
     {
       step: '03',
-      title: 'Compilation & Gateway Config',
-      description: 'We brand the web applications, build your mobile APKs/IPAs, connect your merchant payment gateways, and provision your admin panel.'
+      title: 'Server Setup & App Compilation',
+      description: 'Receive full source code repositories or let us deploy the stack on your cloud server, build your mobile apps, configure DNS/SSL, and customize any flows.'
     },
     {
       step: '04',
@@ -694,13 +679,13 @@ ${formState.message || 'Interested in white label licensing, demo access, and cu
           <Box className="section-badge-header">
             <div className="pill-badge">
               <StarIcon sx={{ fontSize: 16 }} />
-              <span>FLEXIBLE LICENSE MODELS</span>
+              <span>WHITE LABEL LICENSE OPTIONS</span>
             </div>
             <Typography variant="h2" className="main-section-title">
-              Choose the Partnership Model That Fits Your Vision
+              Choose Your White Label Source Code Model
             </Typography>
             <Typography variant="body1" className="main-section-subtitle">
-              From turnkey managed cloud SaaS to private cloud clusters and full intellectual property source code transfer.
+              Acquire 100% intellectual property ownership with full source code. Choose self-deployment or let our senior engineering team set up and launch everything on your cloud server.
             </Typography>
           </Box>
 
@@ -738,6 +723,36 @@ ${formState.message || 'Interested in white label licensing, demo access, and cu
                 </Button>
               </div>
             ))}
+          </div>
+
+          {/* Bespoke Customization Callout Banner */}
+          <div className="editorial-highlight-banner wl-custom-highlight-banner">
+            <div className="banner-icon-box">
+              <AutoAwesomeIcon sx={{ fontSize: 28 }} />
+            </div>
+            <div className="banner-text-box">
+              <h4>Need Custom Flows or Specialized Features? We Customize It For You!</h4>
+              <p>
+                Every hospitality enterprise has unique workflows. Beyond delivering our battle-tested source code and turnkey cloud setup, our core engineering team is available on-demand to customize existing flows (POS billing, KOT routing, tableside ordering, floor plans), integrate regional payment &amp; SMS gateways, or engineer bespoke modules tailored precisely to your business requirements.
+              </p>
+
+              <div className="custom-highlights-pills">
+                <span className="custom-pill"><CheckCircleIcon sx={{ fontSize: 15 }} /> Custom Order &amp; Billing Workflows</span>
+                <span className="custom-pill"><CheckCircleIcon sx={{ fontSize: 15 }} /> Regional Payment &amp; SMS Gateways</span>
+                <span className="custom-pill"><CheckCircleIcon sx={{ fontSize: 15 }} /> Tailored UI/UX Themes &amp; Branding</span>
+                <span className="custom-pill"><CheckCircleIcon sx={{ fontSize: 15 }} /> Third-Party API &amp; ERP Integrations</span>
+                <span className="custom-pill"><CheckCircleIcon sx={{ fontSize: 15 }} /> Specialized Multi-Branch BI Reporting</span>
+              </div>
+            </div>
+
+            <Button
+              variant="contained"
+              className="banner-cta-btn"
+              onClick={scrollToForm}
+              endIcon={<ArrowForwardIcon />}
+            >
+              Discuss Custom Requirements
+            </Button>
           </div>
         </Container>
       </Box>
@@ -1121,7 +1136,7 @@ ${formState.message || 'Interested in white label licensing, demo access, and cu
                         email: '',
                         phone: '',
                         companyName: '',
-                        licenseModel: 'Dedicated Cloud Instance',
+                        licenseModel: 'Source Code + Complete Cloud Setup by Us',
                         timeline: 'Within 30 Days',
                         message: ''
                       });
@@ -1194,10 +1209,18 @@ ${formState.message || 'Interested in white label licensing, demo access, and cu
                       size="small"
                       fullWidth
                     >
-                      <MenuItem value="Turnkey Cloud Partner">Turnkey Managed Cloud Partner</MenuItem>
-                      <MenuItem value="Dedicated Cloud Instance">Dedicated Private Cloud Instance</MenuItem>
-                      <MenuItem value="Enterprise Full Source Code">Enterprise Full Source Code IP</MenuItem>
-                      <MenuItem value="Undecided / Need Consultation">Undecided / Need Consultation</MenuItem>
+                      <MenuItem value="Source Code & White Label License (Self-Setup)">
+                        Full Source Code License (Self-Setup)
+                      </MenuItem>
+                      <MenuItem value="Source Code + Complete Cloud Setup by Us">
+                        Source Code + Complete Cloud Setup by Us (Turnkey)
+                      </MenuItem>
+                      <MenuItem value="Custom Flow & Feature Customization">
+                        Custom Flow &amp; Feature Customization
+                      </MenuItem>
+                      <MenuItem value="Undecided / Need Consultation">
+                        Undecided / Need Consultation
+                      </MenuItem>
                     </TextField>
 
                     <TextField

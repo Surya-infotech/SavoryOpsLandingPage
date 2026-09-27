@@ -9,10 +9,10 @@
 
     .wl-tiers-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
       align-items: stretch;
-      max-width: 1200px;
+      max-width: 1040px;
       margin: 0 auto;
     }
 
@@ -54,24 +54,29 @@
       }
 
       .tier-name {
-        font-size: 1.45rem;
+        font-size: 1.55rem;
         font-weight: 800;
         color: #0f172a;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
+        line-height: 1.25;
+        min-height: 38px;
+        display: flex;
+        align-items: center;
       }
 
       .tier-desc {
         font-size: 0.95rem;
         color: #64748b;
-        line-height: 1.55;
+        line-height: 1.6;
         margin-bottom: 24px;
-        min-height: 48px;
+        min-height: 72px;
       }
 
       .tier-price-box {
         margin-bottom: 24px;
         padding-bottom: 20px;
         border-bottom: 1px solid #f1f5f9;
+        min-height: 110px;
 
         .price-label {
           font-size: 0.775rem;
@@ -83,9 +88,10 @@
         }
 
         .price-val {
-          font-size: 2rem;
+          font-size: 2.1rem;
           font-weight: 800;
           color: #0f172a;
+          line-height: 1.2;
           background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
           -webkit-background-clip: text;
           background-clip: text;
@@ -95,7 +101,8 @@
         .price-sub {
           font-size: 0.85rem;
           color: #64748b;
-          margin-top: 4px;
+          margin-top: 6px;
+          line-height: 1.45;
         }
       }
 
@@ -153,6 +160,105 @@
             background: #f0fdf4;
             transform: translateY(-2px);
           }
+        }
+      }
+    }
+
+    // Bespoke Customization Banner (Matching .editorial-highlight-banner & .comparison-summary-card)
+    .wl-custom-highlight-banner {
+      margin-top: 40px;
+      max-width: 1040px;
+      margin-left: auto;
+      margin-right: auto;
+      background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+      border: 1px solid #bbf7d0;
+      border-radius: 20px;
+      padding: 30px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      box-shadow: 0 10px 30px rgba(6, 95, 70, 0.04);
+      flex-wrap: wrap;
+
+      @media (max-width: 768px) {
+        padding: 24px 20px;
+      }
+
+      .banner-icon-box {
+        width: 54px;
+        height: 54px;
+        border-radius: 14px;
+        background: #028802;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .banner-text-box {
+        flex: 1;
+        min-width: 280px;
+
+        h4 {
+          font-size: 1.25rem;
+          font-weight: 800;
+          color: #065f46;
+          margin-bottom: 6px;
+          line-height: 1.35;
+        }
+
+        p {
+          font-size: 0.935rem;
+          color: #047857;
+          margin: 0;
+          line-height: 1.6;
+        }
+
+        .custom-highlights-pills {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin-top: 14px;
+
+          .custom-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #ffffff;
+            border: 1px solid #86efac;
+            border-radius: 50px;
+            padding: 4px 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #065f46;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+
+            svg {
+              font-size: 14px;
+              color: #028802;
+            }
+          }
+        }
+      }
+
+      .banner-cta-btn {
+        background: #028802;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 0.95rem;
+        border-radius: 50px;
+        padding: 12px 28px;
+        text-transform: none;
+        box-shadow: 0 4px 14px rgba(2, 136, 2, 0.25);
+        white-space: nowrap;
+        transition: all 0.25s ease;
+
+        &:hover {
+          background: #026602;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 18px rgba(2, 136, 2, 0.35);
         }
       }
     }
