@@ -156,7 +156,7 @@ ${formState.message || 'Interested in white label licensing, demo access, and cu
   const metrics = [
     { value: '100%', label: 'Kept Revenue & Direct Client Billing' },
     { value: '< 48 hrs', label: 'Rapid Turnaround & Custom DNS Setup' },
-    { value: '5 Apps & Portals', label: 'Admin Panel, Owner Panel, Landing Page, User App, Employee App' },
+    { value: '5 Platforms', label: 'Admin Panel, Owner Panel, Landing Page, User App, Employee App' },
     { value: '$0', label: 'Per-Transaction Surcharges from Us' }
   ];
 
