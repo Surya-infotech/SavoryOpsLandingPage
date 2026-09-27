@@ -14,8 +14,8 @@ import {
   Storefront as StorefrontIcon,
   PhoneIphone as PhoneIphoneIcon,
   QrCodeScanner as QrCodeScannerIcon,
-  CloudQueue as CloudQueueIcon,
   Language as LanguageIcon,
+  AdminPanelSettings as AdminPanelSettingsIcon,
   CheckCircle as CheckCircleIcon,
   ArrowForward as ArrowForwardIcon,
   Badge as BadgeIcon,
@@ -28,12 +28,37 @@ import '../../styles/components/system-ecosystem.scss';
 
 const SYSTEM_MODULES = [
   {
+    id: 'admin-panel',
+    name: 'SaaS Master Admin Panel',
+    tabLabel: 'Admin Panel',
+    badge: 'Master Control & Governance',
+    icon: <AdminPanelSettingsIcon />,
+    targetRoles: ['SaaS Super Admins', 'Platform Owners', 'Reseller Partners', 'System Operators'],
+    headline: 'Centralized Multi-Tenant SaaS Administration & Store Provisioning',
+    description:
+      'The master control center for your entire white-label SaaS business. Onboard new restaurants in seconds, manage customer subscription tiers, configure custom domain DNS mappings, monitor system health, and track 100% of your recurring MRR.',
+    keyCapabilities: [
+      'Multi-Tenant Restaurant Onboarding & Instant Store Provisioning',
+      'Subscription Plan Builder & Custom Billing (Keep 100% of Software MRR)',
+      'Custom Domain DNS Management with Automated SSL Provisioning',
+      'Platform-Wide Analytics: Active Venues, Recurring Revenue & License Expiries',
+      'Granular Feature Flag Toggling & Modular Add-on Controls',
+      'Reseller Sub-Account Hierarchy & Commission Governance',
+      'System Audit Logs, Database Health & Global Service Monitoring'
+    ],
+    primaryLink: '/white-label',
+    primaryLinkText: 'Explore Admin Panel',
+    secondaryLink: '/pricing',
+    secondaryLinkText: 'Subscription Tiers',
+    image: '/images/features/reports-analytics.jpg'
+  },
+  {
     id: 'owner-web',
-    name: 'Owner Web Portal',
-    tabLabel: 'Owner Portal',
-    badge: 'Core Command Center',
+    name: 'Restaurant Owner Portal',
+    tabLabel: 'Owner Panel',
+    badge: 'Operations Command Center',
     icon: <StorefrontIcon />,
-    targetRoles: ['Restaurant Owners', 'General Managers', 'Accountants', 'Store Managers'],
+    targetRoles: ['Restaurant Owners', 'General Managers', 'F&B Directors', 'Store Accountants'],
     headline: 'Centralized Restaurant POS, Inventory BOM & Floor Management',
     description:
       'The primary command center for daily restaurant operations and multi-branch governance. Manage multi-channel POS billing, live KOT dispatch, visual dining floor plans, ingredient-level inventory, 30+ business intelligence reports, and real-time Profit & Loss accounting.',
@@ -53,10 +78,60 @@ const SYSTEM_MODULES = [
     image: '/images/features/pos-system.jpg'
   },
   {
+    id: 'landing-page',
+    name: 'Brand Marketing Landing Page',
+    tabLabel: 'Landing Page',
+    badge: 'High-Converting Web Presence',
+    icon: <LanguageIcon />,
+    targetRoles: ['Marketing Teams', 'Brand Managers', 'Growth Leads', 'Online Diners'],
+    headline: 'SEO-Optimized Landing Page, Online Ordering & Digital Reservations',
+    description:
+      'A turnkey public-facing marketing website engineered to attract diners and convert visitors into loyal customers. Complete with dynamic visual menus, direct commission-free online ordering, table reservations, and 11+ language localizations.',
+    keyCapabilities: [
+      '100% Brand Customization (Logos, Custom Colors, Hero Banners & Typography)',
+      'SEO-Optimized Architecture with High-Speed Lighthouse Performance',
+      'Direct Online Ordering & Visual Interactive Menu Showcase',
+      'Digital Table Reservation Engine with Instant Booking Confirmations',
+      '11 Pre-Integrated Languages with Flawless Arabic Right-to-Left (RTL) Layout',
+      'Lead Generation Forms, Contact Touchpoints & Customer Review Showcase',
+      'Multi-Currency Engine: Display Prices & Charge in USD, EUR, GBP, SAR, AED, INR'
+    ],
+    primaryLink: '/features/multiple-languages',
+    primaryLinkText: 'Explore Landing Page',
+    secondaryLink: '/features/qr-code-scanning',
+    secondaryLinkText: 'Online Ordering Flow',
+    image: '/images/hero-platform.jpg'
+  },
+  {
+    id: 'user-app',
+    name: 'Customer & User Mobile App',
+    tabLabel: 'User App',
+    badge: 'Diner Experience App',
+    icon: <QrCodeScannerIcon />,
+    targetRoles: ['In-House Diners', 'Takeout Guests', 'Delivery Customers', 'Loyalty Members'],
+    headline: 'Digital Menu Browsing, QR Table Ordering & Live Order Tracking',
+    description:
+      'Empower diners with contactless ordering, multi-channel pickup and delivery, advance table booking, and real-time step-by-step order progress tracking right from their smartphones.',
+    keyCapabilities: [
+      'QR Code Table Ordering: Scan dining table QR to view visual menu and order directly',
+      'Takeaway & Curbside Pickup: Schedule orders in advance for lightning-fast collection',
+      'Doorstep Delivery: Real-time address pin, saved addresses (Home, Work), and delivery instructions',
+      'Live 5-Stage Order Tracker: Placed → Preparing in Kitchen → Ready → On The Way → Delivered',
+      'Digital Table Booking: Pick preferred date, time slot, guest count, and seating area',
+      'Customer Reviews & Photo Feedback for dishes and dining ambiance',
+      '1-Click Rapid Reordering from past dining history'
+    ],
+    primaryLink: '/features/customer-mobile-app',
+    primaryLinkText: 'User App Details',
+    secondaryLink: '/features/qr-code-scanning',
+    secondaryLinkText: 'QR Ordering System',
+    image: '/images/features/qr-ordering.jpg'
+  },
+  {
     id: 'employee-app',
-    name: '6-in-1 Employee App',
+    name: '6-in-1 Staff & Employee Mobile App',
     tabLabel: 'Employee App',
-    badge: 'Zero Learning Curve',
+    badge: 'Multi-Role Staff Terminal',
     icon: <PhoneIphoneIcon />,
     targetRoles: ['Waiters', 'Cashiers', 'Line Chefs', 'Head Chefs', 'Hosts', 'Delivery Drivers'],
     headline: 'Single Adaptive Mobile App with 6 Dynamically Morphing Roles',
@@ -71,83 +146,10 @@ const SYSTEM_MODULES = [
       'Delivery Driver Mode: Assigned delivery queue, customer calling, GPS routing & doorstep completion'
     ],
     primaryLink: '/features/employee-mobile-app',
-    primaryLinkText: 'Explore 6-in-1 App',
+    primaryLinkText: 'Explore Employee App',
     secondaryLink: '/features/kot-system',
     secondaryLinkText: 'KOT & Kitchen Flow',
     image: '/images/features/waiter-mobile-pos.jpg'
-  },
-  {
-    id: 'customer-app',
-    name: 'Customer Mobile App',
-    tabLabel: 'Customer App',
-    badge: 'Diner Experience',
-    icon: <QrCodeScannerIcon />,
-    targetRoles: ['In-House Diners', 'Takeout Guests', 'Delivery Customers'],
-    headline: 'Digital Menu Browsing, QR Table Ordering & Live Order Tracking',
-    description:
-      'Empower diners with contactless ordering, multi-channel pickup and delivery, advance table booking, and real-time step-by-step order progress tracking right from their smartphones.',
-    keyCapabilities: [
-      'QR Code Table Ordering: Scan dining table QR to view visual menu and order directly',
-      'Takeaway & Curbside Pickup: Schedule orders in advance for lightning-fast collection',
-      'Doorstep Delivery: Real-time address pin, saved addresses (Home, Work), and delivery instructions',
-      'Live 5-Stage Order Tracker: Placed → Preparing in Kitchen → Ready → On The Way → Delivered',
-      'Digital Table Booking: Pick preferred date, time slot, guest count, and seating area',
-      'Customer Reviews & Photo Feedback for dishes and dining ambiance',
-      '1-Click Rapid Reordering from past dining history'
-    ],
-    primaryLink: '/features/customer-mobile-app',
-    primaryLinkText: 'Customer App Details',
-    secondaryLink: '/features/qr-code-scanning',
-    secondaryLinkText: 'QR Ordering System',
-    image: '/images/features/qr-ordering.jpg'
-  },
-  {
-    id: 'backend-api',
-    name: 'Core Cloud Engine',
-    tabLabel: 'Cloud Engine',
-    badge: 'Enterprise Scalability',
-    icon: <CloudQueueIcon />,
-    targetRoles: ['Restaurant Owners', 'Multi-Branch Operators', 'General Managers'],
-    headline: 'Enterprise Multi-Tenant Cloud Architecture & Real-Time Sync',
-    description:
-      'The enterprise cloud infrastructure powering SavoryOps across all operations. Employs dedicated database isolation per tenant, bank-grade encryption, automated cloud backups, and microsecond data synchronization across all your branches.',
-    keyCapabilities: [
-      'Dedicated Database Isolation: Separate, secure database storage per restaurant brand',
-      'Role-Based Access Control (RBAC): Strict security isolating Owner, Manager, Employee, and Customer APIs',
-      'High-Speed Cloud Media Storage: Fast-loading visual menus and digital invoices with CDN delivery',
-      'Automated Domain Routing: Instant custom domain and branch subdomain provisioning with automated SSL',
-      'Multi-Tax Framework: Dynamic configuration for GST, VAT, Service Charges & regional taxes',
-      'High-Throughput Order Pipeline: Microsecond ticket dispatching between POS, KOT, and Mobile Apps'
-    ],
-    primaryLink: '/features/multi-tenant-architecture',
-    primaryLinkText: 'Backend Architecture',
-    secondaryLink: '/features/cloud-based-system',
-    secondaryLinkText: 'Cloud Infrastructure',
-    image: '/images/about/multi-branch.jpg'
-  },
-  {
-    id: 'marketing-platform',
-    name: 'Global Multi-Lingual Platform',
-    tabLabel: 'Global Platform',
-    badge: 'International Ready',
-    icon: <LanguageIcon />,
-    targetRoles: ['Global Restaurant Chains', 'Franchise Operators', 'Multi-Regional Brands'],
-    headline: 'Global Multi-Lingual Architecture with Native Arabic RTL Support',
-    description:
-      'Engineered for worldwide hospitality operators. Full localization into 11 languages with flawless Right-to-Left (RTL) Arabic layout, multi-currency support, and programmatic search engine optimization.',
-    keyCapabilities: [
-      '11 Pre-Integrated Languages including English, Arabic, Spanish, French, German, and more',
-      'Flawless Arabic Right-to-Left (RTL) layout rendering across all pages and components',
-      'Multi-Currency Engine: Display prices and collect transactions in USD, EUR, GBP, SAR, AED, INR',
-      'Programmatic SEO Cluster Architecture targeting POS alternatives and industry terms',
-      'Interactive ROI, Food Cost Variance Guides, and Hospitality Cost Calculators',
-      'Frictionless 14-Day Free Trial Onboarding Pipeline'
-    ],
-    primaryLink: '/features/multiple-languages',
-    primaryLinkText: 'Explore Localization',
-    secondaryLink: '/features/multiple-currency',
-    secondaryLinkText: 'Multi-Currency Support',
-    image: '/images/features/kitchen-display-system.jpg'
   }
 ];
 
@@ -203,7 +205,7 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
             }}
           >
             {subtitle ||
-              `${softwareName || 'SavoryOps'} delivers an all-inclusive ecosystem: Owner Web Portal, 2 native mobile apps, automated cloud core engine, and global multi-lingual infrastructure.`}
+              `${softwareName || 'SavoryOps'} delivers an all-inclusive ecosystem: Admin Panel, Owner Panel, Landing Page, User App, and Employee App.`}
           </Typography>
         </Box>
 

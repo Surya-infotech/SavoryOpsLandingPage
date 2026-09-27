@@ -156,7 +156,7 @@ ${formState.message || 'Interested in white label licensing, demo access, and cu
   const metrics = [
     { value: '100%', label: 'Kept Revenue & Direct Client Billing' },
     { value: '< 48 hrs', label: 'Rapid Turnaround & Custom DNS Setup' },
-    { value: '4+ Apps', label: 'Web POS, KDS, Waiter App, Customer App' },
+    { value: '5 Apps & Portals', label: 'Admin Panel, Owner Panel, Landing Page, User App, Employee App' },
     { value: '$0', label: 'Per-Transaction Surcharges from Us' }
   ];
 
@@ -646,10 +646,10 @@ ${formState.message || 'Interested in white label licensing, demo access, and cu
         </Container>
       </Box>
 
-      {/* 3. The 6 Core Applications You Get to Resell (Using the Site's SystemEcosystem Component) */}
+      {/* 3. The 5 Core Platforms You Get to Resell (Using the Site's SystemEcosystem Component) */}
       <SystemEcosystem
-        title="The 6 Core Applications You Get to Resell"
-        subtitle="Deliver an enterprise-grade multi-channel hospitality suite across desktop web, touch registers, kitchen monitors, and mobile apps."
+        title="The 5 Complete Platforms You Get to Resell"
+        subtitle="Deliver an enterprise-grade hospitality suite: SaaS Admin Panel, Restaurant Owner Panel, Brand Landing Page, Diner User App, and 6-in-1 Employee App."
         showBadge={true}
       />
 
