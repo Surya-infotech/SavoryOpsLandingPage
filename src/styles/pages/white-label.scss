@@ -19,38 +19,136 @@
 
     .wl-tier-card {
       background: #ffffff;
-      border: 1px solid #e2e8f0;
       border-radius: 24px;
-      padding: 36px 30px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+      padding: 36px 32px;
       position: relative;
       display: flex;
       flex-direction: column;
-      transition: all 0.3s ease;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
-      &:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
-        border-color: #cbd5e1;
+      @media (max-width: 768px) {
+        padding: 28px 20px;
+      }
+
+      &.standard {
+        border: 1px solid rgba(226, 232, 240, 0.95);
+        box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05);
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: #cbd5e1;
+          transition: background 0.25s ease;
+        }
+
+        &:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+          border-color: #94a3b8;
+
+          &::before {
+            background: var(--primary-color);
+          }
+
+          .card-top-bar .tier-icon-box {
+            transform: scale(1.06);
+          }
+        }
       }
 
       &.highlighted {
         border: 2px solid var(--primary-color);
-        box-shadow: 0 20px 50px color-mix(in srgb, var(--primary-color) 20%, transparent);
+        box-shadow: 0 16px 45px -8px rgba(16, 185, 129, 0.18), 0 4px 16px rgba(15, 23, 42, 0.04);
 
-        .popular-badge {
+        &::before {
+          content: '';
           position: absolute;
-          top: -15px;
-          right: 28px;
-          background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-          color: #ffffff;
-          font-size: 0.775rem;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: -50px;
+          right: -50px;
+          width: 200px;
+          height: 200px;
+          background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+          pointer-events: none;
+        }
+
+        &:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 24px 50px -10px rgba(16, 185, 129, 0.25), 0 8px 25px rgba(15, 23, 42, 0.06);
+
+          .card-top-bar .tier-icon-box {
+            transform: scale(1.06);
+          }
+        }
+      }
+
+      // Top bar with Icon and Category/Popular Badge
+      .card-top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        min-height: 46px;
+
+        .tier-icon-box {
+          width: 48px;
+          height: 48px;
+          border-radius: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          transition: transform 0.25s ease;
+
+          &.icon-standard {
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #e2e8f0;
+          }
+
+          &.icon-highlighted {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #ffffff;
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.28);
+          }
+        }
+
+        .tier-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 0.74rem;
           font-weight: 800;
           text-transform: uppercase;
           letter-spacing: 0.06em;
-          padding: 6px 18px;
+          padding: 6px 14px;
           border-radius: 50px;
-          box-shadow: 0 4px 14px color-mix(in srgb, var(--primary-color) 35%, transparent);
+
+          &.neutral {
+            background: #f8fafc;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+          }
+
+          &.popular {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+          }
         }
       }
 
@@ -58,7 +156,7 @@
         font-size: 1.55rem;
         font-weight: 800;
         color: #0f172a;
-        margin-bottom: 12px;
+        margin: 0 0 10px 0;
         line-height: 1.25;
         min-height: 38px;
         display: flex;
@@ -66,33 +164,59 @@
       }
 
       .tier-desc {
-        font-size: 0.95rem;
+        font-size: 0.935rem;
         color: #64748b;
         line-height: 1.6;
-        margin-bottom: 24px;
+        margin: 0 0 22px 0;
         min-height: 72px;
       }
 
       .tier-price-box {
+        border-radius: 16px;
+        padding: 18px 20px;
         margin-bottom: 24px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #f1f5f9;
-        min-height: 110px;
+        min-height: 116px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &.price-standard {
+          background: #f8fafc;
+          border: 1px solid #e2e8f0;
+        }
+
+        &.price-highlighted {
+          background: linear-gradient(145deg, #f0fdf4, #ecfdf5);
+          border: 1px solid #bbf7d0;
+          box-shadow: inset 0 1px 3px rgba(16, 185, 129, 0.06);
+        }
 
         .price-label {
-          font-size: 0.775rem;
-          font-weight: 700;
+          font-size: 0.74rem;
+          font-weight: 800;
           text-transform: uppercase;
-          letter-spacing: 0.06em;
-          color: #94a3b8;
+          letter-spacing: 0.08em;
+          color: #64748b;
           margin-bottom: 4px;
         }
 
         .price-val {
-          font-size: 2.1rem;
+          font-size: 1.85rem;
           font-weight: 800;
-          color: #0f172a;
           line-height: 1.2;
+          margin-bottom: 4px;
+          letter-spacing: -0.01em;
+
+          .price-standard & {
+            color: #0f172a;
+          }
+        }
+
+        &.price-standard .price-val {
+          color: #0f172a;
+        }
+
+        &.price-highlighted .price-val {
           background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
           -webkit-background-clip: text;
           background-clip: text;
@@ -100,55 +224,101 @@
         }
 
         .price-sub {
-          font-size: 0.85rem;
-          color: #64748b;
-          margin-top: 6px;
+          font-size: 0.84rem;
+          color: #475569;
           line-height: 1.45;
         }
       }
 
-      .tier-features {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 32px 0;
+      .features-container {
         flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 28px;
 
-        li {
-          display: flex;
-          align-items: flex-start;
-          gap: 12px;
-          font-size: 0.925rem;
-          color: #334155;
+        .features-header-label {
+          font-size: 0.72rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: #94a3b8;
           margin-bottom: 12px;
-          line-height: 1.45;
+        }
 
-          svg {
-            color: var(--primary-color);
-            font-size: 18px;
-            flex-shrink: 0;
-            margin-top: 2px;
+        .tier-features {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+
+          .tier-feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            font-size: 0.915rem;
+            color: #334155;
+            line-height: 1.45;
+            padding: 7px 10px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+
+            &:hover {
+              background: #f8fafc;
+              transform: translateX(3px);
+            }
+
+            .feature-check-icon {
+              color: var(--primary-color);
+              font-size: 18px;
+              flex-shrink: 0;
+              margin-top: 2px;
+            }
+
+            span {
+              flex: 1;
+            }
+
+            &.feature-super-highlight {
+              background: #ecfdf5;
+              border: 1px solid #a7f3d0;
+              color: #065f46;
+              font-weight: 700;
+              border-radius: 10px;
+              padding: 9px 12px;
+
+              .feature-check-icon {
+                color: #047857;
+                font-size: 19px;
+              }
+            }
           }
         }
       }
 
       .tier-cta-btn {
         width: 100%;
+        height: 52px;
         font-weight: 700;
-        font-size: 1rem;
+        font-size: 0.96rem;
         border-radius: 50px;
-        padding: 13px;
         text-transform: none;
-        transition: all 0.25s ease;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
 
         &.btn-primary {
           background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
           color: #ffffff;
-          box-shadow: 0 6px 20px color-mix(in srgb, var(--primary-color) 35%, transparent);
+          box-shadow: 0 8px 24px color-mix(in srgb, var(--primary-color) 35%, transparent);
 
           &:hover {
             background: linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 85%, #000), var(--primary-color));
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px color-mix(in srgb, var(--primary-color) 45%, transparent);
+            box-shadow: 0 12px 28px color-mix(in srgb, var(--primary-color) 45%, transparent);
           }
         }
 
@@ -159,7 +329,9 @@
 
           &:hover {
             background: #f0fdf4;
+            border-color: var(--primary-color);
             transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(16, 185, 129, 0.15);
           }
         }
       }

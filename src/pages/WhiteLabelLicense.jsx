@@ -240,7 +240,9 @@ ${formState.message || 'Interested in white label licensing, demo access, and cu
   const licenseTiers = [
     {
       name: 'Full Source Code License',
-      badge: null,
+      badge: 'Independent Deployment',
+      badgeType: 'neutral',
+      icon: <TerminalIcon sx={{ fontSize: 24 }} />,
       highlighted: false,
       desc: 'Acquire the complete uncompiled source code with perpetual white label licensing rights. Your engineering team is responsible for server setup, environment configuration, and cloud deployment.',
       priceLabel: 'Perpetual White Label License',
@@ -262,6 +264,8 @@ ${formState.message || 'Interested in white label licensing, demo access, and cu
     {
       name: 'Source Code + Cloud Setup',
       badge: 'Most Popular / Turnkey',
+      badgeType: 'popular',
+      icon: <RocketIcon sx={{ fontSize: 24 }} />,
       highlighted: true,
       desc: 'Acquire the complete white label source code with end-to-end setup handled by our senior engineering team directly on your cloud infrastructure (AWS, DigitalOcean, GCP, or VPS).',
       priceLabel: 'Turnkey Deployment Package',
@@ -693,31 +697,52 @@ ${formState.message || 'Interested in white label licensing, demo access, and cu
             {licenseTiers.map((tier, idx) => (
               <div
                 key={idx}
-                className={`wl-tier-card ${tier.highlighted ? 'highlighted' : ''}`}
+                className={`wl-tier-card ${tier.highlighted ? 'highlighted' : 'standard'}`}
               >
-                {tier.badge && <div className="popular-badge">{tier.badge}</div>}
-                <div className="tier-name">{tier.name}</div>
-                <div className="tier-desc">{tier.desc}</div>
+                {/* Header bar with icon and category badge */}
+                <div className="card-top-bar">
+                  <div className={`tier-icon-box ${tier.highlighted ? 'icon-highlighted' : 'icon-standard'}`}>
+                    {tier.icon}
+                  </div>
+                  {tier.badge && (
+                    <div className={`tier-badge ${tier.badgeType}`}>
+                      {tier.highlighted && <StarIcon sx={{ fontSize: 13 }} />}
+                      <span>{tier.badge}</span>
+                    </div>
+                  )}
+                </div>
 
-                <div className="tier-price-box">
+                <h3 className="tier-name">{tier.name}</h3>
+                <p className="tier-desc">{tier.desc}</p>
+
+                <div className={`tier-price-box ${tier.highlighted ? 'price-highlighted' : 'price-standard'}`}>
                   <div className="price-label">{tier.priceLabel}</div>
                   <div className="price-val">{tier.priceVal}</div>
                   <div className="price-sub">{tier.priceSub}</div>
                 </div>
 
-                <ul className="tier-features">
-                  {tier.features.map((feat, fIdx) => (
-                    <li key={fIdx}>
-                      <CheckCircleIcon />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="features-container">
+                  <div className="features-header-label">
+                    {tier.highlighted ? 'TURNKEY DELIVERABLES & INCLUSIONS:' : 'INCLUDED SOURCE CODE ASSETS:'}
+                  </div>
+                  <ul className="tier-features">
+                    {tier.features.map((feat, fIdx) => (
+                      <li
+                        key={fIdx}
+                        className={`tier-feature-item ${fIdx === 0 && tier.highlighted ? 'feature-super-highlight' : ''}`}
+                      >
+                        <CheckCircleIcon className="feature-check-icon" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
                 <Button
                   variant={tier.highlighted ? 'contained' : 'outlined'}
                   className={`tier-cta-btn ${tier.highlighted ? 'btn-primary' : 'btn-outline'}`}
                   onClick={scrollToForm}
+                  endIcon={<ArrowForwardIcon />}
                 >
                   {tier.ctaText}
                 </Button>
