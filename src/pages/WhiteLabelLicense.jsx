@@ -119,34 +119,33 @@ const WhiteLabelLicense = () => {
     setIsSubmitting(true);
 
     try {
-      const composedMessage = `[WHITE LABEL LICENSE INQUIRY]
-Company / Brand: ${formState.companyName || 'N/A'}
-Phone / WhatsApp: ${formState.phone || 'N/A'}
-Preferred License Model: ${formState.licenseModel}
-Estimated Launch Timeline: ${formState.timeline}
-Partner Requirements:
-${formState.message || 'Interested in white label licensing, demo access, and custom reseller pricing.'}`;
-
-      const response = await fetch(`${backendPath}/System/AddContactUs`, {
+      const response = await fetch(`${backendPath}/System/AddWhiteLabelInquiry`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'x-user': 'admin'
         },
         body: JSON.stringify({
-          name: formState.fullName.trim(),
+          fullName: formState.fullName.trim(),
           email: formState.email.trim(),
-          message: composedMessage
+          phone: formState.phone ? formState.phone.trim() : '',
+          companyName: formState.companyName ? formState.companyName.trim() : '',
+          licenseModel: formState.licenseModel,
+          timeline: formState.timeline,
+          message: formState.message ? formState.message.trim() : ''
         })
       });
+
+      const data = await response.json().catch(() => ({}));
 
       if (response.ok) {
         setSubmitSuccess(true);
       } else {
-        setSubmitSuccess(true);
+        setSubmitError(data.message || 'Failed to submit inquiry. Please try again.');
       }
-    } catch {
-      setSubmitSuccess(true);
+    } catch (err) {
+      console.error('Error submitting inquiry:', err);
+      setSubmitError('Unable to connect to server. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
