@@ -279,7 +279,7 @@ const Partnership = () => {
   // FAQ Accordion State
   const [expandedFaq, setExpandedFaq] = useState('faq-0');
 
-  const handleFaqChange = (panel) => (event, isExpanded) => {
+  const handleFaqChange = (panel) => (_, isExpanded) => {
     setExpandedFaq(isExpanded ? panel : false);
   };
 

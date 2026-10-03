@@ -28,7 +28,7 @@ const FAQPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [expanded, setExpanded] = useState('what-is-savoryops');
 
-  const handleChange = (panel) => (event, isExpanded) => {
+  const handleChange = (panel) => (_, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
 

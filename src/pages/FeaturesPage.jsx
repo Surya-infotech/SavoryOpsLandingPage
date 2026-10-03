@@ -486,7 +486,7 @@ const FeaturesPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleCategoryChange = (event, newCategory) => {
+  const handleCategoryChange = (_, newCategory) => {
     setSelectedCategory(newCategory);
   };
 

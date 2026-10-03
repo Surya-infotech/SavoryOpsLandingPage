@@ -201,15 +201,12 @@
   }
 
   // Policy Content Sections
-  .privacy-policy-content,
-  .privacy-sections-wrapper,
-  .policy-content {
+  .privacy-policy-content {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 
-    .privacy-section,
-    .policy-section {
+    .privacy-section {
       background-color: #ffffff;
       padding: 2.5rem;
       border-radius: 1rem;

@@ -41,7 +41,7 @@ const WhySavoryOps = () => {
 
   const [expandedFaq, setExpandedFaq] = useState('faq-1');
 
-  const handleFaqChange = (panel) => (event, isExpanded) => {
+  const handleFaqChange = (panel) => (_, isExpanded) => {
     setExpandedFaq(isExpanded ? panel : false);
   };
 

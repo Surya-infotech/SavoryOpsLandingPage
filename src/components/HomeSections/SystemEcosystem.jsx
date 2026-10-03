@@ -157,7 +157,7 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
   const [activeTab, setActiveTab] = useState(0);
   const { softwareName } = useAppSettings();
 
-  const handleTabChange = (event, newValue) => {
+  const handleTabChange = (_, newValue) => {
     setActiveTab(newValue);
   };
 

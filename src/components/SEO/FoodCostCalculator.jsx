@@ -157,7 +157,7 @@ const FoodCostCalculator = () => {
       <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 3, display: 'flex', justifyContent: 'center' }}>
         <Tabs
           value={activeTab}
-          onChange={(e, val) => setActiveTab(val)}
+          onChange={(_, val) => setActiveTab(val)}
           aria-label="food cost calculator modes"
           textColor="primary"
           indicatorColor="primary"
