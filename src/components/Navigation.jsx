@@ -506,13 +506,14 @@ const Navigation = () => {
                         </Box>
 
                         <Box sx={{ flex: 1, minWidth: 0 }}>
-                          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8, flexWrap: 'wrap' }}>
+                          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8 }}>
                             <Typography
                               sx={{
-                                fontSize: '0.87rem',
+                                fontSize: '0.86rem',
                                 fontWeight: isTabSelected ? 750 : 600,
-                                color: isTabSelected ? '#0f172a' : '#334155',
-                                lineHeight: 1.2
+                                color: isTabSelected ? 'var(--primary-color)' : '#1e293b',
+                                lineHeight: 1.25,
+                                transition: 'color 0.2s ease'
                               }}
                             >
                               {cat.category}
@@ -535,18 +536,6 @@ const Navigation = () => {
                               </Box>
                             )}
                           </Box>
-                          <Typography
-                            sx={{
-                              fontSize: '0.73rem',
-                              color: '#64748b',
-                              mt: 0.3,
-                              whiteSpace: 'nowrap',
-                              overflow: 'hidden',
-                              textOverflow: 'ellipsis'
-                            }}
-                          >
-                            {cat.tagline}
-                          </Typography>
                         </Box>
 
                         <ChevronRightIcon
@@ -610,23 +599,9 @@ const Navigation = () => {
                         borderBottom: '1px solid #f1f5f9'
                       }}
                     >
-                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        <Typography sx={{ fontSize: '0.98rem', fontWeight: 800, color: '#0f172a' }}>
-                          {solutionsCategories[activeSolutionTab]?.category}
-                        </Typography>
-                        <Box
-                          component="span"
-                          sx={{
-                            fontSize: '0.74rem',
-                            color: '#64748b',
-                            fontWeight: 500,
-                            pl: 1,
-                            borderLeft: '1px solid #cbd5e1'
-                          }}
-                        >
-                          {solutionsCategories[activeSolutionTab]?.tagline}
-                        </Box>
-                      </Box>
+                      <Typography sx={{ fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>
+                        {solutionsCategories[activeSolutionTab]?.category}
+                      </Typography>
                     </Box>
 
                     {/* 2-Column Grid of Items */}
@@ -653,9 +628,9 @@ const Navigation = () => {
                             }}
                             sx={{
                               display: 'flex',
-                              alignItems: 'flex-start',
+                              alignItems: 'center',
                               gap: 1.3,
-                              p: '10px 12px',
+                              p: '10px 14px',
                               borderRadius: '12px',
                               cursor: 'pointer',
                               transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
@@ -699,55 +674,42 @@ const Navigation = () => {
                                   ? 'var(--primary-color)'
                                   : 'color-mix(in srgb, var(--primary-color) 10%, #f8fafc)',
                                 color: isActive ? '#ffffff' : 'var(--primary-color)',
-                                transition: 'all 0.2s ease',
-                                mt: 0.15
+                                transition: 'all 0.2s ease'
                               }}
                             >
                               {item.icon}
                             </Box>
 
-                            <Box sx={{ flex: 1, minWidth: 0 }}>
-                              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8, flexWrap: 'wrap' }}>
-                                <Typography
-                                  className="solution-item-title"
-                                  sx={{
-                                    fontSize: '0.88rem',
-                                    fontWeight: isActive ? 750 : 650,
-                                    color: isActive ? 'var(--primary-color)' : '#0f172a',
-                                    lineHeight: 1.25,
-                                    transition: 'color 0.2s ease'
-                                  }}
-                                >
-                                  {item.text}
-                                </Typography>
-                                {item.badge && (
-                                  <Box
-                                    component="span"
-                                    sx={{
-                                      fontSize: '0.62rem',
-                                      fontWeight: 700,
-                                      color: item.badgeColor || 'var(--primary-color)',
-                                      backgroundColor: `color-mix(in srgb, ${item.badgeColor || 'var(--primary-color)'} 14%, transparent)`,
-                                      px: 0.7,
-                                      py: 0.15,
-                                      borderRadius: '4px',
-                                      lineHeight: 1.2
-                                    }}
-                                  >
-                                    {item.badge}
-                                  </Box>
-                                )}
-                              </Box>
+                            <Box sx={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', gap: 0.8, flexWrap: 'wrap' }}>
                               <Typography
+                                className="solution-item-title"
                                 sx={{
-                                  fontSize: '0.74rem',
-                                  color: '#64748b',
-                                  lineHeight: 1.35,
-                                  mt: 0.3
+                                  fontSize: '0.88rem',
+                                  fontWeight: isActive ? 750 : 650,
+                                  color: isActive ? 'var(--primary-color)' : '#0f172a',
+                                  lineHeight: 1.25,
+                                  transition: 'color 0.2s ease'
                                 }}
                               >
-                                {item.description}
+                                {item.text}
                               </Typography>
+                              {item.badge && (
+                                <Box
+                                  component="span"
+                                  sx={{
+                                    fontSize: '0.62rem',
+                                    fontWeight: 700,
+                                    color: item.badgeColor || 'var(--primary-color)',
+                                    backgroundColor: `color-mix(in srgb, ${item.badgeColor || 'var(--primary-color)'} 14%, transparent)`,
+                                    px: 0.7,
+                                    py: 0.15,
+                                    borderRadius: '4px',
+                                    lineHeight: 1.2
+                                  }}
+                                >
+                                  {item.badge}
+                                </Box>
+                              )}
                             </Box>
 
                             <ChevronRightIcon
