@@ -244,8 +244,6 @@ const Navigation = () => {
       category: 'Worldwide Partnerships',
       tagline: 'Resellers, hardware & white label',
       icon: <PublicIcon fontSize="small" />,
-      badge: '150+ Countries',
-      badgeColor: '#028802',
       promo: {
         title: 'Launch a Branded SaaS in Your Country',
         description: 'Earn up to 100% recurring profit with turnkey cloud deployment in <48 hours.',
@@ -258,7 +256,7 @@ const Navigation = () => {
           description: 'Reseller, hardware & agency partner programs in 150+ countries',
           path: '/partnership',
           icon: <PublicIcon fontSize="small" />,
-          badge: 'Worldwide',
+          badge: '150+ Countries',
           badgeColor: '#028802'
         },
         {
@@ -421,7 +419,7 @@ const Navigation = () => {
                 paper: {
                   sx: {
                     mt: 1.5,
-                    width: { md: 940, lg: 1000 },
+                    width: { md: 960, lg: 1000 },
                     maxWidth: 'calc(100vw - 32px)',
                     borderRadius: '22px',
                     boxShadow: '0 25px 65px -12px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(15, 23, 42, 0.08)',
@@ -433,16 +431,16 @@ const Navigation = () => {
               }}
             >
               {/* Tabbed Sidebar Mega Menu Container */}
-              <Box sx={{ display: 'grid', gridTemplateColumns: { md: '290px 1fr' }, minHeight: 450 }}>
+              <Box sx={{ display: 'grid', gridTemplateColumns: { md: '300px 1fr' }, minHeight: 460 }}>
                 {/* Left Sidebar: Category Navigation Tabs */}
                 <Box
                   sx={{
                     backgroundColor: '#f8fafc',
                     borderRight: '1px solid #e2e8f0',
-                    p: 2,
+                    p: 1.5,
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: 1
+                    gap: 0.8
                   }}
                 >
                   <Typography
@@ -473,13 +471,14 @@ const Navigation = () => {
                         sx={{
                           display: 'flex',
                           alignItems: 'center',
-                          gap: 1.4,
-                          p: '11px 13px',
-                          borderRadius: '13px',
+                          gap: 1.2,
+                          px: 1.25,
+                          py: 1.15,
+                          borderRadius: '12px',
                           cursor: 'pointer',
                           transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                           backgroundColor: isTabSelected ? '#ffffff' : 'transparent',
-                          boxShadow: isTabSelected ? '0 4px 16px -2px rgba(15, 23, 42, 0.08)' : 'none',
+                          boxShadow: isTabSelected ? '0 4px 14px -2px rgba(15, 23, 42, 0.08)' : 'none',
                           border: isTabSelected ? '1px solid #e2e8f0' : '1px solid transparent',
                           '&:hover': {
                             backgroundColor: isTabSelected ? '#ffffff' : 'rgba(255, 255, 255, 0.65)'
@@ -488,9 +487,9 @@ const Navigation = () => {
                       >
                         <Box
                           sx={{
-                            width: 38,
-                            height: 38,
-                            minWidth: 38,
+                            width: 36,
+                            height: 36,
+                            minWidth: 36,
                             borderRadius: '10px',
                             display: 'flex',
                             alignItems: 'center',
@@ -499,44 +498,27 @@ const Navigation = () => {
                               ? 'var(--primary-color)'
                               : 'rgba(15, 23, 42, 0.06)',
                             color: isTabSelected ? '#ffffff' : '#334155',
-                            transition: 'all 0.2s ease'
+                            transition: 'all 0.2s ease',
+                            flexShrink: 0
                           }}
                         >
                           {cat.icon}
                         </Box>
 
-                        <Box sx={{ flex: 1, minWidth: 0 }}>
-                          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8 }}>
-                            <Typography
-                              sx={{
-                                fontSize: '0.86rem',
-                                fontWeight: isTabSelected ? 750 : 600,
-                                color: isTabSelected ? 'var(--primary-color)' : '#1e293b',
-                                lineHeight: 1.25,
-                                transition: 'color 0.2s ease'
-                              }}
-                            >
-                              {cat.category}
-                            </Typography>
-                            {cat.badge && (
-                              <Box
-                                component="span"
-                                sx={{
-                                  fontSize: '0.62rem',
-                                  fontWeight: 700,
-                                  color: cat.badgeColor || 'var(--primary-color)',
-                                  backgroundColor: `color-mix(in srgb, ${cat.badgeColor || 'var(--primary-color)'} 14%, transparent)`,
-                                  px: 0.7,
-                                  py: 0.15,
-                                  borderRadius: '9999px',
-                                  lineHeight: 1.2
-                                }}
-                              >
-                                {cat.badge}
-                              </Box>
-                            )}
-                          </Box>
-                        </Box>
+                        <Typography
+                          sx={{
+                            flex: 1,
+                            minWidth: 0,
+                            fontSize: '0.86rem',
+                            fontWeight: isTabSelected ? 750 : 600,
+                            color: isTabSelected ? 'var(--primary-color)' : '#1e293b',
+                            lineHeight: 1.25,
+                            whiteSpace: 'nowrap',
+                            transition: 'color 0.2s ease'
+                          }}
+                        >
+                          {cat.category}
+                        </Typography>
 
                         <ChevronRightIcon
                           sx={{
@@ -544,7 +526,8 @@ const Navigation = () => {
                             color: isTabSelected ? 'var(--primary-color)' : '#94a3b8',
                             transform: isTabSelected ? 'translateX(2px)' : 'none',
                             transition: 'all 0.2s ease',
-                            opacity: isTabSelected ? 1 : 0.4
+                            opacity: isTabSelected ? 1 : 0.4,
+                            flexShrink: 0
                           }}
                         />
                       </Box>
