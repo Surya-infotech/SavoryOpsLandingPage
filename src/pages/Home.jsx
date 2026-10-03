@@ -12,6 +12,7 @@ import Reports from '../components/HomeSections/Reports';
 import EmployeeRoles from '../components/HomeSections/EmployeeRoles';
 import AppDownloads from '../components/HomeSections/AppDownloads';
 import Languages from '../components/HomeSections/Languages';
+import WorldwidePartnership from '../components/HomeSections/WorldwidePartnership';
 import FreeSoftware from '../components/HomeSections/FreeSoftware';
 import HomeFAQ from '../components/HomeSections/HomeFAQ';
 import Reviews from '../components/HomeSections/Reviews';
@@ -42,6 +43,7 @@ const Home = () => {
       <EmployeeRoles />
       <Benefits />
       <FreeSoftware />
+      <WorldwidePartnership />
       <Languages />
       <AppDownloads />
       <HomeFAQ />

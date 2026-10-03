@@ -34,8 +34,6 @@ import {
   TrendingUp as TrendingUpIcon,
   HelpOutline as HelpOutlineIcon,
   RocketLaunch as RocketIcon,
-  Apartment as ApartmentIcon,
-  CreditCard as CreditCardIcon,
   Storage as StorageIcon,
   Security as SecurityIcon,
   Code as CodeIcon,
@@ -1387,6 +1385,14 @@ const WhiteLabelLicense = () => {
                 endIcon={<ArrowForwardIcon />}
               >
                 Request White Label Demo
+              </Button>
+              <Button
+                component={Link}
+                to="/partnership"
+                variant="outlined"
+                className="btn-outline-white"
+              >
+                Worldwide Partner Program
               </Button>
               <Button
                 component={Link}

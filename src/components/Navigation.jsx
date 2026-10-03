@@ -21,7 +21,8 @@ import {
   Security as SecurityIcon,
   ReceiptLong as ReceiptLongIcon,
   Storefront as StorefrontIcon,
-  ChevronRight as ChevronRightIcon
+  ChevronRight as ChevronRightIcon,
+  Public as PublicIcon
 } from '@mui/icons-material';
 import {
   AppBar,
@@ -205,6 +206,14 @@ const Navigation = () => {
           badgeColor: '#7c3aed'
         },
         {
+          text: 'Worldwide Partnership',
+          description: 'Reseller, hardware & agency partner programs in 150+ countries',
+          path: '/partnership',
+          icon: <PublicIcon fontSize="small" />,
+          badge: 'Worldwide',
+          badgeColor: '#028802'
+        },
+        {
           text: 'White Label License',
           description: 'Rebrand POS with your logo, custom domain & keep 100% profit',
           path: '/white-label',
@@ -223,11 +232,13 @@ const Navigation = () => {
     { text: 'Features', path: '/features' },
     { text: `Why ${softwareName || 'SavoryOps'}`, path: '/why-savoryops' },
     { text: 'Pricing', path: '/pricing' },
+    { text: 'Partnership', path: '/partnership' },
     { text: 'Upcoming Features', path: '/upcoming-features' },
     { text: 'Blog', path: '/blog' }
   ];
 
   const moreMenuItems = [
+    { text: 'Worldwide Partnership', path: '/partnership', icon: <PublicIcon fontSize="small" /> },
     { text: 'White Label License', path: '/white-label', icon: <SecurityIcon fontSize="small" /> },
     { text: 'About Us', path: '/about-us', icon: <InfoOutlinedIcon fontSize="small" /> },
     { text: 'FAQ', path: '/faq', icon: <HelpOutlineIcon fontSize="small" /> },

@@ -26,7 +26,8 @@ import {
   SupportAgent as SupportAgentIcon,
   Twitter as TwitterIcon,
   WhatsApp as WhatsAppIcon,
-  YouTube as YouTubeIcon
+  YouTube as YouTubeIcon,
+  Public as PublicIcon
 } from '@mui/icons-material';
 import { Box, Container, Divider, IconButton, Link, Typography } from '@mui/material';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
@@ -129,6 +130,7 @@ const Footer = () => {
 
   const companyLinks = [
     { name: `Why ${softwareName || 'SavoryOps'}`, icon: <StarIcon />, href: '/why-savoryops' },
+    { name: 'Worldwide Partnership', icon: <PublicIcon />, href: '/partnership' },
     { name: 'White Label License', icon: <BusinessIcon />, href: '/white-label' },
     { name: 'About Us', icon: <InfoOutlinedIcon />, href: '/about-us' },
     { name: 'Blog & Articles', icon: <MenuBookIcon />, href: '/blog' },
@@ -139,6 +141,7 @@ const Footer = () => {
   ];
 
   const solutionsAndGuides = [
+    { name: 'Worldwide Partnership Program', href: '/partnership' },
     { name: 'Restaurant POS System', href: '/solutions/restaurant-pos-system' },
     { name: 'White Label License', href: '/white-label' },
     { name: 'Kitchen Order Ticket (KOT)', href: '/solutions/kitchen-order-ticket-system' },
