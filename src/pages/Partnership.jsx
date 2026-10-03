@@ -575,16 +575,17 @@ Notes: ${formState.message.trim() || 'None provided'}`;
             {regionalReadiness.map((reg, idx) => (
               <Box key={idx} className="region-card">
                 <Box className="region-top-header">
+                  <Typography variant="h5" className="region-name">
+                    {reg.region}
+                  </Typography>
                   <Box className="region-flags-cluster">
                     {reg.flags.map((f, fIdx) => (
                       <span key={fIdx} className="flag-pill" title={f.name}>
-                        <Flag code={f.code} height="16" />
+                        <Flag code={f.code} height="13" style={{ borderRadius: '2px', display: 'block' }} />
+                        <span className="flag-country-name">{f.name}</span>
                       </span>
                     ))}
                   </Box>
-                  <Typography variant="h6" className="region-name">
-                    {reg.region}
-                  </Typography>
                 </Box>
                 <Typography variant="body2" className="region-description">
                   {reg.desc}
