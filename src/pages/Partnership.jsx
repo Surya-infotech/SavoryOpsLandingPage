@@ -328,13 +328,7 @@ const Partnership = () => {
     setIsSubmitting(true);
 
     try {
-      const payloadMessage = `[Worldwide Partnership Application]
-Country/Region: ${formState.country}
-Partnership Track: ${formState.partnershipTrack}
-Projected Client Base: ${formState.projectedClients}
-Notes: ${formState.message.trim() || 'None provided'}`;
-
-      const response = await fetch(`${backendPath}/System/AddWhiteLabelInquiry`, {
+      const response = await fetch(`${backendPath}/System/AddPartnerApplication`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -344,10 +338,11 @@ Notes: ${formState.message.trim() || 'None provided'}`;
           fullName: formState.fullName.trim(),
           email: formState.email.trim(),
           phone: formState.phone ? formState.phone.trim() : '',
-          companyName: formState.companyName ? formState.companyName.trim() : `${formState.country} Partner`,
-          licenseModel: `Worldwide Partner: ${formState.partnershipTrack}`,
-          timeline: formState.projectedClients,
-          message: payloadMessage
+          companyName: formState.companyName ? formState.companyName.trim() : '',
+          country: formState.country,
+          partnershipTrack: formState.partnershipTrack,
+          projectedClients: formState.projectedClients,
+          message: formState.message.trim()
         })
       });
 
