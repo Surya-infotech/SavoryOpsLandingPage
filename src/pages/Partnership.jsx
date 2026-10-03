@@ -241,7 +241,7 @@ Notes: ${formState.message.trim() || 'None provided'}`;
         'Comprehensive GST/HST invoicing with HSN/SAC codes & tax audit registers',
         'Interactive dynamic QR contactless menu ordering at tables',
         'Multi-station KOT routing (Bar, Grill, Dessert, Tandoor) in milliseconds',
-        'Offline billing mode guaranteeing continuous zero-downtime service'
+        'High-speed cloud billing with sub-second order dispatch & payment settling'
       ]
     }
   ];
@@ -279,7 +279,7 @@ Notes: ${formState.message.trim() || 'None provided'}`;
         'Deep wholesale software licensing discounts for hardware bundles',
         'Universal hardware compatibility (Android, Windows, iOS, Mac, Linux)',
         'Certified ESC/POS driver support for USB, Bluetooth, LAN & Wi-Fi printers',
-        'Pre-install configurations & offline-resilient local sync',
+        'Turnkey hardware provisioning & verified plug-and-play cloud sync',
         'High-margin equipment sales combined with recurring software revenue',
         'Joint co-marketing and certified hardware listing on our portal'
       ],

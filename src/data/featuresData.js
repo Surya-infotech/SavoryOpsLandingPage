@@ -148,7 +148,7 @@ export const FEATURES_DATA = {
     subtitle: 'Route orders instantly from counter, tablet, or table QR codes directly to chef preparation stations with zero lost tickets or misread handwriting.',
     overview: 'In high-volume restaurant dining, communication breakdowns between waitstaff and kitchen line cooks cause food delays, wrong orders, and costly food waste. The SavoryOps KOT system digitizes your entire kitchen workflow, assigning automated ticket numbers, color-coded elapsed timers, and station-specific routing (Grill, Fryer, Pantry, and Bar).',
     benefits: [
-      { title: 'Zero Lost Orders', desc: 'Every ticket is permanently tracked in the cloud and local cache, preventing lost or dropped slips.' },
+      { title: 'Zero Lost Orders', desc: 'Every ticket is permanently tracked in the cloud database, preventing lost or dropped slips.' },
       { title: 'Void KOT Loss Prevention', desc: 'Require manager PIN authorizations and mandatory reason codes to cancel items, protecting revenue.' },
       { title: 'Automated Station Splitting', desc: 'Dispatches food to the kitchen and cocktails directly to the Bar Order Ticket (BOT) screen or printer.' },
       { title: 'Paced Course Timing', desc: 'Hold and fire courses (Starters -> Mains -> Desserts) so food arrives at the table hot and on schedule.' }

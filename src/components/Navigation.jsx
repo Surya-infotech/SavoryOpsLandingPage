@@ -103,8 +103,8 @@ const Navigation = () => {
       tagline: 'Cloud POS, KDS screens & tables',
       icon: <PosIcon fontSize="small" />,
       promo: {
-        title: 'Offline-Resilient POS Engine',
-        description: 'Instant wireless KOT printing and split-bill checkouts with zero downtime.',
+        title: 'High-Speed Cloud POS Engine',
+        description: 'Instant wireless KOT printing, split-bill checkouts, and real-time sync.',
         actionText: 'Explore POS System',
         actionPath: '/solutions/restaurant-pos-system'
       },
@@ -583,7 +583,7 @@ const Navigation = () => {
                       }}
                     />
                     <Typography sx={{ fontSize: '0.74rem', color: '#475569', fontWeight: 550 }}>
-                      Cloud &amp; Offline Sync Active
+                      Real-Time Cloud Sync Active
                     </Typography>
                   </Box>
                 </Box>
