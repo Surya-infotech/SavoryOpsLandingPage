@@ -296,7 +296,6 @@ const Navigation = () => {
   ];
 
   const moreMenuItems = [
-    { text: 'Worldwide Partnership', path: '/partnership', icon: <PublicIcon fontSize="small" /> },
     { text: 'White Label License', path: '/white-label', icon: <SecurityIcon fontSize="small" /> },
     { text: 'About Us', path: '/about-us', icon: <InfoOutlinedIcon fontSize="small" /> },
     { text: 'FAQ', path: '/faq', icon: <HelpOutlineIcon fontSize="small" /> },
@@ -304,7 +303,11 @@ const Navigation = () => {
   ];
 
   const isSolutionsActive = solutionsMenuItems.some(
-    (item) => location.pathname === item.path
+    (item) =>
+      item.path !== '/partnership' &&
+      item.path !== '/white-label' &&
+      !item.path.startsWith('/partnership') &&
+      location.pathname === item.path.split('#')[0]
   );
 
   const isMoreActive = moreMenuItems.some(
