@@ -22,7 +22,9 @@ import {
   ReceiptLong as ReceiptLongIcon,
   Storefront as StorefrontIcon,
   ChevronRight as ChevronRightIcon,
-  Public as PublicIcon
+  Public as PublicIcon,
+  Business as BusinessIcon,
+  Devices as DevicesIcon
 } from '@mui/icons-material';
 import {
   AppBar,
@@ -47,6 +49,7 @@ const Navigation = () => {
   const [solutionsAnchorEl, setSolutionsAnchorEl] = useState(null);
   const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [activeSolutionTab, setActiveSolutionTab] = useState(0);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -59,6 +62,7 @@ const Navigation = () => {
     setMoreAnchorEl(null);
     setSolutionsAnchorEl(null);
     setMobileOpen(false);
+    setActiveSolutionTab(0);
   }, [location.pathname]);
 
   const handleMoreClick = (event) => {
@@ -75,6 +79,7 @@ const Navigation = () => {
 
   const handleSolutionsClose = () => {
     setSolutionsAnchorEl(null);
+    setActiveSolutionTab(0);
   };
 
   const handleItemClick = (path) => {
@@ -93,7 +98,16 @@ const Navigation = () => {
 
   const solutionsCategories = [
     {
+      id: 'pos-kitchen',
       category: 'Point of Sale & Kitchen',
+      tagline: 'Cloud POS, KDS screens & tables',
+      icon: <PosIcon fontSize="small" />,
+      promo: {
+        title: 'Offline-Resilient POS Engine',
+        description: 'Instant wireless KOT printing and split-bill checkouts with zero downtime.',
+        actionText: 'Explore POS System',
+        actionPath: '/solutions/restaurant-pos-system'
+      },
       items: [
         {
           text: 'Restaurant POS System',
@@ -130,7 +144,16 @@ const Navigation = () => {
       ]
     },
     {
+      id: 'inventory-ops',
       category: 'Inventory & Operations',
+      tagline: 'Smart BOM, assets & 30+ reports',
+      icon: <InventoryIcon fontSize="small" />,
+      promo: {
+        title: 'Real-Time Food Cost Control',
+        description: 'Auto-deduct raw ingredients on every order settlement to stop stock leakage.',
+        actionText: 'View Inventory Suite',
+        actionPath: '/solutions/restaurant-inventory-management'
+      },
       items: [
         {
           text: 'Inventory & Recipe BOM',
@@ -167,7 +190,16 @@ const Navigation = () => {
       ]
     },
     {
-      category: 'Apps & Comparisons',
+      id: 'apps-comparisons',
+      category: 'Apps & Alternatives',
+      tagline: 'Staff apps, QR menus & savings',
+      icon: <PhoneIcon fontSize="small" />,
+      promo: {
+        title: 'Save Up to 40% vs Toast & Square',
+        description: 'Keep your own payment processor and eliminate expensive per-seat charges.',
+        actionText: 'Compare Toast Alternative',
+        actionPath: '/alternatives/toast-pos-alternative'
+      },
       items: [
         {
           text: '6-in-1 Employee Mobile App',
@@ -204,9 +236,25 @@ const Navigation = () => {
           icon: <CalculateIcon fontSize="small" />,
           badge: 'Free Tool',
           badgeColor: '#7c3aed'
-        },
+        }
+      ]
+    },
+    {
+      id: 'worldwide-partnership',
+      category: 'Worldwide Partnerships',
+      tagline: 'Resellers, hardware & white label',
+      icon: <PublicIcon fontSize="small" />,
+      badge: '150+ Countries',
+      badgeColor: '#028802',
+      promo: {
+        title: 'Launch a Branded SaaS in Your Country',
+        description: 'Earn up to 100% recurring profit with turnkey cloud deployment in <48 hours.',
+        actionText: 'Explore Partner Models',
+        actionPath: '/partnership'
+      },
+      items: [
         {
-          text: 'Worldwide Partnership',
+          text: 'Worldwide Partnership Program',
           description: 'Reseller, hardware & agency partner programs in 150+ countries',
           path: '/partnership',
           icon: <PublicIcon fontSize="small" />,
@@ -220,6 +268,18 @@ const Navigation = () => {
           icon: <SecurityIcon fontSize="small" />,
           badge: 'Reseller',
           badgeColor: '#8b5cf6'
+        },
+        {
+          text: 'Hardware & Terminal Bundles',
+          description: 'Pre-bundled POS setups for Sunmi, iMin, Windows & thermal printers',
+          path: '/partnership#partner-tracks',
+          icon: <DevicesIcon fontSize="small" />
+        },
+        {
+          text: 'Regional Master Franchise',
+          description: 'Exclusive country or state distribution rights & dedicated SLA',
+          path: '/partnership#partner-tracks',
+          icon: <BusinessIcon fontSize="small" />
         }
       ]
     }
@@ -361,68 +421,224 @@ const Navigation = () => {
                 paper: {
                   sx: {
                     mt: 1.5,
-                    width: { md: 940, lg: 1040 },
-                    maxWidth: 'calc(100vw - 48px)',
-                    maxHeight: 'calc(100vh - 85px)',
-                    borderRadius: '20px',
-                    boxShadow: '0 24px 60px -12px rgba(15, 23, 42, 0.2), 0 0 0 1px rgba(15, 23, 42, 0.08)',
-                    overflowY: 'auto',
-                    overflowX: 'hidden',
+                    width: { md: 940, lg: 1000 },
+                    maxWidth: 'calc(100vw - 32px)',
+                    borderRadius: '22px',
+                    boxShadow: '0 25px 65px -12px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(15, 23, 42, 0.08)',
+                    overflow: 'hidden',
                     p: 0,
                     background: '#ffffff'
                   }
                 }
               }}
             >
-              {/* Mega Menu Grid: 3 Clean Columns */}
-              <Box
-                sx={{
-                  display: 'grid',
-                  gridTemplateColumns: { md: 'repeat(3, 1fr)', xs: '1fr' },
-                  gap: { md: 1.8, lg: 2.2 },
-                  p: { md: 2, lg: '18px 22px 14px 22px' },
-                  backgroundColor: '#ffffff'
-                }}
-              >
-                {solutionsCategories.map((cat) => (
-                  <Box
-                    key={cat.category}
+              {/* Tabbed Sidebar Mega Menu Container */}
+              <Box sx={{ display: 'grid', gridTemplateColumns: { md: '290px 1fr' }, minHeight: 450 }}>
+                {/* Left Sidebar: Category Navigation Tabs */}
+                <Box
+                  sx={{
+                    backgroundColor: '#f8fafc',
+                    borderRight: '1px solid #e2e8f0',
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 1
+                  }}
+                >
+                  <Typography
+                    variant="caption"
                     sx={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      minWidth: 0
+                      px: 1.2,
+                      py: 0.5,
+                      fontSize: '0.72rem',
+                      fontWeight: 800,
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase',
+                      color: '#64748b'
                     }}
                   >
-                    {/* Category Header */}
+                    Solutions &amp; Ecosystem
+                  </Typography>
+
+                  {solutionsCategories.map((cat, idx) => {
+                    const isTabSelected = activeSolutionTab === idx;
+                    return (
+                      <Box
+                        key={cat.id}
+                        onMouseEnter={() => setActiveSolutionTab(idx)}
+                        onClick={() => setActiveSolutionTab(idx)}
+                        role="tab"
+                        aria-selected={isTabSelected}
+                        tabIndex={0}
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 1.4,
+                          p: '11px 13px',
+                          borderRadius: '13px',
+                          cursor: 'pointer',
+                          transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                          backgroundColor: isTabSelected ? '#ffffff' : 'transparent',
+                          boxShadow: isTabSelected ? '0 4px 16px -2px rgba(15, 23, 42, 0.08)' : 'none',
+                          border: isTabSelected ? '1px solid #e2e8f0' : '1px solid transparent',
+                          '&:hover': {
+                            backgroundColor: isTabSelected ? '#ffffff' : 'rgba(255, 255, 255, 0.65)'
+                          }
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            width: 38,
+                            height: 38,
+                            minWidth: 38,
+                            borderRadius: '10px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            backgroundColor: isTabSelected
+                              ? 'var(--primary-color)'
+                              : 'rgba(15, 23, 42, 0.06)',
+                            color: isTabSelected ? '#ffffff' : '#334155',
+                            transition: 'all 0.2s ease'
+                          }}
+                        >
+                          {cat.icon}
+                        </Box>
+
+                        <Box sx={{ flex: 1, minWidth: 0 }}>
+                          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8, flexWrap: 'wrap' }}>
+                            <Typography
+                              sx={{
+                                fontSize: '0.87rem',
+                                fontWeight: isTabSelected ? 750 : 600,
+                                color: isTabSelected ? '#0f172a' : '#334155',
+                                lineHeight: 1.2
+                              }}
+                            >
+                              {cat.category}
+                            </Typography>
+                            {cat.badge && (
+                              <Box
+                                component="span"
+                                sx={{
+                                  fontSize: '0.62rem',
+                                  fontWeight: 700,
+                                  color: cat.badgeColor || 'var(--primary-color)',
+                                  backgroundColor: `color-mix(in srgb, ${cat.badgeColor || 'var(--primary-color)'} 14%, transparent)`,
+                                  px: 0.7,
+                                  py: 0.15,
+                                  borderRadius: '9999px',
+                                  lineHeight: 1.2
+                                }}
+                              >
+                                {cat.badge}
+                              </Box>
+                            )}
+                          </Box>
+                          <Typography
+                            sx={{
+                              fontSize: '0.73rem',
+                              color: '#64748b',
+                              mt: 0.3,
+                              whiteSpace: 'nowrap',
+                              overflow: 'hidden',
+                              textOverflow: 'ellipsis'
+                            }}
+                          >
+                            {cat.tagline}
+                          </Typography>
+                        </Box>
+
+                        <ChevronRightIcon
+                          sx={{
+                            fontSize: 16,
+                            color: isTabSelected ? 'var(--primary-color)' : '#94a3b8',
+                            transform: isTabSelected ? 'translateX(2px)' : 'none',
+                            transition: 'all 0.2s ease',
+                            opacity: isTabSelected ? 1 : 0.4
+                          }}
+                        />
+                      </Box>
+                    );
+                  })}
+
+                  {/* Sidebar bottom indicator */}
+                  <Box
+                    sx={{
+                      mt: 'auto',
+                      pt: 1.5,
+                      borderTop: '1px solid #e2e8f0',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 1
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: 8,
+                        height: 8,
+                        borderRadius: '50%',
+                        backgroundColor: '#10b981',
+                        boxShadow: '0 0 0 3px rgba(16, 185, 129, 0.2)'
+                      }}
+                    />
+                    <Typography sx={{ fontSize: '0.74rem', color: '#475569', fontWeight: 550 }}>
+                      Cloud &amp; Offline Sync Active
+                    </Typography>
+                  </Box>
+                </Box>
+
+                {/* Right Content Pane: Active Category Items */}
+                <Box
+                  sx={{
+                    p: { md: 2.5, lg: 3 },
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    backgroundColor: '#ffffff'
+                  }}
+                >
+                  <Box>
+                    {/* Header of Active Category */}
                     <Box
                       sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        gap: 1,
-                        mb: 1.2,
-                        pb: 0.8,
+                        justifyContent: 'space-between',
+                        mb: 2,
+                        pb: 1.2,
                         borderBottom: '1px solid #f1f5f9'
                       }}
                     >
-                      <Typography
-                        variant="caption"
-                        sx={{
-                          fontSize: '0.73rem',
-                          fontWeight: 800,
-                          letterSpacing: '0.08em',
-                          textTransform: 'uppercase',
-                          color: '#334155'
-                        }}
-                      >
-                        {cat.category}
-                      </Typography>
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                        <Typography sx={{ fontSize: '0.98rem', fontWeight: 800, color: '#0f172a' }}>
+                          {solutionsCategories[activeSolutionTab]?.category}
+                        </Typography>
+                        <Box
+                          component="span"
+                          sx={{
+                            fontSize: '0.74rem',
+                            color: '#64748b',
+                            fontWeight: 500,
+                            pl: 1,
+                            borderLeft: '1px solid #cbd5e1'
+                          }}
+                        >
+                          {solutionsCategories[activeSolutionTab]?.tagline}
+                        </Box>
+                      </Box>
                     </Box>
 
-                    {/* Items List */}
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-                      {cat.items.map((item) => {
+                    {/* 2-Column Grid of Items */}
+                    <Box
+                      sx={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(2, 1fr)',
+                        gap: 1.4
+                      }}
+                    >
+                      {solutionsCategories[activeSolutionTab]?.items.map((item) => {
                         const isActive = location.pathname === item.path;
-
                         return (
                           <Box
                             key={item.text}
@@ -438,9 +654,9 @@ const Navigation = () => {
                             sx={{
                               display: 'flex',
                               alignItems: 'flex-start',
-                              gap: 1.2,
-                              p: '7px 10px',
-                              borderRadius: '10px',
+                              gap: 1.3,
+                              p: '10px 12px',
+                              borderRadius: '12px',
                               cursor: 'pointer',
                               transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                               backgroundColor: isActive
@@ -448,11 +664,12 @@ const Navigation = () => {
                                 : 'transparent',
                               border: isActive
                                 ? '1px solid color-mix(in srgb, var(--primary-color) 30%, transparent)'
-                                : '1px solid transparent',
+                                : '1px solid #f1f5f9',
                               '&:hover': {
                                 backgroundColor: 'color-mix(in srgb, var(--primary-color) 7%, #f8fafc)',
-                                transform: 'translateX(3px)',
-                                borderColor: 'color-mix(in srgb, var(--primary-color) 20%, transparent)',
+                                transform: 'translateY(-2px)',
+                                borderColor: 'color-mix(in srgb, var(--primary-color) 35%, transparent)',
+                                boxShadow: '0 6px 18px -4px rgba(15, 23, 42, 0.06)',
                                 '& .solution-item-icon': {
                                   backgroundColor: 'var(--primary-color)',
                                   color: '#ffffff',
@@ -468,14 +685,13 @@ const Navigation = () => {
                               }
                             }}
                           >
-                            {/* Icon Box */}
                             <Box
                               className="solution-item-icon"
                               sx={{
-                                width: 34,
-                                height: 34,
-                                minWidth: 34,
-                                borderRadius: '9px',
+                                width: 36,
+                                height: 36,
+                                minWidth: 36,
+                                borderRadius: '10px',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
@@ -490,13 +706,12 @@ const Navigation = () => {
                               {item.icon}
                             </Box>
 
-                            {/* Title & Description */}
                             <Box sx={{ flex: 1, minWidth: 0 }}>
                               <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8, flexWrap: 'wrap' }}>
                                 <Typography
                                   className="solution-item-title"
                                   sx={{
-                                    fontSize: '0.86rem',
+                                    fontSize: '0.88rem',
                                     fontWeight: isActive ? 750 : 650,
                                     color: isActive ? 'var(--primary-color)' : '#0f172a',
                                     lineHeight: 1.25,
@@ -509,12 +724,12 @@ const Navigation = () => {
                                   <Box
                                     component="span"
                                     sx={{
-                                      fontSize: '0.6rem',
+                                      fontSize: '0.62rem',
                                       fontWeight: 700,
                                       color: item.badgeColor || 'var(--primary-color)',
                                       backgroundColor: `color-mix(in srgb, ${item.badgeColor || 'var(--primary-color)'} 14%, transparent)`,
-                                      px: 0.6,
-                                      py: 0.1,
+                                      px: 0.7,
+                                      py: 0.15,
                                       borderRadius: '4px',
                                       lineHeight: 1.2
                                     }}
@@ -527,22 +742,18 @@ const Navigation = () => {
                                 sx={{
                                   fontSize: '0.74rem',
                                   color: '#64748b',
-                                  lineHeight: 1.3,
-                                  mt: 0.2,
-                                  whiteSpace: 'normal',
-                                  wordBreak: 'normal',
-                                  overflow: 'visible'
+                                  lineHeight: 1.35,
+                                  mt: 0.3
                                 }}
                               >
                                 {item.description}
                               </Typography>
                             </Box>
 
-                            {/* Hover arrow indicator */}
                             <ChevronRightIcon
                               className="solution-item-arrow"
                               sx={{
-                                fontSize: 15,
+                                fontSize: 16,
                                 color: 'var(--primary-color)',
                                 opacity: 0,
                                 transform: 'translateX(-4px)',
@@ -556,13 +767,61 @@ const Navigation = () => {
                       })}
                     </Box>
                   </Box>
-                ))}
+
+                  {/* Featured Category Promo Card */}
+                  {solutionsCategories[activeSolutionTab]?.promo && (
+                    <Box
+                      sx={{
+                        mt: 2.2,
+                        p: '13px 18px',
+                        borderRadius: '14px',
+                        background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(59, 130, 246, 0.08))',
+                        border: '1px solid rgba(16, 185, 129, 0.2)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        gap: 2
+                      }}
+                    >
+                      <Box sx={{ minWidth: 0 }}>
+                        <Typography sx={{ fontWeight: 750, fontSize: '0.85rem', color: '#0f172a' }}>
+                          {solutionsCategories[activeSolutionTab].promo.title}
+                        </Typography>
+                        <Typography sx={{ fontSize: '0.74rem', color: '#475569', mt: 0.2 }}>
+                          {solutionsCategories[activeSolutionTab].promo.description}
+                        </Typography>
+                      </Box>
+                      <Button
+                        size="small"
+                        onClick={() => handleItemClick(solutionsCategories[activeSolutionTab].promo.actionPath)}
+                        endIcon={<ChevronRightIcon sx={{ fontSize: 16 }} />}
+                        sx={{
+                          textTransform: 'none',
+                          fontWeight: 750,
+                          fontSize: '0.78rem',
+                          color: '#ffffff',
+                          backgroundColor: 'var(--primary-color)',
+                          borderRadius: '8px',
+                          px: 1.8,
+                          py: 0.6,
+                          flexShrink: 0,
+                          boxShadow: 'none',
+                          '&:hover': {
+                            backgroundColor: 'color-mix(in srgb, var(--primary-color) 85%, #000)'
+                          }
+                        }}
+                      >
+                        {solutionsCategories[activeSolutionTab].promo.actionText}
+                      </Button>
+                    </Box>
+                  )}
+                </Box>
               </Box>
 
               {/* Bottom Quick-Action Bar */}
               <Box
                 sx={{
-                  px: 2.5,
+                  px: 3,
                   py: 1.2,
                   backgroundColor: '#f8fafc',
                   borderTop: '1px solid #e2e8f0',
@@ -593,7 +852,7 @@ const Navigation = () => {
                       overflow: 'hidden'
                     }}
                   >
-                    <strong style={{ color: '#0f172a' }}>All-In-One Cloud POS:</strong> Real-time sync & zero hidden fees.
+                    <strong style={{ color: '#0f172a' }}>SavoryOps Global Platform:</strong> Built for multi-branch dining and worldwide partners.
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexShrink: 0 }}>
@@ -641,7 +900,7 @@ const Navigation = () => {
                   </Box>
                   <Box
                     component="button"
-                    onClick={() => handleItemClick('/pricing')}
+                    onClick={() => handleItemClick('/partnership')}
                     sx={{
                       background: 'none',
                       border: 'none',
@@ -658,7 +917,7 @@ const Navigation = () => {
                       '&:hover': { color: 'var(--primary-color)' }
                     }}
                   >
-                    Pricing <ChevronRightIcon sx={{ fontSize: 15 }} />
+                    Partnerships <ChevronRightIcon sx={{ fontSize: 15 }} />
                   </Box>
                 </Box>
               </Box>
