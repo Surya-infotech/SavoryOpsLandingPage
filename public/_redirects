@@ -1,4 +1,5 @@
 # Explicit canonical 301 redirects for uppercase / trailing slash variations
+/sitemap  /sitemap.xml  301!
 /SignIn  /signin  301!
 /Signin  /signin  301!
 /SignUp  /signup  301!

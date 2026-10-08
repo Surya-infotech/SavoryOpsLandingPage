@@ -96,6 +96,12 @@ const AppContent = () => {
     return <Navigate to={location.pathname.replace(/\/+$/, '')} replace />;
   }
 
+  // Redirect legacy /sitemap route directly to static sitemap.xml
+  if (location.pathname.toLowerCase() === '/sitemap') {
+    window.location.replace('/sitemap.xml');
+    return null;
+  }
+
   // Normalize uppercase auth paths to canonical lowercase without Route conflict
   if (location.pathname === '/Signin') {
     return <Navigate to="/signin" replace />;
