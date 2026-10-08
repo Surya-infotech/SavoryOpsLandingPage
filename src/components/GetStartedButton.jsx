@@ -27,7 +27,7 @@ const baseStyles = {
   }
 };
 
-const GetStartedButton = ({ className = '', sx = {}, fullWidth = false, children }) => {
+const GetStartedButton = ({ className = '', sx = {}, fullWidth = false, onClick, children }) => {
   const navigate = useNavigate();
 
   return (
@@ -37,7 +37,7 @@ const GetStartedButton = ({ className = '', sx = {}, fullWidth = false, children
       className={`get-started-button ${className}`.trim()}
       fullWidth={fullWidth}
       sx={{ ...baseStyles, ...sx }}
-      onClick={() => navigate('/signin')}
+      onClick={onClick || (() => navigate('/signup'))}
     >
       {children || 'Get Started'}
     </Button>

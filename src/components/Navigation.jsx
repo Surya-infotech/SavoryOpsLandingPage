@@ -93,7 +93,7 @@ const Navigation = () => {
   };
 
   const handleGetStartedClick = () => {
-    navigate('/signin');
+    navigate('/signup');
   };
 
   const solutionsCategories = [
@@ -806,7 +806,7 @@ const Navigation = () => {
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexShrink: 0 }}>
                   <Box
                     component="button"
-                    onClick={() => handleItemClick('/signin')}
+                    onClick={() => handleItemClick('/signup')}
                     sx={{
                       background: 'none',
                       border: 'none',
@@ -995,6 +995,22 @@ const Navigation = () => {
             </Menu>
 
             <Button
+              color="inherit"
+              component={Link}
+              to="/signin"
+              className={`nav-link ${location.pathname === '/signin' ? 'active' : ''}`}
+              sx={{
+                textTransform: 'none',
+                fontWeight: 600,
+                fontSize: '0.92rem',
+                color: 'inherit',
+                mr: 0.5
+              }}
+            >
+              Sign In
+            </Button>
+
+            <Button
               variant="contained"
               onClick={handleGetStartedClick}
               className="get-started-btn"
@@ -1007,7 +1023,7 @@ const Navigation = () => {
                 boxShadow: '0 4px 14px color-mix(in srgb, var(--primary-color) 35%, transparent)'
               }}
             >
-              Get Started
+              Start Free Trial
             </Button>
           </Box>
 
@@ -1361,6 +1377,28 @@ const Navigation = () => {
                 }}
               >
                 <Button
+                  variant="outlined"
+                  onClick={() => {
+                    navigate('/signin');
+                    handleDrawerToggle();
+                  }}
+                  sx={{
+                    borderColor: 'var(--primary-color)',
+                    color: 'var(--primary-color)',
+                    fontWeight: 600,
+                    width: '100%',
+                    textTransform: 'none',
+                    borderRadius: '10px',
+                    py: 1.1,
+                    '&:hover': {
+                      borderColor: 'var(--primary-color)',
+                      backgroundColor: 'color-mix(in srgb, var(--primary-color) 8%, transparent)'
+                    }
+                  }}
+                >
+                  Sign In
+                </Button>
+                <Button
                   variant="contained"
                   onClick={() => {
                     handleGetStartedClick();
@@ -1376,7 +1414,7 @@ const Navigation = () => {
                     py: 1.2
                   }}
                 >
-                  Get Started
+                  Start Free Trial
                 </Button>
               </Box>
             </Box>

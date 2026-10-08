@@ -51,7 +51,7 @@ const FreeSoftware = ({ hideHeader = false }) => {
   };
 
   const handlePlanButtonClick = () => {
-    navigate('/signin');
+    navigate('/signup');
   };
 
   const freePlans = plans.filter((plan) => plan.plantype === 'free');
