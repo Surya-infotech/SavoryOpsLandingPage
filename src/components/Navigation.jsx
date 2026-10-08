@@ -24,19 +24,17 @@ import {
   ChevronRight as ChevronRightIcon,
   Public as PublicIcon,
   Business as BusinessIcon,
-  Devices as DevicesIcon
+  Devices as DevicesIcon,
+  MenuBook as BlogIcon,
+  RocketLaunch as RoadmapIcon,
+  ArrowForward as ArrowForwardIcon
 } from '@mui/icons-material';
 import {
-  AppBar,
   Box,
   Button,
   Collapse,
   IconButton,
-  ListItemIcon,
-  ListItemText,
   Menu,
-  MenuItem,
-  Toolbar,
   Typography
 } from '@mui/material';
 import { useEffect, useState } from 'react';
@@ -45,35 +43,37 @@ import { useAppSettings } from '../context/AppSettingsContext.jsx';
 
 const Navigation = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [moreAnchorEl, setMoreAnchorEl] = useState(null);
   const [solutionsAnchorEl, setSolutionsAnchorEl] = useState(null);
-  const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
+  const [resourcesAnchorEl, setResourcesAnchorEl] = useState(null);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const [activeSolutionTab, setActiveSolutionTab] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
   const { logoUrl, softwareName, setLogoUrl } = useAppSettings();
 
-  const isMoreMenuOpen = Boolean(moreAnchorEl);
   const isSolutionsMenuOpen = Boolean(solutionsAnchorEl);
+  const isResourcesMenuOpen = Boolean(resourcesAnchorEl);
 
   useEffect(() => {
-    setMoreAnchorEl(null);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 15);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
     setSolutionsAnchorEl(null);
+    setResourcesAnchorEl(null);
     setMobileOpen(false);
     setActiveSolutionTab(0);
   }, [location.pathname]);
 
-  const handleMoreClick = (event) => {
-    setMoreAnchorEl((prev) => (prev ? null : event.currentTarget));
-  };
-
-  const handleMoreClose = () => {
-    setMoreAnchorEl(null);
-  };
-
   const handleSolutionsClick = (event) => {
+    setResourcesAnchorEl(null);
     setSolutionsAnchorEl((prev) => (prev ? null : event.currentTarget));
   };
 
@@ -82,9 +82,18 @@ const Navigation = () => {
     setActiveSolutionTab(0);
   };
 
+  const handleResourcesClick = (event) => {
+    setSolutionsAnchorEl(null);
+    setResourcesAnchorEl((prev) => (prev ? null : event.currentTarget));
+  };
+
+  const handleResourcesClose = () => {
+    setResourcesAnchorEl(null);
+  };
+
   const handleItemClick = (path) => {
-    handleMoreClose();
     handleSolutionsClose();
+    handleResourcesClose();
     navigate(path);
   };
 
@@ -285,21 +294,59 @@ const Navigation = () => {
 
   const solutionsMenuItems = solutionsCategories.flatMap((cat) => cat.items);
 
-  const menuItems = [
-    { text: 'Home', path: '/' },
-    { text: 'Features', path: '/features' },
-    { text: `Why ${softwareName || 'SavoryOps'}`, path: '/why-savoryops' },
-    { text: 'Pricing', path: '/pricing' },
-    { text: 'Partnership', path: '/partnership' },
-    { text: 'Upcoming Features', path: '/upcoming-features' },
-    { text: 'Blog', path: '/blog' }
-  ];
-
-  const moreMenuItems = [
-    { text: 'White Label License', path: '/white-label', icon: <SecurityIcon fontSize="small" /> },
-    { text: 'About Us', path: '/about-us', icon: <InfoOutlinedIcon fontSize="small" /> },
-    { text: 'FAQ', path: '/faq', icon: <HelpOutlineIcon fontSize="small" /> },
-    { text: 'Contact Us', path: '/contact-us', icon: <SupportAgentIcon fontSize="small" /> }
+  const resourcesMenuItems = [
+    {
+      title: 'Why SavoryOps',
+      description: 'Enterprise speed, open hardware & zero locked-in fees',
+      path: '/why-savoryops',
+      icon: <InfoOutlinedIcon fontSize="small" />,
+      iconColor: '#059669',
+      bgColor: 'rgba(5, 150, 105, 0.1)'
+    },
+    {
+      title: 'Blog & Insights',
+      description: 'Restaurant tech guides, benchmarks & growth playbooks',
+      path: '/blog',
+      icon: <BlogIcon fontSize="small" />,
+      iconColor: '#d97706',
+      bgColor: 'rgba(217, 119, 6, 0.1)'
+    },
+    {
+      title: 'Upcoming Roadmap',
+      description: 'Quarterly feature drops & live product releases',
+      path: '/upcoming-features',
+      icon: <RoadmapIcon fontSize="small" />,
+      iconColor: '#2563eb',
+      bgColor: 'rgba(37, 99, 235, 0.1)',
+      badge: 'Roadmap',
+      badgeColor: '#2563eb'
+    },
+    {
+      title: 'White Label License',
+      description: 'Turnkey SaaS rebranding with 100% recurring profit',
+      path: '/white-label',
+      icon: <SecurityIcon fontSize="small" />,
+      iconColor: '#7c3aed',
+      bgColor: 'rgba(124, 58, 237, 0.1)',
+      badge: 'Agency',
+      badgeColor: '#7c3aed'
+    },
+    {
+      title: 'Help & FAQs',
+      description: 'Quick answers on hardware, offline mode & billing',
+      path: '/faq',
+      icon: <HelpOutlineIcon fontSize="small" />,
+      iconColor: '#0284c7',
+      bgColor: 'rgba(2, 132, 199, 0.1)'
+    },
+    {
+      title: 'Contact Support',
+      description: '24/7 dedicated support & sales consultation',
+      path: '/contact-us',
+      icon: <SupportAgentIcon fontSize="small" />,
+      iconColor: '#ea580c',
+      bgColor: 'rgba(234, 88, 12, 0.1)'
+    }
   ];
 
   const isSolutionsActive = solutionsMenuItems.some(
@@ -310,66 +357,37 @@ const Navigation = () => {
       location.pathname === item.path.split('#')[0]
   );
 
-  const isMoreActive = moreMenuItems.some(
+  const isFeaturesActive = location.pathname === '/features' || location.pathname.startsWith('/features/');
+  const isPricingActive = location.pathname === '/pricing';
+  const isPartnershipActive = location.pathname === '/partnership' || location.pathname === '/partners';
+
+  const isResourcesActive = resourcesMenuItems.some(
     (item) =>
       location.pathname === item.path ||
-      (item.path === '/faq' && location.pathname === '/faqs') ||
-      (item.path === '/about-us' && location.pathname === '/about')
+      (item.path === '/blog' && location.pathname.startsWith('/blog')) ||
+      (item.path === '/faq' && (location.pathname === '/faqs' || location.pathname === '/faq')) ||
+      (item.path === '/why-savoryops' && (location.pathname === '/why-us' || location.pathname === '/why-savoryops'))
   );
 
   return (
     <>
-      {/* Desktop Navigation */}
-      <AppBar position="fixed" className="navigation-appbar" sx={{ zIndex: 9997 }}>
-        <Toolbar>
-          <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
-            <Link
-              to="/"
-              style={{
-                textDecoration: 'none',
-                display: 'flex',
-                alignItems: 'center',
-                marginRight: 16
-              }}
-            >
-              <img
-                src={logoUrl || undefined}
-                alt={`${softwareName} Logo`}
-                style={{
-                  height: '40px',
-                  width: 'auto',
-                  display: 'block',
-                  objectFit: 'contain',
-                  maxWidth: '120px'
-                }}
-                onError={() => setLogoUrl(null)}
-              />
-            </Link>
-            <Link
-              to="/"
-              style={{
-                textDecoration: 'none',
-                color: 'inherit'
-              }}
-            >
-              <Typography variant="h6" component="div" className="brand-name">
-                {softwareName}
-              </Typography>
-            </Link>
-          </Box>
+      {/* Desktop Floating Island Navigation */}
+      <header className={`nav-header-wrapper ${isScrolled ? 'scrolled' : ''}`}>
+        <nav className="navigation-island">
+          {/* Brand Logo & Name */}
+          <Link to="/" className="brand-group">
+            <img
+              src={logoUrl || undefined}
+              alt={`${softwareName} Logo`}
+              onError={() => setLogoUrl(null)}
+            />
+            <Typography variant="h6" component="span" className="brand-title">
+              {softwareName}
+            </Typography>
+          </Link>
 
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1 }}>
-            {/* Home Link */}
-            <Button
-              color="inherit"
-              component={Link}
-              to="/"
-              className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
-              sx={{ textTransform: 'none' }}
-            >
-              Home
-            </Button>
-
+          {/* Desktop Center Menu Links */}
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }} className="nav-links-center">
             {/* Solutions Dropdown Button */}
             <Button
               id="nav-solutions-button"
@@ -377,667 +395,782 @@ const Navigation = () => {
               aria-haspopup="true"
               aria-expanded={isSolutionsMenuOpen ? 'true' : undefined}
               onClick={handleSolutionsClick}
-              color="inherit"
               className={`nav-link ${isSolutionsActive ? 'active' : ''}`}
               endIcon={
                 <KeyboardArrowDownIcon
                   sx={{
-                    transition: 'transform 0.2s ease',
+                    transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
                     transform: isSolutionsMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                    fontSize: '1.2rem !important'
+                    fontSize: '1.15rem !important',
+                    ml: -0.3
                   }}
                 />
               }
-              sx={{
-                textTransform: 'none',
-                fontWeight: isSolutionsActive ? 700 : 500
-              }}
             >
               Solutions
             </Button>
 
-            {/* Solutions Dropdown Mega Menu */}
-            <Menu
-              id="nav-solutions-menu"
-              anchorEl={solutionsAnchorEl}
-              open={isSolutionsMenuOpen}
-              onClose={handleSolutionsClose}
-              disableRestoreFocus
-              marginThreshold={24}
-              MenuListProps={{
-                component: 'div',
-                'aria-labelledby': 'nav-solutions-button',
-                sx: { p: 0, outline: 'none' }
-              }}
-              elevation={10}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'center'
-              }}
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 220
-              }}
-              slotProps={{
-                paper: {
-                  sx: {
-                    mt: 1.5,
-                    width: { md: 960, lg: 1000 },
-                    maxWidth: 'calc(100vw - 32px)',
-                    borderRadius: '22px',
-                    boxShadow: '0 25px 65px -12px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(15, 23, 42, 0.08)',
-                    overflow: 'hidden',
-                    p: 0,
-                    background: '#ffffff'
-                  }
-                }
+            {/* Features Link */}
+            <Button
+              component={Link}
+              to="/features"
+              className={`nav-link ${isFeaturesActive ? 'active' : ''}`}
+            >
+              Features
+            </Button>
+
+            {/* Pricing Link */}
+            <Button
+              component={Link}
+              to="/pricing"
+              className={`nav-link ${isPricingActive ? 'active' : ''}`}
+            >
+              Pricing
+            </Button>
+
+            {/* Partnership Link */}
+            <Button
+              component={Link}
+              to="/partnership"
+              className={`nav-link ${isPartnershipActive ? 'active' : ''}`}
+            >
+              Partnership
+            </Button>
+
+            {/* Resources Dropdown Button */}
+            <Button
+              id="nav-resources-button"
+              aria-controls={isResourcesMenuOpen ? 'nav-resources-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={isResourcesMenuOpen ? 'true' : undefined}
+              onClick={handleResourcesClick}
+              className={`nav-link ${isResourcesActive ? 'active' : ''}`}
+              endIcon={
+                <KeyboardArrowDownIcon
+                  sx={{
+                    transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                    transform: isResourcesMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                    fontSize: '1.15rem !important',
+                    ml: -0.3
+                  }}
+                />
+              }
+            >
+              Resources
+            </Button>
+          </Box>
+
+          {/* Desktop Right CTA Actions */}
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }} className="nav-actions-right">
+            <Button
+              component={Link}
+              to="/signin"
+              className="nav-signin-btn"
+            >
+              Sign In
+            </Button>
+
+            <Button
+              onClick={handleGetStartedClick}
+              className="nav-cta-btn"
+              endIcon={<ArrowForwardIcon className="cta-arrow" sx={{ fontSize: '1rem !important' }} />}
+            >
+              Start Free Trial
+            </Button>
+          </Box>
+
+          {/* Mobile Hamburger Toggle Button */}
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="end"
+            onClick={handleDrawerToggle}
+            className="nav-mobile-toggle"
+            sx={{ display: { md: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </nav>
+      </header>
+
+      {/* Solutions Mega Menu Dropdown */}
+      <Menu
+        id="nav-solutions-menu"
+        anchorEl={solutionsAnchorEl}
+        open={isSolutionsMenuOpen}
+        onClose={handleSolutionsClose}
+        disableRestoreFocus
+        marginThreshold={24}
+        sx={{ zIndex: 10000 }}
+        MenuListProps={{
+          component: 'div',
+          'aria-labelledby': 'nav-solutions-button',
+          sx: { p: 0, outline: 'none' }
+        }}
+        elevation={10}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center'
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 220
+        }}
+        slotProps={{
+          paper: {
+            sx: {
+              mt: 1.5,
+              width: { md: 960, lg: 1000 },
+              maxWidth: 'calc(100vw - 32px)',
+              borderRadius: '22px',
+              boxShadow: '0 25px 65px -12px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(15, 23, 42, 0.08)',
+              overflow: 'hidden',
+              p: 0,
+              background: '#ffffff'
+            }
+          }
+        }}
+      >
+        <Box sx={{ display: 'grid', gridTemplateColumns: { md: '300px 1fr' }, minHeight: 460 }}>
+          {/* Left Sidebar: Category Navigation Tabs */}
+          <Box
+            sx={{
+              backgroundColor: '#f8fafc',
+              borderRight: '1px solid #e2e8f0',
+              p: 1.5,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 0.8
+            }}
+          >
+            <Typography
+              variant="caption"
+              sx={{
+                px: 1.2,
+                py: 0.5,
+                fontSize: '0.72rem',
+                fontWeight: 800,
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                color: '#64748b'
               }}
             >
-              {/* Tabbed Sidebar Mega Menu Container */}
-              <Box sx={{ display: 'grid', gridTemplateColumns: { md: '300px 1fr' }, minHeight: 460 }}>
-                {/* Left Sidebar: Category Navigation Tabs */}
+              Solutions &amp; Ecosystem
+            </Typography>
+
+            {solutionsCategories.map((cat, idx) => {
+              const isTabSelected = activeSolutionTab === idx;
+              return (
                 <Box
+                  key={cat.id}
+                  onMouseEnter={() => setActiveSolutionTab(idx)}
+                  onClick={() => setActiveSolutionTab(idx)}
+                  role="tab"
+                  aria-selected={isTabSelected}
+                  tabIndex={0}
                   sx={{
-                    backgroundColor: '#f8fafc',
-                    borderRight: '1px solid #e2e8f0',
-                    p: 1.5,
                     display: 'flex',
-                    flexDirection: 'column',
-                    gap: 0.8
+                    alignItems: 'center',
+                    gap: 1.2,
+                    px: 1.25,
+                    py: 1.15,
+                    borderRadius: '12px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                    backgroundColor: isTabSelected ? '#ffffff' : 'transparent',
+                    boxShadow: isTabSelected ? '0 4px 14px -2px rgba(15, 23, 42, 0.08)' : 'none',
+                    border: isTabSelected ? '1px solid #e2e8f0' : '1px solid transparent',
+                    '&:hover': {
+                      backgroundColor: isTabSelected ? '#ffffff' : 'rgba(255, 255, 255, 0.65)'
+                    }
                   }}
                 >
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      px: 1.2,
-                      py: 0.5,
-                      fontSize: '0.72rem',
-                      fontWeight: 800,
-                      letterSpacing: '0.08em',
-                      textTransform: 'uppercase',
-                      color: '#64748b'
-                    }}
-                  >
-                    Solutions &amp; Ecosystem
-                  </Typography>
-
-                  {solutionsCategories.map((cat, idx) => {
-                    const isTabSelected = activeSolutionTab === idx;
-                    return (
-                      <Box
-                        key={cat.id}
-                        onMouseEnter={() => setActiveSolutionTab(idx)}
-                        onClick={() => setActiveSolutionTab(idx)}
-                        role="tab"
-                        aria-selected={isTabSelected}
-                        tabIndex={0}
-                        sx={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: 1.2,
-                          px: 1.25,
-                          py: 1.15,
-                          borderRadius: '12px',
-                          cursor: 'pointer',
-                          transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-                          backgroundColor: isTabSelected ? '#ffffff' : 'transparent',
-                          boxShadow: isTabSelected ? '0 4px 14px -2px rgba(15, 23, 42, 0.08)' : 'none',
-                          border: isTabSelected ? '1px solid #e2e8f0' : '1px solid transparent',
-                          '&:hover': {
-                            backgroundColor: isTabSelected ? '#ffffff' : 'rgba(255, 255, 255, 0.65)'
-                          }
-                        }}
-                      >
-                        <Box
-                          sx={{
-                            width: 36,
-                            height: 36,
-                            minWidth: 36,
-                            borderRadius: '10px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            backgroundColor: isTabSelected
-                              ? 'var(--primary-color)'
-                              : 'rgba(15, 23, 42, 0.06)',
-                            color: isTabSelected ? '#ffffff' : '#334155',
-                            transition: 'all 0.2s ease',
-                            flexShrink: 0
-                          }}
-                        >
-                          {cat.icon}
-                        </Box>
-
-                        <Typography
-                          sx={{
-                            flex: 1,
-                            minWidth: 0,
-                            fontSize: '0.86rem',
-                            fontWeight: isTabSelected ? 750 : 600,
-                            color: isTabSelected ? 'var(--primary-color)' : '#1e293b',
-                            lineHeight: 1.25,
-                            whiteSpace: 'nowrap',
-                            transition: 'color 0.2s ease'
-                          }}
-                        >
-                          {cat.category}
-                        </Typography>
-
-                        <ChevronRightIcon
-                          sx={{
-                            fontSize: 16,
-                            color: isTabSelected ? 'var(--primary-color)' : '#94a3b8',
-                            transform: isTabSelected ? 'translateX(2px)' : 'none',
-                            transition: 'all 0.2s ease',
-                            opacity: isTabSelected ? 1 : 0.4,
-                            flexShrink: 0
-                          }}
-                        />
-                      </Box>
-                    );
-                  })}
-
-                  {/* Sidebar bottom indicator */}
                   <Box
                     sx={{
-                      mt: 'auto',
-                      pt: 1.5,
-                      borderTop: '1px solid #e2e8f0',
+                      width: 36,
+                      height: 36,
+                      minWidth: 36,
+                      borderRadius: '10px',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: 1
+                      justifyContent: 'center',
+                      backgroundColor: isTabSelected
+                        ? 'var(--primary-color)'
+                        : 'rgba(15, 23, 42, 0.06)',
+                      color: isTabSelected ? '#ffffff' : '#334155',
+                      transition: 'all 0.2s ease',
+                      flexShrink: 0
                     }}
                   >
-                    <Box
-                      sx={{
-                        width: 8,
-                        height: 8,
-                        borderRadius: '50%',
-                        backgroundColor: '#10b981',
-                        boxShadow: '0 0 0 3px rgba(16, 185, 129, 0.2)'
-                      }}
-                    />
-                    <Typography sx={{ fontSize: '0.74rem', color: '#475569', fontWeight: 550 }}>
-                      Real-Time Cloud Sync Active
-                    </Typography>
+                    {cat.icon}
                   </Box>
-                </Box>
 
-                {/* Right Content Pane: Active Category Items */}
+                  <Typography
+                    sx={{
+                      flex: 1,
+                      minWidth: 0,
+                      fontSize: '0.86rem',
+                      fontWeight: isTabSelected ? 750 : 600,
+                      color: isTabSelected ? 'var(--primary-color)' : '#1e293b',
+                      lineHeight: 1.25,
+                      whiteSpace: 'nowrap',
+                      transition: 'color 0.2s ease'
+                    }}
+                  >
+                    {cat.category}
+                  </Typography>
+
+                  <ChevronRightIcon
+                    sx={{
+                      fontSize: 16,
+                      color: isTabSelected ? 'var(--primary-color)' : '#94a3b8',
+                      transform: isTabSelected ? 'translateX(2px)' : 'none',
+                      transition: 'all 0.2s ease',
+                      opacity: isTabSelected ? 1 : 0.4,
+                      flexShrink: 0
+                    }}
+                  />
+                </Box>
+              );
+            })}
+
+            {/* Sidebar bottom indicator */}
+            <Box
+              sx={{
+                mt: 'auto',
+                pt: 1.5,
+                borderTop: '1px solid #e2e8f0',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1
+              }}
+            >
+              <Box
+                sx={{
+                  width: 8,
+                  height: 8,
+                  borderRadius: '50%',
+                  backgroundColor: '#10b981',
+                  boxShadow: '0 0 0 3px rgba(16, 185, 129, 0.2)'
+                }}
+              />
+              <Typography sx={{ fontSize: '0.74rem', color: '#475569', fontWeight: 550 }}>
+                Real-Time Cloud Sync Active
+              </Typography>
+            </Box>
+          </Box>
+
+          {/* Right Content Pane: Active Category Items */}
+          <Box
+            sx={{
+              p: { md: 2.5, lg: 3 },
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              backgroundColor: '#ffffff'
+            }}
+          >
+            <Box>
+              {/* Header of Active Category */}
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'baseline',
+                  justifyContent: 'space-between',
+                  mb: 2,
+                  pb: 1.2,
+                  borderBottom: '1px solid #f1f5f9'
+                }}
+              >
+                <Box>
+                  <Typography variant="h6" sx={{ fontWeight: 800, fontSize: '1.05rem', color: '#0f172a' }}>
+                    {solutionsCategories[activeSolutionTab]?.category}
+                  </Typography>
+                  <Typography variant="caption" sx={{ color: '#64748b', fontSize: '0.78rem' }}>
+                    {solutionsCategories[activeSolutionTab]?.tagline}
+                  </Typography>
+                </Box>
                 <Box
+                  component="span"
                   sx={{
-                    p: { md: 2.5, lg: 3 },
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    backgroundColor: '#ffffff'
+                    fontSize: '0.74rem',
+                    color: 'var(--primary-color)',
+                    fontWeight: 650
                   }}
                 >
-                  <Box>
-                    {/* Header of Active Category */}
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        mb: 2,
-                        pb: 1.2,
-                        borderBottom: '1px solid #f1f5f9'
-                      }}
-                    >
-                      <Typography sx={{ fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>
-                        {solutionsCategories[activeSolutionTab]?.category}
-                      </Typography>
-                    </Box>
-
-                    {/* 2-Column Grid of Items */}
-                    <Box
-                      sx={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(2, 1fr)',
-                        gap: 1.4
-                      }}
-                    >
-                      {solutionsCategories[activeSolutionTab]?.items.map((item) => {
-                        const isActive = location.pathname === item.path;
-                        return (
-                          <Box
-                            key={item.text}
-                            onClick={() => handleItemClick(item.path)}
-                            role="button"
-                            tabIndex={0}
-                            onKeyDown={(e) => {
-                              if (e.key === 'Enter' || e.key === ' ') {
-                                e.preventDefault();
-                                handleItemClick(item.path);
-                              }
-                            }}
-                            sx={{
-                              display: 'flex',
-                              alignItems: 'center',
-                              gap: 1.3,
-                              p: '10px 14px',
-                              borderRadius: '12px',
-                              cursor: 'pointer',
-                              transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-                              backgroundColor: isActive
-                                ? 'color-mix(in srgb, var(--primary-color) 12%, transparent)'
-                                : 'transparent',
-                              border: isActive
-                                ? '1px solid color-mix(in srgb, var(--primary-color) 30%, transparent)'
-                                : '1px solid #f1f5f9',
-                              '&:hover': {
-                                backgroundColor: 'color-mix(in srgb, var(--primary-color) 7%, #f8fafc)',
-                                transform: 'translateY(-2px)',
-                                borderColor: 'color-mix(in srgb, var(--primary-color) 35%, transparent)',
-                                boxShadow: '0 6px 18px -4px rgba(15, 23, 42, 0.06)',
-                                '& .solution-item-icon': {
-                                  backgroundColor: 'var(--primary-color)',
-                                  color: '#ffffff',
-                                  transform: 'scale(1.06)'
-                                },
-                                '& .solution-item-title': {
-                                  color: 'var(--primary-color)'
-                                },
-                                '& .solution-item-arrow': {
-                                  opacity: 1,
-                                  transform: 'translateX(0px)'
-                                }
-                              }
-                            }}
-                          >
-                            <Box
-                              className="solution-item-icon"
-                              sx={{
-                                width: 36,
-                                height: 36,
-                                minWidth: 36,
-                                borderRadius: '10px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                backgroundColor: isActive
-                                  ? 'var(--primary-color)'
-                                  : 'color-mix(in srgb, var(--primary-color) 10%, #f8fafc)',
-                                color: isActive ? '#ffffff' : 'var(--primary-color)',
-                                transition: 'all 0.2s ease'
-                              }}
-                            >
-                              {item.icon}
-                            </Box>
-
-                            <Box sx={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', gap: 0.8, flexWrap: 'wrap' }}>
-                              <Typography
-                                className="solution-item-title"
-                                sx={{
-                                  fontSize: '0.88rem',
-                                  fontWeight: isActive ? 750 : 650,
-                                  color: isActive ? 'var(--primary-color)' : '#0f172a',
-                                  lineHeight: 1.25,
-                                  transition: 'color 0.2s ease'
-                                }}
-                              >
-                                {item.text}
-                              </Typography>
-                              {item.badge && (
-                                <Box
-                                  component="span"
-                                  sx={{
-                                    fontSize: '0.62rem',
-                                    fontWeight: 700,
-                                    color: item.badgeColor || 'var(--primary-color)',
-                                    backgroundColor: `color-mix(in srgb, ${item.badgeColor || 'var(--primary-color)'} 14%, transparent)`,
-                                    px: 0.7,
-                                    py: 0.15,
-                                    borderRadius: '4px',
-                                    lineHeight: 1.2
-                                  }}
-                                >
-                                  {item.badge}
-                                </Box>
-                              )}
-                            </Box>
-
-                            <ChevronRightIcon
-                              className="solution-item-arrow"
-                              sx={{
-                                fontSize: 16,
-                                color: 'var(--primary-color)',
-                                opacity: 0,
-                                transform: 'translateX(-4px)',
-                                transition: 'all 0.2s ease',
-                                alignSelf: 'center',
-                                flexShrink: 0
-                              }}
-                            />
-                          </Box>
-                        );
-                      })}
-                    </Box>
-                  </Box>
-
-                  {/* Featured Category Promo Card */}
-                  {solutionsCategories[activeSolutionTab]?.promo && (
-                    <Box
-                      sx={{
-                        mt: 2.2,
-                        p: '13px 18px',
-                        borderRadius: '14px',
-                        background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(59, 130, 246, 0.08))',
-                        border: '1px solid rgba(16, 185, 129, 0.2)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        gap: 2
-                      }}
-                    >
-                      <Box sx={{ minWidth: 0 }}>
-                        <Typography sx={{ fontWeight: 750, fontSize: '0.85rem', color: '#0f172a' }}>
-                          {solutionsCategories[activeSolutionTab].promo.title}
-                        </Typography>
-                        <Typography sx={{ fontSize: '0.74rem', color: '#475569', mt: 0.2 }}>
-                          {solutionsCategories[activeSolutionTab].promo.description}
-                        </Typography>
-                      </Box>
-                      <Button
-                        size="small"
-                        onClick={() => handleItemClick(solutionsCategories[activeSolutionTab].promo.actionPath)}
-                        endIcon={<ChevronRightIcon sx={{ fontSize: 16 }} />}
-                        sx={{
-                          textTransform: 'none',
-                          fontWeight: 750,
-                          fontSize: '0.78rem',
-                          color: '#ffffff',
-                          backgroundColor: 'var(--primary-color)',
-                          borderRadius: '8px',
-                          px: 1.8,
-                          py: 0.6,
-                          flexShrink: 0,
-                          boxShadow: 'none',
-                          '&:hover': {
-                            backgroundColor: 'color-mix(in srgb, var(--primary-color) 85%, #000)'
-                          }
-                        }}
-                      >
-                        {solutionsCategories[activeSolutionTab].promo.actionText}
-                      </Button>
-                    </Box>
-                  )}
+                  {solutionsCategories[activeSolutionTab]?.items.length} Modules
                 </Box>
               </Box>
 
-              {/* Bottom Quick-Action Bar */}
+              {/* Items Grid (2 Columns) */}
               <Box
                 sx={{
-                  px: 3,
-                  py: 1.2,
-                  backgroundColor: '#f8fafc',
-                  borderTop: '1px solid #e2e8f0',
+                  display: 'grid',
+                  gridTemplateColumns: { md: 'repeat(2, 1fr)' },
+                  gap: 1.2
+                }}
+              >
+                {solutionsCategories[activeSolutionTab]?.items.map((item) => {
+                  const isActive = location.pathname === item.path;
+                  return (
+                    <Box
+                      key={item.text}
+                      className="solution-item-card"
+                      onClick={() => handleItemClick(item.path)}
+                      sx={{
+                        p: '10px 12px',
+                        borderRadius: '12px',
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: 1.4,
+                        cursor: 'pointer',
+                        transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                        backgroundColor: isActive
+                          ? 'color-mix(in srgb, var(--primary-color) 8%, transparent)'
+                          : 'transparent',
+                        border: isActive
+                          ? '1px solid color-mix(in srgb, var(--primary-color) 25%, transparent)'
+                          : '1px solid transparent'
+                      }}
+                    >
+                      <Box
+                        className="solution-item-icon"
+                        sx={{
+                          width: 36,
+                          height: 36,
+                          minWidth: 36,
+                          borderRadius: '10px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          backgroundColor: isActive
+                            ? 'var(--primary-color)'
+                            : 'color-mix(in srgb, var(--primary-color) 10%, #f8fafc)',
+                          color: isActive ? '#ffffff' : 'var(--primary-color)',
+                          transition: 'all 0.2s ease',
+                          mt: 0.2
+                        }}
+                      >
+                        {item.icon}
+                      </Box>
+
+                      <Box sx={{ flex: 1, minWidth: 0 }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8, flexWrap: 'wrap' }}>
+                          <Typography
+                            className="solution-item-title"
+                            sx={{
+                              fontSize: '0.88rem',
+                              fontWeight: isActive ? 750 : 650,
+                              color: isActive ? 'var(--primary-color)' : '#0f172a',
+                              lineHeight: 1.25,
+                              transition: 'color 0.2s ease'
+                            }}
+                          >
+                            {item.text}
+                          </Typography>
+                          {item.badge && (
+                            <Box
+                              component="span"
+                              sx={{
+                                fontSize: '0.62rem',
+                                fontWeight: 700,
+                                color: item.badgeColor || 'var(--primary-color)',
+                                backgroundColor: `color-mix(in srgb, ${item.badgeColor || 'var(--primary-color)'} 14%, transparent)`,
+                                px: 0.7,
+                                py: 0.15,
+                                borderRadius: '4px',
+                                lineHeight: 1.2
+                              }}
+                            >
+                              {item.badge}
+                            </Box>
+                          )}
+                        </Box>
+                        <Typography
+                          variant="caption"
+                          sx={{
+                            display: 'block',
+                            color: '#64748b',
+                            fontSize: '0.74rem',
+                            mt: 0.3,
+                            lineHeight: 1.35
+                          }}
+                        >
+                          {item.description}
+                        </Typography>
+                      </Box>
+
+                      <ChevronRightIcon
+                        className="solution-item-arrow"
+                        sx={{
+                          fontSize: 16,
+                          color: 'var(--primary-color)',
+                          opacity: 0,
+                          transform: 'translateX(-4px)',
+                          transition: 'all 0.2s ease',
+                          alignSelf: 'center',
+                          flexShrink: 0
+                        }}
+                      />
+                    </Box>
+                  );
+                })}
+              </Box>
+            </Box>
+
+            {/* Featured Category Promo Card */}
+            {solutionsCategories[activeSolutionTab]?.promo && (
+              <Box
+                sx={{
+                  mt: 2.2,
+                  p: '13px 18px',
+                  borderRadius: '14px',
+                  background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(59, 130, 246, 0.08))',
+                  border: '1px solid rgba(16, 185, 129, 0.2)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   gap: 2
                 }}
               >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, minWidth: 0, overflow: 'hidden' }}>
-                  <Box
-                    sx={{
-                      width: 7,
-                      height: 7,
-                      borderRadius: '50%',
-                      backgroundColor: 'var(--primary-color)',
-                      boxShadow: '0 0 0 3px color-mix(in srgb, var(--primary-color) 25%, transparent)',
-                      flexShrink: 0
-                    }}
-                  />
-                  <Typography
-                    sx={{
-                      fontSize: '0.75rem',
-                      color: '#475569',
-                      fontWeight: 500,
-                      whiteSpace: 'nowrap',
-                      textOverflow: 'ellipsis',
-                      overflow: 'hidden'
-                    }}
-                  >
-                    <strong style={{ color: '#0f172a' }}>SavoryOps Global Platform:</strong> Built for multi-branch dining and worldwide partners.
+                <Box sx={{ minWidth: 0 }}>
+                  <Typography sx={{ fontWeight: 750, fontSize: '0.85rem', color: '#0f172a' }}>
+                    {solutionsCategories[activeSolutionTab].promo.title}
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.74rem', color: '#475569', mt: 0.2 }}>
+                    {solutionsCategories[activeSolutionTab].promo.description}
                   </Typography>
                 </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexShrink: 0 }}>
-                  <Box
-                    component="button"
-                    onClick={() => handleItemClick('/signup')}
-                    sx={{
-                      background: 'none',
-                      border: 'none',
-                      cursor: 'pointer',
-                      fontSize: '0.75rem',
-                      fontWeight: 700,
-                      color: 'var(--primary-color)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 0.3,
-                      p: 0,
-                      whiteSpace: 'nowrap',
-                      transition: 'opacity 0.2s',
-                      '&:hover': { opacity: 0.8 }
-                    }}
-                  >
-                    Book Demo <ChevronRightIcon sx={{ fontSize: 15 }} />
-                  </Box>
-                  <Box
-                    component="button"
-                    onClick={() => handleItemClick('/features')}
-                    sx={{
-                      background: 'none',
-                      border: 'none',
-                      cursor: 'pointer',
-                      fontSize: '0.75rem',
-                      fontWeight: 700,
-                      color: '#475569',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 0.3,
-                      p: 0,
-                      whiteSpace: 'nowrap',
-                      transition: 'color 0.2s',
-                      '&:hover': { color: 'var(--primary-color)' }
-                    }}
-                  >
-                    All Modules <ChevronRightIcon sx={{ fontSize: 15 }} />
-                  </Box>
-                  <Box
-                    component="button"
-                    onClick={() => handleItemClick('/partnership')}
-                    sx={{
-                      background: 'none',
-                      border: 'none',
-                      cursor: 'pointer',
-                      fontSize: '0.75rem',
-                      fontWeight: 700,
-                      color: '#475569',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 0.3,
-                      p: 0,
-                      whiteSpace: 'nowrap',
-                      transition: 'color 0.2s',
-                      '&:hover': { color: 'var(--primary-color)' }
-                    }}
-                  >
-                    Partnerships <ChevronRightIcon sx={{ fontSize: 15 }} />
-                  </Box>
-                </Box>
-              </Box>
-            </Menu>
-
-            {/* Other Standard Menu Items */}
-            {menuItems.slice(1).map((item) => {
-              const isItemActive =
-                location.pathname === item.path ||
-                (item.path === '/blog' && location.pathname.startsWith('/blog'));
-              return (
                 <Button
-                  key={item.text}
-                  color="inherit"
-                  component={Link}
-                  to={item.path}
-                  className={`nav-link ${isItemActive ? 'active' : ''}`}
-                  sx={{ textTransform: 'none' }}
-                >
-                  {item.text}
-                </Button>
-              );
-            })}
-
-            {/* More Dropdown Button */}
-            <Button
-              id="nav-more-button"
-              aria-controls={isMoreMenuOpen ? 'nav-more-menu' : undefined}
-              aria-haspopup="true"
-              aria-expanded={isMoreMenuOpen ? 'true' : undefined}
-              onClick={handleMoreClick}
-              color="inherit"
-              className={`nav-link ${isMoreActive ? 'active' : ''}`}
-              endIcon={
-                <KeyboardArrowDownIcon
+                  size="small"
+                  onClick={() => handleItemClick(solutionsCategories[activeSolutionTab].promo.actionPath)}
+                  endIcon={<ChevronRightIcon sx={{ fontSize: 16 }} />}
                   sx={{
-                    transition: 'transform 0.2s ease',
-                    transform: isMoreMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                    fontSize: '1.2rem !important'
+                    textTransform: 'none',
+                    fontWeight: 750,
+                    fontSize: '0.78rem',
+                    color: '#ffffff',
+                    backgroundColor: 'var(--primary-color)',
+                    borderRadius: '8px',
+                    px: 1.8,
+                    py: 0.6,
+                    flexShrink: 0,
+                    boxShadow: 'none',
+                    '&:hover': {
+                      backgroundColor: 'color-mix(in srgb, var(--primary-color) 85%, #000)'
+                    }
                   }}
-                />
-              }
+                >
+                  {solutionsCategories[activeSolutionTab].promo.actionText}
+                </Button>
+              </Box>
+            )}
+          </Box>
+        </Box>
+
+        {/* Bottom Quick-Action Bar */}
+        <Box
+          sx={{
+            px: 3,
+            py: 1.2,
+            backgroundColor: '#f8fafc',
+            borderTop: '1px solid #e2e8f0',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 2
+          }}
+        >
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, minWidth: 0, overflow: 'hidden' }}>
+            <Box
               sx={{
-                textTransform: 'none',
-                fontWeight: isMoreActive ? 700 : 500
+                width: 7,
+                height: 7,
+                borderRadius: '50%',
+                backgroundColor: 'var(--primary-color)',
+                boxShadow: '0 0 0 3px color-mix(in srgb, var(--primary-color) 25%, transparent)',
+                flexShrink: 0
+              }}
+            />
+            <Typography
+              sx={{
+                fontSize: '0.75rem',
+                color: '#475569',
+                fontWeight: 500,
+                whiteSpace: 'nowrap',
+                textOverflow: 'ellipsis',
+                overflow: 'hidden'
               }}
             >
-              More
-            </Button>
-
-            {/* More Dropdown Menu */}
-            <Menu
-              id="nav-more-menu"
-              anchorEl={moreAnchorEl}
-              open={isMoreMenuOpen}
-              onClose={handleMoreClose}
-              disableRestoreFocus
-              MenuListProps={{
-                'aria-labelledby': 'nav-more-button'
-              }}
-              elevation={4}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'right'
-              }}
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right'
-              }}
-              slotProps={{
-                paper: {
-                  sx: {
-                    mt: 1.5,
-                    minWidth: 190,
-                    borderRadius: '14px',
-                    boxShadow: '0 12px 36px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.05)',
-                    border: '1px solid color-mix(in srgb, var(--primary-color) 18%, #eaeaea)',
-                    overflow: 'hidden',
-                    p: 0.8
-                  }
-                }
-              }}
-            >
-              {moreMenuItems.map((item) => {
-                const isActive =
-                  location.pathname === item.path ||
-                  (item.path === '/faq' && location.pathname === '/faqs');
-                return (
-                  <MenuItem
-                    key={item.text}
-                    onClick={() => handleItemClick(item.path)}
-                    sx={{
-                      borderRadius: '10px',
-                      py: 1.2,
-                      px: 2,
-                      my: 0.3,
-                      transition: 'all 0.2s ease',
-                      fontWeight: isActive ? 700 : 500,
-                      color: isActive ? 'var(--primary-color)' : '#2d3748',
-                      backgroundColor: isActive
-                        ? 'color-mix(in srgb, var(--primary-color) 12%, transparent)'
-                        : 'transparent',
-                      '&:hover': {
-                        backgroundColor: 'color-mix(in srgb, var(--primary-color) 10%, transparent)',
-                        color: 'var(--primary-color)'
-                      }
-                    }}
-                  >
-                    <ListItemIcon
-                      sx={{
-                        color: isActive ? 'var(--primary-color)' : '#718096',
-                        minWidth: 32
-                      }}
-                    >
-                      {item.icon}
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={item.text}
-                      primaryTypographyProps={{
-                        fontSize: '0.92rem',
-                        fontWeight: isActive ? 700 : 500
-                      }}
-                    />
-                  </MenuItem>
-                );
-              })}
-            </Menu>
-
-            <Button
-              color="inherit"
-              component={Link}
-              to="/signin"
-              className={`nav-link ${location.pathname === '/signin' ? 'active' : ''}`}
+              <strong style={{ color: '#0f172a' }}>SavoryOps Global Platform:</strong> Built for multi-branch dining and worldwide partners.
+            </Typography>
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexShrink: 0 }}>
+            <Box
+              component="button"
+              onClick={() => handleItemClick('/signup')}
               sx={{
-                textTransform: 'none',
-                fontWeight: 600,
-                fontSize: '0.92rem',
-                color: 'inherit',
-                mr: 0.5
-              }}
-            >
-              Sign In
-            </Button>
-
-            <Button
-              variant="contained"
-              onClick={handleGetStartedClick}
-              className="get-started-btn"
-              sx={{
-                borderRadius: '50px',
-                px: 3,
-                py: 1,
-                textTransform: 'none',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                fontSize: '0.75rem',
                 fontWeight: 700,
-                boxShadow: '0 4px 14px color-mix(in srgb, var(--primary-color) 35%, transparent)'
+                color: 'var(--primary-color)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 0.3,
+                p: 0,
+                whiteSpace: 'nowrap',
+                transition: 'opacity 0.2s',
+                '&:hover': { opacity: 0.8 }
               }}
             >
-              Start Free Trial
-            </Button>
+              Book Demo <ChevronRightIcon sx={{ fontSize: 15 }} />
+            </Box>
+            <Box
+              component="button"
+              onClick={() => handleItemClick('/features')}
+              sx={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                fontSize: '0.75rem',
+                fontWeight: 700,
+                color: '#475569',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 0.3,
+                p: 0,
+                whiteSpace: 'nowrap',
+                transition: 'color 0.2s',
+                '&:hover': { color: 'var(--primary-color)' }
+              }}
+            >
+              All Modules <ChevronRightIcon sx={{ fontSize: 15 }} />
+            </Box>
+            <Box
+              component="button"
+              onClick={() => handleItemClick('/partnership')}
+              sx={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                fontSize: '0.75rem',
+                fontWeight: 700,
+                color: '#475569',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 0.3,
+                p: 0,
+                whiteSpace: 'nowrap',
+                transition: 'color 0.2s',
+                '&:hover': { color: 'var(--primary-color)' }
+              }}
+            >
+              Partnerships <ChevronRightIcon sx={{ fontSize: 15 }} />
+            </Box>
+          </Box>
+        </Box>
+      </Menu>
+
+      {/* Resources Dropdown Menu */}
+      <Menu
+        id="nav-resources-menu"
+        anchorEl={resourcesAnchorEl}
+        open={isResourcesMenuOpen}
+        onClose={handleResourcesClose}
+        disableRestoreFocus
+        marginThreshold={24}
+        sx={{ zIndex: 10000 }}
+        MenuListProps={{
+          component: 'div',
+          'aria-labelledby': 'nav-resources-button',
+          sx: { p: 0, outline: 'none' }
+        }}
+        elevation={10}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center'
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'center'
+        }}
+        slotProps={{
+          paper: {
+            sx: {
+              mt: 1.5,
+              width: { md: 620, lg: 660 },
+              maxWidth: 'calc(100vw - 32px)',
+              borderRadius: '22px',
+              boxShadow: '0 25px 65px -12px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(15, 23, 42, 0.08)',
+              overflow: 'hidden',
+              p: 0,
+              background: '#ffffff'
+            }
+          }
+        }}
+      >
+        <Box sx={{ p: 2.2 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1.5, px: 0.5 }}>
+            <Typography
+              variant="caption"
+              sx={{
+                fontSize: '0.72rem',
+                fontWeight: 800,
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                color: '#64748b'
+              }}
+            >
+              Resources &amp; Company
+            </Typography>
+            <Typography variant="caption" sx={{ fontSize: '0.74rem', color: '#94a3b8' }}>
+              Learn, explore &amp; get help
+            </Typography>
           </Box>
 
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ display: { md: 'none' }, color: 'var(--primary-color)' }}
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' },
+              gap: 1.2
+            }}
           >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
+            {resourcesMenuItems.map((item) => {
+              const isActive =
+                location.pathname === item.path ||
+                (item.path === '/blog' && location.pathname.startsWith('/blog')) ||
+                (item.path === '/faq' && (location.pathname === '/faqs' || location.pathname === '/faq')) ||
+                (item.path === '/why-savoryops' && (location.pathname === '/why-us' || location.pathname === '/why-savoryops'));
+
+              return (
+                <Box
+                  key={item.title}
+                  onClick={() => handleItemClick(item.path)}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: 1.4,
+                    p: 1.3,
+                    borderRadius: '12px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                    backgroundColor: isActive
+                      ? 'color-mix(in srgb, var(--primary-color) 8%, transparent)'
+                      : 'transparent',
+                    border: isActive
+                      ? '1px solid color-mix(in srgb, var(--primary-color) 25%, transparent)'
+                      : '1px solid transparent',
+                    '&:hover': {
+                      backgroundColor: 'rgba(15, 23, 42, 0.04)',
+                      transform: 'translateY(-1px)'
+                    }
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 38,
+                      height: 38,
+                      minWidth: 38,
+                      borderRadius: '10px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      backgroundColor: item.bgColor,
+                      color: item.iconColor,
+                      transition: 'transform 0.2s ease',
+                      mt: 0.2
+                    }}
+                  >
+                    {item.icon}
+                  </Box>
+                  <Box sx={{ flex: 1, minWidth: 0 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8, flexWrap: 'wrap' }}>
+                      <Typography
+                        sx={{
+                          fontSize: '0.88rem',
+                          fontWeight: 700,
+                          color: isActive ? 'var(--primary-color)' : '#0f172a',
+                          lineHeight: 1.25
+                        }}
+                      >
+                        {item.title}
+                      </Typography>
+                      {item.badge && (
+                        <Box
+                          component="span"
+                          sx={{
+                            fontSize: '0.62rem',
+                            fontWeight: 700,
+                            color: item.badgeColor,
+                            backgroundColor: `color-mix(in srgb, ${item.badgeColor} 14%, transparent)`,
+                            px: 0.7,
+                            py: 0.15,
+                            borderRadius: '4px',
+                            lineHeight: 1.2
+                          }}
+                        >
+                          {item.badge}
+                        </Box>
+                      )}
+                    </Box>
+                    <Typography
+                      sx={{
+                        fontSize: '0.74rem',
+                        color: '#64748b',
+                        mt: 0.3,
+                        lineHeight: 1.35
+                      }}
+                    >
+                      {item.description}
+                    </Typography>
+                  </Box>
+                </Box>
+              );
+            })}
+          </Box>
+        </Box>
+
+        {/* Bottom Bar in Resources */}
+        <Box
+          sx={{
+            px: 2.5,
+            py: 1.3,
+            backgroundColor: '#f8fafc',
+            borderTop: '1px solid #e2e8f0',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 2
+          }}
+        >
+          <Typography sx={{ fontSize: '0.76rem', color: '#475569', fontWeight: 550 }}>
+            Looking for agency license or custom integration?
+          </Typography>
+          <Box
+            component="button"
+            onClick={() => handleItemClick('/partnership')}
+            sx={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              fontSize: '0.76rem',
+              fontWeight: 700,
+              color: 'var(--primary-color)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 0.3,
+              p: 0,
+              whiteSpace: 'nowrap',
+              transition: 'opacity 0.2s',
+              '&:hover': { opacity: 0.8 }
+            }}
+          >
+            Partner With Us <ChevronRightIcon sx={{ fontSize: 16 }} />
+          </Box>
+        </Box>
+      </Menu>
 
       {/* Mobile Navigation Drawer */}
       {mobileOpen && (
@@ -1050,7 +1183,9 @@ const Navigation = () => {
               left: 0,
               right: 0,
               bottom: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              backgroundColor: 'rgba(15, 23, 42, 0.45)',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
               zIndex: 9998,
               transition: 'opacity 0.3s ease'
             }}
@@ -1061,12 +1196,12 @@ const Navigation = () => {
               position: 'fixed',
               top: 0,
               right: 0,
-              width: '80%',
-              maxWidth: '360px',
+              width: '84%',
+              maxWidth: '380px',
               height: '100%',
-              backgroundColor: '#fff',
+              backgroundColor: '#ffffff',
               zIndex: 9999,
-              boxShadow: '-4px 0 20px rgba(0, 0, 0, 0.15)',
+              boxShadow: '-10px 0 40px rgba(15, 23, 42, 0.15)',
               display: 'flex',
               flexDirection: 'column',
               overflowY: 'auto'
@@ -1078,11 +1213,11 @@ const Navigation = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                padding: '16px 20px',
-                borderBottom: '1px solid #e0e0e0'
+                padding: '18px 20px',
+                borderBottom: '1px solid #f1f5f9'
               }}
             >
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.2 }}>
                 <img
                   src={logoUrl || undefined}
                   alt={`${softwareName} Logo`}
@@ -1093,22 +1228,23 @@ const Navigation = () => {
                   }}
                   onError={() => setLogoUrl(null)}
                 />
-                <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#1a1a1a' }}>
+                <Typography variant="h6" sx={{ fontWeight: 800, color: '#0f172a', fontSize: '1.2rem' }}>
                   {softwareName}
                 </Typography>
               </Box>
-              <IconButton onClick={handleDrawerToggle} edge="end">
+              <IconButton onClick={handleDrawerToggle} edge="end" sx={{ color: '#64748b' }}>
                 <CloseIcon />
               </IconButton>
             </Box>
 
             {/* Mobile Nav Links */}
-            <Box sx={{ py: 1 }}>
+            <Box sx={{ py: 1.5, flex: 1 }}>
+              {/* Home Link */}
               <Link to="/" onClick={handleDrawerToggle} style={{ textDecoration: 'none' }}>
                 <Box
                   sx={{
-                    padding: '14px 20px',
-                    color: location.pathname === '/' ? 'var(--primary-color)' : '#333',
+                    padding: '13px 22px',
+                    color: location.pathname === '/' ? 'var(--primary-color)' : '#1e293b',
                     backgroundColor:
                       location.pathname === '/'
                         ? 'color-mix(in srgb, var(--primary-color) 10%, transparent)'
@@ -1117,7 +1253,7 @@ const Navigation = () => {
                       location.pathname === '/'
                         ? '3px solid var(--primary-color)'
                         : '3px solid transparent',
-                    fontWeight: location.pathname === '/' ? 'bold' : 'normal',
+                    fontWeight: location.pathname === '/' ? 750 : 550,
                     cursor: 'pointer'
                   }}
                 >
@@ -1132,8 +1268,8 @@ const Navigation = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '14px 20px',
-                  color: isSolutionsActive ? 'var(--primary-color)' : '#333',
+                  padding: '13px 22px',
+                  color: isSolutionsActive ? 'var(--primary-color)' : '#1e293b',
                   backgroundColor: isSolutionsActive
                     ? 'color-mix(in srgb, var(--primary-color) 10%, transparent)'
                     : 'transparent',
@@ -1143,18 +1279,18 @@ const Navigation = () => {
                   cursor: 'pointer'
                 }}
               >
-                <Typography variant="body1" sx={{ fontWeight: isSolutionsActive ? 'bold' : 'normal' }}>
+                <Typography variant="body1" sx={{ fontWeight: isSolutionsActive ? 750 : 550 }}>
                   Solutions
                 </Typography>
                 {mobileSolutionsOpen || isSolutionsActive ? (
-                  <ExpandLessIcon sx={{ color: isSolutionsActive ? 'var(--primary-color)' : '#666' }} />
+                  <ExpandLessIcon sx={{ color: isSolutionsActive ? 'var(--primary-color)' : '#64748b' }} />
                 ) : (
-                  <ExpandMoreIcon sx={{ color: isSolutionsActive ? 'var(--primary-color)' : '#666' }} />
+                  <ExpandMoreIcon sx={{ color: isSolutionsActive ? 'var(--primary-color)' : '#64748b' }} />
                 )}
               </Box>
 
               <Collapse in={mobileSolutionsOpen || isSolutionsActive} timeout="auto" unmountOnExit>
-                <Box sx={{ pl: 2, pr: 2, py: 1, backgroundColor: 'rgba(0,0,0,0.02)' }}>
+                <Box sx={{ pl: 2, pr: 2, py: 1, backgroundColor: '#f8fafc' }}>
                   {solutionsCategories.map((cat) => (
                     <Box key={cat.category} sx={{ mb: 2 }}>
                       <Typography
@@ -1264,74 +1400,106 @@ const Navigation = () => {
                 </Box>
               </Collapse>
 
-              {menuItems.slice(1).map((item) => {
-                const isItemActive =
-                  location.pathname === item.path ||
-                  (item.path === '/blog' && location.pathname.startsWith('/blog'));
-                return (
-                  <Link
-                    key={item.text}
-                    to={item.path}
-                    onClick={handleDrawerToggle}
-                    style={{ textDecoration: 'none' }}
-                  >
-                    <Box
-                      sx={{
-                        padding: '14px 20px',
-                        color: isItemActive ? 'var(--primary-color)' : '#333',
-                        backgroundColor: isItemActive
-                          ? 'color-mix(in srgb, var(--primary-color) 10%, transparent)'
-                          : 'transparent',
-                        borderLeft: isItemActive
-                          ? '3px solid var(--primary-color)'
-                          : '3px solid transparent',
-                        fontWeight: isItemActive ? 'bold' : 'normal',
-                        cursor: 'pointer'
-                      }}
-                    >
-                      <Typography variant="body1">{item.text}</Typography>
-                    </Box>
-                  </Link>
-                );
-              })}
+              {/* Features Link */}
+              <Link to="/features" onClick={handleDrawerToggle} style={{ textDecoration: 'none' }}>
+                <Box
+                  sx={{
+                    padding: '13px 22px',
+                    color: isFeaturesActive ? 'var(--primary-color)' : '#1e293b',
+                    backgroundColor: isFeaturesActive
+                      ? 'color-mix(in srgb, var(--primary-color) 10%, transparent)'
+                      : 'transparent',
+                    borderLeft: isFeaturesActive
+                      ? '3px solid var(--primary-color)'
+                      : '3px solid transparent',
+                    fontWeight: isFeaturesActive ? 750 : 550,
+                    cursor: 'pointer'
+                  }}
+                >
+                  <Typography variant="body1">Features</Typography>
+                </Box>
+              </Link>
 
-              {/* Collapsible More Section on Mobile */}
+              {/* Pricing Link */}
+              <Link to="/pricing" onClick={handleDrawerToggle} style={{ textDecoration: 'none' }}>
+                <Box
+                  sx={{
+                    padding: '13px 22px',
+                    color: isPricingActive ? 'var(--primary-color)' : '#1e293b',
+                    backgroundColor: isPricingActive
+                      ? 'color-mix(in srgb, var(--primary-color) 10%, transparent)'
+                      : 'transparent',
+                    borderLeft: isPricingActive
+                      ? '3px solid var(--primary-color)'
+                      : '3px solid transparent',
+                    fontWeight: isPricingActive ? 750 : 550,
+                    cursor: 'pointer'
+                  }}
+                >
+                  <Typography variant="body1">Pricing</Typography>
+                </Box>
+              </Link>
+
+              {/* Partnership Link */}
+              <Link to="/partnership" onClick={handleDrawerToggle} style={{ textDecoration: 'none' }}>
+                <Box
+                  sx={{
+                    padding: '13px 22px',
+                    color: isPartnershipActive ? 'var(--primary-color)' : '#1e293b',
+                    backgroundColor: isPartnershipActive
+                      ? 'color-mix(in srgb, var(--primary-color) 10%, transparent)'
+                      : 'transparent',
+                    borderLeft: isPartnershipActive
+                      ? '3px solid var(--primary-color)'
+                      : '3px solid transparent',
+                    fontWeight: isPartnershipActive ? 750 : 550,
+                    cursor: 'pointer'
+                  }}
+                >
+                  <Typography variant="body1">Partnership</Typography>
+                </Box>
+              </Link>
+
+              {/* Collapsible Resources Section on Mobile */}
               <Box
-                onClick={() => setMobileMoreOpen(!mobileMoreOpen)}
+                onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '14px 20px',
-                  color: isMoreActive ? 'var(--primary-color)' : '#333',
-                  backgroundColor: isMoreActive
+                  padding: '13px 22px',
+                  color: isResourcesActive ? 'var(--primary-color)' : '#1e293b',
+                  backgroundColor: isResourcesActive
                     ? 'color-mix(in srgb, var(--primary-color) 10%, transparent)'
                     : 'transparent',
-                  borderLeft: isMoreActive
+                  borderLeft: isResourcesActive
                     ? '3px solid var(--primary-color)'
                     : '3px solid transparent',
                   cursor: 'pointer'
                 }}
               >
-                <Typography variant="body1" sx={{ fontWeight: isMoreActive ? 'bold' : 'normal' }}>
-                  More
+                <Typography variant="body1" sx={{ fontWeight: isResourcesActive ? 750 : 550 }}>
+                  Resources
                 </Typography>
-                {mobileMoreOpen || isMoreActive ? (
-                  <ExpandLessIcon sx={{ color: isMoreActive ? 'var(--primary-color)' : '#666' }} />
+                {mobileResourcesOpen || isResourcesActive ? (
+                  <ExpandLessIcon sx={{ color: isResourcesActive ? 'var(--primary-color)' : '#64748b' }} />
                 ) : (
-                  <ExpandMoreIcon sx={{ color: isMoreActive ? 'var(--primary-color)' : '#666' }} />
+                  <ExpandMoreIcon sx={{ color: isResourcesActive ? 'var(--primary-color)' : '#64748b' }} />
                 )}
               </Box>
 
-              <Collapse in={mobileMoreOpen || isMoreActive} timeout="auto" unmountOnExit>
-                <Box sx={{ pl: 2, backgroundColor: 'rgba(0,0,0,0.02)' }}>
-                  {moreMenuItems.map((item) => {
+              <Collapse in={mobileResourcesOpen || isResourcesActive} timeout="auto" unmountOnExit>
+                <Box sx={{ pl: 2, pr: 2, py: 1, backgroundColor: '#f8fafc' }}>
+                  {resourcesMenuItems.map((item) => {
                     const isActive =
                       location.pathname === item.path ||
-                      (item.path === '/faq' && location.pathname === '/faqs');
+                      (item.path === '/blog' && location.pathname.startsWith('/blog')) ||
+                      (item.path === '/faq' && (location.pathname === '/faqs' || location.pathname === '/faq')) ||
+                      (item.path === '/why-savoryops' && (location.pathname === '/why-us' || location.pathname === '/why-savoryops'));
+
                     return (
                       <Link
-                        key={item.text}
+                        key={item.title}
                         to={item.path}
                         onClick={handleDrawerToggle}
                         style={{ textDecoration: 'none' }}
@@ -1341,82 +1509,112 @@ const Navigation = () => {
                             display: 'flex',
                             alignItems: 'center',
                             gap: 1.5,
-                            padding: '12px 20px',
-                            color: isActive ? 'var(--primary-color)' : '#555',
+                            padding: '10px 12px',
+                            my: 0.4,
+                            borderRadius: '10px',
+                            color: isActive ? 'var(--primary-color)' : '#334155',
                             backgroundColor: isActive
                               ? 'color-mix(in srgb, var(--primary-color) 12%, transparent)'
                               : 'transparent',
                             borderLeft: isActive
                               ? '3px solid var(--primary-color)'
-                              : '3px solid transparent',
-                            fontWeight: isActive ? 'bold' : 'normal'
+                              : '3px solid transparent'
                           }}
                         >
-                          <Box sx={{ color: isActive ? 'var(--primary-color)' : '#888', display: 'flex' }}>
+                          <Box
+                            sx={{
+                              width: 32,
+                              height: 32,
+                              borderRadius: '8px',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              backgroundColor: item.bgColor,
+                              color: item.iconColor,
+                              flexShrink: 0
+                            }}
+                          >
                             {item.icon}
                           </Box>
-                          <Typography variant="body2" sx={{ fontWeight: isActive ? 600 : 400 }}>
-                            {item.text}
-                          </Typography>
+                          <Box sx={{ flex: 1, minWidth: 0 }}>
+                            <Typography variant="body2" sx={{ fontWeight: isActive ? 700 : 600 }}>
+                              {item.title}
+                            </Typography>
+                            <Typography
+                              variant="caption"
+                              sx={{
+                                color: '#64748b',
+                                fontSize: '0.72rem',
+                                display: '-webkit-box',
+                                WebkitLineClamp: 1,
+                                WebkitBoxOrient: 'vertical',
+                                overflow: 'hidden'
+                              }}
+                            >
+                              {item.description}
+                            </Typography>
+                          </Box>
                         </Box>
                       </Link>
                     );
                   })}
                 </Box>
               </Collapse>
+            </Box>
 
-              {/* Get Started Button for Mobile */}
-              <Box
+            {/* Bottom Sticky Action Buttons on Mobile */}
+            <Box
+              sx={{
+                padding: '18px 20px',
+                borderTop: '1px solid #f1f5f9',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 1.5,
+                backgroundColor: '#ffffff'
+              }}
+            >
+              <Button
+                variant="outlined"
+                onClick={() => {
+                  navigate('/signin');
+                  handleDrawerToggle();
+                }}
                 sx={{
-                  padding: '20px',
-                  borderTop: '1px solid #e0e0e0',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 2,
-                  mt: 2
+                  borderColor: '#cbd5e1',
+                  color: '#1e293b',
+                  fontWeight: 650,
+                  width: '100%',
+                  textTransform: 'none',
+                  borderRadius: '9999px',
+                  py: 1.1,
+                  '&:hover': {
+                    borderColor: 'var(--primary-color)',
+                    backgroundColor: 'color-mix(in srgb, var(--primary-color) 8%, transparent)'
+                  }
                 }}
               >
-                <Button
-                  variant="outlined"
-                  onClick={() => {
-                    navigate('/signin');
-                    handleDrawerToggle();
-                  }}
-                  sx={{
-                    borderColor: 'var(--primary-color)',
-                    color: 'var(--primary-color)',
-                    fontWeight: 600,
-                    width: '100%',
-                    textTransform: 'none',
-                    borderRadius: '10px',
-                    py: 1.1,
-                    '&:hover': {
-                      borderColor: 'var(--primary-color)',
-                      backgroundColor: 'color-mix(in srgb, var(--primary-color) 8%, transparent)'
-                    }
-                  }}
-                >
-                  Sign In
-                </Button>
-                <Button
-                  variant="contained"
-                  onClick={() => {
-                    handleGetStartedClick();
-                    handleDrawerToggle();
-                  }}
-                  sx={{
-                    backgroundColor: 'var(--primary-color)',
-                    color: 'white',
-                    fontWeight: 'bold',
-                    width: '100%',
-                    textTransform: 'none',
-                    borderRadius: '10px',
-                    py: 1.2
-                  }}
-                >
-                  Start Free Trial
-                </Button>
-              </Box>
+                Sign In
+              </Button>
+              <Button
+                variant="contained"
+                onClick={() => {
+                  handleGetStartedClick();
+                  handleDrawerToggle();
+                }}
+                endIcon={<ArrowForwardIcon sx={{ fontSize: 16 }} />}
+                sx={{
+                  background: 'linear-gradient(135deg, #059669 0%, #028802 100%)',
+                  color: 'white',
+                  fontWeight: 700,
+                  width: '100%',
+                  textTransform: 'none',
+                  borderRadius: '9999px',
+                  py: 1.2,
+                  boxShadow: '0 4px 14px rgba(2, 136, 2, 0.32)'
+                }}
+              >
+                Start Free Trial
+              </Button>
             </Box>
           </Box>
         </>
