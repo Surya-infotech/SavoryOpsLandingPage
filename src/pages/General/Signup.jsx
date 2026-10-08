@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import PhoneInput, { isValidPhoneNumber, parsePhoneNumber } from "react-phone-number-input";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import 'react-phone-number-input/style.css';
 import { NavLink } from 'react-router-dom';
 import Flag from 'react-world-flags';
@@ -21,8 +21,6 @@ const OwnerSignUp = () => {
     const [phoneError, setPhoneError] = useState('');
     const [termsAccepted, setTermsAccepted] = useState(false);
     const [currentStep, setCurrentStep] = useState(1);
-    const [otp, setOtp] = useState(['', '', '', '', '', '']);
-    const [otpError, setOtpError] = useState('');
     const [signupData, setSignupData] = useState(null);
     const BackendPath = import.meta.env.VITE_BACKEND_URL;
     const host = import.meta.env.VITE_HOST;
@@ -34,34 +32,12 @@ const OwnerSignUp = () => {
     const [referralCode, setReferralCode] = useState('');
     const [referralError, setReferralError] = useState('');
     const [validatedCode, setValidatedCode] = useState('');
-    const [isSendingOtp, setIsSendingOtp] = useState(false);
-    const [isVerifyingOtp, setIsVerifyingOtp] = useState(false);
-    const [isResendingOtp, setIsResendingOtp] = useState(false);
     const [isValidatingReferral, setIsValidatingReferral] = useState(false);
     const [isCreatingAccount, setIsCreatingAccount] = useState(false);
     const [formError, setFormError] = useState('');
     const [warningMessage, setWarningMessage] = useState("");
     const [showWarning, setShowWarning] = useState(false);
-    const [timer, setTimer] = useState(0);
     const { logoUrl, softwareName, setLogoUrl } = useAppSettings();
-
-    useEffect(() => {
-        let interval = null;
-        if (timer > 0) {
-            interval = setInterval(() => {
-                setTimer((prev) => prev - 1);
-            }, 1000);
-        } else {
-            clearInterval(interval);
-        }
-        return () => clearInterval(interval);
-    }, [timer]);
-
-    const formatTimer = (seconds) => {
-        const mins = Math.floor(seconds / 60);
-        const secs = seconds % 60;
-        return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-    };
 
     const languages = getLanguageOptions();
 
@@ -89,8 +65,8 @@ const OwnerSignUp = () => {
     useEffect(() => {
         if (typeof window !== 'undefined' && navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
-                () => {},
-                () => {},
+                () => { },
+                () => { },
                 { enableHighAccuracy: true, timeout: 5000, maximumAge: 300000 }
             );
         }
@@ -123,30 +99,6 @@ const OwnerSignUp = () => {
                 setPhoneError("");
             }
         }
-    };
-
-    const getMaskedPhone = (phoneNum) => {
-        if (!phoneNum) return '';
-        try {
-            const parsed = parsePhoneNumber(phoneNum);
-            if (parsed) {
-                const countryCode = `+${parsed.countryCallingCode}`;
-                const national = parsed.nationalNumber || '';
-                if (national.length > 3) {
-                    const last3 = national.slice(-3);
-                    const mask = '*'.repeat(Math.max(national.length - 3, 4));
-                    return `${countryCode} ${mask}${last3}`;
-                }
-            }
-        } catch {
-            // fallback if parse fails
-        }
-        const str = String(phoneNum).trim();
-        if (str.length <= 4) return str;
-        const last3 = str.slice(-3);
-        const prefix = str.startsWith('+') ? str.slice(0, str.length > 6 ? 3 : 2) : str.slice(0, 2);
-        const mask = '*'.repeat(Math.max(str.length - prefix.length - 3, 4));
-        return `${prefix} ${mask}${last3}`;
     };
 
     const validateReferralCode = async (codeToValidate) => {
@@ -200,113 +152,6 @@ const OwnerSignUp = () => {
         await validateReferralCode(referralCode);
     };
 
-    const handleBasicInfoSubmit = async (e) => {
-        e.preventDefault();
-        setIsSendingOtp(true);
-        setFormError('');
-
-        if (password.length < 8 || password.length > 14) {
-            setFormError(translations.passwordLengthError);
-            setIsSendingOtp(false);
-            return;
-        }
-
-        let isPhoneValid = false;
-        if (phone && phone.trim() !== '') {
-            try {
-                isPhoneValid = isValidPhoneNumber(phone);
-            } catch {
-                isPhoneValid = false;
-            }
-        }
-
-        if (!isPhoneValid || !phone || phone.trim() === '') {
-            setPhoneError(translations.invalidphonenumber);
-            setFormError(translations.invalidphonenumber);
-            setIsSendingOtp(false);
-            return;
-        }
-
-        setPhoneError("");
-
-        if (!termsAccepted) {
-            setFormError(translations.youmustacceptthetermsandconditions);
-            setIsSendingOtp(false);
-            return;
-        }
-
-        if (referralError) {
-            setIsSendingOtp(false);
-            return;
-        }
-
-        if (referralCode && referralCode.trim() !== '') {
-            const isValid = await validateReferralCode(referralCode);
-            if (!isValid) {
-                setIsSendingOtp(false);
-                return;
-            }
-        }
-
-        try {
-            const response = await fetch(`${BackendPath}/General/owner/SendOTP`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json", "x-user": "admin" },
-                body: JSON.stringify({ phone }),
-            });
-            const data = await response.json();
-            if (response.ok) {
-                setOtp(['', '', '', '', '', '']);
-                setOtpError('');
-                setTimer(60);
-                setCurrentStep(2);
-                setFormError('');
-            } else {
-                const errorMessages = {
-                    "All fields are required": translations.allfieldrequired,
-                    "Email ID Already Exists": translations.emailalreadyexists,
-                    "Server error": translations.servererror
-                };
-                setFormError(errorMessages[data.message] || translations.servererror);
-            }
-        } catch {
-            setWarningMessage(translations.servererror);
-            setShowWarning(true);
-        } finally {
-            setIsSendingOtp(false);
-        }
-    };
-
-    const handleOtpChange = (index, value) => {
-        if (value.length > 1) return;
-        const newOtp = [...otp];
-        newOtp[index] = value;
-        setOtp(newOtp);
-        setOtpError('');
-
-        if (value && index < 5) {
-            const nextInput = document.getElementById(`otp-${index + 1}`);
-            if (nextInput) nextInput.focus();
-        }
-    };
-
-    const handleOtpKeyDown = (index, e) => {
-        if (e.key === 'Backspace' && !otp[index] && index > 0) {
-            const prevInput = document.getElementById(`otp-${index - 1}`);
-            if (prevInput) prevInput.focus();
-        }
-    };
-
-    const handleOtpPaste = (e) => {
-        e.preventDefault();
-        const pastedData = e.clipboardData.getData('text').slice(0, 6);
-        const newOtp = pastedData.split('').concat(Array(6 - pastedData.length).fill(''));
-        setOtp(newOtp.slice(0, 6));
-        const lastFilledIndex = Math.min(pastedData.length - 1, 5);
-        const nextInput = document.getElementById(`otp-${lastFilledIndex}`);
-        if (nextInput) nextInput.focus();
-    };
-
     const createAccount = async (usedReferralCode = null) => {
         setIsCreatingAccount(true);
         setReferralError('');
@@ -328,7 +173,7 @@ const OwnerSignUp = () => {
                 location
             };
 
-            if (usedReferralCode) {
+            if (usedReferralCode && usedReferralCode.trim()) {
                 signupBody.usedreferralcode = usedReferralCode.trim().toUpperCase();
             }
 
@@ -340,7 +185,7 @@ const OwnerSignUp = () => {
             const signupResult = await signupResponse.json();
             if (signupResponse.ok) {
                 setSignupData(signupResult);
-                setCurrentStep(3);
+                setCurrentStep(2);
                 setFormError('');
             } else {
                 const errorMessages = {
@@ -349,9 +194,10 @@ const OwnerSignUp = () => {
                     "Invalid referral code": translations.invalidreferralcode,
                     "Server error": translations.servererror
                 };
-                setReferralError(errorMessages[signupResult.message] || translations.servererror);
                 if (signupResult.message === "Invalid referral code") {
-                    setCurrentStep(1);
+                    setReferralError(translations.invalidreferralcode || signupResult.message);
+                } else {
+                    setFormError(errorMessages[signupResult.message] || signupResult.message || translations.servererror);
                 }
             }
         } catch {
@@ -362,92 +208,56 @@ const OwnerSignUp = () => {
         }
     };
 
-    const handleOtpSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setIsVerifyingOtp(true);
-        setOtpError('');
         setFormError('');
 
-        const otpValue = otp.join('');
-        if (otpValue.length !== 6) {
-            setOtpError(translations.invalidotpmessage);
-            setIsVerifyingOtp(false);
+        if (password.length < 8 || password.length > 14) {
+            setFormError(translations.passwordLengthError);
             return;
         }
 
-        try {
-            const response = await fetch(`${BackendPath}/General/owner/VerifyOTP`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json", "x-user": "admin" },
-                body: JSON.stringify({ phone, otp: otpValue }),
-            });
-            const data = await response.json();
-            if (response.ok) {
-                setOtpError('');
-                setOtp(['', '', '', '', '', '']);
-                setFormError('');
-                await createAccount(referralCode);
-            } else {
-                const errorMessages = {
-                    "Invalid OTP format. OTP must be 6 digits.": translations.invalidotpformatotpmustbe6digits,
-                    "Invalid OTP. Please Enter Correct OTP.": translations.invalidotppleaseentercorrectotp,
-                    "OTP not found or expired. Please request a new OTP.": translations.otpnotfoundorexpires,
-                    "OTP has expired. Please request a new OTP.": translations.otphasexpiresrequestanewotp,
-                    "Maximum verification attempts exceeded. Please request a new OTP.": translations.maximumverificationattemptsexceeded,
-                    "Server error": translations.servererror
-                };
-                setOtpError(errorMessages[data.message] || translations.servererror);
-                setOtp(['', '', '', '', '', '']);
-                setTimeout(() => {
-                    const firstInput = document.getElementById('otp-0');
-                    if (firstInput) firstInput.focus();
-                }, 50);
+        let isPhoneValid = false;
+        if (phone && phone.trim() !== '') {
+            try {
+                isPhoneValid = isValidPhoneNumber(phone);
+            } catch {
+                isPhoneValid = false;
             }
-        } catch {
-            setWarningMessage(translations.servererror);
-            setShowWarning(true);
-        } finally {
-            setIsVerifyingOtp(false);
         }
-    };
 
-    const handleResendOtp = async () => {
-        setIsResendingOtp(true);
-        setOtpError('');
-        try {
-            const response = await fetch(`${BackendPath}/General/owner/ResendOTP`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json", "x-user": "admin" },
-                body: JSON.stringify({ phone }),
-            });
-            const data = await response.json();
-            if (response.ok) {
-                setOtp(['', '', '', '', '', '']);
-                setOtpError('');
-                setTimer(60);
-                setFormError('');
-            } else {
-                setOtpError(data.message || translations.servererror);
+        if (!isPhoneValid || !phone || phone.trim() === '') {
+            setPhoneError(translations.invalidphonenumber);
+            setFormError(translations.invalidphonenumber);
+            return;
+        }
+
+        setPhoneError("");
+
+        if (!termsAccepted) {
+            setFormError(translations.youmustacceptthetermsandconditions);
+            return;
+        }
+
+        if (referralError) {
+            return;
+        }
+
+        if (referralCode && referralCode.trim() !== '') {
+            const isValid = await validateReferralCode(referralCode);
+            if (!isValid) {
+                return;
             }
-        } catch {
-            setWarningMessage(translations.servererror);
-            setShowWarning(true);
-        } finally {
-            setIsResendingOtp(false);
         }
-    };
 
-    const handleBackToStepOne = () => {
-        setOtp(['', '', '', '', '', '']);
-        setOtpError('');
-        setTimer(0);
-        setCurrentStep(1);
+        await createAccount(referralCode);
     };
 
     const handleFinish = () => {
         if (signupData && signupData.owner) {
             const { token, id, subdomain } = signupData.owner;
-            const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${token}&id=${id}&success=${translations.signupsuccessful}`;
+            const successText = translations.signupsuccessful || 'Sign up successful';
+            const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${token}&id=${id}&userType=Owner&success=${encodeURIComponent(successText)}`;
             window.location.href = subdomainUrl;
         } else {
             window.location.href = '/signin';
@@ -509,7 +319,7 @@ const OwnerSignUp = () => {
                 <div className="signup-wrapper">
                     <div className="signup-content">
                         {currentStep === 1 ? (
-                            <form onSubmit={handleBasicInfoSubmit} className="signup-form">
+                            <form onSubmit={handleSubmit} className="signup-form">
                                 <div className="form-group name-fields">
                                     <div className="name-field">
                                         <label>{translations.firstname}</label>
@@ -615,11 +425,11 @@ const OwnerSignUp = () => {
                                     </label>
                                 </div>
                                 {formError && <div className="error-message">{formError}</div>}
-                                <button type="submit" className="login-button signup-login-button" disabled={isSendingOtp || isValidatingReferral}>
-                                    {isSendingOtp || isValidatingReferral ? (
+                                <button type="submit" className="login-button signup-login-button" disabled={isCreatingAccount || isValidatingReferral}>
+                                    {isCreatingAccount || isValidatingReferral ? (
                                         <>
                                             <span className="spinner"></span>
-                                            {isValidatingReferral ? translations.validatingreferralcode : translations.sendingotp}
+                                            {isValidatingReferral ? translations.validatingreferralcode : translations.creatingaccount}
                                         </>
                                     ) : (
                                         <>
@@ -628,74 +438,6 @@ const OwnerSignUp = () => {
                                         </>
                                     )}
                                 </button>
-                            </form>
-                        ) : currentStep === 2 ? (
-                            <form onSubmit={handleOtpSubmit} className="signup-form">
-                                <div className="otp-container">
-                                    <div className="otp-header">
-                                        <p className="otp-description">
-                                            {translations.otpsentmessage}
-                                        </p>
-                                        <p className="otp-phone-number">
-                                            {getMaskedPhone(phone)}
-                                        </p>
-                                    </div>
-                                    <div className="otp-input-group">
-                                        {otp.map((digit, index) => (
-                                            <input
-                                                key={index}
-                                                id={`otp-${index}`}
-                                                type="text"
-                                                inputMode="numeric"
-                                                maxLength={1}
-                                                value={digit}
-                                                onChange={(e) => handleOtpChange(index, e.target.value.replace(/\D/g, ''))}
-                                                onKeyDown={(e) => handleOtpKeyDown(index, e)}
-                                                onPaste={index === 0 ? handleOtpPaste : undefined}
-                                                className="otp-input"
-                                                autoFocus={index === 0}
-                                            />
-                                        ))}
-                                    </div>
-                                    {otpError && <div className="error-message">{otpError}</div>}
-                                    <button type="submit" className="login-button signup-login-button" disabled={isVerifyingOtp || isCreatingAccount || isResendingOtp}>
-                                        {isVerifyingOtp || isCreatingAccount ? (
-                                            <>
-                                                <span className="spinner"></span>
-                                                {isVerifyingOtp ? translations.verifying : translations.creatingaccount}
-                                            </>
-                                        ) : (
-                                            <>
-                                                {translations.verify}
-                                                <span className="button-arrow">→</span>
-                                            </>
-                                        )}
-                                    </button>
-                                    <div className="resend-otp">
-                                        {timer > 0 ? (
-                                            <span className="timer-text">
-                                                {translations.resendotpin} <strong className="timer-count">{formatTimer(timer)}</strong>
-                                            </span>
-                                        ) : (
-                                            <>
-                                                <span>{translations.didntreceiveotp}</span>
-                                                <button type="button" onClick={handleResendOtp} disabled={isResendingOtp || isVerifyingOtp || isCreatingAccount} className="resend-button">
-                                                    {isResendingOtp ? (
-                                                        <>
-                                                            <span className="spinner"></span>
-                                                            {translations.sendingotp}
-                                                        </>
-                                                    ) : (
-                                                        translations.resendotp
-                                                    )}
-                                                </button>
-                                            </>
-                                        )}
-                                    </div>
-                                    <button type="button" onClick={handleBackToStepOne} className="demo-admin-button signup-back-button" disabled={isVerifyingOtp || isCreatingAccount}>
-                                        {translations.back}
-                                    </button>
-                                </div>
                             </form>
                         ) : (
                             <div className="welcome-container">
