@@ -382,7 +382,6 @@ const Partnership = () => {
       desc: 'Engineered specifically for the Gulf hospitality market with seamless compliance.',
       features: [
         'Native Arabic RTL interface across POS, Kitchen & Mobile Apps',
-        'ZATCA Phase 1 & 2 e-invoicing compliance with cryptographic QR',
         'Multi-tier GCC VAT & municipal tourism tax calculation',
         'Arabic thermal receipt printing with localized typography'
       ]
@@ -395,9 +394,7 @@ const Partnership = () => {
       ],
       desc: 'Optimized for high-volume American diners, quick-service, and multi-concept venues.',
       features: [
-        'Dual state/provincial sales tax (HST, PST, GST) with exemption rules',
         'Advanced tip pooling, shift clock-in & tip distribution reports',
-        'Split checks by seat, guest, or item with 1-tap card processing',
         'Integrated third-party online delivery aggregator routing'
       ]
     },
