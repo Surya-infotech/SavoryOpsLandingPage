@@ -102,14 +102,6 @@ const AppContent = () => {
     return null;
   }
 
-  // Normalize uppercase auth paths to canonical lowercase without Route conflict
-  if (location.pathname === '/Signin') {
-    return <Navigate to="/signin" replace />;
-  }
-  if (location.pathname === '/Signup') {
-    return <Navigate to="/signup" replace />;
-  }
-
   const currentPath = location.pathname.toLowerCase();
   const isAuthPage = currentPath === '/signin' || currentPath === '/signup';
 
@@ -167,6 +159,10 @@ const AppContent = () => {
         {/* Auth Routes */}
         <Route path="/signin" element={<OwnerLogin />} />
         <Route path="/signup" element={<OwnerSignUp />} />
+        <Route path="/Signin" element={<Navigate to="/signin" replace />} />
+        <Route path="/SignIn" element={<Navigate to="/signin" replace />} />
+        <Route path="/Signup" element={<Navigate to="/signup" replace />} />
+        <Route path="/SignUp" element={<Navigate to="/signup" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
