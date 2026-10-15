@@ -2,6 +2,7 @@
   "email": "Электронная почта",
   "allfieldrequired": "Все поля обязательны",
   "emailalreadyexists": "Электронная почта уже существует",
+  "mobilenumberalreadyexists": "Номер мобильного телефона уже существует",
   "servererror": "Ошибка сервера",
   "ownernotfound": "Владелец не найден",
   "firstname": "Имя",

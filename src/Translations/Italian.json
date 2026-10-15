@@ -2,6 +2,7 @@
   "email": "Indirizzo e-mail",
   "allfieldrequired": "Tutti i campi sono obbligatori",
   "emailalreadyexists": "L'indirizzo e-mail esiste già",
+  "mobilenumberalreadyexists": "Il numero di cellulare esiste già",
   "servererror": "Errore del server",
   "ownernotfound": "Proprietario non trovato",
   "firstname": "Nome",

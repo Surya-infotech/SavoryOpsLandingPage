@@ -2,6 +2,7 @@
   "email": "Διεύθυνση email",
   "allfieldrequired": "Όλα τα πεδία είναι υποχρεωτικά",
   "emailalreadyexists": "Η διεύθυνση email υπάρχει ήδη",
+  "mobilenumberalreadyexists": "Ο αριθμός κινητού υπάρχει ήδη",
   "servererror": "Σφάλμα διακομιστή",
   "ownernotfound": "Ο ιδιοκτήτης δεν βρέθηκε",
   "firstname": "Όνομα",

@@ -2,6 +2,7 @@
   "email": "E-mailadres",
   "allfieldrequired": "Alle velden zijn verplicht",
   "emailalreadyexists": "E-mailadres bestaat al",
+  "mobilenumberalreadyexists": "Mobiel nummer bestaat al",
   "servererror": "Serverfout",
   "ownernotfound": "Eigenaar niet gevonden",
   "firstname": "Voornaam",

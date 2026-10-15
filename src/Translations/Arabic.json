@@ -2,6 +2,7 @@
   "email": "البريد الإلكتروني",
   "allfieldrequired": "جميع الحقول مطلوبة",
   "emailalreadyexists": "البريد الإلكتروني مستخدم بالفعل",
+  "mobilenumberalreadyexists": "رقم الجوال مستخدم بالفعل",
   "servererror": "خطأ في الخادم",
   "ownernotfound": "لم يتم العثور على المالك",
   "firstname": "الاسم الأول",

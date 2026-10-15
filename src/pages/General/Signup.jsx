@@ -191,6 +191,7 @@ const OwnerSignUp = () => {
                 const errorMessages = {
                     "All fields are required": translations.allfieldrequired,
                     "Email ID Already Exists": translations.emailalreadyexists,
+                    "Mobile Number Already Exists": translations.mobilenumberalreadyexists || "Mobile Number Already Exists",
                     "Invalid referral code": translations.invalidreferralcode,
                     "Server error": translations.servererror
                 };
