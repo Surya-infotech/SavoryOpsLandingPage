@@ -68,5 +68,8 @@
   "signinAsOwner": "Als Inhaber anmelden",
   "signinAsManager": "Als Manager anmelden",
   "warning": "Warnung",
-  "okgotit": "Alles klar"
+  "okgotit": "Alles klar",
+  "demoOwner": "Demo Inhaber",
+  "demoSuperAdmin": "Demo Super Admin",
+  "demoLogin": "Schneller Demo-Zugang"
 }

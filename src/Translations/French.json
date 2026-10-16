@@ -68,5 +68,8 @@
   "signinAsOwner": "Se connecter en tant que Propriétaire",
   "signinAsManager": "Se connecter en tant que Responsable",
   "warning": "Avertissement",
-  "okgotit": "D'accord, compris"
+  "okgotit": "D'accord, compris",
+  "demoOwner": "Démo Propriétaire",
+  "demoSuperAdmin": "Démo Super Admin",
+  "demoLogin": "Accès Démo Rapide"
 }

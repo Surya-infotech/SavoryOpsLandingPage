@@ -68,5 +68,8 @@
   "signinAsOwner": "تسجيل الدخول كمالك",
   "signinAsManager": "تسجيل الدخول كمدير",
   "warning": "تحذير",
-  "okgotit": "حسناً، فهمت"
+  "okgotit": "حسناً، فهمت",
+  "demoOwner": "تجربة المالك",
+  "demoSuperAdmin": "تجربة المشرف العام",
+  "demoLogin": "وصول تجريبي سريع"
 }

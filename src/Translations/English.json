@@ -68,5 +68,8 @@
   "signinAsOwner": "Sign in as Owner",
   "signinAsManager": "Sign in as Manager",
   "warning": "Warning",
-  "okgotit": "OK, Got It"
+  "okgotit": "OK, Got It",
+  "demoOwner": "Demo Owner",
+  "demoSuperAdmin": "Demo Super Admin",
+  "demoLogin": "Quick Demo Access"
 }

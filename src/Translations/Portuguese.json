@@ -68,5 +68,8 @@
   "signinAsOwner": "Entrar como Proprietário",
   "signinAsManager": "Entrar como Gerente",
   "warning": "Aviso",
-  "okgotit": "Entendi"
+  "okgotit": "Entendi",
+  "demoOwner": "Demo Proprietário",
+  "demoSuperAdmin": "Demo Super Admin",
+  "demoLogin": "Acesso Demo Rápido"
 }

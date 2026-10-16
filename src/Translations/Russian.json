@@ -68,5 +68,8 @@
   "signinAsOwner": "Войти как Владелец",
   "signinAsManager": "Войти как Менеджер",
   "warning": "Предупреждение",
-  "okgotit": "Понятно"
+  "okgotit": "Понятно",
+  "demoOwner": "Демо Владелец",
+  "demoSuperAdmin": "Демо Супер Админ",
+  "demoLogin": "Быстрый демо-доступ"
 }

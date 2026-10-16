@@ -68,5 +68,8 @@
   "signinAsOwner": "Σύνδεση ως Ιδιοκτήτης",
   "signinAsManager": "Σύνδεση ως Διαχειριστής",
   "warning": "Προειδοποίηση",
-  "okgotit": "Εντάξει, το κατάλαβα"
+  "okgotit": "Εντάξει, το κατάλαβα",
+  "demoOwner": "Demo Ιδιοκτήτης",
+  "demoSuperAdmin": "Demo Super Admin",
+  "demoLogin": "Γρήγορη Δοκιμαστική Πρόσβαση"
 }

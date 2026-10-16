@@ -5,6 +5,7 @@ import PhoneInput, { isValidPhoneNumber, parsePhoneNumber } from "react-phone-nu
 import 'react-phone-number-input/style.css';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import BadgeIcon from '@mui/icons-material/Badge';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import { useLanguage } from '../../context/LanguageContext';
 import { getLanguageOptions } from '../../constants/languages';
 import { useAppSettings } from '../../context/AppSettingsContext.jsx';
@@ -22,6 +23,13 @@ const OwnerLogin = () => {
     const host = import.meta.env.VITE_HOST;
     const tld = import.meta.env.VITE_TLD;
     const HOME_URL = import.meta.env.VITE_HOME_URL || '/';
+    const demoOwnerEmail = import.meta.env.VITE_DEMO_OWNER_EMAIL || 'marcus.vance@savoryops.com';
+    const demoOwnerPassword = import.meta.env.VITE_DEMO_OWNER_PASSWORD || 'Owner@123456';
+    const superAdminUrl = import.meta.env.VITE_SUPERADMIN_URL || (
+        typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname.endsWith('.local'))
+            ? 'http://localhost:3100'
+            : 'https://adminpanel.savoryops.com'
+    );
     const [alertMessage, setAlertMessage] = useState("");
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
@@ -160,6 +168,18 @@ const OwnerLogin = () => {
         } finally {
             setIsLoading(false);
         }
+    };
+
+    // Demo Autofill & Redirect Handlers
+    const handleFillDemoOwner = () => {
+        setLoginType('owner');
+        setEmail(demoOwnerEmail);
+        setPassword(demoOwnerPassword);
+        setFormError('');
+    };
+
+    const handleRedirectSuperAdmin = () => {
+        window.location.href = superAdminUrl;
     };
 
     // Forgot Password Handlers
@@ -842,6 +862,36 @@ const OwnerLogin = () => {
                             </NavLink>
                         </div>
                         <span className="divider-line"></span>
+                    </div>
+                </div>
+
+                <div className="demo-credentials-section">
+                    <div className="demo-section-header">
+                        <span className="divider-line"></span>
+                        <span className="demo-badge">{translations.demoLogin || "Quick Demo Access"}</span>
+                        <span className="divider-line"></span>
+                    </div>
+                    <div className="demo-buttons-grid">
+                        <button
+                            type="button"
+                            id="demo-owner-button"
+                            className="demo-btn demo-owner-btn"
+                            onClick={handleFillDemoOwner}
+                            title="Auto-fill Demo Restaurant Owner credentials"
+                        >
+                            <StorefrontIcon className="demo-btn-icon" />
+                            <span>{translations.demoOwner || "Demo Owner"}</span>
+                        </button>
+                        <button
+                            type="button"
+                            id="demo-superadmin-button"
+                            className="demo-btn demo-superadmin-btn"
+                            onClick={handleRedirectSuperAdmin}
+                            title="Redirect to Super Admin Panel"
+                        >
+                            <AdminPanelSettingsIcon className="demo-btn-icon" />
+                            <span>{translations.demoSuperAdmin || "Demo Super Admin"}</span>
+                        </button>
                     </div>
                 </div>
             </div>

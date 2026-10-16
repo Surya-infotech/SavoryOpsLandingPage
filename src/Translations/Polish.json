@@ -68,5 +68,8 @@
   "signinAsOwner": "Zaloguj się jako Właściciel",
   "signinAsManager": "Zaloguj się jako Menedżer",
   "warning": "Ostrzeżenie",
-  "okgotit": "Rozumiem"
+  "okgotit": "Rozumiem",
+  "demoOwner": "Demo Właściciel",
+  "demoSuperAdmin": "Demo Super Admin",
+  "demoLogin": "Szybki Dostęp Demo"
 }
