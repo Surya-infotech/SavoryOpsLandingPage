@@ -308,7 +308,7 @@ const DETAILED_FEATURES = [
     title: 'Automated Domain Routing',
     subtitle: 'Custom Domains & Subdomains',
     description:
-      'Automated cloud DNS routing dynamically provisions custom white-label restaurant domains and subdomains with instant SSL.'
+      'Automated cloud DNS routing dynamically provisions custom restaurant domains and subdomains with instant SSL.'
   },
 
   // --- Tier 6: Finance, Assets & Enterprise Analytics ---

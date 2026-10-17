@@ -534,7 +534,7 @@ const WhySavoryOps = () => {
               Software is Only Half the Story. Our Service Makes the Difference.
             </Typography>
             <Typography variant="body1" className="main-section-subtitle">
-              We understand that restaurants operate on intense schedules. Our dedicated partner
+              We understand that restaurants operate on intense schedules. Our dedicated customer
               support model ensures you never face technical roadblocks alone.
             </Typography>
           </Box>

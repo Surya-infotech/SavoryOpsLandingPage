@@ -33,21 +33,21 @@ const SYSTEM_MODULES = [
     tabLabel: 'Admin Panel',
     badge: 'Master Control & Governance',
     icon: <AdminPanelSettingsIcon />,
-    targetRoles: ['SaaS Super Admins', 'Platform Owners', 'Reseller Partners', 'System Operators'],
+    targetRoles: ['SaaS Super Admins', 'Platform Owners', 'System Operators'],
     headline: 'Centralized Multi-Tenant SaaS Administration & Store Provisioning',
     description:
-      'The master control center for your entire white-label SaaS business. Onboard new restaurants in seconds, manage customer subscription tiers, configure custom domain DNS mappings, monitor system health, and track 100% of your recurring MRR.',
+      'The master control center for your entire SaaS platform. Onboard new restaurants in seconds, manage customer subscription tiers, configure custom domain DNS mappings, monitor system health, and track recurring MRR.',
     keyCapabilities: [
       'Multi-Tenant Restaurant Onboarding & Instant Store Provisioning',
-      'Subscription Plan Builder & Custom Billing (Keep 100% of Software MRR)',
+      'Subscription Plan Builder & Custom Billing (Manage Customer Plans & Invoicing)',
       'Custom Domain DNS Management with Automated SSL Provisioning',
       'Platform-Wide Analytics: Active Venues, Recurring Revenue & License Expiries',
       'Granular Feature Flag Toggling & Modular Add-on Controls',
-      'Reseller Sub-Account Hierarchy & Commission Governance',
+      'Role-Based Access Control & Permission Governance',
       'System Audit Logs, Database Health & Global Service Monitoring'
     ],
-    primaryLink: '/white-label',
-    primaryLinkText: 'Explore Admin Panel',
+    primaryLink: '/features',
+    primaryLinkText: 'Explore Features',
     secondaryLink: '/pricing',
     secondaryLinkText: 'Subscription Tiers',
     image: '/images/features/reports-analytics.jpg'

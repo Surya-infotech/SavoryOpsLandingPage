@@ -1515,22 +1515,22 @@ export const FEATURES_DATA = {
     badge: 'Cloud DNS Engine',
     title: 'Automated Tenant Subdomain & Custom DNS Routing',
     metaTitle: 'Automated Tenant Custom Domain & Cloud DNS Routing | SavoryOps',
-    metaDescription: 'Instant programmatic custom domain and subdomain provisioning. White-label restaurant SaaS branding with automated SSL routing.',
+    metaDescription: 'Instant programmatic custom domain and subdomain provisioning. Multi-tenant restaurant SaaS branding with automated SSL routing.',
     primaryKeyword: 'Automated SaaS Domain Routing',
     secondaryKeywords: [
       'cloud SaaS routing',
       'tenant custom domain management',
-      'white label restaurant POS domain',
+      'restaurant custom domain',
       'automated subdomain provisioning',
       'multi-tenant DNS management'
     ],
     h1: 'Automated Tenant Subdomain & Custom Domain DNS Routing Engine',
-    subtitle: 'Provision custom branded subdomains and custom white-label restaurant domains instantly with programmatic cloud routing.',
+    subtitle: 'Provision custom branded subdomains and custom restaurant domains instantly with programmatic cloud routing.',
     overview: 'In enterprise hospitality platforms, restaurant chains and premium operators demand their own customized web address (e.g., pos.myrestaurant.com or branch1.savoryops.com). SavoryOps includes integrated cloud DNS automation that programmatically registers and routes restaurant hostnames the instant an account is created or upgraded.',
     benefits: [
       { title: 'Zero Manual DNS Configuration', desc: 'No manual DNS record adding or server restarts needed when new restaurant locations register.' },
       { title: 'Branded Restaurant Subdomains', desc: 'Tenants instantly receive a dedicated, secure subdomain (e.g. pizzapalace.savoryops.com).' },
-      { title: 'White-Label Custom Domains', desc: 'Enterprise restaurant groups can connect their own branded root or subdomains.' },
+      { title: 'Custom Branded Domains', desc: 'Enterprise restaurant groups can connect their own branded root or subdomains.' },
       { title: 'High-Availability Cloud Scalability', desc: 'Built on redundant cloud infrastructure for 100% DNS availability and global low latency routing.' },
       { title: 'Automated SSL & Security', desc: 'Enforces HTTPS encryption across all tenant endpoints to safeguard billing and payment transactions.' }
     ],

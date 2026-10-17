@@ -22,9 +22,6 @@ import {
   ReceiptLong as ReceiptLongIcon,
   Storefront as StorefrontIcon,
   ChevronRight as ChevronRightIcon,
-  Public as PublicIcon,
-  Business as BusinessIcon,
-  Devices as DevicesIcon,
   MenuBook as BlogIcon,
   RocketLaunch as RoadmapIcon,
   ArrowForward as ArrowForwardIcon
@@ -247,48 +244,6 @@ const Navigation = () => {
           badgeColor: '#7c3aed'
         }
       ]
-    },
-    {
-      id: 'worldwide-partnership',
-      category: 'Worldwide Partnerships',
-      tagline: 'Resellers, hardware & white label',
-      icon: <PublicIcon fontSize="small" />,
-      promo: {
-        title: 'Launch a Branded SaaS in Your Country',
-        description: 'Earn up to 100% recurring profit with turnkey cloud deployment in <48 hours.',
-        actionText: 'Explore Partner Models',
-        actionPath: '/partnership'
-      },
-      items: [
-        {
-          text: 'Worldwide Partnership Program',
-          description: 'Reseller, hardware & agency partner programs in 150+ countries',
-          path: '/partnership',
-          icon: <PublicIcon fontSize="small" />,
-          badge: '150+ Countries',
-          badgeColor: '#028802'
-        },
-        {
-          text: 'White Label License',
-          description: 'Rebrand POS with your logo, custom domain & keep 100% profit',
-          path: '/white-label',
-          icon: <SecurityIcon fontSize="small" />,
-          badge: 'Reseller',
-          badgeColor: '#8b5cf6'
-        },
-        {
-          text: 'Hardware & Terminal Bundles',
-          description: 'Pre-bundled POS setups for Sunmi, iMin, Windows & thermal printers',
-          path: '/partnership#partner-tracks',
-          icon: <DevicesIcon fontSize="small" />
-        },
-        {
-          text: 'Regional Master Franchise',
-          description: 'Exclusive country or state distribution rights & dedicated SLA',
-          path: '/partnership#partner-tracks',
-          icon: <BusinessIcon fontSize="small" />
-        }
-      ]
     }
   ];
 
@@ -322,16 +277,6 @@ const Navigation = () => {
       badgeColor: '#2563eb'
     },
     {
-      title: 'White Label License',
-      description: 'Turnkey SaaS rebranding with 100% recurring profit',
-      path: '/white-label',
-      icon: <SecurityIcon fontSize="small" />,
-      iconColor: '#7c3aed',
-      bgColor: 'rgba(124, 58, 237, 0.1)',
-      badge: 'Agency',
-      badgeColor: '#7c3aed'
-    },
-    {
       title: 'Help & FAQs',
       description: 'Quick answers on hardware, offline mode & billing',
       path: '/faq',
@@ -350,16 +295,11 @@ const Navigation = () => {
   ];
 
   const isSolutionsActive = solutionsMenuItems.some(
-    (item) =>
-      item.path !== '/partnership' &&
-      item.path !== '/white-label' &&
-      !item.path.startsWith('/partnership') &&
-      location.pathname === item.path.split('#')[0]
+    (item) => location.pathname === item.path.split('#')[0]
   );
 
   const isFeaturesActive = location.pathname === '/features' || location.pathname.startsWith('/features/');
   const isPricingActive = location.pathname === '/pricing';
-  const isPartnershipActive = location.pathname === '/partnership' || location.pathname === '/partners';
 
   const isResourcesActive = resourcesMenuItems.some(
     (item) =>
@@ -426,15 +366,6 @@ const Navigation = () => {
               className={`nav-link ${isPricingActive ? 'active' : ''}`}
             >
               Pricing
-            </Button>
-
-            {/* Partnership Link */}
-            <Button
-              component={Link}
-              to="/partnership"
-              className={`nav-link ${isPartnershipActive ? 'active' : ''}`}
-            >
-              Partnership
             </Button>
 
             {/* Resources Dropdown Button */}
@@ -902,7 +833,7 @@ const Navigation = () => {
                 overflow: 'hidden'
               }}
             >
-              <strong style={{ color: '#0f172a' }}>SavoryOps Global Platform:</strong> Built for multi-branch dining and worldwide partners.
+              <strong style={{ color: '#0f172a' }}>SavoryOps Global Platform:</strong> Built for multi-branch restaurants, cafes, and enterprise dining.
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexShrink: 0 }}>
@@ -947,27 +878,6 @@ const Navigation = () => {
               }}
             >
               All Modules <ChevronRightIcon sx={{ fontSize: 15 }} />
-            </Box>
-            <Box
-              component="button"
-              onClick={() => handleItemClick('/partnership')}
-              sx={{
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-                fontSize: '0.75rem',
-                fontWeight: 700,
-                color: '#475569',
-                display: 'flex',
-                alignItems: 'center',
-                gap: 0.3,
-                p: 0,
-                whiteSpace: 'nowrap',
-                transition: 'color 0.2s',
-                '&:hover': { color: 'var(--primary-color)' }
-              }}
-            >
-              Partnerships <ChevronRightIcon sx={{ fontSize: 15 }} />
             </Box>
           </Box>
         </Box>
@@ -1129,45 +1039,6 @@ const Navigation = () => {
                 </Box>
               );
             })}
-          </Box>
-        </Box>
-
-        {/* Bottom Bar in Resources */}
-        <Box
-          sx={{
-            px: 2.5,
-            py: 1.3,
-            backgroundColor: '#f8fafc',
-            borderTop: '1px solid #e2e8f0',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: 2
-          }}
-        >
-          <Typography sx={{ fontSize: '0.76rem', color: '#475569', fontWeight: 550 }}>
-            Looking for agency license or custom integration?
-          </Typography>
-          <Box
-            component="button"
-            onClick={() => handleItemClick('/partnership')}
-            sx={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              fontSize: '0.76rem',
-              fontWeight: 700,
-              color: 'var(--primary-color)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: 0.3,
-              p: 0,
-              whiteSpace: 'nowrap',
-              transition: 'opacity 0.2s',
-              '&:hover': { opacity: 0.8 }
-            }}
-          >
-            Partner With Us <ChevronRightIcon sx={{ fontSize: 16 }} />
           </Box>
         </Box>
       </Menu>
@@ -1437,26 +1308,6 @@ const Navigation = () => {
                   }}
                 >
                   <Typography variant="body1">Pricing</Typography>
-                </Box>
-              </Link>
-
-              {/* Partnership Link */}
-              <Link to="/partnership" onClick={handleDrawerToggle} style={{ textDecoration: 'none' }}>
-                <Box
-                  sx={{
-                    padding: '13px 22px',
-                    color: isPartnershipActive ? 'var(--primary-color)' : '#1e293b',
-                    backgroundColor: isPartnershipActive
-                      ? 'color-mix(in srgb, var(--primary-color) 10%, transparent)'
-                      : 'transparent',
-                    borderLeft: isPartnershipActive
-                      ? '3px solid var(--primary-color)'
-                      : '3px solid transparent',
-                    fontWeight: isPartnershipActive ? 750 : 550,
-                    cursor: 'pointer'
-                  }}
-                >
-                  <Typography variant="body1">Partnership</Typography>
                 </Box>
               </Link>
 
