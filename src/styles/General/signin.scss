@@ -505,7 +505,8 @@ body {
                     transform: translateY(0) scale(0.98);
                 }
 
-                &.demo-owner-btn {
+                &.demo-owner-btn,
+                &.demo-manager-btn {
                     background: color-mix(in srgb, var(--primary-color, #1b8a36) 8%, #ffffff);
                     color: var(--primary-color, #1b8a36);
                     border-color: color-mix(in srgb, var(--primary-color, #1b8a36) 30%, transparent);

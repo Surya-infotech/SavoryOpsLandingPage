@@ -25,6 +25,8 @@ const OwnerLogin = () => {
     const HOME_URL = import.meta.env.VITE_HOME_URL || '/';
     const demoOwnerEmail = import.meta.env.VITE_DEMO_OWNER_EMAIL || 'marcus.vance@savoryops.com';
     const demoOwnerPassword = import.meta.env.VITE_DEMO_OWNER_PASSWORD || 'Owner@123456';
+    const demoManagerEmail = import.meta.env.VITE_DEMO_MANAGER_EMAIL || 'alexander.wright@savoryops.com';
+    const demoManagerPassword = import.meta.env.VITE_DEMO_MANAGER_PASSWORD || 'Employee@123456';
     const superAdminUrl = import.meta.env.VITE_SUPERADMIN_URL || (
         typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname.endsWith('.local'))
             ? 'http://localhost:3100'
@@ -175,6 +177,13 @@ const OwnerLogin = () => {
         setLoginType('owner');
         setEmail(demoOwnerEmail);
         setPassword(demoOwnerPassword);
+        setFormError('');
+    };
+
+    const handleFillDemoManager = () => {
+        setLoginType('manager');
+        setEmail(demoManagerEmail);
+        setPassword(demoManagerPassword);
         setFormError('');
     };
 
@@ -872,16 +881,29 @@ const OwnerLogin = () => {
                         <span className="divider-line"></span>
                     </div>
                     <div className="demo-buttons-grid">
-                        <button
-                            type="button"
-                            id="demo-owner-button"
-                            className="demo-btn demo-owner-btn"
-                            onClick={handleFillDemoOwner}
-                            title="Auto-fill Demo Restaurant Owner credentials"
-                        >
-                            <StorefrontIcon className="demo-btn-icon" />
-                            <span>{translations.demoOwner || "Demo Owner"}</span>
-                        </button>
+                        {loginType === 'manager' ? (
+                            <button
+                                type="button"
+                                id="demo-manager-button"
+                                className="demo-btn demo-manager-btn"
+                                onClick={handleFillDemoManager}
+                                title="Auto-fill Demo Restaurant Manager credentials"
+                            >
+                                <BadgeIcon className="demo-btn-icon" />
+                                <span>{translations.demoManager || "Demo Manager"}</span>
+                            </button>
+                        ) : (
+                            <button
+                                type="button"
+                                id="demo-owner-button"
+                                className="demo-btn demo-owner-btn"
+                                onClick={handleFillDemoOwner}
+                                title="Auto-fill Demo Restaurant Owner credentials"
+                            >
+                                <StorefrontIcon className="demo-btn-icon" />
+                                <span>{translations.demoOwner || "Demo Owner"}</span>
+                            </button>
+                        )}
                         <button
                             type="button"
                             id="demo-superadmin-button"
