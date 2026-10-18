@@ -111,7 +111,7 @@ const UpcomingFeatures = () => {
       <SEOHead
         title="Upcoming Features & Product Roadmap | SavoryOps SaaS"
         description="Discover what's next for SavoryOps: AI predictive inventory demand forecasting, HRM staff systems, membership programs, automated tip pooling, and catering event management."
-        canonicalUrl="https://savoryops.com/upcoming-features"
+        canonicalUrl="https://website.savoryops.com/upcoming-features"
         keywords={[
           "restaurant software roadmap",
           "AI predictive inventory forecasting",

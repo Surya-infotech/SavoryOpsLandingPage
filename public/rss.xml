@@ -2,64 +2,64 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SavoryOps - Product Updates &amp; Releases</title>
-    <link>https://savoryops.com/</link>
+    <link>https://website.savoryops.com/</link>
     <description>Latest product releases, feature updates, and improvements from SavoryOps Restaurant Management System SaaS.</description>
     <language>en-us</language>
     <lastBuildDate>Fri, 25 Sep 2026 10:00:00 GMT</lastBuildDate>
-    <atom:link href="https://savoryops.com/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://website.savoryops.com/rss.xml" rel="self" type="application/rss+xml" />
 
     <item>
       <title>What is a Kitchen Order Ticket (KOT) in Restaurants? Meaning, Workflow &amp; System Guide</title>
-      <link>https://savoryops.com/blog/what-is-a-kitchen-order-ticket-kot</link>
-      <guid isPermaLink="true">https://savoryops.com/blog/what-is-a-kitchen-order-ticket-kot</guid>
+      <link>https://website.savoryops.com/blog/what-is-a-kitchen-order-ticket-kot</link>
+      <guid isPermaLink="true">https://website.savoryops.com/blog/what-is-a-kitchen-order-ticket-kot</guid>
       <pubDate>Sat, 26 Sep 2026 09:00:00 GMT</pubDate>
       <description><![CDATA[What is KOT in a restaurant? Discover KOT meaning, KOT vs BOT differences, paper vs digital KOT systems, void audits, and modern kitchen order ticket apps.]]></description>
     </item>
 
     <item>
       <title>Top 5 Toast POS Alternatives in 2026: Compare Hardware, Fees &amp; Features</title>
-      <link>https://savoryops.com/blog/best-toast-pos-alternatives</link>
-      <guid isPermaLink="true">https://savoryops.com/blog/best-toast-pos-alternatives</guid>
+      <link>https://website.savoryops.com/blog/best-toast-pos-alternatives</link>
+      <guid isPermaLink="true">https://website.savoryops.com/blog/best-toast-pos-alternatives</guid>
       <pubDate>Thu, 22 Jan 2026 09:00:00 GMT</pubDate>
       <description><![CDATA[Compare the best independent, hardware-agnostic restaurant POS systems without locked processing rates or proprietary hardware penalties.]]></description>
     </item>
 
     <item>
       <title>How to Calculate Restaurant Food Cost Percentage: Formulas &amp; Benchmarks</title>
-      <link>https://savoryops.com/blog/how-to-calculate-food-cost-percentage</link>
-      <guid isPermaLink="true">https://savoryops.com/blog/how-to-calculate-food-cost-percentage</guid>
+      <link>https://website.savoryops.com/blog/how-to-calculate-food-cost-percentage</link>
+      <guid isPermaLink="true">https://website.savoryops.com/blog/how-to-calculate-food-cost-percentage</guid>
       <pubDate>Tue, 03 Feb 2026 09:00:00 GMT</pubDate>
       <description><![CDATA[Complete step-by-step mathematical guide to period COGS equations, plate-level recipe costing, and QSR vs fine dining target benchmarks.]]></description>
     </item>
 
     <item>
       <title>The Complete Restaurant Inventory Management Guide: Cut Spoilage &amp; Costs</title>
-      <link>https://savoryops.com/blog/restaurant-inventory-management-guide</link>
-      <guid isPermaLink="true">https://savoryops.com/blog/restaurant-inventory-management-guide</guid>
+      <link>https://website.savoryops.com/blog/restaurant-inventory-management-guide</link>
+      <guid isPermaLink="true">https://website.savoryops.com/blog/restaurant-inventory-management-guide</guid>
       <pubDate>Tue, 10 Feb 2026 09:00:00 GMT</pubDate>
       <description><![CDATA[Turn walk-in coolers into profit centers using perpetual digital stock tracking, automated recipe depletion, and FIFO discipline.]]></description>
     </item>
 
     <item>
       <title>SavoryOps Cloud POS &amp; Real-Time Kitchen Display System (KDS) Released</title>
-      <link>https://savoryops.com/upcoming-features</link>
-      <guid isPermaLink="true">https://savoryops.com/upcoming-features#kds-pos-release</guid>
+      <link>https://website.savoryops.com/upcoming-features</link>
+      <guid isPermaLink="true">https://website.savoryops.com/upcoming-features#kds-pos-release</guid>
       <pubDate>Fri, 21 Aug 2026 06:00:00 GMT</pubDate>
       <description><![CDATA[Experience lightning-fast table billing, automated kitchen order ticket (KOT) routing, real-time inventory deduction, and multi-station synchronization on SavoryOps.]]></description>
     </item>
 
     <item>
       <title>Automated Staff Scheduling, Tips Management &amp; Gratuity Handling</title>
-      <link>https://savoryops.com/upcoming-features</link>
-      <guid isPermaLink="true">https://savoryops.com/upcoming-features#hrm-tips-management</guid>
+      <link>https://website.savoryops.com/upcoming-features</link>
+      <guid isPermaLink="true">https://website.savoryops.com/upcoming-features#hrm-tips-management</guid>
       <pubDate>Mon, 17 Aug 2026 10:00:00 GMT</pubDate>
       <description><![CDATA[New HRM module featuring role-based permission control, biometric attendance tracking, shift scheduling, and smart tip pool distribution.]]></description>
     </item>
 
     <item>
       <title>Customer Loyalty Rewards, Gift Coupons &amp; Split Bill Checkout</title>
-      <link>https://savoryops.com/upcoming-features</link>
-      <guid isPermaLink="true">https://savoryops.com/upcoming-features#loyalty-rewards</guid>
+      <link>https://website.savoryops.com/upcoming-features</link>
+      <guid isPermaLink="true">https://website.savoryops.com/upcoming-features#loyalty-rewards</guid>
       <pubDate>Sat, 01 Aug 2026 08:30:00 GMT</pubDate>
       <description><![CDATA[Boost guest retention with tiered membership rewards, digital promo vouchers, automated referral incentives, and split payment checkout at tables.]]></description>
     </item>

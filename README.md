@@ -197,7 +197,7 @@ For technical support or questions about the website:
 
 - **Email**: info@savoryops.com
 - **Phone**: +1 (555) 123-4567
-- **Website**: https://savoryops.com
+- **Website**: https://website.savoryops.com
 
 ## 📄 License
 

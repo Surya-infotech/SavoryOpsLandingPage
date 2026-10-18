@@ -22,12 +22,12 @@ const SEOHead = ({
 }) => {
   const location = useLocation();
   const { language } = useLanguage();
-  const currentUrl = canonicalUrl || `https://savoryops.com${location.pathname.toLowerCase()}`;
+  const currentUrl = canonicalUrl || `https://website.savoryops.com${location.pathname.toLowerCase()}`;
   const resolvedOgImage = ogImage
     ? ogImage.startsWith('http')
       ? ogImage
-      : `https://savoryops.com${ogImage.startsWith('/') ? '' : '/'}${ogImage}`
-    : 'https://savoryops.com/Web_Logo.png';
+      : `https://website.savoryops.com${ogImage.startsWith('/') ? '' : '/'}${ogImage}`
+    : 'https://website.savoryops.com/Web_Logo.png';
 
   useEffect(() => {
     // Determine active language data
@@ -145,16 +145,16 @@ const SEOHead = ({
           'url': 'https://www.linkedin.com/in/surajdholakiya',
           'sameAs': [
             'https://www.linkedin.com/in/surajdholakiya',
-            'https://savoryops.com/about-us'
+            'https://website.savoryops.com/about-us'
           ]
         },
         'publisher': {
           '@type': 'Organization',
           'name': 'SavoryOps',
-          'url': 'https://savoryops.com',
+          'url': 'https://website.savoryops.com',
           'logo': {
             '@type': 'ImageObject',
-            'url': 'https://savoryops.com/logo.png',
+            'url': 'https://website.savoryops.com/logo.png',
             'width': '512',
             'height': '512'
           }
@@ -175,7 +175,7 @@ const SEOHead = ({
         'alternateName': ['SavoryOps SaaS', 'SavoryOps Restaurant Management System', 'SavoryOps POS'],
         'applicationCategory': 'RestaurantManagementApplication',
         'operatingSystem': 'Web, Cloud, iOS, Android',
-        'url': 'https://savoryops.com',
+        'url': 'https://website.savoryops.com',
         'image': resolvedOgImage,
         'description': resolvedDescription || 'Complete Restaurant Management System, Cloud POS, and Kitchen Display System SaaS platform.',
         'featureList': [
@@ -221,7 +221,7 @@ const SEOHead = ({
                 '@type': 'ListItem',
                 'position': 1,
                 'name': 'Home',
-                'item': 'https://savoryops.com/'
+                'item': 'https://website.savoryops.com/'
               },
               {
                 '@type': 'ListItem',
@@ -237,13 +237,13 @@ const SEOHead = ({
               '@type': 'ListItem',
               'position': 1,
               'name': 'Home',
-              'item': 'https://savoryops.com/'
+              'item': 'https://website.savoryops.com/'
             },
             {
               '@type': 'ListItem',
               'position': 2,
               'name': parentName,
-              'item': `https://savoryops.com/${pathSegments[0]}`
+              'item': `https://website.savoryops.com/${pathSegments[0]}`
             },
             {
               '@type': 'ListItem',
@@ -326,15 +326,15 @@ const SEOHead = ({
         'publisher': {
           '@type': 'Organization',
           'name': 'SavoryOps',
-          'url': 'https://savoryops.com',
+          'url': 'https://website.savoryops.com',
           'logo': {
             '@type': 'ImageObject',
-            'url': 'https://savoryops.com/logo.png'
+            'url': 'https://website.savoryops.com/logo.png'
           }
         },
         'datePublished': '2025-08-15T00:00:00Z',
         'dateModified': '2026-09-11T00:00:00Z',
-        'mainEntityOfPage': 'https://savoryops.com/resources/food-cost-percentage-guide'
+        'mainEntityOfPage': 'https://website.savoryops.com/resources/food-cost-percentage-guide'
       });
 
       schemas.push({

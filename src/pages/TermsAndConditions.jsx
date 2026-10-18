@@ -40,7 +40,7 @@ const TermsAndConditions = () => {
       <SEOHead
         title={`Terms and Conditions | ${softwareName || 'SavoryOps'} SaaS Restaurant OS`}
         description={`Read the official Terms and Conditions for ${softwareName || 'SavoryOps'} SaaS platform. Review subscription terms, Razorpay payment gateway processing, merchant obligations, and data rights.`}
-        canonicalUrl="https://savoryops.com/terms-and-conditions"
+        canonicalUrl="https://website.savoryops.com/terms-and-conditions"
         keywords={[
           "SavoryOps terms and conditions",
           "restaurant SaaS terms of service",

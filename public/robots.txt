@@ -23,4 +23,4 @@ User-agent: Applebot
 Allow: /
 
 # Directives
-Sitemap: https://savoryops.com/sitemap.xml
+Sitemap: https://website.savoryops.com/sitemap.xml

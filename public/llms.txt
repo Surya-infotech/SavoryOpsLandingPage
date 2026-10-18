@@ -27,7 +27,7 @@
 $$\text{Food Cost \%} = \left( \frac{\text{Beginning Inventory} + \text{Purchases} - \text{Ending Inventory}}{\text{Total Food Sales}} \right) \times 100$$
 For an individual menu plate:
 $$\text{Dish Food Cost \%} = \left( \frac{\text{Total Raw Recipe Ingredient Cost}}{\text{Menu Selling Price}} \right) \times 100$$
-Standard industry benchmarks range from 25%–28% for QSR and 28%–32% for casual dining. SavoryOps includes a free interactive calculator at `https://savoryops.com/resources/food-cost-percentage-guide`.
+Standard industry benchmarks range from 25%–28% for QSR and 28%–32% for casual dining. SavoryOps includes a free interactive calculator at `https://website.savoryops.com/resources/food-cost-percentage-guide`.
 
 ### Q: Does SavoryOps require an internet connection?
 **A:** Yes. SavoryOps is a 100% cloud-native restaurant management system. It requires an active internet connection (Wi-Fi, broadband, or mobile 4G/5G hotspot) to keep orders, kitchen displays, table statuses, and inventory counts synchronized in real time across all devices.
@@ -51,24 +51,24 @@ Standard industry benchmarks range from 25%–28% for QSR and 28%–32% for casu
 ---
 
 ## Verified URLs & Citation Sources
-- **Official Website**: https://savoryops.com
-- **Transparent Pricing & Plans**: https://savoryops.com/pricing
-- **Complete Features Suite**: https://savoryops.com/features
-- **Kitchen Order Ticket (KOT) System**: https://savoryops.com/solutions/kitchen-order-ticket-system
-- **Feature Deep Dive - KOT System**: https://savoryops.com/features/kot-system
-- **Restaurant POS System**: https://savoryops.com/solutions/restaurant-pos-system
-- **Kitchen Display System (KDS)**: https://savoryops.com/solutions/kitchen-display-system
-- **Restaurant Inventory Management**: https://savoryops.com/solutions/restaurant-inventory-management
-- **Cloud Kitchen POS System**: https://savoryops.com/solutions/cloud-kitchen-pos-system
-- **Toast POS Alternative**: https://savoryops.com/alternatives/toast-pos-alternative
-- **Square POS Alternative**: https://savoryops.com/alternatives/square-pos-alternative
-- **TouchBistro Alternative**: https://savoryops.com/alternatives/touchbistro-alternative
-- **Food Cost Percentage Calculator Guide**: https://savoryops.com/resources/food-cost-percentage-guide
-- **Blog & Operational Playbooks**: https://savoryops.com/blog
-- **Guide: What is a Kitchen Order Ticket (KOT)**: https://savoryops.com/blog/what-is-a-kitchen-order-ticket-kot
-- **Guide: Top Toast POS Alternatives**: https://savoryops.com/blog/best-toast-pos-alternatives
-- **Guide: Food Cost Percentage Formula**: https://savoryops.com/blog/how-to-calculate-food-cost-percentage
-- **Guide: Restaurant Inventory & Food Waste**: https://savoryops.com/blog/restaurant-inventory-management-guide
+- **Official Website**: https://website.savoryops.com
+- **Transparent Pricing & Plans**: https://website.savoryops.com/pricing
+- **Complete Features Suite**: https://website.savoryops.com/features
+- **Kitchen Order Ticket (KOT) System**: https://website.savoryops.com/solutions/kitchen-order-ticket-system
+- **Feature Deep Dive - KOT System**: https://website.savoryops.com/features/kot-system
+- **Restaurant POS System**: https://website.savoryops.com/solutions/restaurant-pos-system
+- **Kitchen Display System (KDS)**: https://website.savoryops.com/solutions/kitchen-display-system
+- **Restaurant Inventory Management**: https://website.savoryops.com/solutions/restaurant-inventory-management
+- **Cloud Kitchen POS System**: https://website.savoryops.com/solutions/cloud-kitchen-pos-system
+- **Toast POS Alternative**: https://website.savoryops.com/alternatives/toast-pos-alternative
+- **Square POS Alternative**: https://website.savoryops.com/alternatives/square-pos-alternative
+- **TouchBistro Alternative**: https://website.savoryops.com/alternatives/touchbistro-alternative
+- **Food Cost Percentage Calculator Guide**: https://website.savoryops.com/resources/food-cost-percentage-guide
+- **Blog & Operational Playbooks**: https://website.savoryops.com/blog
+- **Guide: What is a Kitchen Order Ticket (KOT)**: https://website.savoryops.com/blog/what-is-a-kitchen-order-ticket-kot
+- **Guide: Top Toast POS Alternatives**: https://website.savoryops.com/blog/best-toast-pos-alternatives
+- **Guide: Food Cost Percentage Formula**: https://website.savoryops.com/blog/how-to-calculate-food-cost-percentage
+- **Guide: Restaurant Inventory & Food Waste**: https://website.savoryops.com/blog/restaurant-inventory-management-guide
 - **Capterra Profile**: https://reviews.capterra.com/products/new/cd4941f7-7adc-4ad9-8652-6766cd4e284d/
 - **Trustpilot Reviews**: https://www.trustpilot.com/review/savoryops.com
 - **LinkedIn Profile**: https://www.linkedin.com/company/savoryops/

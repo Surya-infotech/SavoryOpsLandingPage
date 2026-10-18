@@ -269,7 +269,7 @@ const OwnerSignUp = () => {
         <SEOHead
             title={`Sign Up | Create Your ${softwareName || 'SavoryOps'} Account`}
             description={`Start your free trial with ${softwareName || 'SavoryOps'}. Register your restaurant and get access to cloud POS, KDS, inventory tracking, and tableside ordering.`}
-            canonicalUrl="https://savoryops.com/signup"
+            canonicalUrl="https://website.savoryops.com/signup"
             keywords={["SavoryOps signup", "register restaurant POS", "free POS trial", "cloud restaurant OS"]}
             primaryKeyword="Sign Up"
         />

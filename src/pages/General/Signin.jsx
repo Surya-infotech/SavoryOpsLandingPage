@@ -493,7 +493,7 @@ const OwnerLogin = () => {
         <SEOHead
             title={`Sign In | ${softwareName || 'SavoryOps'} Cloud POS & Restaurant OS`}
             description={`Sign in to ${softwareName || 'SavoryOps'} Cloud Management Portal. Access your restaurant POS billing, kitchen orders, inventory, staff shifts, and branch analytics.`}
-            canonicalUrl="https://savoryops.com/signin"
+            canonicalUrl="https://website.savoryops.com/signin"
             keywords={[
                 "SavoryOps signin",
                 "restaurant POS login",

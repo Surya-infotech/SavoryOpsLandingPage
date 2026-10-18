@@ -352,7 +352,7 @@ const DataDeletionPolicy = () => {
             </Typography>
             <ul>
               <li><strong>In-App Self-Service:</strong> Users can effortlessly initiate and complete account deletion directly within the mobile app.</li>
-              <li><strong>Public Web URL:</strong> Users can also request deletion without needing to reinstall the app by visiting this publicly accessible URL (<strong>https://savoryops.com/data-deletion-policy</strong>).</li>
+              <li><strong>Public Web URL:</strong> Users can also request deletion without needing to reinstall the app by visiting this publicly accessible URL (<strong>https://website.savoryops.com/data-deletion-policy</strong>).</li>
               <li><strong>No Penalties:</strong> There are no cancellation fees, penalty charges, or artificial cooling-off delays imposed for exercising your right to account deletion.</li>
             </ul>
           </Box>

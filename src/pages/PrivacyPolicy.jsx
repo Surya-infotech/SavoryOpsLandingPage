@@ -111,7 +111,7 @@ const PrivacyPolicy = () => {
               </Typography>
             </Box>
             <Typography variant="body1" className="section-content">
-              SavoryOps (&ldquo;SavoryOps&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) operates an advanced, 100% hardware-agnostic Cloud Operating System (OS) and Point of Sale (POS) software engine accessible at <strong>https://savoryops.com</strong>, companion mobile applications, and connected kitchen endpoints. Engineered specifically for food and beverage enterprises—including fine dining, quick-service restaurants (QSR), cafes, food courts, and multi-branch franchises—our multi-tenant platform orchestrates end-to-end restaurant management.
+              SavoryOps (&ldquo;SavoryOps&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) operates an advanced, 100% hardware-agnostic Cloud Operating System (OS) and Point of Sale (POS) software engine accessible at <strong>https://website.savoryops.com</strong>, companion mobile applications, and connected kitchen endpoints. Engineered specifically for food and beverage enterprises—including fine dining, quick-service restaurants (QSR), cafes, food courts, and multi-branch franchises—our multi-tenant platform orchestrates end-to-end restaurant management.
             </Typography>
             <Typography variant="body1" className="section-content">
               This comprehensive Privacy Policy governs the collection, processing, storage, and protection of data across all components of the SavoryOps ecosystem:

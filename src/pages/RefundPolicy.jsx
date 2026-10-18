@@ -40,7 +40,7 @@ const RefundPolicy = () => {
       <SEOHead
         title={`Refund and Cancellation Policy | ${brand} SaaS Platform`}
         description={`Official Refund and Cancellation Policy for ${brand} cloud restaurant POS and management SaaS. Clear terms on subscriptions, free trial, cancellation workflow, and 5-7 business days Razorpay refund turnaround.`}
-        canonicalUrl="https://savoryops.com/refund-and-cancellation-policy"
+        canonicalUrl="https://website.savoryops.com/refund-and-cancellation-policy"
         keywords={[
           "SavoryOps refund policy",
           "cancellation policy",

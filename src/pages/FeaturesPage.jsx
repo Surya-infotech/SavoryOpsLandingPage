@@ -505,7 +505,7 @@ const FeaturesPage = () => {
       <SEOHead
         title="Restaurant Software Modules & POS Feature Suite | SavoryOps"
         description="Explore the complete module & feature suite of SavoryOps: Point of Sale (POS), KOT & KDS, Recipe BOM Inventory, 6-in-1 Employee Mobile App, and Multi-Tenant SaaS."
-        canonicalUrl="https://savoryops.com/features"
+        canonicalUrl="https://website.savoryops.com/features"
         keywords={[
           "restaurant POS features",
           "restaurant management modules",

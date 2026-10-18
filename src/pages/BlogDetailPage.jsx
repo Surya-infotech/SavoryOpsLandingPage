@@ -137,7 +137,7 @@ const BlogDetailPage = () => {
         keywords={post.tags}
         primaryKeyword={post.primaryKeyword || post.title}
         ogImage={post.coverImage}
-        canonicalUrl={`https://savoryops.com/blog/${post.slug}`}
+        canonicalUrl={`https://website.savoryops.com/blog/${post.slug}`}
         schemaType="Article"
         authorName={post.author?.name}
         datePublished={post.publishedDate}
