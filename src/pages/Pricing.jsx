@@ -79,16 +79,13 @@ const Pricing = () => {
   useEffect(() => {
     const fetchPricingData = async () => {
       try {
-        const [plansResponse, addonsResponse] = await Promise.all([
-          fetch(`${adminPanelBackendPath}/Subscription/GetPlans_landingpage`, {
+        const plansResponse = await fetch(
+          `${adminPanelBackendPath}/Subscription/GetPlans_landingpage`,
+          {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', 'x-user': 'admin' },
-          }),
-          fetch(`${adminPanelBackendPath}/Subscription/GetAddons_landingpage`, {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json', 'x-user': 'admin' },
-          }).catch(() => null),
-        ]);
+          },
+        );
         const data = await plansResponse.json();
 
         if (plansResponse.ok && data) {
@@ -108,17 +105,6 @@ const Pricing = () => {
           setYearlyDiscountType(discountTypeData);
           if (allAddons.length > 0) {
             setAddons(allAddons);
-          }
-        }
-
-        if (addonsResponse && addonsResponse.ok) {
-          const addonData = await addonsResponse.json();
-          const fetchedAddons = addonData.addons || (Array.isArray(addonData) ? addonData : []);
-          if (fetchedAddons.length > 0) {
-            setAddons(fetchedAddons);
-          }
-          if (addonData.currency && (!data || !data.currency)) {
-            setCurrency(addonData.currency);
           }
         }
       } catch {
