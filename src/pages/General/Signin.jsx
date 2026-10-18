@@ -23,15 +23,11 @@ const OwnerLogin = () => {
     const host = import.meta.env.VITE_HOST;
     const tld = import.meta.env.VITE_TLD;
     const HOME_URL = import.meta.env.VITE_HOME_URL || '/';
-    const demoOwnerEmail = import.meta.env.VITE_DEMO_OWNER_EMAIL || 'marcus.vance@savoryops.com';
-    const demoOwnerPassword = import.meta.env.VITE_DEMO_OWNER_PASSWORD || 'Owner@123456';
-    const demoManagerEmail = import.meta.env.VITE_DEMO_MANAGER_EMAIL || 'alexander.wright@savoryops.com';
-    const demoManagerPassword = import.meta.env.VITE_DEMO_MANAGER_PASSWORD || 'Employee@123456';
-    const superAdminUrl = import.meta.env.VITE_SUPERADMIN_URL || (
-        typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname.endsWith('.local'))
-            ? 'http://localhost:3100'
-            : 'https://adminpanel.savoryops.com'
-    );
+    const demoOwnerEmail = import.meta.env.VITE_DEMO_OWNER_EMAIL;
+    const demoOwnerPassword = import.meta.env.VITE_DEMO_OWNER_PASSWORD;
+    const demoManagerEmail = import.meta.env.VITE_DEMO_MANAGER_EMAIL;
+    const demoManagerPassword = import.meta.env.VITE_DEMO_MANAGER_PASSWORD;
+    const superAdminUrl = import.meta.env.VITE_SUPERADMIN_URL;
     const [alertMessage, setAlertMessage] = useState("");
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
