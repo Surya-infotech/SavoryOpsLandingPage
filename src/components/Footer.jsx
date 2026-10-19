@@ -26,7 +26,8 @@ import {
   SupportAgent as SupportAgentIcon,
   Twitter as TwitterIcon,
   WhatsApp as WhatsAppIcon,
-  YouTube as YouTubeIcon
+  YouTube as YouTubeIcon,
+  WorkspacePremium as LicenseIcon
 } from '@mui/icons-material';
 import { Box, Container, Divider, IconButton, Link, Typography } from '@mui/material';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
@@ -39,6 +40,7 @@ const Footer = () => {
   const [newsletterMessage, setNewsletterMessage] = useState('');
   const [newsletterStatus, setNewsletterStatus] = useState(null); // 'success' | 'error'
   const backendPath = import.meta.env.VITE_BACKEND_URL;
+  const whiteLabelUrl = import.meta.env.VITE_WHITELABEL_MARKETING_URL || 'https://marketing.savoryops.com';
 
   const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
@@ -129,6 +131,7 @@ const Footer = () => {
 
   const companyLinks = [
     { name: `Why ${softwareName || 'SavoryOps'}`, icon: <StarIcon />, href: '/why-savoryops' },
+    { name: 'Buy White Label License', icon: <LicenseIcon sx={{ color: '#818cf8' }} />, href: whiteLabelUrl, isExternal: true },
     { name: 'About Us', icon: <InfoOutlinedIcon />, href: '/about-us' },
     { name: 'Blog & Articles', icon: <MenuBookIcon />, href: '/blog' },
     { name: 'Subscription Plans', icon: <AttachMoneyIcon />, href: '/pricing' },
@@ -402,10 +405,13 @@ const Footer = () => {
                 <Link
                   key={index}
                   href={link.href}
+                  target={link.isExternal ? '_blank' : undefined}
+                  rel={link.isExternal ? 'noopener noreferrer' : undefined}
                   className="footer-link"
                 >
                   <span className="footer-link-icon">{link.icon}</span>
                   <span className="footer-link-text">{link.name}</span>
+                  {link.isExternal && <ArrowForwardIcon sx={{ fontSize: 13, ml: 0.5, opacity: 0.7 }} />}
                 </Link>
               ))}
             </Box>

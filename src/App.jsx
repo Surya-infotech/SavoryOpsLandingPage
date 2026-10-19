@@ -58,6 +58,16 @@ const ScrollToTop = () => {
   return null;
 };
 
+/** Automatically forwards /white-label visitors to the marketing website portal */
+const WhiteLabelRedirect = () => {
+  useEffect(() => {
+    const marketingUrl = import.meta.env.VITE_WHITELABEL_MARKETING_URL || 'https://marketing.savoryops.com';
+    window.location.replace(marketingUrl);
+  }, []);
+
+  return null;
+};
+
 const AppContent = () => {
   const [scrollTop, setScrollTop] = useState(0);
   const location = useLocation();
@@ -120,8 +130,9 @@ const AppContent = () => {
         <Route path="/partners" element={<Navigate to="/" replace />} />
         <Route path="/partner" element={<Navigate to="/" replace />} />
         <Route path="/global-partnership" element={<Navigate to="/" replace />} />
-        <Route path="/white-label" element={<Navigate to="/" replace />} />
-        <Route path="/white-label-license" element={<Navigate to="/" replace />} />
+        <Route path="/white-label" element={<WhiteLabelRedirect />} />
+        <Route path="/white-label-license" element={<WhiteLabelRedirect />} />
+        <Route path="/whitelabel" element={<WhiteLabelRedirect />} />
         <Route path="/upcoming-features" element={<UpcomingFeatures />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/about" element={<AboutUs />} />

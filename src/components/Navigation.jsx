@@ -24,7 +24,9 @@ import {
   ChevronRight as ChevronRightIcon,
   MenuBook as BlogIcon,
   RocketLaunch as RoadmapIcon,
-  ArrowForward as ArrowForwardIcon
+  ArrowForward as ArrowForwardIcon,
+  WorkspacePremium as LicenseIcon,
+  OpenInNew as OpenInNewIcon
 } from '@mui/icons-material';
 import {
   Box,
@@ -50,6 +52,8 @@ const Navigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { logoUrl, softwareName, setLogoUrl } = useAppSettings();
+
+  const whiteLabelUrl = import.meta.env.VITE_WHITELABEL_MARKETING_URL || 'https://marketing.savoryops.com';
 
   const isSolutionsMenuOpen = Boolean(solutionsAnchorEl);
   const isResourcesMenuOpen = Boolean(resourcesAnchorEl);
@@ -393,6 +397,23 @@ const Navigation = () => {
 
           {/* Desktop Right CTA Actions */}
           <Box sx={{ display: { xs: 'none', md: 'flex' } }} className="nav-actions-right">
+            <Button
+              component="a"
+              href={whiteLabelUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-whitelabel-btn"
+              startIcon={<LicenseIcon sx={{ fontSize: '1rem !important' }} />}
+              endIcon={<OpenInNewIcon sx={{ fontSize: '0.82rem !important', opacity: 0.85 }} />}
+            >
+              <Box component="span" sx={{ display: { xs: 'none', lg: 'inline' } }}>
+                Get White Label License
+              </Box>
+              <Box component="span" sx={{ display: { xs: 'none', md: 'inline', lg: 'none' } }}>
+                White Label
+              </Box>
+            </Button>
+
             <Button
               component={Link}
               to="/signin"
@@ -1424,6 +1445,20 @@ const Navigation = () => {
                 backgroundColor: '#ffffff'
               }}
             >
+              <Button
+                variant="contained"
+                component="a"
+                href={whiteLabelUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleDrawerToggle}
+                className="nav-drawer-whitelabel-btn"
+                startIcon={<LicenseIcon sx={{ fontSize: '1.15rem !important' }} />}
+                endIcon={<OpenInNewIcon sx={{ fontSize: '0.95rem !important' }} />}
+              >
+                Get White Label License
+              </Button>
+
               <Button
                 variant="outlined"
                 onClick={() => {
