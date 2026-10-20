@@ -331,7 +331,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Center Menu Links */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }} className="nav-links-center">
+          <Box className="nav-links-center">
             {/* Solutions Dropdown Button */}
             <Button
               id="nav-solutions-button"
@@ -396,7 +396,7 @@ const Navigation = () => {
           </Box>
 
           {/* Desktop Right CTA Actions */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }} className="nav-actions-right">
+          <Box className="nav-actions-right">
             <Button
               component="a"
               href={whiteLabelUrl}
@@ -406,10 +406,10 @@ const Navigation = () => {
               startIcon={<LicenseIcon sx={{ fontSize: '1rem !important' }} />}
               endIcon={<OpenInNewIcon sx={{ fontSize: '0.82rem !important', opacity: 0.85 }} />}
             >
-              <Box component="span" sx={{ display: { xs: 'none', lg: 'inline' } }}>
+              <Box component="span" sx={{ display: { xs: 'none', xl: 'inline' } }}>
                 Get White Label License
               </Box>
-              <Box component="span" sx={{ display: { xs: 'none', md: 'inline', lg: 'none' } }}>
+              <Box component="span" sx={{ display: { xs: 'inline', xl: 'none' } }}>
                 White Label
               </Box>
             </Button>
@@ -431,17 +431,24 @@ const Navigation = () => {
             </Button>
           </Box>
 
-          {/* Mobile Hamburger Toggle Button */}
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="end"
-            onClick={handleDrawerToggle}
-            className="nav-mobile-toggle"
-            sx={{ display: { md: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
+          {/* Mobile & Tablet Actions */}
+          <Box className="nav-mobile-group">
+            <Button
+              onClick={handleGetStartedClick}
+              className="nav-island-mobile-cta"
+            >
+              Free Trial
+            </Button>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="end"
+              onClick={handleDrawerToggle}
+              className="nav-mobile-toggle"
+            >
+              <MenuIcon />
+            </IconButton>
+          </Box>
         </nav>
       </header>
 
@@ -466,7 +473,7 @@ const Navigation = () => {
         }}
         transformOrigin={{
           vertical: 'top',
-          horizontal: 220
+          horizontal: 'center'
         }}
         slotProps={{
           paper: {
