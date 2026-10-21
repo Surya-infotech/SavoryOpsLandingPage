@@ -21,7 +21,7 @@ const OwnerLogin = () => {
     const [password, setPassword] = useState('');
     const BackendPath = import.meta.env.VITE_BACKEND_URL;
     const host = import.meta.env.VITE_HOST;
-    const tld = import.meta.env.VITE_TLD;
+    const hosturl = import.meta.env.VITE_HOST_URL;
     const HOME_URL = import.meta.env.VITE_HOME_URL || '/';
     const demoOwnerEmail = import.meta.env.VITE_DEMO_OWNER_EMAIL;
     const demoOwnerPassword = import.meta.env.VITE_DEMO_OWNER_PASSWORD;
@@ -140,12 +140,12 @@ const OwnerLogin = () => {
                     const subdomain = data.owner?.subdomain;
                     const employeeId = data.employee?._id || data.employee?.id;
                     const successText = translations.signinsucessful;
-                    const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${token}&id=${ownerId}&employeeId=${employeeId}&userType=Manager&success=${encodeURIComponent(successText)}`;
+                    const subdomainUrl = `${host}://${subdomain}.${hosturl}/token-middleware?token=${token}&id=${ownerId}&employeeId=${employeeId}&userType=Manager&success=${encodeURIComponent(successText)}`;
                     window.location.href = subdomainUrl;
                 } else {
                     const { Token, id, subdomain } = data.owner;
                     const successText = translations.signinsucessful;
-                    const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${Token}&id=${id}&userType=Owner&success=${encodeURIComponent(successText)}`;
+                    const subdomainUrl = `${host}://${subdomain}.${hosturl}/token-middleware?token=${Token}&id=${id}&userType=Owner&success=${encodeURIComponent(successText)}`;
                     window.location.href = subdomainUrl;
                 }
             }

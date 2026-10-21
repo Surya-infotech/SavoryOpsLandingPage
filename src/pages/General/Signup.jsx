@@ -24,7 +24,7 @@ const OwnerSignUp = () => {
     const [signupData, setSignupData] = useState(null);
     const BackendPath = import.meta.env.VITE_BACKEND_URL;
     const host = import.meta.env.VITE_HOST;
-    const tld = import.meta.env.VITE_TLD;
+    const hosturl = import.meta.env.VITE_HOST_URL;
     const HOME_URL = import.meta.env.VITE_HOME_URL || '/';
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
@@ -258,7 +258,7 @@ const OwnerSignUp = () => {
         if (signupData && signupData.owner) {
             const { token, id, subdomain } = signupData.owner;
             const successText = translations.signupsuccessful || 'Sign up successful';
-            const subdomainUrl = `${host}://${subdomain}.savoryops.${tld}/token-middleware?token=${token}&id=${id}&userType=Owner&success=${encodeURIComponent(successText)}`;
+            const subdomainUrl = `${host}://${subdomain}.${hosturl}/token-middleware?token=${token}&id=${id}&userType=Owner&success=${encodeURIComponent(successText)}`;
             window.location.href = subdomainUrl;
         } else {
             window.location.href = '/signin';
