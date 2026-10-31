@@ -36,6 +36,7 @@ const OwnerLogin = () => {
     const [formError, setFormError] = useState('');
     const [warningMessage, setWarningMessage] = useState("");
     const [showWarning, setShowWarning] = useState(false);
+    const [activeDemoType, setActiveDemoType] = useState(null); // 'owner' | 'manager' | null
     const { logoUrl, softwareName, setLogoUrl } = useAppSettings();
 
     // Forgot Password States
@@ -107,15 +108,14 @@ const OwnerLogin = () => {
         }
     }, []);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const performLogin = async (typeToUse, emailToUse, passwordToUse) => {
         setIsLoading(true);
         setFormError('');
         try {
             const { browserdetails, device } = getBrowserAndDeviceDetails();
             const { ipaddress, location } = await getIpAndLocation();
 
-            const endpoint = loginType === 'manager'
+            const endpoint = typeToUse === 'manager'
                 ? `${BackendPath}/General/manager/Signin`
                 : `${BackendPath}/General/owner/Signin`;
 
@@ -123,8 +123,8 @@ const OwnerLogin = () => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', "x-user": "admin" },
                 body: JSON.stringify({
-                    email,
-                    password,
+                    email: emailToUse,
+                    password: passwordToUse,
                     browserdetails,
                     ipaddress,
                     device,
@@ -134,7 +134,7 @@ const OwnerLogin = () => {
 
             const data = await response.json();
             if (response.ok) {
-                if (loginType === 'manager') {
+                if (typeToUse === 'manager') {
                     const token = data.Token || data.token;
                     const ownerId = data.owner?.id;
                     const subdomain = data.owner?.subdomain;
@@ -148,8 +148,7 @@ const OwnerLogin = () => {
                     const subdomainUrl = `${host}://${subdomain}.${hosturl}/token-middleware?token=${Token}&id=${id}&userType=Owner&success=${encodeURIComponent(successText)}`;
                     window.location.href = subdomainUrl;
                 }
-            }
-            else {
+            } else {
                 const errorMessages = {
                     "Owner not found": translations.ownernotfound,
                     "Manager account not found for that email address": translations.manageraccountnotfound,
@@ -165,22 +164,41 @@ const OwnerLogin = () => {
             setShowWarning(true);
         } finally {
             setIsLoading(false);
+            setActiveDemoType(null);
         }
     };
 
-    // Demo Autofill & Redirect Handlers
-    const handleFillDemoOwner = () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setActiveDemoType(null);
+        await performLogin(loginType, email, password);
+    };
+
+    // Direct Demo Login Handlers
+    const handleDemoOwnerLogin = async () => {
+        if (!demoOwnerEmail || !demoOwnerPassword) {
+            setFormError('Demo Owner credentials are not configured.');
+            return;
+        }
         setLoginType('owner');
         setEmail(demoOwnerEmail);
         setPassword(demoOwnerPassword);
         setFormError('');
+        setActiveDemoType('owner');
+        await performLogin('owner', demoOwnerEmail, demoOwnerPassword);
     };
 
-    const handleFillDemoManager = () => {
+    const handleDemoManagerLogin = async () => {
+        if (!demoManagerEmail || !demoManagerPassword) {
+            setFormError('Demo Manager credentials are not configured.');
+            return;
+        }
         setLoginType('manager');
         setEmail(demoManagerEmail);
         setPassword(demoManagerPassword);
         setFormError('');
+        setActiveDemoType('manager');
+        await performLogin('manager', demoManagerEmail, demoManagerPassword);
     };
 
     const handleRedirectSuperAdmin = () => {
@@ -882,22 +900,42 @@ const OwnerLogin = () => {
                                 type="button"
                                 id="demo-manager-button"
                                 className="demo-btn demo-manager-btn"
-                                onClick={handleFillDemoManager}
-                                title="Auto-fill Demo Restaurant Manager credentials"
+                                onClick={handleDemoManagerLogin}
+                                disabled={isLoading}
+                                title="Sign in directly as Demo Restaurant Manager"
                             >
-                                <BadgeIcon className="demo-btn-icon" />
-                                <span>{translations.demoManager || "Demo Manager"}</span>
+                                {isLoading && activeDemoType === 'manager' ? (
+                                    <>
+                                        <span className="demo-spinner"></span>
+                                        <span>{translations.signingin || "Signing in..."}</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <BadgeIcon className="demo-btn-icon" />
+                                        <span>{translations.demoManager || "Demo Manager"}</span>
+                                    </>
+                                )}
                             </button>
                         ) : (
                             <button
                                 type="button"
                                 id="demo-owner-button"
                                 className="demo-btn demo-owner-btn"
-                                onClick={handleFillDemoOwner}
-                                title="Auto-fill Demo Restaurant Owner credentials"
+                                onClick={handleDemoOwnerLogin}
+                                disabled={isLoading}
+                                title="Sign in directly as Demo Restaurant Owner"
                             >
-                                <StorefrontIcon className="demo-btn-icon" />
-                                <span>{translations.demoOwner || "Demo Owner"}</span>
+                                {isLoading && activeDemoType === 'owner' ? (
+                                    <>
+                                        <span className="demo-spinner"></span>
+                                        <span>{translations.signingin || "Signing in..."}</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <StorefrontIcon className="demo-btn-icon" />
+                                        <span>{translations.demoOwner || "Demo Owner"}</span>
+                                    </>
+                                )}
                             </button>
                         )}
                         <button
@@ -905,6 +943,7 @@ const OwnerLogin = () => {
                             id="demo-superadmin-button"
                             className="demo-btn demo-superadmin-btn"
                             onClick={handleRedirectSuperAdmin}
+                            disabled={isLoading}
                             title="Redirect to Super Admin Panel"
                         >
                             <AdminPanelSettingsIcon className="demo-btn-icon" />
