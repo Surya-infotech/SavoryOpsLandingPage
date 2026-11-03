@@ -177,7 +177,7 @@ const OwnerLogin = () => {
     // Direct Demo Login Handlers
     const handleDemoOwnerLogin = async () => {
         if (!demoOwnerEmail || !demoOwnerPassword) {
-            setFormError('Demo Owner credentials are not configured.');
+            setFormError(translations.demoOwnerNotConfigured);
             return;
         }
         setLoginType('owner');
@@ -190,7 +190,7 @@ const OwnerLogin = () => {
 
     const handleDemoManagerLogin = async () => {
         if (!demoManagerEmail || !demoManagerPassword) {
-            setFormError('Demo Manager credentials are not configured.');
+            setFormError(translations.demoManagerNotConfigured);
             return;
         }
         setLoginType('manager');
@@ -891,7 +891,7 @@ const OwnerLogin = () => {
                 <div className="demo-credentials-section">
                     <div className="demo-section-header">
                         <span className="divider-line"></span>
-                        <span className="demo-badge">{translations.demoLogin || "Quick Demo Access"}</span>
+                        <span className="demo-badge">{translations.demoLogin}</span>
                         <span className="divider-line"></span>
                     </div>
                     <div className="demo-buttons-grid">
@@ -902,17 +902,17 @@ const OwnerLogin = () => {
                                 className="demo-btn demo-manager-btn"
                                 onClick={handleDemoManagerLogin}
                                 disabled={isLoading}
-                                title="Sign in directly as Demo Restaurant Manager"
+                                title={translations.demoManagerTitle}
                             >
                                 {isLoading && activeDemoType === 'manager' ? (
                                     <>
                                         <span className="demo-spinner"></span>
-                                        <span>{translations.signingin || "Signing in..."}</span>
+                                        <span>{translations.signingin}</span>
                                     </>
                                 ) : (
                                     <>
                                         <BadgeIcon className="demo-btn-icon" />
-                                        <span>{translations.demoManager || "Demo Manager"}</span>
+                                        <span>{translations.demoManager}</span>
                                     </>
                                 )}
                             </button>
@@ -923,17 +923,17 @@ const OwnerLogin = () => {
                                 className="demo-btn demo-owner-btn"
                                 onClick={handleDemoOwnerLogin}
                                 disabled={isLoading}
-                                title="Sign in directly as Demo Restaurant Owner"
+                                title={translations.demoOwnerTitle}
                             >
                                 {isLoading && activeDemoType === 'owner' ? (
                                     <>
                                         <span className="demo-spinner"></span>
-                                        <span>{translations.signingin || "Signing in..."}</span>
+                                        <span>{translations.signingin}</span>
                                     </>
                                 ) : (
                                     <>
                                         <StorefrontIcon className="demo-btn-icon" />
-                                        <span>{translations.demoOwner || "Demo Owner"}</span>
+                                        <span>{translations.demoOwner}</span>
                                     </>
                                 )}
                             </button>
@@ -944,10 +944,10 @@ const OwnerLogin = () => {
                             className="demo-btn demo-superadmin-btn"
                             onClick={handleRedirectSuperAdmin}
                             disabled={isLoading}
-                            title="Redirect to Super Admin Panel"
+                            title={translations.demoSuperAdminTitle}
                         >
                             <AdminPanelSettingsIcon className="demo-btn-icon" />
-                            <span>{translations.demoSuperAdmin || "Demo Super Admin"}</span>
+                            <span>{translations.demoSuperAdmin}</span>
                         </button>
                     </div>
                 </div>

@@ -72,5 +72,11 @@
   "demoOwner": "تجربة المالك",
   "demoManager": "تجربة المدير",
   "demoSuperAdmin": "تجربة المشرف العام",
-  "demoLogin": "وصول تجريبي سريع"
+  "demoLogin": "وصول تجريبي سريع",
+  "emailidplaceholder": "أدخل معرف بريدك الإلكتروني",
+  "demoOwnerNotConfigured": "لم يتم تكوين بيانات اعتماد مالك العرض التجريبي.",
+  "demoManagerNotConfigured": "لم يتم تكوين بيانات اعتماد مدير العرض التجريبي.",
+  "demoManagerTitle": "تسجيل الدخول مباشرة كمدير مطعم تجريبي",
+  "demoOwnerTitle": "تسجيل الدخول مباشرة كمالك مطعم تجريبي",
+  "demoSuperAdminTitle": "إعادة التوجيه إلى لوحة تحكم المسؤول العام"
 }

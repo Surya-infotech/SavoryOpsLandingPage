@@ -72,5 +72,11 @@
   "demoOwner": "Demo Proprietario",
   "demoManager": "Demo Gestore",
   "demoSuperAdmin": "Demo Super Admin",
-  "demoLogin": "Accesso Rapido Demo"
+  "demoLogin": "Accesso Rapido Demo",
+  "emailidplaceholder": "Inserisci il tuo ID e-mail",
+  "demoOwnerNotConfigured": "Le credenziali del proprietario demo non sono configurate.",
+  "demoManagerNotConfigured": "Le credenziali del manager demo non sono configurate.",
+  "demoManagerTitle": "Accedi direttamente come responsabile del ristorante demo",
+  "demoOwnerTitle": "Accedi direttamente come proprietario del ristorante demo",
+  "demoSuperAdminTitle": "Reindirizza al pannello Super Admin"
 }

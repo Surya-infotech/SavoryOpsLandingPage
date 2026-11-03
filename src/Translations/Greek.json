@@ -72,5 +72,11 @@
   "demoOwner": "Demo Ιδιοκτήτης",
   "demoManager": "Demo Διαχειριστής",
   "demoSuperAdmin": "Demo Super Admin",
-  "demoLogin": "Γρήγορη Δοκιμαστική Πρόσβαση"
+  "demoLogin": "Γρήγορη Δοκιμαστική Πρόσβαση",
+  "emailidplaceholder": "Εισαγάγετε το email σας",
+  "demoOwnerNotConfigured": "Τα διαπιστευτήρια του Demo Ιδιοκτήτη δεν έχουν ρυθμιστεί.",
+  "demoManagerNotConfigured": "Τα διαπιστευτήρια του Demo Διαχειριστή δεν έχουν ρυθμιστεί.",
+  "demoManagerTitle": "Απευθείας σύνδεση ως Demo Υπεύθυνος Εστιατορίου",
+  "demoOwnerTitle": "Απευθείας σύνδεση ως Demo Ιδιοκτήτης Εστιατορίου",
+  "demoSuperAdminTitle": "Ανακατεύθυνση στον Πίνακα Super Admin"
 }

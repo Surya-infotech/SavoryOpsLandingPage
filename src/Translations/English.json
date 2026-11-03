@@ -72,5 +72,11 @@
   "demoOwner": "Demo Owner",
   "demoManager": "Demo Manager",
   "demoSuperAdmin": "Demo Super Admin",
-  "demoLogin": "Quick Demo Access"
+  "demoLogin": "Quick Demo Access",
+  "emailidplaceholder": "Enter your Email ID",
+  "demoOwnerNotConfigured": "Demo Owner credentials are not configured.",
+  "demoManagerNotConfigured": "Demo Manager credentials are not configured.",
+  "demoManagerTitle": "Sign in directly as Demo Restaurant Manager",
+  "demoOwnerTitle": "Sign in directly as Demo Restaurant Owner",
+  "demoSuperAdminTitle": "Redirect to Super Admin Panel"
 }

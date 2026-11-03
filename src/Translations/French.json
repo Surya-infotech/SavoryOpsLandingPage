@@ -72,5 +72,11 @@
   "demoOwner": "Démo Propriétaire",
   "demoManager": "Démo Responsable",
   "demoSuperAdmin": "Démo Super Admin",
-  "demoLogin": "Accès Démo Rapide"
+  "demoLogin": "Accès Démo Rapide",
+  "emailidplaceholder": "Entrez votre identifiant e-mail",
+  "demoOwnerNotConfigured": "Les identifiants du propriétaire de démonstration ne sont pas configurés.",
+  "demoManagerNotConfigured": "Les identifiants du responsable de démonstration ne sont pas configurés.",
+  "demoManagerTitle": "Se connecter directement en tant que responsable de restaurant de démonstration",
+  "demoOwnerTitle": "Se connecter directement en tant que propriétaire de restaurant de démonstration",
+  "demoSuperAdminTitle": "Rediriger vers le panneau de super administration"
 }

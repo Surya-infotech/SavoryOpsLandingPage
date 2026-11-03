@@ -72,5 +72,11 @@
   "demoOwner": "Demo Inhaber",
   "demoManager": "Demo Manager",
   "demoSuperAdmin": "Demo Super Admin",
-  "demoLogin": "Schneller Demo-Zugang"
+  "demoLogin": "Schneller Demo-Zugang",
+  "emailidplaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+  "demoOwnerNotConfigured": "Anmeldedaten für Demo-Inhaber sind nicht konfiguriert.",
+  "demoManagerNotConfigured": "Anmeldedaten für Demo-Manager sind nicht konfiguriert.",
+  "demoManagerTitle": "Direkt als Demo-Restaurantmanager anmelden",
+  "demoOwnerTitle": "Direkt als Demo-Restaurantinhaber anmelden",
+  "demoSuperAdminTitle": "Weiterleitung zum Super-Admin-Bereich"
 }

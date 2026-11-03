@@ -36,7 +36,7 @@ const WarningModal = ({ message, onClose, title }) => {
                     <ErrorRoundedIcon className="warning-icon" />
                 </div>
                 <h3 className="warning-modal-title">
-                    {title || translations?.warning || "Warning"}
+                    {title || translations?.warning}
                 </h3>
                 <p className="warning-modal-message">
                     {message}
@@ -46,7 +46,7 @@ const WarningModal = ({ message, onClose, title }) => {
                     className="warning-modal-confirm-btn" 
                     onClick={onClose}
                 >
-                    {translations?.okgotit || "OK, Got It"}
+                    {translations?.okgotit}
                 </button>
             </div>
         </div>

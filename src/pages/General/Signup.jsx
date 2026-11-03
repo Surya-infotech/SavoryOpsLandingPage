@@ -191,12 +191,12 @@ const OwnerSignUp = () => {
                 const errorMessages = {
                     "All fields are required": translations.allfieldrequired,
                     "Email ID Already Exists": translations.emailalreadyexists,
-                    "Mobile Number Already Exists": translations.mobilenumberalreadyexists || "Mobile Number Already Exists",
+                    "Mobile Number Already Exists": translations.mobilenumberalreadyexists,
                     "Invalid referral code": translations.invalidreferralcode,
                     "Server error": translations.servererror
                 };
                 if (signupResult.message === "Invalid referral code") {
-                    setReferralError(translations.invalidreferralcode || signupResult.message);
+                    setReferralError(translations.invalidreferralcode);
                 } else {
                     setFormError(errorMessages[signupResult.message] || signupResult.message || translations.servererror);
                 }
@@ -257,7 +257,7 @@ const OwnerSignUp = () => {
     const handleFinish = () => {
         if (signupData && signupData.owner) {
             const { token, id, subdomain } = signupData.owner;
-            const successText = translations.signupsuccessful || 'Sign up successful';
+            const successText = translations.signupsuccessful;
             const subdomainUrl = `${host}://${subdomain}.${hosturl}/token-middleware?token=${token}&id=${id}&userType=Owner&success=${encodeURIComponent(successText)}`;
             window.location.href = subdomainUrl;
         } else {
@@ -348,7 +348,7 @@ const OwnerSignUp = () => {
                                         <label>{translations.email}</label>
                                         <input
                                             type="email"
-                                            placeholder={translations.emailidplaceholder || translations.emailplaceholder}
+                                            placeholder={translations.emailidplaceholder}
                                             value={email}
                                             onChange={(e) => setEmail(e.target.value)}
                                             required

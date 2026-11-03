@@ -72,5 +72,11 @@
   "demoOwner": "Demo Eigenaar",
   "demoManager": "Demo Manager",
   "demoSuperAdmin": "Demo Super Admin",
-  "demoLogin": "Snelle Demo Toegang"
+  "demoLogin": "Snelle Demo Toegang",
+  "emailidplaceholder": "Voer uw e-mailadres in",
+  "demoOwnerNotConfigured": "Demo-eigenaar inloggegevens zijn niet geconfigureerd.",
+  "demoManagerNotConfigured": "Demo-manager inloggegevens zijn niet geconfigureerd.",
+  "demoManagerTitle": "Direct inloggen als Demo Restaurant Manager",
+  "demoOwnerTitle": "Direct inloggen als Demo Restaurant Eigenaar",
+  "demoSuperAdminTitle": "Omleiden naar het Super Admin Panel"
 }
