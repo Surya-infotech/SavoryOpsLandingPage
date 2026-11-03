@@ -11,7 +11,6 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import SEOHead from '../components/SEO/SEOHead';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
-import '../styles/pages/privacy-policy.scss';
 
 const TermsAndConditions = () => {
   const { softwareName } = useAppSettings();

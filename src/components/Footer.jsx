@@ -31,7 +31,6 @@ import {
 } from '@mui/icons-material';
 import { Box, Container, Divider, IconButton, Link, Typography } from '@mui/material';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
-import '../styles/layout/footer.scss';
 
 const Footer = () => {
   const { logoUrl, softwareName, setLogoUrl, generalSetting, socialMedia } = useAppSettings();

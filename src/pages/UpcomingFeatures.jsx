@@ -17,7 +17,6 @@ import { useEffect } from 'react';
 import CTA from '../components/CTA';
 import SEOHead from '../components/SEO/SEOHead';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
-import '../styles/pages/upcoming-features.scss';
 
 const UpcomingFeatures = () => {
   const { softwareName } = useAppSettings();

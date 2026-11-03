@@ -11,7 +11,6 @@ import StorageIcon from '@mui/icons-material/Storage';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import SEOHead from '../components/SEO/SEOHead';
-import '../styles/pages/privacy-policy.scss';
 
 const DataDeletionPolicy = () => {
   useEffect(() => {

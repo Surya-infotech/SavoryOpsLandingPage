@@ -13,7 +13,6 @@ import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import SEOHead from '../components/SEO/SEOHead';
-import '../styles/pages/privacy-policy.scss';
 
 const PrivacyPolicy = () => {
   useEffect(() => {

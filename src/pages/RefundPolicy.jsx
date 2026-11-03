@@ -13,7 +13,6 @@ import ReceiptIcon from '@mui/icons-material/Receipt';
 import GavelIcon from '@mui/icons-material/Gavel';
 import SEOHead from '../components/SEO/SEOHead';
 import { useAppSettings } from '../context/AppSettingsContext.jsx';
-import '../styles/pages/privacy-policy.scss';
 
 const RefundPolicy = () => {
   const { softwareName } = useAppSettings();

@@ -23,7 +23,7 @@ export const formatDuration = (plan) => {
  * @param {number} value - Duration value
  * @returns {string} Properly formatted duration word
  */
-export const getDurationWord = (duration, value) => {
+const getDurationWord = (duration, value) => {
   const isSingular = value === 1;
   const durationLower = duration.toLowerCase();
 
@@ -87,7 +87,7 @@ export const getPlanLimits = (plan) => {
 /**
  * Module display labels map
  */
-export const MODULE_DISPLAY_NAMES = {
+const MODULE_DISPLAY_NAMES = {
   inventory: 'Inventory Management',
   finance: 'Finance & Expense Management',
   hrms: 'HRMS (Staff Management)',
