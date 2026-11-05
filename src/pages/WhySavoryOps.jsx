@@ -102,6 +102,18 @@ const WhySavoryOps = () => {
       ]
     },
     {
+      icon: <MultiBranchIcon sx={{ fontSize: 32 }} />,
+      title: 'Restaurant-Wise Dedicated Storefront Website',
+      image: '/images/hero-platform.jpg',
+      description:
+        'Every restaurant gets its own independent, white-labeled web portal with custom domain or subdomain, direct commission-free online ordering, and real-time table reservations.',
+      highlights: [
+        '100% Brand Ownership: Custom logo, brand colors, chef story, and hero banners',
+        'Direct Commission-Free Ordering for Takeaway, Delivery, and Contactless QR Dine-In',
+        'Digital Table Reservation Engine with instant confirmation and party size pacing'
+      ]
+    },
+    {
       icon: <QrCodeIcon sx={{ fontSize: 32 }} />,
       title: 'Contactless QR Table Ordering & Payments',
       image: '/images/features/qr-ordering.jpg',
@@ -196,6 +208,14 @@ const WhySavoryOps = () => {
       toast: 'Complex multi-account switching',
       square: 'Separate account fees per location',
       legacy: 'Manual batch data syncing'
+    },
+    {
+      feature: 'Dedicated Restaurant Website',
+      hint: 'Independent white-label web ordering storefront & custom domain per restaurant',
+      savoryops: 'Included Standard (White-Label Storefront)',
+      toast: 'Basic Toast Online Ordering Page',
+      square: 'Square Online Page (Branded Square)',
+      legacy: 'Requires expensive custom web development'
     },
     {
       feature: 'Pricing Transparency',

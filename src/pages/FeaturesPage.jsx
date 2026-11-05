@@ -191,6 +191,16 @@ const DETAILED_FEATURES = [
       'Commission-free Takeaway, Doorstep Delivery, 5-stage live order tracker, digital table reservations, reviews, and 1-click reorder.'
   },
   {
+    id: 'dedicated-restaurant-website',
+    priority: 10.5,
+    category: 'mobile-apps',
+    icon: <LanguageIcon sx={ICON_SIZE} />,
+    title: 'Dedicated Restaurant Website',
+    subtitle: 'White-Label Online Storefront',
+    description:
+      'Every restaurant receives its own dedicated website with direct commission-free ordering, visual photo menus, table reservations, and custom domains.'
+  },
+  {
     id: 'qr-code-scanning',
     priority: 11,
     category: 'mobile-apps',

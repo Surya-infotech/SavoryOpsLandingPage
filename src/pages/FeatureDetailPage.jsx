@@ -75,7 +75,17 @@ const ALIAS_MAP = {
   public_kot: 'public-kot-display',
   'public-kds': 'public-kot-display',
   public_kds: 'public-kot-display',
-  'live-kitchen-screen': 'public-kot-display'
+  'live-kitchen-screen': 'public-kot-display',
+  'dedicated-website': 'dedicated-restaurant-website',
+  dedicated_website: 'dedicated-restaurant-website',
+  'restaurant-website': 'dedicated-restaurant-website',
+  restaurant_website: 'dedicated-restaurant-website',
+  'dedicated_restaurant_website': 'dedicated-restaurant-website',
+  'storefront-website': 'dedicated-restaurant-website',
+  'white-label-website': 'dedicated-restaurant-website',
+  'branded-website': 'dedicated-restaurant-website',
+  'user-website': 'dedicated-restaurant-website',
+  user_website: 'dedicated-restaurant-website'
 };
 
 const FEATURE_IMAGE_MAP = {
@@ -187,6 +197,8 @@ const FEATURE_IMAGE_MAP = {
   'deals_and_bundles': '/images/order-types/takeaway.jpg',
   'public-kot-display': '/images/features/kitchen-display-system.jpg',
   'public_kot_display': '/images/features/kitchen-display-system.jpg',
+  'dedicated-restaurant-website': '/images/hero-platform.jpg',
+  'dedicated_restaurant_website': '/images/hero-platform.jpg',
 };
 
 const FeatureDetailPage = () => {

@@ -78,6 +78,14 @@ const FEATURES = [
       'Enable contactless ordering with dynamic QR menus, live updates, and faster table turnover.',
   },
   {
+    id: 'dedicated-restaurant-website',
+    priority: 5.5,
+    icon: <LanguageIcon />,
+    title: 'Dedicated Restaurant Website',
+    description:
+      'Every restaurant receives its own independent, white-labeled website with direct commission-free ordering, visual menus, and table reservations.',
+  },
+  {
     id: 'smart-dashboard',
     priority: 6,
     icon: <DashboardIcon />,

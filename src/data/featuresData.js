@@ -1803,5 +1803,55 @@ export const FEATURES_DATA = {
     ],
     ctaText: 'Explore Kitchen Display System',
     ctaLink: '/features/kitchen-display-system'
+  },
+  'dedicated-restaurant-website': {
+    id: 'dedicated-restaurant-website',
+    badge: 'White-Label Storefront',
+    title: 'Restaurant-Wise Dedicated Online Ordering Website & Storefront',
+    metaTitle: 'Dedicated Restaurant Website & Online Ordering Storefront | SavoryOps',
+    metaDescription: 'Every restaurant receives its own dedicated, white-labeled online ordering website. 100% direct commission-free orders, digital table reservations, custom subdomains, and visual menus.',
+    primaryKeyword: 'Dedicated Restaurant Website',
+    secondaryKeywords: [
+      'restaurant wise dedicated website',
+      'white label restaurant website',
+      'dedicated online ordering website',
+      'commission free restaurant website',
+      'custom domain restaurant ordering',
+      'restaurant branded storefront',
+      'direct customer ordering portal',
+      'online food ordering website'
+    ],
+    h1: 'Restaurant-Wise Dedicated Online Ordering Website & Brand Storefront',
+    subtitle: 'Give your restaurant its own standalone, white-labeled website with direct commission-free ordering, real-time table reservations, visual interactive menus, and custom domain routing.',
+    overview: 'Third-party delivery platforms hide your brand, charge 15% to 30% commissions, and withhold your customer contact data. With SavoryOps, every onboarded restaurant automatically gets its own dedicated, standalone customer storefront website (powered by SavoryOps User Website). Diners visit your independent domain or subdomain (e.g. order.yourbrand.com), browse your mouthwatering photo menus, customize dishes with modifiers, place direct takeaway or doorstep delivery orders, book dining tables, and track orders in real time—with zero middleman commissions.',
+    benefits: [
+      { title: '100% White-Label Brand Identity', desc: 'Your own logo, custom colors, brand story, chef philosophy, and hero banners. No third-party marketplace logos or competitor dish suggestions.' },
+      { title: 'Zero Commission Fees (Save 15-30%)', desc: 'Accept direct online delivery and takeaway orders without paying crippling commissions to food delivery aggregators.' },
+      { title: 'Custom Subdomain & Custom Domains', desc: 'Host on a dedicated subdomain (yourbrand.savoryops.com) or map your own custom domain (order.yourbrand.com) with automated SSL.' },
+      { title: 'Online Table Reservations Engine', desc: 'Guests can reserve dining tables in advance with date, time slot, party size, seating preferences, and special celebration notes.' },
+      { title: 'Direct Customer Data Ownership', desc: 'Build your own diner database with guest names, verified emails, phone numbers, delivery addresses, and ordering habits for direct marketing.' },
+      { title: 'Complete Owner Control via Owner Panel', desc: 'Manage your website status (Online/Maintenance), customize homepage showcases, announcement marquees, and About Us pillars directly from the Owner Web portal.' }
+    ],
+    features: [
+      'Dedicated Brand Storefront Architecture: Fully isolated web portal engineered specifically for your restaurant with zero marketplace distractions.',
+      'Direct Multi-Channel Ordering: Diners choose between Doorstep Delivery (with saved addresses & pins), Takeaway Pickup, or Contactless Dine-In ordering.',
+      'Visual Interactive Menu Showcase: Rich photo menus categorized by courses, complete with dietary badges (Vegan, Halal, Gluten-Free) and spice levels.',
+      'Multi-Step Modifier & Add-on Customizer: Guests customize dishes with sauces, toppings, portion sizes, preparation temperatures, and cooking notes.',
+      'Homepage Showcases & Carousels: Curate highlighted carousels for Chef Specials, Category Spotlights, Combo Meal Bundles, and Unlimited Buffets.',
+      'Online Table Booking Engine: Self-service table booking with instant confirmation, status history, guest celebration requests, and cancellation management.',
+      'Live 5-Stage Order Progress Tracker: Customers watch real-time order status updates: Placed → In Prep → Cooking → Out for Delivery → Delivered.',
+      'Digital Tax Invoice Generation: 1-click download of beautifully styled, branded PDF tax invoices for guests and corporate expense records.',
+      'Announcement Bar & Daily Specials Marquee: Broadcast urgent updates, festival discount codes, and operational announcements across the top header.',
+      'Verified Reviews & Star Ratings: Collect verified guest reviews, ratings, and feedback directly on menu items to build diner social proof.'
+    ],
+    faqs: [
+      { question: 'Is this a shared marketplace or my restaurant’s own dedicated website?', answer: 'It is 100% your own dedicated separate website! Only your restaurant’s menu, brand, photos, and policies are shown. Unlike third-party delivery apps, your customers will never see competitor restaurants or distracting ads.' },
+      { question: 'Can I use my own custom domain for the website?', answer: 'Yes. You can use your own custom domain (such as order.yourrestaurant.com or yourrestaurant.com) or use a free branded subdomain (yourbrand.savoryops.com) with automated SSL encryption.' },
+      { question: 'Do I need web design or coding skills to manage my website?', answer: 'Not at all. You can easily manage your website from the SavoryOps Owner Panel: toggle website visibility, update About Us stories, add top announcement banners, and feature special dishes in minutes without touching any code.' },
+      { question: 'Does the dedicated website connect directly to the kitchen KOT and POS?', answer: 'Yes! Every order placed on your dedicated website instantly rings into your SavoryOps POS and automatically prints or streams directly to your kitchen KDS / KOT screens in real time.' },
+      { question: 'Are table reservations integrated with the dining floor plan?', answer: 'Absolutely. When a customer books a table through your dedicated website, the reservation immediately syncs with your Host Stand on the Employee Mobile App and the Owner Panel floor plan.' }
+    ],
+    ctaText: 'Explore System Ecosystem',
+    ctaLink: '/features'
   }
 };
