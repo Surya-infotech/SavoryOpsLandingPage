@@ -1628,5 +1628,180 @@ export const FEATURES_DATA = {
     ],
     ctaText: 'Explore Food Cost Guide',
     ctaLink: '/resources/food-cost-percentage-guide'
+  },
+  'day-close-register': {
+    id: 'day-close-register',
+    badge: 'Cash Drawer & Z-Reports',
+    title: 'Restaurant Day-End Register Closing & Z-Report Reconciliation',
+    metaTitle: 'Restaurant Day-End Register Closing & Cash Drawer Reconciliation | SavoryOps',
+    metaDescription: 'Eliminate register discrepancies with SavoryOps Day-Close. Opening float counts, cash/card/UPI settlements, manager void audits, and automated Z-Report generation.',
+    primaryKeyword: 'Restaurant Day-End Register Closing',
+    secondaryKeywords: [
+      'restaurant day close report',
+      'z report restaurant',
+      'pos register reconciliation',
+      'cash drawer reconciliation',
+      'shift handover restaurant',
+      'end of day sales summary',
+      'cash float tracking',
+      'pos tender balancing'
+    ],
+    h1: 'Restaurant Day-End Register Closing & Z-Report Balancing Engine',
+    subtitle: 'Reconcile daily cash drawers, audit digital payment settlements, review manager discounts/voids, and generate audit-ready Z-Reports with zero discrepancies.',
+    overview: 'High-volume restaurant service requires rigorous end-of-shift accountability. From cash float mismatches to unrecorded register payouts and discrepancies between credit card gateway settlements and POS receipts, manual day-close accounting leaves room for costly errors and internal theft. The SavoryOps Day-Close & Register Reconciliation module digitizes the entire register closing workflow. Cashiers count physical currency, declare till balances, and the system automatically matches tender against recorded sales—highlighting variances down to the cent.',
+    benefits: [
+      { title: 'Zero Cash Discrepancies', desc: 'Blind cash counts enforce staff honesty: cashiers count bills and coins before the system reveals recorded POS totals.' },
+      { title: 'Automated Z-Report Generation', desc: 'Instantly produce statutory Z-Reports compiling gross sales, net revenue, taxes, discounts, refunds, and tender breakdowns.' },
+      { title: 'Multi-Tender Balancing', desc: 'Reconcile cash, credit cards, debit cards, UPI, digital wallets, and room charges in dedicated settlement ledgers.' },
+      { title: 'Float & Payout Auditing', desc: 'Track opening morning float, mid-shift cash drops, petty cash expense payouts, and closing deposits.' },
+      { title: 'Manager Void & Discount Audit', desc: 'Review every discounted bill, refunded item, and voided KOT authorized throughout the shift to prevent collusion.' },
+      { title: 'Multi-Branch Fiscal Lock', desc: 'Lock the fiscal business day across all terminals to prevent backdated order tampering and ensure clean books.' }
+    ],
+    features: [
+      'Opening Cash Float Setup: Declare initial till float amounts at shift opening with denomination breakdown recording.',
+      'Blind Register Counting: Cashiers count actual cash drawer contents without seeing theoretical system totals to eliminate bias.',
+      'Automated Variance Calculation: Live calculation of cash overages/shortages with mandatory manager explanation notes for discrepancies.',
+      'Comprehensive Multi-Payment Reconciliation: Detailed tender breakdown across Cash, Visa/Mastercard, UPI, Gift Cards, and House Accounts.',
+      'Petty Cash Payout Logging: Record register cash withdrawals for urgent pantry runs, ice purchases, or delivery driver tips.',
+      'Executive Day-Close Z-Report: 1-click generation and printing of official Z-Reports for store managers, owners, and external accountants.',
+      'Shift-Wise & Terminal-Wise Closures: Run multiple shift handovers throughout the day or consolidate all terminals into one unified venue day close.',
+      'Historical Day-Close Archive: Access historical register settlements with complete employee timestamps and digital audit trails.'
+    ],
+    faqs: [
+      { question: 'What is the difference between an X-Report and a Z-Report in SavoryOps?', answer: 'An X-Report is an interim, mid-shift sales reading that can be run anytime without resetting register counters or locking the shift. A Z-Report is the final end-of-day register closure report that balances tenders, records cash variances, and locks the business day for accounting and tax records.' },
+      { question: 'What is a blind cash count and why is it important?', answer: 'A blind count means the cashier enters physical bill and coin counts into the system without knowing the POS recorded total in advance. This prevents cashiers from guessing or pocketing minor overages, guaranteeing 100% financial transparency.' },
+      { question: 'Can multiple cashiers run separate shift closings on the same terminal?', answer: 'Yes. SavoryOps supports multi-shift workflows. Shift 1 can balance and close out at 3:00 PM with their own cashier settlement report, and Shift 2 opens a fresh drawer with their own opening float.' }
+    ],
+    ctaText: 'Explore Financial Reports',
+    ctaLink: '/features/advanced-reports'
+  },
+  'delivery-driver-dispatch': {
+    id: 'delivery-driver-dispatch',
+    badge: 'In-House Fleet Management',
+    title: 'In-House Restaurant Delivery Fleet Dispatch & Driver Tracking',
+    metaTitle: 'Restaurant Delivery Fleet Dispatch & Driver Tracking Software | SavoryOps',
+    metaDescription: 'Eliminate third-party aggregator commissions. Dispatch orders to your in-house delivery fleet, track turn-by-turn routes, manage cash on delivery (COD), and analyze driver performance.',
+    primaryKeyword: 'Restaurant Delivery Dispatch Software',
+    secondaryKeywords: [
+      'in-house delivery fleet management',
+      'restaurant driver tracking app',
+      'food delivery dispatch system',
+      'doorstep delivery routing',
+      'cod cash on delivery reconciliation',
+      'driver turnaround time report',
+      'restaurant fleet management'
+    ],
+    h1: 'In-House Delivery Fleet Dispatch & Real-Time Driver Tracking Engine',
+    subtitle: 'Assign delivery orders in 1 click, route drivers with Google Maps navigation, collect doorstep Cash on Delivery (COD), and monitor fleet delivery speed.',
+    overview: 'Third-party delivery aggregators charge up to 30% in punishing commissions, taking away your restaurant margins and customer relationships. The SavoryOps In-House Delivery Dispatch module gives you complete control over your own delivery operations. From the POS order terminal or dispatcher screen, assign orders to available drivers, monitor dispatch-to-door transit times, provide turn-by-turn map navigation on the Employee Mobile App, and reconcile collected Cash on Delivery (COD) seamlessly.',
+    benefits: [
+      { title: 'Save Up to 30% on Commissions', desc: 'Fulfill direct website and mobile app delivery orders with your own drivers and keep 100% of your gross margins.' },
+      { title: '1-Tap Order Dispatching', desc: 'Assign packed orders to available drivers from the POS terminal, dispatcher console, or Head Chef expo station.' },
+      { title: 'Dedicated Driver Mobile Workflow', desc: 'Drivers receive instant order alerts, customer addresses, phone calling shortcuts, and map routing on the Employee App.' },
+      { title: 'Accurate Cash on Delivery (COD) Balancing', desc: 'Track cash collected at customer doorsteps and reconcile balances against the cashier register at shift end.' },
+      { title: 'Live 5-Stage Customer Tracking', desc: 'Keep diners informed with real-time updates: Placed → In Kitchen → Packed → Out for Delivery → Delivered.' },
+      { title: 'Fleet Speed & Productivity Metrics', desc: 'Identify top-performing drivers, track average trip durations, and optimize delivery zone radii.' }
+    ],
+    features: [
+      'Visual Dispatcher Queue: Real-time board showing active delivery orders, assigned drivers, transit times, and unassigned tickets.',
+      'Driver Mobile App Integration: In-app turn-by-turn navigation, 1-click customer phone dialer, gate access instructions, and delivery confirmation.',
+      'Cash on Delivery (COD) Management: Track driver-held cash balances and reconcile tender upon return to the restaurant.',
+      'Delivery Zone & Radius Configuration: Define delivery radii, minimum order thresholds, and neighborhood delivery charges per branch.',
+      'Driver Turnaround Analytics Report: Measure dispatch speed, transit duration, on-time percentage, and orders delivered per hour.',
+      'Contactless Doorstep Proof of Delivery: Mark orders as delivered with customer signature or driver timestamp verification.'
+    ],
+    faqs: [
+      { question: 'Do my delivery drivers need separate hardware or devices?', answer: 'No. Delivery drivers simply install the SavoryOps Employee App on their Android or iOS smartphone. Logging in with their driver credentials automatically presents the optimized delivery screen.' },
+      { question: 'How does Cash on Delivery (COD) reconciliation work?', answer: 'When an order is marked as Cash on Delivery, the system logs the exact payable amount against the assigned driver. Upon returning to the restaurant, the cashier opens the Driver Reconciliation screen, accepts the cash, and balances the order.' },
+      { question: 'Can customers track their delivery driver in real time?', answer: 'Yes. Diners using the SavoryOps User Website or Customer Mobile App receive live status notifications and step-by-step order progress tracking.' }
+    ],
+    ctaText: 'Explore Employee App',
+    ctaLink: '/features/employee-mobile-app'
+  },
+  'deals-and-bundles': {
+    id: 'deals-and-bundles',
+    badge: 'Average Ticket Maximizer',
+    title: 'Restaurant Combo Deals, Meal Bundles & Package Engine',
+    metaTitle: 'Restaurant Combo Meals & Deals Bundle Management Software | SavoryOps',
+    metaDescription: 'Maximize restaurant average order value with SavoryOps Deals & Bundles. Build customizable combos, fixed value packs, meal bundles with recipe BOM depletion, and lunch special promotions.',
+    primaryKeyword: 'Restaurant Combo Meals and Deals Software',
+    secondaryKeywords: [
+      'restaurant meal bundles',
+      'combo meal builder pos',
+      'value pack restaurant promotion',
+      'fixed price set menu',
+      'customizable combo deals',
+      'average order value boost',
+      'bundle recipe bom depletion'
+    ],
+    h1: 'Dynamic Combo Deals, Meal Bundles & Value Package Engine',
+    subtitle: 'Create customizable meal combinations, fixed-price family bundles, lunch specials, and happy hour packages that skyrocket average basket size.',
+    overview: 'Diners love bundled value, and operators love higher average ticket sizes. The SavoryOps Deals & Bundles engine empowers restaurateurs to construct sophisticated promotional packages in minutes. Whether configuring fixed set menus (Burger + Fries + Drink for $14.99), flexible multi-step bundles (Choose 1 Appetizer, 2 Entrees, and 1 Dessert), or premium modifier upgrades (+ $2.00 for truffle fries), SavoryOps ensures seamless POS cashier selection and accurate ingredient recipe depletion.',
+    benefits: [
+      { title: 'Skyrocket Average Ticket Size', desc: 'Incentivize diners to spend more per visit with attractive, high-margin combos and bundled pairings.' },
+      { title: 'Customizable Multi-Choice Bundles', desc: 'Allow customers to pick their preferred mains, sides, and beverages with step-by-step modifier flows.' },
+      { title: 'Accurate Recipe BOM Stock Depletion', desc: 'Each component selected in a combo automatically deducts the exact raw ingredients from inventory in real time.' },
+      { title: 'Dynamic Modifier Upgrade Fees', desc: 'Upsell premium sides and drinks with automated incremental pricing (e.g. +$1.50 for waffle fries).' },
+      { title: 'Scheduled Time & Day Availability', desc: 'Set automated launch and expiry rules for Lunch Specials (Mon-Fri 11am-2pm) or Weekend Family Feasts.' },
+      { title: 'Bundle Margin & Profit Analytics', desc: 'Track sales velocity, contribution margins, and most popular bundle configurations to optimize profitability.' }
+    ],
+    features: [
+      'Multi-Tier Bundle Creator: Build combos with fixed items or customizable selection groups (e.g. Step 1: Pick Protein, Step 2: Pick Side, Step 3: Pick Drink).',
+      'Differential Pricing & Upgrades: Set base bundle price and apply additive charges for premium protein or beverage choices.',
+      'Recipe-Level Inventory Depletion: Automatically depletes ingredient inventories based on the specific items chosen inside the bundle.',
+      'Omnichannel Synchronization: Combos synchronize across counter POS, mobile waiter tablets, self-ordering QR menus, and online ordering.',
+      'Time-Restricted Promotional Windows: Automatically enable combos during specific hours, days of the week, or holiday seasons.',
+      'Bundle Popularity Reports: Identify your best-selling combos, top modifier upgrade choices, and total revenue generated per package.'
+    ],
+    faqs: [
+      { question: 'Can customers customize items inside a combo deal?', answer: 'Yes. SavoryOps supports both fixed bundles and flexible customizable combos. For example, in a "Family Meal Deal", the customer can choose 2 pizzas from a selected list, 1 appetizer, and 2 soda flavors.' },
+      { question: 'Does a combo bundle correctly deplete raw ingredients in inventory?', answer: 'Yes. SavoryOps links each combo component to its underlying recipe Bill of Materials (BOM). When a combo is sold, the system deducts the precise ingredients for the chosen items.' }
+    ],
+    ctaText: 'Explore Menu Management',
+    ctaLink: '/features/menu-management'
+  },
+  'public-kot-display': {
+    id: 'public-kot-display',
+    badge: 'Standalone Kitchen Monitor',
+    title: 'Public Kitchen Display Screen (KDS) & Wall-Mounted KOT Display',
+    metaTitle: 'Standalone Kitchen Display Screen & Public KOT Live Display | SavoryOps',
+    metaDescription: 'Mount any smart TV, tablet, or monitor in your kitchen with SavoryOps Public KOT Display. Zero-login setup, real-time ticket streaming, acoustic chimes, and color urgency timers.',
+    primaryKeyword: 'Public Kitchen Order Ticket Display',
+    secondaryKeywords: [
+      'standalone kitchen display system',
+      'public kot display',
+      'live kitchen screen monitor',
+      'wall mounted kitchen display',
+      'restaurant bump bar screen',
+      'paperless kitchen monitor',
+      'expo station display'
+    ],
+    h1: 'Zero-Login Public Kitchen Display (KDS) & Wall-Mounted Screen',
+    subtitle: 'Streamline kitchen communication with zero-login live displays. Mount on any browser-enabled screen, smart TV, or tablet with real-time ticket sync and audio alerts.',
+    overview: 'Commercial kitchens are fast, hot, and noisy environments where logging in with passwords and managing app sessions causes friction. The SavoryOps Public KDS Display provides a frictionless, dedicated kitchen monitor that runs on any smart TV, HDMI monitor, or tablet. Just open the dedicated secure URL, and the kitchen screen stays live 24/7—streaming incoming tickets, flashing color-coded urgency timers, and playing acoustic alerts whenever a new order is fired.',
+    benefits: [
+      { title: 'Zero Login Friction', desc: 'Launch directly via a secure dedicated URL on any kitchen monitor, smart TV, or mounted tablet without needing staff user accounts.' },
+      { title: 'Hardware-Agnostic Setup', desc: 'Save thousands on proprietary hardware. Works on standard Android TVs, Fire TV sticks, iPads, or budget commercial monitors.' },
+      { title: 'Acoustic Chime Alerts', desc: 'Plays distinct audio notification sounds when new tickets arrive so line cooks never miss an incoming order during rush hours.' },
+      { title: 'Color-Coded Cook Urgency', desc: 'Tickets automatically transition from Green (Fresh) to Amber (Warning) and Red (Urgent) based on elapsed prep minutes.' },
+      { title: 'Station-Specific Filtering', desc: 'Display all kitchen orders or filter by station: Grill Line, Fry Station, Cold Prep & Salads, Pizza Oven, or Bar.' },
+      { title: 'High-Contrast Kitchen Visibility', desc: 'Engineered with large high-contrast fonts, clear order type badges (Dine-in, Takeaway, Delivery), and allergy highlights visible from 15 feet away.' }
+    ],
+    features: [
+      '24/7 Always-On Live Ticket Stream: Microsecond WebSocket sync displays orders the instant they are rung up on POS or scanned at tables.',
+      'Acoustic Audio Notification Chimes: Distinct kitchen chimes alert chefs to incoming orders even during loud dinner rush noise.',
+      'Visual Urgency Timers: Live elapsed minute counters color-code tickets (Green under 10 min, Amber 10-15 min, Red over 15 min).',
+      'Station & Category Filtering: Configure screens to show only Grill items, Fryer tickets, Dessert orders, or Expo master overview.',
+      'Allergy Warnings & Cooking Modifiers: High-visibility badge callouts for severe allergies (Gluten-Free, Nut Allergy) and steak temperatures.',
+      'One-Tap Ticket & Item Bumping: Line cooks tap items or tickets to update order status to Cooking, Ready, or Picked Up.',
+      'Full-Screen Kiosk Mode: Optimized for full-screen web views with zero address bar distractions or unwanted popups.'
+    ],
+    faqs: [
+      { question: 'What hardware do I need to run the Public KOT Display?', answer: 'Any device with a modern web browser! You can use an inexpensive Smart TV, a TV with a Fire Stick / Google Chromecast, an Android tablet, an iPad, or a standard PC monitor.' },
+      { question: 'Do kitchen cooks need to remember a username and password?', answer: 'No. The Public KOT Display operates via a secure branch-specific URL with token authentication, meaning staff never have to type passwords on grease-covered keyboards or touchscreens.' },
+      { question: 'Can I have multiple screens for different kitchen sections?', answer: 'Yes. You can open separate screens filtered for specific preparation stations, such as Grill Station, Pizza Station, Bar & Beverages, and a Master Expo screen for the Head Chef.' }
+    ],
+    ctaText: 'Explore Kitchen Display System',
+    ctaLink: '/features/kitchen-display-system'
   }
 };

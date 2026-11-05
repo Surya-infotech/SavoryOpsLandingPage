@@ -54,7 +54,28 @@ const ALIAS_MAP = {
   'driver_performance_report': 'driver-performance-report',
   'reservation-analytics': 'reservation-analytics-report',
   'reservation_analytics': 'reservation-analytics-report',
-  'reservation_analytics_report': 'reservation-analytics-report'
+  'reservation_analytics_report': 'reservation-analytics-report',
+  'day-close': 'day-close-register',
+  day_close: 'day-close-register',
+  dayclose: 'day-close-register',
+  'day-close-report': 'day-close-register',
+  'z-report': 'day-close-register',
+  z_report: 'day-close-register',
+  'register-close': 'day-close-register',
+  register_close: 'day-close-register',
+  'delivery-driver': 'delivery-driver-dispatch',
+  delivery_driver: 'delivery-driver-dispatch',
+  'delivery-dispatch': 'delivery-driver-dispatch',
+  delivery_dispatch: 'delivery-driver-dispatch',
+  'delivery-fleet': 'delivery-driver-dispatch',
+  'deals-bundles': 'deals-and-bundles',
+  deals_bundles: 'deals-and-bundles',
+  deals: 'deals-and-bundles',
+  'public-kot': 'public-kot-display',
+  public_kot: 'public-kot-display',
+  'public-kds': 'public-kot-display',
+  public_kds: 'public-kot-display',
+  'live-kitchen-screen': 'public-kot-display'
 };
 
 const FEATURE_IMAGE_MAP = {
@@ -158,6 +179,14 @@ const FEATURE_IMAGE_MAP = {
   'driver_performance_report': '/images/order-types/delivery.jpg',
   'reservation-analytics-report': '/images/order-types/dine-in.jpg',
   'reservation_analytics_report': '/images/order-types/dine-in.jpg',
+  'day-close-register': '/images/features/reports-analytics.jpg',
+  'day_close_register': '/images/features/reports-analytics.jpg',
+  'delivery-driver-dispatch': '/images/order-types/delivery.jpg',
+  'delivery_driver_dispatch': '/images/order-types/delivery.jpg',
+  'deals-and-bundles': '/images/order-types/takeaway.jpg',
+  'deals_and_bundles': '/images/order-types/takeaway.jpg',
+  'public-kot-display': '/images/features/kitchen-display-system.jpg',
+  'public_kot_display': '/images/features/kitchen-display-system.jpg',
 };
 
 const FeatureDetailPage = () => {

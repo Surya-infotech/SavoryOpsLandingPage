@@ -37,7 +37,11 @@ import {
   Hub as ArchitectureIcon,
   Cancel as CancelIcon,
   TwoWheeler as TwoWheelerIcon,
-  EventAvailable as EventAvailableIcon
+  EventAvailable as EventAvailableIcon,
+  LiveTv as LiveTvIcon,
+  Payments as PaymentsIcon,
+  QueryStats as QueryStatsIcon,
+  LocalOffer as DealsIcon
 } from '@mui/icons-material';
 import {
   Box,
@@ -101,6 +105,16 @@ const DETAILED_FEATURES = [
     subtitle: 'Paperless Kitchen Screen',
     description:
       'Eliminate lost paper tickets. Station routing (Grill, Bar, Pastry), color urgency timers (Green → Red), and 1-tap ready bumping.'
+  },
+  {
+    id: 'public-kot-display',
+    priority: 3.5,
+    category: 'pos-kitchen',
+    icon: <LiveTvIcon sx={ICON_SIZE} />,
+    title: 'Public KDS & Live Screens',
+    subtitle: 'Zero-Login Kitchen Display',
+    description:
+      'Mount any smart TV, tablet, or monitor in the kitchen for real-time ticket streaming, acoustic chimes, and color cook timers.'
   },
   {
     id: 'floor-plan-management',
@@ -227,6 +241,16 @@ const DETAILED_FEATURES = [
       'Rapid token generation, express counter billing, and lightning kitchen handoffs engineered for fast food & quick-serve cafes.'
   },
   {
+    id: 'delivery-driver-dispatch',
+    priority: 15.1,
+    category: 'pos-kitchen',
+    icon: <TwoWheelerIcon sx={ICON_SIZE} />,
+    title: 'Delivery Fleet Dispatching',
+    subtitle: 'In-House Driver Tracking',
+    description:
+      'Dispatch delivery orders, route drivers with Google Maps navigation, track Cash on Delivery (COD), and analyze fleet speed.'
+  },
+  {
     id: 'driver-performance-report',
     priority: 15.2,
     category: 'pos-kitchen',
@@ -310,6 +334,16 @@ const DETAILED_FEATURES = [
     description:
       'Automated cloud DNS routing dynamically provisions custom restaurant domains and subdomains with instant SSL.'
   },
+  {
+    id: 'custom-subdomain',
+    priority: 21.5,
+    category: 'multi-tenant-saas',
+    icon: <LanguageIcon sx={ICON_SIZE} />,
+    title: 'Custom Branded Subdomains',
+    subtitle: 'Unique Restaurant URLs',
+    description:
+      'Give every restaurant branch its own dedicated, branded web portal (e.g. branch.yourdomain.com) with automatic SSL certificates.'
+  },
 
   // --- Tier 6: Finance, Assets & Enterprise Analytics ---
   {
@@ -321,6 +355,16 @@ const DETAILED_FEATURES = [
     subtitle: 'Income, Expenses & Live P&L',
     description:
       'Categorized operational income and expenses, supplier purchase payables, daily cash flow, and real-time Profit & Loss statements.'
+  },
+  {
+    id: 'day-close-register',
+    priority: 23.5,
+    category: 'finance-reports',
+    icon: <PaymentsIcon sx={ICON_SIZE} />,
+    title: 'Day-End Register Closing',
+    subtitle: 'Z-Reports & Till Balancing',
+    description:
+      'Blind cash drawer counting, shift handovers, multi-tender balancing, petty cash payouts, and automated Z-Report generation.'
   },
   {
     id: 'asset-management',
@@ -341,6 +385,16 @@ const DETAILED_FEATURES = [
     subtitle: '5-Category Analytical Suite',
     description:
       'Comprehensive data suite: Sales, P&L, Order Cancellations, Driver Fleet Efficiency, Table Reservation Analytics, Food Cost Variance, Stock Ledger, and Table Turns.'
+  },
+  {
+    id: 'business-analytics',
+    priority: 25.2,
+    category: 'finance-reports',
+    icon: <QueryStatsIcon sx={ICON_SIZE} />,
+    title: 'Business Intelligence & Trends',
+    subtitle: 'Data-Driven Growth Metrics',
+    description:
+      'Deep BI insights across peak dining hours, customer retention, sales velocity, average spend per cover, and branch comparisons.'
   },
   {
     id: 'order-cancellation-report',
@@ -403,6 +457,16 @@ const DETAILED_FEATURES = [
     subtitle: 'Smart Package Promotion',
     description:
       'Bundle appetizers, entrees, and drinks into profitable combo offers, or manage unlimited buffet per-head billing rules.'
+  },
+  {
+    id: 'deals-and-bundles',
+    priority: 30.5,
+    category: 'pos-kitchen',
+    icon: <DealsIcon sx={ICON_SIZE} />,
+    title: 'Deals & Value Bundles',
+    subtitle: 'Customizable Combo Builder',
+    description:
+      'Create multi-step combo packages, fixed-price family bundles, and lunch specials with automated ingredient recipe BOM depletion.'
   },
   {
     id: 'coupon',

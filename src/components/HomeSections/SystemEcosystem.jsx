@@ -20,7 +20,8 @@ import {
   ArrowForward as ArrowForwardIcon,
   Badge as BadgeIcon,
   Apps as AppsIcon,
-  Speed as SpeedIcon
+  Speed as SpeedIcon,
+  LiveTv as LiveTvIcon
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { useAppSettings } from '../../context/AppSettingsContext.jsx';
@@ -150,6 +151,31 @@ const SYSTEM_MODULES = [
     secondaryLink: '/features/kot-system',
     secondaryLinkText: 'KOT & Kitchen Flow',
     image: '/images/features/waiter-mobile-pos.jpg'
+  },
+  {
+    id: 'public-portals',
+    name: 'Public KDS Screens & Contactless QR Portals',
+    tabLabel: 'Live KDS & QR',
+    badge: 'Zero-Login Public Portals',
+    icon: <LiveTvIcon />,
+    targetRoles: ['Kitchen Line Cooks', 'Expeditors', 'Dine-In Diners', 'Walk-in Guests'],
+    headline: 'Hardware-Agnostic Kitchen Screens & Contactless Guest Self-Ordering',
+    description:
+      'Empower restaurant operations with zero-login live displays. Mount any smart TV, tablet, or monitor in the kitchen for real-time ticket streaming with acoustic chimes, or let diners order and pay directly by scanning dynamic table QR codes.',
+    keyCapabilities: [
+      'Standalone Public Kitchen Display (Public KOT) with real-time ticket sync & audio chimes',
+      'Zero-installation needed: runs in any web browser, Android TV, Fire TV, or tablet',
+      'Contactless Table QR Self-Ordering with high-res photos, allergens & custom modifiers',
+      'Direct Table-Side Waiter Call & Bill Request from guest smartphones',
+      'Station-Specific Kitchen Routing (Grill, Fryer, Cold Prep, Dessert, Beverage)',
+      'Automated Ticket Cook Timers with color shifts (Green → Amber → Red) to prevent delays',
+      'End-to-End Live Order Progress: Placed → In Prep → Ready for Pickup/Table'
+    ],
+    primaryLink: '/features/kitchen-display-system',
+    primaryLinkText: 'Explore KDS Screens',
+    secondaryLink: '/features/qr-code-scanning',
+    secondaryLinkText: 'QR Self-Ordering',
+    image: '/images/features/kitchen-display-system.jpg'
   }
 ];
 
@@ -188,7 +214,7 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
           >
             {title || (
               <>
-                5 Interconnected Modules.{' '}
+                6 Interconnected Platforms.{' '}
                 <span style={{ color: 'var(--primary-color, #10b981)' }}>One Unified SaaS Platform.</span>
               </>
             )}
@@ -205,7 +231,7 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
             }}
           >
             {subtitle ||
-              `${softwareName || 'SavoryOps'} delivers an all-inclusive ecosystem: Admin Panel, Owner Panel, Landing Page, User App, and Employee App.`}
+              `${softwareName || 'SavoryOps'} delivers an all-inclusive ecosystem: Admin Panel, Owner Operations, Staff Mobile App, Diner App, Public Live Displays, and High-Converting Marketing Website.`}
           </Typography>
         </Box>
 
