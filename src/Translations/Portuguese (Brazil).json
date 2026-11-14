@@ -71,5 +71,12 @@
   "demoManagerNotConfigured": "Conta de demonstração do gerente não configurada",
   "demoManagerTitle": "Painel do Gerente do Restaurante",
   "demoOwnerTitle": "Painel Geral do Proprietário",
-  "demoSuperAdminTitle": "Painel do Super Administrador SaaS"
+  "demoSuperAdminTitle": "Painel do Super Administrador SaaS",
+  "back": "Voltar",
+  "newpassword": "Nova Senha",
+  "newpasswordplaceholder": "Digite sua nova senha",
+  "cancel": "Cancelar",
+  "warning": "Aviso",
+  "okgotit": "OK, entendi",
+  "emailidplaceholder": "Digite seu e-mail"
 }

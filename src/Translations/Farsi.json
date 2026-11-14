@@ -71,5 +71,12 @@
   "demoManagerNotConfigured": "حساب دموی مدیر پیکربندی نشده است",
   "demoManagerTitle": "مشاهده پنل مدیریت شعبه",
   "demoOwnerTitle": "مشاهده داشبورد جامع مالک",
-  "demoSuperAdminTitle": "مشاهده پنل سوپر ادمین ساس"
+  "demoSuperAdminTitle": "مشاهده پنل سوپر ادمین ساس",
+  "back": "بازگشت",
+  "newpassword": "رمز عبور جدید",
+  "newpasswordplaceholder": "رمز عبور جدید خود را وارد کنید",
+  "cancel": "لغو",
+  "warning": "هشدار",
+  "okgotit": "متوجه شدم",
+  "emailidplaceholder": "ایمیل خود را وارد کنید"
 }

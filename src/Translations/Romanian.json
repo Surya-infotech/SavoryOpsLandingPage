@@ -71,5 +71,12 @@
   "demoManagerNotConfigured": "Contul demo pentru manager nu este configurat",
   "demoManagerTitle": "Panou Manager Restaurant",
   "demoOwnerTitle": "Panou Central Proprietar Restaurant",
-  "demoSuperAdminTitle": "Panou Super Administrator SaaS"
+  "demoSuperAdminTitle": "Panou Super Administrator SaaS",
+  "back": "Înapoi",
+  "newpassword": "Parolă nouă",
+  "newpasswordplaceholder": "Introduceți noua parolă",
+  "cancel": "Anulează",
+  "warning": "Avertisment",
+  "okgotit": "Am înțeles",
+  "emailidplaceholder": "Introduceți adresa de e-mail"
 }

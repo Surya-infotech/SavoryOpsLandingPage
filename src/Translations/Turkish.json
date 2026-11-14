@@ -71,5 +71,12 @@
   "demoManagerNotConfigured": "Müdür demo hesabı yapılandırılmadı",
   "demoManagerTitle": "Restoran Müdür Paneli",
   "demoOwnerTitle": "Restoran Sahibi Kontrol Paneli",
-  "demoSuperAdminTitle": "SaaS Süper Yönetici Paneli"
+  "demoSuperAdminTitle": "SaaS Süper Yönetici Paneli",
+  "back": "Geri",
+  "newpassword": "Yeni Şifre",
+  "newpasswordplaceholder": "Yeni şifrenizi girin",
+  "cancel": "İptal",
+  "warning": "Uyarı",
+  "okgotit": "Tamam, Anladım",
+  "emailidplaceholder": "E-posta adresinizi girin"
 }

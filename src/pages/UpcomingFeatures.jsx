@@ -7,7 +7,6 @@ import {
   Groups as GroupsIcon,
   Inventory2 as Inventory2Icon,
   Language as LanguageIcon,
-  Loyalty as LoyaltyIcon,
   MenuBook as MenuBookIcon,
   NotificationsActive as PushNotificationIcon,
   Payment as PaymentIcon,
@@ -16,7 +15,6 @@ import {
   Sms as SmsIcon,
   Storefront as StorefrontIcon,
   TableBar as TableBarIcon,
-  TipsAndUpdates as TipsAndUpdatesIcon,
   VpnKey as VpnKeyIcon,
   WhatsApp as WhatsAppIcon,
 } from '@mui/icons-material';

@@ -71,5 +71,12 @@
   "demoManagerNotConfigured": "經理演示帳號未設定",
   "demoManagerTitle": "體驗餐廳經理後台",
   "demoOwnerTitle": "體驗餐廳業主控制台",
-  "demoSuperAdminTitle": "體驗平台超級管理後台"
+  "demoSuperAdminTitle": "體驗平台超級管理後台",
+  "back": "返回",
+  "newpassword": "新密碼",
+  "newpasswordplaceholder": "輸入您的新密碼",
+  "cancel": "取消",
+  "warning": "警告",
+  "okgotit": "好的，明白了",
+  "emailidplaceholder": "輸入您的電子郵箱"
 }

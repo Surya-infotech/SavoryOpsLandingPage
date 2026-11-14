@@ -71,5 +71,12 @@
   "demoManagerNotConfigured": "经理演示账号未配置",
   "demoManagerTitle": "体验餐厅经理终端",
   "demoOwnerTitle": "体验餐厅业主控制台",
-  "demoSuperAdminTitle": "体验平台超级管理后台"
+  "demoSuperAdminTitle": "体验平台超级管理后台",
+  "back": "返回",
+  "newpassword": "新密码",
+  "newpasswordplaceholder": "输入您的新密码",
+  "cancel": "取消",
+  "warning": "警告",
+  "okgotit": "好的，明白了",
+  "emailidplaceholder": "输入您的电子邮箱"
 }

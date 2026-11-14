@@ -71,5 +71,12 @@
   "demoManagerNotConfigured": "Juhataja demot pole seadistatud",
   "demoManagerTitle": "Restorani Juhataja Paneel",
   "demoOwnerTitle": "Restorani Omaniku Töölaud",
-  "demoSuperAdminTitle": "SaaS Superadministraatori Paneel"
+  "demoSuperAdminTitle": "SaaS Superadministraatori Paneel",
+  "back": "Tagasi",
+  "newpassword": "Uus parool",
+  "newpasswordplaceholder": "Sisestage oma uus parool",
+  "cancel": "Tühista",
+  "warning": "Hoiatus",
+  "okgotit": "Hästi, sain aru",
+  "emailidplaceholder": "Sisestage oma e-posti aadress"
 }

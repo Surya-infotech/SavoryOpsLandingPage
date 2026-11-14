@@ -22,8 +22,7 @@ import {
   Apps as AppsIcon,
   Speed as SpeedIcon,
   LiveTv as LiveTvIcon,
-  WhatsApp as WhatsAppIcon,
-  NotificationsActive as NotificationsActiveIcon
+  WhatsApp as WhatsAppIcon
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { useAppSettings } from '../../context/AppSettingsContext.jsx';
