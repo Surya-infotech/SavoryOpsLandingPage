@@ -254,22 +254,23 @@ const UpcomingFeatures = () => {
 
         {/* Tab 0: Recently Shipped */}
         {activeTab === 0 && (
-          <Grid container spacing={{ xs: 2, sm: 2, md: 2 }} className="upcoming-features-grid">
+          <Grid container spacing={{ xs: 2, sm: 2, md: 2.5 }} alignItems="stretch" className="upcoming-features-grid">
             {RECENTLY_SHIPPED_FEATURES.map((feature, index) => (
-              <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={index}>
+              <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={index} sx={{ display: 'flex' }}>
                 <Card
                   className="upcoming-feature-card"
                   style={{ animationDelay: `${index * 0.08}s` }}
                   sx={{
                     display: 'flex',
                     flexDirection: 'column',
+                    width: '100%',
                     height: '100%',
                     textDecoration: 'none'
                   }}
                   component={Link}
                   to={feature.link}
                 >
-                  <CardContent className="card-content" sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                  <CardContent className="card-content" sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', width: '100%', height: '100%' }}>
                     <Box
                       className="feature-icon"
                       style={{
@@ -292,7 +293,7 @@ const UpcomingFeatures = () => {
                       {feature.description}
                     </Typography>
 
-                    <Box className="coming-soon-label" sx={{ mt: 2 }}>
+                    <Box className="coming-soon-label">
                       <Chip
                         label="Live in v4.0"
                         size="small"
@@ -313,9 +314,9 @@ const UpcomingFeatures = () => {
 
         {/* Tab 1: Upcoming Roadmap */}
         {activeTab === 1 && (
-          <Grid container spacing={{ xs: 2, sm: 2, md: 2 }} className="upcoming-features-grid">
+          <Grid container spacing={{ xs: 2, sm: 2, md: 2.5 }} alignItems="stretch" className="upcoming-features-grid">
             {UPCOMING_ROADMAP.map((feature, index) => (
-              <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={index}>
+              <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={index} sx={{ display: 'flex' }}>
                 <Card
                   className="upcoming-feature-card"
                   style={{ animationDelay: `${index * 0.08}s` }}
@@ -323,13 +324,14 @@ const UpcomingFeatures = () => {
                     cursor: 'default !important',
                     display: 'flex',
                     flexDirection: 'column',
+                    width: '100%',
                     height: '100%',
                     '&:hover': {
                       cursor: 'default !important'
                     }
                   }}
                 >
-                  <CardContent className="card-content" sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                  <CardContent className="card-content" sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', width: '100%', height: '100%' }}>
                     <Box
                       className="feature-icon"
                       style={{
@@ -352,7 +354,7 @@ const UpcomingFeatures = () => {
                       {feature.description}
                     </Typography>
 
-                    <Box className="coming-soon-label" sx={{ mt: 2 }}>
+                    <Box className="coming-soon-label">
                       <Chip
                         label="In Development"
                         size="small"
