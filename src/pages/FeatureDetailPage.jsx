@@ -85,7 +85,18 @@ const ALIAS_MAP = {
   'white-label-website': 'dedicated-restaurant-website',
   'branded-website': 'dedicated-restaurant-website',
   'user-website': 'dedicated-restaurant-website',
-  user_website: 'dedicated-restaurant-website'
+  user_website: 'dedicated-restaurant-website',
+  whatsapp: 'whatsapp-notifications',
+  'whatsapp-notification': 'whatsapp-notifications',
+  push: 'push-notifications',
+  'push-notification': 'push-notifications',
+  notifications: 'push-notifications',
+  otp: 'otp-phone-login',
+  'phone-login': 'otp-phone-login',
+  'phone-otp': 'otp-phone-login',
+  'payment-gateway': 'payment-gateway-integration',
+  payment: 'payment-gateway-integration',
+  payments: 'payment-gateway-integration'
 };
 
 const FEATURE_IMAGE_MAP = {

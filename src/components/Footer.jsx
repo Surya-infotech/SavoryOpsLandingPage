@@ -115,7 +115,8 @@ const Footer = () => {
     { name: 'Table & QR Ordering', icon: <BranchIcon />, href: '/features/qr-code-scanning' },
     { name: 'Multiple Business & Branches', icon: <BusinessIcon />, href: '/features/multiple-branches' },
     { name: 'Staff & Role Management', icon: <PeopleIcon />, href: '/features/branch-staff-management' },
-    { name: '11 Languages (Arabic RTL)', icon: <LanguageIcon />, href: '/features/multiple-languages' }
+    { name: '18 Languages (Arabic & Farsi RTL)', icon: <LanguageIcon />, href: '/features/multiple-languages' },
+    { name: 'WhatsApp & Push Alerts', icon: <WhatsAppIcon />, href: '/features/whatsapp-notifications' }
   ];
 
   const reportList = [

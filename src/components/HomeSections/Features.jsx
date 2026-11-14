@@ -27,6 +27,10 @@ import {
   Share as ReferralIcon,
   Star as StarIcon,
   Timeline as TimelineIcon,
+  WhatsApp as WhatsAppIcon,
+  NotificationsActive as PushNotificationIcon,
+  Sms as SmsIcon,
+  CreditCard as PaymentGatewayIcon,
 } from '@mui/icons-material';
 import { Box, Button, Card, CardContent, Chip, Container, Typography } from '@mui/material';
 import { useMemo } from 'react';
@@ -248,8 +252,8 @@ const FEATURES = [
     id: 'multiple-languages',
     priority: 25,
     icon: <LanguageIcon />,
-    title: '11 Languages (Arabic RTL)',
-    description: 'Support for 11 global languages including native Arabic with Right-to-Left (RTL) support.',
+    title: '18 Languages (Arabic & Farsi RTL)',
+    description: 'Support for 18 global languages including full native Arabic and Farsi with complete Right-to-Left (RTL) support.',
   },
   {
     id: 'multiple-currency',
@@ -257,6 +261,34 @@ const FEATURES = [
     icon: <CurrencyIcon />,
     title: 'Multiple Currency',
     description: 'Accept payments in multiple currencies for global business operations.',
+  },
+  {
+    id: 'whatsapp-notifications',
+    priority: 26.2,
+    icon: <WhatsAppIcon />,
+    title: 'WhatsApp Notifications',
+    description: 'Automated Meta WhatsApp Cloud API alerts for order lifecycle, delivery tracking, and digital PDF invoices.',
+  },
+  {
+    id: 'push-notifications',
+    priority: 26.4,
+    icon: <PushNotificationIcon />,
+    title: 'Real-Time Push Alerts',
+    description: 'Instant audible sound chimes and persistent notification center across Admin, Owner, Staff, and Customer apps.',
+  },
+  {
+    id: 'otp-phone-login',
+    priority: 26.6,
+    icon: <SmsIcon />,
+    title: 'Phone Number OTP Login',
+    description: 'Passwordless AWS SNS SMS authentication for fast customer ordering and streamlined staff access.',
+  },
+  {
+    id: 'payment-gateway-integration',
+    priority: 26.8,
+    icon: <PaymentGatewayIcon />,
+    title: 'Payment Gateways',
+    description: 'Integrated Stripe, Razorpay & PayPal with live/sandbox modes and self-service SaaS plan purchases.',
   },
   {
     id: 'help-center',

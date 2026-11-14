@@ -10,19 +10,19 @@ const appLinks = [
     id: 'user',
     name: 'SavoryOps: Dine & Food Order',
     description:
-      'Empower diners to browse interactive visual menus, customize dishes with modifiers, place instant tableside orders, and track live culinary prep status from seat to plate.',
+      'Empower diners with v4.0.2 mobile ordering: browse interactive visual menus, customize dishes with modifiers, sign in with instant phone SMS OTP, enjoy combo deals, place tableside QR orders, and receive real-time push notifications from seat to plate.',
     href: 'https://play.google.com/store/apps/details?id=com.savoryops',
     logo: '/logo.png',
-    highlights: ['Smart QR Ordering', 'Live Kitchen Tracking', 'Custom Dish Modifiers', 'Digital Bill & Pay']
+    highlights: ['v4.0.2 Live', 'Phone + SMS OTP', 'Real-Time Push Alerts', 'Smart QR Ordering', 'Live Kitchen Tracker', 'Deals & Combos', 'Digital Bill & Pay']
   },
   {
     id: 'employee',
     name: 'SavoryOps Crew: POS & Staff',
     description:
-      'Turn any tablet or phone into a high-speed mobile POS. Waitstaff take tableside orders, fire instant KOT tickets to kitchen stations, manage floor tables, and settle split checks effortlessly.',
+      'Turn any tablet or phone into a high-speed mobile terminal with v4.0.2: 6 dynamically morphing roles (Waiter, Cashier, Head Chef, Line Chef, Host, Delivery Driver), instant SMS OTP login, live FCM order alerts with audio chimes, and fast checkouts.',
     href: 'https://play.google.com/store/apps/details?id=com.savoryops.employeeapp',
     logo: '/Employee_Logo.png',
-    highlights: ['Handheld Mobile POS', 'Instant KOT Dispatch', 'Table & Floor Control', 'Fast Split Checkout']
+    highlights: ['v4.0.2 Live', '6 Adaptive Roles', 'Handheld Mobile POS', 'Instant KOT Dispatch', 'Live Push Notifications', 'Table & Floor Control', 'Fast Split Checkout']
   }
 ];
 

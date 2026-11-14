@@ -1,21 +1,36 @@
 const LANGUAGE_OPTIONS = [
-    { name: 'Arabic', code: 'SA' },
-    { name: 'English', code: 'GB' },
-    { name: 'Spanish', code: 'ES' },
-    { name: 'French', code: 'FR' },
-    { name: 'Greek', code: 'GR' },
-    { name: 'German', code: 'DE' },
-    { name: 'Dutch', code: 'NL' },
-    { name: 'Italian', code: 'IT' },
-    { name: 'Russian', code: 'RU' },
-    { name: 'Portuguese', code: 'PT' },
-    { name: 'Polish', code: 'PL' },
+    { name: 'Arabic', code: 'SA', short: 'Ara' },
+    { name: 'Chinese (S)', code: 'CN', short: 'ZH-S' },
+    { name: 'Chinese (T)', code: 'TW', short: 'ZH-T' },
+    { name: 'Dutch', code: 'NL', short: 'Dut' },
+    { name: 'English', code: 'GB', short: 'Eng' },
+    { name: 'Estonian', code: 'EE', short: 'Est' },
+    { name: 'Farsi', code: 'IR', short: 'Far' },
+    { name: 'French', code: 'FR', short: 'Fre' },
+    { name: 'German', code: 'DE', short: 'Ger' },
+    { name: 'Greek', code: 'GR', short: 'Gre' },
+    { name: 'Italian', code: 'IT', short: 'Ita' },
+    { name: 'Polish', code: 'PL', short: 'Pol' },
+    { name: 'Portuguese', code: 'PT', short: 'Por' },
+    { name: 'Portuguese (Brazil)', code: 'BR', short: 'PT-BR' },
+    { name: 'Romanian', code: 'RO', short: 'Rom' },
+    { name: 'Russian', code: 'RU', short: 'Rus' },
+    { name: 'Spanish', code: 'ES', short: 'Spa' },
+    { name: 'Turkish', code: 'TR', short: 'Tur' },
 ];
 
 export const isRtlLanguage = (lang) => {
     if (!lang) return false;
     const lower = String(lang).trim().toLowerCase();
-    return lower === 'arabic' || lower === 'ar' || lower === 'sa';
+    return (
+        lower === 'arabic' ||
+        lower === 'ar' ||
+        lower === 'sa' ||
+        lower === 'farsi' ||
+        lower === 'persian' ||
+        lower === 'fa' ||
+        lower === 'ir'
+    );
 };
 
 export const getLanguageOptions = () => [...LANGUAGE_OPTIONS].sort((a, b) => a.name.localeCompare(b.name));

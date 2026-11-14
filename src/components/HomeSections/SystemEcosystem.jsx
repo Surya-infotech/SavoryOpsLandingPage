@@ -21,7 +21,9 @@ import {
   Badge as BadgeIcon,
   Apps as AppsIcon,
   Speed as SpeedIcon,
-  LiveTv as LiveTvIcon
+  LiveTv as LiveTvIcon,
+  WhatsApp as WhatsAppIcon,
+  NotificationsActive as NotificationsActiveIcon
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { useAppSettings } from '../../context/AppSettingsContext.jsx';
@@ -37,15 +39,15 @@ const SYSTEM_MODULES = [
     targetRoles: ['SaaS Super Admins', 'Platform Owners', 'System Operators'],
     headline: 'Centralized Multi-Tenant SaaS Administration & Store Provisioning',
     description:
-      'The master control center for your entire SaaS platform. Onboard new restaurants in seconds, manage customer subscription tiers, configure custom domain DNS mappings, monitor system health, and track recurring MRR.',
+      'The master control center for your entire SaaS platform. Onboard new restaurants in seconds, manage customer subscription tiers, configure Stripe, Razorpay & PayPal payment gateways, configure custom domain DNS mappings, monitor system health, and track recurring MRR.',
     keyCapabilities: [
       'Multi-Tenant Restaurant Onboarding & Instant Store Provisioning',
+      'Multi-Gateway Payment Settings (Stripe, Razorpay, PayPal with Sandbox/Live modes)',
       'Subscription Plan Builder & Custom Billing (Manage Customer Plans & Invoicing)',
       'Custom Domain DNS Management with Automated SSL Provisioning',
       'Platform-Wide Analytics: Active Venues, Recurring Revenue & License Expiries',
       'Granular Feature Flag Toggling & Modular Add-on Controls',
-      'Role-Based Access Control & Permission Governance',
-      'System Audit Logs, Database Health & Global Service Monitoring'
+      'Role-Based Access Control, Notification Management & Global Service Monitoring'
     ],
     primaryLink: '/features',
     primaryLinkText: 'Explore Features',
@@ -55,22 +57,22 @@ const SYSTEM_MODULES = [
   },
   {
     id: 'owner-web',
-    name: 'Restaurant Owner Portal',
+    name: 'Restaurant Owner Operations Portal',
     tabLabel: 'Owner Panel',
     badge: 'Operations Command Center',
     icon: <StorefrontIcon />,
     targetRoles: ['Restaurant Owners', 'General Managers', 'F&B Directors', 'Store Accountants'],
     headline: 'Centralized Restaurant POS, Inventory BOM & Floor Management',
     description:
-      'The primary command center for daily restaurant operations and multi-branch governance. Manage multi-channel POS billing, live KOT dispatch, visual dining floor plans, ingredient-level inventory, 30+ business intelligence reports, and real-time Profit & Loss accounting.',
+      'The primary command center for daily restaurant operations and multi-branch governance. Manage multi-channel POS billing, live KOT dispatch, visual dining floor plans, ingredient-level inventory, in-app self-service plan upgrades, 30+ business intelligence reports, and real-time Profit & Loss accounting.',
     keyCapabilities: [
       'Multi-Channel POS Billing (Dine-in, Takeaway, Doorstep Delivery, QSR counter)',
+      'In-App Subscription Self-Purchase & Plan Upgrades with Integrated Payment Gateways',
       'Visual Floor Plan Builder with 5 live table status colors (Available, Occupied, Reserved, Billed, Dirty)',
       'Kitchen Order Ticket (KOT) station routing with preparation urgency timers',
       'Precision Bill of Materials (BOM) inventory with automatic recipe stock deduction',
       '30+ Enterprise BI Reports across Sales, Financials, Staff, Stock, and Menu Matrix',
-      'Commercial Kitchen Asset Management & Preventative Servicing Logs',
-      'Daily Register Day-Close (Z-Reports) & Real-time Profit & Loss (P&L)'
+      'Order Cancellation Audits with Reason Tracking & Real-Time Profit & Loss (P&L)'
     ],
     primaryLink: '/features/pos-system',
     primaryLinkText: 'Explore POS & Operations',
@@ -79,71 +81,47 @@ const SYSTEM_MODULES = [
     image: '/images/features/pos-system.jpg'
   },
   {
-    id: 'landing-page',
-    name: 'Brand Marketing Landing Page',
-    tabLabel: 'Landing Page',
-    badge: 'High-Converting Web Presence',
+    id: 'user-website',
+    name: 'Customer Online Ordering & Reservation Website',
+    tabLabel: 'Customer Website',
+    badge: 'Turnkey Online Storefront',
     icon: <LanguageIcon />,
-    targetRoles: ['Marketing Teams', 'Brand Managers', 'Growth Leads', 'Online Diners'],
-    headline: 'SEO-Optimized Landing Page, Online Ordering & Digital Reservations',
+    targetRoles: ['Online Diners', 'Takeout Guests', 'Table Booking Customers', 'Brand Visitors'],
+    headline: 'SEO-Optimized Customer Web Portal, Direct Ordering & Digital Reservations',
     description:
-      'A turnkey public-facing marketing website engineered to attract diners and convert visitors into loyal customers. Complete with dynamic visual menus, direct commission-free online ordering, table reservations, and 11+ language localizations.',
+      'A standalone, white-labeled customer web application hosted on custom subdomains or custom domains. Diners enjoy commission-free ordering, visual menu exploration with dish addons, digital table reservations, deal combos, and customer reviews.',
     keyCapabilities: [
-      '100% Brand Customization (Logos, Custom Colors, Hero Banners & Typography)',
-      'SEO-Optimized Architecture with High-Speed Lighthouse Performance',
-      'Direct Online Ordering & Visual Interactive Menu Showcase',
-      'Digital Table Reservation Engine with Instant Booking Confirmations',
-      '11 Pre-Integrated Languages with Flawless Arabic Right-to-Left (RTL) Layout',
-      'Lead Generation Forms, Contact Touchpoints & Customer Review Showcase',
-      'Multi-Currency Engine: Display Prices & Charge in USD, EUR, GBP, SAR, AED, INR'
+      'Dedicated Restaurant Web Portal with custom subdomain or white-label domain routing',
+      'Contactless QR Table Ordering with branch selection and instant cart sync',
+      'Multi-Channel Checkout: Dine-In Table Service, Takeaway Pickup & Doorstep Delivery',
+      'Digital Table Reservation Engine with party size, time slot & seating selection',
+      'Deals & Bundles Showcase (Combo meals, unlimited discount packages, promo codes)',
+      'Customer Reviews & Photo Ratings per dish and dining experience',
+      'Printable & Downloadable Digital HTML/PDF Invoices for customers'
     ],
-    primaryLink: '/features/multiple-languages',
-    primaryLinkText: 'Explore Landing Page',
-    secondaryLink: '/features/qr-code-scanning',
-    secondaryLinkText: 'Online Ordering Flow',
+    primaryLink: '/features/dedicated-restaurant-website',
+    primaryLinkText: 'Explore Customer Website',
+    secondaryLink: '/features/table-reservation',
+    secondaryLinkText: 'Table Reservations',
     image: '/images/hero-platform.jpg'
   },
   {
-    id: 'user-app',
-    name: 'Customer & User Mobile App',
-    tabLabel: 'User App',
-    badge: 'Diner Experience App',
-    icon: <QrCodeScannerIcon />,
-    targetRoles: ['In-House Diners', 'Takeout Guests', 'Delivery Customers', 'Loyalty Members'],
-    headline: 'Digital Menu Browsing, QR Table Ordering & Live Order Tracking',
-    description:
-      'Empower diners with contactless ordering, multi-channel pickup and delivery, advance table booking, and real-time step-by-step order progress tracking right from their smartphones.',
-    keyCapabilities: [
-      'QR Code Table Ordering: Scan dining table QR to view visual menu and order directly',
-      'Takeaway & Curbside Pickup: Schedule orders in advance for lightning-fast collection',
-      'Doorstep Delivery: Real-time address pin, saved addresses (Home, Work), and delivery instructions',
-      'Live 5-Stage Order Tracker: Placed → Preparing in Kitchen → Ready → On The Way → Delivered',
-      'Digital Table Booking: Pick preferred date, time slot, guest count, and seating area',
-      'Customer Reviews & Photo Feedback for dishes and dining ambiance',
-      '1-Click Rapid Reordering from past dining history'
-    ],
-    primaryLink: '/features/customer-mobile-app',
-    primaryLinkText: 'User App Details',
-    secondaryLink: '/features/qr-code-scanning',
-    secondaryLinkText: 'QR Ordering System',
-    image: '/images/features/qr-ordering.jpg'
-  },
-  {
     id: 'employee-app',
-    name: '6-in-1 Staff & Employee Mobile App',
+    name: '6-in-1 Adaptive Staff Mobile App (v4.0.2)',
     tabLabel: 'Employee App',
     badge: 'Multi-Role Staff Terminal',
     icon: <PhoneIphoneIcon />,
     targetRoles: ['Waiters', 'Cashiers', 'Line Chefs', 'Head Chefs', 'Hosts', 'Delivery Drivers'],
     headline: 'Single Adaptive Mobile App with 6 Dynamically Morphing Roles',
     description:
-      'Eliminate software fragmentation and training headaches. One universal mobile app dynamically morphs its entire UI and toolset based on the authenticated staff member’s job role.',
+      'Eliminate software fragmentation and staff training bottlenecks. One universal native mobile app dynamically morphs its entire UI and toolset based on the authenticated employee’s job role, featuring phone OTP login and real-time push alerts.',
     keyCapabilities: [
-      'Waiter Mode: Table-side ordering with modifiers, instant KOT dispatch & dish ready alerts',
+      'AWS SNS SMS OTP & Phone Number Authentication for instant staff sign-in',
+      'Waiter Mode: Table-side ordering with modifiers, instant KOT dispatch & ready alerts',
       'Cashier Mode: Quick mobile billing terminal, collecting cash, card or UPI with receipt printing',
       'Head Chef Mode: Master kitchen queue overview, station delegation & kitchen speed metrics',
-      'Line Chef Mode: High-contrast, distraction-free KDS station ticket view with 1-tap ready bumping',
-      'Host Mode: Front-of-house guest queue, reservation check-in, and table seating allocation',
+      'Line Chef Mode: High-contrast station KDS screen with 1-tap dish ready bumping',
+      'Host Mode: Front-of-house guest queue, table reservation check-in & seating allocation',
       'Delivery Driver Mode: Assigned delivery queue, customer calling, GPS routing & doorstep completion'
     ],
     primaryLink: '/features/employee-mobile-app',
@@ -151,6 +129,31 @@ const SYSTEM_MODULES = [
     secondaryLink: '/features/kot-system',
     secondaryLinkText: 'KOT & Kitchen Flow',
     image: '/images/features/waiter-mobile-pos.jpg'
+  },
+  {
+    id: 'user-app',
+    name: 'Customer & Diner Mobile App (v4.0.2)',
+    tabLabel: 'Customer App',
+    badge: 'Native Diner Experience',
+    icon: <QrCodeScannerIcon />,
+    targetRoles: ['In-House Diners', 'Takeout Guests', 'Delivery Customers', 'Loyalty Members'],
+    headline: 'Digital Menu Browsing, QR Table Ordering & Live Order Tracking',
+    description:
+      'Empower diners with contactless ordering, multi-channel pickup and delivery, advance table booking, combo deals, and real-time 5-stage order progress tracking right from their smartphones.',
+    keyCapabilities: [
+      'Passwordless Phone Number & AWS SNS SMS OTP Login for friction-free onboarding',
+      'QR Code Table Ordering: Scan dining table QR to view visual menu and order directly',
+      'Takeaway & Curbside Pickup: Schedule orders in advance for lightning-fast collection',
+      'Doorstep Delivery: Real-time address pin, saved addresses (Home, Work), and delivery instructions',
+      'Live 5-Stage Order Tracker: Placed → Preparing in Kitchen → Ready → On The Way → Delivered',
+      'Real-Time Push Notifications & In-App Notification Center with shimmer loading',
+      'Combo Deals & Badges with 1-Click Rapid Reordering from past dining history'
+    ],
+    primaryLink: '/features/customer-mobile-app',
+    primaryLinkText: 'Customer App Details',
+    secondaryLink: '/features/qr-code-scanning',
+    secondaryLinkText: 'QR Ordering System',
+    image: '/images/features/qr-ordering.jpg'
   },
   {
     id: 'public-portals',
@@ -176,6 +179,31 @@ const SYSTEM_MODULES = [
     secondaryLink: '/features/qr-code-scanning',
     secondaryLinkText: 'QR Self-Ordering',
     image: '/images/features/kitchen-display-system.jpg'
+  },
+  {
+    id: 'messaging-engine',
+    name: 'Multi-Channel Alerts & Messaging Engine',
+    tabLabel: 'WhatsApp & Push Alerts',
+    badge: 'Real-Time Communications',
+    icon: <WhatsAppIcon />,
+    targetRoles: ['Customers', 'Waiters', 'Chefs', 'Restaurant Owners', 'Delivery Drivers'],
+    headline: 'Official WhatsApp Cloud API & Real-Time Push Notification Engine',
+    description:
+      'Keep staff and guests synchronized in real time without communication gaps. Automated WhatsApp order lifecycle alerts and PDF invoices straight to diners, alongside low-latency Firebase Cloud Messaging (FCM) & Expo push alerts across every terminal.',
+    keyCapabilities: [
+      'Official Meta WhatsApp Cloud API v21.0 Automated Order Notifications',
+      'WhatsApp Alerts for Order Received, Kitchen Prep, Dish Ready, Out for Delivery & Completed',
+      '1-Click Digital Invoice PDF links delivered straight into customer WhatsApp chats',
+      'Cross-Platform Firebase Cloud Messaging (FCM) & Expo Push for Web and Native Mobile',
+      'Audible alerts & unread badge counters for incoming orders, KOT routing & table calls',
+      'Automated Low-Stock Alerts sent to kitchen managers when ingredients reach reorder thresholds',
+      'Table Reservation Status Notifications sent automatically to hosts and diners'
+    ],
+    primaryLink: '/features/whatsapp-notifications',
+    primaryLinkText: 'WhatsApp Integration',
+    secondaryLink: '/features/push-notifications',
+    secondaryLinkText: 'Push Notifications',
+    image: '/images/features/pos-system.jpg'
   }
 ];
 
@@ -214,7 +242,7 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
           >
             {title || (
               <>
-                6 Interconnected Platforms.{' '}
+                7 Interconnected Platforms.{' '}
                 <span style={{ color: 'var(--primary-color, #10b981)' }}>One Unified SaaS Platform.</span>
               </>
             )}
@@ -231,7 +259,7 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
             }}
           >
             {subtitle ||
-              `${softwareName || 'SavoryOps'} delivers an all-inclusive ecosystem: Admin Panel, Owner Operations, Staff Mobile App, Diner App, Public Live Displays, and High-Converting Marketing Website.`}
+              `${softwareName || 'SavoryOps'} delivers an all-inclusive SaaS ecosystem: Admin Panel, Owner Operations, Staff Mobile App, Customer Dining App, Dedicated Web Portal, Zero-Login Kitchen Screens, and WhatsApp & Push Notifications.`}
           </Typography>
         </Box>
 

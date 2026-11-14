@@ -41,7 +41,11 @@ import {
   LiveTv as LiveTvIcon,
   Payments as PaymentsIcon,
   QueryStats as QueryStatsIcon,
-  LocalOffer as DealsIcon
+  LocalOffer as DealsIcon,
+  WhatsApp as WhatsAppIcon,
+  NotificationsActive as PushNotificationIcon,
+  Sms as SmsIcon,
+  CreditCard as PaymentGatewayIcon
 } from '@mui/icons-material';
 import {
   Box,
@@ -525,10 +529,10 @@ const DETAILED_FEATURES = [
     priority: 35,
     category: 'multi-tenant-saas',
     icon: <LanguageIcon sx={ICON_SIZE} />,
-    title: '11 Global Languages (Arabic RTL)',
+    title: '18 Global Languages (Arabic & Farsi RTL)',
     subtitle: 'Native Right-to-Left Layout',
     description:
-      'Full localization into 11 international languages with complete native Right-to-Left (RTL) layout across POS, KOT, and QR menus.'
+      'Full localization into 18 international languages with complete native Right-to-Left (RTL) layout across POS, KOT, and QR menus.'
   },
   {
     id: 'multiple-currency',
@@ -549,6 +553,46 @@ const DETAILED_FEATURES = [
     subtitle: 'Fast Ticket Resolution',
     description:
       'Knowledge base guides, operational manuals, and an integrated support ticketing desk to assist your team around the clock.'
+  },
+  {
+    id: 'whatsapp-notifications',
+    priority: 38,
+    category: 'pos-kitchen',
+    icon: <WhatsAppIcon sx={ICON_SIZE} />,
+    title: 'Automated WhatsApp Notifications',
+    subtitle: 'Meta Cloud API v21.0',
+    description:
+      'Instant automated WhatsApp alerts for orders, kitchen preparation, ready-for-pickup, delivery status, and 1-click digital PDF invoices.'
+  },
+  {
+    id: 'push-notifications',
+    priority: 39,
+    category: 'mobile-apps',
+    icon: <PushNotificationIcon sx={ICON_SIZE} />,
+    title: 'Real-Time Push Notifications',
+    subtitle: 'Firebase FCM & Expo Push',
+    description:
+      'Sub-second push alerts with audible chimes and centralized notification center across Admin, Owner, Staff, and Customer apps.'
+  },
+  {
+    id: 'otp-phone-login',
+    priority: 40,
+    category: 'mobile-apps',
+    icon: <SmsIcon sx={ICON_SIZE} />,
+    title: 'Passwordless Phone OTP Login',
+    subtitle: 'AWS SNS SMS Verification',
+    description:
+      'Frictionless login for customers and staff using mobile phone numbers and secure cryptographic 6-digit SMS OTPs.'
+  },
+  {
+    id: 'payment-gateway-integration',
+    priority: 41,
+    category: 'finance-reports',
+    icon: <PaymentGatewayIcon sx={ICON_SIZE} />,
+    title: 'Payment Gateway Integration',
+    subtitle: 'Stripe, Razorpay & PayPal',
+    description:
+      'Multi-gateway payment processing with Sandbox/Live modes, multi-currency checkout, and self-service SaaS subscription plan purchases.'
   }
 ];
 

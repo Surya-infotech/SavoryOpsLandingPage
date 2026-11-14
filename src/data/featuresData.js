@@ -1853,5 +1853,199 @@ export const FEATURES_DATA = {
     ],
     ctaText: 'Explore System Ecosystem',
     ctaLink: '/features'
+  },
+  'whatsapp-notifications': {
+    id: 'whatsapp-notifications',
+    badge: 'Meta WhatsApp Cloud API',
+    title: 'Automated WhatsApp Order Notifications & Alerts',
+    metaTitle: 'Automated WhatsApp Restaurant Order Notifications & Status Alerts | SavoryOps',
+    metaDescription: 'Send automated WhatsApp alerts for orders, KOT status, out-for-delivery updates, and instant digital invoice links using official Meta WhatsApp Cloud API v21.0.',
+    primaryKeyword: 'WhatsApp Restaurant Order Notifications',
+    secondaryKeywords: [
+      'whatsapp food ordering notifications',
+      'restaurant whatsapp bot',
+      'whatsapp order updates',
+      'whatsapp invoice link',
+      'automated whatsapp messages for restaurants',
+      'meta cloud api whatsapp restaurant',
+      'order status on whatsapp'
+    ],
+    h1: 'Automated WhatsApp Order Lifecycle Notifications & Real-Time Alerts',
+    subtitle: 'Keep guests updated from kitchen to doorstep with automated WhatsApp notifications, live order status tracking, and 1-click digital PDF tax invoices.',
+    overview: 'Text messages get lost and mobile app downloads have 80% drop-off. WhatsApp is where your diners live. SavoryOps integrates directly with the official Meta WhatsApp Cloud API (v21.0) to deliver instant, automated notifications directly to your customers\' WhatsApp chats. The moment an order is confirmed, begins preparation in the kitchen, gets packed, or heads out with a delivery driver, your customer receives a beautifully formatted WhatsApp update with estimated arrival times and clickable digital invoice links—delivering a 5-star customer experience with zero app downloads.',
+    benefits: [
+      { title: 'Zero Friction & 98% Open Rates', desc: 'Reach customers where they already spend time, achieving near-100% open rates and reducing "where is my order" phone inquiries by 85%.' },
+      { title: 'Automatic Lifecycle Triggers', desc: 'Updates dispatch automatically when POS or KOT kitchen statuses change: Placed, Preparing, Ready, Out for Delivery, Completed, or Cancelled.' },
+      { title: 'Clickable Digital PDF Invoices', desc: 'Send customers a direct, secure link to view and download their official digital tax invoice straight inside WhatsApp.' },
+      { title: 'Order Cancellation Transparency', desc: 'If an item or order is cancelled, customers immediately receive an informative WhatsApp message explaining the reason and refund status.' },
+      { title: 'Owner Subscription Alerts', desc: 'Restaurant owners receive instant WhatsApp alerts when new subscription plans, branches, or addon licenses are purchased.' },
+      { title: 'Meta Enterprise Security & Compliance', desc: 'Operates on official Meta WhatsApp Cloud API endpoints with end-to-end encryption and verified sender security.' }
+    ],
+    features: [
+      'Official Meta WhatsApp Cloud API (v21.0) Integration: High-speed, enterprise-grade message delivery with zero dependence on unreliable third-party scrapers.',
+      'Automated Order Confirmation: Guests receive instant order summaries, order IDs, estimated preparation times, and venue contact numbers.',
+      'Kitchen Preparation & Ready Alerts: Send real-time notifications when the kitchen begins preparation and when the food is freshly boxed and ready for counter pickup.',
+      'Doorstep Delivery Dispatch Updates: Real-time notification when a delivery driver is assigned and dispatched with live driver tracking.',
+      'Digital Tax Invoice PDF Delivery: Automated WhatsApp message containing the direct link to the branded HTML and PDF tax invoice.',
+      'Order Cancellation & Refund Advisories: Transparent updates with itemized audit cancellation reasons, ensuring clear communication.',
+      'Multi-Currency & Localized Formatting: Currency amounts, decimal formats, and date/time displays automatically match your venue\'s country configuration.',
+      'Multi-Branch WhatsApp Sender Configuration: Support for multi-branch dining brands and central commissary groups.',
+      'Zero-App Diner Experience: Customers get the luxury of live order tracking without being forced to download an app from an app store.',
+      'Executive SaaS Admin & Owner Alerts: Instant notifications to platform owners on subscription tier purchases, license renewals, and venue signups.'
+    ],
+    faqs: [
+      { question: 'Do diners need to install any app to receive WhatsApp updates?', answer: 'No! That is the greatest advantage. Any guest who enters their phone number during dine-in, takeaway, or online ordering will automatically receive real-time updates directly in their existing WhatsApp app.' },
+      { question: 'Is this using the official Meta WhatsApp Cloud API?', answer: 'Yes. SavoryOps connects directly to the official Meta WhatsApp Cloud API (v21.0). There is no risky unofficial WhatsApp Web automation or third-party scraping involved.' },
+      { question: 'What order events trigger automated WhatsApp messages?', answer: 'SavoryOps sends automated WhatsApp alerts on: 1) Order Placed & Confirmed, 2) Kitchen Preparation Started, 3) Food Ready / Packed for Pickup, 4) Order Dispatched with Delivery Driver, 5) Order Delivered / Completed, and 6) Order Cancelled with reason.' },
+      { question: 'Can customers view their digital invoice on WhatsApp?', answer: 'Yes. Every WhatsApp completion notification includes a direct clickable link to the customer\'s secure, branded digital invoice for easy downloading or expensing.' },
+      { question: 'Can restaurant owners receive WhatsApp alerts as well?', answer: 'Yes! Restaurant owners receive automated WhatsApp notifications when new SaaS subscription plans are activated, renewed, or upgraded.' }
+    ],
+    ctaText: 'Explore Notification Features',
+    ctaLink: '/features'
+  },
+  'push-notifications': {
+    id: 'push-notifications',
+    badge: 'Firebase FCM & Expo Push',
+    title: 'Real-Time Push Notifications & Central Alert Hub',
+    metaTitle: 'Real-Time Push Notifications & Central Alert Center | SavoryOps',
+    metaDescription: 'Synchronize your restaurant with real-time push notifications powered by Firebase Cloud Messaging and Expo Push across Web, Mobile, and Kitchen displays.',
+    primaryKeyword: 'Restaurant Push Notifications',
+    secondaryKeywords: [
+      'real time kitchen push notifications',
+      'firebase fcm restaurant alerts',
+      'expo push notifications food app',
+      'restaurant notification center',
+      'order sound chime alerts',
+      'waiter mobile push notification',
+      'chef kds alerts'
+    ],
+    h1: 'Real-Time Push Notifications & Centralized Multi-Channel Alert Hub',
+    subtitle: 'Instant audible sound chimes, unread badge counters, and real-time push alerts across Admin Web, Owner Web, Employee App, and Diner App.',
+    overview: 'Seconds matter in commercial restaurant operations. A missed order at the counter or an unread modification in the kitchen directly impacts table turnover and customer satisfaction. The SavoryOps Real-Time Push Notification Engine is powered by Firebase Cloud Messaging (FCM) and Expo Push, orchestrating synchronized instant alerts across your web portals, handheld staff terminals, kitchen displays, and diner mobile apps. With acoustic order bells, persistent notification centers, and cross-tab synchronization, your entire team stays coordinated without a single delay.',
+    benefits: [
+      { title: 'Sub-Second Kitchen & Staff Alerts', desc: 'Incoming orders and KOT tickets trigger instantly on waiter and chef screens with audible chimes to ensure zero missed tickets.' },
+      { title: 'Universal Centralized Notification Hub', desc: 'Dedicated notification bell and inbox on Admin Panel, Owner Web, User Website, and Mobile Apps with unread counts and mark-as-read.' },
+      { title: 'Cross-Tab & Multi-Device Sync', desc: 'Read notifications on one browser tab or tablet and your unread badge clears everywhere in real time.' },
+      { title: 'Role-Targeted Operational Dispatching', desc: 'Waiters get table calls, chefs get station KOTs, hosts get reservation arrivals, and cashiers get payment alerts.' },
+      { title: 'Automated Low-Stock Threshold Alarms', desc: 'When pantry ingredients hit minimum safety levels, stock managers receive instant notifications before stockouts occur.' },
+      { title: 'Diner Engagement & Status Updates', desc: 'Diners receive lock-screen push alerts as their meal transitions from kitchen preparation to packaging and doorstep delivery.' }
+    ],
+    features: [
+      'Cross-Platform Firebase Cloud Messaging (FCM): High-reliability Google FCM architecture powering web push notifications and background device wakeup.',
+      'Native Expo Push Notification Integration: Instant mobile push notifications on iOS and Android for the 6-in-1 Employee App and Customer App.',
+      'Acoustic Order & Chime Notifications: Configurable audio alerts (classic order bell, kitchen chime, buzzer) for loud restaurant kitchens.',
+      'Persistent In-App Notification Center: View historical notifications grouped by date, category, and read/unread status with shimmer loading.',
+      'Chef Station KOT Routing Alerts: Line chefs receive targeted station alerts (Grill, Fryer, Pantry, Bar) only for dishes assigned to their kitchen station.',
+      'Host Stand Table Reservation Alerts: Front-of-house hosts get instant push notifications when online guests submit, reschedule, or cancel reservations.',
+      'Delivery Driver Dispatch Notifications: Delivery drivers receive instant push notifications with customer addresses, phone links, and special directions.',
+      'Real-Time Low Inventory Stock Warnings: Automatic stock depletion alerts notify owners when high-velocity ingredients need immediate vendor reordering.',
+      'SaaS Subscription Expiry & Renewal Alerts: Multi-tenant super admins and restaurant owners receive automated billing and license alerts.',
+      'Offline Queue & Retry Resilience: Push tokens are automatically refreshed and pruned to maintain high delivery rates even on flaky kitchen Wi-Fi.'
+    ],
+    faqs: [
+      { question: 'Do push notifications work when the staff app is running in the background?', answer: 'Yes! Thanks to native Expo Push and Firebase Cloud Messaging background handlers, staff receive vibration and acoustic notifications even when their device screen is locked or the app is minimized.' },
+      { question: 'Can kitchen cooks hear incoming orders in loud environments?', answer: 'Yes. The system plays audible sound chimes upon receiving new tickets, ensuring chefs and cashiers are alerted immediately during busy rushes.' },
+      { question: 'How does the notification center handle multiple browser tabs?', answer: 'SavoryOps features cross-tab synchronization. When you open or clear notifications in one tab, the unread badge updates across all open browser sessions in real time.' },
+      { question: 'Can waiters receive notifications when dishes are marked ready by the kitchen?', answer: 'Yes. When a line chef bumps a dish as Ready on the KDS, the assigned waiter immediately receives a push notification on their handheld mobile app indicating table number and ready dishes.' },
+      { question: 'Do diners receive push notifications for table reservations?', answer: 'Yes. Guests who reserve tables through the customer website or mobile app receive instant push notifications confirming reservation acceptance or updates.' }
+    ],
+    ctaText: 'Explore Mobile & Web Apps',
+    ctaLink: '/features/employee-mobile-app'
+  },
+  'otp-phone-login': {
+    id: 'otp-phone-login',
+    badge: 'Passwordless AWS SNS SMS',
+    title: 'Passwordless Phone Number & SMS OTP Login',
+    metaTitle: 'Passwordless Phone Number & SMS OTP Authentication | SavoryOps',
+    metaDescription: 'Eliminate password friction with SavoryOps passwordless SMS OTP login powered by AWS SNS for diners, cashiers, waiters, and kitchen staff.',
+    primaryKeyword: 'Restaurant Phone OTP Login',
+    secondaryKeywords: [
+      'passwordless restaurant login',
+      'sms otp food ordering',
+      'aws sns otp authentication',
+      'phone number sign in restaurant app',
+      'fast checkout otp',
+      'waiter phone sign in'
+    ],
+    h1: 'Passwordless Phone Number & AWS SNS SMS OTP Authentication',
+    subtitle: 'Deliver a friction-free dining experience. Diners and staff sign in seamlessly with just their mobile number and a secure 6-digit cryptographic SMS OTP.',
+    overview: 'Complicated passwords and forgotten credentials are the #1 cause of cart abandonment in online food ordering. Customers seated at a busy table don\'t want to create passwords, verify complex emails, or solve captchas just to order food. SavoryOps eliminates password friction across the Customer Website, Diner Mobile App, and Staff Mobile App with automated Phone Number + SMS OTP Authentication powered by enterprise AWS Simple Notification Service (SNS). Enter your phone number, receive a 6-digit code in seconds, and start dining or working immediately.',
+    benefits: [
+      { title: '3x Higher Conversion & Zero Cart Drop-Off', desc: 'Guests order faster without password prompts, leading to higher average order volumes and zero login frustration.' },
+      { title: 'Frictionless Table-Side QR Dining', desc: 'Diners sit down, scan table QR, enter mobile number, verify OTP, and place orders in under 30 seconds.' },
+      { title: 'Instant Staff Onboarding', desc: 'Front-of-house staff and delivery drivers authenticate with their registered mobile number with zero password resets needed.' },
+      { title: 'Enterprise AWS SNS Cloud Reliability', desc: 'Messages deliver with carrier-grade priority routing across international telecom networks.' },
+      { title: 'Cryptographic 6-Digit Security', desc: 'Automated 5-minute code expiration, brute-force rate-limiting, and memory-safe validation prevent abuse.' },
+      { title: 'Automatic Profile Creation', desc: 'New guests automatically receive a customer account with saved delivery addresses, order history, and reordering perks.' }
+    ],
+    features: [
+      'One-Touch Mobile Authentication: Enter mobile number, receive SMS OTP, and authenticate instantly with zero password creation required.',
+      'Global AWS SNS SMS Gateway: Leverages Amazon Web Services telecom backbone for sub-second SMS delivery rates globally.',
+      'Cryptographic 6-Digit OTP Generator: Secure random token generation with isolated memory storage and auto-expiry after 5 minutes.',
+      'Automated Phone Sanitization & Formatting: Intelligently formats country calling codes, E.164 international standards, and local phone numbers.',
+      'Brute-Force & Rate-Limiting Protection: Enforces maximum retry limits and cooldown timers to protect against spam or unauthorized attempts.',
+      'Customer & Employee Unified Auth: Works across Customer Website, Customer Mobile App, and 6-in-1 Staff Mobile App.',
+      'Automatic Customer CRM Sync: Automatically links verified phone numbers with diner profile, order history, and saved delivery addresses.',
+      'Resend OTP Countdown Timer: Clean UI with 60-second cooldown timer, preventing accidental repeated SMS requests.',
+      'JWT Session Token Generation: Automatically issues secure JSON Web Tokens with encrypted claims upon successful verification.',
+      'Fallback Password Option: Supports traditional email/password login for administrative and back-office corporate users.'
+    ],
+    faqs: [
+      { question: 'Why is phone OTP login better than traditional email and password?', answer: 'Remembering passwords causes massive drop-offs in restaurant ordering. Phone OTP is faster, works seamlessly on mobile devices, verifies the guest\'s authentic contact number for delivery/WhatsApp updates, and takes less than 15 seconds.' },
+      { question: 'How fast do customers receive the SMS OTP code?', answer: 'Because SavoryOps uses AWS SNS with dedicated telecom carrier routes, OTP messages typically arrive on the guest\'s phone within 2 to 5 seconds.' },
+      { question: 'Can restaurant employees use phone OTP login as well?', answer: 'Yes! Waiters, line chefs, cashiers, hosts, and delivery drivers can all sign in to the Employee Mobile App using their registered phone number and SMS OTP.' },
+      { question: 'What happens if a customer enters an incorrect OTP?', answer: 'The system provides immediate helpful feedback, allows retry, and protects against unauthorized attempts with strict rate limiting.' },
+      { question: 'Does phone OTP login work internationally?', answer: 'Yes. The system automatically formats country calling codes and international E.164 phone standards across North America, Europe, the Middle East, Asia, and worldwide.' }
+    ],
+    ctaText: 'Explore Customer App',
+    ctaLink: '/features/customer-mobile-app'
+  },
+  'payment-gateway-integration': {
+    id: 'payment-gateway-integration',
+    badge: 'Stripe, Razorpay & PayPal',
+    title: 'Integrated Payment Gateways & Self-Service Subscriptions',
+    metaTitle: 'Integrated Payment Gateways & Automated Subscription Billing | SavoryOps',
+    metaDescription: 'Accept credit cards, debit cards, UPI, and digital wallets with Stripe, Razorpay, and PayPal. Self-service plan purchases for restaurant owners in SaaS.',
+    primaryKeyword: 'Restaurant Payment Gateway Integration',
+    secondaryKeywords: [
+      'stripe restaurant payment gateway',
+      'razorpay pos integration',
+      'paypal restaurant software',
+      'saas self service subscription billing',
+      'split tender restaurant payment',
+      'online food ordering payment gateway'
+    ],
+    h1: 'Multi-Gateway Payment Processing & Automated SaaS Billing System',
+    subtitle: 'Accept frictionless diner payments and empower restaurant owners to self-purchase subscription tiers and addons with Stripe, Razorpay, and PayPal.',
+    overview: 'Payment flexibility is essential for both your dining guests and your SaaS subscribers. SavoryOps features a unified multi-gateway payment architecture supporting Stripe, Razorpay, and PayPal. Super Admins configure payment gateways with live and sandbox toggles directly inside the Master Admin Panel. Restaurant owners enjoy in-app self-service subscription upgrades, addon purchases, and automated invoicing. Meanwhile, dining guests enjoy seamless payments via credit/debit cards, UPI, net banking, split tenders, and digital wallets.',
+    benefits: [
+      { title: 'Global & Local Payment Flexibility', desc: 'Support popular global payment processors (Stripe, PayPal) alongside regional market leaders (Razorpay, UPI).' },
+      { title: 'In-App Self-Service Plan Upgrades', desc: 'Restaurant owners upgrade plans, add branches, and purchase module addons directly from the Owner Web portal.' },
+      { title: 'Instant Sandbox / Live Environment Toggling', desc: 'Test end-to-end checkout flows safely in sandbox mode before flipping the switch to live production.' },
+      { title: 'Automated Tax & Discount Calculations', desc: 'Accurately handles localized tax percentages, fixed service fees, and promotional discount voucher codes.' },
+      { title: 'Multiple Payment Options for Diners', desc: 'Accept Visa, Mastercard, American Express, Apple Pay, Google Pay, Razorpay UPI, PayPal, and Cash on Delivery.' },
+      { title: 'PCI-DSS Compliant Security', desc: 'Sensitive payment credentials never touch your server, utilizing hosted tokenization and encrypted webhooks.' }
+    ],
+    features: [
+      'Triple Gateway Support: Pre-integrated with Stripe, Razorpay, and PayPal with modular gateway activation controls.',
+      'Admin Gateway Management: Configure API keys, publishable tokens, client secrets, and sandbox/live modes with 1 click.',
+      'Owner Self-Purchase Portal: Restaurant owners browse subscription tiers, select monthly or yearly billing, and complete checkout in seconds.',
+      'Modular Addon Purchases: Purchase additional branch licenses, SMS packs, and premium modules without contacting sales.',
+      'Dynamic Currency Support: Automatically formats currency symbols, decimal separators, and thousands separators based on venue configuration.',
+      'Automated Invoice & Billing History: Generates downloadable PDF invoices with tax breakdown and transaction reference numbers upon payment.',
+      'Split-Tender POS Billing: Cashiers can split a single restaurant bill across Cash, Credit Card, and UPI digital payments.',
+      'Promotional Coupon Code Validation: Real-time discount code calculation for percentage-off or flat-rate promotional campaigns.',
+      'Secure Webhook Reconciliation: Automated background webhook processing ensures subscriptions activate immediately upon payment confirmation.',
+      'Refund & Payment Audit Trails: Detailed payment tracking with transaction IDs, payment methods, and timestamps for seamless financial audits.'
+    ],
+    faqs: [
+      { question: 'Which payment gateways are supported in SavoryOps?', answer: 'SavoryOps natively supports Stripe, Razorpay, and PayPal, covering international credit/debit cards, digital wallets, and UPI payments.' },
+      { question: 'Can restaurant owners upgrade their SaaS subscription automatically?', answer: 'Yes! Restaurant owners can open the Subscription page in the Owner Web portal, choose a monthly or yearly plan, apply discount codes, and complete checkout with instant activation.' },
+      { question: 'Can I test transactions before going live?', answer: 'Absolutely. Each payment gateway has a Sandbox / Live toggle in the Admin Panel, allowing you to test test card numbers and simulated webhooks with zero financial risk.' },
+      { question: 'Can dining guests pay with Cash on Delivery or at the counter?', answer: 'Yes. The system supports full omnichannel payment options: online digital payment at checkout, tableside card machine payment, or Cash on Delivery.' },
+      { question: 'Does SavoryOps store customer credit card details?', answer: 'No. SavoryOps adheres to strict PCI-DSS standards. All credit card processing uses client-side SDK tokenization via Stripe, Razorpay, or PayPal, ensuring card details never touch your server.' }
+    ],
+    ctaText: 'View Pricing & Plans',
+    ctaLink: '/pricing'
   }
 };
