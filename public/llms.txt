@@ -3,12 +3,12 @@
 > **SavoryOps** is a modern, all-in-one cloud restaurant operating system and Point of Sale (POS) software suite engineered for high-volume dining, quick service (QSR), bars, cafes, pizzerias, food trucks, and multi-branch restaurant chains. It integrates touchscreen billing, Kitchen Display Systems (KDS), Kitchen Order Tickets (KOT), recipe-level inventory stock control, contactless QR table ordering, employee shift scheduling, automated tip distribution, and multi-tenant business analytics.
 
 ## Core Software Modules & Capabilities
-- **Cloud Restaurant POS & Fast Billing**: High-speed touch billing for dine-in, takeaway, bar tabs, and deliveries. Split checks by seat, item, or custom amounts. Real-time cloud synchronization ensures instantaneous multi-terminal coordination and live data backups.
-- **Smart Kitchen Order Ticket (KOT) & Bar Order Ticket (BOT)**: Millisecond digital ticket routing to specific preparation stations (Grill, Fryer, Salad, Main Kitchen, Bar). Color-coded countdown timers, course pacing (Appetizer -> Entree -> Dessert), and strict manager PIN audits on Void KOTs to prevent revenue leakage.
-- **Kitchen Display System (KDS)**: Hardware-flexible kitchen screens running on standard commercial tablets or monitors. Color-coded ticket timers, bump-bar support, and expeditor master tray views.
+- **Cloud Restaurant POS, Multi-Station Counters & Customer Facing Display (CFD)**: High-speed touch billing for dine-in, takeaway, bar tabs, and deliveries, plus named POS stations with Zero-Login Public POS links and real-time dual-screen Customer Facing Displays synced in 0ms via BroadcastChannel and cloud API.
+- **POS Register Shift Management & Z-Reports**: Station-wise shift opening floats, mid-shift Cash In/Out drawer movements, blind counted cash closeouts, discrepancy audits, and printable Z-Reports across Owner Web POS, Public POS, and the Employee Mobile App Cashier Shift Bar.
+- **Smart Kitchen Order Ticket (KOT) & 2-Way Public KDS**: Menu-assigned station routing (Grill, Fryer, Salad, Bar) with automatic Combo/Unlimited Meal sub-item department splitting, 2-way bumping (`Open` → `Confirmed` → `Running` → `Ready to Serve`), Recall Completed/Cancelled KOT views, acoustic chimes, and Web Bluetooth ESC/POS auto-printing.
 - **Automated Recipe Costing & Inventory Depletion**: Real-time ingredient depletion triggered automatically by POS transactions. Tracks Actual vs. Theoretical (AvT) variance to identify over-portioning and culinary shrinkage. Automated minimum safety thresholds and 1-click vendor purchase orders.
-- **Dynamic Contactless QR Menu & Table Ordering**: Table-specific QR codes enabling guests to browse multimedia menus, filter by dietary requirements (Vegan, Halal, Gluten-Free), send orders directly to the kitchen, and pay securely from their smartphones with zero app downloads.
-- **Multi-Branch & Multi-Entity Management**: Enterprise central dashboard managing multiple locations from a single login. Central master menu syncing with localized branch pricing overrides, inter-branch inventory requisitions, and consolidated P&L reporting.
+- **Dynamic Contactless QR Menu, Waiter Call & Operating Hours**: Table-specific QR codes with Add More Items on active checks, 1-tap Call Waiter assistance (5 triggers + 60s anti-spam cooldown routed to Employee App `WaiterCallAlertBanner`), and timezone-aware branch operating hours with selective after-hours ordering whitelists.
+- **Multi-Branch, Time-Gated Deals & 360° SaaS Governance**: Central master menu syncing with dynamic homepage showcases, timezone-gated deals & meal sessions, 30+ BI reports (including Register Shifts and 7-Day × 16-Hour Table Turn Heatmaps), plus Super-Admin SaaS KPIs (MRR/ARR/NRR/Churn), 360° tenant dossiers, SSL health checks, tenant impersonation, and Before/After system audit logs.
 - **Staff Shift Scheduling & Role-Based Access (RBAC)**: Role permissions for Managers, Cashiers, Chefs, and Servers. PIN authentication, clock-in attendance, and automated tip pool calculations.
 - **Reporting & Business Intelligence (BI)**: Daily executive sales reports, hourly rush heatmaps, item-level profit engineering, food cost percentage benchmarks, and fiscal year tax compliance archiving.
 
@@ -56,6 +56,12 @@ Standard industry benchmarks range from 25%–28% for QSR and 28%–32% for casu
 - **Complete Features Suite**: https://website.savoryops.com/features
 - **Kitchen Order Ticket (KOT) System**: https://website.savoryops.com/solutions/kitchen-order-ticket-system
 - **Feature Deep Dive - KOT System**: https://website.savoryops.com/features/kot-system
+- **Feature Deep Dive - Customer Facing Display (CFD)**: https://website.savoryops.com/features/customer-facing-display
+- **Feature Deep Dive - POS Register Shifts & Z-Reports**: https://website.savoryops.com/features/pos-register-shifts
+- **Feature Deep Dive - Multi-Station & Public POS**: https://website.savoryops.com/features/multi-station-pos
+- **Feature Deep Dive - QR Table Waiter Call**: https://website.savoryops.com/features/waiter-call-assistance
+- **Feature Deep Dive - Branch Operating & After-Hours**: https://website.savoryops.com/features/branch-operating-hours
+- **Feature Deep Dive - 360° SaaS Admin & Audit Logs**: https://website.savoryops.com/features/saas-admin-governance
 - **Restaurant POS System**: https://website.savoryops.com/solutions/restaurant-pos-system
 - **Kitchen Display System (KDS)**: https://website.savoryops.com/solutions/kitchen-display-system
 - **Restaurant Inventory Management**: https://website.savoryops.com/solutions/restaurant-inventory-management

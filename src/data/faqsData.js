@@ -68,6 +68,27 @@ export const faqsData = [
     question: 'Does SavoryOps offer a free trial?',
     shortAnswer: 'Yes, SavoryOps offers a 14-day free trial with instant setup, full access to POS billing, KDS screens, and analytics with no credit card required.',
     answer: 'Yes, SavoryOps offers a 14-day free trial with instant setup and full access to POS billing, menu configuration, KDS kitchen screens, and analytics with no credit card required.'
+  },
+  {
+    id: 'customer-facing-display',
+    category: 'Features & POS',
+    question: 'Does SavoryOps include a Customer Facing Display (CFD) for dual-screen counters?',
+    shortAnswer: 'Yes. Every POS station has a paired zero-login Customer Facing Display URL synced in 0ms via BroadcastChannel and cross-device cloud sync.',
+    answer: 'Yes. Each POS station generates a dedicated Customer Facing Display link showing a branded welcome screen, live itemized cart with savings and taxes, cash tendered and change due or QR payment prompts, and order token confirmation numbers—with 18-language RTL support.'
+  },
+  {
+    id: 'pos-register-shifts',
+    category: 'Features & POS',
+    question: 'How do POS Register Shifts, Cash In/Out movements, and Z-Reports work?',
+    shortAnswer: 'Cashiers open shifts per POS station with an opening float, record Cash In/Out drawer movements, perform blind cash counts at close, and generate Z-Reports across Web POS and the Cashier Mobile App.',
+    answer: 'SavoryOps tracks station-wise register shifts across Owner Web POS, Public POS portals, and the Employee Mobile App Cashier Shift Bar. Operators log opening floats, mid-shift Cash In/Out payouts with reasons, inspect live expected cash, and submit blind counted cash at close to compute discrepancies and produce Z-Reports.'
+  },
+  {
+    id: 'qr-waiter-call-hours',
+    category: 'Kitchen & Operations',
+    question: 'Can QR dine-in guests call a waiter, and can branches enforce operating and after-hours rules?',
+    shortAnswer: 'Yes. QR diners can tap Call Waiter with 5 assistance options, and branches enforce timezone-aware hours, breaks, and selective after-hours order types.',
+    answer: 'Seated guests scanning a table QR code see a floating Call Waiter button (plus inside Order Details) with 5 triggers—General Assistance, Water Refill, Bring Bill, Cutlery & Napkins, and Clean Table—protected by a 60-second cooldown and sent straight to the Employee App WaiterCallAlertBanner. Branches also enforce local timezone operating hours, break windows, and optional after-hours ordering whitelists.'
   }
 ];
 

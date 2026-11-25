@@ -45,7 +45,12 @@ import {
   WhatsApp as WhatsAppIcon,
   NotificationsActive as PushNotificationIcon,
   Sms as SmsIcon,
-  CreditCard as PaymentGatewayIcon
+  CreditCard as PaymentGatewayIcon,
+  Tv as CustomerDisplayIcon,
+  Devices as MultiStationPosIcon,
+  RoomService as WaiterCallIcon,
+  AccessTime as OperatingHoursIcon,
+  AdminPanelSettings as AdminGovernanceIcon
 } from '@mui/icons-material';
 import {
   Box,
@@ -88,7 +93,37 @@ const DETAILED_FEATURES = [
     title: 'POS Terminal & Billing',
     subtitle: 'Multi-Channel Cashier Terminal',
     description:
-      'Fast, reliable point-of-sale billing with split-tender payments, custom discounts, and real-time counter synchronization.'
+      'Fast, reliable point-of-sale billing with split-tender payments, custom discounts, register shifts, and real-time counter synchronization.'
+  },
+  {
+    id: 'multi-station-pos',
+    priority: 1.3,
+    category: 'pos-kitchen',
+    icon: <MultiStationPosIcon sx={ICON_SIZE} />,
+    title: 'Multi-Station & Public POS',
+    subtitle: 'Zero-Login Counter Terminals',
+    description:
+      'Manage multiple named POS registers per branch with live shift indicators, station codes, and shareable fullscreen Public POS links.'
+  },
+  {
+    id: 'customer-facing-display',
+    priority: 1.6,
+    category: 'pos-kitchen',
+    icon: <CustomerDisplayIcon sx={ICON_SIZE} />,
+    title: 'Customer Facing Display (CFD)',
+    subtitle: '0ms Dual-Screen & Tablet Sync',
+    description:
+      'Broadcast live itemized carts, combo savings, taxes, cash change due, and pickup token numbers via BroadcastChannel and cloud sync.'
+  },
+  {
+    id: 'pos-register-shifts',
+    priority: 1.9,
+    category: 'finance-reports',
+    icon: <PaymentsIcon sx={ICON_SIZE} />,
+    title: 'POS Register Shifts & Z-Reports',
+    subtitle: 'Cash Drawer & Shift Handover',
+    description:
+      'Station-wise shift opening floats, Cash In/Out drawer movements, blind closing counts, discrepancy audits, and mobile Cashier Shift Bar.'
   },
   {
     id: 'kot-system',
@@ -96,9 +131,9 @@ const DETAILED_FEATURES = [
     category: 'pos-kitchen',
     icon: <RestaurantIcon sx={ICON_SIZE} />,
     title: 'KOT System',
-    subtitle: 'Kitchen Order Tickets',
+    subtitle: 'Menu-Assigned Kitchen Tickets',
     description:
-      'Streamlined kitchen order management with microsecond ticket generation, station-based routing, and live status tracking.'
+      'Streamlined kitchen order management with menu-to-station routing, automatic combo sub-item splitting, and live ticket tracking.'
   },
   {
     id: 'kitchen-display-system',
@@ -116,9 +151,9 @@ const DETAILED_FEATURES = [
     category: 'pos-kitchen',
     icon: <LiveTvIcon sx={ICON_SIZE} />,
     title: 'Public KDS & Live Screens',
-    subtitle: 'Zero-Login Kitchen Display',
+    subtitle: '2-Way Zero-Login Station Display',
     description:
-      'Mount any smart TV, tablet, or monitor in the kitchen for real-time ticket streaming, acoustic chimes, and color cook timers.'
+      'Mount any TV or tablet with menu-filtered KOT stations, 2-way ticket bumping, Recall/Cancelled views, chimes, and Bluetooth auto-printing.'
   },
   {
     id: 'floor-plan-management',
@@ -212,7 +247,17 @@ const DETAILED_FEATURES = [
     title: 'QR-Based Digital Menu',
     subtitle: 'Contactless Table Ordering',
     description:
-      'Table QR code scanning allows diners to browse rich food photos, customize dietary modifiers, and order directly from their phone.'
+      'Table QR ordering with rich photos, modifiers, Add More Items on open checks, and instant Call Waiter assistance.'
+  },
+  {
+    id: 'waiter-call-assistance',
+    priority: 11.5,
+    category: 'mobile-apps',
+    icon: <WaiterCallIcon sx={ICON_SIZE} />,
+    title: 'Real-Time QR Waiter Call',
+    subtitle: '5 Assistance Modes & Push Alerts',
+    description:
+      'Seated diners call waiters for refills, cutlery, cleaning, or the bill (60s anti-spam cooldown) with 1-tap Employee App acknowledgement.'
   },
   {
     id: 'table-reservation',
@@ -327,7 +372,26 @@ const DETAILED_FEATURES = [
       'Tailor dish pricing per branch location to account for prime real estate overhead, delivery platform cuts, or regional costs.'
   },
 
-  // --- Tier 5: SaaS Multi-Tenancy & Cloud Infrastructure ---
+  {
+    id: 'branch-operating-hours',
+    priority: 19.5,
+    category: 'multi-tenant-saas',
+    icon: <OperatingHoursIcon sx={ICON_SIZE} />,
+    title: 'Operating & After-Hours Rules',
+    subtitle: 'Timezone Schedules & Break Windows',
+    description:
+      'Enforce daily branch hours, scheduled breaks, and selective After-Hours Ordering whitelists (e.g. Delivery/Pickup) across all channels.'
+  },
+  {
+    id: 'saas-admin-governance',
+    priority: 22.5,
+    category: 'multi-tenant-saas',
+    icon: <AdminGovernanceIcon sx={ICON_SIZE} />,
+    title: '360° SaaS Governance & Audits',
+    subtitle: 'MRR/NRR, Impersonation & Diffs',
+    description:
+      'Super-Admin SaaS KPIs, 360° tenant onboarding & SSL checks, Login as Tenant impersonation, Before/After audit logs, and Executive PDFs.'
+  },
   {
     id: 'multi-tenant-architecture',
     priority: 20,
@@ -676,10 +740,10 @@ const FeaturesPage = () => {
         </Container>
       </Box>
 
-      {/* 6 Core Interconnected System Modules Showcase */}
+      {/* Core Interconnected System Modules Showcase */}
       <SystemEcosystem
-        title="The 6 Core Applications of SavoryOps SaaS"
-        subtitle="Explore the 6 interconnected web and mobile applications that power front-of-house service, kitchen prep, and multi-tenant SaaS governance."
+        title="The 7 Core Modules of SavoryOps SaaS"
+        subtitle="Explore the 7 interconnected web, mobile, display, and messaging platforms that power front-of-house service, kitchen prep, and multi-tenant SaaS governance."
         showBadge={false}
       />
 

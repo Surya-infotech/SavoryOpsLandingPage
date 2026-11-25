@@ -108,11 +108,13 @@ const Footer = () => {
 
   const productFeatures = [
     { name: 'POS & KOT System', icon: <ReceiptIcon />, href: '/features/pos-system' },
+    { name: 'Customer Facing Display (CFD)', icon: <ReceiptIcon />, href: '/features/customer-facing-display' },
+    { name: 'POS Register Shifts & Z-Reports', icon: <AttachMoneyIcon />, href: '/features/pos-register-shifts' },
     { name: 'Inventory & BOM Recipes', icon: <InventoryIcon />, href: '/features/inventory-management' },
     { name: 'Asset & Equipment Control', icon: <ApartmentIcon />, href: '/features/asset-management' },
     { name: 'Finance & Expense Control', icon: <AttachMoneyIcon />, href: '/features/finance-management' },
     { name: 'Menu & Add-ons Control', icon: <MenuBookIcon />, href: '/features/menu-management' },
-    { name: 'Table & QR Ordering', icon: <BranchIcon />, href: '/features/qr-code-scanning' },
+    { name: 'Table & QR Waiter Call', icon: <BranchIcon />, href: '/features/waiter-call-assistance' },
     { name: 'Multiple Business & Branches', icon: <BusinessIcon />, href: '/features/multiple-branches' },
     { name: 'Staff & Role Management', icon: <PeopleIcon />, href: '/features/branch-staff-management' },
     { name: '18 Languages (Arabic & Farsi RTL)', icon: <LanguageIcon />, href: '/features/multiple-languages' },
@@ -120,7 +122,9 @@ const Footer = () => {
   ];
 
   const reportList = [
+    { name: 'Register Shift & Z-Report Audit', icon: <ReceiptIcon />, href: '/features/pos-register-shifts' },
     { name: 'Profit & Loss (P&L) Report', icon: <AttachMoneyIcon />, href: '/features/advanced-reports' },
+    { name: 'Table Turn 7-Day Heatmap', icon: <BarChartIcon />, href: '/features/advanced-reports' },
     { name: 'Food Cost Variance & Leakage', icon: <AssessmentIcon />, href: '/features/advanced-reports' },
     { name: 'Menu Engineering Matrix', icon: <BarChartIcon />, href: '/features/advanced-reports' },
     { name: 'Stock Balance & Movement', icon: <InventoryIcon />, href: '/features/advanced-reports' },

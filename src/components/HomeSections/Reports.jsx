@@ -33,6 +33,7 @@ import {
   Apartment as AssetValuationIcon,
   Build as AssetMaintenanceIcon,
   SwapHoriz as AssetTransferIcon,
+  PointOfSale as RegisterShiftIcon,
 } from '@mui/icons-material';
 import { Box, Card, CardContent, Chip, Container, Typography } from '@mui/material';
 
@@ -64,6 +65,14 @@ const REPORTS = [
     title: 'Day Close & Register Reconciliation',
     description:
       'Daily end-of-day register closeout, cash drawer counts, card settlements, and shift variance auditing.',
+  },
+  {
+    id: 'register-shift-report',
+    category: 'sales',
+    icon: <RegisterShiftIcon />,
+    title: 'Register Shift & Z-Report Audit',
+    description:
+      'Station-wise shift openings, Cash In/Out drawer movements, expected vs counted cash, discrepancy tracking, and printable Z-Report slips.',
   },
   {
     id: 'profit-loss-report',
@@ -209,9 +218,9 @@ const REPORTS = [
     id: 'table-utilization-report',
     category: 'dining',
     icon: <TableIcon />,
-    title: 'Table Utilization & Turnover',
+    title: 'Table Utilization & 7-Day Heatmap',
     description:
-      'Measure dining table occupancy, seating duration, turnover speed, and revenue generated per seat hour.',
+      'Dynamic dwell times, Lunch vs. Dinner turn-time benchmarks, interactive 7-Day × 16-Hour Peak Occupancy Heatmap, and Party Size seating duration (1–7+ Pax).',
   },
   {
     id: 'customer-frequency-report',

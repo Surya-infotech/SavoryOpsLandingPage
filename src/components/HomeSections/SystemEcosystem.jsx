@@ -36,20 +36,19 @@ const SYSTEM_MODULES = [
     badge: 'Master Control & Governance',
     icon: <AdminPanelSettingsIcon />,
     targetRoles: ['SaaS Super Admins', 'Platform Owners', 'System Operators'],
-    headline: 'Centralized Multi-Tenant SaaS Administration & Store Provisioning',
+    headline: '360° Multi-Tenant SaaS Governance, Executive KPIs & Audit Trail',
     description:
-      'The master control center for your entire SaaS platform. Onboard new restaurants in seconds, manage customer subscription tiers, configure Stripe, Razorpay & PayPal payment gateways, configure custom domain DNS mappings, monitor system health, and track recurring MRR.',
+      'The master command center for your entire SaaS platform. Monitor live MRR, ARR, NRR, churn, cohort retention, and export Executive PDF reports; inspect 360° restaurant dossiers with onboarding checklists & SSL health; impersonate tenants in 1 click; and track Before/After audit diffs.',
     keyCapabilities: [
-      'Multi-Tenant Restaurant Onboarding & Instant Store Provisioning',
-      'Multi-Gateway Payment Settings (Stripe, Razorpay, PayPal with Sandbox/Live modes)',
-      'Subscription Plan Builder & Custom Billing (Manage Customer Plans & Invoicing)',
-      'Custom Domain DNS Management with Automated SSL Provisioning',
-      'Platform-Wide Analytics: Active Venues, Recurring Revenue & License Expiries',
-      'Granular Feature Flag Toggling & Modular Add-on Controls',
-      'Role-Based Access Control, Notification Management & Global Service Monitoring'
+      'Executive SaaS KPIs (MRR, ARR, ARPU, NRR, Churn), Top Owners Leaderboard & Cohort Retention',
+      '360° Tenant Profile: Lifecycle Stages, Onboarding Tracker, Quotas, SSL Health & Live POS Pulse',
+      '1-Click Login as Tenant Impersonation & Multi-Tab Inactivity Auto-Logout (15m/20m)',
+      'System Audit Logs with IP/Device Attribution & Visual Before/After Diffs + 1-Click Executive PDF',
+      'Multi-Gateway Payment Settings (Stripe, Razorpay, PayPal) & Subscription Plan Builder',
+      'Subscriber & Contact Us Lead Management with Direct Email Dispatch'
     ],
-    primaryLink: '/features',
-    primaryLinkText: 'Explore Features',
+    primaryLink: '/features/saas-admin-governance',
+    primaryLinkText: 'Explore SaaS Governance',
     secondaryLink: '/pricing',
     secondaryLinkText: 'Subscription Tiers',
     image: '/images/features/reports-analytics.jpg'
@@ -61,22 +60,21 @@ const SYSTEM_MODULES = [
     badge: 'Operations Command Center',
     icon: <StorefrontIcon />,
     targetRoles: ['Restaurant Owners', 'General Managers', 'F&B Directors', 'Store Accountants'],
-    headline: 'Centralized Restaurant POS, Inventory BOM & Floor Management',
+    headline: 'Multi-Station POS, Register Shifts, Live CFD, KOT Routing & 30+ Reports',
     description:
-      'The primary command center for daily restaurant operations and multi-branch governance. Manage multi-channel POS billing, live KOT dispatch, visual dining floor plans, ingredient-level inventory, in-app self-service plan upgrades, 30+ business intelligence reports, and real-time Profit & Loss accounting.',
+      'The primary command center for daily restaurant operations and multi-branch control. Manage station-scoped POS billing and Zero-Login Public POS/Customer Display links, station register shifts with Z-Reports, menu-assigned KOT stations with combo sub-item splitting, branch hours/after-hours rules, BOM inventory, and 30+ reports.',
     keyCapabilities: [
-      'Multi-Channel POS Billing (Dine-in, Takeaway, Doorstep Delivery, QSR counter)',
-      'In-App Subscription Self-Purchase & Plan Upgrades with Integrated Payment Gateways',
-      'Visual Floor Plan Builder with 5 live table status colors (Available, Occupied, Reserved, Billed, Dirty)',
-      'Kitchen Order Ticket (KOT) station routing with preparation urgency timers',
-      'Precision Bill of Materials (BOM) inventory with automatic recipe stock deduction',
-      '30+ Enterprise BI Reports across Sales, Financials, Staff, Stock, and Menu Matrix',
-      'Order Cancellation Audits with Reason Tracking & Real-Time Profit & Loss (P&L)'
+      'Multi-Station POS & Station-Wise Register Shifts (Open Float, Cash In/Out, Blind Close & Z-Reports)',
+      'Live Customer Facing Display (CFD) with 0ms BroadcastChannel & Cross-Device Network Sync',
+      'Menu-Assigned KOT Stations with Automatic Combo/Unlimited Sub-Item Department Splitting',
+      'Branch Operating Hours, Scheduled Break Windows & Selective After-Hours Order Type Whitelists',
+      'Dynamic Table Turn-Time 7-Day × 16-Hour Heatmap, Lunch/Dinner Dwell & Party Size Analytics',
+      'Precision Bill of Materials (BOM) Inventory, Visual Floor Plans & Real-Time Profit & Loss (P&L)'
     ],
     primaryLink: '/features/pos-system',
     primaryLinkText: 'Explore POS & Operations',
-    secondaryLink: '/features/inventory-management',
-    secondaryLinkText: 'View Inventory BOM',
+    secondaryLink: '/features/pos-register-shifts',
+    secondaryLinkText: 'POS Register Shifts',
     image: '/images/features/pos-system.jpg'
   },
   {
@@ -86,22 +84,21 @@ const SYSTEM_MODULES = [
     badge: 'Turnkey Online Storefront',
     icon: <LanguageIcon />,
     targetRoles: ['Online Diners', 'Takeout Guests', 'Table Booking Customers', 'Brand Visitors'],
-    headline: 'SEO-Optimized Customer Web Portal, Direct Ordering & Digital Reservations',
+    headline: 'Commission-Free Storefront, Dynamic Showcases, QR Waiter Call & Bookings',
     description:
-      'A standalone, white-labeled customer web application hosted on custom subdomains or custom domains. Diners enjoy commission-free ordering, visual menu exploration with dish addons, digital table reservations, deal combos, and customer reviews.',
+      'A standalone, white-labeled customer web portal hosted on custom subdomains or domains. Diners browse dynamic homepage menu showcases, order time-gated combos, add items directly to open QR dine-in orders, call waiters in 1 tap, book tables, and download PDF invoices.',
     keyCapabilities: [
-      'Dedicated Restaurant Web Portal with custom subdomain or white-label domain routing',
-      'Contactless QR Table Ordering with branch selection and instant cart sync',
-      'Multi-Channel Checkout: Dine-In Table Service, Takeaway Pickup & Doorstep Delivery',
-      'Digital Table Reservation Engine with party size, time slot & seating selection',
-      'Deals & Bundles Showcase (Combo meals, unlimited discount packages, promo codes)',
-      'Customer Reviews & Photo Ratings per dish and dining experience',
-      'Printable & Downloadable Digital HTML/PDF Invoices for customers'
+      'Dynamic Homepage Menu Showcases (Curated Menus, Categories, Items, Combos & Unlimited Meals)',
+      'QR Table Call Waiter Modal (5 Service Triggers + 60s Anti-Spam Cooldown) & Add More Items',
+      'Timezone-Aware Operating Hours, Scheduled Breaks & After-Hours Order Type Enforcement',
+      'Timezone & Meal-Session Gated Deals (Always, Weekly, Custom Date, Breakfast/Lunch/Dinner)',
+      'Multi-Channel Checkout (Dine-In QR, Takeaway, Delivery) & Digital Table Reservations',
+      'Consolidated Deal Order Views, Verified Reviews & Downloadable HTML/PDF Invoices'
     ],
     primaryLink: '/features/dedicated-restaurant-website',
     primaryLinkText: 'Explore Customer Website',
-    secondaryLink: '/features/table-reservation',
-    secondaryLinkText: 'Table Reservations',
+    secondaryLink: '/features/waiter-call-assistance',
+    secondaryLinkText: 'QR Waiter Call Flow',
     image: '/images/hero-platform.jpg'
   },
   {
@@ -111,22 +108,21 @@ const SYSTEM_MODULES = [
     badge: 'Multi-Role Staff Terminal',
     icon: <PhoneIphoneIcon />,
     targetRoles: ['Waiters', 'Cashiers', 'Line Chefs', 'Head Chefs', 'Hosts', 'Delivery Drivers'],
-    headline: 'Single Adaptive Mobile App with 6 Dynamically Morphing Roles',
+    headline: '6-in-1 Adaptive Staff App with Cashier Shift Bar & Waiter Call Alerts',
     description:
-      'Eliminate software fragmentation and staff training bottlenecks. One universal native mobile app dynamically morphs its entire UI and toolset based on the authenticated employee’s job role, featuring phone OTP login and real-time push alerts.',
+      'One universal native mobile app that dynamically morphs across 6 staff roles—now featuring a full mobile Cashier Register Shift Bar (Open/Close Shift, Cash In/Out, Drawer Summary & Z-Reports), live Waiter Call Alert Banners with 1-tap "On My Way" acknowledgement, and real-time Branch Operating Hours banners.',
     keyCapabilities: [
-      'AWS SNS SMS OTP & Phone Number Authentication for instant staff sign-in',
-      'Waiter Mode: Table-side ordering with modifiers, instant KOT dispatch & ready alerts',
-      'Cashier Mode: Quick mobile billing terminal, collecting cash, card or UPI with receipt printing',
-      'Head Chef Mode: Master kitchen queue overview, station delegation & kitchen speed metrics',
-      'Line Chef Mode: High-contrast station KDS screen with 1-tap dish ready bumping',
-      'Host Mode: Front-of-house guest queue, table reservation check-in & seating allocation',
-      'Delivery Driver Mode: Assigned delivery queue, customer calling, GPS routing & doorstep completion'
+      'Cashier Mode Shift Bar: Switch POS Stations, Open Shift, Cash In/Out, Drawer Summary & Z-Reports',
+      'Waiter Mode Live Call Alerts: WaiterCallAlertBanner with Push Sync & "On My Way" Acknowledgement',
+      'Branch Operating Hours Banner & After-Hours Order Guardrails Across Ordering Flows',
+      'Head Chef & Line Chef Modes: Station KDS Queue, Ticket Bumping & Urgency Metrics',
+      'Host & Delivery Modes: Table Check-In Queue, GPS Delivery Routing & Doorstep Completion',
+      'AWS SNS SMS OTP & Phone Number Authentication for Frictionless Staff Sign-In'
     ],
     primaryLink: '/features/employee-mobile-app',
     primaryLinkText: 'Explore Employee App',
-    secondaryLink: '/features/kot-system',
-    secondaryLinkText: 'KOT & Kitchen Flow',
+    secondaryLink: '/features/pos-register-shifts',
+    secondaryLinkText: 'Mobile Register Shifts',
     image: '/images/features/waiter-mobile-pos.jpg'
   },
   {
@@ -136,47 +132,45 @@ const SYSTEM_MODULES = [
     badge: 'Native Diner Experience',
     icon: <QrCodeScannerIcon />,
     targetRoles: ['In-House Diners', 'Takeout Guests', 'Delivery Customers', 'Loyalty Members'],
-    headline: 'Digital Menu Browsing, QR Table Ordering & Live Order Tracking',
+    headline: 'Dynamic Menu Showcases, QR Waiter Call, Time-Gated Deals & Live Tracking',
     description:
-      'Empower diners with contactless ordering, multi-channel pickup and delivery, advance table booking, combo deals, and real-time 5-stage order progress tracking right from their smartphones.',
+      'Empower diners with contactless QR table ordering, 1-tap Call Waiter assistance, dynamic homepage showcases, timezone-gated combo & unlimited deals, operating hours awareness, and real-time 5-stage order progress tracking right from their smartphones.',
     keyCapabilities: [
-      'Passwordless Phone Number & AWS SNS SMS OTP Login for friction-free onboarding',
-      'QR Code Table Ordering: Scan dining table QR to view visual menu and order directly',
-      'Takeaway & Curbside Pickup: Schedule orders in advance for lightning-fast collection',
-      'Doorstep Delivery: Real-time address pin, saved addresses (Home, Work), and delivery instructions',
+      'Dynamic HomeMenuShowcase Sections for Featured Menus, Categories, Dishes & Value Bundles',
+      'QR Table Call Waiter Modal (General, Water, Bring Bill, Cutlery, Clean Table) with 60s Cooldown',
+      'Timezone-Aware Deal Badges & Unlimited Meal Session Scheduling + Operating Hours Sync',
       'Live 5-Stage Order Tracker: Placed → Preparing in Kitchen → Ready → On The Way → Delivered',
-      'Real-Time Push Notifications & In-App Notification Center with shimmer loading',
-      'Combo Deals & Badges with 1-Click Rapid Reordering from past dining history'
+      'Passwordless Phone Number & AWS SNS SMS OTP Login with Saved Delivery Addresses',
+      'Real-Time Push Notifications, PDF Invoices & 1-Click Reorder from History'
     ],
     primaryLink: '/features/customer-mobile-app',
     primaryLinkText: 'Customer App Details',
-    secondaryLink: '/features/qr-code-scanning',
-    secondaryLinkText: 'QR Ordering System',
+    secondaryLink: '/features/branch-operating-hours',
+    secondaryLinkText: 'Branch Hours & Deals',
     image: '/images/features/qr-ordering.jpg'
   },
   {
     id: 'public-portals',
-    name: 'Public KDS Screens & Contactless QR Portals',
-    tabLabel: 'Live KDS & QR',
+    name: 'Public POS, Customer Display (CFD) & KDS Screens',
+    tabLabel: 'Live POS, CFD & KDS',
     badge: 'Zero-Login Public Portals',
     icon: <LiveTvIcon />,
-    targetRoles: ['Kitchen Line Cooks', 'Expeditors', 'Dine-In Diners', 'Walk-in Guests'],
-    headline: 'Hardware-Agnostic Kitchen Screens & Contactless Guest Self-Ordering',
+    targetRoles: ['Counter Cashiers', 'Walk-In Guests', 'Kitchen Line Cooks', 'Dine-In Diners'],
+    headline: 'Zero-Login Public POS Terminals, Customer Displays (CFD) & 2-Way KDS',
     description:
-      'Empower restaurant operations with zero-login live displays. Mount any smart TV, tablet, or monitor in the kitchen for real-time ticket streaming with acoustic chimes, or let diners order and pay directly by scanning dynamic table QR codes.',
+      'Launch dedicated counter, customer-facing, and kitchen displays via secure zero-login station URLs. Run fullscreen Public POS registers with shift management, broadcast 0ms dual-screen carts & change due to Customer Facing Displays, and manage 2-way station KOT screens with Recall/Cancelled history and Bluetooth auto-printing.',
     keyCapabilities: [
-      'Standalone Public Kitchen Display (Public KOT) with real-time ticket sync & audio chimes',
-      'Zero-installation needed: runs in any web browser, Android TV, Fire TV, or tablet',
-      'Contactless Table QR Self-Ordering with high-res photos, allergens & custom modifiers',
-      'Direct Table-Side Waiter Call & Bill Request from guest smartphones',
-      'Station-Specific Kitchen Routing (Grill, Fryer, Cold Prep, Dessert, Beverage)',
-      'Automated Ticket Cook Timers with color shifts (Green → Amber → Red) to prevent delays',
-      'End-to-End Live Order Progress: Placed → In Prep → Ready for Pickup/Table'
+      'Zero-Login Public POS Terminals (/Public/POS) with Station Shifts, Fullscreen & Bluetooth Printing',
+      'Live Customer Facing Display (CFD) with 0ms BroadcastChannel + Network Sync & Token Screens',
+      'Menu-Assigned Public KDS (/Public/KOT) with 2-Way Bumping & Recall Completed/Cancelled KOTs',
+      'Web Bluetooth ESC/POS Auto-Printing, Kitchen Chimes & Color Cook Timers (Green → Amber → Red)',
+      'Contactless Table QR Ordering with 1-Tap Call Waiter Assistance & Add-More-Items',
+      'Full 18-Language & RTL Layout Support Across All Public Counter, Customer & Kitchen Screens'
     ],
-    primaryLink: '/features/kitchen-display-system',
-    primaryLinkText: 'Explore KDS Screens',
-    secondaryLink: '/features/qr-code-scanning',
-    secondaryLinkText: 'QR Self-Ordering',
+    primaryLink: '/features/customer-facing-display',
+    primaryLinkText: 'Explore Customer Display',
+    secondaryLink: '/features/multi-station-pos',
+    secondaryLinkText: 'Public POS Portals',
     image: '/images/features/kitchen-display-system.jpg'
   },
   {
@@ -406,9 +400,9 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
                 ))}
               </Box>
 
-              {/* Core Capabilities in a Compact 2x2 Grid */}
+              {/* Core Capabilities in a Compact 2x3 Grid */}
               <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 1.2, mb: 3 }}>
-                {currentModule.keyCapabilities.slice(0, 4).map((capability, idx) => (
+                {currentModule.keyCapabilities.slice(0, 6).map((capability, idx) => (
                   <Box
                     key={idx}
                     sx={{

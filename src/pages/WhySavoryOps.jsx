@@ -127,14 +127,14 @@ const WhySavoryOps = () => {
     },
     {
       icon: <SecurityIcon sx={{ fontSize: 32 }} />,
-      title: 'Granular Staff Permissions & Cash Audit Trails',
+      title: 'Station Register Shifts, Cash Drawer & Audit Trails',
       image: '/images/features/staff-management.jpg',
       description:
-        'Keep total control over financial operations. Enforce strict role-based access for Cashiers, Waiters, Floor Managers, and Kitchen Line Cooks with tamper-proof audit logs.',
+        'Keep airtight control over cash drawers and terminal handovers across Web POS, Public POS, and the Cashier Mobile App—paired with tamper-evident Before/After system audit logs.',
       highlights: [
-        'Cash drawer opening tracking and shift reconciliation reports',
-        'Mandatory manager approval for dish voids, refunds, and bill discounts',
-        'Detailed employee clock-in, sales attribution, and tip distribution'
+        'Station-wise shift openings, Cash In/Out movements, blind counts & Z-Reports',
+        'Live Customer Facing Display (CFD) showing cart totals, savings & cash change due',
+        'Mandatory manager approval for dish voids, refunds, and bill discounts'
       ]
     },
     {
@@ -259,8 +259,8 @@ const WhySavoryOps = () => {
     },
     {
       feature: 'Arabic & Multi-Language RTL',
-      hint: '11 global languages with native Right-to-Left (RTL) alignment',
-      savoryops: '11 Languages (Native Arabic RTL)',
+      hint: '18 global languages with native Arabic & Farsi Right-to-Left (RTL) alignment',
+      savoryops: '18 Languages (Arabic & Farsi RTL)',
       toast: 'No Arabic / RTL support',
       square: 'English & Spanish only',
       legacy: 'English single-language only'

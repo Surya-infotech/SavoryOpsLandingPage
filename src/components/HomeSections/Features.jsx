@@ -31,6 +31,12 @@ import {
   NotificationsActive as PushNotificationIcon,
   Sms as SmsIcon,
   CreditCard as PaymentGatewayIcon,
+  Tv as CustomerDisplayIcon,
+  Devices as MultiStationPosIcon,
+  RoomService as WaiterCallIcon,
+  AccessTime as OperatingHoursIcon,
+  AdminPanelSettings as AdminGovernanceIcon,
+  ReceiptLong as RegisterShiftIcon,
 } from '@mui/icons-material';
 import { Box, Button, Card, CardContent, Chip, Container, Typography } from '@mui/material';
 import { useMemo } from 'react';
@@ -46,7 +52,31 @@ const FEATURES = [
     icon: <PosIcon />,
     title: 'POS',
     description:
-      'Fast, reliable point-of-sale billing with payments, discounts, and order sync across counters.',
+      'Fast, reliable point-of-sale billing with payments, discounts, station shifts, and order sync across counters.',
+  },
+  {
+    id: 'multi-station-pos',
+    priority: 1.3,
+    icon: <MultiStationPosIcon />,
+    title: 'Multi-Station & Public POS',
+    description:
+      'Configure multiple counter stations with Zero-Login Public POS URLs, live shift badges, and fullscreen kiosk mode.',
+  },
+  {
+    id: 'customer-facing-display',
+    priority: 1.6,
+    icon: <CustomerDisplayIcon />,
+    title: 'Customer Facing Display (CFD)',
+    description:
+      'Dual-screen 0ms BroadcastChannel & network-synced display showing live items, savings, taxes, change due, and token numbers.',
+  },
+  {
+    id: 'pos-register-shifts',
+    priority: 1.9,
+    icon: <RegisterShiftIcon />,
+    title: 'POS Register Shifts & Z-Reports',
+    description:
+      'Per-station shift openings, Cash In/Out drawer movements, blind cash counts, discrepancy tracking, and Z-Report slips.',
   },
   {
     id: 'kot-system',
@@ -54,7 +84,7 @@ const FEATURES = [
     icon: <RestaurantIcon />,
     title: 'KOT System',
     description:
-      'Streamlined kitchen order management with real-time ticket generation, routing, and tracking.',
+      'Menu-assigned kitchen station routing, automatic combo sub-item splitting, 2-way KDS bumping, and Bluetooth printing.',
   },
   {
     id: 'inventory-management',
@@ -79,7 +109,15 @@ const FEATURES = [
     icon: <QrCode2Icon />,
     title: 'QR-Based Menu',
     description:
-      'Enable contactless ordering with dynamic QR menus, live updates, and faster table turnover.',
+      'Contactless table ordering with dynamic QR menus, Add More Items on active orders, and instant Call Waiter assistance.',
+  },
+  {
+    id: 'waiter-call-assistance',
+    priority: 5.2,
+    icon: <WaiterCallIcon />,
+    title: 'Table Waiter Call & Alerts',
+    description:
+      'Guests tap Call Waiter for water, bill, cutlery, or cleaning—sending push alerts and live banners to Employee App waiters.',
   },
   {
     id: 'dedicated-restaurant-website',
@@ -289,6 +327,22 @@ const FEATURES = [
     icon: <PaymentGatewayIcon />,
     title: 'Payment Gateways',
     description: 'Integrated Stripe, Razorpay & PayPal with live/sandbox modes and self-service SaaS plan purchases.',
+  },
+  {
+    id: 'branch-operating-hours',
+    priority: 13.5,
+    icon: <OperatingHoursIcon />,
+    title: 'Operating & After-Hours Rules',
+    description:
+      'Timezone-aware branch opening hours, scheduled kitchen breaks, and configurable after-hours order type whitelists.',
+  },
+  {
+    id: 'saas-admin-governance',
+    priority: 26.9,
+    icon: <AdminGovernanceIcon />,
+    title: '360° SaaS Admin & Audit Logs',
+    description:
+      'MRR/ARR/NRR metrics, 360° tenant onboarding dossiers, SSL checks, Login as Tenant impersonation, and Before/After audit diffs.',
   },
   {
     id: 'help-center',

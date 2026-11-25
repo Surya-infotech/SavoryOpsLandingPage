@@ -96,7 +96,30 @@ const ALIAS_MAP = {
   'phone-otp': 'otp-phone-login',
   'payment-gateway': 'payment-gateway-integration',
   payment: 'payment-gateway-integration',
-  payments: 'payment-gateway-integration'
+  payments: 'payment-gateway-integration',
+  cfd: 'customer-facing-display',
+  'customer-display': 'customer-facing-display',
+  'customer_facing_display': 'customer-facing-display',
+  'dual-screen-display': 'customer-facing-display',
+  'register-shifts': 'pos-register-shifts',
+  'shift-management': 'pos-register-shifts',
+  'pos-shifts': 'pos-register-shifts',
+  'pos_register_shifts': 'pos-register-shifts',
+  'pos-stations': 'multi-station-pos',
+  'public-pos': 'multi-station-pos',
+  'multi_station_pos': 'multi-station-pos',
+  'waiter-call': 'waiter-call-assistance',
+  'call-waiter': 'waiter-call-assistance',
+  'table-assistance': 'waiter-call-assistance',
+  'waiter_call_assistance': 'waiter-call-assistance',
+  'operating-hours': 'branch-operating-hours',
+  'after-hours': 'branch-operating-hours',
+  'after-hours-ordering': 'branch-operating-hours',
+  'branch_operating_hours': 'branch-operating-hours',
+  'admin-governance': 'saas-admin-governance',
+  'audit-logs': 'saas-admin-governance',
+  'tenant-360': 'saas-admin-governance',
+  'saas_admin_governance': 'saas-admin-governance'
 };
 
 const FEATURE_IMAGE_MAP = {
@@ -210,6 +233,18 @@ const FEATURE_IMAGE_MAP = {
   'public_kot_display': '/images/features/kitchen-display-system.jpg',
   'dedicated-restaurant-website': '/images/hero-platform.jpg',
   'dedicated_restaurant_website': '/images/hero-platform.jpg',
+  'customer-facing-display': '/images/features/pos-system.jpg',
+  'customer_facing_display': '/images/features/pos-system.jpg',
+  'pos-register-shifts': '/images/features/reports-analytics.jpg',
+  'pos_register_shifts': '/images/features/reports-analytics.jpg',
+  'multi-station-pos': '/images/features/pos-system.jpg',
+  'multi_station_pos': '/images/features/pos-system.jpg',
+  'waiter-call-assistance': '/images/features/waiter-mobile-pos.jpg',
+  'waiter_call_assistance': '/images/features/waiter-mobile-pos.jpg',
+  'branch-operating-hours': '/images/hero-platform.jpg',
+  'branch_operating_hours': '/images/hero-platform.jpg',
+  'saas-admin-governance': '/images/features/reports-analytics.jpg',
+  'saas_admin_governance': '/images/features/reports-analytics.jpg',
 };
 
 const FeatureDetailPage = () => {

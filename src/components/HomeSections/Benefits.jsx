@@ -7,15 +7,15 @@ const Benefits = () => {
   const { softwareName } = useAppSettings();
 
   const benefits = [
-    'Increase operational efficiency',
-    'Improve customer satisfaction',
-    'Streamline staff management across all branches',
-    'Real-time analytics and comprehensive reporting',
-    'Multi-business and multi-branch management',
-    'Advanced order tracking with status history',
-    'Branch-wise pricing and employee management',
-    'Easy ordering through user app with QR code scanning',
-    'Employee app for order management and status updates'
+    'Increase operational efficiency across POS, KDS & mobile terminals',
+    'Live Customer Facing Display (CFD) with 0ms dual-screen cart & change sync',
+    'Per-station POS register shifts, Cash In/Out tracking & blind Z-Report closing',
+    'Instant QR table Waiter Call button with live Employee App alert banners',
+    'Menu-assigned KOT stations with automatic combo item splitting & Bluetooth printing',
+    'Timezone-aware branch operating hours & selective after-hours ordering controls',
+    'Multi-business and multi-branch management with 360° SaaS governance & audit logs',
+    '30+ real-time reports including Register Shifts & 7-day Table Turn Heatmaps',
+    'Direct commission-free Customer Website & 6-in-1 Employee Mobile App'
   ];
 
   return (

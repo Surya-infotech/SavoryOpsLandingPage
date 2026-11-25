@@ -146,6 +146,20 @@ const Navigation = () => {
           icon: <TableBarIcon fontSize="small" />
         },
         {
+          text: 'Customer Facing Display (CFD)',
+          description: '0ms dual-screen live cart, change due & token confirmation',
+          path: '/features/customer-facing-display',
+          icon: <PosIcon fontSize="small" />,
+          badge: 'New',
+          badgeColor: '#0ea5e9'
+        },
+        {
+          text: 'POS Register Shifts & Z-Reports',
+          description: 'Station floats, Cash In/Out drawer logs & blind close audits',
+          path: '/features/pos-register-shifts',
+          icon: <ReceiptLongIcon fontSize="small" />
+        },
+        {
           text: 'Cloud Kitchen POS System',
           description: 'Multi-brand virtual kitchen aggregator & unified dispatch',
           path: '/solutions/cloud-kitchen-pos-system',

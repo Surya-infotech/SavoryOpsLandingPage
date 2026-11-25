@@ -10,19 +10,19 @@ const appLinks = [
     id: 'user',
     name: 'SavoryOps: Dine & Food Order',
     description:
-      'Empower diners with v4.0.2 mobile ordering: browse interactive visual menus, customize dishes with modifiers, sign in with instant phone SMS OTP, enjoy combo deals, place tableside QR orders, and receive real-time push notifications from seat to plate.',
+      'Empower diners with v4.0.3 mobile ordering: browse dynamic homepage showcases, customize time-gated combo & unlimited deals, scan table QRs with 1-tap Call Waiter assistance, sign in via phone SMS OTP, and track live kitchen progress.',
     href: 'https://play.google.com/store/apps/details?id=com.savoryops',
     logo: '/logo.png',
-    highlights: ['v4.0.2 Live', 'Phone + SMS OTP', 'Real-Time Push Alerts', 'Smart QR Ordering', 'Live Kitchen Tracker', 'Deals & Combos', 'Digital Bill & Pay']
+    highlights: ['v4.0.3 Live', 'Phone + SMS OTP', 'QR Call Waiter', 'Dynamic Showcases', 'Time-Gated Deals', 'Branch Hours Sync', 'Real-Time Push Alerts']
   },
   {
     id: 'employee',
     name: 'SavoryOps Crew: POS & Staff',
     description:
-      'Turn any tablet or phone into a high-speed mobile terminal with v4.0.2: 6 dynamically morphing roles (Waiter, Cashier, Head Chef, Line Chef, Host, Delivery Driver), instant SMS OTP login, live FCM order alerts with audio chimes, and fast checkouts.',
+      'Turn any tablet or phone into a high-speed mobile terminal with v4.0.3: 6 dynamically morphing roles, Cashier Register Shift Bar (Open/Close, Cash In/Out & Z-Reports), live Waiter Call alert banners, operating hours banners, and SMS OTP login.',
     href: 'https://play.google.com/store/apps/details?id=com.savoryops.employeeapp',
     logo: '/Employee_Logo.png',
-    highlights: ['v4.0.2 Live', '6 Adaptive Roles', 'Handheld Mobile POS', 'Instant KOT Dispatch', 'Live Push Notifications', 'Table & Floor Control', 'Fast Split Checkout']
+    highlights: ['v4.0.3 Live', '6 Adaptive Roles', 'Cashier Shift & Z-Report', 'Waiter Call Alerts', 'Operating Hours Banner', 'Instant KOT Dispatch', 'Live Push Alerts']
   }
 ];
 

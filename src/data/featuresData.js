@@ -154,10 +154,11 @@ export const FEATURES_DATA = {
       { title: 'Paced Course Timing', desc: 'Hold and fire courses (Starters -> Mains -> Desserts) so food arrives at the table hot and on schedule.' }
     ],
     features: [
-      'Real-time multi-station order routing (Grill, Prep, Fryer, Bar, Expeditor)',
+      'Real-time multi-station order routing (Grill, Prep, Fryer, Bar, Expeditor) via menu-to-station assignment',
+      'Automatic Combo & Unlimited Meal sub-item department splitting across kitchen and bar stations without double-counting deal pricing',
       'Custom modifier tags for allergies, cooking temperatures, and special guest requests',
       'Unified table-wise cumulative ticket view for one-click invoice generation',
-      'Dual output support: thermal paper ESC/POS kitchen printers & digital touchscreen KDS',
+      'Dual output support: Web Bluetooth / ESC/POS thermal kitchen printers & 2-way interactive KDS with Recall Completed & Cancelled KOT history',
       'Audited void KOT reports with wastage tracking and manager accountability'
     ],
     faqs: [
@@ -420,10 +421,12 @@ export const FEATURES_DATA = {
       { title: 'Server Efficiency', desc: 'Waitstaff focus on hospitality and food delivery instead of taking repetitive orders.' }
     ],
     features: [
-      'Table-specific QR code generator with printable high-resolution templates',
-      'Direct order routing from smartphone to kitchen KOT and bar BOT',
-      'Real-time item 86-ing so guests never order unavailable dishes',
-      'Contactless digital payment options directly on the mobile screen'
+      'Table-specific encrypted QR code generator with printable high-resolution templates',
+      'Direct order routing from smartphone to menu-assigned kitchen KOT and bar BOT stations',
+      'Table-Side Call Waiter Assistance Modal: 5 instant service triggers (General Assistance, Water Refill, Bring Bill, Cutlery & Napkins, Clean Table) with 60-second anti-spam cooldown',
+      'Add More Items directly into open dine-in orders from the guest Order Details view without starting a duplicate check',
+      'Timezone-aware operating hours & after-hours ordering rule enforcement',
+      'Real-time item 86-ing so guests never order unavailable dishes'
     ],
     faqs: [
       { question: 'Do customers need to download an app to scan the QR code?', answer: 'No. The SavoryOps QR menu runs as a progressive web experience that opens instantly in any mobile browser.' },
@@ -466,9 +469,9 @@ export const FEATURES_DATA = {
       { title: 'Asset Valuation & Maintenance Audit', desc: 'Track physical equipment net book value, preventative maintenance repair expenses, and inter-branch equipment transfer logs.' }
     ],
     features: [
-      'Sales & Financial Reports: Gross & Net Revenue, Day Close reconciliation, Branch-wise comparative sales, Date-wise trends, Tax compliance, Payment Mode tender split, Additional Charges breakdown, Profit & Loss (P&L), Expense & Income, Accounts Payable (AP) Aging Report, Supplier Spend Analysis, and Order Cancellation & Void Report.',
+      'Sales & Financial Reports: Gross & Net Revenue, Day Close & Register Shift Z-Reports (opening float, cash-in/cash-out, expected vs counted cash, discrepancy audits), Branch-wise comparative sales, Date-wise trends, Tax compliance, Payment Mode tender split, Additional Charges breakdown, Profit & Loss (P&L), Expense & Income, Accounts Payable (AP) Aging Report, Supplier Spend Analysis, and Order Cancellation & Void Report.',
       'Menu & Operations Reports: Item-Wise sales velocity, Category contribution analysis, Menu Engineering Matrix (Stars, Plowhorses, Puzzles, Dogs), Food Cost Variance Analysis (Ideal vs Actual), Wastage & Loss tracking, Hourly Sales Rush heatmaps, and Kitchen Speed prep times.',
-      'Dining & Guests Reports: Table Utilization & turnover speed, Customer Visit Frequency, Order Type distribution (Dine-In, Takeaway, Delivery, QR), Delivery Driver Performance Report, Table Reservation Analytics, Staff Sales & Tip Performance, and Guest Reviews & Feedback.',
+      'Dining & Guests Reports: Dynamic Table Utilization & Turnover (7-Day × 16-Hour Peak Occupancy Heatmap, Lunch vs. Dinner dwell benchmarking, Party Size Seating Duration 1–2 / 3–4 / 5–6 / 7+ Pax), Customer Visit Frequency, Order Type distribution (Dine-In, Takeaway, Delivery, QR), Delivery Driver Performance Report, Table Reservation Analytics, Staff Sales & Tip Performance, and Guest Reviews & Feedback.',
       'Inventory & Stock Reports: Stock Balance valuation, Stock Ledger movement audit trails, Low Stock & Reorder Alert reports, ingredient consumption variance, and culinary shrinkage audits.',
       'Asset Management Reports: Asset Valuation & Depreciation report, Asset Maintenance & Service Logs report, and Inter-Branch Asset Transfer audit report.',
       'Custom Multi-Branch & Fiscal Year Filters: Filter by Branch, Fiscal Year, Day, Week, Month, Quarter, or custom date ranges with side-by-side comparative growth metrics.',
@@ -1658,14 +1661,14 @@ export const FEATURES_DATA = {
       { title: 'Multi-Branch Fiscal Lock', desc: 'Lock the fiscal business day across all terminals to prevent backdated order tampering and ensure clean books.' }
     ],
     features: [
-      'Opening Cash Float Setup: Declare initial till float amounts at shift opening with denomination breakdown recording.',
-      'Blind Register Counting: Cashiers count actual cash drawer contents without seeing theoretical system totals to eliminate bias.',
-      'Automated Variance Calculation: Live calculation of cash overages/shortages with mandatory manager explanation notes for discrepancies.',
-      'Comprehensive Multi-Payment Reconciliation: Detailed tender breakdown across Cash, Visa/Mastercard, UPI, Gift Cards, and House Accounts.',
-      'Petty Cash Payout Logging: Record register cash withdrawals for urgent pantry runs, ice purchases, or delivery driver tips.',
-      'Executive Day-Close Z-Report: 1-click generation and printing of official Z-Reports for store managers, owners, and external accountants.',
-      'Shift-Wise & Terminal-Wise Closures: Run multiple shift handovers throughout the day or consolidate all terminals into one unified venue day close.',
-      'Historical Day-Close Archive: Access historical register settlements with complete employee timestamps and digital audit trails.'
+      'Opening Cash Float & Station Shift Setup: Select the POS station and operator, declare initial till float, and open daily-numbered shifts per register across Owner Web POS, Public POS, and the Cashier Employee App.',
+      'Mid-Shift Cash In / Cash Out Movements: Record petty cash top-ups (CASH_IN) and vendor/expense payouts (CASH_OUT) with mandatory reasons and employee attribution.',
+      'Live Drawer Summary & Blind Register Counting: View real-time expected cash while enforcing blind physical currency counting at shift close to eliminate bias.',
+      'Automated Discrepancy Calculation: Instant surplus/shortage calculation comparing actual counted cash against opening float + cash sales + cash-in - cash-out - cash refunds.',
+      'Comprehensive Multi-Payment Reconciliation: Detailed tender breakdown across Cash, Card, Online/UPI, and Other payment modes.',
+      'Executive Shift & Day-Close Z-Report: 1-click viewing and printing of official Z-Report slips from POS modals, Cashier mobile app, or the dedicated Register Shift Report.',
+      'Shift-Wise & Station-Wise Closures: Run multiple shift handovers per POS station throughout the day with daily per-station shift resets in the branch timezone.',
+      'Historical Register Shift Archive: Filterable Register Shift Report across stations, status, and date ranges with KPI cards and itemized Z-Report drilldowns.'
     ],
     faqs: [
       { question: 'What is the difference between an X-Report and a Z-Report in SavoryOps?', answer: 'An X-Report is an interim, mid-shift sales reading that can be run anytime without resetting register counters or locking the shift. A Z-Report is the final end-of-day register closure report that balances tenders, records cash variances, and locks the business day for accounting and tax records.' },
@@ -1746,12 +1749,12 @@ export const FEATURES_DATA = {
       { title: 'Bundle Margin & Profit Analytics', desc: 'Track sales velocity, contribution margins, and most popular bundle configurations to optimize profitability.' }
     ],
     features: [
-      'Multi-Tier Bundle Creator: Build combos with fixed items or customizable selection groups (e.g. Step 1: Pick Protein, Step 2: Pick Side, Step 3: Pick Drink).',
-      'Differential Pricing & Upgrades: Set base bundle price and apply additive charges for premium protein or beverage choices.',
-      'Recipe-Level Inventory Depletion: Automatically depletes ingredient inventories based on the specific items chosen inside the bundle.',
-      'Omnichannel Synchronization: Combos synchronize across counter POS, mobile waiter tablets, self-ordering QR menus, and online ordering.',
-      'Time-Restricted Promotional Windows: Automatically enable combos during specific hours, days of the week, or holiday seasons.',
-      'Bundle Popularity Reports: Identify your best-selling combos, top modifier upgrade choices, and total revenue generated per package.'
+      'Multi-Tier Bundle Creator: Build fixed combos or flexible packages with item quantities and unlimited round flags.',
+      'Timezone-Aware Availability Scheduling: Configure Always, Weekly day-of-week schedules, or Custom Date promotional windows evaluated automatically in the branch local timezone.',
+      'Meal Session & Order-Type Gating: Restrict Unlimited Meals to Breakfast, Lunch, or Dinner sessions and enforce Dine-In / Quick Order eligibility at checkout.',
+      'Multi-Station KOT Splitting & Order Consolidation: Route individual bundle sub-items to their assigned kitchen/bar stations while consolidating split deal rows cleanly on customer order details and invoices.',
+      'Dynamic Homepage Menu Showcases: Spotlight curated Menu, Category, Item, Combo, and Unlimited Meal sections directly on your Customer App and Restaurant Website.',
+      'Recipe-Level Inventory Depletion: Automatically depletes ingredient inventories based on the specific items chosen inside the bundle.'
     ],
     faqs: [
       { question: 'Can customers customize items inside a combo deal?', answer: 'Yes. SavoryOps supports both fixed bundles and flexible customizable combos. For example, in a "Family Meal Deal", the customer can choose 2 pizzas from a selected list, 1 appetizer, and 2 soda flavors.' },
@@ -1788,13 +1791,13 @@ export const FEATURES_DATA = {
       { title: 'High-Contrast Kitchen Visibility', desc: 'Engineered with large high-contrast fonts, clear order type badges (Dine-in, Takeaway, Delivery), and allergy highlights visible from 15 feet away.' }
     ],
     features: [
-      '24/7 Always-On Live Ticket Stream: Microsecond WebSocket sync displays orders the instant they are rung up on POS or scanned at tables.',
-      'Acoustic Audio Notification Chimes: Distinct kitchen chimes alert chefs to incoming orders even during loud dinner rush noise.',
-      'Visual Urgency Timers: Live elapsed minute counters color-code tickets (Green under 10 min, Amber 10-15 min, Red over 15 min).',
-      'Station & Category Filtering: Configure screens to show only Grill items, Fryer tickets, Dessert orders, or Expo master overview.',
-      'Allergy Warnings & Cooking Modifiers: High-visibility badge callouts for severe allergies (Gluten-Free, Nut Allergy) and steak temperatures.',
-      'One-Tap Ticket & Item Bumping: Line cooks tap items or tickets to update order status to Cooking, Ready, or Picked Up.',
-      'Full-Screen Kiosk Mode: Optimized for full-screen web views with zero address bar distractions or unwanted popups.'
+      '24/7 Always-On Live Ticket Stream: Real-time polling and station-specific Public KDS links display orders the instant they are placed on POS, Employee App, or QR menus.',
+      'Menu-Assigned Kitchen & Bar Routing: Configure named, color-coded KOT stations and assign specific menus so Grill, Tandoor, Chinese, or Bar screens only show relevant items—including split Combo sub-items.',
+      'Interactive 2-Way Ticket Bumping & Item Checklists: Chefs tap individual dish checklists and bump tickets sequentially through Open → Confirmed → Running → Ready to Serve.',
+      'Recall Completed & Cancelled KOT Modals: Review recently bumped or voided tickets and restore accidentally bumped orders back to active preparation.',
+      'Web Bluetooth ESC/POS Auto-Printing & Acoustic Chimes: Connect thermal kitchen printers directly from the browser for automatic KOT printing alongside audible rush-hour chimes.',
+      'Visual Urgency Timers & Diet Badges: Live elapsed minute counters color-code tickets (Green → Amber → Red) with clear Veg/Non-Veg indicators and modifier badges.',
+      'Full-Screen Kiosk Mode & Order Type Filtering: Filter tickets by Dine-In, Takeaway, Delivery, or Quick Order in distraction-free full-screen mode.'
     ],
     faqs: [
       { question: 'What hardware do I need to run the Public KOT Display?', answer: 'Any device with a modern web browser! You can use an inexpensive Smart TV, a TV with a Fire Stick / Google Chromecast, an Android tablet, an iPad, or a standard PC monitor.' },
@@ -2047,5 +2050,241 @@ export const FEATURES_DATA = {
     ],
     ctaText: 'View Pricing & Plans',
     ctaLink: '/pricing'
+  },
+  'customer-facing-display': {
+    id: 'customer-facing-display',
+    badge: 'Dual-Screen Counter Transparency',
+    title: 'Live Customer Facing Display (CFD) & Dual-Screen Sync',
+    metaTitle: 'Restaurant Customer Facing Display (CFD) Software | SavoryOps',
+    metaDescription: 'Build guest trust at checkout with SavoryOps Live Customer Facing Display (CFD). 0ms dual-screen BroadcastChannel sync, live cart breakdown, change due, and token screens.',
+    primaryKeyword: 'Restaurant Customer Facing Display Software',
+    secondaryKeywords: [
+      'customer facing display pos',
+      'dual screen pos display',
+      'restaurant secondary customer screen',
+      'live pos cart display',
+      'qsr token order confirmation screen',
+      'cfd restaurant software'
+    ],
+    h1: 'Real-Time Customer Facing Display (CFD) & Dual-Screen POS Sync',
+    subtitle: 'Give counter guests crystal-clear visibility into itemized dishes, combo savings, tax breakdowns, cash change due, and order token numbers in real time.',
+    overview: 'Checkout surprises and misheard totals slow down counter queues and erode customer confidence. The SavoryOps Customer Facing Display (CFD) turns any secondary monitor or counter tablet into a branded, zero-login live order board paired to a specific POS station. Powered by 0ms local BroadcastChannel synchronization for dual-screen setups and cross-device backend syncing for standalone tablets, the CFD transitions seamlessly across Welcome, Active Cart, Payment Tender, and Order Confirmation states.',
+    benefits: [
+      { title: 'Zero-Latency Dual-Screen Sync', desc: 'Instant 0ms cart synchronization via browser BroadcastChannel API alongside cross-device network sync for remote counter tablets.' },
+      { title: 'Complete Checkout Transparency', desc: 'Displays item quantities, Veg/Non-Veg indicators, combo sub-items, addons, discount savings, taxes, round-off, and grand total live.' },
+      { title: 'Clear Payment & Change Prompts', desc: 'Shows cash tendered and exact change due, or prompts guests to scan QR/tap cards during digital payment.' },
+      { title: 'Branded Order Token Confirmation', desc: 'Celebrates completed checkouts with large order number and pickup token number callouts plus soft confirmation chimes.' },
+      { title: 'Zero-Login Station Pairing', desc: 'Launch directly via each POS station’s dedicated Customer Display URL in full-screen mode with 18-language RTL support.' }
+    ],
+    features: [
+      '4-Stage Live Display Lifecycle: Automatically cycles between IDLE (Welcome + Live Clock), CART_ACTIVE, PAYMENT, and ORDER_SUCCESS screens.',
+      'Dual-Layer Synchronization: Combines instant local BroadcastChannel + localStorage sync with server-backed cross-device sync.',
+      'Itemized Cart & Deal Visualization: Renders dietary Veg/Non-Veg indicators, Combo/Unlimited deal summaries, add-on chips, and special notes.',
+      'Granular Bill & Savings Breakdown: Live subtotal, item & overall savings badge, before/after-tax charges, itemized taxes, and round-off line.',
+      'Payment Mode & Cash Change Screen: Displays Cash Tendered and Change Due for cash sales, or interactive terminal/QR payment prompts.',
+      'Full-Screen Kiosk Controls: Includes branch logo branding, station code badge, live online indicator, sound chime toggle, and 18-language selector.'
+    ],
+    faqs: [
+      { question: 'Do I need proprietary second-screen hardware to run the Customer Facing Display?', answer: 'No. You can open the station’s Customer Display URL on a second monitor wired to your POS PC (0ms BroadcastChannel sync) or on a separate iPad/Android tablet facing the customer via cross-device sync.' },
+      { question: 'What information can customers see on the display?', answer: 'Customers see a branded welcome screen when idle, live itemized dishes with modifiers, discounts/savings, taxes, and round-off while ringing up, cash tendered/change due or QR tap prompts during payment, and their order token number upon completion.' },
+      { question: 'Does the Customer Facing Display require separate staff login credentials?', answer: 'No. Each POS station provides a zero-login Customer Display link in Branch POS Stations and directly inside the POS screen.' }
+    ],
+    ctaText: 'Explore POS Terminal',
+    ctaLink: '/features/pos-system'
+  },
+  'pos-register-shifts': {
+    id: 'pos-register-shifts',
+    badge: 'Cash Drawer Control & Z-Reports',
+    title: 'POS Register Shift Management, Cash Movements & Z-Reports',
+    metaTitle: 'POS Register Shift Management & Cash Drawer Z-Reports | SavoryOps',
+    metaDescription: 'Track every register shift per POS station across Web POS and Cashier Mobile App. Opening floats, CASH_IN/CASH_OUT drawer movements, blind counts, and Z-Report audits.',
+    primaryKeyword: 'POS Register Shift Management Software',
+    secondaryKeywords: [
+      'pos shift management',
+      'cash drawer cash in cash out',
+      'restaurant z report software',
+      'cashier register shift report',
+      'pos blind cash count',
+      'mobile cashier shift bar'
+    ],
+    h1: 'Station-Wise POS Register Shift Management & Cash Drawer Audits',
+    subtitle: 'Control every cash drawer across Owner Web POS, Zero-Login Public POS, and the Cashier Employee App with opening floats, cash movements, and Z-Reports.',
+    overview: 'Shared counters and multi-shift dining days make cash accountability impossible without structured register handovers. SavoryOps Register Shift Management ties every POS order and refund to an active station shift. Operators open shifts with verified floats, record mid-shift CASH_IN and CASH_OUT drawer movements with reasons, inspect live expected cash balances, and close shifts with blind counted cash reconciliation that immediately generates printable Z-Reports and feeds the Owner Panel Register Shift Report.',
+    benefits: [
+      { title: 'Per-Station Daily Shift Numbering', desc: 'Each POS station tracks independent open/closed shifts with automatic daily shift numbering reset in your branch timezone.' },
+      { title: 'Audited Cash In / Cash Out Movements', desc: 'Log every mid-shift petty cash payout or drawer top-up with mandatory reasons, timestamps, and staff attribution.' },
+      { title: 'Unified Web & Mobile Cashier Control', desc: 'Manage identical shift lifecycles from Owner Web POS, Public POS terminals, and the Employee Mobile App Cashier Shift Bar.' },
+      { title: 'Instant Z-Reports & Variance Alerts', desc: 'Blind cash counting computes exact surplus or shortage discrepancies and generates itemized tender & cash drawer Z-Reports.' }
+    ],
+    features: [
+      'Station-Scoped Open Shift Workflow: Assign the active branch operator, declare opening cash float, and enter opening shift notes.',
+      'Real-Time Cash Drawer Calculator: Automatically computes expected cash from Opening Float + Cash Sales + Cash In − Cash Out − Cash Refunds.',
+      'Cash Movement Ledger (CASH_IN / CASH_OUT): Log drawer drops, change bank additions, and petty cash expenses with employee names.',
+      'Blind Shift Close & Discrepancy Reconciliation: Compare actual counted cash against system expectations and flag balanced, surplus, or shortage variances.',
+      'Cashier Mobile App Shift Bar: Built-in CashierShiftBar with Open Shift, Cash In/Out, Drawer Summary, Station Switcher, and End Shift Z-Report modals.',
+      'Register Shift Sales Report: Owner Panel report hub page with KPI cards, station/status/date filters, and historical Z-Report slip viewer.'
+    ],
+    faqs: [
+      { question: 'Can cashiers manage register shifts from the Employee Mobile App?', answer: 'Yes. Cashier mode includes a dedicated Cashier Shift Bar allowing operators to switch POS stations, open shifts, record Cash In/Out movements, view drawer summaries, and close shifts with Z-Reports.' },
+      { question: 'How does SavoryOps calculate expected cash in the drawer?', answer: 'Expected Cash is calculated dynamically as: Opening Float + Cash Sales + Cash In movements − Cash Out movements − Cash Refunds, giving managers exact visibility before blind closing.' },
+      { question: 'Can multiple shifts run on the same POS station in one day?', answer: 'Yes. Morning, afternoon, and evening cashiers can each open and close their own numbered shift on the same POS register with separate Z-Reports.' }
+    ],
+    ctaText: 'Explore Financial Reports',
+    ctaLink: '/features/advanced-reports'
+  },
+  'multi-station-pos': {
+    id: 'multi-station-pos',
+    badge: 'Multi-Counter & Kiosk Ready',
+    title: 'Multi-Station POS Terminals & Zero-Login Public POS Portals',
+    metaTitle: 'Multi-Station POS Terminals & Zero-Login Public POS Links | SavoryOps',
+    metaDescription: 'Configure multiple billing counters per branch with live shift indicators, station codes, and shareable Zero-Login Public POS URLs in SavoryOps.',
+    primaryKeyword: 'Multi-Station Restaurant POS Software',
+    secondaryKeywords: [
+      'multi counter restaurant pos',
+      'public pos terminal link',
+      'zero login pos kiosk',
+      'pos station management',
+      'branch pos counters',
+      'counter pos terminal'
+    ],
+    h1: 'Multi-Station POS Terminals & Zero-Login Public Counter Portals',
+    subtitle: 'Set up dedicated billing stations for Main Counter, Bar, Takeaway, or Patio—each with live shift tracking, a Customer Display link, and a Public POS URL.',
+    overview: 'High-volume venues operate multiple ordering counters simultaneously—front cashier desks, bar registers, takeaway windows, and patio stations. SavoryOps lets branch managers configure unlimited named POS stations with unique station codes, view which operator currently has an open shift on each terminal, and launch dedicated Zero-Login Public POS links on counter tablets or touch PCs without exposing owner back-office logins.',
+    benefits: [
+      { title: 'Dedicated Station Identity', desc: 'Organize counters with clear names and codes (e.g. POS-1, BAR, TAKEAWAY) for accurate shift and sales attribution.' },
+      { title: 'Zero-Login Public Counter Mode', desc: 'Open a station’s secure Public POS URL in fullscreen on dedicated counter hardware without handing out owner admin passwords.' },
+      { title: 'Paired Customer Facing Display', desc: 'Every POS station pairs directly with its own Customer Facing Display URL for live dual-screen checkout.' },
+      { title: 'Real-Time Shift Visibility', desc: 'See at a glance from Branch Settings which POS stations have active open shifts and which operator is logged on.' }
+    ],
+    features: [
+      'Branch POS Station Registry: Create, edit, toggle active status, and assign short codes to every register counter in a branch.',
+      '1-Click Public POS & Customer Display Links: Copy or launch standalone station-scoped POS and CFD URLs right from the station card.',
+      'Fullscreen Counter Kiosk Bar: Dedicated top bar with branch name, fullscreen toggle, Bluetooth printer status, and language switcher.',
+      'Station-Scoped Shift & Order Binding: Orders and register shifts automatically tag the exact POS station ID for granular reconciliation.',
+      'Operating Hours & Deal Availability Sync: Public POS stations automatically enforce branch operating hours, after-hours rules, and time-gated deals.'
+    ],
+    faqs: [
+      { question: 'Why use Zero-Login Public POS URLs on counter tablets?', answer: 'Zero-Login Public POS links let dedicated counter screens launch straight into POS billing and station shift management without risking exposure of your Owner Panel financials, reports, or settings.' },
+      { question: 'Can each POS station have its own Customer Facing Display?', answer: 'Yes. Every POS station generates both a Public POS URL and a paired Public Customer Display URL so cart and payment updates sync directly to that counter’s guest screen.' },
+      { question: 'Can I see which cashier has an open shift on each station?', answer: 'Yes. The Branch POS Stations tab shows a live Open/Closed shift badge alongside the active shift number and operator name.' }
+    ],
+    ctaText: 'Explore POS System',
+    ctaLink: '/features/pos-system'
+  },
+  'waiter-call-assistance': {
+    id: 'waiter-call-assistance',
+    badge: 'Instant Table Hospitality',
+    title: 'Real-Time Table Waiter Call & Diner Assistance System',
+    metaTitle: 'QR Table Waiter Call & Diner Assistance Software | SavoryOps',
+    metaDescription: 'Let QR dine-in guests summon waiters with 1 tap for water refills, cutlery, table cleaning, or the bill—with push alerts and 1-tap employee acknowledgement.',
+    primaryKeyword: 'Restaurant QR Table Waiter Call System',
+    secondaryKeywords: [
+      'call waiter qr code system',
+      'restaurant table service request',
+      'waiter call alert app',
+      'bring bill qr button',
+      'contactless waiter paging',
+      'table assistance software'
+    ],
+    h1: 'Real-Time QR Table Waiter Call & Service Assistance Workflow',
+    subtitle: 'Give seated diners a 1-tap Call Waiter button with categorized service requests, anti-spam cooldown protection, and instant Employee App alerts.',
+    overview: 'Even with contactless QR ordering, great dine-in hospitality still requires timely human service—refilling water, bringing extra napkins, clearing plates, or delivering the check. SavoryOps embeds a smart Call Waiter button across the QR Customer Website, Customer Mobile App, and active Order Details screen. Guests pick why they need a server, and waiters receive instant push notifications and a live alert banner on the Employee App with 1-tap "On My Way" acknowledgement.',
+    benefits: [
+      { title: '5 Specific Table Service Triggers', desc: 'Diners select General Assistance, Water Refill, Bring Bill, Cutlery & Napkins, or Clean Table so staff arrive prepared on the first trip.' },
+      { title: 'Live Employee App Alert Banner', desc: 'Pending table requests appear prominently on the Waiter Home screen via push events and real-time refresh.' },
+      { title: '1-Tap "On My Way" Accountability', desc: 'Waiters acknowledge requests in one tap, logging attending employee name and timestamp so tables are never double-visited or ignored.' },
+      { title: 'Built-In 60-Second Anti-Spam Cooldown', desc: 'Client and server-side 60-second rate limiting prevents accidental repeated taps from flooding floor staff.' }
+    ],
+    features: [
+      'Omnichannel Guest Access: Floating Call Waiter FAB and Order Details header button triggered automatically after scanning any table QR.',
+      'Categorized Assistance Modal: Clean radio-selection modal for General Assistance, Water Refill, Bring Bill, Cutlery & Napkins, and Clean Table.',
+      'Push Notification & Banner Dispatch: Fires targeted FCM/Expo push alerts to active branch waiters and surfaces a live WaiterCallAlertBanner.',
+      'Duplicate & Cooldown Protection: 60-second countdown timer on guest devices paired with server-side pending-request checks.',
+      'Attendance Tracking Ledger: Records request status (PENDING, ATTENDED, CANCELLED) along with attending employee ID, name, and timestamp.'
+    ],
+    faqs: [
+      { question: 'Where do customers see the Call Waiter button?', answer: 'Whenever a guest scans a table QR code on the Customer Website or Customer Mobile App, a floating Call Waiter button appears automatically—as well as directly inside active dine-in Order Details.' },
+      { question: 'How are waiters notified when a table requests assistance?', answer: 'Active waiters in that branch receive an instant push notification and see a highlighted Waiter Call Alert Banner showing the table number, assistance reason, and an "On My Way" acknowledgement button.' },
+      { question: 'What stops guests from tapping Call Waiter repeatedly?', answer: 'SavoryOps enforces a 60-second cooldown both on the guest interface and on the backend API, letting guests know the waiter has already been notified.' }
+    ],
+    ctaText: 'Explore QR Ordering',
+    ctaLink: '/features/qr-code-scanning'
+  },
+  'branch-operating-hours': {
+    id: 'branch-operating-hours',
+    badge: 'Schedule & After-Hours Control',
+    title: 'Branch Operating Hours & After-Hours Ordering Controls',
+    metaTitle: 'Restaurant Operating Hours & After-Hours Ordering Software | SavoryOps',
+    metaDescription: 'Enforce timezone-aware opening hours, day-offs, and scheduled kitchen breaks across POS, staff apps, and customer ordering—with flexible after-hours order type rules.',
+    primaryKeyword: 'Restaurant Operating Hours & After-Hours Software',
+    secondaryKeywords: [
+      'restaurant branch schedule software',
+      'after hours food ordering settings',
+      'scheduled kitchen break pos',
+      'timezone aware restaurant hours',
+      'multi-branch opening hours'
+    ],
+    h1: 'Timezone-Aware Branch Operating Hours & After-Hours Ordering Engine',
+    subtitle: 'Automatically enforce weekly opening hours, mid-day breaks, and holidays across every ordering channel—while optionally allowing select after-hours orders.',
+    overview: 'Multi-branch restaurants operate across timezones, afternoon prep breaks, and varying late-night policies. SavoryOps evaluates each branch’s local schedule in real time before orders are placed across Owner POS, Employee Mobile App, Customer App, and Customer Website. When a branch is on break, closed for the day, or outside operating hours, clear status banners notify staff and guests—while configurable After-Hours Ordering rules let you keep specific channels (such as Delivery or Pickup) open when the dining room closes.',
+    benefits: [
+      { title: 'Timezone-Accurate Schedule Enforcement', desc: 'Evaluates opening times, closing times, day-offs, and multiple mid-day break windows using each branch’s exact local timezone.' },
+      { title: 'Selective After-Hours Ordering', desc: 'Enable After-Hours Ordering in Branch Settings and whitelist exact order types (e.g. Delivery or Pickup) allowed outside normal hours.' },
+      { title: 'Consistent Omnichannel Status Banners', desc: 'Displays live operating hours warning banners with branch local time across Web POS, Employee App, Customer App, and Storefront Website.' },
+      { title: 'Backend Order Guardrails', desc: 'Validates every incoming customer and counter order on the server so disallowed order types cannot slip through after closing.' }
+    ],
+    features: [
+      'Day-by-Day Weekly Hours & Break Windows: Configure opening hours, closing hours, full day-offs, and scheduled kitchen breaks per branch.',
+      'After-Hours Order Type Whitelist: Toggle after-hours acceptance and choose which order types remain active after closing.',
+      'Cross-App Operating Hours Banners: Real-time status indicators in Employee App, Customer App, Customer Website, and Owner Web POS.',
+      'Automatic Order-Type Tab Gating: Automatically disables unavailable order types while keeping permitted after-hours channels active.'
+    ],
+    faqs: [
+      { question: 'Can we accept Delivery or Pickup pre-orders after our dining room closes?', answer: 'Yes. In Branch Settings, enable After-Hours Ordering and select the exact allowed order types (such as Delivery and Pickup) while keeping Dine-In closed.' },
+      { question: 'Does SavoryOps support afternoon break times between lunch and dinner?', answer: 'Yes. Each weekday schedule supports break intervals; during a break window, the branch status automatically updates across apps and websites.' },
+      { question: 'How are timezones handled for chains operating across cities?', answer: 'Every branch stores its own IANA timezone, so opening, closing, break checks, and deal availability always evaluate against that branch’s local clock.' }
+    ],
+    ctaText: 'Explore Multi-Branch Controls',
+    ctaLink: '/features/multiple-branches'
+  },
+  'saas-admin-governance': {
+    id: 'saas-admin-governance',
+    badge: 'Super-Admin Command & Security',
+    title: '360° SaaS Tenant Governance, Audit Logs & Executive Analytics',
+    metaTitle: '360° SaaS Restaurant Admin Governance, Audit Logs & KPIs | SavoryOps',
+    metaDescription: 'Govern your multi-tenant restaurant SaaS platform with live MRR/ARR/NRR KPIs, 360° tenant dossiers, domain/SSL health checks, tenant impersonation, and Before/After audit diffs.',
+    primaryKeyword: 'SaaS Restaurant Admin Governance & Audit Logs',
+    secondaryKeywords: [
+      'multi tenant saas admin dashboard',
+      'restaurant saas mrr arr nrr',
+      'tenant impersonation admin panel',
+      'system audit logs before after diff',
+      'custom domain ssl health check',
+      'tenant onboarding tracker'
+    ],
+    h1: '360° SaaS Tenant Governance, System Audit Trail & Executive KPIs',
+    subtitle: 'Monitor MRR, ARR, NRR, and churn; inspect 360° restaurant dossiers with onboarding & SSL checks; impersonate tenants for support; and audit every admin change.',
+    overview: 'Running a commercial multi-tenant restaurant SaaS requires full executive visibility and airtight administrative accountability. The SavoryOps Super-Admin Panel unifies SaaS financial analytics (MRR, ARR, ARPU, NRR, Churn, Conversion Rate, Top Owners Leaderboard, Quarterly Cohort Retention, and 1-click Executive PDF Exports) with a 360° Tenant Profile detailing lifecycle stages, onboarding milestones, resource quotas, custom domain SSL health, live branch POS status, 1-click Login as Tenant impersonation, multi-tab inactivity auto-logout, and tamper-evident Audit Logs with Before/After state diffs.',
+    benefits: [
+      { title: 'Executive SaaS Financial Intelligence', desc: 'Track live MRR, ARR, ARPU, Net Revenue Retention (NRR), churn, conversion funnel, cohort retention, and export branded Executive PDF reports.' },
+      { title: '360° Tenant Health & Onboarding Dossier', desc: 'Inspect active plans, renewal countdowns, branch/station/staff counts, resource limit meters, onboarding completion %, and live branch POS status in one view.' },
+      { title: '1-Click Tenant Impersonation & SSL Checks', desc: 'Diagnose tenant configurations via instant Login as Tenant sessions and verify custom domain DNS/SSL health on demand.' },
+      { title: 'Tamper-Evident Audit Trail & Session Security', desc: 'Log every admin action with IP, device details, target resource, and Before/After state diffs—protected by multi-tab 15/20-minute inactivity auto-logout.' }
+    ],
+    features: [
+      'SaaS Growth KPI Suite: Live MRR, ARR, ARPU, NRR, Churn Rate, Conversion Rate, Top Restaurants Leaderboard, and Quarterly Cohort Retention Matrix.',
+      '1-Click Executive PDF Summary: Generate formatted executive PDF briefings combining SaaS growth KPIs, tax & earnings summaries, top owners, and recent audit activity.',
+      '360° Business Detail & Lifecycle Stages: Manage Trial, Active, Grace Period, Suspended, Cancelled, and Archived tenant states alongside onboarding progress checklists.',
+      'Domain & SSL Health Checker + Live Branch Pulse: Verify custom subdomain/domain SSL status and monitor live open POS register shifts per branch.',
+      'System Audit Logs with Visual Before/After Diffs: Filterable audit ledger across Users, Subscriptions, Settings, Security, Exports, and System events with JSON/value diffs.',
+      'Multi-Tab Inactivity Auto-Logout & Lead Tools: Synchronized 15-minute warning countdown and 20-minute session lock, plus Contact Us and Newsletter Subscriber email dispatch.'
+    ],
+    faqs: [
+      { question: 'What SaaS metrics are tracked on the Super-Admin Executive Dashboard?', answer: 'The dashboard calculates live MRR, ARR, ARPU, Net Revenue Retention (NRR), Churn Rate, Trial-to-Paid Conversion Rate, Top Restaurants Leaderboard, Quarterly Cohort Retention, and supports 1-click Executive PDF export.' },
+      { question: 'How does Login as Tenant impersonation help support teams?', answer: 'Authorized admins can launch an authenticated session directly into a restaurant owner’s portal from the 360° Business Detail page to diagnose menu, tax, or POS settings without asking for passwords.' },
+      { question: 'What details are recorded in System Audit Logs?', answer: 'Each audit log captures the action, category, administrator identity, IP address, parsed device/browser details, target resource, timestamp, and side-by-side Before/After field diffs.' }
+    ],
+    ctaText: 'Explore Multi-Tenant Architecture',
+    ctaLink: '/features/multi-tenant-architecture'
   }
 };

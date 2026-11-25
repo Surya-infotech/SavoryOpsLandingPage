@@ -17,6 +17,14 @@ import {
   TableBar as TableBarIcon,
   VpnKey as VpnKeyIcon,
   WhatsApp as WhatsAppIcon,
+  Tv as CustomerDisplayIcon,
+  PointOfSale as RegisterShiftIcon,
+  Devices as MultiStationPosIcon,
+  RoomService as WaiterCallIcon,
+  AccessTime as OperatingHoursIcon,
+  AdminPanelSettings as AdminGovernanceIcon,
+  Insights as HeatmapIcon,
+  LocalOffer as DealsIcon,
 } from '@mui/icons-material';
 import { Box, Card, CardContent, Chip, Container, Grid, Typography, Tabs, Tab } from '@mui/material';
 import { useEffect, useState } from 'react';
@@ -89,6 +97,70 @@ const RECENTLY_SHIPPED_FEATURES = [
     link: '/features/customer-reviews',
     icon: <RateReviewIcon sx={{ fontSize: 24 }} />,
     color: '#f97316'
+  },
+  {
+    title: 'Customer Facing Display (CFD)',
+    subtitle: '0ms Dual-Screen & Tablet Sync',
+    description: 'Zero-login guest display synced via BroadcastChannel and cloud API showing live cart items, savings, taxes, change due, and pickup token numbers.',
+    link: '/features/customer-facing-display',
+    icon: <CustomerDisplayIcon sx={{ fontSize: 24 }} />,
+    color: '#0ea5e9'
+  },
+  {
+    title: 'POS Register Shifts & Z-Reports',
+    subtitle: 'Web POS & Cashier App Sync',
+    description: 'Station-wise shift openings, Cash In/Out drawer movements, blind counted cash closeouts, discrepancy tracking, and printable Z-Report slips.',
+    link: '/features/pos-register-shifts',
+    icon: <RegisterShiftIcon sx={{ fontSize: 24 }} />,
+    color: '#10b981'
+  },
+  {
+    title: 'Multi-Station & Public POS',
+    subtitle: 'Zero-Login Counter Terminals',
+    description: 'Named counter POS stations with live shift badges, paired Customer Display links, fullscreen kiosk mode, and Bluetooth ESC/POS printing.',
+    link: '/features/multi-station-pos',
+    icon: <MultiStationPosIcon sx={{ fontSize: 24 }} />,
+    color: '#6366f1'
+  },
+  {
+    title: 'QR Waiter Call & Assistance',
+    subtitle: 'Diner Request → Staff Banner',
+    description: 'Seated QR guests trigger 5 service requests (with 60s anti-spam cooldown), firing push alerts and live "On My Way" banners in Employee App.',
+    link: '/features/waiter-call-assistance',
+    icon: <WaiterCallIcon sx={{ fontSize: 24 }} />,
+    color: '#f59e0b'
+  },
+  {
+    title: 'Branch Hours & After-Hours',
+    subtitle: 'Timezone & Break Guardrails',
+    description: 'Enforce opening windows, day-offs, and scheduled kitchen breaks across every app—with selective after-hours Delivery/Pickup whitelists.',
+    link: '/features/branch-operating-hours',
+    icon: <OperatingHoursIcon sx={{ fontSize: 24 }} />,
+    color: '#14b8a6'
+  },
+  {
+    title: '360° SaaS Admin & Audit Logs',
+    subtitle: 'MRR/NRR, Impersonation & Diffs',
+    description: 'Executive SaaS KPIs, 360° tenant onboarding & SSL checks, 1-click Login as Tenant impersonation, Before/After audit diffs, and PDF exports.',
+    link: '/features/saas-admin-governance',
+    icon: <AdminGovernanceIcon sx={{ fontSize: 24 }} />,
+    color: '#8b5cf6'
+  },
+  {
+    title: 'Table Turn 7-Day Heatmap',
+    subtitle: 'Dwell Time & Party Analytics',
+    description: 'Interactive 7-Day × 16-Hour occupancy heatmap, Lunch vs. Dinner dwell benchmarking, and seating duration by party size (1–7+ Pax).',
+    link: '/features/advanced-reports',
+    icon: <HeatmapIcon sx={{ fontSize: 24 }} />,
+    color: '#ec4899'
+  },
+  {
+    title: 'Time-Gated Deals & Showcases',
+    subtitle: 'Meal Sessions & KOT Splitting',
+    description: 'Dynamic homepage menu showcases, Weekly/Custom-Date/Meal-Session deal gating, multi-station KOT splitting, and QR Add More Items.',
+    link: '/features/deals-and-bundles',
+    icon: <DealsIcon sx={{ fontSize: 24 }} />,
+    color: '#ef4444'
   }
 ];
 
