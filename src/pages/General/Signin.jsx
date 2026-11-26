@@ -30,8 +30,7 @@ const OwnerLogin = () => {
     const superAdminUrl = import.meta.env.VITE_SUPERADMIN_URL;
     const [alertMessage, setAlertMessage] = useState("");
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
-    const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
-    const { translations } = useLanguage();
+    const { language: selectedLanguage, translations, changeLanguage } = useLanguage();
     const [isLoading, setIsLoading] = useState(false);
     const [formError, setFormError] = useState('');
     const [warningMessage, setWarningMessage] = useState("");
@@ -80,8 +79,7 @@ const OwnerLogin = () => {
     const toggleLanguageDropdown = () => setLanguageDropdownVisible(!isLanguageDropdownVisible);
 
     const handleLanguageSelect = (language) => {
-        setSelectedLanguage(language.name);
-        localStorage.setItem('selectedLanguage', language.name);
+        changeLanguage(language.name);
         setLanguageDropdownVisible(false);
         window.location.reload();
     };

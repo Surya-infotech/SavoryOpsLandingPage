@@ -27,8 +27,7 @@ const OwnerSignUp = () => {
     const hosturl = import.meta.env.VITE_HOST_URL;
     const HOME_URL = import.meta.env.VITE_HOME_URL || '/';
     const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
-    const [selectedLanguage, setSelectedLanguage] = useState(() => localStorage.getItem('selectedLanguage') || 'English');
-    const { translations } = useLanguage();
+    const { language: selectedLanguage, translations, changeLanguage } = useLanguage();
     const [referralCode, setReferralCode] = useState('');
     const [referralError, setReferralError] = useState('');
     const [validatedCode, setValidatedCode] = useState('');
@@ -44,8 +43,7 @@ const OwnerSignUp = () => {
     const toggleLanguageDropdown = () => setLanguageDropdownVisible(!isLanguageDropdownVisible);
 
     const handleLanguageSelect = (language) => {
-        setSelectedLanguage(language.name);
-        localStorage.setItem('selectedLanguage', language.name);
+        changeLanguage(language.name);
         setLanguageDropdownVisible(false);
         window.location.reload();
     };

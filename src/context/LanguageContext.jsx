@@ -1,21 +1,32 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import loadLanguage from '../utils/LanguageLoader';
-import { isRtlLanguage } from '../constants/languages';
+import {
+    DEFAULT_LANGUAGE,
+    LANGUAGE_SOURCE_KEY,
+    SELECTED_LANGUAGE_KEY,
+    detectBrowserLanguage,
+    getLanguageHtmlCode,
+    isRtlLanguage,
+    normalizeSupportedLanguage,
+    resolveInitialLanguage,
+} from '../constants/languages';
 
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState(localStorage.getItem('selectedLanguage') || 'English');
+    const [language, setLanguage] = useState(() => resolveInitialLanguage());
     const [translations, setTranslations] = useState({});
     const isRtl = isRtlLanguage(language);
 
-    const changeLanguage = async (lang) => {
+    const changeLanguage = useCallback((lang, { manual = true } = {}) => {
         if (!lang) return;
-        setLanguage(lang);
-        localStorage.setItem('selectedLanguage', lang);
-        const loadedTranslations = await loadLanguage(lang);
-        setTranslations(loadedTranslations);
-    };
+        const resolvedLang = normalizeSupportedLanguage(lang) || DEFAULT_LANGUAGE;
+        setLanguage(resolvedLang);
+        if (typeof window !== 'undefined' && window.localStorage) {
+            window.localStorage.setItem(SELECTED_LANGUAGE_KEY, resolvedLang);
+            window.localStorage.setItem(LANGUAGE_SOURCE_KEY, manual ? 'manual' : 'auto');
+        }
+    }, []);
 
     useEffect(() => {
         if (typeof document !== 'undefined') {
@@ -25,13 +36,47 @@ export const LanguageProvider = ({ children }) => {
             document.body.dir = dir;
             document.body.setAttribute('dir', dir);
             document.body.classList.toggle('rtl-mode', isRtl);
-            document.documentElement.setAttribute('lang', isRtl ? 'ar' : (language === 'English' ? 'en' : language.toLowerCase()));
+            document.documentElement.setAttribute('lang', getLanguageHtmlCode(language));
         }
     }, [isRtl, language]);
 
     useEffect(() => {
-        changeLanguage(language);
+        let isActive = true;
+
+        if (typeof window !== 'undefined' && window.localStorage) {
+            const currentSource = window.localStorage.getItem(LANGUAGE_SOURCE_KEY);
+            window.localStorage.setItem(SELECTED_LANGUAGE_KEY, language);
+            if (currentSource !== 'manual') {
+                window.localStorage.setItem(LANGUAGE_SOURCE_KEY, 'auto');
+            }
+        }
+
+        loadLanguage(language).then((loadedTranslations) => {
+            if (isActive) {
+                setTranslations(loadedTranslations);
+            }
+        });
+
+        return () => {
+            isActive = false;
+        };
     }, [language]);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return undefined;
+
+        const handleBrowserLanguageChange = () => {
+            const storedLang = window.localStorage.getItem(SELECTED_LANGUAGE_KEY);
+            const source = window.localStorage.getItem(LANGUAGE_SOURCE_KEY);
+            if (source === 'manual' && normalizeSupportedLanguage(storedLang)) {
+                return;
+            }
+            changeLanguage(detectBrowserLanguage(), { manual: false });
+        };
+
+        window.addEventListener('languagechange', handleBrowserLanguageChange);
+        return () => window.removeEventListener('languagechange', handleBrowserLanguageChange);
+    }, [changeLanguage]);
 
     return (
         <LanguageContext.Provider value={{ language, translations, changeLanguage, isRtl }}>
