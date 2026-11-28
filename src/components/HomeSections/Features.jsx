@@ -258,8 +258,8 @@ const FEATURES = [
     id: 'coupon',
     priority: 21,
     icon: <CouponIcon />,
-    title: 'Coupon',
-    description: 'Create and manage discount coupons with flexible rules, validity, and usage limits.',
+    title: 'Omnichannel Coupons',
+    description: 'Create business/branch coupons across Website, App, POS & Cashier App with usage caps, eligibility drawers, and Coupon Usage Reports.',
   },
   {
     id: 'referral-system',

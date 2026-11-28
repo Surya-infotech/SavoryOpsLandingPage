@@ -215,9 +215,9 @@ const DETAILED_FEATURES = [
     category: 'mobile-apps',
     icon: <PhoneIcon sx={ICON_SIZE} />,
     title: '6-in-1 Employee Mobile App',
-    subtitle: 'Universal Role-Adaptive App',
+    subtitle: 'Universal Role-Adaptive App (v4.0.4)',
     description:
-      'Single cross-platform app that dynamically morphs into 6 distinct modes: Waiter, Cashier, Head Chef, Line Chef, Host, and Delivery.'
+      'One cross-platform app across 6 roles—Waiter, Cashier, Head Chef, Line Chef, Host, and Delivery—with QR Scanner, Cashier Checkout, Coupons, and Register Shift Z-Reports.'
   },
   {
     id: 'customer-mobile-app',
@@ -225,9 +225,9 @@ const DETAILED_FEATURES = [
     category: 'mobile-apps',
     icon: <MobileFriendlyIcon sx={ICON_SIZE} />,
     title: 'Customer Mobile App',
-    subtitle: 'Diner Loyalty & Direct Orders',
+    subtitle: 'Diner Ordering & Coupons (v4.0.4)',
     description:
-      'Commission-free Takeaway, Doorstep Delivery, 5-stage live order tracker, digital table reservations, reviews, and 1-click reorder.'
+      'Commission-free Takeaway, Delivery & QR ordering with HomeMenuShowcase, floating cart bar, one-tap Coupon drawer, 5-stage tracker, and table reservations.'
   },
   {
     id: 'dedicated-restaurant-website',
@@ -237,7 +237,7 @@ const DETAILED_FEATURES = [
     title: 'Dedicated Restaurant Website',
     subtitle: 'White-Label Online Storefront',
     description:
-      'Every restaurant receives its own dedicated website with direct commission-free ordering, visual photo menus, table reservations, and custom domains.'
+      'Every restaurant receives its own dedicated website with direct commission-free ordering, CouponBox promo modals, menu showcases, table reservations, and custom domains.'
   },
   {
     id: 'qr-code-scanning',
@@ -551,10 +551,10 @@ const DETAILED_FEATURES = [
     priority: 31,
     category: 'multi-tenant-saas',
     icon: <CouponIcon sx={ICON_SIZE} />,
-    title: 'Coupon & Discount Engine',
-    subtitle: 'Targeted Marketing Campaigns',
+    title: 'Omnichannel Coupon Engine',
+    subtitle: 'Website, App, POS & Cashier Sync',
     description:
-      'Generate promotional vouchers with usage limits, minimum ticket thresholds, percentage/flat discounts, and expiration dates.'
+      'Business/branch-scoped percentage & flat coupons across all 4 ordering channels with per-customer limits, Available Coupons drawers, and Coupon Usage Reports.'
   },
   {
     id: 'referral-system',

@@ -2,6 +2,7 @@ import {
   CalendarToday as CalendarTodayIcon,
   CardGiftcard as CardGiftcardIcon,
   CheckCircle as CheckCircleIcon,
+  ConfirmationNumber as CouponIcon,
   CreditCard as PaymentGatewayIcon,
   DevicesOther as DevicesOtherIcon,
   Groups as GroupsIcon,
@@ -84,8 +85,8 @@ const RECENTLY_SHIPPED_FEATURES = [
   },
   {
     title: '18 Global Languages',
-    subtitle: 'Native Arabic & Farsi RTL',
-    description: 'Comprehensive localization across 18 languages with complete native Right-to-Left (RTL) layout support for Arabic and Farsi.',
+    subtitle: 'Auto-Detect + Native RTL',
+    description: 'Comprehensive localization across 18 languages with browser language auto-detection (English fallback) and native Arabic & Farsi RTL support.',
     link: '/features/multiple-languages',
     icon: <LanguageIcon sx={{ fontSize: 24 }} />,
     color: '#06b6d4'
@@ -161,6 +162,22 @@ const RECENTLY_SHIPPED_FEATURES = [
     link: '/features/deals-and-bundles',
     icon: <DealsIcon sx={{ fontSize: 24 }} />,
     color: '#ef4444'
+  },
+  {
+    title: 'Omnichannel Coupon Engine',
+    subtitle: 'Web, App, POS & Usage Reports',
+    description: 'Business/branch-scoped coupons across Website, Customer App, Owner POS & Employee App with Available Coupons drawers, audit logs, and Coupon Usage Reports.',
+    link: '/features/coupon',
+    icon: <CouponIcon sx={{ fontSize: 24 }} />,
+    color: '#f59e0b'
+  },
+  {
+    title: 'Promotional Banners & Subscribers',
+    subtitle: 'In-App Marketing & Email Dispatch',
+    description: 'Launch promotional marketing banners across customer web and mobile storefronts, capture newsletter subscribers, and send bulk email campaigns.',
+    link: '/features/dedicated-restaurant-website',
+    icon: <MenuBookIcon sx={{ fontSize: 24 }} />,
+    color: '#0ea5e9'
   }
 ];
 
@@ -212,13 +229,6 @@ const UPCOMING_ROADMAP = [
     subtitle: 'Digital & Physical Gift Cards',
     description: 'Create, sell, and redeem branded digital and printable gift cards with balance tracking and automated expiry management.',
     icon: <CardGiftcardIcon sx={{ fontSize: 24 }} />,
-    color: 'var(--secondary-color)'
-  },
-  {
-    title: 'Promotional Banners',
-    subtitle: 'In-App Marketing Campaigns',
-    description: 'Create and display promotional marketing banners and special event announcements across customer web and mobile platforms.',
-    icon: <MenuBookIcon sx={{ fontSize: 24 }} />,
     color: 'var(--secondary-color)'
   }
 ];

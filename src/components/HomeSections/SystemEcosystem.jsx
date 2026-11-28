@@ -65,11 +65,11 @@ const SYSTEM_MODULES = [
       'The primary command center for daily restaurant operations and multi-branch control. Manage station-scoped POS billing and Zero-Login Public POS/Customer Display links, station register shifts with Z-Reports, menu-assigned KOT stations with combo sub-item splitting, branch hours/after-hours rules, BOM inventory, and 30+ reports.',
     keyCapabilities: [
       'Multi-Station POS & Station-Wise Register Shifts (Open Float, Cash In/Out, Blind Close & Z-Reports)',
+      'In-Cart Omnichannel Coupon Engine, OrderReceiptModal, Bluetooth Thermal Printing & Coupon Usage Reports',
       'Live Customer Facing Display (CFD) with 0ms BroadcastChannel & Cross-Device Network Sync',
       'Menu-Assigned KOT Stations with Automatic Combo/Unlimited Sub-Item Department Splitting',
       'Branch Operating Hours, Scheduled Break Windows & Selective After-Hours Order Type Whitelists',
-      'Dynamic Table Turn-Time 7-Day × 16-Hour Heatmap, Lunch/Dinner Dwell & Party Size Analytics',
-      'Precision Bill of Materials (BOM) Inventory, Visual Floor Plans & Real-Time Profit & Loss (P&L)'
+      'Dynamic Table Turn-Time 7-Day × 16-Hour Heatmap, Promotional Banners, Subscribers & Referral Portal'
     ],
     primaryLink: '/features/pos-system',
     primaryLinkText: 'Explore POS & Operations',
@@ -88,10 +88,10 @@ const SYSTEM_MODULES = [
     description:
       'A standalone, white-labeled customer web portal hosted on custom subdomains or domains. Diners browse dynamic homepage menu showcases, order time-gated combos, add items directly to open QR dine-in orders, call waiters in 1 tap, book tables, and download PDF invoices.',
     keyCapabilities: [
-      'Dynamic Homepage Menu Showcases (Curated Menus, Categories, Items, Combos & Unlimited Meals)',
+      'Dynamic Homepage Menu Showcases & Deals Filtering (Menus, Categories, Items, Combos & Unlimited Meals)',
+      'CouponBox & Available Coupons Modal with Eligible/Locked Gaps, Best-Savings Highlight & Tax Breakdown',
       'QR Table Call Waiter Modal (5 Service Triggers + 60s Anti-Spam Cooldown) & Add More Items',
       'Timezone-Aware Operating Hours, Scheduled Breaks & After-Hours Order Type Enforcement',
-      'Timezone & Meal-Session Gated Deals (Always, Weekly, Custom Date, Breakfast/Lunch/Dinner)',
       'Multi-Channel Checkout (Dine-In QR, Takeaway, Delivery) & Digital Table Reservations',
       'Consolidated Deal Order Views, Verified Reviews & Downloadable HTML/PDF Invoices'
     ],
@@ -103,21 +103,21 @@ const SYSTEM_MODULES = [
   },
   {
     id: 'employee-app',
-    name: '6-in-1 Adaptive Staff Mobile App (v4.0.2)',
+    name: '6-in-1 Adaptive Staff Mobile App (v4.0.4)',
     tabLabel: 'Employee App',
     badge: 'Multi-Role Staff Terminal',
     icon: <PhoneIphoneIcon />,
     targetRoles: ['Waiters', 'Cashiers', 'Line Chefs', 'Head Chefs', 'Hosts', 'Delivery Drivers'],
-    headline: '6-in-1 Adaptive Staff App with Cashier Shift Bar & Waiter Call Alerts',
+    headline: '6-in-1 Adaptive Staff App with Cashier Shift Bar, Coupons & QR Scanner',
     description:
-      'One universal native mobile app that dynamically morphs across 6 staff roles—now featuring a full mobile Cashier Register Shift Bar (Open/Close Shift, Cash In/Out, Drawer Summary & Z-Reports), live Waiter Call Alert Banners with 1-tap "On My Way" acknowledgement, and real-time Branch Operating Hours banners.',
+      'One universal native mobile app that dynamically morphs across 6 staff roles—featuring a mobile Cashier Register Shift Bar (Open/Close Shift, Cash In/Out, Drawer Summary & Z-Reports), built-in QR Scanner, Cashier Checkout with Coupons & Billing Breakdown, live Waiter Call Alert Banners, and Branch Operating Hours banners.',
     keyCapabilities: [
       'Cashier Mode Shift Bar: Switch POS Stations, Open Shift, Cash In/Out, Drawer Summary & Z-Reports',
+      'Cashier Checkout, QR Scanner & CouponSection with Live Tax/Discount Breakdown',
       'Waiter Mode Live Call Alerts: WaiterCallAlertBanner with Push Sync & "On My Way" Acknowledgement',
       'Branch Operating Hours Banner & After-Hours Order Guardrails Across Ordering Flows',
       'Head Chef & Line Chef Modes: Station KDS Queue, Ticket Bumping & Urgency Metrics',
-      'Host & Delivery Modes: Table Check-In Queue, GPS Delivery Routing & Doorstep Completion',
-      'AWS SNS SMS OTP & Phone Number Authentication for Frictionless Staff Sign-In'
+      'Host & Delivery Modes: Table Check-In Queue, GPS Delivery Routing & Doorstep Completion'
     ],
     primaryLink: '/features/employee-mobile-app',
     primaryLinkText: 'Explore Employee App',
@@ -127,21 +127,21 @@ const SYSTEM_MODULES = [
   },
   {
     id: 'user-app',
-    name: 'Customer & Diner Mobile App (v4.0.2)',
+    name: 'Customer & Diner Mobile App (v4.0.4)',
     tabLabel: 'Customer App',
     badge: 'Native Diner Experience',
     icon: <QrCodeScannerIcon />,
     targetRoles: ['In-House Diners', 'Takeout Guests', 'Delivery Customers', 'Loyalty Members'],
-    headline: 'Dynamic Menu Showcases, QR Waiter Call, Time-Gated Deals & Live Tracking',
+    headline: 'Menu Showcases, Floating Cart & Coupons, QR Waiter Call & Live Tracking',
     description:
-      'Empower diners with contactless QR table ordering, 1-tap Call Waiter assistance, dynamic homepage showcases, timezone-gated combo & unlimited deals, operating hours awareness, and real-time 5-stage order progress tracking right from their smartphones.',
+      'Empower diners with contactless QR table ordering, 1-tap Call Waiter assistance, HomeMenuShowcase sections, a dedicated CartScreen with floating cart bar and one-tap Coupons, centralized billing & tax breakdowns, operating hours awareness, and real-time 5-stage order tracking right from their smartphones.',
     keyCapabilities: [
-      'Dynamic HomeMenuShowcase Sections for Featured Menus, Categories, Dishes & Value Bundles',
+      'HomeMenuShowcase & ShowcaseDetails for Featured Menus, Categories, Dishes & Value Bundles',
+      'Dedicated CartScreen, Floating Cart Bar & One-Tap CouponSection with Tax Breakdown',
       'QR Table Call Waiter Modal (General, Water, Bring Bill, Cutlery, Clean Table) with 60s Cooldown',
       'Timezone-Aware Deal Badges & Unlimited Meal Session Scheduling + Operating Hours Sync',
       'Live 5-Stage Order Tracker: Placed → Preparing in Kitchen → Ready → On The Way → Delivered',
-      'Passwordless Phone Number & AWS SNS SMS OTP Login with Saved Delivery Addresses',
-      'Real-Time Push Notifications, PDF Invoices & 1-Click Reorder from History'
+      'Passwordless Phone Number & AWS SNS SMS OTP Login with BranchSelection & HTML/PDF Invoices'
     ],
     primaryLink: '/features/customer-mobile-app',
     primaryLinkText: 'Customer App Details',

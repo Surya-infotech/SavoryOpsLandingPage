@@ -181,24 +181,24 @@ export const FEATURES_DATA = {
     secondaryKeywords: ['pos systems multi-language support', 'multilingual restaurant software', 'multi-language qr menu'],
     h1: 'Multi-Language Restaurant Management & POS Software',
     subtitle: 'Break down language barriers in front-of-house service, back-of-house kitchen prep, and dynamic customer QR digital menus.',
-    overview: 'SavoryOps supports international dining venues, tourist hotspots, and diverse restaurant teams with multi-language interfaces. Waitstaff and kitchen cooks can work in their native languages, while QR code menus automatically adapt to the guest’s preferred browser language.',
+    overview: 'SavoryOps supports international dining venues, tourist hotspots, and diverse restaurant teams with multi-language interfaces. Staff and owners can work in their native languages, while customer portals and auth screens automatically detect the visitor’s browser language (falling back to English if unsupported) and allow instant manual switching.',
     benefits: [
-      { title: '11 Global Languages Supported', desc: 'Full native interface support for Arabic, English, Spanish, French, German, Greek, Dutch, Italian, Russian, Portuguese, and Polish.' },
-      { title: 'Native Arabic & Right-to-Left (RTL)', desc: 'Seamless bidirectional RTL interface for Middle Eastern hospitality operators and Arabic-speaking staff.' },
-      { title: 'Fewer Kitchen Misunderstandings', desc: 'Cooks can read prep notes in their preferred language, reducing cooking mistakes.' },
-      { title: 'International Franchise Ready', desc: 'Deploy across multiple countries with localized menus and unified corporate analytics.' }
+      { title: '18 Global Languages Supported', desc: 'Full native interface support for Arabic, Chinese (S), Chinese (T), Dutch, English, Estonian, Farsi, French, German, Greek, Italian, Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Spanish, and Turkish.' },
+      { title: 'Native Arabic & Farsi RTL', desc: 'Seamless bidirectional Right-to-Left (RTL) interface for Arabic and Farsi across Admin, Owner, Employee, and Customer portals.' },
+      { title: 'Browser Auto-Detection & Fallback', desc: 'Automatically detects the visitor’s primary browser language across web portals and falls back cleanly to English when a browser language is not in the suite.' },
+      { title: 'International Franchise Ready', desc: 'Deploy across multiple countries with localized menus, branch currencies, and unified corporate analytics.' }
     ],
     features: [
-      '11 built-in language packs: Arabic (SA), English (GB), Spanish (ES), French (FR), German (DE), Greek (GR), Dutch (NL), Italian (IT), Russian (RU), Portuguese (PT), and Polish (PL)',
-      'Native Right-to-Left (RTL) directional layout rendering for Arabic and Middle Eastern markets',
-      'Localized guest QR menus with automatic smartphone language detection',
-      'Multilingual receipts and thermal invoice printing',
+      '18 built-in language packs: Arabic, Chinese (S), Chinese (T), Dutch, English, Estonian, Farsi, French, German, Greek, Italian, Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Spanish, and Turkish',
+      'Native Right-to-Left (RTL) directional layout rendering for Arabic and Farsi across web and mobile apps',
+      'Automatic browser language detection with English fallback and persistent manual language selector',
+      'Multilingual receipts, digital PDF invoices, and thermal Bluetooth/ESC-POS printing',
       'Centralized catalog translation for food items, modifiers, and allergy warnings'
     ],
     faqs: [
-      { question: 'Which languages does SavoryOps support?', answer: 'SavoryOps supports 11 major global languages: Arabic, English, Spanish, French, German, Greek, Dutch, Italian, Russian, Portuguese, and Polish, with continuous regional expansions.' },
-      { question: 'Does SavoryOps support Right-to-Left (RTL) languages like Arabic?', answer: 'Yes! SavoryOps features native RTL layout rendering for Arabic across administrative dashboards, POS counters, and customer-facing QR digital menus.' },
-      { question: 'Can guests switch languages on QR menus?', answer: 'Yes, guests scanning your QR code can switch languages with a single tap, viewing item names, descriptions, and dietary labels in their preferred tongue.' },
+      { question: 'Which languages does SavoryOps support?', answer: 'SavoryOps supports 18 global languages: Arabic, Chinese (Simplified), Chinese (Traditional), Dutch, English, Estonian, Farsi, French, German, Greek, Italian, Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Spanish, and Turkish.' },
+      { question: 'Does SavoryOps support Right-to-Left (RTL) languages like Arabic and Farsi?', answer: 'Yes! SavoryOps features native RTL layout rendering for both Arabic and Farsi across administrative dashboards, POS counters, mobile apps, and customer-facing storefronts.' },
+      { question: 'Does SavoryOps automatically detect the user’s browser language?', answer: 'Yes. Web portals automatically detect the browser’s primary language and select the matching language pack—or fall back to English if that browser language is not supported—while still allowing manual switching.' },
       { question: 'Can the kitchen print KOTs in a different language than the customer menu?', answer: 'Yes. SavoryOps allows bilingual catalog mapping. For example, guests can order in Arabic or English while your thermal printer or KDS displays items in another preferred tongue for kitchen staff.' },
       { question: 'Can I customize translations for unique local dish names and dietary disclaimers?', answer: 'Absolutely. While SavoryOps provides automated localized translations, operators have full manual editing control over every dish title, description, modifier, and allergen warning.' }
     ],
@@ -281,18 +281,18 @@ export const FEATURES_DATA = {
     secondaryKeywords: ['restaurant pos software', 'pos restaurant management system', 'full service restaurant pos'],
     h1: 'High-Speed Restaurant POS Billing Built for Peak Rushes',
     subtitle: 'Engineered for high-volume dining, quick service, bars, and cafes. Split checks, manage floor plans, and settle bills in seconds.',
-    overview: 'Front-of-house speed directly dictates guest satisfaction and table turnover. SavoryOps POS provides intuitive touch billing, custom modifier popups, bar pre-authorizations, split checks by seat or item, and integrated payment processing freedom.',
+    overview: 'Front-of-house speed directly dictates guest satisfaction and table turnover. SavoryOps POS provides intuitive touch billing, custom modifier popups, in-cart coupon validation & available coupon drawers, station register shifts with Z-Reports, 0ms Customer Facing Display (CFD) sync, and integrated payment processing freedom.',
     benefits: [
-      { title: 'Lightning Fast Billing', desc: 'Ring up orders in 3 taps with optimized item layouts and quick modifiers.' },
+      { title: 'Lightning Fast Billing', desc: 'Ring up orders in 3 taps with optimized item layouts, quick modifiers, and one-tap coupon application.' },
       { title: 'Visual Floor Plans', desc: 'Track table occupancy, turn times, and guest counts with real-time floor status.' },
-      { title: 'Split Checks with Ease', desc: 'Split by seat, item, or even custom percentages without holding up the line.' },
+      { title: 'Receipt Modal & Bluetooth Printing', desc: 'Preview itemized order receipts and print directly via USB, LAN, or Bluetooth ESC/POS thermal printers.' },
       { title: 'Processor Freedom', desc: 'No payment lock-in; connect your preferred merchant account without penalties.' }
     ],
     features: [
       'Interactive visual dining room layout with color-coded seating timers',
-      '1-tap check splitting by seat, item, or custom dollar amounts',
-      'Bar tab pre-authorizations and fast drink reorders',
-      'Universal printer compatibility (USB, Ethernet, Bluetooth thermal printers)'
+      'In-cart Coupon selector with live eligibility checks, savings preview, and manual promo code entry',
+      'Station-scoped Register Shifts (opening float, Cash In/Out, blind close & Z-Reports)',
+      'Universal printer compatibility (USB, Ethernet LAN, Wi-Fi, and Bluetooth thermal ESC/POS printers)'
     ],
     faqs: [
       { question: 'Can I use SavoryOps on my existing iPads and Android tablets?', answer: 'Yes. SavoryOps is completely hardware-agnostic and runs on iPads, Android tablets, Windows touch terminals, and Mac browsers.' },
@@ -324,8 +324,8 @@ export const FEATURES_DATA = {
     features: [
       'Chronological order timeline with timestamped event milestones',
       'Filter by order type (Dine-in, Takeaway, QR Contactless, Delivery)',
-      'One-click ticket reprints and digital receipt resending',
-      'Audit log of server edits, item voids, and manager overrides'
+      'Detailed billing breakdown with itemized taxes, applied coupon discounts, and payment mode logs',
+      'One-click Order Receipt Modal, Bluetooth thermal reprint, and PDF/HTML invoice export'
     ],
     faqs: [
       { question: 'Can I view past order summaries from previous dates?', answer: 'Yes. SavoryOps archives complete historical order summaries with itemized receipts, timestamps, server IDs, and payment methods for tax and auditing purposes.' },
@@ -469,7 +469,7 @@ export const FEATURES_DATA = {
       { title: 'Asset Valuation & Maintenance Audit', desc: 'Track physical equipment net book value, preventative maintenance repair expenses, and inter-branch equipment transfer logs.' }
     ],
     features: [
-      'Sales & Financial Reports: Gross & Net Revenue, Day Close & Register Shift Z-Reports (opening float, cash-in/cash-out, expected vs counted cash, discrepancy audits), Branch-wise comparative sales, Date-wise trends, Tax compliance, Payment Mode tender split, Additional Charges breakdown, Profit & Loss (P&L), Expense & Income, Accounts Payable (AP) Aging Report, Supplier Spend Analysis, and Order Cancellation & Void Report.',
+      'Sales & Financial Reports: Gross & Net Revenue, Day Close & Register Shift Z-Reports (opening float, cash-in/cash-out, expected vs counted cash, discrepancy audits), Coupon Usage Report (total redemptions, total discount given, average discount, order revenue & unique coupons used), Branch-wise comparative sales, Date-wise trends, Tax compliance, Payment Mode tender split, Additional Charges breakdown, Profit & Loss (P&L), Expense & Income, Accounts Payable (AP) Aging Report, Supplier Spend Analysis, and Order Cancellation & Void Report.',
       'Menu & Operations Reports: Item-Wise sales velocity, Category contribution analysis, Menu Engineering Matrix (Stars, Plowhorses, Puzzles, Dogs), Food Cost Variance Analysis (Ideal vs Actual), Wastage & Loss tracking, Hourly Sales Rush heatmaps, and Kitchen Speed prep times.',
       'Dining & Guests Reports: Dynamic Table Utilization & Turnover (7-Day × 16-Hour Peak Occupancy Heatmap, Lunch vs. Dinner dwell benchmarking, Party Size Seating Duration 1–2 / 3–4 / 5–6 / 7+ Pax), Customer Visit Frequency, Order Type distribution (Dine-In, Takeaway, Delivery, QR), Delivery Driver Performance Report, Table Reservation Analytics, Staff Sales & Tip Performance, and Guest Reviews & Feedback.',
       'Inventory & Stock Reports: Stock Balance valuation, Stock Ledger movement audit trails, Low Stock & Reorder Alert reports, ingredient consumption variance, and culinary shrinkage audits.',
@@ -1254,42 +1254,43 @@ export const FEATURES_DATA = {
   },
   'coupon': {
     id: 'coupon',
-    badge: 'Promotions & Discounts',
-    title: 'Restaurant Coupon, Discount & Voucher Management Software',
-    metaTitle: 'Restaurant Coupon & Promotion Management Software | SavoryOps',
-    metaDescription: 'Launch percentage and flat discounts, promotional coupon codes, happy hour pricing rules, and single-use promo vouchers with SavoryOps.',
+    badge: 'Omnichannel Promotions',
+    title: 'Omnichannel Restaurant Coupon & Promotion Management',
+    metaTitle: 'Restaurant Coupon & Discount Management Software | SavoryOps',
+    metaDescription: 'Create business- or branch-scoped percentage and flat coupons across Website, Customer App, Owner POS, and Employee Cashier App with usage caps and Coupon Usage Reports.',
     primaryKeyword: 'Restaurant Coupon and Discount Management',
     secondaryKeywords: [
       'restaurant coupon management',
-      'restaurant promotional discounts',
-      'pos coupon codes',
-      'happy hour discount rules',
-      'restaurant voucher software',
-      'restaurant discount controls'
+      'omnichannel pos coupons',
+      'restaurant promo codes',
+      'coupon usage report',
+      'branch scoped restaurant discounts',
+      'restaurant voucher software'
     ],
-    h1: 'Dynamic Restaurant Promotion & Coupon Code Management',
-    subtitle: 'Drive guest acquisition and repeat dining visits with targeted discount codes, happy hour schedules, minimum spend rules, and manager PIN authorizations.',
-    overview: 'Promotions attract new guests and fill empty tables during slow dining hours, but uncontrolled discounts can bleed restaurant margins and open doors to employee theft. The SavoryOps Coupon and Promotion Management module gives operators strict, granular control over marketing discounts, single-use voucher codes, automated happy hours, and manager approval workflows.',
+    h1: 'Omnichannel Restaurant Coupon & Promotion Engine',
+    subtitle: 'Run targeted promo codes across your Customer Website, Diner Mobile App, Owner Web POS, and Employee Cashier App with business/branch scoping, order-type rules, per-customer caps, and live Coupon Usage Reports.',
+    overview: 'Promotions drive repeat orders and higher basket sizes, but uncontrolled discounting erodes margins. SavoryOps delivers a unified, subscription-gated Coupon Engine across every ordering channel—Customer Website, Customer Mobile App, Owner & Public POS, and Employee Cashier App. Operators define percentage or flat discounts with maximum discount caps, minimum order amounts, business or branch-level scoping, order-type restrictions, and total or per-customer redemption limits—backed by automatic expiry/exhaustion deactivation and real-time Coupon Usage Reports.',
     benefits: [
-      { title: 'Prevent Discount Fraud', desc: 'Enforce manager PIN authorizations and strict discount usage limits to stop unauthorized employee giveaways.' },
-      { title: 'Automated Happy Hour Pricing', desc: 'Schedule time-activated promotional pricing that automatically starts and ends without manual cashier intervention.' },
-      { title: 'Targeted Marketing Campaigns', desc: 'Issue trackable coupon codes for social media campaigns, influencer partnerships, and corporate perks.' },
-      { title: 'Detailed Discount Audit Trails', desc: 'Track every discount dollar applied, who authorized it, and which promotional campaign it belongs to.' }
+      { title: '4-Channel Omnichannel Sync', desc: 'Target coupons specifically to Website, Customer App, Owner/Public POS, or Employee Cashier App—or enable them everywhere.' },
+      { title: 'Business & Branch Scoping', desc: 'Launch brand-wide campaigns across all locations or restrict promo codes to selected restaurant branches.' },
+      { title: 'Smart Checkout Eligibility', desc: 'Diners and cashiers browse an Available Coupons drawer showing eligible offers, best-savings highlights, and exact minimum-spend gaps.' },
+      { title: 'Audit Logs & Coupon Usage Reports', desc: 'Track every redeemed and released coupon by order alongside KPIs for total redemptions, discount given, average discount, and attributed revenue.' }
     ],
     features: [
-      'Percentage, flat dollar amount, or item-specific discount rules',
-      'Single-use and multi-use coupon code generators with expiration date parameters',
-      'Minimum order value and qualifying menu category criteria (e.g. $10 off orders over $50)',
-      'Automated happy hour schedules with day-of-week and time-window triggers',
-      'Mandatory manager PIN verification toggle for manual cashier bill discounts',
-      'Promotion ROI report hub: track total revenue generated vs discount dollars conceded'
+      'Percentage or Fixed-amount discounts with configurable Maximum Discount Cap and Minimum Order Amount thresholds',
+      'Channel & Order-Type Targeting: restrict coupons to Website, Customer App, POS, or Employee App and specific order types (Dine-In, Delivery, Pickup, Takeaway, Quick Order)',
+      'Business-level or Multi-Branch scoping with branch-timezone start/end validity dates and automatic deactivation on expiry or exhaustion',
+      'Unlimited or Limited total usage caps, Per-Customer redemption limits, and Show-on-Frontend visibility toggle',
+      'One-tap Available Coupons drawer & manual code entry across Website (CouponBox), Customer App, Owner POS, and Employee Cashier App',
+      'Order Redemption & Release audit logs (auto-releasing redeemed counts when orders are cancelled) plus dedicated Coupon Usage Reports and CSV/PDF/Excel exports',
+      'SaaS Subscription Plan module gating (modules.coupon) managed from the Super Admin Plan Builder'
     ],
     faqs: [
-      { question: 'How can we prevent cashiers from abusing manual discounts?', answer: 'SavoryOps allows you to disable arbitrary manual discounts for cashiers. Any manual discount requires a manager PIN, and all discounts are logged with manager timestamps in the daily audit report.' },
-      { question: 'Can we create coupon codes for social media or flyers?', answer: 'Yes. You can generate alphanumeric coupon codes (e.g. SAVORY20) with predefined usage limits, start and end dates, and minimum spend requirements.' },
-      { question: 'How does automated Happy Hour discounting work?', answer: 'You can set automated rules (such as 25% off appetizers and craft beer from 4 PM to 7 PM, Monday through Thursday). The POS automatically applies the discounted pricing during those hours without manual cashier input.' },
-      { question: 'Can coupons be redeemed through table QR ordering?', answer: 'Yes. Diners ordering or paying through table QR codes can enter valid promo codes at checkout to apply discounts.' },
-      { question: 'Can we restrict discounts from applying to alcohol or specific items?', answer: 'Yes. You can configure discounts to exclude specific menu categories (like alcoholic beverages, tobacco, or specialty retail items) to comply with local laws and protect margins.' }
+      { question: 'Where can customers and staff apply SavoryOps coupons?', answer: 'Coupons work seamlessly across all 4 ordering channels: your dedicated Customer Website, the Customer Mobile App, Owner Web / Public POS terminals, and the Employee Cashier Mobile App.' },
+      { question: 'Can I restrict a coupon to specific branches, channels, or order types?', answer: 'Yes. Each coupon can be scoped to an entire business or selected branches, restricted to specific channels (Website, User App, POS, Employee App), and limited to chosen order types such as Delivery, Pickup, or Dine-In.' },
+      { question: 'How do usage limits and expiry dates work?', answer: 'You can set total redemption caps (unlimited or limited), per-customer usage limits, and branch-timezone start/end dates. Coupons automatically deactivate once expired or when their total usage limit is reached, and cancelled orders automatically release their redemption.' },
+      { question: 'Can customers see available promo codes during checkout?', answer: 'Yes. When "Show on Frontend" is enabled, checkout displays an Available Coupons drawer highlighting eligible offers, the highest-savings coupon, and the exact remaining amount needed for locked coupons.' },
+      { question: 'How can owners track coupon ROI and discount spend?', answer: 'The Owner Panel includes a dedicated Coupon Usage Report showing Total Redemptions, Total Discount Given, Average Discount, Total Order Revenue, and Unique Coupons Used, filterable by branch, fiscal year, date range, and coupon.' }
     ],
     ctaText: 'Start Free 14-Day Trial',
     ctaLink: '/signup'
@@ -1454,8 +1455,8 @@ export const FEATURES_DATA = {
     ],
     features: [
       'Role-Adaptive UI Morphing: Dynamic interface rendering based on JWT authenticated staff role permissions.',
-      'Waiter Mode: Visual floor plan table selector, digital catalog ordering, addon notes, and dish ready alerts.',
-      'Cashier Mode: Portable billing terminal for fast mobile invoice generation, payment settlement, and thermal printer sync.',
+      'Waiter Mode: Visual floor plan table selector, digital catalog ordering, addon notes, Waiter Call alert banners, and dish ready alerts.',
+      'Cashier Mode: Portable billing terminal with QR Scanner, Cashier Checkout & Coupon application, station Register Shift bar (Cash In/Out, Drawer Summary & Z-Reports), and thermal printer sync.',
       'Head Chef Mode: Kitchen queue supervisor dashboard with preparation timing alerts and station bottleneck tracking.',
       'Line Chef Mode: High-contrast order ticket cards with 1-tap item bumping to "Ready" status.',
       'Host / Greeter Mode: Front-of-house waiting list management, reservation confirmation, and table allocation.',
@@ -1497,12 +1498,12 @@ export const FEATURES_DATA = {
       { title: 'Direct Customer Reviews & Feedback', desc: 'Collect verified star ratings and photo feedback directly to safeguard your online reputation.' }
     ],
     features: [
-      'Multi-Channel Ordering: Unified support for Dine-In QR ordering, Curbside Takeaway, and Scheduled Home Delivery.',
-      'Visual Digital Catalog: Rich food photography, allergen badges (Vegan, Gluten-Free, Halal), and ingredient descriptions.',
-      'Live Step-by-Step Order Tracker: Real-time visual progress timeline keeping diners informed at every preparation stage.',
+      'Multi-Channel Ordering: Unified support for Dine-In QR ordering (via built-in QR Scanner), Curbside Takeaway, and Scheduled Home Delivery.',
+      'HomeMenuShowcase & Showcase Details: Curated homepage carousels for featured menus, categories, dishes, combos, and deals.',
+      'Dedicated CartScreen & Floating Cart Bar: Centralized cart billing & tax breakdown calculator with one-tap Coupon application and promo eligibility checks.',
+      'Live Step-by-Step Order Tracker: Real-time visual progress timeline keeping diners informed at every preparation stage, plus digital invoice export.',
       'Digital Table Reservation Engine: Diners book tables with instant status notifications upon host confirmation.',
       'Multiple Saved Delivery Addresses: Store Home, Work, and Custom address pins with landmark notes.',
-      'Integrated Payment Gateways: Supports Credit Cards, UPI, Digital Wallets, and Cash on Delivery.',
       'Direct Ratings & Dish Reviews: Diners rate individual menu dishes with comments and photos.'
     ],
     faqs: [
@@ -1840,11 +1841,12 @@ export const FEATURES_DATA = {
       'Direct Multi-Channel Ordering: Diners choose between Doorstep Delivery (with saved addresses & pins), Takeaway Pickup, or Contactless Dine-In ordering.',
       'Visual Interactive Menu Showcase: Rich photo menus categorized by courses, complete with dietary badges (Vegan, Halal, Gluten-Free) and spice levels.',
       'Multi-Step Modifier & Add-on Customizer: Guests customize dishes with sauces, toppings, portion sizes, preparation temperatures, and cooking notes.',
-      'Homepage Showcases & Carousels: Curate highlighted carousels for Chef Specials, Category Spotlights, Combo Meal Bundles, and Unlimited Buffets.',
+      'Homepage Showcases & Deals Filtering: Curate highlighted carousels for Chef Specials, Category Spotlights, Combo Meal Bundles, and Unlimited Buffets with timezone-aware deal filtering.',
+      'CouponBox & Available Coupons Modal: Diners enter promo codes or browse eligible offers with best-savings highlights and centralized cart billing/tax breakdowns.',
       'Online Table Booking Engine: Self-service table booking with instant confirmation, status history, guest celebration requests, and cancellation management.',
       'Live 5-Stage Order Progress Tracker: Customers watch real-time order status updates: Placed → In Prep → Cooking → Out for Delivery → Delivered.',
-      'Digital Tax Invoice Generation: 1-click download of beautifully styled, branded PDF tax invoices for guests and corporate expense records.',
-      'Announcement Bar & Daily Specials Marquee: Broadcast urgent updates, festival discount codes, and operational announcements across the top header.',
+      'Digital Tax Invoice Generation: 1-click download of beautifully styled, branded HTML/PDF tax invoices for guests and corporate expense records.',
+      'Promotional Banners & Newsletter Subscribers: Manage hero banners, announcement bars, and direct email subscriber campaigns from the Owner Panel.',
       'Verified Reviews & Star Ratings: Collect verified guest reviews, ratings, and feedback directly on menu items to build diner social proof.'
     ],
     faqs: [
