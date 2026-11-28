@@ -15,7 +15,6 @@ import {
   PhoneIphone as PhoneIphoneIcon,
   QrCodeScanner as QrCodeScannerIcon,
   Language as LanguageIcon,
-  AdminPanelSettings as AdminPanelSettingsIcon,
   CheckCircle as CheckCircleIcon,
   ArrowForward as ArrowForwardIcon,
   Badge as BadgeIcon,
@@ -29,30 +28,6 @@ import { useAppSettings } from '../../context/AppSettingsContext.jsx';
 import '../../styles/components/system-ecosystem.scss';
 
 const SYSTEM_MODULES = [
-  {
-    id: 'admin-panel',
-    name: 'SaaS Master Admin Panel',
-    tabLabel: 'Admin Panel',
-    badge: 'Master Control & Governance',
-    icon: <AdminPanelSettingsIcon />,
-    targetRoles: ['SaaS Super Admins', 'Platform Owners', 'System Operators'],
-    headline: '360° Multi-Tenant SaaS Governance, Executive KPIs & Audit Trail',
-    description:
-      'The master command center for your entire SaaS platform. Monitor live MRR, ARR, NRR, churn, cohort retention, and export Executive PDF reports; inspect 360° restaurant dossiers with onboarding checklists & SSL health; impersonate tenants in 1 click; and track Before/After audit diffs.',
-    keyCapabilities: [
-      'Executive SaaS KPIs (MRR, ARR, ARPU, NRR, Churn), Top Owners Leaderboard & Cohort Retention',
-      '360° Tenant Profile: Lifecycle Stages, Onboarding Tracker, Quotas, SSL Health & Live POS Pulse',
-      '1-Click Login as Tenant Impersonation & Multi-Tab Inactivity Auto-Logout (15m/20m)',
-      'System Audit Logs with IP/Device Attribution & Visual Before/After Diffs + 1-Click Executive PDF',
-      'Multi-Gateway Payment Settings (Stripe, Razorpay, PayPal) & Subscription Plan Builder',
-      'Subscriber & Contact Us Lead Management with Direct Email Dispatch'
-    ],
-    primaryLink: '/features/saas-admin-governance',
-    primaryLinkText: 'Explore SaaS Governance',
-    secondaryLink: '/pricing',
-    secondaryLinkText: 'Subscription Tiers',
-    image: '/images/features/reports-analytics.jpg'
-  },
   {
     id: 'owner-web',
     name: 'Restaurant Owner Operations Portal',
@@ -235,7 +210,7 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
           >
             {title || (
               <>
-                7 Interconnected Platforms.{' '}
+                6 Interconnected Platforms.{' '}
                 <span style={{ color: 'var(--primary-color, #10b981)' }}>One Unified SaaS Platform.</span>
               </>
             )}
@@ -252,7 +227,7 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
             }}
           >
             {subtitle ||
-              `${softwareName || 'SavoryOps'} delivers an all-inclusive SaaS ecosystem: Admin Panel, Owner Operations, Staff Mobile App, Customer Dining App, Dedicated Web Portal, Zero-Login Kitchen Screens, and WhatsApp & Push Notifications.`}
+              `${softwareName || 'SavoryOps'} delivers an all-inclusive SaaS ecosystem: Owner Operations, Staff Mobile App, Customer Dining App, Dedicated Web Portal, Zero-Login Kitchen Screens, and WhatsApp & Push Notifications.`}
           </Typography>
         </Box>
 
@@ -262,7 +237,8 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
             value={activeTab}
             onChange={handleTabChange}
             variant="scrollable"
-            scrollButtons={false}
+            scrollButtons="auto"
+            allowScrollButtonsMobile
             aria-label="SavoryOps System Modules"
             className="ecosystem-tabs"
             sx={{
@@ -278,18 +254,17 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
                 display: 'none'
               },
               '& .MuiTabs-flexContainer': {
-                justifyContent: { xs: 'flex-start', md: 'center' },
-                gap: { xs: 0.5, sm: 0.8 }
+                gap: { xs: 0.4, sm: 0.5 }
               },
               '& .MuiTabs-scroller': {
-                overflowX: 'auto !important',
                 scrollbarWidth: 'none',
                 '&::-webkit-scrollbar': {
                   display: 'none'
                 }
               },
               '& .MuiTabScrollButton-root': {
-                display: 'none'
+                width: 28,
+                color: 'var(--text-secondary, #64748b)'
               }
             }}
           >
@@ -301,15 +276,20 @@ const SystemEcosystem = ({ title, subtitle, showBadge = true }) => {
                 label={module.tabLabel || module.name}
                 sx={{
                   borderRadius: '40px',
-                  minHeight: 42,
-                  px: { xs: 1.8, sm: 2.2, md: 2.5 },
-                  py: 0.8,
-                  fontSize: { xs: '0.82rem', sm: '0.88rem' },
+                  minHeight: 40,
+                  minWidth: 'auto',
+                  px: { xs: 1.5, sm: 1.75, md: 1.85 },
+                  py: 0.75,
+                  fontSize: { xs: '0.8rem', sm: '0.84rem' },
                   fontWeight: 600,
                   textTransform: 'none',
                   whiteSpace: 'nowrap',
                   color: 'var(--text-secondary, #64748b)',
                   transition: 'all 0.25s ease',
+                  '& .MuiTab-iconWrapper': {
+                    mr: 0.7,
+                    fontSize: '1.1rem'
+                  },
                   '&.Mui-selected': {
                     color: '#ffffff !important',
                     fontWeight: 700,
