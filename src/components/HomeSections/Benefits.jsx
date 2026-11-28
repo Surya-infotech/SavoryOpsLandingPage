@@ -13,7 +13,7 @@ const Benefits = () => {
     'Instant QR table Waiter Call button with live Employee App alert banners',
     'Menu-assigned KOT stations with automatic combo item splitting & Bluetooth printing',
     'Timezone-aware branch operating hours & selective after-hours ordering controls',
-    'Multi-business and multi-branch management with 360° SaaS governance & audit logs',
+    'Multi-business and multi-branch management with branch-level pricing, tax & hours control',
     '30+ real-time reports including Register Shifts & 7-day Table Turn Heatmaps',
     'Direct commission-free Customer Website & 6-in-1 Employee Mobile App'
   ];

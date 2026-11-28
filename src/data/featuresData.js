@@ -1283,7 +1283,7 @@ export const FEATURES_DATA = {
       'Unlimited or Limited total usage caps, Per-Customer redemption limits, and Show-on-Frontend visibility toggle',
       'One-tap Available Coupons drawer & manual code entry across Website (CouponBox), Customer App, Owner POS, and Employee Cashier App',
       'Order Redemption & Release audit logs (auto-releasing redeemed counts when orders are cancelled) plus dedicated Coupon Usage Reports and CSV/PDF/Excel exports',
-      'SaaS Subscription Plan module gating (modules.coupon) managed from the Super Admin Plan Builder'
+      'Included in flexible subscription plans with instant module activation across your restaurant branches'
     ],
     faqs: [
       { question: 'Where can customers and staff apply SavoryOps coupons?', answer: 'Coupons work seamlessly across all 4 ordering channels: your dedicated Customer Website, the Customer Mobile App, Owner Web / Public POS terminals, and the Employee Cashier Mobile App.' },
@@ -1896,7 +1896,7 @@ export const FEATURES_DATA = {
       'Multi-Currency & Localized Formatting: Currency amounts, decimal formats, and date/time displays automatically match your venue\'s country configuration.',
       'Multi-Branch WhatsApp Sender Configuration: Support for multi-branch dining brands and central commissary groups.',
       'Zero-App Diner Experience: Customers get the luxury of live order tracking without being forced to download an app from an app store.',
-      'Executive SaaS Admin & Owner Alerts: Instant notifications to platform owners on subscription tier purchases, license renewals, and venue signups.'
+      'Owner Subscription & Venue Alerts: Instant notifications to restaurant owners on plan activations, renewals, and branch updates.'
     ],
     faqs: [
       { question: 'Do diners need to install any app to receive WhatsApp updates?', answer: 'No! That is the greatest advantage. Any guest who enters their phone number during dine-in, takeaway, or online ordering will automatically receive real-time updates directly in their existing WhatsApp app.' },
@@ -1925,11 +1925,11 @@ export const FEATURES_DATA = {
       'chef kds alerts'
     ],
     h1: 'Real-Time Push Notifications & Centralized Multi-Channel Alert Hub',
-    subtitle: 'Instant audible sound chimes, unread badge counters, and real-time push alerts across Admin Web, Owner Web, Employee App, and Diner App.',
+    subtitle: 'Instant audible sound chimes, unread badge counters, and real-time push alerts across Owner Web, Customer Website, Employee App, and Diner App.',
     overview: 'Seconds matter in commercial restaurant operations. A missed order at the counter or an unread modification in the kitchen directly impacts table turnover and customer satisfaction. The SavoryOps Real-Time Push Notification Engine is powered by Firebase Cloud Messaging (FCM) and Expo Push, orchestrating synchronized instant alerts across your web portals, handheld staff terminals, kitchen displays, and diner mobile apps. With acoustic order bells, persistent notification centers, and cross-tab synchronization, your entire team stays coordinated without a single delay.',
     benefits: [
       { title: 'Sub-Second Kitchen & Staff Alerts', desc: 'Incoming orders and KOT tickets trigger instantly on waiter and chef screens with audible chimes to ensure zero missed tickets.' },
-      { title: 'Universal Centralized Notification Hub', desc: 'Dedicated notification bell and inbox on Admin Panel, Owner Web, User Website, and Mobile Apps with unread counts and mark-as-read.' },
+      { title: 'Universal Centralized Notification Hub', desc: 'Dedicated notification bell and inbox on Owner Web, Customer Website, and Mobile Apps with unread counts and mark-as-read.' },
       { title: 'Cross-Tab & Multi-Device Sync', desc: 'Read notifications on one browser tab or tablet and your unread badge clears everywhere in real time.' },
       { title: 'Role-Targeted Operational Dispatching', desc: 'Waiters get table calls, chefs get station KOTs, hosts get reservation arrivals, and cashiers get payment alerts.' },
       { title: 'Automated Low-Stock Threshold Alarms', desc: 'When pantry ingredients hit minimum safety levels, stock managers receive instant notifications before stockouts occur.' },
@@ -1944,7 +1944,7 @@ export const FEATURES_DATA = {
       'Host Stand Table Reservation Alerts: Front-of-house hosts get instant push notifications when online guests submit, reschedule, or cancel reservations.',
       'Delivery Driver Dispatch Notifications: Delivery drivers receive instant push notifications with customer addresses, phone links, and special directions.',
       'Real-Time Low Inventory Stock Warnings: Automatic stock depletion alerts notify owners when high-velocity ingredients need immediate vendor reordering.',
-      'SaaS Subscription Expiry & Renewal Alerts: Multi-tenant super admins and restaurant owners receive automated billing and license alerts.',
+      'Subscription Expiry & Renewal Alerts: Restaurant owners receive automated billing and plan renewal reminders before expiry.',
       'Offline Queue & Retry Resilience: Push tokens are automatically refreshed and pruned to maintain high delivery rates even on flaky kitchen Wi-Fi.'
     ],
     faqs: [
@@ -2022,18 +2022,18 @@ export const FEATURES_DATA = {
     ],
     h1: 'Multi-Gateway Payment Processing & Automated SaaS Billing System',
     subtitle: 'Accept frictionless diner payments and empower restaurant owners to self-purchase subscription tiers and addons with Stripe, Razorpay, and PayPal.',
-    overview: 'Payment flexibility is essential for both your dining guests and your SaaS subscribers. SavoryOps features a unified multi-gateway payment architecture supporting Stripe, Razorpay, and PayPal. Super Admins configure payment gateways with live and sandbox toggles directly inside the Master Admin Panel. Restaurant owners enjoy in-app self-service subscription upgrades, addon purchases, and automated invoicing. Meanwhile, dining guests enjoy seamless payments via credit/debit cards, UPI, net banking, split tenders, and digital wallets.',
+    overview: 'Payment flexibility is essential for both your dining guests and your restaurant operations. SavoryOps features a unified multi-gateway payment architecture supporting Stripe, Razorpay, and PayPal. Restaurant owners enjoy in-app self-service subscription upgrades, addon purchases, and automated invoicing inside the Owner Web portal, while dining guests enjoy seamless payments via credit/debit cards, UPI, net banking, split tenders, and digital wallets.',
     benefits: [
       { title: 'Global & Local Payment Flexibility', desc: 'Support popular global payment processors (Stripe, PayPal) alongside regional market leaders (Razorpay, UPI).' },
       { title: 'In-App Self-Service Plan Upgrades', desc: 'Restaurant owners upgrade plans, add branches, and purchase module addons directly from the Owner Web portal.' },
-      { title: 'Instant Sandbox / Live Environment Toggling', desc: 'Test end-to-end checkout flows safely in sandbox mode before flipping the switch to live production.' },
+      { title: 'Sandbox & Live Processing Modes', desc: 'Verify end-to-end checkout flows safely in sandbox testing mode before accepting live diner transactions.' },
       { title: 'Automated Tax & Discount Calculations', desc: 'Accurately handles localized tax percentages, fixed service fees, and promotional discount voucher codes.' },
       { title: 'Multiple Payment Options for Diners', desc: 'Accept Visa, Mastercard, American Express, Apple Pay, Google Pay, Razorpay UPI, PayPal, and Cash on Delivery.' },
       { title: 'PCI-DSS Compliant Security', desc: 'Sensitive payment credentials never touch your server, utilizing hosted tokenization and encrypted webhooks.' }
     ],
     features: [
       'Triple Gateway Support: Pre-integrated with Stripe, Razorpay, and PayPal with modular gateway activation controls.',
-      'Admin Gateway Management: Configure API keys, publishable tokens, client secrets, and sandbox/live modes with 1 click.',
+      'Unified Checkout Experience: Accept Visa, Mastercard, Apple Pay, Google Pay, UPI, and PayPal across storefront and mobile ordering.',
       'Owner Self-Purchase Portal: Restaurant owners browse subscription tiers, select monthly or yearly billing, and complete checkout in seconds.',
       'Modular Addon Purchases: Purchase additional branch licenses, SMS packs, and premium modules without contacting sales.',
       'Dynamic Currency Support: Automatically formats currency symbols, decimal separators, and thousands separators based on venue configuration.',
@@ -2046,7 +2046,7 @@ export const FEATURES_DATA = {
     faqs: [
       { question: 'Which payment gateways are supported in SavoryOps?', answer: 'SavoryOps natively supports Stripe, Razorpay, and PayPal, covering international credit/debit cards, digital wallets, and UPI payments.' },
       { question: 'Can restaurant owners upgrade their SaaS subscription automatically?', answer: 'Yes! Restaurant owners can open the Subscription page in the Owner Web portal, choose a monthly or yearly plan, apply discount codes, and complete checkout with instant activation.' },
-      { question: 'Can I test transactions before going live?', answer: 'Absolutely. Each payment gateway has a Sandbox / Live toggle in the Admin Panel, allowing you to test test card numbers and simulated webhooks with zero financial risk.' },
+      { question: 'Does SavoryOps support sandbox testing before going live?', answer: 'Yes. Payment gateways support Sandbox testing alongside Live production mode so checkout flows can be verified safely before processing live diner payments.' },
       { question: 'Can dining guests pay with Cash on Delivery or at the counter?', answer: 'Yes. The system supports full omnichannel payment options: online digital payment at checkout, tableside card machine payment, or Cash on Delivery.' },
       { question: 'Does SavoryOps store customer credit card details?', answer: 'No. SavoryOps adheres to strict PCI-DSS standards. All credit card processing uses client-side SDK tokenization via Stripe, Razorpay, or PayPal, ensuring card details never touch your server.' }
     ],
@@ -2248,45 +2248,5 @@ export const FEATURES_DATA = {
     ],
     ctaText: 'Explore Multi-Branch Controls',
     ctaLink: '/features/multiple-branches'
-  },
-  'saas-admin-governance': {
-    id: 'saas-admin-governance',
-    badge: 'Super-Admin Command & Security',
-    title: '360° SaaS Tenant Governance, Audit Logs & Executive Analytics',
-    metaTitle: '360° SaaS Restaurant Admin Governance, Audit Logs & KPIs | SavoryOps',
-    metaDescription: 'Govern your multi-tenant restaurant SaaS platform with live MRR/ARR/NRR KPIs, 360° tenant dossiers, domain/SSL health checks, tenant impersonation, and Before/After audit diffs.',
-    primaryKeyword: 'SaaS Restaurant Admin Governance & Audit Logs',
-    secondaryKeywords: [
-      'multi tenant saas admin dashboard',
-      'restaurant saas mrr arr nrr',
-      'tenant impersonation admin panel',
-      'system audit logs before after diff',
-      'custom domain ssl health check',
-      'tenant onboarding tracker'
-    ],
-    h1: '360° SaaS Tenant Governance, System Audit Trail & Executive KPIs',
-    subtitle: 'Monitor MRR, ARR, NRR, and churn; inspect 360° restaurant dossiers with onboarding & SSL checks; impersonate tenants for support; and audit every admin change.',
-    overview: 'Running a commercial multi-tenant restaurant SaaS requires full executive visibility and airtight administrative accountability. The SavoryOps Super-Admin Panel unifies SaaS financial analytics (MRR, ARR, ARPU, NRR, Churn, Conversion Rate, Top Owners Leaderboard, Quarterly Cohort Retention, and 1-click Executive PDF Exports) with a 360° Tenant Profile detailing lifecycle stages, onboarding milestones, resource quotas, custom domain SSL health, live branch POS status, 1-click Login as Tenant impersonation, multi-tab inactivity auto-logout, and tamper-evident Audit Logs with Before/After state diffs.',
-    benefits: [
-      { title: 'Executive SaaS Financial Intelligence', desc: 'Track live MRR, ARR, ARPU, Net Revenue Retention (NRR), churn, conversion funnel, cohort retention, and export branded Executive PDF reports.' },
-      { title: '360° Tenant Health & Onboarding Dossier', desc: 'Inspect active plans, renewal countdowns, branch/station/staff counts, resource limit meters, onboarding completion %, and live branch POS status in one view.' },
-      { title: '1-Click Tenant Impersonation & SSL Checks', desc: 'Diagnose tenant configurations via instant Login as Tenant sessions and verify custom domain DNS/SSL health on demand.' },
-      { title: 'Tamper-Evident Audit Trail & Session Security', desc: 'Log every admin action with IP, device details, target resource, and Before/After state diffs—protected by multi-tab 15/20-minute inactivity auto-logout.' }
-    ],
-    features: [
-      'SaaS Growth KPI Suite: Live MRR, ARR, ARPU, NRR, Churn Rate, Conversion Rate, Top Restaurants Leaderboard, and Quarterly Cohort Retention Matrix.',
-      '1-Click Executive PDF Summary: Generate formatted executive PDF briefings combining SaaS growth KPIs, tax & earnings summaries, top owners, and recent audit activity.',
-      '360° Business Detail & Lifecycle Stages: Manage Trial, Active, Grace Period, Suspended, Cancelled, and Archived tenant states alongside onboarding progress checklists.',
-      'Domain & SSL Health Checker + Live Branch Pulse: Verify custom subdomain/domain SSL status and monitor live open POS register shifts per branch.',
-      'System Audit Logs with Visual Before/After Diffs: Filterable audit ledger across Users, Subscriptions, Settings, Security, Exports, and System events with JSON/value diffs.',
-      'Multi-Tab Inactivity Auto-Logout & Lead Tools: Synchronized 15-minute warning countdown and 20-minute session lock, plus Contact Us and Newsletter Subscriber email dispatch.'
-    ],
-    faqs: [
-      { question: 'What SaaS metrics are tracked on the Super-Admin Executive Dashboard?', answer: 'The dashboard calculates live MRR, ARR, ARPU, Net Revenue Retention (NRR), Churn Rate, Trial-to-Paid Conversion Rate, Top Restaurants Leaderboard, Quarterly Cohort Retention, and supports 1-click Executive PDF export.' },
-      { question: 'How does Login as Tenant impersonation help support teams?', answer: 'Authorized admins can launch an authenticated session directly into a restaurant owner’s portal from the 360° Business Detail page to diagnose menu, tax, or POS settings without asking for passwords.' },
-      { question: 'What details are recorded in System Audit Logs?', answer: 'Each audit log captures the action, category, administrator identity, IP address, parsed device/browser details, target resource, timestamp, and side-by-side Before/After field diffs.' }
-    ],
-    ctaText: 'Explore Multi-Tenant Architecture',
-    ctaLink: '/features/multi-tenant-architecture'
   }
 };

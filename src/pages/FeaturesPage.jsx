@@ -49,8 +49,7 @@ import {
   Tv as CustomerDisplayIcon,
   Devices as MultiStationPosIcon,
   RoomService as WaiterCallIcon,
-  AccessTime as OperatingHoursIcon,
-  AdminPanelSettings as AdminGovernanceIcon
+  AccessTime as OperatingHoursIcon
 } from '@mui/icons-material';
 import {
   Box,
@@ -381,16 +380,6 @@ const DETAILED_FEATURES = [
     subtitle: 'Timezone Schedules & Break Windows',
     description:
       'Enforce daily branch hours, scheduled breaks, and selective After-Hours Ordering whitelists (e.g. Delivery/Pickup) across all channels.'
-  },
-  {
-    id: 'saas-admin-governance',
-    priority: 22.5,
-    category: 'multi-tenant-saas',
-    icon: <AdminGovernanceIcon sx={ICON_SIZE} />,
-    title: '360° SaaS Governance & Audits',
-    subtitle: 'MRR/NRR, Impersonation & Diffs',
-    description:
-      'Super-Admin SaaS KPIs, 360° tenant onboarding & SSL checks, Login as Tenant impersonation, Before/After audit logs, and Executive PDFs.'
   },
   {
     id: 'multi-tenant-architecture',
@@ -742,8 +731,8 @@ const FeaturesPage = () => {
 
       {/* Core Interconnected System Modules Showcase */}
       <SystemEcosystem
-        title="The 7 Core Modules of SavoryOps SaaS"
-        subtitle="Explore the 7 interconnected web, mobile, display, and messaging platforms that power front-of-house service, kitchen prep, and multi-tenant SaaS governance."
+        title="The 6 Core Platforms of Your Restaurant OS"
+        subtitle="Explore the 6 interconnected web, mobile, display, and messaging platforms that power front-of-house service, kitchen prep, and direct customer ordering."
         showBadge={false}
       />
 

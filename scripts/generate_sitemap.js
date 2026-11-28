@@ -59,7 +59,6 @@ function getRouteMetadata(route) {
     '/features/multi-station-pos',
     '/features/waiter-call-assistance',
     '/features/branch-operating-hours',
-    '/features/saas-admin-governance',
     '/features/floor-plan-management',
     '/features/multi-tenant-architecture',
     '/features/advanced-reports',

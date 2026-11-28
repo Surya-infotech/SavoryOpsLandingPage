@@ -35,7 +35,6 @@ import {
   Devices as MultiStationPosIcon,
   RoomService as WaiterCallIcon,
   AccessTime as OperatingHoursIcon,
-  AdminPanelSettings as AdminGovernanceIcon,
   ReceiptLong as RegisterShiftIcon,
 } from '@mui/icons-material';
 import { Box, Button, Card, CardContent, Chip, Container, Typography } from '@mui/material';
@@ -335,14 +334,6 @@ const FEATURES = [
     title: 'Operating & After-Hours Rules',
     description:
       'Timezone-aware branch opening hours, scheduled kitchen breaks, and configurable after-hours order type whitelists.',
-  },
-  {
-    id: 'saas-admin-governance',
-    priority: 26.9,
-    icon: <AdminGovernanceIcon />,
-    title: '360° SaaS Admin & Audit Logs',
-    description:
-      'MRR/ARR/NRR metrics, 360° tenant onboarding dossiers, SSL checks, Login as Tenant impersonation, and Before/After audit diffs.',
   },
   {
     id: 'help-center',

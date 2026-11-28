@@ -115,11 +115,7 @@ const ALIAS_MAP = {
   'operating-hours': 'branch-operating-hours',
   'after-hours': 'branch-operating-hours',
   'after-hours-ordering': 'branch-operating-hours',
-  'branch_operating_hours': 'branch-operating-hours',
-  'admin-governance': 'saas-admin-governance',
-  'audit-logs': 'saas-admin-governance',
-  'tenant-360': 'saas-admin-governance',
-  'saas_admin_governance': 'saas-admin-governance'
+  'branch_operating_hours': 'branch-operating-hours'
 };
 
 const FEATURE_IMAGE_MAP = {
@@ -243,8 +239,6 @@ const FEATURE_IMAGE_MAP = {
   'waiter_call_assistance': '/images/features/waiter-mobile-pos.jpg',
   'branch-operating-hours': '/images/hero-platform.jpg',
   'branch_operating_hours': '/images/hero-platform.jpg',
-  'saas-admin-governance': '/images/features/reports-analytics.jpg',
-  'saas_admin_governance': '/images/features/reports-analytics.jpg',
 };
 
 const FeatureDetailPage = () => {

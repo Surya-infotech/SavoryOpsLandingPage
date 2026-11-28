@@ -23,7 +23,6 @@ import {
   Devices as MultiStationPosIcon,
   RoomService as WaiterCallIcon,
   AccessTime as OperatingHoursIcon,
-  AdminPanelSettings as AdminGovernanceIcon,
   Insights as HeatmapIcon,
   LocalOffer as DealsIcon,
 } from '@mui/icons-material';
@@ -46,7 +45,7 @@ const RECENTLY_SHIPPED_FEATURES = [
   {
     title: 'Real-Time Push Alerts',
     subtitle: 'Firebase FCM & Expo Push',
-    description: 'Instant audible sound chimes and persistent notification center across Admin Web, Owner Web, Employee App, and Diner App.',
+    description: 'Instant audible sound chimes and persistent notification center across Owner Web, Customer Website, Employee App, and Diner App.',
     link: '/features/push-notifications',
     icon: <PushNotificationIcon sx={{ fontSize: 24 }} />,
     color: '#10b981'
@@ -138,14 +137,6 @@ const RECENTLY_SHIPPED_FEATURES = [
     link: '/features/branch-operating-hours',
     icon: <OperatingHoursIcon sx={{ fontSize: 24 }} />,
     color: '#14b8a6'
-  },
-  {
-    title: '360° SaaS Admin & Audit Logs',
-    subtitle: 'MRR/NRR, Impersonation & Diffs',
-    description: 'Executive SaaS KPIs, 360° tenant onboarding & SSL checks, 1-click Login as Tenant impersonation, Before/After audit diffs, and PDF exports.',
-    link: '/features/saas-admin-governance',
-    icon: <AdminGovernanceIcon sx={{ fontSize: 24 }} />,
-    color: '#8b5cf6'
   },
   {
     title: 'Table Turn 7-Day Heatmap',
